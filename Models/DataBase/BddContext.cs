@@ -46,7 +46,7 @@ namespace LittleBigTraveler.Models.DataBase
                     Id = 1,
                     Country = "Brésil",
                     City = "Belo Horizonte",
-                    Description = "Un voyage à Minas Gerais",
+                    Description = "Voyage à Minas Gerais",
                     Style = "Ville",
                     Images = "UneImage",
                     ExternalLinks = "UnLien",
