@@ -31,8 +31,10 @@ namespace LittleBigTraveler.Models.DataBase
         //Connexion avec la database MySql
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;user id=root;password=RRRRR<;database=LittleBigTravelDB");
+            optionsBuilder.UseMySql("server=localhost;user id=root;password=Zachary3529<;database=LittleBigTravelDB");
         }
+
+
 
         //Méthode d'initialisation (remplissage de donnée)
         public void InitializeDb()
