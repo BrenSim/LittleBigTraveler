@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
 using Microsoft.EntityFrameworkCore;
-
 namespace LittleBigTraveler.Models.DataBase
 {
-	public class BddContext : DbContext
-	{
+    public class BddContext : DbContext
+    {
         // Tables Users
         public DbSet<User> Users { get; set; }
         public DbSet<Customer> Customers { get; set; }
@@ -17,7 +17,6 @@ namespace LittleBigTraveler.Models.DataBase
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserPreference> UserPreferences { get; set; }
-
         // Table Travels
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Travel> Travels { get; set; }
@@ -27,13 +26,11 @@ namespace LittleBigTraveler.Models.DataBase
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceCatalog> ServiceCatalogs { get; set; }
-
         //Connexion avec la database MySql
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;user id=root;password=Zachary3529<;database=LittleBigTravelDB");
+            optionsBuilder.UseMySql("server=localhost;user id=root;password=80648064;database=LittleBigTravelDB", options => options.EnableRetryOnFailure());
         }
-
         //Méthode d'initialisation (remplissage de donnée)
         public void InitializeDb()
         {
@@ -42,7 +39,6 @@ namespace LittleBigTraveler.Models.DataBase
             this.Destinations.AddRange(
                 new Destination
                 {
-                    
                     Id = 1,
                     Country = "France",
                     City = "Brest",
@@ -66,4 +62,3 @@ namespace LittleBigTraveler.Models.DataBase
         }
     }
 }
-
