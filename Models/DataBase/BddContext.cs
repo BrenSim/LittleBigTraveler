@@ -31,7 +31,7 @@ namespace LittleBigTraveler.Models.DataBase
         //Connexion avec la database MySql
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;user id=root;password=Zachary3529<;database=LittleBigTravelDB");
+            optionsBuilder.UseMySql("server=localhost;user id=root;password=RRRRR<;database=LittleBigTravelDB");
         }
 
         //Méthode d'initialisation (remplissage de donnée)
@@ -44,7 +44,7 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     
                     Id = 1,
-                    Country = "France",
+                    Country = "Senegal",
                     City = "Brest",
                     Description = "Un voyage en Finistère",
                     Style = "Nature",

@@ -17,6 +17,7 @@ namespace LittleBigTraveler.Models.TravelClasses
 
         public virtual List<Payment> Payments { get; set; }
         public virtual List<Evaluation> Evaluations { get; set; }
+      
     }
 }
 
