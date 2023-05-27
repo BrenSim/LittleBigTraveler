@@ -22,6 +22,7 @@
     <None Remove="Models\TravelClasses\" />
     <None Remove="Models\DataBase\" />
     <None Remove="Views\Shared\" />
+    <None Remove="Views\Destination\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -34,6 +35,7 @@
     <Folder Include="Models\DataBase\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\css\" />
+    <Folder Include="Views\Destination\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

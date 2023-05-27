@@ -36,6 +36,7 @@ namespace LittleBigTraveler.Models.DataBase
             optionsBuilder.UseMySql("server=localhost;user id=root;password=Zachary3529<;database=LittleBigTravelDB");
         }
 
+        // Méthode permettant de convertir Images=List<string>  en une seule chaîne de caractères séparée par des points-virgules dans la database ; la conversion inverse est effectuée lorsque la donnée sera récupérée depuis la database.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Destination>()
@@ -61,10 +62,10 @@ namespace LittleBigTraveler.Models.DataBase
                     Style = "Nature",
                     Images = new List<string>
                     {
-                        "image1.jpg",
-                        "image2.jpg",
-                        "image3.jpg",
-                        "image4.jpg"
+                        "/ImagesTest/Brest1.jpg",
+                        "/ImagesTest/Brest2.jpg",
+                        "/ImagesTest/Brest3.jpg",
+                        "/ImagesTest/Brest4.jpg"
                     },
                     ExternalLinks = "UnLien",
                 },
@@ -77,10 +78,10 @@ namespace LittleBigTraveler.Models.DataBase
                     Style = "Decouverte",
                     Images = new List<string>
                     {
-                        "image5.jpg",
-                        "image6.jpg",
-                        "image7.jpg",
-                        "image8.jpg"
+                        "/ImagesTest/Pau1.jpg",
+                        "/ImagesTest/Pau2.jpg",
+                        "/ImagesTest/Pau3.jpg",
+                        "/ImagesTest/Pau4.jpg"
                     },
                     ExternalLinks = "UnLien",
                 }
