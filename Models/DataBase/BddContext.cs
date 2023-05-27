@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
 using Microsoft.EntityFrameworkCore;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LittleBigTraveler.Models.DataBase
 {
@@ -42,24 +44,73 @@ namespace LittleBigTraveler.Models.DataBase
             this.Destinations.AddRange(
                 new Destination
                 {
-                    
                     Id = 1,
-                    Country = "Brésil",
-                    City = "Belo Horizonte",
-                    Description = "Voyage à Minas Gerais",
-                    Style = "Ville",
+                    Country = "France",
+                    City = "Paris",
+                    Description = "Capitale de la culture avec musées, monuments emblématiques et arts.",
+                    Style = "Cultural",
                     Images = "UneImage",
-                    ExternalLinks = "UnLien",
+                    ExternalLinks = "https://www.parisinfo.com/",
                 },
                 new Destination
                 {
                     Id = 2,
-                    Country = "France",
-                    City = "Pau",
-                    Description = "Un voyage dans le Bearn",
-                    Style = "Decouverte",
+                    Country = "Italie",
+                    City = "Rome",
+                    Description = "Ville éternelle avec vestiges antiques, art religieux et gastronomie.",
+                    Style = "Cultural",
                     Images = "UneImage",
-                    ExternalLinks = "UnLien",
+                    ExternalLinks = "https://www.turismoroma.it/",
+                },
+                new Destination
+                {
+                    Id = 3,
+                    Country = "République tchèque",
+                    City = "Prague",
+                    Description = "Ville médiévale avec châteaux, ponts, musique classique et atmosphère romantique.\"Style: Sportive",
+                    Style = "",
+                    Images = "UneImage",
+                    ExternalLinks = "https://www.prague.eu/",
+                },
+                new Destination
+                {
+                    Id = 4,
+                    Country = "Italie",
+                    City = "Venise",
+                    Description = "La ville romantique des canaux, riche en histoire et en arts.",
+                    Style = "Culture",
+                    Images = "UneImage",
+                    ExternalLinks = "https://www.veneziaunica.it/",
+                },
+                new Destination
+                {
+                    Id = 5,
+                    Country = "Germany",
+                    City = "Munich",
+                    Description = "La ville de l’Oktoberfest et ses traditions.",
+                    Style = "Culture",
+                    Images = "UneImage",
+                    ExternalLinks = "https://www.muenchen.de/",
+                },
+                new Destination
+                {
+                    Id = 6,
+                    Country = "Royaume-Uni",
+                    City = "Londres",
+                    Description = "Métropole cosmopolite avec musées de renommée mondiale et scène théâtrale vibrante.",
+                    Style = "Culture",
+                    Images = "UneImage",
+                    ExternalLinks = "https://www.visitlondon.com/",
+                },
+                new Destination
+                {
+                    Id = 7,
+                    Country = "Grèce",
+                    City = "Athènes",
+                    Description = "Berceau de la civilisation occidentale, avec l'Acropole et les sites historiques.",
+                    Style = "",
+                    Images = "UneImage",
+                    ExternalLinks = "https://www.thisisathens.org/",
                 }
             );
             this.SaveChanges();
