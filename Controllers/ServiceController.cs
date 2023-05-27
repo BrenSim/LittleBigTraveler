@@ -31,7 +31,7 @@ namespace LittleBigTraveler.Controllers
             {
                 using (var dal = new Dal())
                 {
-                    int serviceId = dal.CreerService(model.Price, model.Schedule, model.Location, model.Type, model.MaxCapacity);
+                    int serviceId = dal.CreerService(model.Name, model.Price, model.Schedule, model.Location, model.Type, model.MaxCapacity, model.Images, model.ExternalLinks);
                     // Autres actions à effectuer après la création du service
                     return RedirectToAction("Index", "Home");
                 }
@@ -64,11 +64,14 @@ namespace LittleBigTraveler.Controllers
                 var model = new ServiceViewModel
                 {
                     Id = service.Id,
+                    Name = service.Name,
                     Price = service.Price,
                     Schedule = service.Schedule,
                     Location = service.Location,
                     Type = service.Type,
-                    MaxCapacity = service.MaxCapacity
+                    MaxCapacity = service.MaxCapacity,
+                    Images = service.Images,
+                    ExternalLinks = service.ExternalLinks
                 };
 
                 return View(model);
@@ -82,7 +85,7 @@ namespace LittleBigTraveler.Controllers
             {
                 using (var dal = new Dal())
                 {
-                    dal.ModifierService(id, model.Price, model.Schedule, model.Location, model.Type, model.MaxCapacity);
+                    dal.ModifierService(id, model.Name, model.Price, model.Schedule, model.Location, model.Type, model.MaxCapacity, model.Images, model.ExternalLinks);
                     // Autres actions à effectuer après la modification du service
                 }
 

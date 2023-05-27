@@ -175,7 +175,7 @@ namespace LittleBigTraveler.Models.DataBase
                 }
                 else
                 {
-                    recherche = recherche.Where(s => s.Name.Contains(query) || s => s.Type.Contains(query) || s.Location.Contains(query));
+                    recherche = recherche.Where(s => s.Name.Contains(query) || s.Type.Contains(query) || s.Location.Contains(query));
                 }
             }
 

@@ -28,3 +28,22 @@
         </div>
     </form>
 </div>
+
+<div class="text-center mb-4" style="margin-top: 40px;">
+    <a href="/Service/Liste" class="btn btn-primary btn-lg mr-2">Voir les services</a>
+    <a href="/Service/AjoutService" class="btn btn-success btn-lg">Ajouter un service</a>
+</div>
+
+<div class="container">
+    <h2 class="text-center">Rechercher un service</h2>
+    <form method="get" action="/Service/Rechercher">
+        <div class="form-row justify-content-center">
+            <div class="col-6">
+                <input type="text" class="form-control rounded-pill" placeholder="Recherche de services par Nom, Localisation ou Type" name="query">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary rounded-pill">Rechercher</button>
+            </div>
+        </div>
+    </form>
+</div>

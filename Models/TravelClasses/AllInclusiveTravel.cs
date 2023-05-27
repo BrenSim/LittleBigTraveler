@@ -16,7 +16,7 @@ namespace LittleBigTraveler.Models.TravelClasses
         public virtual Travel Travel { get; set; }
 
         
-        public List<int> ServiceId { get; set; }
+        public int ServiceId { get; set; }
         public virtual Service Service { get; set; }
 
         //public int TravelPackageId { get; set; }

@@ -45,6 +45,13 @@ namespace LittleBigTraveler.Models.DataBase
                     images => string.Join(";", images),
                     imagesString => imagesString.Split(';', StringSplitOptions.RemoveEmptyEntries).ToList()
                 );
+
+            modelBuilder.Entity<Service>()
+                .Property(d => d.Images)
+                .HasConversion(
+                    images => string.Join(";", images),
+                    imagesString => imagesString.Split(';', StringSplitOptions.RemoveEmptyEntries).ToList()
+                );
         }
 
         // Méthode d'initialisation (remplissage de donnée)
@@ -87,25 +94,25 @@ namespace LittleBigTraveler.Models.DataBase
                 }
             );
             this.Services.AddRange(
-                    new Service
-                    {
-                        Id = 1,
-                        Price = 20.0,
-                        Schedule = DateTime.Now.AddDays(1),
-                        Location = "Brest",
-                        Type = "Transport",
-                        MaxCapacity = 100,
-                        Images = new List<string>
+                new Service
+                {
+                    Id = 1,
+                    Name = "Service de transport à Brest",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Brest",
+                    Type = "Transport",
+                    MaxCapacity = 100,
+                    Images = new List<string>
                         {
-                "/ImagesTest/Transport1.jpg",
-                "/ImagesTest/Transport2.jpg",
-                "/ImagesTest/Transport3.jpg"
+                            "/ImagesTest/BrestBateau.jpg",
                         },
-                        ExternalLinks = "UnLien"
-                    },
+                    ExternalLinks = "UnLien"
+                },
                     new Service
                     {
                         Id = 2,
+                        Name = "Activité à Brest",
                         Price = 30.0,
                         Schedule = DateTime.Now.AddDays(2),
                         Location = "Brest",
@@ -113,25 +120,71 @@ namespace LittleBigTraveler.Models.DataBase
                         MaxCapacity = 50,
                         Images = new List<string>
                         {
-                "/ImagesTest/Activité1.jpg",
-                "/ImagesTest/Activité2.jpg",
-                "/ImagesTest/Activité3.jpg"
+                            "/ImagesTest/BrestVoile.jpg",
+
                         },
                         ExternalLinks = "UnLien"
                     },
                     new Service
                     {
                         Id = 3,
+                        Name = "Restaurant à Brest",
                         Price = 40.0,
                         Schedule = DateTime.Now.AddDays(3),
-                        Location = "Pau",
+                        Location = "Brest",
                         Type = "Restaurant",
                         MaxCapacity = 30,
                         Images = new List<string>
                         {
-                "/ImagesTest/Restaurant1.jpg",
-                "/ImagesTest/Restaurant2.jpg",
-                "/ImagesTest/Restaurant3.jpg"
+                            "/ImagesTest/RestaurantBrest.jpg",
+
+                        },
+                        ExternalLinks = "UnLien"
+                    },
+                    // Services pour Pau
+                    new Service
+                    {
+                        Id = 4,
+                        Name = "Service de transport à Pau",
+                        Price = 25.0,
+                        Schedule = DateTime.Now.AddDays(1),
+                        Location = "Pau",
+                        Type = "Transport",
+                        MaxCapacity = 80,
+                        Images = new List<string>
+                        {
+                            "/ImagesTest/PauTrain.jpg",
+                        },
+                        ExternalLinks = "UnLien"
+                    },
+                    new Service
+                    {
+                        Id = 5,
+                        Name = "Activité à Pau",
+                        Price = 35.0,
+                        Schedule = DateTime.Now.AddDays(2),
+                        Location = "Pau",
+                        Type = "Activité",
+                        MaxCapacity = 60,
+                        Images = new List<string>
+                        {
+                            "/ImagesTest/PauRando.jpg",
+                        },
+                        ExternalLinks = "UnLien"
+                    },
+                    new Service
+                    {
+                        Id = 6,
+                        Name = "Restaurant à Pau",
+                        Price = 45.0,
+                        Schedule = DateTime.Now.AddDays(3),
+                        Location = "Pau",
+                        Type = "Restaurant",
+                        MaxCapacity = 40,
+                        Images = new List<string>
+                        {
+                            "/ImagesTest/PauRestaurant.jpg",
+
                         },
                         ExternalLinks = "UnLien"
                     }
