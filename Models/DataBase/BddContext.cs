@@ -108,7 +108,7 @@ namespace LittleBigTraveler.Models.DataBase
                     Country = "Grèce",
                     City = "Athènes",
                     Description = "Berceau de la civilisation occidentale, avec l'Acropole et les sites historiques.",
-                    Style = "",
+                    Style = "Culture",
                     Images = "UneImage",
                     ExternalLinks = "https://www.thisisathens.org/",
                 }
