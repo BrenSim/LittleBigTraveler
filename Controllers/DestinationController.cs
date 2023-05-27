@@ -93,13 +93,15 @@ namespace LittleBigTraveler.Controllers
             return View("ModiDestination", model);
         }
 
-        public IActionResult Rechercher(string country, string city, string style)
+        public IActionResult Rechercher(string query)
         {
             using (var dal = new Dal())
             {
-                List<Destination> destinations = dal.RechercherDestinations(country, city, style);
-                return View("Liste", destinations);
+                List<Destination> destinations = dal.RechercherDestinations(query);
+                var viewModel = new DestinationViewModel { Destinations = destinations };
+                return View("ListeResultatRecherche", viewModel);
             }
         }
+
     }
 }

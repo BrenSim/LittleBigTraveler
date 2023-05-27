@@ -1,11 +1,13 @@
-﻿@{
+﻿@model LittleBigTraveler.ViewModels.DestinationViewModel
+
+@{
     Layout = "_Layout";
     ViewData["Title"] = "Accueil";
 }
 
 <div class="jumbotron mt-4">
-    <h1 class="display-4 text-center">Destinations!</h1>
-    <p class="lead text-center">Test de formulaire pour ajout/modification de destinations.</p>
+    <h1 class="display-4 text-center">Test de Fonctionnalités!</h1>
+    <p class="lead text-center">Test des fonctionnalités implémentées dans le back</p>
 </div>
 
 <div class="text-center mb-4" style="margin-top: 20px;">
@@ -13,4 +15,16 @@
     <a href="/Destination/AjoutDestination" class="btn btn-success btn-lg">Ajouter une destination</a>
 </div>
 
-
+<div class="container">
+    <h2 class="text-center">Rechercher une destination</h2>
+    <form method="get" action="/Destination/Rechercher">
+        <div class="form-row justify-content-center">
+            <div class="col-6">
+                <input type="text" class="form-control rounded-pill" placeholder="Recherche de destinations par Pays, Ville ou Style" name="query">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary rounded-pill">Rechercher</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -80,26 +80,16 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
         // Recherche dans les données "Destination" d'après country, city et style
-        public List<Destination> RechercherDestinations(string country, string city, string style)
+        public List<Destination> RechercherDestinations(string query)
         {
-            IQueryable<Destination> query = _bddContext.Destinations;
+            IQueryable<Destination> recherche = _bddContext.Destinations;
 
-            if (!string.IsNullOrEmpty(country))
+            if (!string.IsNullOrEmpty(query))
             {
-                query = query.Where(d => d.Country == country);
+                recherche = recherche.Where(d => d.Country.Contains(query) || d.City.Contains(query) || d.Style.Contains(query));
             }
 
-            if (!string.IsNullOrEmpty(city))
-            {
-                query = query.Where(d => d.City == city);
-            }
-
-            if (!string.IsNullOrEmpty(style))
-            {
-                query = query.Where(d => d.Style == style);
-            }
-
-            return query.ToList();
+            return recherche.ToList();
         }
 
 

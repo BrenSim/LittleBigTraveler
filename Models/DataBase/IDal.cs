@@ -12,6 +12,6 @@ namespace LittleBigTraveler.Models.DataBase
         void SupprimerDestination(int id);
         void ModifierDestination(int id, string country, string city, string description, string style, List<string> images, string link);
         Destination ObtientDestinationParId(int id);
-        List<Destination> RechercherDestinations(string country, string city, string style);
+        List<Destination> RechercherDestinations(string searchText);
     }
 }
