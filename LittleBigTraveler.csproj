@@ -23,6 +23,7 @@
     <None Remove="Models\DataBase\" />
     <None Remove="Views\Shared\" />
     <None Remove="Views\Destination\" />
+    <None Remove="Views\Service\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -36,6 +37,7 @@
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="Views\Destination\" />
+    <Folder Include="Views\Service\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

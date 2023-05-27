@@ -86,6 +86,57 @@ namespace LittleBigTraveler.Models.DataBase
                     ExternalLinks = "UnLien",
                 }
             );
+            this.Services.AddRange(
+                    new Service
+                    {
+                        Id = 1,
+                        Price = 20.0,
+                        Schedule = DateTime.Now.AddDays(1),
+                        Location = "Brest",
+                        Type = "Transport",
+                        MaxCapacity = 100,
+                        Images = new List<string>
+                        {
+                "/ImagesTest/Transport1.jpg",
+                "/ImagesTest/Transport2.jpg",
+                "/ImagesTest/Transport3.jpg"
+                        },
+                        ExternalLinks = "UnLien"
+                    },
+                    new Service
+                    {
+                        Id = 2,
+                        Price = 30.0,
+                        Schedule = DateTime.Now.AddDays(2),
+                        Location = "Brest",
+                        Type = "Activité",
+                        MaxCapacity = 50,
+                        Images = new List<string>
+                        {
+                "/ImagesTest/Activité1.jpg",
+                "/ImagesTest/Activité2.jpg",
+                "/ImagesTest/Activité3.jpg"
+                        },
+                        ExternalLinks = "UnLien"
+                    },
+                    new Service
+                    {
+                        Id = 3,
+                        Price = 40.0,
+                        Schedule = DateTime.Now.AddDays(3),
+                        Location = "Pau",
+                        Type = "Restaurant",
+                        MaxCapacity = 30,
+                        Images = new List<string>
+                        {
+                "/ImagesTest/Restaurant1.jpg",
+                "/ImagesTest/Restaurant2.jpg",
+                "/ImagesTest/Restaurant3.jpg"
+                        },
+                        ExternalLinks = "UnLien"
+                    }
+                );
+
             this.SaveChanges();
         }
     }
