@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
 using Microsoft.EntityFrameworkCore;
@@ -36,11 +38,36 @@ namespace LittleBigTraveler.Models.DataBase
             optionsBuilder.UseMySql("server=localhost;user id=root;password=Maia*Pereira2403;database=LittleBigTravelDB");
         }
 
+        // Méthode permettant de convertir Images=List<string>  en une seule chaîne de caractères séparée par des points-virgules dans la database ; la conversion inverse est effectuée lorsque la donnée sera récupérée depuis la database.
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Destination>()
+                .Property(d => d.Images)
+                .HasConversion(
+                    images => string.Join(";", images),
+                    imagesString => imagesString.Split(';', StringSplitOptions.RemoveEmptyEntries).ToList()
+                );
+
+            modelBuilder.Entity<Service>()
+                .Property(d => d.Images)
+                .HasConversion(
+                    images => string.Join(";", images),
+                    imagesString => imagesString.Split(';', StringSplitOptions.RemoveEmptyEntries).ToList()
+                );
+        }
+
+        public DbSet<User> GetUsers()
+        {
+            return Users;
+        }
+
         //Méthode d'initialisation (remplissage de donnée)
         public void InitializeDb()
         {
             this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
+
+            // Création des destinations
             this.Destinations.AddRange(
                 new Destination
                 {
@@ -49,7 +76,13 @@ namespace LittleBigTraveler.Models.DataBase
                     City = "Paris",
                     Description = "Capitale de la culture avec musées, monuments emblématiques et arts.",
                     Style = "Cultural",
-                    Images = "UneImage",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Paris1.jpg",
+                        "/ImagesDestinations/Paris2.jpg",
+                        "/ImagesDestinations/Paris3.jpg",
+                        "/ImagesDestinations/Paris4.jpg"
+                    },
                     ExternalLinks = "https://www.parisinfo.com/",
                 },
                 new Destination
@@ -59,7 +92,13 @@ namespace LittleBigTraveler.Models.DataBase
                     City = "Rome",
                     Description = "Ville éternelle avec vestiges antiques, art religieux et gastronomie.",
                     Style = "Cultural",
-                    Images = "UneImage",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Rome1.jpg",
+                        "/ImagesDestinations/Rome2.jpg",
+                        "/ImagesDestinations/Rome3.jpg",
+                        "/ImagesDestinations/Rome4.jpg"
+                    },
                     ExternalLinks = "https://www.turismoroma.it/",
                 },
                 new Destination
@@ -69,7 +108,13 @@ namespace LittleBigTraveler.Models.DataBase
                     City = "Prague",
                     Description = "Ville médiévale avec châteaux, ponts, musique classique et atmosphère romantique.\"Style: Sportive",
                     Style = "",
-                    Images = "UneImage",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Prague1.jpg",
+                        "/ImagesDestinations/Prague2.jpg",
+                        "/ImagesDestinations/Prague3.jpg",
+                        "/ImagesDestinations/Prague4.jpg"
+                    },
                     ExternalLinks = "https://www.prague.eu/",
                 },
                 new Destination
@@ -79,7 +124,13 @@ namespace LittleBigTraveler.Models.DataBase
                     City = "Venise",
                     Description = "La ville romantique des canaux, riche en histoire et en arts.",
                     Style = "Culture",
-                    Images = "UneImage",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Venise1.jpg",
+                        "/ImagesDestinations/Venise2.jpg",
+                        "/ImagesDestinations/Venise3.jpg",
+                        "/ImagesDestinations/Venise4.jpg"
+                    },
                     ExternalLinks = "https://www.veneziaunica.it/",
                 },
                 new Destination
@@ -89,7 +140,13 @@ namespace LittleBigTraveler.Models.DataBase
                     City = "Munich",
                     Description = "La ville de l’Oktoberfest et ses traditions.",
                     Style = "Culture",
-                    Images = "UneImage",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Munich1.jpg",
+                        "/ImagesDestinations/Munich2.jpg",
+                        "/ImagesDestinations/Munich3.jpg",
+                        "/ImagesDestinations/Munich4.jpg"
+                    },
                     ExternalLinks = "https://www.muenchen.de/",
                 },
                 new Destination
@@ -99,7 +156,13 @@ namespace LittleBigTraveler.Models.DataBase
                     City = "Londres",
                     Description = "Métropole cosmopolite avec musées de renommée mondiale et scène théâtrale vibrante.",
                     Style = "Culture",
-                    Images = "UneImage",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Londres1.jpg",
+                        "/ImagesDestinations/Londres2.jpg",
+                        "/ImagesDestinations/Londres3.jpg",
+                        "/ImagesDestinations/Londres4.jpg"
+                    },
                     ExternalLinks = "https://www.visitlondon.com/",
                 },
                 new Destination
@@ -109,7 +172,13 @@ namespace LittleBigTraveler.Models.DataBase
                     City = "Athènes",
                     Description = "Berceau de la civilisation occidentale, avec l'Acropole et les sites historiques.",
                     Style = "Culture",
-                    Images = "UneImage",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Athenes1.jpg",
+                        "/ImagesDestinations/Athenes2.jpg",
+                        "/ImagesDestinations/Athenes3.jpg",
+                        "/ImagesDestinations/Athenes4.jpg"
+                    },
                     ExternalLinks = "https://www.thisisathens.org/",
                 }
             );
