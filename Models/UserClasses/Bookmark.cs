@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using LittleBigTraveler.Models.TravelClasses;
 
 namespace LittleBigTraveler.Models.UserClasses
 {
 	public class Bookmark
 	{
+        [Key]
         public int Id { get; set; }
 
         public int DestinationId { get; set; }

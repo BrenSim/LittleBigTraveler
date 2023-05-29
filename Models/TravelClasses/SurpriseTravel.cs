@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using LittleBigTraveler.Models.UserClasses;
 
 namespace LittleBigTraveler.Models.TravelClasses
 {
 	public class SurpriseTravel
 	{
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
 
