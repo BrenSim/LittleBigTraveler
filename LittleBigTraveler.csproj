@@ -34,9 +34,11 @@
     <Folder Include="Models\DataBase\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\ImagesDestinations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
     <Content Remove="wwwroot\css\" />
+    <Content Remove="wwwroot\ImagesDestinations\" />
   </ItemGroup>
 </Project>
