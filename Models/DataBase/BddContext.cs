@@ -180,6 +180,86 @@ namespace LittleBigTraveler.Models.DataBase
                         "/ImagesDestinations/Athenes4.jpg"
                     },
                     ExternalLinks = "https://www.thisisathens.org/",
+                },
+                new Destination
+                {
+                    Id = 8,
+                    Country = "Espagne",
+                    City = "Barcelone",
+                    Description = "Destination sportive avec football, basketball et sports nautiques.",
+                    Style = "Sportive",
+                    Images = new List<string>
+                    {
+                         "/ImagesDestinations/Barcelona1.jpg",
+                         "/ImagesDestinations/Barcelona2.jpg",
+                         "/ImagesDestinations/Barcelona3.jpg",
+                         "/ImagesDestinations/Barcelona4.jpg"
+                    },
+                    ExternalLinks = "https://www.barcelona.cat/",
+                },
+                new Destination
+                {
+                    Id = 9,
+                    Country = "Autriche",
+                    City = "Innsbruck",
+                    Description = "Ville alpine pour le ski, le snowboard et les sports d'hiver.",
+                    Style = "Sportive",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Innsbruck1.jpg",
+                        "/ImagesDestinations/Innsbruck2.jpg",
+                        "/ImagesDestinations/Innsbruck3.jpg",
+                        "/ImagesDestinations/Innsbruck4.jpg"
+                    },
+                    ExternalLinks = "https://www.innsbruck.info/",
+                },
+                new Destination
+                {
+                    Id = 10,
+                    Country = "France",
+                    City = "Annecy",
+                    Description = "Paradis des sports nautiques entouré de magnifiques montagnes.",
+                    Style = "Sportive",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Annecy1.jpg",
+                        "/ImagesDestinations/Annecy2.jpg",
+                        "/ImagesDestinations/Annecy3.jpg",
+                        "/ImagesDestinations/Annecy4.jpg"
+                    },
+                    ExternalLinks = "https://www.lac-annecy.com/",
+                },
+                new Destination
+                {
+                    Id = 11,
+                    Country = "Allemagne",
+                    City = "Garmisch-Partenkirchen",
+                    Description = "Destination alpine pour le ski, l'escalade et les sports de montagne.",
+                    Style = "Sportive",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Garmisch-Partenkirchen1.jpg",
+                        "/ImagesDestinations/Garmisch-Partenkirchen2.jpg",
+                        "/ImagesDestinations/Garmisch-Partenkirchen3.jpg",
+                        "/ImagesDestinations/Garmisch-Partenkirchen4.jpg"
+                    },
+                    ExternalLinks = "https://www.gapa.de/",
+                },
+                new Destination
+                {
+                    Id = 12,
+                    Country = "Portugal",
+                    City = "Lisbonne",
+                    Description = "Ville dynamique avec des possibilités de surf et de sports nautiques.",
+                    Style = "Sportive",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Lisbonne1.jpg",
+                        "/ImagesDestinations/Lisbonne2.jpg",
+                        "/ImagesDestinations/Lisbonne3.jpg",
+                        "/ImagesDestinations/Lisbonne4.jpg"
+                    },
+                    ExternalLinks = "https://www.visitportugal.com/",
                 }
             );
             this.SaveChanges();
