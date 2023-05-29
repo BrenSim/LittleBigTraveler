@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
+using Microsoft.EntityFrameworkCore;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace LittleBigTraveler.Models.DataBase
@@ -195,10 +196,10 @@ namespace LittleBigTraveler.Models.DataBase
             return _bddContext.Services.FirstOrDefault(s => s.Id == id);
         }
 
-// Création, suppression et modification des données "Service"
+        // Création, suppression et modification des données "Users"
 
-        // Création des données "User"
-        public int CreerUser(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string profilePicture)
+        // Méthode de création d'un administrateur
+        public int CreerAdministrateur(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate)
         {
             User user = new User()
             {
@@ -208,15 +209,80 @@ namespace LittleBigTraveler.Models.DataBase
                 Password = password,
                 Address = address,
                 PhoneNumber = phoneNumber,
-                BirthDate = birthDate,
-                ProfilePicture = profilePicture
+                BirthDate = birthDate
             };
 
-            _bddContext.Users.Add(user);
+            Administrator administrator = new Administrator()
+            {
+                User = user
+            };
+
+            _bddContext.Administrators.Add(administrator);
             _bddContext.SaveChanges();
 
-            return user.Id;
+            return administrator.Id;
         }
+
+        // Méthode de création d'un partenaire
+        public int CreerPartenaireAvecRole(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string roleName, string roleType)
+        {
+            User user = new User()
+            {
+                LastName = lastName,
+                FirstName = firstName,
+                Email = email,
+                Password = password,
+                Address = address,
+                PhoneNumber = phoneNumber,
+                BirthDate = birthDate
+            };
+
+            Role role = new Role()
+            {
+                Name = roleName,
+                Type = roleType
+            };
+
+            Partner partner = new Partner()
+            {
+                User = user,
+                Role = role
+            };
+
+            _bddContext.Partners.Add(partner);
+            _bddContext.SaveChanges();
+
+            return partner.Id;
+        }
+
+        // Méthode de création d'un client
+        public int CreerClient(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, int loyaltyPoint, int commentPoint)
+        {
+            User user = new User()
+            {
+                LastName = lastName,
+                FirstName = firstName,
+                Email = email,
+                Password = password,
+                Address = address,
+                PhoneNumber = phoneNumber,
+                BirthDate = birthDate
+            };
+
+            Customer customer = new Customer()
+            {
+                User = user,
+                LoyaltyPoint = loyaltyPoint,
+                CommentPoint = commentPoint
+            };
+
+            _bddContext.Customers.Add(customer);
+            _bddContext.SaveChanges();
+
+            return customer.Id;
+        }
+
+
 
         // Suppression des données "User"
         public void SupprimerUser(int id)
@@ -228,6 +294,8 @@ namespace LittleBigTraveler.Models.DataBase
                 _bddContext.SaveChanges();
             }
         }
+
+
 
         // Modification des données "User"
         public void ModifierUser(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string profilePicture)
@@ -264,7 +332,11 @@ namespace LittleBigTraveler.Models.DataBase
         // Récupération de tous les utilisateurs avec le type
         public List<User> ObtientTousUsersAvecType()
         {
-            List<User> users = _bddContext.Users.ToList();
+            List<User> users = _bddContext.Users
+                .Include(u => u.Customer)
+                .Include(u => u.Partner)
+                .Include(u => u.Administrator)
+                .ToList();
 
             foreach (var user in users)
             {
@@ -274,6 +346,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             return users;
         }
+
 
         // Récupération des données "User" par ID avec le type
         public User ObtientUserParIdAvecType(int id)

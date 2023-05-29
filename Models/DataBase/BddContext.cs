@@ -306,6 +306,20 @@ namespace LittleBigTraveler.Models.DataBase
                 }
             );
 
+             this.Administrators.AddRange(
+                 new Administrator
+                 {
+                     Id = 3,
+                     User = Users.Find(3),
+
+                 },
+                new Administrator
+                {
+                    Id = 4,
+                    User = Users.Find(4),
+                }
+            );
+
             this.SaveChanges();
         }
 
