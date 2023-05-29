@@ -54,11 +54,18 @@ namespace LittleBigTraveler.Models.DataBase
                 );
         }
 
+        public DbSet<User> GetUsers()
+        {
+            return Users;
+        }
+
         // Méthode d'initialisation (remplissage de donnée)
-        public void InitializeDb()
+        public void InitializeDb(DbSet<User> users)
         {
             this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
+
+            // Création des destinations
             this.Destinations.AddRange(
                 new Destination
                 {
@@ -93,6 +100,8 @@ namespace LittleBigTraveler.Models.DataBase
                     ExternalLinks = "UnLien",
                 }
             );
+
+            // Création des services
             this.Services.AddRange(
                 new Service
                 {
@@ -190,7 +199,129 @@ namespace LittleBigTraveler.Models.DataBase
                     }
                 );
 
+      
+            // Création des rôles
+            this.Roles.AddRange(
+    
+                    new Role { Id = 1, Name = "Air France", Type = "Transport" },
+
+                    new Role { Id = 2, Name = "Chez Toto Pizza", Type = "Restaurant" }
+            // Autre role ci-après
+                );
+
+            // Création des users
+            //User users = new List<User> {
+            this.Users.AddRange(
+            new User
+                     {
+                         Id = 1,
+                         LastName = "Dupont",
+                         FirstName = "Alice",
+                         Email = "alice@example.com",
+                         Password = "password123",
+                         Address = "123 Rue des Fleurs",
+                         PhoneNumber = "1234567890",
+                         BirthDate = new DateTime(1990, 1, 1)
+                     },
+                    new User
+                    {
+                        Id = 2,
+                        LastName = "Martin",
+                        FirstName = "Bob",
+                        Email = "bob@example.com",
+                        Password = "password456",
+                        Address = "456 Rue des Arbres",
+                        PhoneNumber = "9876543210",
+                        BirthDate = new DateTime(1995, 5, 5)
+                    },
+                    new User
+                    {
+                        Id = 3,
+                        LastName = "Dubois",
+                        FirstName = "Charlie",
+                        Email = "charlie@example.com",
+                        Password = "password789",
+                        Address = "789 Rue des Montagnes",
+                        PhoneNumber = "5678901234",
+                        BirthDate = new DateTime(1985, 10, 10)
+                    },
+                    new User
+                    {
+                        Id = 4,
+                        LastName = "Leclerc",
+                        FirstName = "David",
+                        Email = "david@example.com",
+                        Password = "passwordabc",
+                        Address = "321 Rue des Champs",
+                        PhoneNumber = "0123456789",
+                        BirthDate = new DateTime(1980, 3, 15)
+                    },
+                    new User
+                    {
+                        Id = 5,
+                        LastName = "Lefebvre",
+                        FirstName = "Emma",
+                        Email = "emma@example.com",
+                        Password = "passworddef",
+                        Address = "654 Rue des Rivières",
+                        PhoneNumber = "6789012345",
+                        BirthDate = new DateTime(1992, 7, 20)
+                    },
+                    new User
+                    {
+                        Id = 6,
+                        LastName = "Fournier",
+                        FirstName = "François",
+                        Email = "francois@example.com",
+                        Password = "passwordghi",
+                        Address = "987 Rue des Collines",
+                        PhoneNumber = "3456789012",
+                        BirthDate = new DateTime(1988, 12, 25)
+                    }
+               );
+
+            
+            // Création des Customers
+            this.Customers.AddRange(
+                 new Customer
+                 {
+                     Id = 1,
+                     User = users.FirstOrDefault(u => u.Id == 1),
+                     LoyaltyPoint = 100,
+                     CommentPoint = 50
+                 },
+                new Customer
+                {
+                    Id = 2,
+                    User = users.FirstOrDefault(u => u.Id == 2),
+                    LoyaltyPoint = 200,
+                    CommentPoint = 75
+                }
+            );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.SaveChanges();
         }
+
+
     }
 }
