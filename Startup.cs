@@ -39,7 +39,7 @@ namespace LittleBigTraveler
 
             using (BddContext ctx = new BddContext())
             {
-                ctx.InitializeDb(                ctx.GetUsers());
+                ctx.InitializeDb();
             }
 
             //Div

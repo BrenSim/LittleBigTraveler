@@ -24,6 +24,7 @@
     <None Remove="Views\Shared\" />
     <None Remove="Views\Destination\" />
     <None Remove="Views\Service\" />
+    <None Remove="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -38,6 +39,7 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="Views\Destination\" />
     <Folder Include="Views\Service\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

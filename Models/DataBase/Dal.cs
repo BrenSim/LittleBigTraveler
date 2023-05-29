@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using LittleBigTraveler.Models.TravelClasses;
+using LittleBigTraveler.Models.UserClasses;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace LittleBigTraveler.Models.DataBase
@@ -193,6 +194,101 @@ namespace LittleBigTraveler.Models.DataBase
         {
             return _bddContext.Services.FirstOrDefault(s => s.Id == id);
         }
+
+// Création, suppression et modification des données "Service"
+
+        // Création des données "User"
+        public int CreerUser(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string profilePicture)
+        {
+            User user = new User()
+            {
+                LastName = lastName,
+                FirstName = firstName,
+                Email = email,
+                Password = password,
+                Address = address,
+                PhoneNumber = phoneNumber,
+                BirthDate = birthDate,
+                ProfilePicture = profilePicture
+            };
+
+            _bddContext.Users.Add(user);
+            _bddContext.SaveChanges();
+
+            return user.Id;
+        }
+
+        // Suppression des données "User"
+        public void SupprimerUser(int id)
+        {
+            var user = _bddContext.Users.FirstOrDefault(u => u.Id == id);
+            if (user != null)
+            {
+                _bddContext.Users.Remove(user);
+                _bddContext.SaveChanges();
+            }
+        }
+
+        // Modification des données "User"
+        public void ModifierUser(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string profilePicture)
+        {
+            var user = _bddContext.Users.FirstOrDefault(u => u.Id == id);
+            if (user != null)
+            {
+                user.LastName = lastName;
+                user.FirstName = firstName;
+                user.Email = email;
+                user.Password = password;
+                user.Address = address;
+                user.PhoneNumber = phoneNumber;
+                user.BirthDate = birthDate;
+                user.ProfilePicture = profilePicture;
+
+                _bddContext.SaveChanges();
+            }
+        }
+
+        // Recherche dans les données "User" d'après le nom, prénom ou email
+        public List<User> RechercherUsers(string query)
+        {
+            IQueryable<User> recherche = _bddContext.Users;
+
+            if (!string.IsNullOrEmpty(query))
+            {
+                recherche = recherche.Where(u => u.LastName.Contains(query) || u.FirstName.Contains(query) || u.Email.Contains(query));
+            }
+
+            return recherche.ToList();
+        }
+
+        // Récupération de tous les utilisateurs avec le type
+        public List<User> ObtientTousUsersAvecType()
+        {
+            List<User> users = _bddContext.Users.ToList();
+
+            foreach (var user in users)
+            {
+                string userType = user.GetUserType(); // Utilisez la méthode GetUserType()
+                                                      // Faites ce que vous devez faire avec le userType, par exemple, l'afficher ou le stocker dans une autre liste
+            }
+
+            return users;
+        }
+
+        // Récupération des données "User" par ID avec le type
+        public User ObtientUserParIdAvecType(int id)
+        {
+            User user = _bddContext.Users.FirstOrDefault(u => u.Id == id);
+            if (user != null)
+            {
+                string userType = user.GetUserType(); // Utilisez la méthode GetUserType()
+                                                      // Faites ce que vous devez faire avec le userType, par exemple, l'afficher ou le stocker dans une variable
+            }
+
+            return user;
+        }
+
+
 
 
     }
