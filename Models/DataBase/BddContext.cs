@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Numerics;
+using System.Runtime.Intrinsics.X86;
+using System.Text.RegularExpressions;
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
 using Microsoft.EntityFrameworkCore;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Net.WebRequestMethods;
 
 namespace LittleBigTraveler.Models.DataBase
 {
@@ -260,6 +265,166 @@ namespace LittleBigTraveler.Models.DataBase
                         "/ImagesDestinations/Lisbonne4.jpg"
                     },
                     ExternalLinks = "https://www.visitportugal.com/",
+                },
+                new Destination
+                {
+                    Id = 13,
+                    Country = "Suisse",
+                    City = "Interlaken",
+                    Description = "Les majestueuses Alpes suisses entourent Interlaken pour des paysages spectaculaires.",
+                    Style = "Nature",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Interlaken1.jpg",
+                        "/ImagesDestinations/Interlaken2.jpg",
+                        "/ImagesDestinations/Interlaken3.jpg",
+                        "/ImagesDestinations/Interlaken4.jpg"
+                    },
+                    ExternalLinks = "https://www.interlaken.ch/",
+                },
+                new Destination
+                {
+                    Id = 14,
+                    Country = "France",
+                    City = "Chamonix",
+                    Description = "Paradis alpin au pied du Mont Blanc pour les amoureux de montagne.",
+                    Style = "Nature",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Chamonix1.jpg",
+                        "/ImagesDestinations/Chamonix2.jpg",
+                        "/ImagesDestinations/Chamonix3.jpg",
+                        "/ImagesDestinations/Chamonix4.jpg"
+                    },
+                    ExternalLinks = "https://www.chamonix.com/",
+                },
+                new Destination
+                {
+                    Id = 15,
+                    Country = "Croatie",
+                    City = "Plitvice Lakes",
+                    Description = "Cascades, eaux turquoise et végétation luxuriante aux lacs de Plitvice.",
+                    Style = "Nature",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/PlitviceLakes1.jpg",
+                        "/ImagesDestinations/PlitviceLakes2.jpg",
+                        "/ImagesDestinations/PlitviceLakes3.jpg",
+                        "/ImagesDestinations/PlitviceLakes4.jpg"
+                    },
+                    ExternalLinks = "https://www.np-plitvicka-jezera.hr/",
+                },
+                new Destination
+                {
+                    Id = 16,
+                    Country = "Norvège",
+                    City = "Tromsø",
+                    Description = "Arctique norvégien : aurores boréales et nature sauvage exceptionnelle.",
+                    Style = "Nature",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Tromso1.jpg",
+                        "/ImagesDestinations/Tromso2.jpg",
+                        "/ImagesDestinations/Tromso3.jpg",
+                        "/ImagesDestinations/Tromso4.jpg"
+                    },
+                    ExternalLinks = "https://www.visittromso.no/",
+                },
+                new Destination
+                {
+                    Id = 17,
+                    Country = "Irlande",
+                    City = "Killarney",
+                    Description = "Lacs, montagnes et paysages préservés au cœur de Killarney.",
+                    Style = "Nature",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Killarney1.jpg",
+                        "/ImagesDestinations/Killarney2.jpg",
+                        "/ImagesDestinations/Killarney3.jpg",
+                        "/ImagesDestinations/Killarney4.jpg"
+                    },
+                    ExternalLinks = "https://www.killarney.ie/",
+                },
+                new Destination
+                {
+                    Id = 18,
+                    Country = "Hongrie",
+                    City = "Budapest",
+                    Description = "La ville des bains thermaux et des spas historiques.",
+                    Style = "Relax",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Budapest1.jpg",
+                        "/ImagesDestinations/Budapest2.jpg",
+                        "/ImagesDestinations/Budapest3.jpg",
+                        "/ImagesDestinations/Budapest4.jpg"
+                    },
+                    ExternalLinks = "https://www.budapestinfo.hu/",
+                },
+                new Destination
+                {
+                    Id = 19,
+                    Country = "Royaume-Uni",
+                    City = "Bath",
+                    Description = "Ville célèbre pour ses thermes romains et son architecture géorgienne.",
+                    Style = "Relax",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Bath1.jpg",
+                        "/ImagesDestinations/Bath2.jpg",
+                        "/ImagesDestinations/Bath3.jpg",
+                        "/ImagesDestinations/Bath4.jpg"
+                    },
+                    ExternalLinks = "https://visitbath.co.uk/",
+                },
+                new Destination
+                {
+                    Id = 20,
+                    Country = "République tchèque",
+                    City = "Karlovy Vary",
+                    Description = "Spas historiques et eaux thermales dans une ville pittoresque.",
+                    Style = "Relax",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/KarlovyVary1.jpg",
+                        "/ImagesDestinations/KarlovyVary2.jpg",
+                        "/ImagesDestinations/KarlovyVary3.jpg",
+                        "/ImagesDestinations/KarlovyVary4.jpg"
+                    },
+                    ExternalLinks = "https://www.karlovyvary.cz/en",
+                },
+                new Destination
+                {
+                    Id = 21,
+                    Country = "Italie",
+                    City = "Ischia",
+                    Description = "Une île thermale dans le golfe de Naples avec des eaux curatives.",
+                    Style = "Relax",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Ischia1.jpg",
+                        "/ImagesDestinations/Ischia2.jpg",
+                        "/ImagesDestinations/Ischia3.jpg",
+                        "/ImagesDestinations/Ischia4.jpg"
+                    },
+                    ExternalLinks = "https://www.ischiareview.com/",
+                },
+                new Destination
+                {
+                    Id = 22,
+                    Country = "France",
+                    City = "Vichy",
+                    Description = "Station thermale élégante avec des spas et une architecture Art Nouveau.",
+                    Style = "Relax",
+                    Images = new List<string>
+                    {
+                        "/ImagesDestinations/Vichy1.jpg",
+                        "/ImagesDestinations/Vichy2.jpg",
+                        "/ImagesDestinations/Vichy3.jpg",
+                        "/ImagesDestinations/Vichy4.jpg"
+                    },
+                    ExternalLinks = "https://www.vichy-destinations.fr/",
                 }
             );
             this.SaveChanges();
