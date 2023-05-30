@@ -9,7 +9,7 @@ namespace LittleBigTraveler.Models.TravelClasses
         public string City { get; set; }
         public string Country { get; set; }
         public string Description { get; set; }
-        public string Style { get; set; }
+        //public string Style { get; set; }
         public List<string> Images { get; set; }
         public string ExternalLinks { get; set; }
 

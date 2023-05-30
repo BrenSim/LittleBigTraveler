@@ -80,7 +80,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "France",
                 City = "Paris",
                 Description = "Capitale de la culture avec musées, monuments emblématiques et arts.",
-                Style = "Cultural",
                 Images = new List<string>
                 {
                     "/ImagesDestinations/Paris1.jpg",
@@ -96,7 +95,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Italie",
                 City = "Rome",
                 Description = "Ville éternelle avec vestiges antiques, art religieux et gastronomie.",
-                Style = "Cultural",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Rome1.jpg",
@@ -112,7 +110,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "République tchèque",
                 City = "Prague",
                 Description = "Ville médiévale avec châteaux, ponts, musique classique et atmosphère romantique.\"Style: Sportive",
-                Style = "Cultural",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Prague1.jpg",
@@ -128,7 +125,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Italie",
                 City = "Venise",
                 Description = "La ville romantique des canaux, riche en histoire et en arts.",
-                Style = "Cultural",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Venise1.jpg",
@@ -144,7 +140,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Germany",
                 City = "Munich",
                 Description = "La ville de l’Oktoberfest et ses traditions.",
-                Style = "Cultural",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Munich1.jpg",
@@ -160,7 +155,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Royaume-Uni",
                 City = "Londres",
                 Description = "Métropole cosmopolite avec musées de renommée mondiale et scène théâtrale vibrante.",
-                Style = "Cultural",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Londres1.jpg",
@@ -176,7 +170,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Grèce",
                 City = "Athènes",
                 Description = "Berceau de la civilisation occidentale, avec l'Acropole et les sites historiques.",
-                Style = "Cultural",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Athenes1.jpg",
@@ -192,7 +185,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Espagne",
                 City = "Barcelone",
                 Description = "Destination sportive avec football, basketball et sports nautiques.",
-                Style = "Sportive",
                 Images = new List<string>
                     {
                          "/ImagesDestinations/Barcelona1.jpg",
@@ -208,7 +200,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Autriche",
                 City = "Innsbruck",
                 Description = "Ville alpine pour le ski, le snowboard et les sports d'hiver.",
-                Style = "Sportive",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Innsbruck1.jpg",
@@ -224,7 +215,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "France",
                 City = "Annecy",
                 Description = "Paradis des sports nautiques entouré de magnifiques montagnes.",
-                Style = "Sportive",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Annecy1.jpg",
@@ -240,7 +230,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Allemagne",
                 City = "Garmisch-Partenkirchen",
                 Description = "Destination alpine pour le ski, l'escalade et les sports de montagne.",
-                Style = "Sportive",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Garmisch-Partenkirchen1.jpg",
@@ -256,7 +245,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Portugal",
                 City = "Lisbonne",
                 Description = "Ville dynamique avec des possibilités de surf et de sports nautiques.",
-                Style = "Sportive",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Lisbonne1.jpg",
@@ -272,7 +260,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = "Suisse",
                 City = "Interlaken",
                 Description = "Les majestueuses Alpes suisses entourent Interlaken pour des paysages spectaculaires.",
-                Style = "Nature",
                 Images = new List<string>
                     {
                         "/ImagesDestinations/Interlaken1.jpg",
@@ -282,150 +269,141 @@ namespace LittleBigTraveler.Models.DataBase
                     },
                 ExternalLinks = "https://www.interlaken.ch/",
             },
-                new Destination
-                {
-                    Id = 14,
-                    Country = "France",
-                    City = "Chamonix",
-                    Description = "Paradis alpin au pied du Mont Blanc pour les amoureux de montagne.",
-                    Style = "Nature",
-                    Images = new List<string>
+            new Destination
+            {
+                Id = 14,
+                Country = "France",
+                City = "Chamonix",
+                Description = "Paradis alpin au pied du Mont Blanc pour les amoureux de montagne.",
+                Images = new List<string>
                     {
                         "/ImagesDestinations/Chamonix1.jpg",
                         "/ImagesDestinations/Chamonix2.jpg",
                         "/ImagesDestinations/Chamonix3.jpg",
                         "/ImagesDestinations/Chamonix4.jpg"
                     },
-                    ExternalLinks = "https://www.chamonix.com/",
-                },
-                new Destination
-                {
-                    Id = 15,
-                    Country = "Croatie",
-                    City = "Plitvice Lakes",
-                    Description = "Cascades, eaux turquoise et végétation luxuriante aux lacs de Plitvice.",
-                    Style = "Nature",
-                    Images = new List<string>
+                ExternalLinks = "https://www.chamonix.com/",
+            },
+            new Destination
+            {
+                Id = 15,
+                Country = "Croatie",
+                City = "Plitvice Lakes",
+                Description = "Cascades, eaux turquoise et végétation luxuriante aux lacs de Plitvice.",
+                Images = new List<string>
                     {
                         "/ImagesDestinations/PlitviceLakes1.jpg",
                         "/ImagesDestinations/PlitviceLakes2.jpg",
                         "/ImagesDestinations/PlitviceLakes3.jpg",
                         "/ImagesDestinations/PlitviceLakes4.jpg"
                     },
-                    ExternalLinks = "https://www.np-plitvicka-jezera.hr/",
-                },
-                new Destination
-                {
-                    Id = 16,
-                    Country = "Norvège",
-                    City = "Tromsø",
-                    Description = "Arctique norvégien : aurores boréales et nature sauvage exceptionnelle.",
-                    Style = "Nature",
-                    Images = new List<string>
+                ExternalLinks = "https://www.np-plitvicka-jezera.hr/",
+            },
+            new Destination
+            {
+                Id = 16,
+                Country = "Norvège",
+                City = "Tromsø",
+                Description = "Arctique norvégien : aurores boréales et nature sauvage exceptionnelle.",
+                Images = new List<string>
                     {
                         "/ImagesDestinations/Tromso1.jpg",
                         "/ImagesDestinations/Tromso2.jpg",
                         "/ImagesDestinations/Tromso3.jpg",
                         "/ImagesDestinations/Tromso4.jpg"
                     },
-                    ExternalLinks = "https://www.visittromso.no/",
-                },
-                new Destination
-                {
-                    Id = 17,
-                    Country = "Irlande",
-                    City = "Killarney",
-                    Description = "Lacs, montagnes et paysages préservés au cœur de Killarney.",
-                    Style = "Nature",
-                    Images = new List<string>
+                ExternalLinks = "https://www.visittromso.no/",
+            },
+            new Destination
+            {
+                Id = 17,
+                Country = "Irlande",
+                City = "Killarney",
+                Description = "Lacs, montagnes et paysages préservés au cœur de Killarney.",
+                Images = new List<string>
                     {
                         "/ImagesDestinations/Killarney1.jpg",
                         "/ImagesDestinations/Killarney2.jpg",
                         "/ImagesDestinations/Killarney3.jpg",
                         "/ImagesDestinations/Killarney4.jpg"
                     },
-                    ExternalLinks = "https://www.killarney.ie/",
-                },
-                new Destination
-                {
-                    Id = 18,
-                    Country = "Hongrie",
-                    City = "Budapest",
-                    Description = "La ville des bains thermaux et des spas historiques.",
-                    Style = "Relax",
-                    Images = new List<string>
+                ExternalLinks = "https://www.killarney.ie/",
+            },
+            new Destination
+            {
+                Id = 18,
+                Country = "Hongrie",
+                City = "Budapest",
+                Description = "La ville des bains thermaux et des spas historiques.",
+                Images = new List<string>
                     {
                         "/ImagesDestinations/Budapest1.jpg",
                         "/ImagesDestinations/Budapest2.jpg",
                         "/ImagesDestinations/Budapest3.jpg",
                         "/ImagesDestinations/Budapest4.jpg"
                     },
-                    ExternalLinks = "https://www.budapestinfo.hu/",
-                },
-                new Destination
-                {
-                    Id = 19,
-                    Country = "Royaume-Uni",
-                    City = "Bath",
-                    Description = "Ville célèbre pour ses thermes romains et son architecture géorgienne.",
-                    Style = "Relax",
-                    Images = new List<string>
+                ExternalLinks = "https://www.budapestinfo.hu/",
+            },
+            new Destination
+            {
+                Id = 19,
+                Country = "Royaume-Uni",
+                City = "Bath",
+                Description = "Ville célèbre pour ses thermes romains et son architecture géorgienne.",
+                Images = new List<string>
                     {
                         "/ImagesDestinations/Bath1.jpg",
                         "/ImagesDestinations/Bath2.jpg",
                         "/ImagesDestinations/Bath3.jpg",
                         "/ImagesDestinations/Bath4.jpg"
                     },
-                    ExternalLinks = "https://visitbath.co.uk/",
-                },
-                new Destination
-                {
-                    Id = 20,
-                    Country = "République tchèque",
-                    City = "Karlovy Vary",
-                    Description = "Spas historiques et eaux thermales dans une ville pittoresque.",
-                    Style = "Relax",
-                    Images = new List<string>
+                ExternalLinks = "https://visitbath.co.uk/",
+            },
+            new Destination
+            {
+                Id = 20,
+                Country = "République tchèque",
+                City = "Karlovy Vary",
+                Description = "Spas historiques et eaux thermales dans une ville pittoresque.",
+                Images = new List<string>
                     {
                         "/ImagesDestinations/KarlovyVary1.jpg",
                         "/ImagesDestinations/KarlovyVary2.jpg",
                         "/ImagesDestinations/KarlovyVary3.jpg",
                         "/ImagesDestinations/KarlovyVary4.jpg"
                     },
-                    ExternalLinks = "https://www.karlovyvary.cz/en",
-                },
-                new Destination
-                {
-                    Id = 21,
-                    Country = "Italie",
-                    City = "Ischia",
-                    Description = "Une île thermale dans le golfe de Naples avec des eaux curatives.",
-                    Style = "Relax",
-                    Images = new List<string>
+                ExternalLinks = "https://www.karlovyvary.cz/en",
+            },
+            new Destination
+            {
+                Id = 21,
+                Country = "Italie",
+                City = "Ischia",
+                Description = "Une île thermale dans le golfe de Naples avec des eaux curatives.",
+                Images = new List<string>
                     {
                         "/ImagesDestinations/Ischia1.jpg",
                         "/ImagesDestinations/Ischia2.jpg",
                         "/ImagesDestinations/Ischia3.jpg",
                         "/ImagesDestinations/Ischia4.jpg"
                     },
-                    ExternalLinks = "https://www.ischiareview.com/",
-                },
-                new Destination
-                {
-                    Id = 22,
-                    Country = "France",
-                    City = "Vichy",
-                    Description = "Station thermale élégante avec des spas et une architecture Art Nouveau.",
-                    Style = "Relax",
-                    Images = new List<string>
+                ExternalLinks = "https://www.ischiareview.com/",
+            },
+            new Destination
+            {
+                Id = 22,
+                Country = "France",
+                City = "Vichy",
+                Description = "Station thermale élégante avec des spas et une architecture Art Nouveau.",
+                Images = new List<string>
                     {
                         "/ImagesDestinations/Vichy1.jpg",
                         "/ImagesDestinations/Vichy2.jpg",
                         "/ImagesDestinations/Vichy3.jpg",
                         "/ImagesDestinations/Vichy4.jpg"
                     },
-                    ExternalLinks = "https://www.vichy-destinations.fr/",
-                }
+                ExternalLinks = "https://www.vichy-destinations.fr/",
+            }
             );
 
             // Création des services
@@ -440,6 +418,7 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Brest",
                     Type = "Transport",
+                    Style = "Cultural",
                     MaxCapacity = 100,
                     Images = new List<string>
                         {
@@ -457,10 +436,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Accommodation",
+                    Style = null,
                     MaxCapacity = 2,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome16Hotel.jpeg",
                         },
                     ExternalLinks = "https://www.hostelrome.com"
                 },
@@ -472,10 +452,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Accommodation",
+                    Style = null,
                     MaxCapacity = 4,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome17Hotel.jpeg",
                         },
                     ExternalLinks = "https://www.the-yellow.com"
                 },
@@ -487,10 +468,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Accommodation",
+                    Style = null,
                     MaxCapacity = 2,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome18Hotel.jpeg",
                         },
                     ExternalLinks = "https://www.hotelderussie.it"
                 },
@@ -502,10 +484,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Accommodation",
+                    Style = null,
                     MaxCapacity = 3,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome19Hotel.jpeg",
                         },
                     ExternalLinks = "https://www.hotelartemide.it"
                 },
@@ -517,10 +500,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Accommodation",
+                    Style = null,
                     MaxCapacity = 4,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome20Hotel.jpeg",
                         },
                     ExternalLinks = "https://www.raphaelhotel.com"
                 },
@@ -532,10 +516,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Restaurant",
+                    Style = null,
                     MaxCapacity = 50,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome21Restaurant.jpeg",
                         },
                     ExternalLinks = "https://www.trattoriadadanilo.it"
                 },
@@ -547,10 +532,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Restaurant",
+                    Style = null,
                     MaxCapacity = 30,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome22Restaurant.jpeg",
                         },
                     ExternalLinks = "https://www.bonci.it"
                 },
@@ -562,10 +548,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Restaurant",
+                    Style = null,
                     MaxCapacity = 20,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome23Restaurant.jpeg",
                         },
                     ExternalLinks = "https://www.romecavalieri.com/lapergola"
                 },
@@ -577,10 +564,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Restaurant",
+                    Style = null,
                     MaxCapacity = 40,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome24Restaurant.jpeg",
                         },
                     ExternalLinks = "https://www.armandoalpantheon.it"
                 },
@@ -592,10 +580,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Restaurant",
+                    Style = null,
                     MaxCapacity = 35,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome25Restaurant.jpeg",
                         },
                     ExternalLinks = "https://www.anticoarco.it"
                 },
@@ -607,10 +596,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Transport",
+                    Style = null,
                     MaxCapacity = 1,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome26Transport.jpeg",
                         },
                     ExternalLinks = "https://www.hertz.com"
                 },
@@ -622,10 +612,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Transport",
+                    Style = null,
                     MaxCapacity = 1,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome27Transport.jpeg",
                         },
                     ExternalLinks = "https://www.avis.com"
                 },
@@ -637,10 +628,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Transport",
+                    Style = null,
                     MaxCapacity = 3,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome28Transport.jpeg",
                         },
                     ExternalLinks = "https://www.mydriver.com"
                 },
@@ -652,10 +644,11 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Guide",
+                    Style = null,
                     MaxCapacity = 1,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/Rome29Guide.jpeg",
                         },
                     ExternalLinks = "https://www.romeprivateguides.com"
                 },
@@ -667,14 +660,157 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Rome",
                     Type = "Guide",
+                    Style = null,
+                    MaxCapacity = 1,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/Rome30Guide.jpeg",
+                        },
+                    ExternalLinks = "https://www.walksofitaly.com"
+                },
+                new Service
+                {
+                    Id = 31,
+                    Name = "Hotel Clement Prague",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Accommodation",
+                    Style = null,
+                    MaxCapacity = 2,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/serviceVilleId.jpg",
+                        },
+                    ExternalLinks = "https://www.hotelclement.cz"
+                },
+                new Service
+                {
+                    Id = 32,
+                    Name = "Hotel Salvator",
+                    Price = 95.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Accommodation",
+                    Style = null,
+                    MaxCapacity = 2,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/serviceVilleId.jpg",
+                        },
+                    ExternalLinks = "https://www.hotelsalvator.cz"
+                },
+                new Service
+                {
+                    Id = 33,
+                    Name = "Hotel Julian",
+                    Price = 90.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Accommodation",
+                    Style = null,
+                    MaxCapacity = 2,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/serviceVilleId.jpg",
+                        },
+                    ExternalLinks = "https://www.hoteljulian.com"
+                },
+                new Service
+                {
+                    Id = 34,
+                    Name = "Mosaic House",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Accommodation",
+                    Style = null,
+                    MaxCapacity = 4,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/serviceVilleId.jpg",
+                        },
+                    ExternalLinks = "https://www.mosaichouse.com"
+                },
+                new Service
+                {
+                    Id = 35,
+                    Name = "Hostel One Home",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Accommodation",
+                    Style = null,
+                    MaxCapacity = 6,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/serviceVilleId.jpg",
+                        },
+                    ExternalLinks = "https://www.hostelone.com"
+                },
+                new Service
+                {
+                    Id = 36,
+                    Name = "U Fleků",
+                    Price = 50.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/serviceVilleId.jpg",
+                        },
+                    ExternalLinks = "https://www.ufleku.cz"
+                },
+                new Service
+                {
+                    Id = 37,
+                    Name = "Czech Folklore Restaurant",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/serviceVilleId.jpg",
+                        },
+                    ExternalLinks = "https://www.czechfolklore.com"
+                },
+                new Service
+                {
+                    Id = 38,
+                    Name = "Lokál Dlouhááá",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/serviceVilleId.jpg",
+                        },
+                    ExternalLinks = "https://www.lokal-dlouha.ambi.cz"
+                },
+                new Service
+                {
+                    Id = 39,
+                    Name = "Prague Local Guides",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Guide",
                     MaxCapacity = 1,
                     Images = new List<string>
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.walksofitaly.com"
-                },
-
+                    ExternalLinks = "https://www.praguelocalguides.com"
+                }
 
                 );
 
