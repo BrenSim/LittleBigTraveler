@@ -14,8 +14,8 @@ using static System.Net.WebRequestMethods;
 
 namespace LittleBigTraveler.Models.DataBase
 {
-	public class BddContext : DbContext
-	{
+    public class BddContext : DbContext
+    {
         // Tables Users
         public DbSet<User> Users { get; set; }
         public DbSet<Customer> Customers { get; set; }
@@ -74,22 +74,22 @@ namespace LittleBigTraveler.Models.DataBase
 
             // Création des destinations
             this.Destinations.AddRange(
-                new Destination
+            new Destination
+            {
+                Id = 1,
+                Country = "France",
+                City = "Paris",
+                Description = "Capitale de la culture avec musées, monuments emblématiques et arts.",
+                Style = "Cultural",
+                Images = new List<string>
                 {
-                    Id = 1,
-                    Country = "France",
-                    City = "Paris",
-                    Description = "Capitale de la culture avec musées, monuments emblématiques et arts.",
-                    Style = "Cultural",
-                    Images = new List<string>
-                    {
-                        "/ImagesDestinations/Paris1.jpg",
-                        "/ImagesDestinations/Paris2.jpg",
-                        "/ImagesDestinations/Paris3.jpg",
-                        "/ImagesDestinations/Paris4.jpg"
-                    },
-                    ExternalLinks = "https://www.parisinfo.com/",
+                    "/ImagesDestinations/Paris1.jpg",
+                    "/ImagesDestinations/Paris2.jpg",
+                    "/ImagesDestinations/Paris3.jpg",
+                    "/ImagesDestinations/Paris4.jpg"
                 },
+                ExternalLinks = "https://www.parisinfo.com/",
+            },
                 new Destination
                 {
                     Id = 2,
@@ -112,7 +112,7 @@ namespace LittleBigTraveler.Models.DataBase
                     Country = "République tchèque",
                     City = "Prague",
                     Description = "Ville médiévale avec châteaux, ponts, musique classique et atmosphère romantique.\"Style: Sportive",
-                    Style = "",
+                    Style = "Cultural",
                     Images = new List<string>
                     {
                         "/ImagesDestinations/Prague1.jpg",
@@ -128,7 +128,7 @@ namespace LittleBigTraveler.Models.DataBase
                     Country = "Italie",
                     City = "Venise",
                     Description = "La ville romantique des canaux, riche en histoire et en arts.",
-                    Style = "Culture",
+                    Style = "Cultural",
                     Images = new List<string>
                     {
                         "/ImagesDestinations/Venise1.jpg",
@@ -144,7 +144,7 @@ namespace LittleBigTraveler.Models.DataBase
                     Country = "Germany",
                     City = "Munich",
                     Description = "La ville de l’Oktoberfest et ses traditions.",
-                    Style = "Culture",
+                    Style = "Cultural",
                     Images = new List<string>
                     {
                         "/ImagesDestinations/Munich1.jpg",
@@ -160,7 +160,7 @@ namespace LittleBigTraveler.Models.DataBase
                     Country = "Royaume-Uni",
                     City = "Londres",
                     Description = "Métropole cosmopolite avec musées de renommée mondiale et scène théâtrale vibrante.",
-                    Style = "Culture",
+                    Style = "Cultural",
                     Images = new List<string>
                     {
                         "/ImagesDestinations/Londres1.jpg",
@@ -176,7 +176,7 @@ namespace LittleBigTraveler.Models.DataBase
                     Country = "Grèce",
                     City = "Athènes",
                     Description = "Berceau de la civilisation occidentale, avec l'Acropole et les sites historiques.",
-                    Style = "Culture",
+                    Style = "Cultural",
                     Images = new List<string>
                     {
                         "/ImagesDestinations/Athenes1.jpg",
@@ -427,6 +427,498 @@ namespace LittleBigTraveler.Models.DataBase
                     ExternalLinks = "https://www.vichy-destinations.fr/",
                 }
             );
+
+            // Création des services
+            this.Services.AddRange(
+
+                new Service
+                {
+                    Id = 1,
+                    Name = "Service de transport à Brest",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Brest",
+                    Type = "Transport",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/BrestBateau.jpg",
+                        },
+                    ExternalLinks = "UnLien"
+                },
+                new Service
+                {
+                    Id = 2,
+                    Name = "Activité à Brest",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(2),
+                    Location = "Brest",
+                    Type = "Activité",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/BrestVoile.jpg",
+
+                        },
+                    ExternalLinks = "UnLien"
+                },
+                new Service
+                {
+                    Id = 3,
+                    Name = "Restaurant à Brest",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(3),
+                    Location = "Brest",
+                    Type = "Restaurant",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/RestaurantBrest.jpg",
+
+                        },
+                    ExternalLinks = "UnLien"
+                },
+
+
+                // Services pour Pau
+                new Service
+                {
+                    Id = 4,
+                    Name = "Service de transport à Pau",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Pau",
+                    Type = "Transport",
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/PauTrain.jpg",
+                        },
+                    ExternalLinks = "UnLien"
+                },
+                new Service
+                {
+                    Id = 5,
+                    Name = "Activité à Pau",
+                    Price = 35.0,
+                    Schedule = DateTime.Now.AddDays(2),
+                    Location = "Pau",
+                    Type = "Activité",
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/PauRando.jpg",
+                        },
+                    ExternalLinks = "UnLien"
+                },
+                new Service
+                {
+                    Id = 6,
+                    Name = "Restaurant à Pau",
+                    Price = 45.0,
+                    Schedule = DateTime.Now.AddDays(3),
+                    Location = "Pau",
+                    Type = "Restaurant",
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                        {
+                            "/ImagesTest/PauRestaurant.jpg",
+
+                        },
+                    ExternalLinks = "UnLien"
+                }
+                );
+
+
+            // Création des rôles
+            this.Roles.AddRange(
+
+                    new Role { Id = 1, Name = "Air France", Type = "Transport" },
+
+                    new Role { Id = 2, Name = "Chez Toto Pizza", Type = "Restaurant" }
+                // Autre role ci-après
+                );
+
+            // Création des users
+            //User users = new List<User> {
+            this.Users.AddRange(
+                new User
+                {
+                    Id = 1,
+                    LastName = "Dupont",
+                    FirstName = "Alice",
+                    Email = "alice@example.com",
+                    Password = "password123",
+                    Address = "123 Rue des Fleurs",
+                    PhoneNumber = "1234567890",
+                    BirthDate = new DateTime(1990, 1, 1),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 2,
+                    LastName = "Martin",
+                    FirstName = "Bob",
+                    Email = "bob@example.com",
+                    Password = "password456",
+                    Address = "456 Rue des Arbres",
+                    PhoneNumber = "9876543210",
+                    BirthDate = new DateTime(1995, 5, 5),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 3,
+                    LastName = "Dubois",
+                    FirstName = "Charlie",
+                    Email = "charlie@example.com",
+                    Password = "password789",
+                    Address = "789 Rue des Montagnes",
+                    PhoneNumber = "5678901234",
+                    BirthDate = new DateTime(1985, 10, 10),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 4,
+                    LastName = "Leclerc",
+                    FirstName = "David",
+                    Email = "david@example.com",
+                    Password = "passwordabc",
+                    Address = "321 Rue des Champs",
+                    PhoneNumber = "0123456789",
+                    BirthDate = new DateTime(1980, 3, 15),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 5,
+                    LastName = "Lefebvre",
+                    FirstName = "Emma",
+                    Email = "emma@example.com",
+                    Password = "passworddef",
+                    Address = "654 Rue des Rivières",
+                    PhoneNumber = "6789012345",
+                    BirthDate = new DateTime(1992, 7, 20),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 6,
+                    LastName = "Fournier",
+                    FirstName = "François",
+                    Email = "francois@example.com",
+                    Password = "passwordghi",
+                    Address = "987 Rue des Collines",
+                    PhoneNumber = "3456789012",
+                    BirthDate = new DateTime(1988, 12, 25),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 7,
+                    LastName = "Rousseau",
+                    FirstName = "Alexandre",
+                    Email = "alexandre.rousseau@gmail.com",
+                    Password = "pass12345",
+                    Address = "14 Rue de Rivoli, Quartier des Tuileries, Paris",
+                    PhoneNumber = "0145678901",
+                    BirthDate = new DateTime(1994, 9, 2),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 8,
+                    LastName = "Leclerc",
+                    FirstName = "Manon",
+                    Email = "manon.leclerc@gmail.com",
+                    Password = "mdp98765",
+                    Address = "30 Rue Sainte-Catherine, Pentes de la Croix-Rousse, Lyon",
+                    PhoneNumber = "046543210",
+                    BirthDate = new DateTime(1993, 12, 18),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 9,
+                    LastName = "Dubois",
+                    FirstName = "Émilie",
+                    Email = "emilie.dubois@gmail.com",
+                    Password = "securepass123",
+                    Address = "18 Rue des Augustins, Centre Ville, Perpignan",
+                    PhoneNumber = "043216549",
+                    BirthDate = new DateTime(1992, 5, 28),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 10,
+                    LastName = "Martin",
+                    FirstName = "Antoine",
+                    Email = "antoine.martin@gmail.com",
+                    Password = "password456",
+                    Address = "10 Quai de la Tourette, Le Panier, Marseille",
+                    PhoneNumber = "067891234",
+                    BirthDate = new DateTime(1991, 8, 10),
+                    ProfilePicture = "/path/to/profile_picture.jpg"
+                },
+                new User
+                {
+                    Id = 11,
+                    LastName = "Dubois",
+                    FirstName = "Jean",
+                    Email = "jean.dubois@gmail.com",
+                    Password = "motdepasse123",
+                    Address = "12 Rue de la Paix, Quartier Latin, Paris",
+                    PhoneNumber = "0145678901",
+                    BirthDate = new DateTime(1985, 8, 20),
+                },
+                new User
+                {
+                    Id = 12,
+                    LastName = "Leroy",
+                    FirstName = "Sophie",
+                    Email = "sophie.leroy@gmail.com",
+                    Password = "securepassword",
+                    Address = "27 Rue du Palais Grillet, Presqu'île, Lyon",
+                    PhoneNumber = "046543210",
+                    BirthDate = new DateTime(1992, 3, 10),
+                },
+                new User
+                {
+                    Id = 13,
+                    LastName = "Martin",
+                    FirstName = "Pierre",
+                    Email = "pierre.martin@gmail.com",
+                    Password = "12345678",
+                    Address = "45 Rue des Pénitents Bleus, Vieux Lyon, Lyon",
+                    PhoneNumber = "0141234564",
+                    BirthDate = new DateTime(1991, 11, 25),
+                },
+                new User
+                {
+                    Id = 14,
+                    LastName = "Dubois",
+                    FirstName = "Marie",
+                    Email = "marie.dubois@gmail.com",
+                    Password = "mdp123",
+                    Address = "8 Rue de la République, Part-Dieu, Lyon",
+                    PhoneNumber = "0149876543",
+                    BirthDate = new DateTime(1988, 6, 15),
+                },
+                new User
+                {
+                    Id = 15,
+                    LastName = "Dupont",
+                    FirstName = "Paul",
+                    Email = "paul.dupont@gmail.com",
+                    Password = "password",
+                    Address = "15 Rue de l'Ancienne Porte Neuve, Centre Ville, Perpignan",
+                    PhoneNumber = "0145678901",
+                    BirthDate = new DateTime(1995, 2, 18),
+                },
+                new User
+                {
+                    Id = 16,
+                    LastName = "Lefèvre",
+                    FirstName = "Sophie",
+                    Email = "sophie.lefevre@gmail.com",
+                    Password = "secure123",
+                    Address = "22 Avenue de Grande Bretagne, Les Coves, Perpignan",
+                    PhoneNumber = "0410987654",
+                    BirthDate = new DateTime(1987, 7, 5),
+                },
+                new User
+                {
+                    Id = 17,
+                    LastName = "Moreau",
+                    FirstName = "Luc",
+                    Email = "luc.moreau@gmail.com",
+                    Password = "pass1234",
+                    Address = "32 Rue Saint-Ferréol, Centre Ville, Marseille",
+                    PhoneNumber = "0623415678",
+                    BirthDate = new DateTime(1993, 9, 12),
+                },
+                new User
+                {
+                    Id = 18,
+                    LastName = "Girard",
+                    FirstName = "Emma",
+                    Email = "emma.girard@gmail.com",
+                    Password = "password321",
+                    Address = "9 Quai du Port, Vieux Port, Marseille",
+                    PhoneNumber = "0168765432",
+                    BirthDate = new DateTime(1989, 4, 27),
+                },
+                new User
+                {
+                    Id = 19,
+                    LastName = "Dupuis",
+                    FirstName = "Marc",
+                    Email = "marc.dupuis@gmail.com",
+                    Password = "mdp5678",
+                    Address = "23 Rue Esquermoise, Vieux Lille, Lille",
+                    PhoneNumber = "0131234567",
+                    BirthDate = new DateTime(1990, 12, 5),
+                },
+                new User
+                {
+                    Id = 20,
+                    LastName = "Lefebvre",
+                    FirstName = "Julie",
+                    Email = "julie.lefebvre@gmail.com",
+                    Password = "securepass",
+                    Address = "8 Rue de la Clef, Centre Ville, Lille",
+                    PhoneNumber = "0139876543",
+                    BirthDate = new DateTime(1986, 2, 28),
+                },
+            new User
+            {
+                Id = 21,
+                LastName = "Roy",
+                FirstName = "Sophie",
+                Email = "sophie.roy@gmail.com",
+                Password = "pass1234",
+                Address = "17 Rue Sainte-Catherine, Saint-Michel, Bordeaux",
+                PhoneNumber = "0123456789",
+                BirthDate = new DateTime(1992, 10, 15),
+            },
+            new User
+            {
+                Id = 22,
+                LastName = "Gagnon",
+                FirstName = "Alexandre",
+                Email = "alexandre.gagnon@gmail.com",
+                Password = "securepass",
+                Address = "12 Avenue de la Marne, La Négresse, Biarritz",
+                PhoneNumber = "0456789123",
+                BirthDate = new DateTime(1988, 5, 2),
+            },
+            new User
+            {
+                Id = 23,
+                LastName = "Tremblay",
+                FirstName = "Emma",
+                Email = "emma.tremblay@gmail.com",
+                Password = "mdp7890",
+                Address = "9 Rue des Francs-Bourgeois, Centre Ville, Strasbourg",
+                PhoneNumber = "0498765432",
+                BirthDate = new DateTime(1995, 12, 28),
+            },
+            new User
+            {
+                Id = 24,
+                LastName = "Lavoie",
+                FirstName = "Pierre",
+                Email = "pierre.lavoie@gmail.com",
+                Password = "password789",
+                Address = "6 Boulevard des Anglais, Milady, Biarritz",
+                PhoneNumber = "0632147859",
+                BirthDate = new DateTime(1991, 7, 10),
+            },
+            new User
+            {
+                Id = 25,
+                LastName = "Bélanger",
+                FirstName = "Marie",
+                Email = "marie.belanger@gmail.com",
+                Password = "secure1234",
+                Address = "15 Rue de la Douane, Centre Ville, Strasbourg",
+                PhoneNumber = "0356897412",
+                BirthDate = new DateTime(1987, 3, 22),
+            },
+            new User
+            {
+                Id = 26,
+                LastName = "Fortin",
+                FirstName = "Marc",
+                Email = "marc.fortin@gmail.com",
+                Password = "mdp4567",
+                Address = "32 Avenue Jean Médecin, Carré d'Or, Nice",
+                PhoneNumber = "0123456789",
+                BirthDate = new DateTime(1993, 9, 5),
+            },
+            new User
+            {
+                Id = 27,
+                LastName = "Gauthier",
+                FirstName = "Isabelle",
+                Email = "isabelle.gauthier@gmail.com",
+                Password = "pass456",
+                Address = "8 Rue Masséna, Vieux Nice, Nice",
+                PhoneNumber = "0456789123",
+                BirthDate = new DateTime(1990, 4, 12),
+
+            },
+            new User
+            {
+                Id = 28,
+                LastName = "Morin",
+                FirstName = "David",
+                Email = "david.morin@gmail.com",
+                Password = "password123",
+                Address = "17 Rue du Maréchal Foch, Petite France, Strasbourg",
+                PhoneNumber = "0498765432",
+                BirthDate = new DateTime(1986, 11, 25),
+            },
+            new User
+            {
+                Id = 29,
+                LastName = "Lévesque",
+                FirstName = "Sarah",
+                Email = "sarah.levesque@gmail.com",
+                Password = "securepass789",
+                Address = "6 Avenue Thiers, Jean Médecin, Nice",
+                PhoneNumber = "0632147859",
+                BirthDate = new DateTime(1994, 2, 18),
+            },
+            new User
+            {
+                Id = 30,
+                LastName = "Caron",
+                FirstName = "Thomas",
+                Email = "thomas.caron@gmail.com",
+                Password = "mdp789",
+                Address = "15 Rue de la Juiverie, Bouffay, Nantes",
+                PhoneNumber = "0132546897",
+                BirthDate = new DateTime(1991, 10, 20),
+            }
+            );
+
+
+            // Création des Customers
+            this.Customers.AddRange(
+                 new Customer
+                 {
+                     Id = 1,
+                     User = Users.Find(1),
+                     LoyaltyPoint = 100,
+                     CommentPoint = 50
+                 },
+                new Customer
+                {
+                    Id = 2,
+                    User = Users.Find(2),
+                    LoyaltyPoint = 200,
+                    CommentPoint = 75
+                }
+            );
+
+            this.Administrators.AddRange(
+                new Administrator
+                {
+                    Id = 3,
+                    User = Users.Find(3),
+
+                },
+               new Administrator
+               {
+                   Id = 4,
+                   User = Users.Find(4),
+               }
+           );
+
+
             this.SaveChanges();
         }
     }
