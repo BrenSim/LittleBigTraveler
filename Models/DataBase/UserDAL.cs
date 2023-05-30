@@ -146,6 +146,44 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
+        public void ModifyCustomer(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, int loyaltyPoint, int commentPoint)
+        {
+            var customer = _bddContext.Customers.FirstOrDefault(c => c.Id == id);
+            if (customer != null)
+            {
+                var user = customer.User;
+                ModifyUser(user.Id, lastName, firstName, email, password, address, phoneNumber, birthDate, user.ProfilePicture);
+                customer.LoyaltyPoint = loyaltyPoint;
+                customer.CommentPoint = commentPoint;
+                _bddContext.SaveChanges();
+            }
+        }
+
+        public void ModifyPartner(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string roleName, string roleType)
+        {
+            var partner = _bddContext.Partners.FirstOrDefault(p => p.Id == id);
+            if (partner != null)
+            {
+                var user = partner.User;
+                ModifyUser(user.Id, lastName, firstName, email, password, address, phoneNumber, birthDate, user.ProfilePicture);
+                partner.Role.Name = roleName;
+                partner.Role.Type = roleType;
+                _bddContext.SaveChanges();
+            }
+        }
+
+        public void ModifyAdministrator(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate)
+        {
+            var administrator = _bddContext.Administrators.FirstOrDefault(a => a.Id == id);
+            if (administrator != null)
+            {
+                var user = administrator.User;
+                ModifyUser(user.Id, lastName, firstName, email, password, address, phoneNumber, birthDate, user.ProfilePicture);
+                _bddContext.SaveChanges();
+            }
+        }
+
+
         // Recherche dans les données "User" d'après le nom, prénom ou email
         public List<User> SearchUser(string query)
         {

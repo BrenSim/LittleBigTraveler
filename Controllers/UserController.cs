@@ -120,11 +120,105 @@ namespace LittleBigTraveler.Controllers
                 {
                     userDAL.ModifyUser(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.ProfilePicture);
                 }
-                return RedirectToAction("Liste");
+                return RedirectToAction("List");
             }
 
-            return View("ModiUser", model);
+            return View(model);
         }
+
+        // Action pour la modification d'un client
+        public IActionResult ChangeCustomer(int id)
+        {
+            using (var userDAL = new UserDAL())
+            {
+                var user = userDAL.GetAllUsersWithTypeWithId(id);
+                if (user == null || user.Customer == null)
+                {
+                    return NotFound();
+                }
+
+                var model = MapUserToViewModel(user);
+                return View(model);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult ChangeCustomers(int id, UserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var userDAL = new UserDAL())
+                {
+                    userDAL.ModifyCustomer(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
+                }
+                return RedirectToAction("List");
+            }
+
+            return View("ChangeCustomer", model);
+        }
+
+        // Action pour la modification d'un partenaire
+        public IActionResult ChangePartner(int id)
+        {
+            using (var userDAL = new UserDAL())
+            {
+                var user = userDAL.GetAllUsersWithTypeWithId(id);
+                if (user == null || user.Partner == null)
+                {
+                    return NotFound();
+                }
+
+                var model = MapUserToViewModel(user);
+                return View(model);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult ChangePartners(int id, UserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var userDAL = new UserDAL())
+                {
+                    userDAL.ModifyPartner(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
+                }
+                return RedirectToAction("List");
+            }
+
+            return View( model);
+        }
+
+        // Action pour la modification d'un administrateur
+        public IActionResult ChangeAdministrator(int id)
+        {
+            using (var userDAL = new UserDAL())
+            {
+                var user = userDAL.GetAllUsersWithTypeWithId(id);
+                if (user == null || user.Administrator == null)
+                {
+                    return NotFound();
+                }
+
+                var model = MapUserToViewModel(user);
+                return View( model);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult ChangeAdministrators(int id, UserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var userDAL = new UserDAL())
+                {
+                    userDAL.ModifyAdministrator(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
+                }
+                return RedirectToAction("List");
+            }
+
+            return View("ChangeAdministrator", model);
+        }
+
 
         // Action pour la recherche d'un utilisateur
         public IActionResult FindUsers(string query) // Méthode à appeller dans "l'action" du Front

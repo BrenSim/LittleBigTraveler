@@ -33,7 +33,19 @@
                         <td>@user.Email</td>
                         <td>@user.UserType</td>
                         <td>
-                            <a href="/User/ChangeUsers/@user.UserId" class="btn btn-secondary mr-2">Modifier</a>
+                            @if (user.UserType == "Customer")
+                            {
+                                <a href="/User/ChangeCustomer/@user.UserId" class="btn btn-secondary mr-2">Modifier</a>
+                            }
+                            else if (user.UserType == "Partner")
+                            {
+                                <a href="/User/ChangePartner/@user.UserId" class="btn btn-secondary mr-2">Modifier</a>
+                            }
+                            else if (user.UserType == "Administrator")
+                            {
+                                <a href="/User/ChangeAdministrator/@user.UserId" class="btn btn-secondary mr-2">Modifier</a>
+                            }
+
                             <a href="/User/DeleteUsers/@user.UserId" class="btn btn-danger">Supprimer</a>
                         </td>
                     </tr>
