@@ -10,52 +10,53 @@ namespace LittleBigTraveler.Controllers
 {
     public class ServiceController : Controller
     {
-        public IActionResult Liste()
+        public IActionResult List()
         {
-            using (var dal = new Dal())
+            using (var serviceDAL = new ServiceDAL())
             {
-                var services = dal.ObtientTousServices();
+                var services = serviceDAL.GetAllServices();
                 return View(services);
             }
         }
 
-        public IActionResult AjoutService()
+        // Création des données "Service"
+        public IActionResult AddService() // Action pour aller à la vue AddService (formulaire de suppression)
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult AjouterService(ServiceViewModel model)
+        public IActionResult AddServices(ServiceViewModel model) // Méthode à appeller dans "l'action" de la vue AddService
         {
             if (ModelState.IsValid)
             {
-                using (var dal = new Dal())
+                using (var serviceDAL = new ServiceDAL())
                 {
-                    int serviceId = dal.CreerService(model.Name, model.Price, model.Schedule, model.Location, model.Type, model.MaxCapacity, model.Images, model.ExternalLinks);
-                    // Autres actions à effectuer après la création du service
+                    int serviceId = serviceDAL.CreateService(model.Name, model.Price, model.Schedule, model.Location, model.Type, model.MaxCapacity, model.Images, model.ExternalLinks);
                     return RedirectToAction("Index", "Home");
                 }
             }
 
-            return View("AjoutService", model);
+            return View("AddService", model);
         }
 
-        public IActionResult SuppService(int id)
+        // Suppression des données "Service"
+        public IActionResult DeleteServices(int id) // Méthode à appeller sur le bouton Suppression
         {
-            using (var dal = new Dal())
+            using (var serviceDAL = new ServiceDAL())
             {
-                dal.SupprimerService(id);
-                // Autres actions à effectuer après la suppression du service
+                serviceDAL.DeleteService(id);
             }
 
-            return RedirectToAction("Liste");
+            return RedirectToAction("List");
         }
 
-        public IActionResult ModiService(int id)
+        // Modification des données "Service"
+        public IActionResult ChangeService(int id) // Action pour aller à la vue ChangeService (formulaire de modification)
         {
-            using (var dal = new Dal())
+            using (var serviceDAL = new ServiceDAL())
             {
-                var service = dal.ObtientServiceParId(id);
+                var service = serviceDAL.GetServiceWithId(id);
                 if (service == null)
                 {
                     return NotFound();
@@ -79,29 +80,29 @@ namespace LittleBigTraveler.Controllers
         }
 
         [HttpPost]
-        public IActionResult ModifierService(int id, ServiceViewModel model)
+        public IActionResult ChangeServices(int id, ServiceViewModel model) // Méthode à appeller dans "l'action" de la vue ChangeService
         {
             if (ModelState.IsValid)
             {
-                using (var dal = new Dal())
+                using (var serviceDAL = new ServiceDAL())
                 {
-                    dal.ModifierService(id, model.Name, model.Price, model.Schedule, model.Location, model.Type, model.MaxCapacity, model.Images, model.ExternalLinks);
-                    // Autres actions à effectuer après la modification du service
+                    serviceDAL.ModifyService(id, model.Name, model.Price, model.Schedule, model.Location, model.Type, model.MaxCapacity, model.Images, model.ExternalLinks);
                 }
 
-                return RedirectToAction("Liste");
+                return RedirectToAction("List");
             }
 
-            return View("ModiService", model);
+            return View("ChangeService", model);
         }
 
-        public IActionResult Rechercher(string query)
+        // Recherche dans les données "Destination" d'après country, city et style
+        public IActionResult FindServices(string query) // Méthode à appeller dans "l'action" du bouton Recherche
         {
-            using (var dal = new Dal())
+            using (var serviceDAL = new ServiceDAL())
             {
-                List<Service> services = dal.RechercherServices(query);
+                List<Service> services = serviceDAL.SearchService(query);
                 var viewModel = new ServiceViewModel { Services = services };
-                return View("ListeResultatRecherche", viewModel);
+                return View("ListSearchResult", viewModel);
             }
         }
     }

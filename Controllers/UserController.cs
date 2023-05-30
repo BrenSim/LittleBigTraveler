@@ -10,11 +10,11 @@ namespace LittleBigTraveler.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Liste()
+        public IActionResult List()
         {
-            using (var dal = new Dal())
+            using (var userDAL = new UserDAL())
             {
-                var users = dal.ObtientTousUsersAvecType();
+                var users = userDAL.GetAllUsersWithType();
                 var userViewModels = MapUsersToViewModels(users);
                 return View(userViewModels);
             }
@@ -27,13 +27,13 @@ namespace LittleBigTraveler.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddCustomers(UserViewModel model)
+        public IActionResult AddCustomers(UserViewModel model) // Méthode à appeller dans "l'action" du Front
         {
             if (ModelState.IsValid)
             {
-                using (var dal = new Dal())
+                using (var userDAL = new UserDAL())
                 {
-                    int customerId = dal.CreerClient(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
+                    int customerId = userDAL.CreateCustomer(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
                     // Autres actions à effectuer après la création du client
                     return RedirectToAction("Index", "Home");
                 }
@@ -49,14 +49,13 @@ namespace LittleBigTraveler.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddPartners(UserViewModel model)
+        public IActionResult AddPartners(UserViewModel model) // Méthode à appeller dans "l'action" du Front
         {
             if (ModelState.IsValid)
             {
-                using (var dal = new Dal())
+                using (var userDAL = new UserDAL())
                 {
-                    int partnerId = dal.CreerPartenaireAvecRole(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
-                    // Autres actions à effectuer après la création du partenaire
+                    int partnerId = userDAL.CreatePartner(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -71,14 +70,13 @@ namespace LittleBigTraveler.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddAdministrators(UserViewModel model)
+        public IActionResult AddAdministrators(UserViewModel model) // Méthode à appeller dans "l'action" du Front
         {
             if (ModelState.IsValid)
             {
-                using (var dal = new Dal())
+                using (var userDAL = new UserDAL())
                 {
-                    int administratorId = dal.CreerAdministrateur(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
-                    // Autres actions à effectuer après la création de l'administrateur
+                    int administratorId = userDAL.CreateAdministrator(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -86,22 +84,23 @@ namespace LittleBigTraveler.Controllers
             return View("AddAdministrator", model);
         }
 
-        public IActionResult SuppUser(int id)
+        // Action pour la suppression d'un utilisateur
+        public IActionResult DeleteUsers(int id) // Méthode à appeller dans "l'action" du Front
         {
-            using (var dal = new Dal())
+            using (var userDAL = new UserDAL())
             {
-                dal.SupprimerUser(id);
-                // Autres actions à effectuer après la suppression de l'utilisateur
+                userDAL.DeleteUser(id);
             }
 
-            return RedirectToAction("Liste");
+            return RedirectToAction("List");
         }
 
-        public IActionResult ModiUser(int id)
+        // Action pour la modification d'un utilisateur
+        public IActionResult ChangeUser(int id)
         {
-            using (var dal = new Dal())
+            using (var userDAL = new UserDAL())
             {
-                var user = dal.ObtientUserParIdAvecType(id);
+                var user = userDAL.GetAllUsersWithTypeWithId(id);
                 if (user == null)
                 {
                     return NotFound();
@@ -113,14 +112,13 @@ namespace LittleBigTraveler.Controllers
         }
 
         [HttpPost]
-        public IActionResult ModifierUser(int id, UserViewModel model)
+        public IActionResult ChangeUsers(int id, UserViewModel model) // Méthode à appeller dans "l'action" du Front
         {
             if (ModelState.IsValid)
             {
-                using (var dal = new Dal())
+                using (var userDAL = new UserDAL())
                 {
-                    dal.ModifierUser(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.ProfilePicture);
-                    // Autres actions à effectuer après la modification de l'utilisateur
+                    userDAL.ModifyUser(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.ProfilePicture);
                 }
                 return RedirectToAction("Liste");
             }
@@ -128,36 +126,39 @@ namespace LittleBigTraveler.Controllers
             return View("ModiUser", model);
         }
 
-        public IActionResult Rechercher(string query)
+        // Action pour la recherche d'un utilisateur
+        public IActionResult FindUsers(string query) // Méthode à appeller dans "l'action" du Front
         {
-            using (var dal = new Dal())
+            using (var userDAL = new UserDAL())
             {
-                var users = dal.RechercherUsers(query);
+                var users = userDAL.SearchUser(query);
                 var userViewModels = MapUsersToViewModels(users);
                 var viewModel = new UserViewModel { Users = userViewModels };
                 return View("ListeResultatRecherche", viewModel);
             }
         }
 
-        private int CreateUser(UserViewModel model)
+        // Action pour la création d'un User (et non pas d'un Customer etc.) (outdated)
+        public int CreateUser(UserViewModel model)
         {
-            using (var dal = new Dal())
+            using (var userDAL = new UserDAL())
             {
                 switch (model.UserType)
                 {
                     case "Customer":
-                        return dal.CreerClient(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
+                        return userDAL.CreateCustomer(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
                     case "Partner":
-                        return dal.CreerPartenaireAvecRole(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
+                        return userDAL.CreatePartner(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
                     case "Administrator":
-                        return dal.CreerAdministrateur(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
+                        return userDAL.CreateAdministrator(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
                     default:
                         throw new ArgumentException("Invalid user type");
                 }
             }
         }
 
-        private UserViewModel MapUserToViewModel(User user)
+        // Action pour "Mapper" le ViewModel
+        public UserViewModel MapUserToViewModel(User user)
         {
             var model = new UserViewModel
             {
@@ -195,7 +196,7 @@ namespace LittleBigTraveler.Controllers
         }
 
 
-        private List<UserViewModel> MapUsersToViewModels(List<User> users)
+        public List<UserViewModel> MapUsersToViewModels(List<User> users)
         {
             return users.Select(MapUserToViewModel).ToList();
         }

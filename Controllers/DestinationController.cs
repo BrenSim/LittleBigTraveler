@@ -10,52 +10,53 @@ namespace LittleBigTraveler.Controllers
 {
     public class DestinationController : Controller
     {
-        public IActionResult Liste()
+        public IActionResult List()
         {
-            using (var dal = new Dal())
+            using (var destinationDAL = new DestinationDAL())
             {
-                var destinations = dal.ObtientToutesDestination();
+                var destinations = destinationDAL.GetAllDestinations();
                 return View(destinations);
             }
         }
 
-        public IActionResult AjoutDestination()
+        // Création des données "Destination"
+        public IActionResult AddDestination() // Action pour aller à la vue AddDestination (formulaire d'ajout)
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult AjouterDestination(DestinationViewModel model)
+        public IActionResult AddDestinations(DestinationViewModel model) // Méthode à appeller dans "l'action" de la vue AddDestination
         {
             if (ModelState.IsValid)
             {
-                using (var dal = new Dal())
+                using (var destinationDAL = new DestinationDAL())
                 {
-                    int destinationId = dal.CreerDestination(model.Country, model.City, model.Description, model.Style, model.Images, model.ExternalLinks);
-                    // Autres actions à effectuer après la création de la destination
+                    int destinationId = destinationDAL.CreateDestination(model.Country, model.City, model.Description, model.Style, model.Images, model.ExternalLinks);
                     return RedirectToAction("Index", "Home");
                 }
             }
 
-            return View("AjoutDestination", model);
+            return View("AddDestination", model);
         }
 
-        public IActionResult SuppDestination(int id)
+        // Suppression des données "Destination"
+        public IActionResult DeleteDestinations(int id) // Méthode à appeller sur le bouton Suppression
         {
-            using (var dal = new Dal())
+            using (var destinationDAL = new DestinationDAL())
             {
-                dal.SupprimerDestination(id);
-                // Autres actions à effectuer après la suppression de la destination
+                destinationDAL.DeleteDestination(id);
             }
 
-            return RedirectToAction("Liste");
+            return RedirectToAction("List");
         }
 
-        public IActionResult ModiDestination(int id)
+        // Modification des données "Destination"
+        public IActionResult ChangeDestination(int id) // Action pour aller à la vue ChangeDestination (formulaire de modification)
         {
-            using (var dal = new Dal())
+            using (var destinationDAL = new DestinationDAL())
             {
-                var destination = dal.ObtientDestinationParId(id);
+                var destination = destinationDAL.GetDestinationWithId(id);
                 if (destination == null)
                 {
                     return NotFound();
@@ -77,29 +78,29 @@ namespace LittleBigTraveler.Controllers
         }
 
         [HttpPost]
-        public IActionResult ModifierDestination(int id, DestinationViewModel model)
+        public IActionResult ChangeDestinations(int id, DestinationViewModel model) // Méthode à appeller dans "l'action" de la vue ChangeDestination
         {
             if (ModelState.IsValid)
             {
-                using (var dal = new Dal())
+                using (var destinationDAL = new DestinationDAL())
                 {
-                    dal.ModifierDestination(id, model.Country, model.City, model.Description, model.Style, model.Images, model.ExternalLinks);
-                    // Autres actions à effectuer après la modification de la destination
+                    destinationDAL.ModifyDestination(id, model.Country, model.City, model.Description, model.Style, model.Images, model.ExternalLinks);
                 }
 
                 return RedirectToAction("Liste");
             }
 
-            return View("ModiDestination", model);
+            return View("ChangeDestination", model);
         }
 
-        public IActionResult Rechercher(string query)
+        // Recherche dans les données "Destination" d'après country, city et style
+        public IActionResult FindDestinations(string query) // Méthode à appeller dans "l'action" du bouton Recherche
         {
-            using (var dal = new Dal())
+            using (var destinationDAL = new DestinationDAL())
             {
-                List<Destination> destinations = dal.RechercherDestinations(query);
+                List<Destination> destinations = destinationDAL.SearchDestination(query);
                 var viewModel = new DestinationViewModel { Destinations = destinations };
-                return View("ListeResultatRecherche", viewModel);
+                return View("ListSearchResult", viewModel);
             }
         }
 
