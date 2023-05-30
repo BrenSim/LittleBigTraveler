@@ -542,236 +542,236 @@ namespace LittleBigTraveler.Models.DataBase
             // Création des users
             //User users = new List<User> {
             this.Users.AddRange(
-                new User
-                {
-                    Id = 1,
-                    LastName = "Dupont",
-                    FirstName = "Alice",
-                    Email = "alice@example.com",
-                    Password = "password123",
-                    Address = "123 Rue des Fleurs",
-                    PhoneNumber = "1234567890",
-                    BirthDate = new DateTime(1990, 1, 1),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 2,
-                    LastName = "Martin",
-                    FirstName = "Bob",
-                    Email = "bob@example.com",
-                    Password = "password456",
-                    Address = "456 Rue des Arbres",
-                    PhoneNumber = "9876543210",
-                    BirthDate = new DateTime(1995, 5, 5),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 3,
-                    LastName = "Dubois",
-                    FirstName = "Charlie",
-                    Email = "charlie@example.com",
-                    Password = "password789",
-                    Address = "789 Rue des Montagnes",
-                    PhoneNumber = "5678901234",
-                    BirthDate = new DateTime(1985, 10, 10),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 4,
-                    LastName = "Leclerc",
-                    FirstName = "David",
-                    Email = "david@example.com",
-                    Password = "passwordabc",
-                    Address = "321 Rue des Champs",
-                    PhoneNumber = "0123456789",
-                    BirthDate = new DateTime(1980, 3, 15),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 5,
-                    LastName = "Lefebvre",
-                    FirstName = "Emma",
-                    Email = "emma@example.com",
-                    Password = "passworddef",
-                    Address = "654 Rue des Rivières",
-                    PhoneNumber = "6789012345",
-                    BirthDate = new DateTime(1992, 7, 20),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 6,
-                    LastName = "Fournier",
-                    FirstName = "François",
-                    Email = "francois@example.com",
-                    Password = "passwordghi",
-                    Address = "987 Rue des Collines",
-                    PhoneNumber = "3456789012",
-                    BirthDate = new DateTime(1988, 12, 25),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 7,
-                    LastName = "Rousseau",
-                    FirstName = "Alexandre",
-                    Email = "alexandre.rousseau@gmail.com",
-                    Password = "pass12345",
-                    Address = "14 Rue de Rivoli, Quartier des Tuileries, Paris",
-                    PhoneNumber = "0145678901",
-                    BirthDate = new DateTime(1994, 9, 2),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 8,
-                    LastName = "Leclerc",
-                    FirstName = "Manon",
-                    Email = "manon.leclerc@gmail.com",
-                    Password = "mdp98765",
-                    Address = "30 Rue Sainte-Catherine, Pentes de la Croix-Rousse, Lyon",
-                    PhoneNumber = "046543210",
-                    BirthDate = new DateTime(1993, 12, 18),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 9,
-                    LastName = "Dubois",
-                    FirstName = "Émilie",
-                    Email = "emilie.dubois@gmail.com",
-                    Password = "securepass123",
-                    Address = "18 Rue des Augustins, Centre Ville, Perpignan",
-                    PhoneNumber = "043216549",
-                    BirthDate = new DateTime(1992, 5, 28),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 10,
-                    LastName = "Martin",
-                    FirstName = "Antoine",
-                    Email = "antoine.martin@gmail.com",
-                    Password = "password456",
-                    Address = "10 Quai de la Tourette, Le Panier, Marseille",
-                    PhoneNumber = "067891234",
-                    BirthDate = new DateTime(1991, 8, 10),
-                    ProfilePicture = "/path/to/profile_picture.jpg"
-                },
-                new User
-                {
-                    Id = 11,
-                    LastName = "Dubois",
-                    FirstName = "Jean",
-                    Email = "jean.dubois@gmail.com",
-                    Password = "motdepasse123",
-                    Address = "12 Rue de la Paix, Quartier Latin, Paris",
-                    PhoneNumber = "0145678901",
-                    BirthDate = new DateTime(1985, 8, 20),
-                },
-                new User
-                {
-                    Id = 12,
-                    LastName = "Leroy",
-                    FirstName = "Sophie",
-                    Email = "sophie.leroy@gmail.com",
-                    Password = "securepassword",
-                    Address = "27 Rue du Palais Grillet, Presqu'île, Lyon",
-                    PhoneNumber = "046543210",
-                    BirthDate = new DateTime(1992, 3, 10),
-                },
-                new User
-                {
-                    Id = 13,
-                    LastName = "Martin",
-                    FirstName = "Pierre",
-                    Email = "pierre.martin@gmail.com",
-                    Password = "12345678",
-                    Address = "45 Rue des Pénitents Bleus, Vieux Lyon, Lyon",
-                    PhoneNumber = "0141234564",
-                    BirthDate = new DateTime(1991, 11, 25),
-                },
-                new User
-                {
-                    Id = 14,
-                    LastName = "Dubois",
-                    FirstName = "Marie",
-                    Email = "marie.dubois@gmail.com",
-                    Password = "mdp123",
-                    Address = "8 Rue de la République, Part-Dieu, Lyon",
-                    PhoneNumber = "0149876543",
-                    BirthDate = new DateTime(1988, 6, 15),
-                },
-                new User
-                {
-                    Id = 15,
-                    LastName = "Dupont",
-                    FirstName = "Paul",
-                    Email = "paul.dupont@gmail.com",
-                    Password = "password",
-                    Address = "15 Rue de l'Ancienne Porte Neuve, Centre Ville, Perpignan",
-                    PhoneNumber = "0145678901",
-                    BirthDate = new DateTime(1995, 2, 18),
-                },
-                new User
-                {
-                    Id = 16,
-                    LastName = "Lefèvre",
-                    FirstName = "Sophie",
-                    Email = "sophie.lefevre@gmail.com",
-                    Password = "secure123",
-                    Address = "22 Avenue de Grande Bretagne, Les Coves, Perpignan",
-                    PhoneNumber = "0410987654",
-                    BirthDate = new DateTime(1987, 7, 5),
-                },
-                new User
-                {
-                    Id = 17,
-                    LastName = "Moreau",
-                    FirstName = "Luc",
-                    Email = "luc.moreau@gmail.com",
-                    Password = "pass1234",
-                    Address = "32 Rue Saint-Ferréol, Centre Ville, Marseille",
-                    PhoneNumber = "0623415678",
-                    BirthDate = new DateTime(1993, 9, 12),
-                },
-                new User
-                {
-                    Id = 18,
-                    LastName = "Girard",
-                    FirstName = "Emma",
-                    Email = "emma.girard@gmail.com",
-                    Password = "password321",
-                    Address = "9 Quai du Port, Vieux Port, Marseille",
-                    PhoneNumber = "0168765432",
-                    BirthDate = new DateTime(1989, 4, 27),
-                },
-                new User
-                {
-                    Id = 19,
-                    LastName = "Dupuis",
-                    FirstName = "Marc",
-                    Email = "marc.dupuis@gmail.com",
-                    Password = "mdp5678",
-                    Address = "23 Rue Esquermoise, Vieux Lille, Lille",
-                    PhoneNumber = "0131234567",
-                    BirthDate = new DateTime(1990, 12, 5),
-                },
-                new User
-                {
-                    Id = 20,
-                    LastName = "Lefebvre",
-                    FirstName = "Julie",
-                    Email = "julie.lefebvre@gmail.com",
-                    Password = "securepass",
-                    Address = "8 Rue de la Clef, Centre Ville, Lille",
-                    PhoneNumber = "0139876543",
-                    BirthDate = new DateTime(1986, 2, 28),
-                },
+            new User
+            {
+                Id = 1,
+                LastName = "Dupont",
+                FirstName = "Alice",
+                Email = "alice@example.com",
+                Password = "password123",
+                Address = "123 Rue des Fleurs",
+                PhoneNumber = "1234567890",
+                BirthDate = new DateTime(1990, 1, 1),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 2,
+                LastName = "Martin",
+                FirstName = "Bob",
+                Email = "bob@example.com",
+                Password = "password456",
+                Address = "456 Rue des Arbres",
+                PhoneNumber = "9876543210",
+                BirthDate = new DateTime(1995, 5, 5),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 3,
+                LastName = "Dubois",
+                FirstName = "Charlie",
+                Email = "charlie@example.com",
+                Password = "password789",
+                Address = "789 Rue des Montagnes",
+                PhoneNumber = "5678901234",
+                BirthDate = new DateTime(1985, 10, 10),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 4,
+                LastName = "Leclerc",
+                FirstName = "David",
+                Email = "david@example.com",
+                Password = "passwordabc",
+                Address = "321 Rue des Champs",
+                PhoneNumber = "0123456789",
+                BirthDate = new DateTime(1980, 3, 15),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 5,
+                LastName = "Lefebvre",
+                FirstName = "Emma",
+                Email = "emma@example.com",
+                Password = "passworddef",
+                Address = "654 Rue des Rivières",
+                PhoneNumber = "6789012345",
+                BirthDate = new DateTime(1992, 7, 20),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 6,
+                LastName = "Fournier",
+                FirstName = "François",
+                Email = "francois@example.com",
+                Password = "passwordghi",
+                Address = "987 Rue des Collines",
+                PhoneNumber = "3456789012",
+                BirthDate = new DateTime(1988, 12, 25),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 7,
+                LastName = "Rousseau",
+                FirstName = "Alexandre",
+                Email = "alexandre.rousseau@gmail.com",
+                Password = "pass12345",
+                Address = "14 Rue de Rivoli, Quartier des Tuileries, Paris",
+                PhoneNumber = "0145678901",
+                BirthDate = new DateTime(1994, 9, 2),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 8,
+                LastName = "Leclerc",
+                FirstName = "Manon",
+                Email = "manon.leclerc@gmail.com",
+                Password = "mdp98765",
+                Address = "30 Rue Sainte-Catherine, Pentes de la Croix-Rousse, Lyon",
+                PhoneNumber = "046543210",
+                BirthDate = new DateTime(1993, 12, 18),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 9,
+                LastName = "Dubois",
+                FirstName = "Émilie",
+                Email = "emilie.dubois@gmail.com",
+                Password = "securepass123",
+                Address = "18 Rue des Augustins, Centre Ville, Perpignan",
+                PhoneNumber = "043216549",
+                BirthDate = new DateTime(1992, 5, 28),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 10,
+                LastName = "Martin",
+                FirstName = "Antoine",
+                Email = "antoine.martin@gmail.com",
+                Password = "password456",
+                Address = "10 Quai de la Tourette, Le Panier, Marseille",
+                PhoneNumber = "067891234",
+                BirthDate = new DateTime(1991, 8, 10),
+                ProfilePicture = "/path/to/profile_picture.jpg"
+            },
+            new User
+            {
+                Id = 11,
+                LastName = "Dubois",
+                FirstName = "Jean",
+                Email = "jean.dubois@gmail.com",
+                Password = "motdepasse123",
+                Address = "12 Rue de la Paix, Quartier Latin, Paris",
+                PhoneNumber = "0145678901",
+                BirthDate = new DateTime(1985, 8, 20),
+            },
+            new User
+            {
+                Id = 12,
+                LastName = "Leroy",
+                FirstName = "Sophie",
+                Email = "sophie.leroy@gmail.com",
+                Password = "securepassword",
+                Address = "27 Rue du Palais Grillet, Presqu'île, Lyon",
+                PhoneNumber = "046543210",
+                BirthDate = new DateTime(1992, 3, 10),
+            },
+            new User
+            {
+                Id = 13,
+                LastName = "Martin",
+                FirstName = "Pierre",
+                Email = "pierre.martin@gmail.com",
+                Password = "12345678",
+                Address = "45 Rue des Pénitents Bleus, Vieux Lyon, Lyon",
+                PhoneNumber = "0141234564",
+                BirthDate = new DateTime(1991, 11, 25),
+            },
+            new User
+            {
+                Id = 14,
+                LastName = "Dubois",
+                FirstName = "Marie",
+                Email = "marie.dubois@gmail.com",
+                Password = "mdp123",
+                Address = "8 Rue de la République, Part-Dieu, Lyon",
+                PhoneNumber = "0149876543",
+                BirthDate = new DateTime(1988, 6, 15),
+            },
+            new User
+            {
+                Id = 15,
+                LastName = "Dupont",
+                FirstName = "Paul",
+                Email = "paul.dupont@gmail.com",
+                Password = "password",
+                Address = "15 Rue de l'Ancienne Porte Neuve, Centre Ville, Perpignan",
+                PhoneNumber = "0145678901",
+                BirthDate = new DateTime(1995, 2, 18),
+            },
+            new User
+            {
+                Id = 16,
+                LastName = "Lefèvre",
+                FirstName = "Sophie",
+                Email = "sophie.lefevre@gmail.com",
+                Password = "secure123",
+                Address = "22 Avenue de Grande Bretagne, Les Coves, Perpignan",
+                PhoneNumber = "0410987654",
+                BirthDate = new DateTime(1987, 7, 5),
+            },
+            new User
+            {
+                Id = 17,
+                LastName = "Moreau",
+                FirstName = "Luc",
+                Email = "luc.moreau@gmail.com",
+                Password = "pass1234",
+                Address = "32 Rue Saint-Ferréol, Centre Ville, Marseille",
+                PhoneNumber = "0623415678",
+                BirthDate = new DateTime(1993, 9, 12),
+            },
+            new User
+            {
+                Id = 18,
+                LastName = "Girard",
+                FirstName = "Emma",
+                Email = "emma.girard@gmail.com",
+                Password = "password321",
+                Address = "9 Quai du Port, Vieux Port, Marseille",
+                PhoneNumber = "0168765432",
+                BirthDate = new DateTime(1989, 4, 27),
+            },
+            new User
+            {
+                Id = 19,
+                LastName = "Dupuis",
+                FirstName = "Marc",
+                Email = "marc.dupuis@gmail.com",
+                Password = "mdp5678",
+                Address = "23 Rue Esquermoise, Vieux Lille, Lille",
+                PhoneNumber = "0131234567",
+                BirthDate = new DateTime(1990, 12, 5),
+            },
+            new User
+            {
+                Id = 20,
+                LastName = "Lefebvre",
+                FirstName = "Julie",
+                Email = "julie.lefebvre@gmail.com",
+                Password = "securepass",
+                Address = "8 Rue de la Clef, Centre Ville, Lille",
+                PhoneNumber = "0139876543",
+                BirthDate = new DateTime(1986, 2, 28),
+            },
             new User
             {
                 Id = 21,
@@ -917,7 +917,6 @@ namespace LittleBigTraveler.Models.DataBase
                    User = Users.Find(4),
                }
            );
-
 
             this.SaveChanges();
         }
