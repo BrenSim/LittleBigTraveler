@@ -1,0 +1,468 @@
+﻿* {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    background: white;
+    /*background-image: url("/images/zakynthos-2997092_1920.jpg"); */
+}
+
+.myCardUp {
+    height: 480px;
+    width: 410px;
+    z-index: 0;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 15%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.myCardIn {
+    height: 50vh;
+    width: 50vh;
+    z-index: 0;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 15%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating1 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-80px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.myCard1 {
+    position: absolute;
+    z-index: -1;
+    height: 150px;
+    width: 120px;
+    right: 65%;
+    top: 10%;
+    background-color: rgba(255, 255, 255, 0.074);
+    /* border: 2px solid ; */
+    border-radius: 25%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-image: url("/images/vienna-933500_1280.jpg");
+    background-size: cover;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.myCard2 {
+    position: absolute;
+    height: 100px;
+    width: 120px;
+    left: 70%;
+    top: 10%;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 25%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-image: url("/images/krka-987021_1920.jpg");
+    background-size: cover;
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.myCard3 {
+    position: absolute;
+    height: 80px;
+    width: 160px;
+    bottom: 10%;
+    right: 70%;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 25%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-image: url("/images/amsterdam-1910176_1920.jpg");
+    background-size: cover;
+    animation-name: floating1;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.myCard4 {
+    position: absolute;
+    height: 100px;
+    width: 70px;
+    top: 30%;
+    left: 5%;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 25%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-image: url("/images/rome-5074421_1920.jpg");
+    background-size: cover;
+    animation-name: floating;
+    animation-duration: 9s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.myCard5 {
+    position: absolute;
+    height: 180px;
+    width: 140px;
+    bottom: 5%;
+    right: 5%;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 25%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-image: url("/images/santorini-1972883_1920.jpg");
+    background-size: cover;
+    animation-name: floating1;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.myLittleCard1 {
+    position: absolute;
+    z-index: -2;
+    height: 40px;
+    width: 20px;
+    bottom: 25%;
+    right: 2%;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 25%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.myLittleCard2 {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 5%;
+    left: 5%;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 25%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation-name: floating1;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.myLittleCard3 {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    Top: 35%;
+    right: 25%;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 25%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation-name: floating1;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.myLittleCard5 {
+    position: absolute;
+    z-index: 0;
+    height: 40px;
+    width: 20px;
+    top: 25%;
+    left: 12%;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 25%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    padding: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.littleHole {
+    margin: 10px 48.7%;
+    height: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px); /* Ajout de l'effet de flou */
+    opacity: 0.9;
+}
+
+.btnRegistration, .btnLogin {
+    background-color: orange;
+    position: relative;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 10px;
+    padding: 12px 80px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    transition: 0.3s ease-in-out
+}
+
+    .btnRegistration:active, .btnLogin:active {
+        transform: scale(1.1);
+        background-color: rgb(255, 178, 34);
+    }
+
+.input-Email {
+    position: relative;
+}
+
+.input {
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+    margin-bottom: 20px;
+    padding: 12px 80px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 700;
+    /*box-shadow: 20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;*/
+    text-transform: capitalize;
+    transition: 0.3s ease-in-out;
+}
+
+.user-Email {
+    position: absolute;
+    left: 85px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.input:focus, input:valid {
+    outline: none;
+    border: 1.5px solid orange;
+}
+
+    .input:focus ~ label, input:valid ~ label {
+        transform: translateY(-50%) scale(0.8);
+        padding: 0 .2em;
+        color: black;
+        background-color: white;
+    }
+
+.input-Password {
+    position: relative;
+}
+
+.user-Password {
+    position: absolute;
+    left: 85px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.input-Firstname {
+    position: relative;
+}
+
+.user-Firstname {
+    position: absolute;
+    left: 85px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.input-Name {
+    position: relative;
+}
+
+.user-Name {
+    position: absolute;
+    left: 85px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+
+/* SignIn button */
+
+
+/* SignIn button */
+
+/* SignUp button */
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+    button.btnSignInUp {
+        width: 14rem;
+        height: auto;
+    }
+
+        button.btnSignInUp .circle {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background: orange;
+            border-radius: 1.625rem;
+        }
+
+            button.btnSignInUp .circle .icon {
+                transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: #fff;
+            }
+
+                button.btnSignInUp .circle .icon.arrow {
+                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                    left: 0.625rem;
+                    width: 1.125rem;
+                    height: 0.125rem;
+                    background: none;
+                }
+
+                    button.btnSignInUp .circle .icon.arrow::before {
+                        position: absolute;
+                        content: "";
+                        top: -0.29rem;
+                        right: 0.0625rem;
+                        width: 0.625rem;
+                        height: 0.625rem;
+                        border-top: 0.125rem solid #fff;
+                        border-right: 0.125rem solid #fff;
+                        transform: rotate(45deg);
+                    }
+
+        button.btnSignInUp .button-text {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0.75rem 0;
+            margin: 0 0 0 3rem;
+            color: #282936;
+            font-weight: 700;
+            line-height: 1.6;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+    button:hover .circle {
+        width: 100%;
+    }
+
+        button:hover .circle .icon.arrow {
+            background: #fff;
+            transform: translate(1rem, 0);
+        }
+
+    button:hover .button-text {
+        color: #fff;
+    }

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Projet 2 -- Groupe 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/Primary.css">
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <header>
+        <!-- Contenu spécifique à l'en-tête commun à toutes les pages -->
+    </header>
+
+    <main>
+        <section>
+            @RenderSection("Content") <!-- Contenu spécifique à chaque page -->
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
+
+

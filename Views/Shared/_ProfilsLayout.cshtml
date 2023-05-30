@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Projet 2 -- Groupe 3</title>
+    <link rel="stylesheet" href="~/css/Profils.css">
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <header>
+        <!-- Contenu spécifique à l'en-tête commun à toutes les pages -->
+    </header>
+
+    <main>
+        
+           @RenderSection("Content") <!-- Contenu spécifique à chaque page -->
+           
+    </main>
+
+    <footer>
+        <!-- Contenu spécifique au pied de page commun à toutes les pages -->
+    </footer>
+</body>
+</html>

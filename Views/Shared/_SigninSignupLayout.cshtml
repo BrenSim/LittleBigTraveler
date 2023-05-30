@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Projet 2 -- Groupe 3</title>
+    <link rel="stylesheet" href="~/css/SigninSignup.css">
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <header>
+        <!-- Contenu spécifique à l'en-tête commun à toutes les pages -->
+    </header>
+
+    <main>
+        <section id="card-signup">
+            <div class="card-container1">
+                    @RenderSection("Log") <!-- Contenu spécifique à chaque page -->
+                </div>
+        </section>
+        <div class="myCard1"></div>
+        <div class="myCard2"></div>
+        <div class="myCard3"></div>
+        <div class="myCard4"></div>
+        <div class="myCard5"></div>
+
+        <div class="myLittleCard1"></div>
+        <div class="myLittleCard2"></div>
+        <div class="myLittleCard3"></div>
+        <div class="myLittleCard5"></div>
+    </main>
+
+    <footer>
+        <!-- Contenu spécifique au pied de page commun à toutes les pages -->
+    </footer>
+</body>
+</html>
