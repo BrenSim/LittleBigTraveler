@@ -448,8 +448,255 @@ namespace LittleBigTraveler.Models.DataBase
                     ExternalLinks = "UnLien"
                 },
 
-            // Services à Rome
+                // Services à Paris 
                 new Service
+                {
+                    Id = 1,
+                    Name = "Hôtel Prince Albert Louvre",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(2),
+                    Location = "Paris",
+                    Type = "Accommodation",
+                    MaxCapacity = 2,
+                    Images = new List<string>
+    {
+        "/ImagesTest/Paris1Services.jpg",
+    },
+                    ExternalLinks = "https://www.hotelprincealbert.com/louvre"
+                },
+
+            new Service
+            {
+                Id = 2,
+                Name = "Le Village Hostel Montmartre",
+                Price = 35.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris2Services.jpg",
+                },
+                ExternalLinks = "https://www.villagehostel.fr/montmartre"
+            },
+
+            new Service
+            {
+                Id = 3,
+                Name = "La Villa Paris",
+                Price = 180.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris3Services.jpg",
+                },
+                ExternalLinks = "https://www.lavillaparis.com"
+            },
+
+            new Service
+            {
+                Id = 4,
+                Name = "Hôtel de la Herse d'Or",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris4Services.jpg",
+                },
+                ExternalLinks = "https://www.herse-dor.com"
+            },
+
+            new Service
+            {
+                Id = 5,
+                Name = "Le Bristol Paris",
+                Price = 200.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris5Services.jpg",
+                },
+                ExternalLinks = "https://www.lebristolparis.com"
+            },
+
+            // Restaurants
+            new Service
+            {
+                Id = 6,
+                Name = "Le Petit Bistro",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris6Services.jpg",
+                },
+                ExternalLinks = "https://www.lepetitbistro.fr"
+            },
+
+            new Service
+            {
+                Id = 7,
+                Name = "Green Garden",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris7Services.jpg",
+                },
+                ExternalLinks = "https://www.greengardenrestaurant.fr"
+            },
+
+            new Service
+            {
+                Id = 8,
+                Name = "La Brasserie Parisienne",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris8Services.jpg",
+                },
+                ExternalLinks = "https://www.labrasserieparisienne.com"
+            },
+
+            new Service
+            {
+                Id = 9,
+                Name = "Le Bistrot Gourmand",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris9Services.jpg",
+                },
+                ExternalLinks = "https://www.lebistrotgourmand.com"
+            },
+
+            new Service
+            {
+                Id = 10,
+                Name = "Le Ciel de Paris",
+                Price = 100.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris10Services.jpg",
+                },
+                ExternalLinks = "https://www.lecieldeparis.com"
+            },
+
+            new Service
+            {
+                Id = 11,
+                Name = "Paris Private Guides",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Paris",
+                Type = "Guide",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris11Services.jpg",
+                },
+                ExternalLinks = "https://www.parisprivateguides.com"
+            },
+
+            new Service
+            {
+                Id = 12,
+                Name = "Historical Paris Tours",
+                Price = 90.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Paris",
+                Type = "Guide",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris12Services.jpg",
+                },
+                ExternalLinks = "https://www.historicalparistours.com"
+            },
+
+            new Service
+            {
+                Id = 13,
+                Name = "Location de voiture",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Transport",
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris13Services.jpg",
+                },
+                ExternalLinks = "https://www.location-voiture-paris.com"
+            },
+
+            new Service
+            {
+                Id = 14,
+                Name = "TAXI G7",
+                Price = 15.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Transport",
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris14Services.jpg",
+                },
+                ExternalLinks = "https://www.g7.fr"
+            },
+
+            new Service
+            {
+                Id = 15,
+                Name = "Batobus",
+                Price = 17.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Transport",
+                MaxCapacity = 150,
+                Images = new List<string>
+                {
+                    "/ImagesTest/Paris15Services.jpg",
+                },
+                ExternalLinks = "https://www.batobus.com"
+            },
+
+
+
+
+
+
+    // Services à Rome
+    new Service
                 {
                     Id = 16,
                     Name = "Hostel Alessandro Palace & Bar",
@@ -673,7 +920,7 @@ namespace LittleBigTraveler.Models.DataBase
                             "/ImagesTest/serviceVilleId.jpg",
                         },
                     ExternalLinks = "https://www.walksofitaly.com"
-                },
+                }
 
 
                 );
