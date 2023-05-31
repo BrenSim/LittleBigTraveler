@@ -11,11 +11,9 @@
     <table class="table">
         <thead>
             <tr>
-                
                 <th>Pays</th>
                 <th>Ville</th>
                 <th>Description</th>
-                <th>Style</th>
                 <th>Images</th>
                 <th>Liens</th>
                 <th>Actions</th>
@@ -25,11 +23,9 @@
             @foreach (var destination in Model)
             {
                 <tr>
-           
                     <td>@destination.Country</td>
                     <td>@destination.City</td>
                     <td>@destination.Description</td>
-                    <td>@destination.Style</td>
                     <td>
                         @foreach (var image in destination.Images)
                         {
@@ -40,9 +36,11 @@
                     <td>
                         <a href="/Destination/ChangeDestination/@destination.Id" class="btn btn-secondary mr-2">Modifier</a>
                         <a href="/Destination/DeleteDestinations/@destination.Id" class="btn btn-danger">Supprimer</a>
+                        <a href="/Travel/CreateTravel?destinationId=@destination.Id" class="btn btn-primary">Voyager</a>
                     </td>
                 </tr>
             }
+
         </tbody>
     </table>
 

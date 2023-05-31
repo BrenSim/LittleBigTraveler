@@ -32,7 +32,7 @@ namespace LittleBigTraveler.Controllers
             {
                 using (var destinationDAL = new DestinationDAL())
                 {
-                    int destinationId = destinationDAL.CreateDestination(model.Country, model.City, model.Description, model.Style, model.Images, model.ExternalLinks);
+                    int destinationId = destinationDAL.CreateDestination(model.Country, model.City, model.Description, model.Images, model.ExternalLinks);
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -68,7 +68,7 @@ namespace LittleBigTraveler.Controllers
                     Country = destination.Country,
                     City = destination.City,
                     Description = destination.Description,
-                    Style = destination.Style,
+                    //Style = destination.Style,
                     Images = destination.Images,
                     ExternalLinks = destination.ExternalLinks
                 };
@@ -84,7 +84,7 @@ namespace LittleBigTraveler.Controllers
             {
                 using (var destinationDAL = new DestinationDAL())
                 {
-                    destinationDAL.ModifyDestination(id, model.Country, model.City, model.Description, model.Style, model.Images, model.ExternalLinks);
+                    destinationDAL.ModifyDestination(id, model.Country, model.City, model.Description, model.Images, model.ExternalLinks);
                 }
 
                 return RedirectToAction("List");

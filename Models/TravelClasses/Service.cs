@@ -11,6 +11,7 @@ namespace LittleBigTraveler.Models.TravelClasses
         public DateTime Schedule { get; set; }
         public string Location { get; set; }
         public string Type { get; set; }
+        public string Style { get; set; }
         public int MaxCapacity { get; set; }
         public List<string> Images { get; set; } // Liste d'images
         public string ExternalLinks { get; set; }

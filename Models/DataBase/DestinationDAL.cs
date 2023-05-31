@@ -26,7 +26,7 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
         // Création des données "Destination"
-        public int CreateDestination(string country, string city, string description, string style, List<string> images, string link)
+        public int CreateDestination(string country, string city, string description, List<string> images, string link)
         {
 
             Destination destination = new Destination()
@@ -34,7 +34,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Country = country,
                 City = city,
                 Description = description,
-                Style = style,
+                //Style = style,
                 Images = images,
                 ExternalLinks = link
             };
@@ -57,7 +57,7 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
         // Modification des données "Destination"
-        public void ModifyDestination(int id, string country, string city, string description, string style, List<string> images, string link)
+        public void ModifyDestination(int id, string country, string city, string description, List<string> images, string link)
         {
             var destination = _bddContext.Destinations.FirstOrDefault(d => d.Id == id);
             if (destination != null)
@@ -65,7 +65,7 @@ namespace LittleBigTraveler.Models.DataBase
                 destination.Country = country;
                 destination.City = city;
                 destination.Description = description;
-                destination.Style = style;
+                //destination.Style = style;
                 destination.Images = images;
                 destination.ExternalLinks = link;
 
@@ -80,7 +80,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             if (!string.IsNullOrEmpty(query))
             {
-                recherche = recherche.Where(d => d.Country.Contains(query) || d.City.Contains(query) || d.Style.Contains(query));
+                recherche = recherche.Where(d => d.Country.Contains(query) || d.City.Contains(query));
             }
 
             return recherche.ToList();

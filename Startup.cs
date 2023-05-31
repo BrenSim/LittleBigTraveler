@@ -17,13 +17,15 @@ namespace LittleBigTraveler
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            .AddCookie(options =>
-            {
-                options.LoginPath = "/User/LogIn";
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/User/LogIn";
+                });
 
-            });
             services.AddControllersWithViews();
+            services.AddHttpContextAccessor();
         }
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             using (BddContext ctx = new BddContext())
@@ -31,12 +33,17 @@ namespace LittleBigTraveler
                 ctx.InitializeDb();
             }
 
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
 
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -53,4 +60,3 @@ namespace LittleBigTraveler
         }
     }
 }
-

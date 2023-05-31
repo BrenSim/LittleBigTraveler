@@ -73,7 +73,6 @@ namespace LittleBigTraveler.Models.DataBase
                     Country = "Canada",
                     City = "Brest",
                     Description = "Un voyage en Finistère",
-                    Style = "Nature",
                     Images = new List<string>
                     {
                         "/ImagesTest/Brest1.jpg",
@@ -89,7 +88,6 @@ namespace LittleBigTraveler.Models.DataBase
                     Country = "France",
                     City = "Pau",
                     Description = "Un voyage dans le Béarn",
-                    Style = "Decouverte",
                     Images = new List<string>
                     {
                         "/ImagesTest/Pau1.jpg",
@@ -111,6 +109,7 @@ namespace LittleBigTraveler.Models.DataBase
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Brest",
                     Type = "Transport",
+                    Style = null,
                     MaxCapacity = 100,
                     Images = new List<string>
                         {
@@ -126,6 +125,7 @@ namespace LittleBigTraveler.Models.DataBase
                         Schedule = DateTime.Now.AddDays(2),
                         Location = "Brest",
                         Type = "Activité",
+                        Style = "Sport",
                         MaxCapacity = 50,
                         Images = new List<string>
                         {
@@ -142,6 +142,7 @@ namespace LittleBigTraveler.Models.DataBase
                         Schedule = DateTime.Now.AddDays(3),
                         Location = "Brest",
                         Type = "Restaurant",
+                        Style = null,
                         MaxCapacity = 30,
                         Images = new List<string>
                         {
@@ -154,15 +155,16 @@ namespace LittleBigTraveler.Models.DataBase
                     new Service
                     {
                         Id = 4,
-                        Name = "Service de transport à Pau",
+                        Name = "Service de transport ",
                         Price = 25.0,
                         Schedule = DateTime.Now.AddDays(1),
-                        Location = "Pau",
+                        Location = "",
                         Type = "Transport",
+                        Style = null,
                         MaxCapacity = 80,
                         Images = new List<string>
                         {
-                            "/ImagesTest/PauTrain.jpg",
+                            "/ImagesTest/Train.jpg",
                         },
                         ExternalLinks = "UnLien"
                     },
@@ -174,6 +176,7 @@ namespace LittleBigTraveler.Models.DataBase
                         Schedule = DateTime.Now.AddDays(2),
                         Location = "Pau",
                         Type = "Activité",
+                        Style = "Culture",
                         MaxCapacity = 60,
                         Images = new List<string>
                         {
@@ -189,6 +192,7 @@ namespace LittleBigTraveler.Models.DataBase
                         Schedule = DateTime.Now.AddDays(3),
                         Location = "Pau",
                         Type = "Restaurant",
+                        Style = null,
                         MaxCapacity = 40,
                         Images = new List<string>
                         {

@@ -29,7 +29,7 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
         // Création des données "Service"
-        public int CreateService(string name, double price, DateTime schedule, string location, string type, int maxCapacity, List<string> images, string link)
+        public int CreateService(string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link)
         {
             Service service = new Service()
             {
@@ -38,6 +38,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = schedule,
                 Location = location,
                 Type = type,
+                Style = style,
                 MaxCapacity = maxCapacity,
                 Images = images,
                 ExternalLinks = link
@@ -61,7 +62,7 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
         // Modification des données "Service"
-        public void ModifyService(int id, string name, double price, DateTime schedule, string location, string type, int maxCapacity, List<string> images, string link)
+        public void ModifyService(int id, string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link)
         {
             var service = _bddContext.Services.FirstOrDefault(s => s.Id == id);
             if (service != null)
@@ -71,6 +72,7 @@ namespace LittleBigTraveler.Models.DataBase
                 service.Schedule = schedule;
                 service.Location = location;
                 service.Type = type;
+                service.Style = style;
                 service.MaxCapacity = maxCapacity;
                 service.Images = images;
                 service.ExternalLinks = link;
@@ -87,15 +89,9 @@ namespace LittleBigTraveler.Models.DataBase
 
             if (!string.IsNullOrEmpty(query))
             {
-                double prix;
-                if (double.TryParse(query, out prix))
-                {
-                    recherche = recherche.Where(s => s.Price <= prix);
-                }
-                else
-                {
-                    recherche = recherche.Where(s => s.Name.Contains(query) || s.Type.Contains(query) || s.Location.Contains(query));
-                }
+  
+                    recherche = recherche.Where(s => s.Name.Contains(query) || s.Type.Contains(query) || s.Location.Contains(query) || s.Style.Contains(query));
+                
             }
 
             return recherche.ToList();
