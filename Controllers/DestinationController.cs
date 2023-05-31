@@ -87,7 +87,7 @@ namespace LittleBigTraveler.Controllers
                     destinationDAL.ModifyDestination(id, model.Country, model.City, model.Description, model.Style, model.Images, model.ExternalLinks);
                 }
 
-                return RedirectToAction("Liste");
+                return RedirectToAction("List");
             }
 
             return View("ChangeDestination", model);

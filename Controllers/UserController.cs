@@ -127,6 +127,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour la modification d'un client
+        [HttpGet]
         public IActionResult ChangeCustomer(int id)
         {
             using (var userDAL = new UserDAL())
@@ -134,7 +135,7 @@ namespace LittleBigTraveler.Controllers
                 var user = userDAL.GetAllUsersWithTypeWithId(id);
                 if (user == null || user.Customer == null)
                 {
-                    return NotFound();
+                    return NotFound("Not found");
                 }
 
                 var model = MapUserToViewModel(user);
@@ -185,7 +186,7 @@ namespace LittleBigTraveler.Controllers
                 return RedirectToAction("List");
             }
 
-            return View( model);
+            return View("ChangePartner", model);
         }
 
         // Action pour la modification d'un administrateur
@@ -200,7 +201,7 @@ namespace LittleBigTraveler.Controllers
                 }
 
                 var model = MapUserToViewModel(user);
-                return View( model);
+                return View(model);
             }
         }
 

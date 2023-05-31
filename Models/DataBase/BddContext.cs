@@ -292,14 +292,14 @@ namespace LittleBigTraveler.Models.DataBase
             this.Customers.AddRange(
                  new Customer
                  {
-                     Id = 1,
+                     Id = 5,
                      User = Users.Find(1),
                      LoyaltyPoint = 100,
                      CommentPoint = 50
                  },
                 new Customer
                 {
-                    Id = 2,
+                    Id = 6,
                     User = Users.Find(2),
                     LoyaltyPoint = 200,
                     CommentPoint = 75

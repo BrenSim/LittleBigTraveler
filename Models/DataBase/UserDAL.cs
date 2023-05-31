@@ -208,8 +208,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             foreach (var user in users)
             {
-                string userType = user.GetUserType(); // Utilisez la méthode GetUserType()
-                                                      // Faites ce que vous devez faire avec le userType, par exemple, l'afficher ou le stocker dans une autre liste
+                string userType = user.GetUserType();                                               
             }
 
             return users;
@@ -219,11 +218,15 @@ namespace LittleBigTraveler.Models.DataBase
         // Récupération des données "User" par ID avec le type
         public User GetAllUsersWithTypeWithId(int id)
         {
-            User user = _bddContext.Users.FirstOrDefault(u => u.Id == id);
+            User user = _bddContext.Users
+                .Include(u => u.Customer)
+                .Include(u => u.Partner)
+                .Include(u => u.Administrator)
+                .FirstOrDefault(u => u.Id == id);
+
             if (user != null)
             {
-                string userType = user.GetUserType(); // Utilisez la méthode GetUserType()
-                                                      // Faites ce que vous devez faire avec le userType, par exemple, l'afficher ou le stocker dans une variable
+                string userType = user.GetUserType();
             }
 
             return user;
