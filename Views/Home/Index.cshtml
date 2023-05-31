@@ -1,16 +1,64 @@
-﻿@{
+﻿@model LittleBigTraveler.ViewModels.DestinationViewModel
+
+@{
     Layout = "_Layout";
     ViewData["Title"] = "Accueil";
 }
 
 <div class="jumbotron mt-4">
-    <h1 class="display-4 text-center">Destinations!</h1>
-    <p class="lead text-center">Test de formulaire pour ajout/modification de destinations.</p>
+    <h1 class="display-4 text-center">Test de Fonctionnalités!</h1>
+    <p class="lead text-center">Test des fonctionnalités implémentées dans le back</p>
 </div>
 
 <div class="text-center mb-4" style="margin-top: 20px;">
-    <a href="/Destination/Liste" class="btn btn-primary btn-lg mr-2">Voir les destinations</a>
-    <a href="/Destination/AjoutDestination" class="btn btn-success btn-lg">Ajouter une destination</a>
+    <a href="/Destination/List" class="btn btn-primary btn-lg mr-2">Voir les destinations</a>
+    <a href="/Destination/AddDestination" class="btn btn-success btn-lg">Ajouter une destination</a>
 </div>
 
+<div class="container">
+    <h2 class="text-center">Rechercher une destination</h2>
+    <form method="get" action="/Destination/FindDestinations">
+        <div class="form-row justify-content-center">
+            <div class="col-6">
+                <input type="text" class="form-control rounded-pill" placeholder="Recherche de destinations par Pays ou Ville" name="query">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary rounded-pill">Rechercher</button>
+            </div>
+        </div>
+    </form>
+</div>
 
+<div class="text-center mb-4" style="margin-top: 40px;">
+    <a href="/Service/List" class="btn btn-primary btn-lg mr-2">Voir les services</a>
+    <a href="/Service/AddService" class="btn btn-success btn-lg">Ajouter un service</a>
+</div>
+
+<div class="container">
+    <h2 class="text-center">Rechercher un service</h2>
+    <form method="get" action="/Service/FindServices">
+        <div class="form-row justify-content-center">
+            <div class="col-6">
+                <input type="text" class="form-control rounded-pill" placeholder="Recherche de services par Nom, Localisation, Type ou Style" name="query">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary rounded-pill">Rechercher</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="text-center mb-4" style="margin-top: 40px;">
+    <a href="/User/List" class="btn btn-primary btn-lg mr-2">Voir les utilisateurs</a>
+    <a href="/User/AddCustomer" class="btn btn-success btn-lg">Créer un compte client</a>
+    <a href="/User/AddPartner" class="btn btn-success btn-lg">Créer un compte partenaire</a>
+    <a href="/User/AddAdministrator" class="btn btn-success btn-lg">Créer un compte administrateur</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a href="/User/LogOut" class="btn btn-danger btn-lg">Déconnexion</a>
+    }
+    else
+    {
+        <a href="/User/LogIn" class="btn btn-primary btn-lg">Connexion Client</a>
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model LittleBigTraveler.ViewModels.UserViewModel
+
+@{
+    ViewData["Title"] = "Ajouter un administrateur";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1 class="text-center">Ajouter un administrateur</h1>
+
+    <form method="post" action="/User/AddAdministrators">
+        <div class="form-group">
+            <label for="LastName">Nom :</label>
+            <input type="text" id="LastName" name="LastName" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="FirstName">Prénom :</label>
+            <input type="text" id="FirstName" name="FirstName" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Email">Email :</label>
+            <input type="email" id="Email" name="Email" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Mot de passe :</label>
+            <input type="password" id="Password" name="Password" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Address">Adresse :</label>
+            <input type="text" id="Address" name="Address" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="PhoneNumber">Numéro de téléphone :</label>
+            <input type="tel" id="PhoneNumber" name="PhoneNumber" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="BirthDate">Date de naissance :</label>
+            <input type="date" id="BirthDate" name="BirthDate" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
+

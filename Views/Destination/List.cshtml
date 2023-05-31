@@ -1,0 +1,50 @@
+﻿@model List<LittleBigTraveler.Models.TravelClasses.Destination>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Liste des destinations";
+}
+
+@section content {
+    <h1 class="text-center">Liste des destinations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Pays</th>
+                <th>Ville</th>
+                <th>Description</th>
+                <th>Images</th>
+                <th>Liens</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var destination in Model)
+            {
+                <tr>
+                    <td>@destination.Country</td>
+                    <td>@destination.City</td>
+                    <td>@destination.Description</td>
+                    <td>
+                        @foreach (var image in destination.Images)
+                        {
+                            <img src="@image" alt="Image" class="img-thumbnail" />
+                        }
+                    </td>
+                    <td>@destination.ExternalLinks</td>
+                    <td>
+                        <a href="/Destination/ChangeDestination/@destination.Id" class="btn btn-secondary mr-2">Modifier</a>
+                        <a href="/Destination/DeleteDestinations/@destination.Id" class="btn btn-danger">Supprimer</a>
+                        <a href="/Travel/CreateTravel?destinationId=@destination.Id" class="btn btn-primary">Voyager</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <div class="text-center mt-4">
+        <a href="/Home/Index" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+}

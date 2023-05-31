@@ -1,0 +1,60 @@
+﻿@model List<LittleBigTraveler.ViewModels.UserViewModel>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Liste des utilisateurs";
+}
+
+@section content {
+    <h1 class="text-center">Liste des utilisateurs</h1>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <p>Aucun utilisateur trouvé.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Type d'utilisateur</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.LastName</td>
+                        <td>@user.FirstName</td>
+                        <td>@user.Email</td>
+                        <td>@user.UserType</td>
+                        <td>
+                            @if (user.UserType == "Customer")
+                            {
+                                <a href="/User/ChangeCustomer/@user.UserId" class="btn btn-secondary mr-2">Modifier</a>
+                            }
+                            else if (user.UserType == "Partner")
+                            {
+                                <a href="/User/ChangePartner/@user.UserId" class="btn btn-secondary mr-2">Modifier</a>
+                            }
+                            else if (user.UserType == "Administrator")
+                            {
+                                <a href="/User/ChangeAdministrator/@user.UserId" class="btn btn-secondary mr-2">Modifier</a>
+                            }
+
+                            <a href="/User/DeleteUsers/@user.UserId" class="btn btn-danger">Supprimer</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <div class="text-center mt-4">
+        <a href="/Home/Index" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+}

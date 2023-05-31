@@ -1,0 +1,53 @@
+﻿@model LittleBigTraveler.ViewModels.UserViewModel
+
+@{
+    ViewData["Title"] = "Modification d'un administrateur";
+    Layout = "_Layout";
+}
+
+@section content {
+    <div class="container">
+        <h1 class="text-center">Modifier un administrateur</h1>
+
+        <form method="post" action="/User/ChangeAdministrators/@Model.UserId">
+
+            <input type="hidden" name="UserId" value="@Model.UserId" />
+
+            <div class="form-group">
+                <label for="LastName">Nom :</label>
+                <input type="text" id="LastName" name="LastName" class="form-control" value="@Model.LastName" required />
+            </div>
+            <div class="form-group">
+                <label for="FirstName">Prénom :</label>
+                <input type="text" id="FirstName" name="FirstName" class="form-control" value="@Model.FirstName" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Email :</label>
+                <input type="email" id="Email" name="Email" class="form-control" value="@Model.Email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Mot de passe :</label>
+                <input type="password" id="Password" name="Password" class="form-control" value="@Model.Password" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Address">Adresse :</label>
+                <input type="text" id="Address" name="Address" class="form-control" value="@Model.Address" required />
+            </div>
+
+            <div class="form-group">
+                <label for="PhoneNumber">Numéro de téléphone :</label>
+                <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" required />
+            </div>
+
+            <div class="form-group">
+                <label for="BirthDate">Date de naissance :</label>
+                <input type="date" id="BirthDate" name="BirthDate" class="form-control" value="@Model.BirthDate.ToShortDateString()" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </form>
+    </div>
+}
