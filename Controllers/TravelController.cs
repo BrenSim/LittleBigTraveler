@@ -1,147 +1,147 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using LittleBigTraveler.Models.DataBase;
-using LittleBigTraveler.Models.TravelClasses;
-using LittleBigTraveler.ViewModels;
-using LittleBigTraveler.Models.UserClasses;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using Microsoft.AspNetCore.Mvc;
+//using LittleBigTraveler.Models.DataBase;
+//using LittleBigTraveler.Models.TravelClasses;
+//using LittleBigTraveler.ViewModels;
+//using Microsoft.AspNetCore.Identity;
+//using System.Threading.Tasks;
 
-namespace LittleBigTraveler.Controllers
-{
-    public class TravelController : Controller
-    {
-        public IActionResult List()
-        {
-            using (var travelDAL = new TravelDAL())
-            {
-                var travels = travelDAL.GetAllTravels();
-                return View(travels);
-            }
-        }
+//namespace LittleBigTraveler.Controllers
+//{
+//    public class TravelController : Controller
+//    {
+//        public IActionResult List()
+//        {
+//            using (var travelDAL = new TravelDAL())
+//            {
+//                var travels = travelDAL.GetAllTravels();
+//                var travelViewModels = MapTravelsToViewModels(travels);
+//                return View(travelViewModels);
+//            }
+//        }
 
-        public IActionResult AddTravel()
-        {
-            using (var destinationDAL = new DestinationDAL())
-            {
-                var destinations = destinationDAL.GetAllDestinations();
-                var customers = new List<Customer>(); // Mettez ici votre logique pour récupérer les clients
+//        // Action pour l'ajout d'un voyage
+//        public IActionResult AddTravel()
+//        {
+//            return View();
+//        }
 
-                var model = new TravelViewModel
-                {
-                    Destinations = destinations,
-                    Customers = customers
-                };
+//        [HttpPost]
+//        public async Task<IActionResult> AddTravels(TravelViewModel model)
+//        {
+//            if (ModelState.IsValid)
+//            {
+//                using (var travelDAL = new TravelDAL())
+//                {
+//                    // Récupérer l'utilisateur actuellement connecté
+//                    var user = await _userManager.GetUserAsync(User);
+//                    if (user == null)
+//                    {
+//                        ModelState.AddModelError("", "No user is currently logged in.");
+//                        return View("AddTravel", model);
+//                    }
 
-                return View(model);
-            }
-        }
+//                    // Récupérer le client correspondant à l'utilisateur connecté
+//                    var customer = _bddContext.Customers.FirstOrDefault(c => c.UserId == user.Id);
+//                    if (customer == null)
+//                    {
+//                        ModelState.AddModelError("", "The logged-in user is not a customer.");
+//                        return View("AddTravel", model);
+//                    }
 
-        [HttpPost]
-        public IActionResult AddTravel(TravelViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                using (var travelDAL = new TravelDAL())
-                {
-                    int travelId = travelDAL.CreateTravel(model.CustomerId, model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
-                    return RedirectToAction("Index", "Home");
-                }
-            }
+//                    // Récupérer la destination sélectionnée
+//                    Destination destination _bddContext.Destinations.Find(model.DestinationId);
+//                    if (destination == null)
+//                    {
+//                        ModelState.AddModelError("", "Invalid destination.");
+//                        return View("AddTravel", model);
+//                    }
 
-            using (var destinationDAL = new DestinationDAL())
-            {
-                var destinations = destinationDAL.GetAllDestinations();
-                var customers = new List<Customer>(); // Mettez ici votre logique pour récupérer les clients
+//                    int travelId = travelDAL.CreateTravel(model.DepartureDate, model.ReturnDate, customer, destination, model.Price, model.NumParticipants);
+//                    return RedirectToAction("Index", "Home");
+//                }
+//            }
 
-                model.Destinations = destinations;
-                model.Customers = customers;
+//            return View("AddTravel", model);
+//        }
 
-                return View("AddTravel", model);
-            }
-        }
 
-        public IActionResult DeleteTravel(int id)
-        {
-            using (var travelDAL = new TravelDAL())
-            {
-                travelDAL.DeleteTravel(id);
-            }
+//        // Action pour la suppression d'un voyage
+//        public IActionResult DeleteTravel(int id)
+//        {
+//            using (var travelDAL = new TravelDAL())
+//            {
+//                travelDAL.DeleteTravel(id);
+//            }
 
-            return RedirectToAction("List");
-        }
+//            return RedirectToAction("List");
+//        }
 
-        public IActionResult EditTravel(int id)
-        {
-            using (var travelDAL = new TravelDAL())
-            {
-                var travel = travelDAL.GetTravelWithId(id);
-                if (travel == null)
-                {
-                    return NotFound();
-                }
+//        // Action pour la modification d'un voyage
+//        public IActionResult ChangeTravel(int id)
+//        {
+//            using (var travelDAL = new TravelDAL())
+//            {
+//                var travel = travelDAL.GetTravelWithId(id);
+//                if (travel == null)
+//                {
+//                    return NotFound();
+//                }
 
-                using (var destinationDAL = new DestinationDAL())
-                {
-                    var destinations = destinationDAL.GetAllDestinations();
-                    var customers = new List<Customer>(); // Mettez ici votre logique pour récupérer les clients
+//                var model = MapTravelToViewModel(travel);
+//                return View(model);
+//            }
+//        }
 
-                    var model = new TravelViewModel
-                    {
-                        Id = travel.Id,
-                        CustomerId = travel.CustomerId,
-                        DestinationId = travel.DestinationId,
-                        DepartureLocation = travel.DepartureLocation,
-                        DepartureDate = travel.DepartureDate,
-                        ReturnDate = travel.ReturnDate,
-                        Price = travel.Price,
-                        NumParticipants = travel.NumParticipants,
-                        Destinations = destinations,
-                        Customers = customers
-                    };
+//        [HttpPost]
+//        public IActionResult ChangeTravel(int id, TravelViewModel model)
+//        {
+//            if (ModelState.IsValid)
+//            {
+//                using (var travelDAL = new TravelDAL())
+//                {
+//                    travelDAL.ModifyTravel(
+//                        id,
+//                        model.Customer,
+//                        model.Destination,
+//                        model.DepartureLocation,
+//                        model.DepartureDate,
+//                        model.ReturnDate,
+//                        model.Price,
+//                        model.NumParticipants
+//                    );
+//                }
+//                return RedirectToAction("List");
+//            }
 
-                    return View(model);
-                }
-            }
-        }
+//            return View(model);
+//        }
 
-        [HttpPost]
-        public IActionResult EditTravel(int id, TravelViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                using (var travelDAL = new TravelDAL())
-                {
-                    var travel = new Travel
-                    {
-                        Id = id,
-                        CustomerId = model.CustomerId,
-                        DestinationId = model.DestinationId,
-                        DepartureLocation = model.DepartureLocation,
-                        DepartureDate = model.DepartureDate,
-                        ReturnDate = model.ReturnDate,
-                        Price = model.Price,
-                        NumParticipants = model.NumParticipants
-                    };
 
-                    travelDAL.ModifyTravel(travel);
-                }
 
-                return RedirectToAction("List");
-            }
+//        public TravelViewModel MapTravelToViewModel(Travel travel)
+//        {
+//            var model = new TravelViewModel
+//            {
+//                Id = travel.Id,
+//                Customer = travel.Customer,
+//                Destination = travel.Destination,
+//                DepartureLocation = travel.DepartureLocation,
+//                DepartureDate = travel.DepartureDate,
+//                ReturnDate = travel.ReturnDate,
+//                Price = travel.Price,
+//                NumParticipants = travel.NumParticipants
+//            };
 
-            using (var destinationDAL = new DestinationDAL())
-            {
-                var destinations = destinationDAL.GetAllDestinations();
-                var customers = new List<Customer>(); // Mettez ici votre logique pour récupérer les clients
-                model.Destinations = destinations;
-                model.Customers = customers;
+//            return model;
+//        }
 
-                return View("EditTravel", model);
-            }
-        }
+//        public List<TravelViewModel> MapTravelsToViewModels(List<Travel> travels)
+//        {
+//            return travels.Select(MapTravelToViewModel).ToList();
+//        }
+//    }
+//}
 
-        // Autres actions du contrôleur...
-
-    }
-}

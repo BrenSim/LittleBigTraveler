@@ -4,6 +4,10 @@ using System.Linq;
 using LittleBigTraveler.Models.DataBase;
 using LittleBigTraveler.Models.UserClasses;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace LittleBigTraveler.Models.DataBase
 {
@@ -28,9 +32,26 @@ namespace LittleBigTraveler.Models.DataBase
         {
             _bddContext.Dispose();
         }
+
+        // Encodage
+        public static string EncodeMD5(string motDePasse)
+        {
+            string motDePasseSel = "UnUser" + motDePasse + "ASP.NET MVC";
+            return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));
+        }
+
+        //Authentification
+        public User Authentification (string email, string password)
+        {
+            string passwordLoggIn = EncodeMD5(password);
+            User user = _bddContext.Users.FirstOrDefault(u => u.Email == email && u.Password == passwordLoggIn);
+            return user;
+        }
+
         // Méthode de création d'un administrateur
         public int CreateAdministrator(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate)
         {
+            
             User user = new User()
             {
                 LastName = lastName,
@@ -88,12 +109,13 @@ namespace LittleBigTraveler.Models.DataBase
         // Méthode de création d'un client
         public int CreateCustomer(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, int loyaltyPoint, int commentPoint)
         {
+            string passwordEncode = EncodeMD5(password);
             User user = new User()
             {
                 LastName = lastName,
                 FirstName = firstName,
                 Email = email,
-                Password = password,
+                Password = passwordEncode,
                 Address = address,
                 PhoneNumber = phoneNumber,
                 BirthDate = birthDate
@@ -230,6 +252,21 @@ namespace LittleBigTraveler.Models.DataBase
             }
 
             return user;
+        }
+
+        public User GetUserById (int id)
+        {
+            return _bddContext.Users.Find(id);
+        }
+
+        public User GetUserById(string idStr)
+        {
+            int id;
+            if (int.TryParse(idStr, out id))
+            {
+                return this.GetUserById(id);
+            }
+            return null;
         }
     }
 }

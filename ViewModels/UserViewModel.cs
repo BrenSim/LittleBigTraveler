@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using LittleBigTraveler.Models.UserClasses;
 
 namespace LittleBigTraveler.ViewModels
 {
@@ -30,5 +29,9 @@ namespace LittleBigTraveler.ViewModels
         public string UserType { get; set; }
 
         public List<UserViewModel> Users { get; set; }
+
+        public bool LoggedIn { get; set; }
+
+        //public string ReturnUrl { get; set; } // Ajout de la propriété ReturnUrl
     }
 }

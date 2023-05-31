@@ -53,4 +53,12 @@
     <a href="/User/AddCustomer" class="btn btn-success btn-lg">Créer un compte client</a>
     <a href="/User/AddPartner" class="btn btn-success btn-lg">Créer un compte partenaire</a>
     <a href="/User/AddAdministrator" class="btn btn-success btn-lg">Créer un compte administrateur</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a href="/User/LogOut" class="btn btn-danger btn-lg">Déconnexion</a>
+    }
+    else
+    {
+        <a href="/User/LogIn" class="btn btn-primary btn-lg">Connexion Client</a>
+    }
 </div>

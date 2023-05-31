@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using LittleBigTraveler.Models.DataBase;
 using LittleBigTraveler.Models.UserClasses;
 using LittleBigTraveler.ViewModels;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 
 namespace LittleBigTraveler.Controllers
 {
@@ -18,6 +20,61 @@ namespace LittleBigTraveler.Controllers
                 var userViewModels = MapUsersToViewModels(users);
                 return View(userViewModels);
             }
+        }
+
+        public IActionResult LogIn()
+        {
+            var model = new UserViewModel { LoggedIn = HttpContext.User.Identity.IsAuthenticated };
+            if (model.LoggedIn)
+            {
+                using (var userDAL = new UserDAL())
+                {
+                    User user = userDAL.GetUserById(HttpContext.User.Identity.Name);
+                    model.FirstName = user.FirstName;
+                }
+                return View(model);
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult LogIn(UserViewModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var userDAL = new UserDAL())
+                {
+                    User user = userDAL.Authentification(model.Email, model.Password);
+                    if (user != null)
+                    {
+                        var userClaims = new List<Claim>()
+                {
+                    new Claim(ClaimTypes.Name, user.Id.ToString()),
+                };
+
+                        var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
+
+                        var mainUser = new ClaimsPrincipal(new[] { ClaimIdentity });
+
+                        HttpContext.SignInAsync(mainUser);
+                        if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
+                            return Redirect(returnUrl);
+                        return Redirect("/");
+                    }
+                    ModelState.AddModelError("user.Email", "Prénom et/ou mot de passe inccorrect(s)");
+                }
+                return View(model);
+            }
+
+            return View("Index", "Home");
+        }
+
+
+        // Deconnexion
+        public ActionResult LogOut()
+        {
+            HttpContext.SignOutAsync();
+            return Redirect("/");
         }
 
         // Action pour l'ajout d'un client
@@ -34,7 +91,18 @@ namespace LittleBigTraveler.Controllers
                 using (var userDAL = new UserDAL())
                 {
                     int customerId = userDAL.CreateCustomer(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
-                    // Autres actions à effectuer après la création du client
+
+                    var userClaims = new List<Claim>()
+                    {
+                        new Claim(ClaimTypes.Name, customerId.ToString()),
+                    };
+
+                    var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
+
+                    var mainUser = new ClaimsPrincipal(new[] { ClaimIdentity });
+
+                    HttpContext.SignInAsync(mainUser);
+
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -42,7 +110,7 @@ namespace LittleBigTraveler.Controllers
             return View("AddCustomer", model);
         }
 
-        // Action pour l'ajout d'un partenaire
+        // Action pour l'ajout d'un partenai re
         public IActionResult AddPartner()
         {
             return View();

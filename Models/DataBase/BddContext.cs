@@ -218,7 +218,7 @@ namespace LittleBigTraveler.Models.DataBase
                     LastName = "Dupont",
                     FirstName = "Alice",
                     Email = "alice@example.com",
-                    Password = "password123",
+                    Password = UserDAL.EncodeMD5("password123"),
                     Address = "123 Rue des Fleurs",
                     PhoneNumber = "1234567890",
                     BirthDate = new DateTime(1990, 1, 1),
