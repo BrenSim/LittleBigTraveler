@@ -1565,52 +1565,85 @@ namespace LittleBigTraveler.Models.DataBase
                 new Service
                 {
                     Id = 71,
-                    Name = "Spa et bien-être à Munich",
+                    Name = "Excursion classique de Munich à vélo",
                     Price = 70.0,
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Munich",
-                    Type = "Détente",
-                    Style = "",
+                    Type = "Activité sportive",
+                    Style = "Sport",
                     MaxCapacity = 20,
                     Images = new List<string>
                     {
-                        "/ImagesServices/71.jpg",
+                        "/ImagesServices/71MunichVelo.png",
                     },
-                    ExternalLinks = "https://www.spa-munich.com"
+                    ExternalLinks = "https://www.mikesbiketours.com/munich/"
                 },
                 new Service
                 {
                     Id = 72,
-                    Name = "Location de vélos à Munich",
-                    Price = 25.0,
+                    Name = "Excursion d'une journée au départ de Munich le long de la route romantique de Rothenburg à Harburg",
+                    Price = 60.0,
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Munich",
-                    Type = "Sport",
-                    Style = "",
+                    Type = "Tour guidé",
+                    Style = "Culturel",
                     MaxCapacity = 50,
                     Images = new List<string>
                     {
-                        "/ImagesServices/72.jpg",
+                        "/ImagesServices/72MunichVisite.webp",
                     },
-                    ExternalLinks = "https://www.locationvelosmunich.com"
+                    ExternalLinks = "https://www.munichdaytrips.com/en"
                 },
                 new Service
                 {
                     Id = 73,
-                    Name = "Parc olympique de Munich",
+                    Name = "Visite privée à pied de Munich",
                     Price = 40.0,
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Munich",
-                    Type = "Sport",
-                    Style = "",
+                    Type = "Tour guidé",
+                    Style = "Culturel",
                     MaxCapacity = 10,
                     Images = new List<string>
                     {
-                        "/ImagesServices/73.jpg",
+                        "/ImagesServices/73MunichVisite.jpeg",
                     },
-                    ExternalLinks = "https://www.olympiapark.de"
-                }
+                    ExternalLinks = "https://www.inmunichtours.com/"
+                },
 
+                new Service
+                {
+                    Id = 74,
+                    Name = "Randonnée privée d'une journée dans les Alpes bavaroises au départ de Munich",
+                    Price = 289.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Activitée Sportive",
+                    Style = "Sport",
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/74MunichRandonnee.webp",
+                    },
+                    ExternalLinks = "https://www.munich-wanderland.com/"
+                },
+
+                new Service
+                {
+                    Id = 75,
+                    Name = "Dégustation de bière privée et visite du musée de l'Oktoberfest à Munich",
+                    Price = 253.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Visite gastronomique",
+                    Style = "Culturel",
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/75MunichVisite.png",
+                    },
+                    ExternalLinks = "https://www.rosotravel.com/tours/munich-tours/"
+                }
 
                 );
 
