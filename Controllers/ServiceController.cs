@@ -10,6 +10,7 @@ namespace LittleBigTraveler.Controllers
 {
     public class ServiceController : Controller
     {
+        // Action pour afficher la liste des services
         public IActionResult List()
         {
             using (var serviceDAL = new ServiceDAL())
@@ -19,14 +20,15 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
-        // Création des données "Service"
-        public IActionResult AddService() // Action pour aller à la vue AddService (formulaire de suppression)
+        // Action pour ajouter un service (affiche le formulaire)
+        public IActionResult AddService()
         {
             return View();
         }
 
+        // Méthode pour traiter le formulaire d'ajout d'un service
         [HttpPost]
-        public IActionResult AddServices(ServiceViewModel model) // Méthode à appeller dans "l'action" de la vue AddService
+        public IActionResult AddServices(ServiceViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -40,8 +42,8 @@ namespace LittleBigTraveler.Controllers
             return View("AddService", model);
         }
 
-        // Suppression des données "Service"
-        public IActionResult DeleteServices(int id) // Méthode à appeller sur le bouton Suppression
+        // Action pour supprimer un service
+        public IActionResult DeleteServices(int id)
         {
             using (var serviceDAL = new ServiceDAL())
             {
@@ -51,8 +53,8 @@ namespace LittleBigTraveler.Controllers
             return RedirectToAction("List");
         }
 
-        // Modification des données "Service"
-        public IActionResult ChangeService(int id) // Action pour aller à la vue ChangeService (formulaire de modification)
+        // Action pour modifier un service (affiche le formulaire de modification)
+        public IActionResult ChangeService(int id)
         {
             using (var serviceDAL = new ServiceDAL())
             {
@@ -80,8 +82,9 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        // Méthode pour traiter le formulaire de modification d'un service
         [HttpPost]
-        public IActionResult ChangeServices(int id, ServiceViewModel model) // Méthode à appeller dans "l'action" de la vue ChangeService
+        public IActionResult ChangeServices(int id, ServiceViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -96,8 +99,8 @@ namespace LittleBigTraveler.Controllers
             return View("ChangeService", model);
         }
 
-        // Recherche dans les données "Destination" d'après country, city et style
-        public IActionResult FindServices(string query) // Méthode à appeller dans "l'action" du bouton Recherche
+        // Action pour rechercher des services
+        public IActionResult FindServices(string query)
         {
             using (var serviceDAL = new ServiceDAL())
             {

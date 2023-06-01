@@ -10,6 +10,7 @@ namespace LittleBigTraveler.Controllers
 {
     public class DestinationController : Controller
     {
+        // Action pour afficher la liste des destinations
         public IActionResult List()
         {
             using (var destinationDAL = new DestinationDAL())
@@ -19,14 +20,15 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
-        // Création des données "Destination"
-        public IActionResult AddDestination() // Action pour aller à la vue AddDestination (formulaire d'ajout)
+        // Action pour ajouter une destination (affiche le formulaire)
+        public IActionResult AddDestination()
         {
             return View();
         }
 
+        // Méthode pour traiter le formulaire d'ajout d'une destination
         [HttpPost]
-        public IActionResult AddDestinations(DestinationViewModel model) // Méthode à appeller dans "l'action" de la vue AddDestination
+        public IActionResult AddDestinations(DestinationViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -40,8 +42,8 @@ namespace LittleBigTraveler.Controllers
             return View("AddDestination", model);
         }
 
-        // Suppression des données "Destination"
-        public IActionResult DeleteDestinations(int id) // Méthode à appeller sur le bouton Suppression
+        // Action pour supprimer une destination
+        public IActionResult DeleteDestinations(int id)
         {
             using (var destinationDAL = new DestinationDAL())
             {
@@ -51,8 +53,8 @@ namespace LittleBigTraveler.Controllers
             return RedirectToAction("List");
         }
 
-        // Modification des données "Destination"
-        public IActionResult ChangeDestination(int id) // Action pour aller à la vue ChangeDestination (formulaire de modification)
+        // Action pour modifier une destination (affiche le formulaire de modification)
+        public IActionResult ChangeDestination(int id)
         {
             using (var destinationDAL = new DestinationDAL())
             {
@@ -68,7 +70,6 @@ namespace LittleBigTraveler.Controllers
                     Country = destination.Country,
                     City = destination.City,
                     Description = destination.Description,
-                    //Style = destination.Style,
                     Images = destination.Images,
                     ExternalLinks = destination.ExternalLinks
                 };
@@ -77,8 +78,9 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        // Méthode pour traiter le formulaire de modification d'une destination
         [HttpPost]
-        public IActionResult ChangeDestinations(int id, DestinationViewModel model) // Méthode à appeller dans "l'action" de la vue ChangeDestination
+        public IActionResult ChangeDestinations(int id, DestinationViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -93,8 +95,8 @@ namespace LittleBigTraveler.Controllers
             return View("ChangeDestination", model);
         }
 
-        // Recherche dans les données "Destination" d'après country, city et style
-        public IActionResult FindDestinations(string query) // Méthode à appeller dans "l'action" du bouton Recherche
+        // Action pour rechercher des destinations
+        public IActionResult FindDestinations(string query)
         {
             using (var destinationDAL = new DestinationDAL())
             {

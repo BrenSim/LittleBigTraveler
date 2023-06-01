@@ -12,6 +12,7 @@ namespace LittleBigTraveler.Controllers
 {
     public class UserController : Controller
     {
+        // Action pour afficher la liste des utilisateurs
         public IActionResult List()
         {
             using (var userDAL = new UserDAL())
@@ -22,6 +23,7 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        // Action pour l'authentification (connexion) de l'utilisateur
         public IActionResult LogIn()
         {
             var model = new UserViewModel { LoggedIn = HttpContext.User.Identity.IsAuthenticated };
@@ -37,6 +39,7 @@ namespace LittleBigTraveler.Controllers
             return View(model);
         }
 
+        // Action pour le traitement du formulaire de connexion (authentification)
         [HttpPost]
         public IActionResult LogIn(UserViewModel model, string returnUrl)
         {
@@ -47,21 +50,24 @@ namespace LittleBigTraveler.Controllers
                     User user = userDAL.Authentification(model.Email, model.Password);
                     if (user != null)
                     {
+                        // Création des revendications (claims) pour l'utilisateur authentifié
                         var userClaims = new List<Claim>()
-                {
-                    new Claim(ClaimTypes.Name, user.Id.ToString()),
-                };
+                        {
+                            new Claim(ClaimTypes.Name, user.Id.ToString()),
+                        };
 
                         var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
 
                         var mainUser = new ClaimsPrincipal(new[] { ClaimIdentity });
 
                         HttpContext.SignInAsync(mainUser);
+
+                        // Redirection vers la page précédente si returnUrl est spécifié et est une URL locale
                         if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                             return Redirect(returnUrl);
                         return Redirect("/");
                     }
-                    ModelState.AddModelError("user.Email", "Prénom et/ou mot de passe inccorrect(s)");
+                    ModelState.AddModelError("user.Email", "Prénom et/ou mot de passe incorrect(s)");
                 }
                 return View(model);
             }
@@ -69,8 +75,7 @@ namespace LittleBigTraveler.Controllers
             return View("Index", "Home");
         }
 
-
-        // Deconnexion
+        // Action pour la déconnexion de l'utilisateur
         public ActionResult LogOut()
         {
             HttpContext.SignOutAsync();
@@ -83,8 +88,9 @@ namespace LittleBigTraveler.Controllers
             return View();
         }
 
+        // Action pour le traitement du formulaire d'ajout d'un client
         [HttpPost]
-        public IActionResult AddCustomers(UserViewModel model) // Méthode à appeller dans "l'action" du Front
+        public IActionResult AddCustomers(UserViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -92,6 +98,7 @@ namespace LittleBigTraveler.Controllers
                 {
                     int customerId = userDAL.CreateCustomer(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
 
+                    // Création des revendications (claims) pour l'utilisateur authentifié
                     var userClaims = new List<Claim>()
                     {
                         new Claim(ClaimTypes.Name, customerId.ToString()),
@@ -110,14 +117,16 @@ namespace LittleBigTraveler.Controllers
             return View("AddCustomer", model);
         }
 
-        // Action pour l'ajout d'un partenai re
+        // Action pour l'ajout d'un partenaire
+        // Action pour l'ajout d'un partenaire
         public IActionResult AddPartner()
         {
             return View();
         }
 
+        // Action pour le traitement du formulaire d'ajout d'un partenaire
         [HttpPost]
-        public IActionResult AddPartners(UserViewModel model) // Méthode à appeller dans "l'action" du Front
+        public IActionResult AddPartners(UserViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -137,8 +146,9 @@ namespace LittleBigTraveler.Controllers
             return View();
         }
 
+        // Action pour le traitement du formulaire d'ajout d'un administrateur
         [HttpPost]
-        public IActionResult AddAdministrators(UserViewModel model) // Méthode à appeller dans "l'action" du Front
+        public IActionResult AddAdministrators(UserViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -153,7 +163,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour la suppression d'un utilisateur
-        public IActionResult DeleteUsers(int id) // Méthode à appeller dans "l'action" du Front
+        public IActionResult DeleteUsers(int id)
         {
             using (var userDAL = new UserDAL())
             {
@@ -179,8 +189,9 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        // Action pour le traitement du formulaire de modification d'un utilisateur
         [HttpPost]
-        public IActionResult ChangeUsers(int id, UserViewModel model) // Méthode à appeller dans "l'action" du Front
+        public IActionResult ChangeUsers(int id, UserViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -211,6 +222,7 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        // Action pour le traitement du formulaire de modification d'un client
         [HttpPost]
         public IActionResult ChangeCustomers(int id, UserViewModel model)
         {
@@ -242,6 +254,7 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        // Action pour le traitement du formulaire de modification d'un partenaire
         [HttpPost]
         public IActionResult ChangePartners(int id, UserViewModel model)
         {
@@ -273,6 +286,7 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        // Action pour le traitement du formulaire de modification d'un administrateur
         [HttpPost]
         public IActionResult ChangeAdministrators(int id, UserViewModel model)
         {
@@ -288,9 +302,8 @@ namespace LittleBigTraveler.Controllers
             return View("ChangeAdministrator", model);
         }
 
-
         // Action pour la recherche d'un utilisateur
-        public IActionResult FindUsers(string query) // Méthode à appeller dans "l'action" du Front
+        public IActionResult FindUsers(string query)
         {
             using (var userDAL = new UserDAL())
             {
@@ -320,7 +333,7 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
-        // Action pour "Mapper" le ViewModel
+        // Action pour "Mapper" le ViewModel d'un utilisateur
         public UserViewModel MapUserToViewModel(User user)
         {
             var model = new UserViewModel
@@ -354,14 +367,16 @@ namespace LittleBigTraveler.Controllers
             {
                 model.AdministratorId = user.Administrator.Id;
             }
-
             return model;
         }
 
-
+        // Méthode pour mapper une liste d'utilisateurs vers une liste de ViewModels d'utilisateurs
         public List<UserViewModel> MapUsersToViewModels(List<User> users)
         {
             return users.Select(MapUserToViewModel).ToList();
         }
     }
 }
+
+
+

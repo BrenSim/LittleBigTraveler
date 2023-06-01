@@ -2,6 +2,7 @@
 using System.Linq;
 using LittleBigTraveler.Models.DataBase;
 using LittleBigTraveler.Models.TravelClasses;
+
 namespace LittleBigTraveler.Models.DataBase
 {
     public class DestinationDAL : IDestinationDAL
@@ -13,7 +14,7 @@ namespace LittleBigTraveler.Models.DataBase
             _bddContext = new BddContext();
         }
 
-        // Supression/Création de la database (méthode appelé dans BddContext)
+        // Suppression/Création de la base de données (méthode appelée dans BddContext)
         public void DeleteCreateDatabase()
         {
             _bddContext.Database.EnsureDeleted();
@@ -28,13 +29,11 @@ namespace LittleBigTraveler.Models.DataBase
         // Création des données "Destination"
         public int CreateDestination(string country, string city, string description, List<string> images, string link)
         {
-
             Destination destination = new Destination()
             {
                 Country = country,
                 City = city,
                 Description = description,
-                //Style = style,
                 Images = images,
                 ExternalLinks = link
             };
@@ -65,7 +64,6 @@ namespace LittleBigTraveler.Models.DataBase
                 destination.Country = country;
                 destination.City = city;
                 destination.Description = description;
-                //destination.Style = style;
                 destination.Images = images;
                 destination.ExternalLinks = link;
 
@@ -73,7 +71,7 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-        // Recherche dans les données "Destination" d'après country, city et style
+        // Recherche dans les données "Destination" d'après le pays (country) et la ville (city)
         public List<Destination> SearchDestination(string query)
         {
             IQueryable<Destination> recherche = _bddContext.Destinations;
@@ -85,7 +83,6 @@ namespace LittleBigTraveler.Models.DataBase
 
             return recherche.ToList();
         }
-
 
         // Récupération de toutes les données "Destination"
         public List<Destination> GetAllDestinations()
@@ -100,5 +97,3 @@ namespace LittleBigTraveler.Models.DataBase
         }
     }
 }
-
-

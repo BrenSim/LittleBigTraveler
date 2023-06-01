@@ -13,8 +13,10 @@ public class TravelController : Controller
         HttpContextAccessor = httpContextAccessor;
     }
 
+    // Action pour afficher la liste des voyages d'un client
     public IActionResult List()
     {
+        // Récupérer l'ID du client connecté depuis le contexte HTTP
         int customerId = int.Parse(HttpContext.User.Identity.Name);
 
         using (var travelDAL = new TravelDAL(HttpContextAccessor))
@@ -30,6 +32,7 @@ public class TravelController : Controller
         }
     }
 
+    // Action pour créer un voyage
     public IActionResult CreateTravel(int destinationId)
     {
         using (var destinationDAL = new DestinationDAL())
@@ -42,22 +45,20 @@ public class TravelController : Controller
 
             var model = new TravelViewModel(HttpContextAccessor)
             {
-                DestinationId = destinationId, 
+                DestinationId = destinationId,
                 Destination = destination,
-                DepartureLocation = "", 
-                DepartureDate = DateTime.Now, 
-                ReturnDate = DateTime.Now.AddDays(7), 
-                Price = 0, 
-                NumParticipants = 1 
+                DepartureLocation = "",
+                DepartureDate = DateTime.Now,
+                ReturnDate = DateTime.Now.AddDays(7),
+                Price = 0,
+                NumParticipants = 1
             };
 
             return View(model);
         }
     }
 
-
-
-
+    // Action pour le traitement du formulaire de création d'un voyage
     [HttpPost]
     public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,Price,NumParticipants")] TravelViewModel model)
     {
@@ -81,8 +82,7 @@ public class TravelController : Controller
         }
     }
 
-
-
+    // Action pour modifier un voyage
     [HttpPost]
     public IActionResult ModifyTravel(int id, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
     {
@@ -105,7 +105,6 @@ public class TravelController : Controller
             using (var destinationDAL = new DestinationDAL())
             {
                 var destination = destinationDAL.GetDestinationWithId(destinationId);
-
                 // Si une erreur s'est produite, revenir à la vue avec les données saisies et la destination
                 return View(new TravelViewModel(HttpContextAccessor)
                 {
@@ -121,5 +120,4 @@ public class TravelController : Controller
             }
         }
     }
-
 }

@@ -11,7 +11,6 @@ using System.Text;
 
 namespace LittleBigTraveler.Models.DataBase
 {
-
     public class UserDAL : IUserDAL
     {
         private BddContext _bddContext;
@@ -21,7 +20,7 @@ namespace LittleBigTraveler.Models.DataBase
             _bddContext = new BddContext();
         }
 
-        // Supression/Création de la database (méthode appelé dans BddContext)
+        // Suppression/Création de la base de données (méthode appelée dans BddContext)
         public void DeleteCreateDatabase()
         {
             _bddContext.Database.EnsureDeleted();
@@ -33,15 +32,15 @@ namespace LittleBigTraveler.Models.DataBase
             _bddContext.Dispose();
         }
 
-        // Encodage
+        // Encodage MD5 d'un mot de passe
         public static string EncodeMD5(string motDePasse)
         {
             string motDePasseSel = "UnUser" + motDePasse + "ASP.NET MVC";
             return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));
         }
 
-        //Authentification
-        public User Authentification (string email, string password)
+        // Authentification d'un utilisateur
+        public User Authentification(string email, string password)
         {
             string passwordLoggIn = EncodeMD5(password);
             User user = _bddContext.Users.FirstOrDefault(u => u.Email == email && u.Password == passwordLoggIn);
@@ -51,7 +50,7 @@ namespace LittleBigTraveler.Models.DataBase
         // Méthode de création d'un administrateur
         public int CreateAdministrator(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate)
         {
-            
+            // Création d'un nouvel utilisateur avec les données fournies
             User user = new User()
             {
                 LastName = lastName,
@@ -63,6 +62,7 @@ namespace LittleBigTraveler.Models.DataBase
                 BirthDate = birthDate
             };
 
+            // Création d'un nouvel administrateur lié à l'utilisateur
             Administrator administrator = new Administrator()
             {
                 User = user
@@ -77,6 +77,7 @@ namespace LittleBigTraveler.Models.DataBase
         // Méthode de création d'un partenaire
         public int CreatePartner(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string roleName, string roleType)
         {
+            // Création d'un nouvel utilisateur avec les données fournies
             User user = new User()
             {
                 LastName = lastName,
@@ -88,12 +89,14 @@ namespace LittleBigTraveler.Models.DataBase
                 BirthDate = birthDate
             };
 
+            // Création d'un nouveau rôle
             Role role = new Role()
             {
                 Name = roleName,
                 Type = roleType
             };
 
+            // Création d'un nouveau partenaire lié à l'utilisateur et au rôle
             Partner partner = new Partner()
             {
                 User = user,
@@ -109,6 +112,7 @@ namespace LittleBigTraveler.Models.DataBase
         // Méthode de création d'un client
         public int CreateCustomer(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, int loyaltyPoint, int commentPoint)
         {
+            // Encodage du mot de passe en utilisant MDD (pour stockage sécurisé)
             string passwordEncode = EncodeMD5(password);
             User user = new User()
             {
@@ -120,7 +124,7 @@ namespace LittleBigTraveler.Models.DataBase
                 PhoneNumber = phoneNumber,
                 BirthDate = birthDate
             };
-
+            // Création d'un nouveau client lié à l'utilisateur
             Customer customer = new Customer()
             {
                 User = user,
@@ -134,9 +138,7 @@ namespace LittleBigTraveler.Models.DataBase
             return customer.Id;
         }
 
-
-
-        // Suppression des données "User"
+        // Suppression des données d'un utilisateur
         public void DeleteUser(int id)
         {
             var user = _bddContext.Users.FirstOrDefault(u => u.Id == id);
@@ -147,14 +149,13 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-
-
-        // Modification des données "User"
+        // Modification des données d'un utilisateur
         public void ModifyUser(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string profilePicture)
         {
             var user = _bddContext.Users.FirstOrDefault(u => u.Id == id);
             if (user != null)
             {
+                // Modification des propriétés de l'utilisateur avec les nouvelles données fournies
                 user.LastName = lastName;
                 user.FirstName = firstName;
                 user.Email = email;
@@ -168,45 +169,51 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
+        // Modification des données d'un client
         public void ModifyCustomer(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, int loyaltyPoint, int commentPoint)
         {
             var customer = _bddContext.Customers.FirstOrDefault(c => c.Id == id);
             if (customer != null)
             {
                 var user = customer.User;
+                // Appel de la méthode ModifyUser pour mettre à jour les données de l'utilisateur
                 ModifyUser(user.Id, lastName, firstName, email, password, address, phoneNumber, birthDate, user.ProfilePicture);
+                // Modification des propriétés spécifiques du client
                 customer.LoyaltyPoint = loyaltyPoint;
                 customer.CommentPoint = commentPoint;
                 _bddContext.SaveChanges();
             }
         }
 
+        // Modification des données d'un partenaire
         public void ModifyPartner(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string roleName, string roleType)
         {
             var partner = _bddContext.Partners.FirstOrDefault(p => p.Id == id);
             if (partner != null)
             {
                 var user = partner.User;
+                // Appel de la méthode ModifyUser pour mettre à jour les données de l'utilisateur
                 ModifyUser(user.Id, lastName, firstName, email, password, address, phoneNumber, birthDate, user.ProfilePicture);
+                // Modification des propriétés spécifiques du partenaire
                 partner.Role.Name = roleName;
                 partner.Role.Type = roleType;
                 _bddContext.SaveChanges();
             }
         }
 
+        // Modification des données d'un administrateur
         public void ModifyAdministrator(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate)
         {
             var administrator = _bddContext.Administrators.FirstOrDefault(a => a.Id == id);
             if (administrator != null)
             {
                 var user = administrator.User;
+                // Appel de la méthode ModifyUser pour mettre à jour les données de l'utilisateur
                 ModifyUser(user.Id, lastName, firstName, email, password, address, phoneNumber, birthDate, user.ProfilePicture);
                 _bddContext.SaveChanges();
             }
         }
-
-
-        // Recherche dans les données "User" d'après le nom, prénom ou email
+        // Recherche dans les données "User" en fonction du nom, prénom ou email
         public List<User> SearchUser(string query)
         {
             IQueryable<User> recherche = _bddContext.Users;
@@ -219,7 +226,7 @@ namespace LittleBigTraveler.Models.DataBase
             return recherche.ToList();
         }
 
-        // Récupération de tous les utilisateurs avec le type
+        // Récupération de tous les utilisateurs avec leur type
         public List<User> GetAllUsersWithType()
         {
             List<User> users = _bddContext.Users
@@ -230,14 +237,15 @@ namespace LittleBigTraveler.Models.DataBase
 
             foreach (var user in users)
             {
-                string userType = user.GetUserType();                                               
+                // Obtention du type d'utilisateur en appelant la méthode GetUserType()
+                string userType = user.GetUserType();
+                // Faites quelque chose avec le type d'utilisateur...
             }
 
             return users;
         }
 
-
-        // Récupération des données "User" par ID avec le type
+        // Récupération des données d'un utilisateur par ID avec son type
         public User GetAllUsersWithTypeWithId(int id)
         {
             User user = _bddContext.Users
@@ -248,17 +256,21 @@ namespace LittleBigTraveler.Models.DataBase
 
             if (user != null)
             {
+                // Obtention du type d'utilisateur en appelant la méthode GetUserType()
                 string userType = user.GetUserType();
+                // Faites quelque chose avec le type d'utilisateur...
             }
 
             return user;
         }
 
-        public User GetUserById (int id)
+        // Récupération d'un utilisateur par ID
+        public User GetUserById(int id)
         {
             return _bddContext.Users.Find(id);
         }
 
+        // Récupération d'un utilisateur par ID (version surchargée acceptant une chaîne)
         public User GetUserById(string idStr)
         {
             int id;
