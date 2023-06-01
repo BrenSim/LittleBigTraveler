@@ -12,6 +12,8 @@ using LittleBigTraveler.Models.UserClasses;
 using Microsoft.EntityFrameworkCore;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Net.WebRequestMethods;
+using System.IO.Pipelines;
+using System.Xml.Linq;
 
 namespace LittleBigTraveler.Models.DataBase
 {
@@ -1581,7 +1583,7 @@ namespace LittleBigTraveler.Models.DataBase
                 new Service
                 {
                     Id = 72,
-                    Name = "Excursion d'une journée au départ de Munich le long de la route romantique de Rothenburg à Harburg",
+                    Name = "Excursion le long de la route romantique de Rothenburg à Harburg",
                     Price = 60.0,
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Munich",
@@ -1614,7 +1616,7 @@ namespace LittleBigTraveler.Models.DataBase
                 new Service
                 {
                     Id = 74,
-                    Name = "Randonnée privée d'une journée dans les Alpes bavaroises au départ de Munich",
+                    Name = "Randonnée privée dans les Alpes bavaroises",
                     Price = 289.0,
                     Schedule = DateTime.Now.AddDays(1),
                     Location = "Munich",
@@ -1627,23 +1629,267 @@ namespace LittleBigTraveler.Models.DataBase
                     },
                     ExternalLinks = "https://www.munich-wanderland.com/"
                 },
-
+           
+                // Londres :
                 new Service
                 {
                     Id = 75,
-                    Name = "Dégustation de bière privée et visite du musée de l'Oktoberfest à Munich",
-                    Price = 253.0,
+                    Name = "The Ritz London",
+                    Price = 250.0,
                     Schedule = DateTime.Now.AddDays(1),
-                    Location = "Munich",
-                    Type = "Visite gastronomique",
-                    Style = "Culturel",
-                    MaxCapacity = 10,
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 200,
                     Images = new List<string>
                     {
-                        "/ImagesServices/75MunichVisite.png",
+                        "/ImagesServices/75LondresHotel.png",
                     },
-                    ExternalLinks = "https://www.rosotravel.com/tours/munich-tours/"
+                    ExternalLinks = "https://www.theritzlondon.com"
+                },
+
+                new Service
+                {
+                    Id = 76,
+                    Name = "The Savoy",
+                    Price = 220.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/76LondresHotel.png",
+                    },
+                    ExternalLinks = "https://www.thesavoylondon.com"
+                },
+
+                new Service
+                {
+                    Id = 77,
+                    Name = "Claridge's",
+                    Price = 200.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/77LondresHotel.png",
+                    },
+                    ExternalLinks = "https://www.claridges.co.uk"
+                },
+
+                new Service
+                {
+                    Id = 78,
+                    Name = "The Dorchester",
+                    Price = 180.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/78LondresHotel.png",
+                    },
+                    ExternalLinks = "https://www.dorchestercollection.com/en/london/the-dorchester"
+                },
+
+                new Service
+                {
+                    Id = 79,
+                    Name = "Shangri-La Hotel at The Shard",
+                    Price = 160.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/79LondresHotel.webp",
+                    },
+                    ExternalLinks = "https://www.shangri-la.com/london/shangrila"
+                },
+
+                new Service
+                {
+                    Id = 80,
+                    Name = "The Ledbury",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/80LondresRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.theledbury.com"
+                },
+
+                new Service
+                {
+                    Id = 81,
+                    Name = "Sketch",
+                    Price = 100.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 120,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/81LondresRestaurant.webp",
+                    },
+                    ExternalLinks = "https://www.sketch.london"
+                },
+
+                new Service
+                {
+                    Id = 82,
+                    Name = "Dishoom",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/82LondresRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.dishoom.com"
+                },
+
+                new Service
+                {
+                    Id = 83,
+                    Name = "London Walks",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Visite Guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 15,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/83LondresService.jpeg",
+                    },
+                    ExternalLinks = "https://www.walks.com/london"
+                },
+
+                new Service
+                {
+                    Id = 84,
+                    Name = "The British Museum",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Activité Culturelle",
+                    Style = "Culture",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/84LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.britishmuseum.org"
+                },
+
+                new Service
+                {
+                    Id = 85,
+                    Name = "Tower of London",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Activité Culturelle",
+                    Style = "Culturel",
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/85LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.hrp.org.uk/tower-of-london"
+                },
+
+                new Service
+                {
+                    Id = 86,
+                    Name = "Thames River Cruise",
+                    Price = 14.9,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Croisière",
+                    Style = "Culturel",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/86LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.thames-river-cruise.com/it/?msclkid=9dac8ae633d61bc42889ee9ed0ed5606"
+                },
+
+                new Service
+                {
+                    Id = 87,
+                    Name = "Visite au Hyde Park",
+                    Price = 0.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Visite",
+                    Style = "Culturel",
+                    MaxCapacity = 1000,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/87LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.royalparks.org.uk/parks/hyde-park"
+                },
+
+                new Service
+                {
+                    Id = 88,
+                    Name = "Excursion matinale à Stonehenge",
+                    Price = 35.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Visite Guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/88LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.daytourslondon.com/half-day-stonehenge-tour-from-london/"
+                },
+
+                new Service
+                {
+                    Id = 89,
+                    Name = "Croisière sur la Tamise en bateau à grande vitesse",
+                    Price = 50.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Croisière en bateau",
+                    Style = "Sportive",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/88LondresActivite.png",
+                    },
+                    ExternalLinks = "https://thamesribexperience.com/"
                 }
+
+
+
+
+
 
                 );
 
