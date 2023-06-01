@@ -37,4 +37,8 @@ namespace LittleBigTraveler.Models.UserClasses
             return "Unknown";
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> filldb
