@@ -1,0 +1,53 @@
+﻿@model List<LittleBigTraveler.Models.TravelClasses.Travel>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Liste des voyages";
+}
+
+@section content {
+    <h1 class="text-center">Liste des voyages</h1>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <p>Aucun voyage trouvé.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Destination</th>
+                    <th>Lieu de départ</th>
+                    <th>Date de départ</th>
+                    <th>Date de retour</th>
+                    <th>Prix</th>
+                    <th>Nombre de participants</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var travel in Model)
+                {
+                    <tr>
+                        <td>@travel.Id</td>
+                        <td>@travel.Destination.Country, @travel.Destination.City</td>
+                        <td>@travel.DepartureLocation</td>
+                        <td>@travel.DepartureDate.ToString("dd/MM/yyyy")</td>
+                        <td>@travel.ReturnDate.ToString("dd/MM/yyyy")</td>
+                        <td>@travel.Price</td>
+                        <td>@travel.NumParticipants</td>
+                        <td>
+                            <a href="/Travel/ModifyTravel/@travel.Id" class="btn btn-secondary">Modifier</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <div class="text-center mt-4">
+        <a href="/Home/Index" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+}

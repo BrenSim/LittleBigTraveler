@@ -14,8 +14,8 @@ namespace LittleBigTraveler.Models.UserClasses
         public int LoyaltyPoint { get; set; }
         public int CommentPoint { get; set; }
 
-        public int BookingId { get; set; }
-        public virtual Booking Booking { get; set; }
+        //public int BookingId { get; set; }
+        //public virtual Booking Booking { get; set; }
 
 
         public virtual List<Evaluation> Evaluations { get; set; }
