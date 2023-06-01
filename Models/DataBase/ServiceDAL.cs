@@ -6,7 +6,6 @@ using LittleBigTraveler.Models.TravelClasses;
 
 namespace LittleBigTraveler.Models.DataBase
 {
-
     public class ServiceDAL : IServiceDAL
     {
         private BddContext _bddContext;
@@ -16,7 +15,7 @@ namespace LittleBigTraveler.Models.DataBase
             _bddContext = new BddContext();
         }
 
-        // Supression/Création de la database (méthode appelé dans BddContext)
+        // Suppression/Création de la base de données (méthode appelée dans BddContext)
         public void DeleteCreateDatabase()
         {
             _bddContext.Database.EnsureDeleted();
@@ -77,21 +76,18 @@ namespace LittleBigTraveler.Models.DataBase
                 service.Images = images;
                 service.ExternalLinks = link;
 
-
                 _bddContext.SaveChanges();
             }
         }
 
-        // Recherche dans les données "Service" d'après le type
+        // Recherche dans les données "Service" en fonction du type
         public List<Service> SearchService(string query)
         {
             IQueryable<Service> recherche = _bddContext.Services;
 
             if (!string.IsNullOrEmpty(query))
             {
-  
-                    recherche = recherche.Where(s => s.Name.Contains(query) || s.Type.Contains(query) || s.Location.Contains(query) || s.Style.Contains(query));
-                
+                recherche = recherche.Where(s => s.Name.Contains(query) || s.Type.Contains(query) || s.Location.Contains(query) || s.Style.Contains(query));
             }
 
             return recherche.ToList();
@@ -110,4 +106,3 @@ namespace LittleBigTraveler.Models.DataBase
         }
     }
 }
-
