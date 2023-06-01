@@ -1058,14 +1058,9 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-<<<<<<< HEAD
                     ExternalLinks = "https://www.praguelocalguides.com"
                 }
-=======
-                    ExternalLinks = "https://www.walksofitaly.com"
-                }
 
->>>>>>> aa5661ca09656a182d6c26ecd4536f8d7b10c597
 
                 );
 
