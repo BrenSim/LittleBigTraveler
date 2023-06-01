@@ -14,6 +14,7 @@ namespace LittleBigTraveler.Models.TravelClasses
         public string ExternalLinks { get; set; }
 
         public virtual List<Travel> Travels { get; set; }
+        public virtual List<Service> Services { get; set; }
     }
 }
 

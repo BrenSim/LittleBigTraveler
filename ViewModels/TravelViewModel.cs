@@ -26,7 +26,6 @@ namespace LittleBigTraveler.ViewModels
 
         public TravelViewModel(IHttpContextAccessor httpContextAccessor)
         {
-            // Initialisez les propriétés si nécessaire en utilisant les informations de l'HttpContextAccessor
         }
     }
 
