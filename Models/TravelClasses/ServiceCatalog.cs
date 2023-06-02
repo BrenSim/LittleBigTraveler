@@ -14,4 +14,3 @@ namespace LittleBigTraveler.Models.TravelClasses
         public virtual Partner Partner { get; set; }
     }
 }
-

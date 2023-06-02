@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+
 
 using System.Linq;
 
@@ -10,11 +12,14 @@ using System.Numerics;
 using System.Runtime.Intrinsics.X86;
 using System.Text.RegularExpressions;
 
+
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
 using Microsoft.EntityFrameworkCore;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Net.WebRequestMethods;
+using System.IO.Pipelines;
+using System.Xml.Linq;
 
 namespace LittleBigTraveler.Models.DataBase
 {
@@ -87,10 +92,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Images = new List<string>
                 {
 
-                    "/ImagesDestinations/Paris1.jpg",
-                    "/ImagesDestinations/Paris2.jpg",
-                    "/ImagesDestinations/Paris3.jpg",
-                    "/ImagesDestinations/Paris4.jpg"
+                    "/ImagesDestinations/Paris1.jpeg",
+                    "/ImagesDestinations/Paris2.jpeg",
+                    "/ImagesDestinations/Paris3.jpeg",
+                    "/ImagesDestinations/Paris4.jpeg"
                 },
                 ExternalLinks = "https://www.parisinfo.com/",
             },
@@ -102,10 +107,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Ville éternelle avec vestiges antiques, art religieux et gastronomie.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Rome1.jpg",
-                        "/ImagesDestinations/Rome2.jpg",
-                        "/ImagesDestinations/Rome3.jpg",
-                        "/ImagesDestinations/Rome4.jpg"
+                        "/ImagesDestinations/Rome1.jpeg",
+                        "/ImagesDestinations/Rome2.jpeg",
+                        "/ImagesDestinations/Rome3.jpeg",
+                        "/ImagesDestinations/Rome4.jpeg"
                     },
                 ExternalLinks = "https://www.turismoroma.it/",
             },
@@ -117,10 +122,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Ville médiévale avec châteaux, ponts, musique classique et atmosphère romantique.\"Style: Sportive",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Prague1.jpg",
-                        "/ImagesDestinations/Prague2.jpg",
-                        "/ImagesDestinations/Prague3.jpg",
-                        "/ImagesDestinations/Prague4.jpg"
+                        "/ImagesDestinations/Prague1.jpeg",
+                        "/ImagesDestinations/Prague2.jpeg",
+                        "/ImagesDestinations/Prague3.jpeg",
+                        "/ImagesDestinations/Prague4.jpeg"
                     },
                 ExternalLinks = "https://www.prague.eu/",
             },
@@ -132,10 +137,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "La ville romantique des canaux, riche en histoire et en arts.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Venise1.jpg",
-                        "/ImagesDestinations/Venise2.jpg",
-                        "/ImagesDestinations/Venise3.jpg",
-                        "/ImagesDestinations/Venise4.jpg"
+                        "/ImagesDestinations/Venise1.jpeg",
+                        "/ImagesDestinations/Venise2.jpeg",
+                        "/ImagesDestinations/Venise3.jpeg",
+                        "/ImagesDestinations/Venise4.jpeg"
                     },
                 ExternalLinks = "https://www.veneziaunica.it/",
             },
@@ -147,10 +152,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "La ville de l’Oktoberfest et ses traditions.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Munich1.jpg",
-                        "/ImagesDestinations/Munich2.jpg",
-                        "/ImagesDestinations/Munich3.jpg",
-                        "/ImagesDestinations/Munich4.jpg"
+                        "/ImagesDestinations/Munich1.jpeg",
+                        "/ImagesDestinations/Munich2.jpeg",
+                        "/ImagesDestinations/Munich3.jpeg",
+                        "/ImagesDestinations/Munich4.jpeg"
                     },
                 ExternalLinks = "https://www.muenchen.de/",
             },
@@ -162,10 +167,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Métropole cosmopolite avec musées de renommée mondiale et scène théâtrale vibrante.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Londres1.jpg",
-                        "/ImagesDestinations/Londres2.jpg",
-                        "/ImagesDestinations/Londres3.jpg",
-                        "/ImagesDestinations/Londres4.jpg"
+                        "/ImagesDestinations/Londres1.jpeg",
+                        "/ImagesDestinations/Londres2.jpeg",
+                        "/ImagesDestinations/Londres3.jpeg",
+                        "/ImagesDestinations/Londres4.jpeg"
                     },
                 ExternalLinks = "https://www.visitlondon.com/",
             },
@@ -177,10 +182,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Berceau de la civilisation occidentale, avec l'Acropole et les sites historiques.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Athenes1.jpg",
-                        "/ImagesDestinations/Athenes2.jpg",
-                        "/ImagesDestinations/Athenes3.jpg",
-                        "/ImagesDestinations/Athenes4.jpg"
+                        "/ImagesDestinations/Athenes1.jpeg",
+                        "/ImagesDestinations/Athenes2.jpeg",
+                        "/ImagesDestinations/Athenes3.jpeg",
+                        "/ImagesDestinations/Athenes4.jpeg"
                     },
                 ExternalLinks = "https://www.thisisathens.org/",
             },
@@ -192,10 +197,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Destination sportive avec football, basketball et sports nautiques.",
                 Images = new List<string>
                     {
-                         "/ImagesDestinations/Barcelona1.jpg",
-                         "/ImagesDestinations/Barcelona2.jpg",
-                         "/ImagesDestinations/Barcelona3.jpg",
-                         "/ImagesDestinations/Barcelona4.jpg"
+                         "/ImagesDestinations/Barcelona1.jpeg",
+                         "/ImagesDestinations/Barcelona2.jpeg",
+                         "/ImagesDestinations/Barcelona3.jpeg",
+                         "/ImagesDestinations/Barcelona4.jpeg"
                     },
                 ExternalLinks = "https://www.barcelona.cat/",
             },
@@ -207,10 +212,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Ville alpine pour le ski, le snowboard et les sports d'hiver.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Innsbruck1.jpg",
-                        "/ImagesDestinations/Innsbruck2.jpg",
-                        "/ImagesDestinations/Innsbruck3.jpg",
-                        "/ImagesDestinations/Innsbruck4.jpg"
+                        "/ImagesDestinations/Innsbruck1.jpeg",
+                        "/ImagesDestinations/Innsbruck2.jpeg",
+                        "/ImagesDestinations/Innsbruck3.jpeg",
+                        "/ImagesDestinations/Innsbruck4.jpeg"
                     },
                 ExternalLinks = "https://www.innsbruck.info/",
             },
@@ -222,10 +227,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Paradis des sports nautiques entouré de magnifiques montagnes.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Annecy1.jpg",
-                        "/ImagesDestinations/Annecy2.jpg",
-                        "/ImagesDestinations/Annecy3.jpg",
-                        "/ImagesDestinations/Annecy4.jpg"
+                        "/ImagesDestinations/Annecy1.jpeg",
+                        "/ImagesDestinations/Annecy2.jpeg",
+                        "/ImagesDestinations/Annecy3.jpeg",
+                        "/ImagesDestinations/Annecy4.jpeg"
                     },
                 ExternalLinks = "https://www.lac-annecy.com/",
             },
@@ -237,10 +242,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Destination alpine pour le ski, l'escalade et les sports de montagne.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Garmisch-Partenkirchen1.jpg",
-                        "/ImagesDestinations/Garmisch-Partenkirchen2.jpg",
-                        "/ImagesDestinations/Garmisch-Partenkirchen3.jpg",
-                        "/ImagesDestinations/Garmisch-Partenkirchen4.jpg"
+                        "/ImagesDestinations/Garmisch-Partenkirchen1.jpeg",
+                        "/ImagesDestinations/Garmisch-Partenkirchen2.jpeg",
+                        "/ImagesDestinations/Garmisch-Partenkirchen3.jpeg",
+                        "/ImagesDestinations/Garmisch-Partenkirchen4.jpeg"
                     },
                 ExternalLinks = "https://www.gapa.de/",
             },
@@ -252,10 +257,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Ville dynamique avec des possibilités de surf et de sports nautiques.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Lisbonne1.jpg",
-                        "/ImagesDestinations/Lisbonne2.jpg",
-                        "/ImagesDestinations/Lisbonne3.jpg",
-                        "/ImagesDestinations/Lisbonne4.jpg"
+                        "/ImagesDestinations/Lisbonne1.jpeg",
+                        "/ImagesDestinations/Lisbonne2.jpeg",
+                        "/ImagesDestinations/Lisbonne3.jpeg",
+                        "/ImagesDestinations/Lisbonne4.jpeg"
                     },
                 ExternalLinks = "https://www.visitportugal.com/",
             },
@@ -267,10 +272,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Les majestueuses Alpes suisses entourent Interlaken pour des paysages spectaculaires.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Interlaken1.jpg",
-                        "/ImagesDestinations/Interlaken2.jpg",
-                        "/ImagesDestinations/Interlaken3.jpg",
-                        "/ImagesDestinations/Interlaken4.jpg"
+                        "/ImagesDestinations/Interlaken1.jpeg",
+                        "/ImagesDestinations/Interlaken2.jpeg",
+                        "/ImagesDestinations/Interlaken3.jpeg",
+                        "/ImagesDestinations/Interlaken4.jpeg"
                     },
                 ExternalLinks = "https://www.interlaken.ch/",
             },
@@ -282,10 +287,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Paradis alpin au pied du Mont Blanc pour les amoureux de montagne.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Chamonix1.jpg",
-                        "/ImagesDestinations/Chamonix2.jpg",
-                        "/ImagesDestinations/Chamonix3.jpg",
-                        "/ImagesDestinations/Chamonix4.jpg"
+                        "/ImagesDestinations/Chamonix1.jpeg",
+                        "/ImagesDestinations/Chamonix2.jpeg",
+                        "/ImagesDestinations/Chamonix3.jpeg",
+                        "/ImagesDestinations/Chamonix4.jpeg"
                     },
                 ExternalLinks = "https://www.chamonix.com/",
             },
@@ -297,10 +302,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Cascades, eaux turquoise et végétation luxuriante aux lacs de Plitvice.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/PlitviceLakes1.jpg",
-                        "/ImagesDestinations/PlitviceLakes2.jpg",
-                        "/ImagesDestinations/PlitviceLakes3.jpg",
-                        "/ImagesDestinations/PlitviceLakes4.jpg"
+                        "/ImagesDestinations/PlitviceLakes1.jpeg",
+                        "/ImagesDestinations/PlitviceLakes2.jpeg",
+                        "/ImagesDestinations/PlitviceLakes3.jpeg",
+                        "/ImagesDestinations/PlitviceLakes4.jpeg"
                     },
                 ExternalLinks = "https://www.np-plitvicka-jezera.hr/",
             },
@@ -312,10 +317,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Arctique norvégien : aurores boréales et nature sauvage exceptionnelle.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Tromso1.jpg",
-                        "/ImagesDestinations/Tromso2.jpg",
-                        "/ImagesDestinations/Tromso3.jpg",
-                        "/ImagesDestinations/Tromso4.jpg"
+                        "/ImagesDestinations/Tromso1.jpeg",
+                        "/ImagesDestinations/Tromso2.jpeg",
+                        "/ImagesDestinations/Tromso3.jpeg",
+                        "/ImagesDestinations/Tromso4.jpeg"
                     },
                 ExternalLinks = "https://www.visittromso.no/",
             },
@@ -327,10 +332,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Lacs, montagnes et paysages préservés au cœur de Killarney.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Killarney1.jpg",
-                        "/ImagesDestinations/Killarney2.jpg",
-                        "/ImagesDestinations/Killarney3.jpg",
-                        "/ImagesDestinations/Killarney4.jpg"
+                        "/ImagesDestinations/Killarney1.jpeg",
+                        "/ImagesDestinations/Killarney2.jpeg",
+                        "/ImagesDestinations/Killarney3.jpeg",
+                        "/ImagesDestinations/Killarney4.jpeg"
                     },
                 ExternalLinks = "https://www.killarney.ie/",
             },
@@ -342,10 +347,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "La ville des bains thermaux et des spas historiques.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Budapest1.jpg",
-                        "/ImagesDestinations/Budapest2.jpg",
-                        "/ImagesDestinations/Budapest3.jpg",
-                        "/ImagesDestinations/Budapest4.jpg"
+                        "/ImagesDestinations/Budapest1.jpeg",
+                        "/ImagesDestinations/Budapest2.jpeg",
+                        "/ImagesDestinations/Budapest3.jpeg",
+                        "/ImagesDestinations/Budapest4.webp"
                     },
                 ExternalLinks = "https://www.budapestinfo.hu/",
             },
@@ -357,10 +362,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Ville célèbre pour ses thermes romains et son architecture géorgienne.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Bath1.jpg",
-                        "/ImagesDestinations/Bath2.jpg",
-                        "/ImagesDestinations/Bath3.jpg",
-                        "/ImagesDestinations/Bath4.jpg"
+                        "/ImagesDestinations/Bath1.jpeg",
+                        "/ImagesDestinations/Bath2.jpeg",
+                        "/ImagesDestinations/Bath3.jpeg",
+                        "/ImagesDestinations/Bath4.jpeg"
                     },
                 ExternalLinks = "https://visitbath.co.uk/",
             },
@@ -372,10 +377,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Spas historiques et eaux thermales dans une ville pittoresque.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/KarlovyVary1.jpg",
-                        "/ImagesDestinations/KarlovyVary2.jpg",
-                        "/ImagesDestinations/KarlovyVary3.jpg",
-                        "/ImagesDestinations/KarlovyVary4.jpg"
+                        "/ImagesDestinations/KarlovyVary1.jpeg",
+                        "/ImagesDestinations/KarlovyVary2.jpeg",
+                        "/ImagesDestinations/KarlovyVary3.jpeg",
+                        "/ImagesDestinations/KarlovyVary4.png"
                     },
                 ExternalLinks = "https://www.karlovyvary.cz/en",
             },
@@ -387,10 +392,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Une île thermale dans le golfe de Naples avec des eaux curatives.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Ischia1.jpg",
-                        "/ImagesDestinations/Ischia2.jpg",
-                        "/ImagesDestinations/Ischia3.jpg",
-                        "/ImagesDestinations/Ischia4.jpg"
+                        "/ImagesDestinations/Ischia1.jpeg",
+                        "/ImagesDestinations/Ischia2.jpeg",
+                        "/ImagesDestinations/Ischia3.jpeg",
+                        "/ImagesDestinations/Ischia4.jpeg"
                     },
                 ExternalLinks = "https://www.ischiareview.com/",
             },
@@ -402,10 +407,10 @@ namespace LittleBigTraveler.Models.DataBase
                 Description = "Station thermale élégante avec des spas et une architecture Art Nouveau.",
                 Images = new List<string>
                     {
-                        "/ImagesDestinations/Vichy1.jpg",
-                        "/ImagesDestinations/Vichy2.jpg",
-                        "/ImagesDestinations/Vichy3.jpg",
-                        "/ImagesDestinations/Vichy4.jpg"
+                        "/ImagesDestinations/Vichy1.jpeg",
+                        "/ImagesDestinations/Vichy2.jpeg",
+                        "/ImagesDestinations/Vichy3.jpeg",
+                        "/ImagesDestinations/Vichy4.jpeg"
                     },
                 ExternalLinks = "https://www.vichy-destinations.fr/",
             }
@@ -414,26 +419,7 @@ namespace LittleBigTraveler.Models.DataBase
             // Création des services
             this.Services.AddRange(
 
-            //Modèle à suivre
-                new Service
-                {
-                    Id = 1,
-                    Name = "Service de transport à Brest",
-                    Price = 20.0,
-                    Schedule = DateTime.Now.AddDays(1),
-                    Location = "Brest",
-                    Type = "Transport",
-                    Style = "Cultural",
-                    MaxCapacity = 100,
-                    Images = new List<string>
-                        {
-                            "/ImagesTest/BrestBateau.jpg",
-                        },
-                    ExternalLinks = "UnLien",
-                    DestinationId = 1
-                },
-           
-
+                // Paris:
                 // Services à Paris 
                 new Service
                 {
@@ -445,27 +431,28 @@ namespace LittleBigTraveler.Models.DataBase
                     Type = "Accommodation",
                     MaxCapacity = 2,
                     Images = new List<string>
-    {
-        "/ImagesTest/Paris1Services.jpg",
-    },
-                    ExternalLinks = "https://www.hotelprincealbert.com/louvre"
+                        {
+                            "/ImagesTest/Paris1Services.jpg",
+                        },
+                    ExternalLinks = "https://www.hotelprincealbert.com/louvre",
                 },
 
-            new Service
-            {
-                Id = 2,
-                Name = "Le Village Hostel Montmartre",
-                Price = 35.0,
-                Schedule = DateTime.Now.AddDays(2),
-                Location = "Paris",
-                Type = "Accommodation",
-                MaxCapacity = 1,
-                Images = new List<string>
+
+                new Service
                 {
-                    "/ImagesTest/Paris2Services.jpg",
+                    Id = 2,
+                    Name = "Le Village Hostel Montmartre",
+                    Price = 35.0,
+                    Schedule = DateTime.Now.AddDays(2),
+                    Location = "Paris",
+                    Type = "Accommodation",
+                    MaxCapacity = 1,
+                    Images = new List<string>
+                    {
+                        "/ImagesTest/Paris2Services.jpg",
+                    },
+                    ExternalLinks = "https://www.villagehostel.fr/montmartre"
                 },
-                ExternalLinks = "https://www.villagehostel.fr/montmartre"
-            },
 
             new Service
             {
@@ -515,7 +502,6 @@ namespace LittleBigTraveler.Models.DataBase
                 ExternalLinks = "https://www.lebristolparis.com"
             },
 
-            // Restaurants
             new Service
             {
                 Id = 6,
@@ -681,24 +667,25 @@ namespace LittleBigTraveler.Models.DataBase
 
 
 
-    // Services à Rome
-    new Service
-                {
-                    Id = 16,
-                    Name = "Hostel Alessandro Palace & Bar",
-                    Price = 20.0,
-                    Schedule = DateTime.Now.AddDays(1),
-                    Location = "Rome",
-                    Type = "Accommodation",
-                    Style = null,
-                    MaxCapacity = 2,
-                    Images = new List<string>
-                        {
-                            "/ImagesServices/Rome16Hotel.jpeg",
-                        },
 
-                    ExternalLinks = "https://www.hostelrome.com"
-                },
+            // Rome:
+            new Service
+            {
+                Id = 16,
+                Name = "Hostel Alessandro Palace & Bar",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Rome",
+                Type = "Accommodation",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                                {
+                                    "/ImagesServices/16RomeHotel.jpeg",
+                                },
+                ExternalLinks = "https://www.hostelrome.com"
+            },
+
                 new Service
                 {
                     Id = 17,
@@ -711,7 +698,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 4,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome17Hotel.jpeg",
+                            "/ImagesServices/17RomeHotel.jpeg",
                         },
                     ExternalLinks = "https://www.the-yellow.com"
                 },
@@ -727,7 +714,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 2,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome18Hotel.jpeg",
+                            "/ImagesServices/18RomeHotel.jpeg",
                         },
                     ExternalLinks = "https://www.hotelderussie.it"
                 },
@@ -743,7 +730,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 3,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome19Hotel.jpeg",
+                            "/ImagesServices/19RomeHotel.jpeg",
                         },
                     ExternalLinks = "https://www.hotelartemide.it"
                 },
@@ -759,7 +746,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 4,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome20Hotel.jpeg",
+                            "/ImagesServices/20RomeHotel.jpeg",
                         },
                     ExternalLinks = "https://www.raphaelhotel.com"
                 },
@@ -775,7 +762,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 50,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome21Restaurant.jpeg",
+                            "/ImagesServices/21RomeRestaurant.jpeg",
                         },
                     ExternalLinks = "https://www.trattoriadadanilo.it"
                 },
@@ -791,7 +778,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 30,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome22Restaurant.jpeg",
+                            "/ImagesServices/22RomeRestaurant.jpeg",
                         },
                     ExternalLinks = "https://www.bonci.it"
                 },
@@ -807,7 +794,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 20,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome23Restaurant.jpeg",
+                            "/ImagesServices/23RomeRestaurant.jpeg",
                         },
                     ExternalLinks = "https://www.romecavalieri.com/lapergola"
                 },
@@ -823,7 +810,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 40,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome24Restaurant.jpeg",
+                            "/ImagesServices/24RomeRestaurant.jpeg",
                         },
                     ExternalLinks = "https://www.armandoalpantheon.it"
                 },
@@ -839,7 +826,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 35,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome25Restaurant.jpeg",
+                            "/ImagesServices/25RomeRestaurant.jpeg",
                         },
                     ExternalLinks = "https://www.anticoarco.it"
                 },
@@ -855,7 +842,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 1,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome26Transport.jpeg",
+                            "/ImagesServices/26RomeTransport.jpeg",
                         },
                     ExternalLinks = "https://www.hertz.com"
                 },
@@ -871,7 +858,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 1,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome27Transport.jpeg",
+                            "/ImagesServices/27RomeTransport.jpeg",
                         },
                     ExternalLinks = "https://www.avis.com"
                 },
@@ -887,7 +874,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 3,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome28Transport.jpeg",
+                            "/ImagesServices/28RomeTransport.jpeg",
                         },
                     ExternalLinks = "https://www.mydriver.com"
                 },
@@ -903,7 +890,7 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 1,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome29Guide.jpeg",
+                            "/ImagesServices/29RomeGuide.jpeg",
                         },
                     ExternalLinks = "https://www.romeprivateguides.com"
                 },
@@ -919,10 +906,11 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 1,
                     Images = new List<string>
                         {
-                            "/ImagesServices/Rome30Guide.jpeg",
+                            "/ImagesServices/30Rome0Guide.jpeg",
                         },
                     ExternalLinks = "https://www.walksofitaly.com"
                 },
+                // Prague :
                 new Service
                 {
                     Id = 31,
@@ -935,10 +923,11 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 2,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/31PragueHotel.jpeg",
                         },
                     ExternalLinks = "https://www.hotelclement.cz"
                 },
+
                 new Service
                 {
                     Id = 32,
@@ -951,10 +940,11 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 2,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/32PragueHotel.png",
                         },
                     ExternalLinks = "https://www.hotelsalvator.cz"
                 },
+
                 new Service
                 {
                     Id = 33,
@@ -967,10 +957,11 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 2,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/33PragueHotel.png",
                         },
                     ExternalLinks = "https://www.hoteljulian.com"
                 },
+
                 new Service
                 {
                     Id = 34,
@@ -983,10 +974,11 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 4,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/34PragueHotel.jpeg",
                         },
                     ExternalLinks = "https://www.mosaichouse.com"
                 },
+
                 new Service
                 {
                     Id = 35,
@@ -999,10 +991,11 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 6,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/35PragueHotel.jpeg",
                         },
                     ExternalLinks = "https://www.hostelone.com"
                 },
+
                 new Service
                 {
                     Id = 36,
@@ -1015,10 +1008,11 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 60,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/36PragueRestaurant.png",
                         },
                     ExternalLinks = "https://www.ufleku.cz"
                 },
+
                 new Service
                 {
                     Id = 37,
@@ -1031,10 +1025,11 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 80,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/37PragueRestaurant.png",
                         },
                     ExternalLinks = "https://www.czechfolklore.com"
                 },
+
                 new Service
                 {
                     Id = 38,
@@ -1047,10 +1042,11 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 40,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/38PragueRestaurant.png",
                         },
                     ExternalLinks = "https://www.lokal-dlouha.ambi.cz"
                 },
+
                 new Service
                 {
                     Id = 39,
@@ -1062,9 +1058,1840 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 1,
                     Images = new List<string>
                         {
-                            "/ImagesTest/serviceVilleId.jpg",
+                            "/ImagesServices/39PragueGuide.png",
                         },
                     ExternalLinks = "https://www.praguelocalguides.com"
+                },
+
+                new Service
+                {
+                    Id = 40,
+                    Name = "Prague Urban Adventures",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Guide",
+                    Style = null,
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/40PragueGuide.webp",
+                        },
+                    ExternalLinks = "https://www.urbanadventures.com/destination/Prague-tours"
+                },
+
+                new Service
+                {
+                    Id = 41,
+                    Name = "City Walking Tour, Boat Cruise, and Typical Czech Lunch",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "City Tour",
+                    Style = "Culturel",
+                    MaxCapacity = 15,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/41PragueTour.png"
+                        },
+                    ExternalLinks = "https://www.funinprague.eu/en/"
+                },
+
+                new Service
+                {
+                    Id = 42,
+                    Name = "Prague Castle Walking Tour Including Admission Tickets",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Visite culturelle",
+                    Style = "Culturel",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/42PragueVisite.png"
+                        },
+                    ExternalLinks = "https://www.getpragueguide.com/"
+                },
+
+                new Service
+                {
+                    Id = 43,
+                    Name = "Panoramic Vltava River Cruise",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Croisière en bateau",
+                    Style = "Culturel",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/43PragueActivite.png"
+                        },
+                    ExternalLinks = "https://www.premiant.cz/fra/"
+                },
+
+                new Service
+                {
+                    Id = 44,
+                    Name = "3-hour Complete Prague Bike Tour",
+                    Price = 35.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Activité sportive",
+                    Style = "Sportive",
+                    MaxCapacity = 18,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/44PragueActivite.png"
+                    },
+                    ExternalLinks = "https://mijntours.com/prague/"
+                },
+
+                new Service
+                {
+                    Id = 45,
+                    Name = "Prague Kayaking Adventure",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Prague",
+                    Type = "Activité sportive",
+                    Style = "Sportive",
+                    MaxCapacity = 8,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/45PragueActivite.png"
+                    },
+                    ExternalLinks = "https://www.padlujeme.cz/"
+                },
+                // Venise:
+                new Service
+                {
+                    Id = 46,
+                    Name = "Hotel Rialto",
+                    Price = 125.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/46VeniseHotel.png",
+                        },
+                    ExternalLinks = "https://www.rialtohotel.com/"
+                },
+
+                new Service
+                {
+                    Id = 47,
+                    Name = "Hotel Danieli",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/47VeniseHotel.png",
+                    },
+                    ExternalLinks = "https://www.hoteldanieli.com"
+                },
+
+                new Service
+                {
+                    Id = 48,
+                    Name = "Hotel Ca'Sagredo",
+                    Price = 110.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/48VeniseHotel.webp",
+                    },
+                    ExternalLinks = "https://www.casagredohotel.com"
+                },
+
+                new Service
+                {
+                    Id = 49,
+                    Name = "Hotel Londra Palace",
+                    Price = 100.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/49VeniseHotel.webp",
+                    },
+                    ExternalLinks = "https://www.londrapalace.com"
+                },
+
+                new Service
+                {
+                    Id = 50,
+                    Name = "Hotel Canal Grande",
+                    Price = 90.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/50VeniseHotel.png",
+                    },
+                    ExternalLinks = "https://www.hotelcanalgrande.it"
+                },
+
+                new Service
+                {
+                    Id = 51,
+                    Name = "Restaurant Antiche Carampane",
+                    Price = 60.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/51VeniseRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.antichecarampane.com"
+                },
+
+                new Service
+                {
+                    Id = 52,
+                    Name = "Osteria Alle Testiere",
+                    Price = 70.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/52VeniseRestaurant.jpeg",
+                    },
+                    ExternalLinks = "http://www.osterialletestiere.it/"
+                },
+
+                new Service
+                {
+                    Id = 53,
+                    Name = "Trattoria Da Romano",
+                    Price = 55.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/53VeniseRestaurant.png",
+                    },
+                    ExternalLinks = "https://daromano.it/"
+                },
+
+                new Service
+                {
+                    Id = 54,
+                    Name = "Venice Tours",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Visite Guideé",
+                    Style = "Culturel",
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/54VeniseTour.png",
+                    },
+                    ExternalLinks = "https://www.venicetours.it"
+                },
+
+                new Service
+                {
+                    Id = 55,
+                    Name = "Gondola Serenade Tour",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Tour en Gondole",
+                    Style = "Culturel",
+                    MaxCapacity = 4,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/55VeniseTour.png",
+                    },
+                    ExternalLinks = "https://www.gondolaserenade.com"
+                },
+
+                new Service
+                {
+                    Id = 56,
+                    Name = "Visite de la Basilique Saint-Marc",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Culture",
+                    Style = "Culture",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/56VeniseVisite.png",
+                    },
+                    ExternalLinks = "https://www.basilicasanmarco.it"
+                },
+
+                new Service
+                {
+                    Id = 57,
+                    Name = "Museum Gallerie dell'Accademia",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Culture",
+                    Style = "Culturel",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/57VeniseVisite.png",
+                    },
+                    ExternalLinks = "https://www.gallerieaccademia.it"
+                },
+
+                new Service
+                {
+                    Id = 58,
+                    Name = "The Garden Space Wellness & Events",
+                    Price = 70.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Activité",
+                    Style = "Relax",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/58VeniseSpa.png",
+                    },
+                    ExternalLinks = "https://thegardenspacevenice.it/"
+                },
+
+                new Service
+                {
+                    Id = 59,
+                    Name = "Location de vélos à Venise",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Activité",
+                    Style = "Sportive",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/59VeniseVelo.jpeg",
+                    },
+                    ExternalLinks = "https://www.noleggioscooterlido.it/"
+                },
+
+                new Service
+                {
+                    Id = 60,
+                    Name = "Kayak sur les canaux de Venise",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Venise",
+                    Type = "Activité",
+                    Style = "Sportive",
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/60VeniseSport.png",
+                    },
+                    ExternalLinks = "https://www.venicekayak.com/"
+                },
+                // Munich :
+                new Service
+                {
+                    Id = 61,
+                    Name = "Hotel Bayerischer Hof",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/61MunichHotel.png",
+                        },
+                    ExternalLinks = "https://www.bayerischerhof.de/en/index.html"
+                },
+                new Service
+                {
+                    Id = 62,
+                    Name = "Hotel Vier Jahreszeiten Kempinski",
+                    Price = 110.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/62MunichHotel.png",
+                    },
+                    ExternalLinks = "https://www.kempinski.com/en/hotel-vier-jahreszeiten"
+                },
+                new Service
+                {
+                    Id = 63,
+                    Name = "Hotel Munich City Hilton",
+                    Price = 100.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/63MunichHotel.jpeg",
+                    },
+                    ExternalLinks = "https://www.hilton.com/en/hotels/mucchtw-hilton-munich-city/"
+                },
+                new Service
+                {
+                    Id = 64,
+                    Name = "Wombat's City Hostel Munich",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/64MunichHotel.jpeg",
+                        },
+                    ExternalLinks = "https://www.wombats-hostels.com/de/munich"
+                },
+                new Service
+                {
+                    Id = 65,
+                    Name = "Hotel Eurostars Grand Central Munich",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/65MunichHotel.png",
+                    },
+                    ExternalLinks = "https://www.eurostarshotels.co.uk/eurostars-grand-central.html"
+                },
+                new Service
+                {
+                    Id = 66,
+                    Name = "Restaurant Hofbräuhaus",
+                    Price = 50.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/66MunichRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.hofbraeuhaus.de/en/welcome.html"
+                },
+                new Service
+                {
+                    Id = 67,
+                    Name = "Restaurant Tantris",
+                    Price = 70.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/67MunichRestaurant.jpeg",
+                    },
+                    ExternalLinks = "https://tantris.de/en/"
+                },
+                new Service
+                {
+                    Id = 68,
+                    Name = "Restaurant Brenner Grill",
+                    Price = 55.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/68MunichRestaurant.jpeg",
+                    },
+                    ExternalLinks = "https://www.brennergrill.de/en/"
+                },
+                new Service
+                {
+                    Id = 69,
+                    Name = "Simply Munich Tours",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Activité",
+                    Style = "Culturel",
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/69MunichTours.png",
+                    },
+                    ExternalLinks = "https://www.munich.travel/en/"
+                },
+                new Service
+                {
+                    Id = 70,
+                    Name = "Pinakothek der Moderne",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Activité",
+                    Style = "Culturel",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/70MunichVisite.jpeg",
+                    },
+                    ExternalLinks = "https://www.pinakothek-der-moderne.de/en/"
+                },
+                new Service
+                {
+                    Id = 71,
+                    Name = "Excursion classique de Munich à vélo",
+                    Price = 70.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Activité sportive",
+                    Style = "Sport",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/71MunichVelo.png",
+                    },
+                    ExternalLinks = "https://www.mikesbiketours.com/munich/"
+                },
+                new Service
+                {
+                    Id = 72,
+                    Name = "Excursion le long de la route romantique de Rothenburg à Harburg",
+                    Price = 60.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Tour guidé",
+                    Style = "Culturel",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/72MunichVisite.webp",
+                    },
+                    ExternalLinks = "https://www.munichdaytrips.com/en"
+                },
+                new Service
+                {
+                    Id = 73,
+                    Name = "Visite privée à pied de Munich",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Tour guidé",
+                    Style = "Culturel",
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/73MunichVisite.jpeg",
+                    },
+                    ExternalLinks = "https://www.inmunichtours.com/"
+                },
+
+                new Service
+                {
+                    Id = 74,
+                    Name = "Randonnée privée dans les Alpes bavaroises",
+                    Price = 289.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Munich",
+                    Type = "Activitée Sportive",
+                    Style = "Sport",
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/74MunichRandonnee.webp",
+                    },
+                    ExternalLinks = "https://www.munich-wanderland.com/"
+                },
+
+                // Londres :
+                new Service
+                {
+                    Id = 75,
+                    Name = "The Ritz London",
+                    Price = 250.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/75LondresHotel.png",
+                    },
+                    ExternalLinks = "https://www.theritzlondon.com"
+                },
+
+                new Service
+                {
+                    Id = 76,
+                    Name = "The Savoy",
+                    Price = 220.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/76LondresHotel.png",
+                    },
+                    ExternalLinks = "https://www.thesavoylondon.com"
+                },
+
+                new Service
+                {
+                    Id = 77,
+                    Name = "Claridge's",
+                    Price = 200.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/77LondresHotel.png",
+                    },
+                    ExternalLinks = "https://www.claridges.co.uk"
+                },
+
+                new Service
+                {
+                    Id = 78,
+                    Name = "The Dorchester",
+                    Price = 180.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/78LondresHotel.png",
+                    },
+                    ExternalLinks = "https://www.dorchestercollection.com/en/london/the-dorchester"
+                },
+
+                new Service
+                {
+                    Id = 79,
+                    Name = "Shangri-La Hotel at The Shard",
+                    Price = 160.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/79LondresHotel.webp",
+                    },
+                    ExternalLinks = "https://www.shangri-la.com/london/shangrila"
+                },
+
+                new Service
+                {
+                    Id = 80,
+                    Name = "The Ledbury",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/80LondresRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.theledbury.com"
+                },
+
+                new Service
+                {
+                    Id = 81,
+                    Name = "Sketch",
+                    Price = 100.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 120,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/81LondresRestaurant.webp",
+                    },
+                    ExternalLinks = "https://www.sketch.london"
+                },
+
+                new Service
+                {
+                    Id = 82,
+                    Name = "Dishoom",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/82LondresRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.dishoom.com"
+                },
+
+                new Service
+                {
+                    Id = 83,
+                    Name = "London Walks",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Visite Guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 15,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/83LondresService.jpeg",
+                    },
+                    ExternalLinks = "https://www.walks.com/london"
+                },
+
+                new Service
+                {
+                    Id = 84,
+                    Name = "The British Museum",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Activité Culturelle",
+                    Style = "Culture",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/84LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.britishmuseum.org"
+                },
+
+                new Service
+                {
+                    Id = 85,
+                    Name = "Tower of London",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Activité Culturelle",
+                    Style = "Culturel",
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/85LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.hrp.org.uk/tower-of-london"
+                },
+
+                new Service
+                {
+                    Id = 86,
+                    Name = "Thames River Cruise",
+                    Price = 14.9,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Croisière",
+                    Style = "Culturel",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/86LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.thames-river-cruise.com/it/?msclkid=9dac8ae633d61bc42889ee9ed0ed5606"
+                },
+
+                new Service
+                {
+                    Id = 87,
+                    Name = "Visite au Hyde Park",
+                    Price = 0.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Visite",
+                    Style = "Culturel",
+                    MaxCapacity = 1000,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/87LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.royalparks.org.uk/parks/hyde-park"
+                },
+
+                new Service
+                {
+                    Id = 88,
+                    Name = "Excursion matinale à Stonehenge",
+                    Price = 35.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Visite Guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/88LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.daytourslondon.com/half-day-stonehenge-tour-from-london/"
+                },
+
+                new Service
+                {
+                    Id = 89,
+                    Name = "Croisière sur la Tamise en bateau à grande vitesse",
+                    Price = 50.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Croisière en bateau",
+                    Style = "Sportive",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/89LondresActivite.png",
+                    },
+                    ExternalLinks = "https://thamesribexperience.com/"
+                },
+
+                new Service
+                {
+                    Id = 90,
+                    Name = "Visite au Musée d'Histoire Naturelle de Londres",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Visite Culturelle",
+                    Style = "Culturel",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/90LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.nhm.ac.uk/visit.html"
+                },
+                // Athènes
+                new Service
+                {
+                    Id = 91,
+                    Name = "Athens Backpackers",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/91AthensHostel.png",
+                        },
+                    ExternalLinks = "https://backpackers.gr/"
+                },
+
+                new Service
+                {
+                    Id = 92,
+                    Name = "City Circus Athens",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/92AthensHostel.png",
+                    },
+                    ExternalLinks = "https://www.citycircus.gr"
+                },
+
+                new Service
+                {
+                    Id = 93,
+                    Name = "Athens Studios",
+                    Price = 18.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 120,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/93AthensHostel.webp",
+                    },
+                    ExternalLinks = "https://www.athensstudios.gr"
+                },
+
+                new Service
+                {
+                    Id = 94,
+                    Name = "Student & Travellers Inn",
+                    Price = 17.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/94AthensHostel.webp",
+                    },
+                    ExternalLinks = "https://the-student-travellers-inn.athens-greecehotels.com/en/"
+                },
+
+                new Service
+                {
+                    Id = 95,
+                    Name = "San Remo Hostel",
+                    Price = 16.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/95AthensHostel.jpeg",
+                    },
+                    ExternalLinks = "http://hostelsanremoathens.com/"
+                },
+
+                new Service
+                {
+                    Id = 96,
+                    Name = "Dionysos Zonars",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/96AthensRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.dionysoszonars.gr"
+                },
+
+                new Service
+                {
+                    Id = 97,
+                    Name = "Thes Greek Creative Cuisine",
+                    Price = 70.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/97.jpeg",
+                    },
+                    ExternalLinks = "https://thes.katalogos.menu/#/el"
+                },
+
+                new Service
+                {
+                    Id = 98,
+                    Name = "Liondi",
+                    Price = 60.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/98AthensRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.liondi.com/"
+                },
+
+                new Service
+                {
+                    Id = 99,
+                    Name = "Athens Walking Tours",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Guide",
+                    Style = "",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/99AthensActivite.svg",
+                    },
+                    ExternalLinks = "https://www.athenswalkingtours.gr"
+                },
+
+                new Service
+                {
+                    Id = 100,
+                    Name = "Acropolis Museum",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Culture",
+                    Style = "Culture",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/100AthensActivite.jpeg",
+                    },
+                    ExternalLinks = "https://www.theacropolismuseum.gr"
+                },
+
+                new Service
+                {
+                    Id = 101,
+                    Name = "National Archaeological Museum",
+                    Price = 10.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Culture",
+                    Style = "",
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/101AthensActivite.png",
+                    },
+                    ExternalLinks = "https://www.namuseum.gr"
+                },
+
+                new Service
+                {
+                    Id = 102,
+                    Name = "Croisière d'une journée avec déjeuner et boissons inclus",
+                    Price = 135.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Visite guidée",
+                    Style = "Nature",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/102AthensActivite.png",
+                    },
+                    ExternalLinks = "https://alldaycruise.net/"
+                },
+
+                new Service
+                {
+                    Id = 103,
+                    Name = "Balade l'après-midi à l'Acropole",
+                    Price = 56.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Sport",
+                    Style = "",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/103AthensActivite.png",
+                    },
+                    ExternalLinks = "https://www.athens-walks.com/"
+                },
+
+                new Service
+                {
+                    Id = 104,
+                    Name = "Athènes hors des sentiers battus",
+                    Price = 53.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Visite Guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/104AthensActivite.png",
+                    },
+                    ExternalLinks = "https://www.withlocals.com/fr/experiences/greece/athens/"
+                },
+                // Barcelona
+                new Service
+                {
+                    Id = 105,
+                    Name = "Yeah Barcelona Hostel",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/105BarcelonaHostel.png",
+                    },
+                    ExternalLinks = "https://www.yeahhostels.com/barcelona"
+                },
+
+                new Service
+                {
+                    Id = 106,
+                    Name = "Safestay Barcelona Sea",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/106BarcelonaHostel.png",
+                    },
+                    ExternalLinks = "https://www.safestay.com/barcelona-sea"
+                },
+
+                new Service
+                {
+                    Id = 107,
+                    Name = "Casa Gracia Barcelona Hostel",
+                    Price = 22.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 120,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/107BarcelonaHostel.jpeg",
+                    },
+                    ExternalLinks = "https://www.casagraciabcn.com"
+                },
+
+                new Service
+                {
+                    Id = 108,
+                    Name = "Hotel Arts Barcelona",
+                    Price = 250.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/108BarcelonaHotel.png",
+                    },
+                    ExternalLinks = "https://www.hotelartsbarcelona.com"
+                },
+
+                new Service
+                {
+                    Id = 109,
+                    Name = "W Barcelona",
+                    Price = 200.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 180,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/109BarcelonaHotel.webp",
+                    },
+                    ExternalLinks = "https://www.marriott.com/hotels/travel/bcnwh-w-barcelona"
+                },
+
+                new Service
+                {
+                    Id = 110,
+                    Name = "Con Garcia",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/110Barcelonarestaurant.png",
+                    },
+                    ExternalLinks = "https://congraciarestaurant.com/"
+                },
+
+                new Service
+                {
+                    Id = 111,
+                    Name = "El Celler de Can Roca",
+                    Price = 250.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/111Barcelonarestaurant.png",
+                    },
+                    ExternalLinks = "https://www.cellercanroca.com"
+                },
+
+                new Service
+                {
+                    Id = 112,
+                    Name = "Disfrutar",
+                    Price = 180.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/112Barcelonarestaurant.png",
+                    },
+                    ExternalLinks = "https://www.disfrutarbarcelona.com"
+                },
+
+                new Service
+                {
+                    Id = 113,
+                    Name = "Visite guidée du quartier gotique",
+                    Price = 106.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 15,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/113BarcelonaActivite.jpeg",
+                    },
+                    ExternalLinks = "https://www.contexttravel.com/cities/barcelona"
+                },
+
+                new Service
+                {
+                    Id = 114,
+                    Name = "Promenade autour du passé noir de l'histoire de Barcelona",
+                    Price = 17.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/114BarcelonaActivite.webp",
+                    },
+                    ExternalLinks = "https://www.runnerbeantours.com/barcelona"
+                },
+
+                new Service
+                {
+                    Id = 115,
+                    Name = "Visita de la Sagrada Familia",
+                    Price = 26.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Cultural Activity",
+                    Style = "",
+                    MaxCapacity = 1000,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/115BarcelonaActivite.jpeg",
+                    },
+                    ExternalLinks = "https://sagradafamilia.org"
+                },
+
+                new Service
+                {
+                    Id = 116,
+                    Name = "Park Güell",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite",
+                    Style = "Nature",
+                    MaxCapacity = 500,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/116BarcelonaActivite.png",
+                    },
+                    ExternalLinks = "https://parkguell.barcelona"
+                },
+
+                new Service
+                {
+                    Id = 117,
+                    Name = "Picasso Museum",
+                    Price = 10.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite",
+                    Style = "Culture",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/117BarcelonaActivite.png",
+                    },
+                    ExternalLinks = "https://museupicassobcn.cat/"
+                },
+
+                new Service
+                {
+                    Id = 118,
+                    Name = "Mercat de la Boqueria",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite",
+                    Style = "Culture",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/118BarcelonaActivite.jpeg",
+                    },
+                    ExternalLinks = "https://www.boqueria.barcelona/"
+                },
+
+                new Service
+                {
+                    Id = 119,
+                    Name = "Barcelona Bike Tour",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite",
+                    Style = "Sportive",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/119BarcelonaActivite.png",
+                    },
+                    ExternalLinks = "https://www.buenavistatours.es/"
+                },
+                // Innsbruck :
+                new Service
+                {
+                    Id = 120,
+                    Name = "Hostel Marmota",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/120InnsbruckHostel.png",
+                    },
+                    ExternalLinks = "https://www.hostelmarmota.com"
+                },
+
+                new Service
+                {
+                    Id = 121,
+                    Name = "Jugendherberge Youth Hostel Innsbruck",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/121InnsbruckHostel.png",
+                    },
+                    ExternalLinks = "https://www.youth-hostel-innsbruck.at/"
+                },
+                // Hôtels
+
+                new Service
+                {
+                    Id = 122,
+                    Name = "Das Innsbruck Hotel",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/122InnsbruckHotel.png",
+                    },
+                    ExternalLinks = "https://www.hotelinnsbruck.com"
+                },
+
+                new Service
+                {
+                    Id = 123,
+                    Name = "AC Hotel Innsbruck",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/123InnsbruckHotel.webp",
+                    },
+                    ExternalLinks = "https://www.marriott.com/hotels/travel/innac-ac-hotel-innsbruck"
+                },
+
+                new Service
+                {
+                    Id = 124,
+                    Name = "Sitzwohl Restaurant",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/124InnsbruckRestaurant.svg",
+                    },
+                    ExternalLinks = "https://www.sitzwohl-innsbruck.at"
+                },
+
+                new Service
+                {
+                    Id = 125,
+                    Name = "Lichtblick Restaurant",
+                    Price = 100.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/125InnsbruckRestaurant.svg",
+                    },
+                    ExternalLinks = "https://www.restaurant-lichtblick.at/"
+                },
+
+                new Service
+                {
+                    Id = 126,
+                    Name = "Visite des Dolomites, des lacs y compris Braies d'Innsbruck",
+                    Price = 90.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite guidée",
+                    Style = "Nature",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/126InnsbruckActivite.webp",
+                    },
+                    ExternalLinks = "https://www.tyroltravel.net/experiences/tour-of-dolomites%2C-alpine-lakes-including-braies"
+                },
+
+                new Service
+                {
+                    Id = 127,
+                    Name = "Zoo Alpin d'Innsbruck",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Nature",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/127InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.alpenzoo.at"
+                },
+
+                new Service
+                {
+                    Id = 128,
+                    Name = "Visite audioguidée d'une heure et demie d'Innsbruck",
+                    Price = 27.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite guidée",
+                    Style = "Culture",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/127InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.tyroltravel.net/product-page/innsbrucktourdg"
+                },
+
+                new Service
+                {
+                    Id = 129,
+                    Name = "Golden Roof Museum",
+                    Price = 10.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Culture",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/129InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.innsbruck.gv.at/en/freizeit/kultur/museen-stadtarchiv/museum-goldenes-dachl"
+                },
+
+                new Service
+                {
+                    Id = 130,
+                    Name = "Hofburg Innsbruck Museum",
+                    Price = 12.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Culture",
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/130InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.burghauptmannschaft.at/Betriebe/Hofburg-Innsbruck.html"
+                },
+
+                new Service
+                {
+                    Id = 131,
+                    Name = "Bergisel Ski Jump",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Nature" + " " + "Sport",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/131InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.bergisel.info"
+                },
+
+                new Service
+                {
+                    Id = 132,
+                    Name = "Nordkette Cable Car",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Nature" + " " + "Sport",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/132InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.nordkette.com/en"
+                },
+
+                new Service
+                {
+                    Id = 133,
+                    Name = "Complex Olympic OlympiaWorld Innsbruck",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Sport Activity",
+                    Style = "Culture" + " " + "Sport",
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/133InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.olympiaworld.at"
+                },
+
+                new Service
+                {
+                    Id = 134,
+                    Name = "Up Stream Surfing Innsbruck",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Activité",
+                    Style = "Nature" + " " + "Sport",
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/134InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.upstreamsurfing.com/"
+                },
+                //Annecy
+                new Service
+                {
+                    Id = 135,
+                    Name = "Allobroges Park Hotel",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Accomodation",
+                    Style = "",
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/135.jpeg",
+                    },
+                    ExternalLinks = "https://www.allobrogesparkhotel.com"
+                },
+
+                new Service
+                {
+                    Id = 136,
+                    Name = "Hotel des Alpes",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Accomodation",
+                    Style = "",
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/136.jpeg",
+                    },
+                    ExternalLinks = "https://www.hoteldesalpes-annecy.com"
+                },
+
+                // Hôtels
+                new Service
+                {
+                    Id = 137,
+                    Name = "Hotel Imperial Palace",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Accomodation",
+                    Style = "",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/137.jpeg",
+                    },
+                    ExternalLinks = "https://www.imperialpalace.fr"
+                },
+
+                new Service
+                {
+                    Id = 138,
+                    Name = "Hotel Les Tresoms",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Accomodation",
+                    Style = "",
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/138.jpeg",
+                    },
+                    ExternalLinks = "https://www.lestresoms.com"
+                },
+
+                // Restaurants
+                new Service
+                {
+                    Id = 139,
+                    Name = "L'Esquisse Restaurant",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Restaurant",
+                    Style = "",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/139.jpeg",
+                    },
+                    ExternalLinks = "https://www.restaurant-lesquisse.fr"
+                },
+
+                new Service
+                {
+                    Id = 140,
+                    Name = "Le Belvedere Restaurant",
+                    Price = 100.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Restaurant",
+                    Style = "",
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/140.jpeg",
+                    },
+                    ExternalLinks = "https://www.belvedere-annecy.com"
+                },
+
+                // Visites guidées
+                new Service
+                {
+                    Id = 141,
+                    Name = "Annecy Segway Tours",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Guided Tour",
+                    Style = "",
+                    MaxCapacity = 15,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/141.jpeg",
+                    },
+                    ExternalLinks = "https://www.annecy-segway-tours.com"
+                },
+
+                new Service
+                {
+                    Id = 142,
+                    Name = "Annecy City Sightseeing Tour",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Guided Tour",
+                    Style = "",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/142.jpeg",
+                    },
+                    ExternalLinks = "https://www.annecy-city-sightseeing-tour.com"
+                },
+
+                // Activités culturelles
+                new Service
+                {
+                    Id = 143,
+                    Name = "Château d'Annecy",
+                    Price = 10.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Cultural Activity",
+                    Style = "",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/143.jpeg",
+                    },
+                    ExternalLinks = "https://en.chateau-annecy.com"
+                },
+
+                new Service
+                {
+                    Id = 144,
+                    Name = "Palais de l'Isle",
+                    Price = 8.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Cultural Activity",
+                    Style = "",
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/144.jpeg",
+                    },
+                    ExternalLinks = "https://www.lac-annecy.com"
+                },
+
+                new Service
+                {
+                    Id = 145,
+                    Name = "Musée-Château d'Annecy",
+                    Price = 12.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Cultural Activity",
+                    Style = "",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/145.jpeg",
+                    },
+                    ExternalLinks = "https://en.chateau-annecy.com"
+                },
+
+                // Activités sportives
+                new Service
+                {
+                    Id = 146,
+                    Name = "Lake Annecy Watersports",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Sport Activity",
+                    Style = "",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/146.jpeg",
+                    },
+                    ExternalLinks = "https://www.annecy-watersports.com"
+                },
+
+                new Service
+                {
+                    Id = 147,
+                    Name = "Annecy Paragliding",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Sport Activity",
+                    Style = "",
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/147.jpeg",
+                    },
+                    ExternalLinks = "https://www.annecy-paragliding.com"
                 }
 
                 );
