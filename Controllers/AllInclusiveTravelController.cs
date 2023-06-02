@@ -77,7 +77,7 @@ public class AllInclusiveTravelController : Controller
 
     // Action pour le traitement du formulaire de création d'un AllInclusiveTravel
     [HttpPost]
-    public IActionResult CreateAllInclusiveTravel([Bind("TravelId,Name,Description,SelectedServiceId")] AllInclusiveTravelViewModel model)
+    public IActionResult CreateAllInclusiveTravel(AllInclusiveTravelViewModel model, List<int> SelectedServices)
     {
         // Récupéreration de l'ID du client connecté depuis le contexte HTTP
         int customerId = int.Parse(HttpContext.User.Identity.Name);
@@ -108,7 +108,7 @@ public class AllInclusiveTravelController : Controller
                     }
                 }
 
-                return RedirectToAction("List"); // Redirection vers la page de la liste des AllInclusiveTravel
+                return RedirectToAction ("List"); // Redirection vers la page de la liste des AllInclusiveTravel
             }
             catch (Exception ex)
             {

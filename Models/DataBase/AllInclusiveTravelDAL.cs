@@ -47,12 +47,12 @@ namespace LittleBigTraveler.Models.DataBase
         public int CreateAllInclusiveTravel(int customerId, int travelId, string name, string description, List<Service> services)
         {
             var customer = _bddContext.Customers.Include(c => c.User).FirstOrDefault(c => c.Id == customerId);
-            var travel = _bddContext.Travels.FirstOrDefault(t => t.Id == travelId);
-            //var travel = _bddContext.Travels
-            //    .Include(t => t.Customer)
-            //        .ThenInclude(c => c.User)
-            //    .Include(t => t.Destination)
-            //    .FirstOrDefault(t => t.Id == travelId);
+            //var travel = _bddContext.Travels.FirstOrDefault(t => t.Id == travelId);
+            var travel = _bddContext.Travels
+                .Include(t => t.Customer)
+                    .ThenInclude(c => c.User)
+                .Include(t => t.Destination)
+                .FirstOrDefault(t => t.Id == travelId);
 
 
             if (customer != null && travel != null)
