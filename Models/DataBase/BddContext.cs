@@ -1629,7 +1629,7 @@ namespace LittleBigTraveler.Models.DataBase
                     },
                     ExternalLinks = "https://www.munich-wanderland.com/"
                 },
-           
+
                 // Londres :
                 new Service
                 {
@@ -1881,11 +1881,265 @@ namespace LittleBigTraveler.Models.DataBase
                     MaxCapacity = 30,
                     Images = new List<string>
                     {
-                        "/ImagesServices/88LondresActivite.png",
+                        "/ImagesServices/89LondresActivite.png",
                     },
                     ExternalLinks = "https://thamesribexperience.com/"
-                }
+                },
 
+                new Service
+                {
+                    Id = 90,
+                    Name = "Visite au Musée d'Histoire Naturelle de Londres",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Londres",
+                    Type = "Visite Culturelle",
+                    Style = "Culturel",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/90LondresActivite.png",
+                    },
+                    ExternalLinks = "https://www.nhm.ac.uk/visit.html"
+                },
+                // Athènes
+                new Service
+                {
+                    Id = 91,
+                    Name = "Athens Backpackers",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                        {
+                            "/ImagesServices/91AthensHostel.png",
+                        },
+                    ExternalLinks = "https://backpackers.gr/"
+                },
+
+                new Service
+                {
+                    Id = 92,
+                    Name = "City Circus Athens",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/92AthensHostel.png",
+                    },
+                    ExternalLinks = "https://www.citycircus.gr"
+                },
+
+                new Service
+                {
+                    Id = 93,
+                    Name = "Athens Studios",
+                    Price = 18.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 120,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/93AthensHostel.webp",
+                    },
+                    ExternalLinks = "https://www.athensstudios.gr"
+                },
+                
+                new Service
+                {
+                    Id = 94,
+                    Name = "Student & Travellers Inn",
+                    Price = 17.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/94AthensHostel.webp",
+                    },
+                    ExternalLinks = "https://the-student-travellers-inn.athens-greecehotels.com/en/"
+                },
+
+                new Service
+                {
+                    Id = 95,
+                    Name = "San Remo Hostel",
+                    Price = 16.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/95AthensHostel.jpeg",
+                    },
+                    ExternalLinks = "http://hostelsanremoathens.com/"
+                },
+
+                new Service
+                {
+                    Id = 96,
+                    Name = "Dionysos Zonars",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/96AthensRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.dionysoszonars.gr"
+                },
+
+                new Service
+                {
+                    Id = 97,
+                    Name = "Thes Greek Creative Cuisine",
+                    Price = 70.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/97.jpeg",
+                    },
+                    ExternalLinks = "https://thes.katalogos.menu/#/el"
+                },
+
+                new Service
+                {
+                    Id = 98,
+                    Name = "Liondi",
+                    Price = 60.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/98AthensRestaurant.png",
+                    },
+                    ExternalLinks = "https://www.liondi.com/"
+                },
+
+                new Service
+                {
+                    Id = 99,
+                    Name = "Athens Walking Tours",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Guide",
+                    Style = "",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/99AthensActivite.svg",
+                    },
+                    ExternalLinks = "https://www.athenswalkingtours.gr"
+                },
+
+                new Service
+                {
+                    Id = 100,
+                    Name = "Acropolis Museum",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Culture",
+                    Style = "Culture",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/100AthensActivite.jpeg",
+                    },
+                    ExternalLinks = "https://www.theacropolismuseum.gr"
+                },
+
+                new Service
+                {
+                    Id = 101,
+                    Name = "National Archaeological Museum",
+                    Price = 10.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Culture",
+                    Style = "",
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/101AthensActivite.png",
+                    },
+                    ExternalLinks = "https://www.namuseum.gr"
+                },
+
+                new Service
+                {
+                    Id = 102,
+                    Name = "Croisière d'une journée avec déjeuner et boissons inclus",
+                    Price = 135.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Visite guidée",
+                    Style = "Nature",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/102AthensActivite.png",
+                    },
+                    ExternalLinks = "https://alldaycruise.net/"
+                },
+
+                new Service
+                {
+                    Id = 103,
+                    Name = "Balade l'après-midi à l'Acropole",
+                    Price = 56.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Sport",
+                    Style = "",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/103AthensActivite.png",
+                    },
+                    ExternalLinks = "https://www.athens-walks.com/"
+                },
+
+                new Service
+                {
+                    Id = 104,
+                    Name = "Athènes hors des sentiers battus",
+                    Price = 53.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Athènes",
+                    Type = "Visite Guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 10,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/104AthensActivite.png",
+                    },
+                    ExternalLinks = "https://www.withlocals.com/fr/experiences/greece/athens/"
+                }
 
 
 
