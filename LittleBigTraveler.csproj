@@ -22,7 +22,6 @@
     <None Remove="Models\TravelClasses\" />
     <None Remove="Models\DataBase\" />
     <None Remove="Views\Shared\" />
-    <None Remove="Views\Profil\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -36,11 +35,12 @@
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
-    <Folder Include="Views\Profil\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
     <Content Remove="wwwroot\css\" />
     <Content Remove="wwwroot\images\" />
+    <Content Remove="wwwroot\js\" />
   </ItemGroup>
 </Project>
