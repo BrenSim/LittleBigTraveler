@@ -22,10 +22,15 @@
     <None Remove="Models\TravelClasses\" />
     <None Remove="Models\DataBase\" />
     <None Remove="Views\Shared\" />
+<<<<<<< HEAD
     <None Remove="Views\Destination\" />
     <None Remove="Views\Service\" />
     <None Remove="Views\User\" />
     <None Remove="Views\Travel\" />
+=======
+    <None Remove="Views\User\" />
+    <None Remove="Views\Service\" />
+>>>>>>> filldb
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -38,13 +43,22 @@
     <Folder Include="Models\DataBase\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\css\" />
+<<<<<<< HEAD
     <Folder Include="Views\Destination\" />
     <Folder Include="Views\Service\" />
     <Folder Include="Views\User\" />
     <Folder Include="Views\Travel\" />
+=======
+    <Folder Include="wwwroot\ImagesDestinations\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Service\" />
+    <Folder Include="wwwroot\ImagesServices\" />
+>>>>>>> filldb
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
     <Content Remove="wwwroot\css\" />
+    <Content Remove="wwwroot\ImagesDestinations\" />
+    <Content Remove="wwwroot\ImagesServices\" />
   </ItemGroup>
 </Project>
