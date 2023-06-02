@@ -16,7 +16,12 @@ namespace LittleBigTraveler.Models.TravelClasses
         public List<string> Images { get; set; } // Liste d'images
         public string ExternalLinks { get; set; }
 
-        public virtual List<ServiceCatalog> ServiceCatalogs { get; set; }
+        public int DestinationId { get; set; }
+        public virtual Destination Destination { get; set; }
+
+        //public virtual List<AllInclusiveTravel> AllInclusiveTravels { get; set; }
+
+        //public virtual List<ServiceCatalog> ServiceCatalogs { get; set; }
         //public virtual List<Booking> Bookings { get; set; }
     }
 }

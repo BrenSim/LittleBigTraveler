@@ -2,6 +2,7 @@
 using System.Linq;
 using LittleBigTraveler.Models.DataBase;
 using LittleBigTraveler.Models.TravelClasses;
+using Microsoft.EntityFrameworkCore;
 
 namespace LittleBigTraveler.Models.DataBase
 {
@@ -93,7 +94,18 @@ namespace LittleBigTraveler.Models.DataBase
         // Récupération des données "Destination" par ID
         public Destination GetDestinationWithId(int id)
         {
-            return _bddContext.Destinations.FirstOrDefault(d => d.Id == id);
+            return _bddContext.Destinations
+                           .Include(d => d.Services)  // Charge les services associés
+                           .FirstOrDefault(d => d.Id == id);
         }
+
+
+        public List<Service> GetServicesByDestinationId(int destinationId)
+        {
+            return _bddContext.Services
+                       .Where(s => s.DestinationId == destinationId)
+                       .ToList();
+        }
+
     }
 }

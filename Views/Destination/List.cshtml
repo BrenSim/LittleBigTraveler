@@ -1,5 +1,4 @@
 ﻿@model List<LittleBigTraveler.Models.TravelClasses.Destination>
-
 @{
     Layout = "_Layout";
     ViewData["Title"] = "Liste des destinations";
@@ -32,7 +31,8 @@
                             <img src="@image" alt="Image" class="img-thumbnail" />
                         }
                     </td>
-                    <td>@destination.ExternalLinks</td>
+                    <td><a href="@destination.ExternalLinks">Lien</a></td>
+
                     <td>
                         <a href="/Destination/ChangeDestination/@destination.Id" class="btn btn-secondary mr-2">Modifier</a>
                         <a href="/Destination/DeleteDestinations/@destination.Id" class="btn btn-danger">Supprimer</a>

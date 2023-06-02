@@ -115,7 +115,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/BrestBateau.jpg",
                         },
-                    ExternalLinks = "UnLien"
+                    ExternalLinks = "UnLien",
+                    DestinationId = 1
                 },
                     new Service
                     {
@@ -132,7 +133,8 @@ namespace LittleBigTraveler.Models.DataBase
                             "/ImagesTest/BrestVoile.jpg",
 
                         },
-                        ExternalLinks = "UnLien"
+                        ExternalLinks = "UnLien",
+                        DestinationId = 1
                     },
                     new Service
                     {
@@ -149,7 +151,8 @@ namespace LittleBigTraveler.Models.DataBase
                             "/ImagesTest/RestaurantBrest.jpg",
 
                         },
-                        ExternalLinks = "UnLien"
+                        ExternalLinks = "UnLien",
+                        DestinationId = 1
                     },
                     // Services pour Pau
                     new Service
@@ -166,7 +169,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/Train.jpg",
                         },
-                        ExternalLinks = "UnLien"
+                        ExternalLinks = "UnLien",
+                        DestinationId = 2
                     },
                     new Service
                     {
@@ -182,7 +186,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/PauRando.jpg",
                         },
-                        ExternalLinks = "UnLien"
+                        ExternalLinks = "UnLien",
+                        DestinationId = 2
                     },
                     new Service
                     {
@@ -199,7 +204,8 @@ namespace LittleBigTraveler.Models.DataBase
                             "/ImagesTest/PauRestaurant.jpg",
 
                         },
-                        ExternalLinks = "UnLien"
+                        ExternalLinks = "UnLien",
+                        DestinationId = 2
                     }
                 );
 

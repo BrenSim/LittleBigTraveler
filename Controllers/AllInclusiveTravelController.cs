@@ -40,15 +40,17 @@ public class AllInclusiveTravelController : Controller
             var travel = travelDAL.GetTravelById(travelId);
             if (travel == null)
             {
-                return NotFound("Invalid travel.");
+                return NotFound("Le voyage n'est pas valide");
             }
+
+            var destinationId = travel.DestinationId; // Accéder à la propriété DestinationId du voyage
 
             using (var destinationDAL = new DestinationDAL())
             {
-                var destination = destinationDAL.GetDestinationById(travel.DestinationId);
+                var destination = destinationDAL.GetDestinationWithId(destinationId);
                 if (destination == null)
                 {
-                    return NotFound("Invalid destination.");
+                    return NotFound("Destination non valide");
                 }
 
                 var services = destination.Services;
@@ -60,19 +62,24 @@ public class AllInclusiveTravelController : Controller
                     Name = "",
                     Description = "",
                     Services = services,
-                    SelectedServiceIds = new List<int>()
+                    SelectedServiceId = new List<int>()
                 };
+
+                // Affecter les services disponibles au modèle
+                model.AvailableServices = services;
 
                 return View(model);
             }
         }
     }
 
+
+
     // Action pour le traitement du formulaire de création d'un AllInclusiveTravel
     [HttpPost]
-    public IActionResult CreateAllInclusiveTravel([Bind("TravelId,Name,Description,SelectedServiceIds")] AllInclusiveTravelViewModel model)
+    public IActionResult CreateAllInclusiveTravel([Bind("TravelId,Name,Description,SelectedServiceId")] AllInclusiveTravelViewModel model)
     {
-        // Récupérer l'ID du client connecté depuis le contexte HTTP
+        // Récupéreration de l'ID du client connecté depuis le contexte HTTP
         int customerId = int.Parse(HttpContext.User.Identity.Name);
 
         using (var allInclusiveTravelDAL = new AllInclusiveTravelDAL(HttpContextAccessor))
@@ -83,30 +90,76 @@ public class AllInclusiveTravelController : Controller
                 var travel = allInclusiveTravelDAL.GetTravelById(travelId);
                 if (travel == null)
                 {
-                    return NotFound("Invalid travel.");
+                    return NotFound("le travel n'est pas valide FORM");
                 }
 
-                var services = new List<Service>();
+                // Création de voyage tout compris sans services.
+                int allInclusiveTravelId = allInclusiveTravelDAL.CreateAllInclusiveTravel(customerId, travelId, model.Name, model.Description, new List<Service>());
+
                 if (model.SelectedServiceId != null && model.SelectedServiceId.Any())
                 {
                     using (var serviceDAL = new ServiceDAL())
                     {
-                        services = serviceDAL.GetServicesByIds(model.SelectedServiceId);
+                        foreach (var serviceId in model.SelectedServiceId)
+                        {
+                            var service = serviceDAL.GetServiceWithId(serviceId);
+                                        allInclusiveTravelDAL.AddServiceToAllInclusiveTravel(allInclusiveTravelId, service);
+                        }
                     }
                 }
 
-                allInclusiveTravelDAL.CreateAllInclusiveTravel(customerId, travelId, model.Name, model.Description, services);
-                return RedirectToAction("List"); // Rediriger vers la page de la liste des AllInclusiveTravel
+                return RedirectToAction("List"); // Redirection vers la page de la liste des AllInclusiveTravel
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
 
-            // Si une erreur s'est produite, revenir à la vue avec les données saisies
+            // Si une erreur revenir à la vue avec les données saisies
             return View(model);
         }
     }
+
+
+
+    //[HttpPost]
+    //public IActionResult CreateAllInclusiveTravel([Bind("TravelId,Name,Description,SelectedServiceIds")] AllInclusiveTravelViewModel model)
+    //{
+    //    // Récupérer l'ID du client connecté depuis le contexte HTTP
+    //    int customerId = int.Parse(HttpContext.User.Identity.Name);
+
+    //    using (var allInclusiveTravelDAL = new AllInclusiveTravelDAL(HttpContextAccessor))
+    //    {
+    //        try
+    //        {
+    //            var travelId = model.TravelId;
+    //            var travel = allInclusiveTravelDAL.GetTravelById(travelId);
+    //            if (travel == null)
+    //            {
+    //                return NotFound("le travel n'est pas valide FORM");
+    //            }
+
+    //            var services = new List<Service>();
+    //            if (model.SelectedServiceId != null && model.SelectedServiceId.Any())
+    //            {
+    //                using (var serviceDAL = new ServiceDAL())
+    //                {
+    //                    services = serviceDAL.GetServiceWithIds(model.SelectedServiceId);
+    //                }
+    //            }
+
+    //            allInclusiveTravelDAL.CreateAllInclusiveTravel(customerId, travelId, model.Name, model.Description, services);
+    //            return RedirectToAction("List"); // Rediriger vers la page de la liste des AllInclusiveTravel
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            ModelState.AddModelError("", ex.Message);
+    //        }
+
+    //        // Si une erreur s'est produite, revenir à la vue avec les données saisies
+    //        return View(model);
+    //    }
+    //}
 
     // Action pour supprimer un AllInclusiveTravel
     public IActionResult DeleteAllInclusiveTravel(int id)
@@ -133,7 +186,7 @@ public class AllInclusiveTravelController : Controller
             var allInclusiveTravel = allInclusiveTravelDAL.GetAllInclusiveTravelById(id);
             if (allInclusiveTravel == null)
             {
-                return NotFound("Invalid AllInclusiveTravel.");
+                return NotFound("AllInclusiveTravel incorrect");
             }
 
             var model = new AllInclusiveTravelViewModel(HttpContextAccessor)
@@ -161,15 +214,15 @@ public class AllInclusiveTravelController : Controller
                 var allInclusiveTravel = allInclusiveTravelDAL.GetAllInclusiveTravelById(model.Id);
                 if (allInclusiveTravel == null)
                 {
-                    return NotFound("Invalid AllInclusiveTravel.");
+                    return NotFound("AllInclusiveTravel incorrect");
                 }
 
                 var services = new List<Service>();
-                if (model.SelectedServiceIds != null && model.SelectedServiceIds.Any())
+                if (model.SelectedServiceId != null && model.SelectedServiceId.Any())
                 {
                     using (var serviceDAL = new ServiceDAL())
                     {
-                        services = serviceDAL.GetServicesByIds(model.SelectedServiceIds);
+                        services = serviceDAL.GetServiceWithIds(model.SelectedServiceId);
                     }
                 }
 

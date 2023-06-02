@@ -34,7 +34,7 @@ namespace LittleBigTraveler.Controllers
             {
                 using (var serviceDAL = new ServiceDAL())
                 {
-                    int serviceId = serviceDAL.CreateService(model.Name, model.Price, model.Schedule, model.Location, model.Type, model.Style, model.MaxCapacity, model.Images, model.ExternalLinks);
+                    int serviceId = serviceDAL.CreateService(model.Name, model.Price, model.Schedule, model.Location, model.Type, model.Style, model.MaxCapacity, model.Images, model.ExternalLinks, model.DestinationId); // Ajout de model.DestinationId
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -90,7 +90,7 @@ namespace LittleBigTraveler.Controllers
             {
                 using (var serviceDAL = new ServiceDAL())
                 {
-                    serviceDAL.ModifyService(id, model.Name, model.Price, model.Schedule, model.Location, model.Type, model.Style, model.MaxCapacity, model.Images, model.ExternalLinks);
+                    serviceDAL.ModifyService(id, model.Name, model.Price, model.Schedule, model.Location, model.Type, model.Style, model.MaxCapacity, model.Images, model.ExternalLinks, model.DestinationId); // Ajout de model.DestinationId
                 }
 
                 return RedirectToAction("List");

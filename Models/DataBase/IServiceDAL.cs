@@ -10,9 +10,9 @@ namespace LittleBigTraveler.Models.DataBase
 
         // Méthodes relatives aux services
         List<Service> GetAllServices();
-        int CreateService(string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link);
+        int CreateService(string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link, int destinationId);
         void DeleteService(int id);
-        void ModifyService(int id, string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link);
+        void ModifyService(int id, string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link, int destinationId);
         Service GetServiceWithId(int id);
         List<Service> SearchService(string searchText);
 

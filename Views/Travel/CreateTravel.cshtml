@@ -13,39 +13,39 @@
         <h2 class="text-center">Destination : @Model.Destination.Country, @Model.Destination.City</h2>
     }
 
-<form method="post" action="/Travel/CreateTravel">
-    <div class="form-group">
-        <label for="departureLocation">Lieu de départ :</label>
-        <input type="text" class="form-control" id="departureLocation" name="departureLocation" value="@Model.DepartureLocation" required>
-    </div>
+    <form method="post" action="/Travel/CreateTravel">
+        <div class="form-group">
+            <label for="departureLocation">Lieu de départ :</label>
+            <input type="text" class="form-control" id="departureLocation" name="departureLocation" value="@Model.DepartureLocation" required>
+        </div>
 
-    <div class="form-group">
-        <label for="departureDate">Date de départ :</label>
-        <input type="date" class="form-control" id="departureDate" name="departureDate" value="@Model.DepartureDate.ToString("yyyy-MM-dd")" required>
-    </div>
+        <div class="form-group">
+            <label for="departureDate">Date de départ :</label>
+            <input type="date" class="form-control" id="departureDate" name="departureDate" value="@Model.DepartureDate.ToString("yyyy-MM-dd")" required>
+        </div>
 
-    <div class="form-group">
-        <label for="returnDate">Date de retour :</label>
-        <input type="date" class="form-control" id="returnDate" name="returnDate" value="@Model.ReturnDate.ToString("yyyy-MM-dd")" required>
-    </div>
+        <div class="form-group">
+            <label for="returnDate">Date de retour :</label>
+            <input type="date" class="form-control" id="returnDate" name="returnDate" value="@Model.ReturnDate.ToString("yyyy-MM-dd")" required>
+        </div>
 
-    <div class="form-group">
-        <label for="price">Prix :</label>
-        <input type="number" class="form-control" id="price" name="price" value="@Model.Price" required>
-    </div>
+        <div class="form-group">
+            <label for="price">Prix :</label>
+            <input type="number" class="form-control" id="price" name="price" value="@Model.Price" required>
+        </div>
 
-    <div class="form-group">
-        <label for="numParticipants">Nombre de participants :</label>
-        <input type="number" class="form-control" id="numParticipants" name="numParticipants" value="@Model.NumParticipants" required>
-    </div>
+        <div class="form-group">
+            <label for="numParticipants">Nombre de participants :</label>
+            <input type="number" class="form-control" id="numParticipants" name="numParticipants" value="@Model.NumParticipants" required>
+        </div>
 
-    @if (Model.Destination != null)
-    {
-        <input type="hidden" name="destinationId" value="@Model.Destination?.Id">
-    }
+        @if (Model.Destination != null)
+        {
+            <input type="hidden" name="destinationId" value="@Model.Destination?.Id">
+        }
 
-    <div class="text-center">
-        <button type="submit" class="btn btn-primary">Créer le voyage</button>
-    </div>
-</form>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Créer le voyage</button>
+        </div>
+    </form>
 </div>

@@ -19,7 +19,7 @@ namespace LittleBigTraveler.Models.TravelClasses
 
         
         public List<Service> ServiceForPackage { get; set; }
-        public virtual Service Service { get; set; }
+        //public virtual Service Service { get; set; }
     }
 }
 

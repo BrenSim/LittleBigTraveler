@@ -61,7 +61,7 @@ namespace LittleBigTraveler.Models.DataBase
             }
             else
             {
-                throw new Exception("Invalid customer or destination id.");
+                throw new Exception("Customer ou destination non valide.");
             }
         }
 
@@ -97,7 +97,7 @@ namespace LittleBigTraveler.Models.DataBase
             }
             else
             {
-                throw new Exception("Invalid travel, customer, or destination id.");
+                throw new Exception("Customer , travel ou destination non valide.");
             }
         }
 
@@ -114,5 +114,30 @@ namespace LittleBigTraveler.Models.DataBase
                 .Where(t => t.Customer.Id == customerId)
                 .ToList();
         }
+
+
+        // Récupération d'un voyage par son ID
+        public Travel GetTravelById(int travelId)
+
+        {
+            return _bddContext.Travels
+                .Include(t => t.Customer)
+                    .ThenInclude(c => c.User)
+                .Include(t => t.Destination)
+                .FirstOrDefault(t => t.Id == travelId);
+        }
+
+        // Récupération d'un voyage par son ID pour un client spécifique
+        public Travel GetTravelByIdForCustomer(int travelId)
+        {
+            int customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
+
+            return _bddContext.Travels
+                .Include(t => t.Customer)
+                    .ThenInclude(c => c.User)
+                .Include(t => t.Destination)
+                .FirstOrDefault(t => t.Id == travelId && t.Customer.Id == customerId);
+        }
+
     }
 }
