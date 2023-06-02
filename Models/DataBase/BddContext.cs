@@ -1953,7 +1953,7 @@ namespace LittleBigTraveler.Models.DataBase
                     },
                     ExternalLinks = "https://www.athensstudios.gr"
                 },
-                
+
                 new Service
                 {
                     Id = 94,
@@ -2650,6 +2650,232 @@ namespace LittleBigTraveler.Models.DataBase
                         "/ImagesServices/134InnsbruckActivite.png",
                     },
                     ExternalLinks = "https://www.upstreamsurfing.com/"
+                },
+                //Annecy
+                new Service
+                {
+                    Id = 135,
+                    Name = "Allobroges Park Hotel",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Accomodation",
+                    Style = "",
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/135.jpeg",
+                    },
+                    ExternalLinks = "https://www.allobrogesparkhotel.com"
+                },
+
+                new Service
+                {
+                    Id = 136,
+                    Name = "Hotel des Alpes",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Accomodation",
+                    Style = "",
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/136.jpeg",
+                    },
+                    ExternalLinks = "https://www.hoteldesalpes-annecy.com"
+                },
+
+                // Hôtels
+                new Service
+                {
+                    Id = 137,
+                    Name = "Hotel Imperial Palace",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Accomodation",
+                    Style = "",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/137.jpeg",
+                    },
+                    ExternalLinks = "https://www.imperialpalace.fr"
+                },
+
+                new Service
+                {
+                    Id = 138,
+                    Name = "Hotel Les Tresoms",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Accomodation",
+                    Style = "",
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/138.jpeg",
+                    },
+                    ExternalLinks = "https://www.lestresoms.com"
+                },
+
+                // Restaurants
+                new Service
+                {
+                    Id = 139,
+                    Name = "L'Esquisse Restaurant",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Restaurant",
+                    Style = "",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/139.jpeg",
+                    },
+                    ExternalLinks = "https://www.restaurant-lesquisse.fr"
+                },
+
+                new Service
+                {
+                    Id = 140,
+                    Name = "Le Belvedere Restaurant",
+                    Price = 100.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Restaurant",
+                    Style = "",
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/140.jpeg",
+                    },
+                    ExternalLinks = "https://www.belvedere-annecy.com"
+                },
+
+                // Visites guidées
+                new Service
+                {
+                    Id = 141,
+                    Name = "Annecy Segway Tours",
+                    Price = 40.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Guided Tour",
+                    Style = "",
+                    MaxCapacity = 15,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/141.jpeg",
+                    },
+                    ExternalLinks = "https://www.annecy-segway-tours.com"
+                },
+
+                new Service
+                {
+                    Id = 142,
+                    Name = "Annecy City Sightseeing Tour",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Guided Tour",
+                    Style = "",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/142.jpeg",
+                    },
+                    ExternalLinks = "https://www.annecy-city-sightseeing-tour.com"
+                },
+
+                // Activités culturelles
+                new Service
+                {
+                    Id = 143,
+                    Name = "Château d'Annecy",
+                    Price = 10.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Cultural Activity",
+                    Style = "",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/143.jpeg",
+                    },
+                    ExternalLinks = "https://en.chateau-annecy.com"
+                },
+
+                new Service
+                {
+                    Id = 144,
+                    Name = "Palais de l'Isle",
+                    Price = 8.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Cultural Activity",
+                    Style = "",
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/144.jpeg",
+                    },
+                    ExternalLinks = "https://www.lac-annecy.com"
+                },
+
+                new Service
+                {
+                    Id = 145,
+                    Name = "Musée-Château d'Annecy",
+                    Price = 12.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Cultural Activity",
+                    Style = "",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/145.jpeg",
+                    },
+                    ExternalLinks = "https://en.chateau-annecy.com"
+                },
+
+                // Activités sportives
+                new Service
+                {
+                    Id = 146,
+                    Name = "Lake Annecy Watersports",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Sport Activity",
+                    Style = "",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/146.jpeg",
+                    },
+                    ExternalLinks = "https://www.annecy-watersports.com"
+                },
+
+                new Service
+                {
+                    Id = 147,
+                    Name = "Annecy Paragliding",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Annecy",
+                    Type = "Sport Activity",
+                    Style = "",
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/147.jpeg",
+                    },
+                    ExternalLinks = "https://www.annecy-paragliding.com"
                 }
 
                 );
