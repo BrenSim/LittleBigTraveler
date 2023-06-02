@@ -2139,9 +2139,262 @@ namespace LittleBigTraveler.Models.DataBase
                         "/ImagesServices/104AthensActivite.png",
                     },
                     ExternalLinks = "https://www.withlocals.com/fr/experiences/greece/athens/"
+                },
+                // Barcelona
+                new Service
+                {
+                    Id = 105,
+                    Name = "Yeah Barcelona Hostel",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/105BarcelonaHostel.png",
+                    },
+                    ExternalLinks = "https://www.yeahhostels.com/barcelona"
+                },
+
+                new Service
+                {
+                    Id = 106,
+                    Name = "Safestay Barcelona Sea",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/106BarcelonaHostel.png",
+                    },
+                    ExternalLinks = "https://www.safestay.com/barcelona-sea"
+                },
+
+                new Service
+                {
+                    Id = 107,
+                    Name = "Casa Gracia Barcelona Hostel",
+                    Price = 22.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 120,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/107BarcelonaHostel.jpeg",
+                    },
+                    ExternalLinks = "https://www.casagraciabcn.com"
+                },
+
+                new Service
+                {
+                    Id = 108,
+                    Name = "Hotel Arts Barcelona",
+                    Price = 250.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/108BarcelonaHotel.png",
+                    },
+                    ExternalLinks = "https://www.hotelartsbarcelona.com"
+                },
+
+                new Service
+                {
+                    Id = 109,
+                    Name = "W Barcelona",
+                    Price = 200.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 180,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/109BarcelonaHotel.webp",
+                    },
+                    ExternalLinks = "https://www.marriott.com/hotels/travel/bcnwh-w-barcelona"
+                },
+
+                new Service
+                {
+                    Id = 110,
+                    Name = "Con Garcia",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/110Barcelonarestaurant.png",
+                    },
+                    ExternalLinks = "https://congraciarestaurant.com/"
+                },
+
+                new Service
+                {
+                    Id = 111,
+                    Name = "El Celler de Can Roca",
+                    Price = 250.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/111Barcelonarestaurant.png",
+                    },
+                    ExternalLinks = "https://www.cellercanroca.com"
+                },
+
+                new Service
+                {
+                    Id = 112,
+                    Name = "Disfrutar",
+                    Price = 180.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/112Barcelonarestaurant.png",
+                    },
+                    ExternalLinks = "https://www.disfrutarbarcelona.com"
+                },
+
+                new Service
+                {
+                    Id = 113,
+                    Name = "Visite guidée du quartier gotique",
+                    Price = 106.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 15,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/113BarcelonaActivite.jpeg",
+                    },
+                    ExternalLinks = "https://www.contexttravel.com/cities/barcelona"
+                },
+
+                new Service
+                {
+                    Id = 114,
+                    Name = "Promenade autour du passé noir de l'histoire de Barcelona",
+                    Price = 17.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite guidée",
+                    Style = "Culturel",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/114BarcelonaActivite.webp",
+                    },
+                    ExternalLinks = "https://www.runnerbeantours.com/barcelona"
+                },
+
+                new Service
+                {
+                    Id = 115,
+                    Name = "Visita de la Sagrada Familia",
+                    Price = 26.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Cultural Activity",
+                    Style = "",
+                    MaxCapacity = 1000,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/115BarcelonaActivite.jpeg",
+                    },
+                    ExternalLinks = "https://sagradafamilia.org"
+                },
+
+                new Service
+                {
+                    Id = 116,
+                    Name = "Park Güell",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite",
+                    Style = "Nature",
+                    MaxCapacity = 500,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/116BarcelonaActivite.png",
+                    },
+                    ExternalLinks = "https://parkguell.barcelona"
+                },
+
+                new Service
+                {
+                    Id = 117,
+                    Name = "Picasso Museum",
+                    Price = 10.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite",
+                    Style = "Culture",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/117BarcelonaActivite.png",
+                    },
+                    ExternalLinks = "https://museupicassobcn.cat/"
+                },
+
+                new Service
+                {
+                    Id = 118,
+                    Name = "Mercat de la Boqueria",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite",
+                    Style = "Culture",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/118BarcelonaActivite.jpeg",
+                    },
+                    ExternalLinks = "https://www.boqueria.barcelona/"
+                },
+
+                new Service
+                {
+                    Id = 119,
+                    Name = "Barcelona Bike Tour",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Barcelona",
+                    Type = "Visite",
+                    Style = "Sportive",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/119BarcelonaActivite.png",
+                    },
+                    ExternalLinks = "https://www.buenavistatours.es/"
                 }
-
-
 
 
 
