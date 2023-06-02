@@ -1,13 +1,11 @@
-﻿using System;
+﻿using LittleBigTraveler.Models.TravelClasses;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using LittleBigTraveler.Models.TravelClasses;
 
 namespace LittleBigTraveler.ViewModels
 {
     public class ServiceViewModel
     {
-
         public int Id { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
@@ -18,6 +16,9 @@ namespace LittleBigTraveler.ViewModels
         public int MaxCapacity { get; set; }
         public List<string> Images { get; set; }
         public string ExternalLinks { get; set; }
+
+        // Ajout de DestinationId pour le référencer
+        public int DestinationId { get; set; }
 
         public List<Service> Services { get; set; }
     }

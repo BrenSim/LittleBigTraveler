@@ -14,7 +14,11 @@ namespace LittleBigTraveler.Models.DataBase
         {
             _bddContext = new BddContext();
         }
-
+        public void UpdateAllInclusiveTravel(Service service, int allinclusiveId)
+        {
+            service.AllInclusiveTravelId = allinclusiveId;
+            _bddContext.SaveChanges();
+        }
         // Suppression/Création de la base de données (méthode appelée dans BddContext)
         public void DeleteCreateDatabase()
         {
@@ -28,7 +32,7 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
         // Création des données "Service"
-        public int CreateService(string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link)
+        public int CreateService(string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link, int destinationId)
         {
             Service service = new Service()
             {
@@ -40,7 +44,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Style = style,
                 MaxCapacity = maxCapacity,
                 Images = images,
-                ExternalLinks = link
+                ExternalLinks = link,
+                DestinationId = destinationId
             };
 
             _bddContext.Services.Add(service);
@@ -61,7 +66,7 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
         // Modification des données "Service"
-        public void ModifyService(int id, string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link)
+        public void ModifyService(int id, string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link, int destinationId)
         {
             var service = _bddContext.Services.FirstOrDefault(s => s.Id == id);
             if (service != null)
@@ -75,6 +80,7 @@ namespace LittleBigTraveler.Models.DataBase
                 service.MaxCapacity = maxCapacity;
                 service.Images = images;
                 service.ExternalLinks = link;
+                service.DestinationId = destinationId;
 
                 _bddContext.SaveChanges();
             }
@@ -103,6 +109,12 @@ namespace LittleBigTraveler.Models.DataBase
         public Service GetServiceWithId(int id)
         {
             return _bddContext.Services.FirstOrDefault(s => s.Id == id);
+        }
+
+        // Récupération des données "Service" par liste d'IDs
+        public List<Service> GetServiceWithIds(List<int> ids)
+        {
+            return _bddContext.Services.Where(s => ids.Contains(s.Id)).ToList();
         }
     }
 }

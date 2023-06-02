@@ -23,6 +23,8 @@ namespace LittleBigTraveler.Models.TravelClasses
 
         public virtual List<Booking> Bookings { get; set; }
 
+        public virtual List<AllInclusiveTravel> AllInclusiveTravels { get; set; }
+
 
         //public virtual List<TravelPackage> TravelPackages { get; set; }
     }

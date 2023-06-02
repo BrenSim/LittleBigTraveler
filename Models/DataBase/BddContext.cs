@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
+
 using System.Linq;
-=======
+
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
+
 using System.Numerics;
 using System.Runtime.Intrinsics.X86;
 using System.Text.RegularExpressions;
->>>>>>> filldb
+
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
 using Microsoft.EntityFrameworkCore;
@@ -429,10 +429,10 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/BrestBateau.jpg",
                         },
-                    ExternalLinks = "UnLien"
+                    ExternalLinks = "UnLien",
+                    DestinationId = 1
                 },
-            
-
+           
 
                 // Services à Paris 
                 new Service
@@ -696,6 +696,7 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome16Hotel.jpeg",
                         },
+
                     ExternalLinks = "https://www.hostelrome.com"
                 },
                 new Service
@@ -1065,7 +1066,6 @@ namespace LittleBigTraveler.Models.DataBase
                         },
                     ExternalLinks = "https://www.praguelocalguides.com"
                 }
-
 
                 );
 

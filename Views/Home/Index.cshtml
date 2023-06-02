@@ -1,5 +1,4 @@
 ﻿@model LittleBigTraveler.ViewModels.DestinationViewModel
-
 @{
     Layout = "_Layout";
     ViewData["Title"] = "Accueil";
@@ -61,4 +60,11 @@
     {
         <a href="/User/LogIn" class="btn btn-primary btn-lg">Connexion Client</a>
     }
+</div>
+
+<div class="container">
+    <h2 class="text-center">Créer un voyage tout compris</h2>
+    <form method="get" action="/Destination/List">
+        <button type="submit" class="btn btn-primary btn-lg">Créer un voyage tout compris</button>
+    </form>
 </div>

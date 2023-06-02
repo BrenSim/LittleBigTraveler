@@ -1,0 +1,27 @@
+﻿@model AllInclusiveTravelViewModel
+
+<h1>Modify All Inclusive Travel</h1>
+
+<form asp-action="ModifyAllInclusiveTravel">
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <input type="hidden" asp-for="TravelId" value="@Model.TravelId" />
+
+    <div>
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" value="@Model.Name" />
+    </div>
+
+    <div>
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description">@Model.Description</textarea>
+    </div>
+
+    <div>
+        <label>Services:</label>
+        <select asp-for="SelectedServiceIds" asp-items="Model.Services.Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Name, Selected = Model.SelectedServiceIds.Contains(s.Id) })" multiple></select>
+    </div>
+
+    <div>
+        <button type="submit">Modify</button>
+    </div>
+</form>

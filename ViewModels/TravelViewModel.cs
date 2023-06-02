@@ -19,6 +19,8 @@ namespace LittleBigTraveler.ViewModels
         public double Price { get; set; }
         public int NumParticipants { get; set; }
 
+        public List<Travel> Travels { get; set; }
+
         public TravelViewModel()
         {
             // Ajoutez des valeurs par défaut si nécessaire
@@ -26,7 +28,6 @@ namespace LittleBigTraveler.ViewModels
 
         public TravelViewModel(IHttpContextAccessor httpContextAccessor)
         {
-            // Initialisez les propriétés si nécessaire en utilisant les informations de l'HttpContextAccessor
         }
     }
 
