@@ -115,7 +115,6 @@ namespace LittleBigTraveler.Models.DataBase
                 .ToList();
         }
 
-
         // Récupération d'un voyage par son ID
         public Travel GetTravelById(int travelId)
 

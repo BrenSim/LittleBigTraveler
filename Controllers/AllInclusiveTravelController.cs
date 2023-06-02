@@ -28,6 +28,11 @@ public class AllInclusiveTravelController : Controller
         {
             var allInclusiveTravels = allInclusiveTravelDAL.GetCustomerAllInclusiveTravels(customerId);
 
+            if (allInclusiveTravels == null || allInclusiveTravels.Count == 0)
+            {
+                return View("List"); // Appelle la vue "List.cshtml" lorsque la liste des voyages est vide
+            }
+
             return View(allInclusiveTravels);
         }
     }
@@ -154,7 +159,7 @@ public class AllInclusiveTravelController : Controller
 
     // Action pour le traitement du formulaire de modification d'un AllInclusiveTravel
     [HttpPost]
-    public IActionResult ModifyAllInclusiveTravel([Bind("Id,Name,Description,TravelId,SelectedServiceIds")] AllInclusiveTravelViewModel model)
+    public IActionResult ModifyAllInclusiveTravel(AllInclusiveTravelViewModel model)
     {
         using (var allInclusiveTravelDAL = new AllInclusiveTravelDAL(HttpContextAccessor))
         {
@@ -187,6 +192,7 @@ public class AllInclusiveTravelController : Controller
             return View(model);
         }
     }
+
 }
 
 

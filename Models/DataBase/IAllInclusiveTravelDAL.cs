@@ -13,8 +13,8 @@ namespace LittleBigTraveler.Models.DataBase
         void ModifyAllInclusiveTravel(int id, string name, string description, List<Service> services);
         AllInclusiveTravel GetAllInclusiveTravelById(int id);
         List<AllInclusiveTravel> GetCustomerAllInclusiveTravels(int customerId);
-        void AddServiceToAllInclusiveTravel(int allInclusiveTravelId, Service service);
-        void RemoveServiceFromAllInclusiveTravel(int allInclusiveTravelId, int serviceId);
+        //void AddServiceToAllInclusiveTravel(int allInclusiveTravelId, Service service);
+        //void RemoveServiceFromAllInclusiveTravel(int allInclusiveTravelId, int serviceId);
         Travel GetTravelById(int travelId);
     }
 }
