@@ -180,7 +180,11 @@ namespace LittleBigTraveler.Models.DataBase
                         Schedule = DateTime.Now.AddDays(2),
                         Location = "Pau",
                         Type = "Activité",
-                        Style = "Culture",
+                        Style = "Culture" +
+                        " " +
+                        "Sport" +
+                        " " +
+                        "Nature",
                         MaxCapacity = 60,
                         Images = new List<string>
                         {

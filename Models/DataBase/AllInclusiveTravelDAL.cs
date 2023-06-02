@@ -63,10 +63,12 @@ namespace LittleBigTraveler.Models.DataBase
                     Travel = travel,
                     Name = name,
                     Description = description,
-                    Price = travel.Price // Par défaut, le prix est initialisé avec le prix du Travel
+                    Price = travel.Price, // Par défaut, le prix est initialisé avec le prix du Travel
+                    ServiceForPackage = new List<Service>()
                 };
 
                 // Ajout des services sélectionnés au package AllInclusiveTravel
+
                 allInclusiveTravel.ServiceForPackage.AddRange(services);
                 // Mise à jour du prix total du package
                 allInclusiveTravel.Price += services.Sum(s => s.Price);
@@ -130,6 +132,9 @@ namespace LittleBigTraveler.Models.DataBase
         // Récupération des AllInclusiveTravel d'un client par son ID
         public List<AllInclusiveTravel> GetCustomerAllInclusiveTravels(int customerId)
         {
+
+            // Récupération de l'ID du client connecté à partir du contexte HTTP
+            customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
             return _bddContext.AllInclusiveTravels
                 .Include(a => a.Customer)
                     .ThenInclude(c => c.User)

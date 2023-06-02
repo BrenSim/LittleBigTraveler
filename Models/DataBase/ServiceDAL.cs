@@ -14,7 +14,11 @@ namespace LittleBigTraveler.Models.DataBase
         {
             _bddContext = new BddContext();
         }
-
+        public void UpdateAllInclusiveTravel(Service service, int allinclusiveId)
+        {
+            service.AllInclusiveTravelId = allinclusiveId;
+            _bddContext.SaveChanges();
+        }
         // Suppression/Création de la base de données (méthode appelée dans BddContext)
         public void DeleteCreateDatabase()
         {
