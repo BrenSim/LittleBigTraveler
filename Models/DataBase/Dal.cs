@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
+
 using Microsoft.EntityFrameworkCore;
+
 using static System.Net.Mime.MediaTypeNames;
 
 namespace LittleBigTraveler.Models.DataBase
@@ -13,6 +15,7 @@ namespace LittleBigTraveler.Models.DataBase
 
 	public class Dal : IDal
 	{
+
         private BddContext _bddContext;
 
         public Dal()
@@ -31,6 +34,7 @@ namespace LittleBigTraveler.Models.DataBase
         {
             _bddContext.Dispose();
         }
+
 
 //// Création, suppression et modification des données "Destination"
 
@@ -360,6 +364,7 @@ namespace LittleBigTraveler.Models.DataBase
 
 //            return user;
 //        }
+
 
 
 
