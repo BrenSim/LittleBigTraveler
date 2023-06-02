@@ -2394,9 +2394,263 @@ namespace LittleBigTraveler.Models.DataBase
                         "/ImagesServices/119BarcelonaActivite.png",
                     },
                     ExternalLinks = "https://www.buenavistatours.es/"
+                },
+                // Innsbruck :
+                new Service
+                {
+                    Id = 120,
+                    Name = "Hostel Marmota",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/120InnsbruckHostel.png",
+                    },
+                    ExternalLinks = "https://www.hostelmarmota.com"
+                },
+
+                new Service
+                {
+                    Id = 121,
+                    Name = "Jugendherberge Youth Hostel Innsbruck",
+                    Price = 20.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/121InnsbruckHostel.png",
+                    },
+                    ExternalLinks = "https://www.youth-hostel-innsbruck.at/"
+                },
+                // Hôtels
+
+                new Service
+                {
+                    Id = 122,
+                    Name = "Das Innsbruck Hotel",
+                    Price = 150.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 80,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/122InnsbruckHotel.png",
+                    },
+                    ExternalLinks = "https://www.hotelinnsbruck.com"
+                },
+
+                new Service
+                {
+                    Id = 123,
+                    Name = "AC Hotel Innsbruck",
+                    Price = 120.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Accomodation",
+                    Style = null,
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/123InnsbruckHotel.webp",
+                    },
+                    ExternalLinks = "https://www.marriott.com/hotels/travel/innac-ac-hotel-innsbruck"
+                },
+
+                new Service
+                {
+                    Id = 124,
+                    Name = "Sitzwohl Restaurant",
+                    Price = 80.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/124InnsbruckRestaurant.svg",
+                    },
+                    ExternalLinks = "https://www.sitzwohl-innsbruck.at"
+                },
+
+                new Service
+                {
+                    Id = 125,
+                    Name = "Lichtblick Restaurant",
+                    Price = 100.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Restaurant",
+                    Style = null,
+                    MaxCapacity = 60,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/125InnsbruckRestaurant.svg",
+                    },
+                    ExternalLinks = "https://www.restaurant-lichtblick.at/"
+                },
+
+                new Service
+                {
+                    Id = 126,
+                    Name = "Visite des Dolomites, des lacs y compris Braies d'Innsbruck",
+                    Price = 90.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite guidée",
+                    Style = "Nature",
+                    MaxCapacity = 20,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/126InnsbruckActivite.webp",
+                    },
+                    ExternalLinks = "https://www.tyroltravel.net/experiences/tour-of-dolomites%2C-alpine-lakes-including-braies"
+                },
+
+                new Service
+                {
+                    Id = 127,
+                    Name = "Zoo Alpin d'Innsbruck",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Nature",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/127InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.alpenzoo.at"
+                },
+
+                new Service
+                {
+                    Id = 128,
+                    Name = "Visite audioguidée d'une heure et demie d'Innsbruck",
+                    Price = 27.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite guidée",
+                    Style = "Culture",
+                    MaxCapacity = 30,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/127InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.tyroltravel.net/product-page/innsbrucktourdg"
+                },
+
+                new Service
+                {
+                    Id = 129,
+                    Name = "Golden Roof Museum",
+                    Price = 10.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Culture",
+                    MaxCapacity = 200,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/129InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.innsbruck.gv.at/en/freizeit/kultur/museen-stadtarchiv/museum-goldenes-dachl"
+                },
+
+                new Service
+                {
+                    Id = 130,
+                    Name = "Hofburg Innsbruck Museum",
+                    Price = 12.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Culture",
+                    MaxCapacity = 150,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/130InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.burghauptmannschaft.at/Betriebe/Hofburg-Innsbruck.html"
+                },
+
+                new Service
+                {
+                    Id = 131,
+                    Name = "Bergisel Ski Jump",
+                    Price = 15.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Nature" + " " + "Sport",
+                    MaxCapacity = 100,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/131InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.bergisel.info"
+                },
+
+                new Service
+                {
+                    Id = 132,
+                    Name = "Nordkette Cable Car",
+                    Price = 30.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Visite",
+                    Style = "Nature" + " " + "Sport",
+                    MaxCapacity = 50,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/132InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.nordkette.com/en"
+                },
+
+                new Service
+                {
+                    Id = 133,
+                    Name = "Complex Olympic OlympiaWorld Innsbruck",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Sport Activity",
+                    Style = "Culture" + " " + "Sport",
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/133InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.olympiaworld.at"
+                },
+
+                new Service
+                {
+                    Id = 134,
+                    Name = "Up Stream Surfing Innsbruck",
+                    Price = 25.0,
+                    Schedule = DateTime.Now.AddDays(1),
+                    Location = "Innsbruck",
+                    Type = "Activité",
+                    Style = "Nature" + " " + "Sport",
+                    MaxCapacity = 40,
+                    Images = new List<string>
+                    {
+                        "/ImagesServices/134InnsbruckActivite.png",
+                    },
+                    ExternalLinks = "https://www.upstreamsurfing.com/"
                 }
-
-
 
                 );
 
