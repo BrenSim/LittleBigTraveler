@@ -97,7 +97,7 @@ h1 {
     text-align: center;
     min-height: 100vh;
     background: url("../imagesIndex/bg4.jpg") center/cover;
-        /* Attention, les chemin ne s'écrive pas forcément
+    /* Attention, les chemin ne s'écrive pas forcément
         de la même maniere dans un fichier css et dans un fichier html
         ou ASP .NET. Toujours mettre le chemin relatf dans un css */
 }
@@ -265,11 +265,17 @@ footer {
     margin-right: 10%;
     text-align: center;
 }
+
     .logoFooter i {
         margin-right: 5%;
         font-size: 25px;
     }
-    
+
+        .logoFooter i:hover {
+            margin-right: 5%;
+            transform: scale(1.2);
+        }
+
 #navFooter {
     display: flex;
     justify-content: flex-start;
@@ -278,7 +284,11 @@ footer {
 .navFooter ul {
     display: flex;
     flex-direction: column;
-    margin-right: 30px;
+    margin-right: 5vw;
+}
+
+.navFooter li {
+    line-height: 40px;
 }
 
 .navFooter {
