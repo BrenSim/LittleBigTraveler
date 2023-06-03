@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using LittleBigTraveler.ViewModels;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 public class TravelController : Controller
 {
@@ -14,6 +15,7 @@ public class TravelController : Controller
     }
 
     // Action pour afficher la liste des voyages d'un client
+    [Authorize(Roles = "Administrator, Customer")]
     public IActionResult List()
     {
         // Récupérer l'ID du client connecté depuis le contexte HTTP
@@ -33,6 +35,7 @@ public class TravelController : Controller
     }
 
     // Action pour créer un voyage
+    [Authorize(Roles = "Administrator, Customer")]
     public IActionResult CreateTravel(int destinationId)
     {
         using (var destinationDAL = new DestinationDAL())
@@ -59,6 +62,7 @@ public class TravelController : Controller
     }
 
     // Action pour le traitement du formulaire de création d'un voyage
+    [Authorize(Roles = "Administrator, Customer")]
     [HttpPost]
     public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,Price,NumParticipants")] TravelViewModel model)
     {
@@ -83,6 +87,7 @@ public class TravelController : Controller
     }
 
     // Action pour modifier un voyage
+    [Authorize(Roles = "Administrator, Customer")]
     [HttpPost]
     public IActionResult ModifyTravel(int id, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
     {
@@ -94,7 +99,7 @@ public class TravelController : Controller
             try
             {
                 travelDAL.ModifyTravel(id, customerId, destinationId, departureLocation, departureDate, returnDate, price, numParticipants);
-                return RedirectToAction("Index", "Home"); // Rediriger vers la page d'accueil ou une autre page appropriée
+                return RedirectToAction("IndexTEST", "Home"); // Rediriger vers la page d'accueil ou une autre page appropriée
             }
             catch (Exception ex)
             {

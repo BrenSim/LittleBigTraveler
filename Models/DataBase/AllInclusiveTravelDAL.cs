@@ -32,8 +32,8 @@ namespace LittleBigTraveler.Models.DataBase
             _bddContext.Dispose();
         }
 
+        // Redéfinition de GetTravelById dans ce DAL pour faciliter la récupération des "Travel" dans le controller
         public Travel GetTravelById(int travelId)
-
         {
             return _bddContext.Travels
                 .Include(t => t.Customer)
@@ -47,13 +47,7 @@ namespace LittleBigTraveler.Models.DataBase
         public int CreateAllInclusiveTravel(int customerId, int travelId, string name, string description, List<Service> services)
         {
             var customer = _bddContext.Customers.Include(c => c.User).FirstOrDefault(c => c.Id == customerId);
-            //var travel = _bddContext.Travels.FirstOrDefault(t => t.Id == travelId);
-            var travel = _bddContext.Travels
-                .Include(t => t.Customer)
-                    .ThenInclude(c => c.User)
-                .Include(t => t.Destination)
-                .FirstOrDefault(t => t.Id == travelId);
-
+            var travel = _bddContext.Travels.Include(t => t.Customer).ThenInclude(c => c.User).Include(t => t.Destination).FirstOrDefault(t => t.Id == travelId);
 
             if (customer != null && travel != null)
             {
@@ -95,33 +89,43 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-        // Modification d'un AllInclusiveTravel par ID
-        public void ModifyAllInclusiveTravel(int id, string name, string description, List<Service> services)
+        public void UpdateAllInclusiveTravel(int id, int customerId, int travelId, string name, string description, List<Service> services)
         {
-            var allInclusiveTravel = _bddContext.AllInclusiveTravels
-                .Include(a => a.Travel)
-                .FirstOrDefault(a => a.Id == id);
-
-            if (allInclusiveTravel != null)
+            var allInclusiveTravel = _bddContext.AllInclusiveTravels.Include(a => a.Customer).ThenInclude(c => c.User).Include(a => a.Travel).FirstOrDefault(a => a.Id == id);
+            if (allInclusiveTravel == null)
             {
-                allInclusiveTravel.Name = name;
-                allInclusiveTravel.Description = description;
-
-                // Supprimer tous les services existants du package
-                allInclusiveTravel.ServiceForPackage.Clear();
-                // Ajouter les nouveaux services sélectionnés au package AllInclusiveTravel
-                allInclusiveTravel.ServiceForPackage.AddRange(services);
-                // Mise à jour du prix total du package
-                allInclusiveTravel.Price = allInclusiveTravel.Travel.Price + services.Sum(s => s.Price);
-
-                _bddContext.SaveChanges();
+                throw new Exception("AllInclusiveTravel non trouvé");
             }
-            else
+
+            var customer = _bddContext.Customers.Include(c => c.User).FirstOrDefault(c => c.Id == customerId);
+            var travel = _bddContext.Travels.Include(t => t.Customer).ThenInclude(c => c.User).Include(t => t.Destination).FirstOrDefault(t => t.Id == travelId);
+            if (customer == null || travel == null)
             {
-                throw new Exception("Voyage All Inclusive non valide.");
+                throw new Exception("Client ou Voyage incorrect");
             }
+
+            allInclusiveTravel.Customer = customer;
+            allInclusiveTravel.Travel = travel;
+            allInclusiveTravel.Name = name;
+            allInclusiveTravel.Description = description;
+
+            // Mettre à jour les services
+            allInclusiveTravel.ServiceForPackage.Clear();
+            allInclusiveTravel.ServiceForPackage.AddRange(services);
+
+            // Mettre à jour le prix
+            allInclusiveTravel.Price = travel.Price + services.Sum(s => s.Price);
+
+            _bddContext.AllInclusiveTravels.Update(allInclusiveTravel);
+            _bddContext.SaveChanges();
         }
 
+
+        // Récupération de toutes les données "AllInclusiveTravel"
+        public List<AllInclusiveTravel> GetAllInclusiveTravel()
+        {
+            return _bddContext.AllInclusiveTravels.ToList();
+        }
 
         // Récupération d'un AllInclusiveTravel par ID
         public AllInclusiveTravel GetAllInclusiveTravelById(int id)
@@ -130,6 +134,7 @@ namespace LittleBigTraveler.Models.DataBase
                 .Include(a => a.Customer)
                     .ThenInclude(c => c.User)
                 .Include(a => a.Travel)
+                .Include(a => a.ServiceForPackage) 
                 .FirstOrDefault(a => a.Id == id);
         }
 
@@ -147,57 +152,11 @@ namespace LittleBigTraveler.Models.DataBase
                 .ToList();
         }
 
-        //// Ajout d'un Service à un AllInclusiveTravel
-        //public void AddServiceToAllInclusiveTravel(int allInclusiveTravelId, Service service)
-        //{
-        //    var allInclusiveTravel = _bddContext.AllInclusiveTravels
-        //        .Include(a => a.Travel)
-        //            .ThenInclude(t => t.Destination)
-        //                .ThenInclude(d => d.Services)
-        //        .FirstOrDefault(a => a.Id == allInclusiveTravelId);
+        
 
-        //    if (allInclusiveTravel != null)
-        //    {
-        //        if (allInclusiveTravel.Travel.Destination != null)
-        //        {
-        //            allInclusiveTravel.ServiceForPackage.Add(service);
-        //            allInclusiveTravel.Price += service.Price; // Ajout du prix du service au prix total du package
-        //            _bddContext.SaveChanges();
-        //        }
-        //        else
-        //        {
-        //            throw new Exception("Destination invalide.");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        throw new Exception("Voyage All Inclusive non valide");
-        //    }
-        //}
-
-        //// Suppression d'un Service d'un AllInclusiveTravel
-        //public void RemoveServiceFromAllInclusiveTravel(int allInclusiveTravelId, int serviceId)
-        //{
-        //    var allInclusiveTravel = _bddContext.AllInclusiveTravels
-        //        .Include(a => a.ServiceForPackage)
-        //        .FirstOrDefault(a => a.Id == allInclusiveTravelId);
-
-        //    if (allInclusiveTravel != null)
-        //    {
-        //        var service = allInclusiveTravel.ServiceForPackage.FirstOrDefault(s => s.Id == serviceId);
-        //        if (service != null)
-        //        {
-        //            allInclusiveTravel.ServiceForPackage.Remove(service);
-        //            allInclusiveTravel.Price -= service.Price; // Soustraction du prix du service du prix total du package
-        //            _bddContext.SaveChanges();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        throw new Exception("Voyage All Inclusive non valide.");
-        //    }
-        //}
     }
 }
+
+
 
 

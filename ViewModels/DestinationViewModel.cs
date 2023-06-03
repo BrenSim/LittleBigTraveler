@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using LittleBigTraveler.Models.TravelClasses;
 
 namespace LittleBigTraveler.ViewModels
@@ -21,6 +22,7 @@ namespace LittleBigTraveler.ViewModels
         public string ExternalLinks { get; set; }
 
         public List<Destination> Destinations { get; set; }
+        //public ClaimsPrincipal UserPrincipal { get; set; }
     }
 }
 

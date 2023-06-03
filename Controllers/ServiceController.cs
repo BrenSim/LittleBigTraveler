@@ -5,12 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 using LittleBigTraveler.Models.DataBase;
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LittleBigTraveler.Controllers
 {
     public class ServiceController : Controller
     {
-        // Action pour afficher la liste des services
+        // Action pour afficher la liste de tout les services
         public IActionResult List()
         {
             using (var serviceDAL = new ServiceDAL())
@@ -21,12 +22,14 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour ajouter un service (affiche le formulaire)
+        [Authorize(Roles = "Administrator, Partner")]
         public IActionResult AddService()
         {
             return View();
         }
 
         // Méthode pour traiter le formulaire d'ajout d'un service
+        [Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult AddServices(ServiceViewModel model)
         {
@@ -35,7 +38,7 @@ namespace LittleBigTraveler.Controllers
                 using (var serviceDAL = new ServiceDAL())
                 {
                     int serviceId = serviceDAL.CreateService(model.Name, model.Price, model.Schedule, model.Location, model.Type, model.Style, model.MaxCapacity, model.Images, model.ExternalLinks, model.DestinationId); // Ajout de model.DestinationId
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("IndexTEST", "Home");
                 }
             }
 
@@ -43,6 +46,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour supprimer un service
+        [Authorize(Roles = "Administrator, Partner")]
         public IActionResult DeleteServices(int id)
         {
             using (var serviceDAL = new ServiceDAL())
@@ -54,6 +58,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour modifier un service (affiche le formulaire de modification)
+        [Authorize(Roles = "Administrator, Partner")]
         public IActionResult ChangeService(int id)
         {
             using (var serviceDAL = new ServiceDAL())
@@ -83,6 +88,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Méthode pour traiter le formulaire de modification d'un service
+        [Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult ChangeServices(int id, ServiceViewModel model)
         {
@@ -100,6 +106,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour rechercher des services
+        [AllowAnonymous]
         public IActionResult FindServices(string query)
         {
             using (var serviceDAL = new ServiceDAL())

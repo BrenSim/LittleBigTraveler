@@ -43,20 +43,26 @@ namespace LittleBigTraveler.Models.DataBase
         public User Authentification(string email, string password)
         {
             string passwordLoggIn = EncodeMD5(password);
-            User user = _bddContext.Users.FirstOrDefault(u => u.Email == email && u.Password == passwordLoggIn);
+            User user = _bddContext.Users
+                .Include(u => u.Customer)
+                .Include(u => u.Partner)
+                .Include(u => u.Administrator)
+                .FirstOrDefault(u => u.Email == email && u.Password == passwordLoggIn);
             return user;
         }
 
         // Méthode de création d'un administrateur
         public int CreateAdministrator(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate)
         {
+            // Encodage du mot de passe en utilisant MDD (pour stockage sécurisé)
+            string passwordEncode = EncodeMD5(password);
             // Création d'un nouvel utilisateur avec les données fournies
             User user = new User()
             {
                 LastName = lastName,
                 FirstName = firstName,
                 Email = email,
-                Password = password,
+                Password = passwordEncode,
                 Address = address,
                 PhoneNumber = phoneNumber,
                 BirthDate = birthDate
@@ -77,13 +83,15 @@ namespace LittleBigTraveler.Models.DataBase
         // Méthode de création d'un partenaire
         public int CreatePartner(string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string roleName, string roleType)
         {
+            // Encodage du mot de passe en utilisant MDD (pour stockage sécurisé)
+            string passwordEncode = EncodeMD5(password);
             // Création d'un nouvel utilisateur avec les données fournies
             User user = new User()
             {
                 LastName = lastName,
                 FirstName = firstName,
                 Email = email,
-                Password = password,
+                Password = passwordEncode,
                 Address = address,
                 PhoneNumber = phoneNumber,
                 BirthDate = birthDate
@@ -114,6 +122,7 @@ namespace LittleBigTraveler.Models.DataBase
         {
             // Encodage du mot de passe en utilisant MDD (pour stockage sécurisé)
             string passwordEncode = EncodeMD5(password);
+            // Création d'un nouvel utilisateur avec les données fournies
             User user = new User()
             {
                 LastName = lastName,
@@ -258,10 +267,19 @@ namespace LittleBigTraveler.Models.DataBase
             {
                 // Obtention du type d'utilisateur en appelant la méthode GetUserType()
                 string userType = user.GetUserType();
-                // Faites quelque chose avec le type d'utilisateur...
             }
 
             return user;
+        }
+
+        public User GetAllUsersWithTypeWithId(string idStr)
+        {
+            int id;
+            if (int.TryParse(idStr, out id))
+            {
+                return this.GetAllUsersWithTypeWithId(id);
+            }
+            return null;
         }
 
         // Récupération d'un utilisateur par ID

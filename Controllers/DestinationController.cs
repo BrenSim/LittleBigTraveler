@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using LittleBigTraveler.Models.DataBase;
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LittleBigTraveler.Controllers
 {
@@ -21,12 +22,14 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour ajouter une destination (affiche le formulaire)
+        [Authorize(Roles = "Administrator")]
         public IActionResult AddDestination()
         {
             return View();
         }
 
         // Méthode pour traiter le formulaire d'ajout d'une destination
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult AddDestinations(DestinationViewModel model)
         {
@@ -35,7 +38,7 @@ namespace LittleBigTraveler.Controllers
                 using (var destinationDAL = new DestinationDAL())
                 {
                     int destinationId = destinationDAL.CreateDestination(model.Country, model.City, model.Description, model.Images, model.ExternalLinks);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("IndexTEST", "Home");
                 }
             }
 
@@ -43,6 +46,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour supprimer une destination
+        [Authorize(Roles = "Administrator")]
         public IActionResult DeleteDestinations(int id)
         {
             using (var destinationDAL = new DestinationDAL())
@@ -54,6 +58,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour modifier une destination (affiche le formulaire de modification)
+        [Authorize(Roles = "Administrator")]
         public IActionResult ChangeDestination(int id)
         {
             using (var destinationDAL = new DestinationDAL())
@@ -79,6 +84,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Méthode pour traiter le formulaire de modification d'une destination
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult ChangeDestinations(int id, DestinationViewModel model)
         {
@@ -96,6 +102,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour rechercher des destinations
+        [AllowAnonymous]
         public IActionResult FindDestinations(string query)
         {
             using (var destinationDAL = new DestinationDAL())

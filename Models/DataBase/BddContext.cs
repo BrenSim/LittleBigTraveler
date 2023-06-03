@@ -414,42 +414,26 @@ namespace LittleBigTraveler.Models.DataBase
             // Création des services
             this.Services.AddRange(
 
-            //Modèle à suivre
-                new Service
-                {
-                    Id = 1,
-                    Name = "Service de transport à Brest",
-                    Price = 20.0,
-                    Schedule = DateTime.Now.AddDays(1),
-                    Location = "Brest",
-                    Type = "Transport",
-                    Style = "Cultural",
-                    MaxCapacity = 100,
-                    Images = new List<string>
-                        {
-                            "/ImagesTest/BrestBateau.jpg",
-                        },
-                    ExternalLinks = "UnLien",
-                    DestinationId = 1
-                },
+ 
            
 
                 // Services à Paris 
-                new Service
+            new Service
+            {
+                Id = 1,
+                Name = "Hôtel Prince Albert Louvre",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 2,
+                Images = new List<string>
                 {
-                    Id = 1,
-                    Name = "Hôtel Prince Albert Louvre",
-                    Price = 120.0,
-                    Schedule = DateTime.Now.AddDays(2),
-                    Location = "Paris",
-                    Type = "Accommodation",
-                    MaxCapacity = 2,
-                    Images = new List<string>
-    {
-        "/ImagesTest/Paris1Services.jpg",
-    },
-                    ExternalLinks = "https://www.hotelprincealbert.com/louvre"
+                    "/ImagesTest/Paris1Services.jpg",
                 },
+                ExternalLinks = "https://www.hotelprincealbert.com/louvre",
+                DestinationId = 1
+            },
 
             new Service
             {
@@ -464,7 +448,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris2Services.jpg",
                 },
-                ExternalLinks = "https://www.villagehostel.fr/montmartre"
+                ExternalLinks = "https://www.villagehostel.fr/montmartre",
+                DestinationId = 1
             },
 
             new Service
@@ -480,7 +465,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris3Services.jpg",
                 },
-                ExternalLinks = "https://www.lavillaparis.com"
+                ExternalLinks = "https://www.lavillaparis.com",
+                DestinationId = 1
             },
 
             new Service
@@ -496,7 +482,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris4Services.jpg",
                 },
-                ExternalLinks = "https://www.herse-dor.com"
+                ExternalLinks = "https://www.herse-dor.com",
+                DestinationId = 1
             },
 
             new Service
@@ -512,7 +499,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris5Services.jpg",
                 },
-                ExternalLinks = "https://www.lebristolparis.com"
+                ExternalLinks = "https://www.lebristolparis.com",
+                DestinationId = 1
             },
 
             // Restaurants
@@ -529,7 +517,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris6Services.jpg",
                 },
-                ExternalLinks = "https://www.lepetitbistro.fr"
+                ExternalLinks = "https://www.lepetitbistro.fr",
+                DestinationId = 1
             },
 
             new Service
@@ -545,7 +534,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris7Services.jpg",
                 },
-                ExternalLinks = "https://www.greengardenrestaurant.fr"
+                ExternalLinks = "https://www.greengardenrestaurant.fr",
+                DestinationId = 1
             },
 
             new Service
@@ -561,7 +551,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris8Services.jpg",
                 },
-                ExternalLinks = "https://www.labrasserieparisienne.com"
+                ExternalLinks = "https://www.labrasserieparisienne.com",
+                DestinationId = 1
             },
 
             new Service
@@ -577,7 +568,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris9Services.jpg",
                 },
-                ExternalLinks = "https://www.lebistrotgourmand.com"
+                ExternalLinks = "https://www.lebistrotgourmand.com",
+                DestinationId = 1
             },
 
             new Service
@@ -593,7 +585,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris10Services.jpg",
                 },
-                ExternalLinks = "https://www.lecieldeparis.com"
+                ExternalLinks = "https://www.lecieldeparis.com",
+                DestinationId = 1
             },
 
             new Service
@@ -609,7 +602,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris11Services.jpg",
                 },
-                ExternalLinks = "https://www.parisprivateguides.com"
+                ExternalLinks = "https://www.parisprivateguides.com",
+                DestinationId = 1
             },
 
             new Service
@@ -625,7 +619,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris12Services.jpg",
                 },
-                ExternalLinks = "https://www.historicalparistours.com"
+                ExternalLinks = "https://www.historicalparistours.com",
+                DestinationId = 1
             },
 
             new Service
@@ -641,7 +636,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris13Services.jpg",
                 },
-                ExternalLinks = "https://www.location-voiture-paris.com"
+                ExternalLinks = "https://www.location-voiture-paris.com",
+                DestinationId = 1
             },
 
             new Service
@@ -657,7 +653,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris14Services.jpg",
                 },
-                ExternalLinks = "https://www.g7.fr"
+                ExternalLinks = "https://www.g7.fr",
+                DestinationId = 1
             },
 
             new Service
@@ -673,7 +670,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesTest/Paris15Services.jpg",
                 },
-                ExternalLinks = "https://www.batobus.com"
+                ExternalLinks = "https://www.batobus.com",
+                DestinationId = 1
             },
 
 
@@ -682,7 +680,7 @@ namespace LittleBigTraveler.Models.DataBase
 
 
     // Services à Rome
-    new Service
+                new Service
                 {
                     Id = 16,
                     Name = "Hostel Alessandro Palace & Bar",
@@ -697,7 +695,8 @@ namespace LittleBigTraveler.Models.DataBase
                             "/ImagesServices/Rome16Hotel.jpeg",
                         },
 
-                    ExternalLinks = "https://www.hostelrome.com"
+                    ExternalLinks = "https://www.hostelrome.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -713,7 +712,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome17Hotel.jpeg",
                         },
-                    ExternalLinks = "https://www.the-yellow.com"
+                    ExternalLinks = "https://www.the-yellow.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -729,7 +729,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome18Hotel.jpeg",
                         },
-                    ExternalLinks = "https://www.hotelderussie.it"
+                    ExternalLinks = "https://www.hotelderussie.it",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -745,7 +746,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome19Hotel.jpeg",
                         },
-                    ExternalLinks = "https://www.hotelartemide.it"
+                    ExternalLinks = "https://www.hotelartemide.it",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -761,7 +763,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome20Hotel.jpeg",
                         },
-                    ExternalLinks = "https://www.raphaelhotel.com"
+                    ExternalLinks = "https://www.raphaelhotel.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -777,7 +780,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome21Restaurant.jpeg",
                         },
-                    ExternalLinks = "https://www.trattoriadadanilo.it"
+                    ExternalLinks = "https://www.trattoriadadanilo.it",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -793,7 +797,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome22Restaurant.jpeg",
                         },
-                    ExternalLinks = "https://www.bonci.it"
+                    ExternalLinks = "https://www.bonci.it",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -809,7 +814,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome23Restaurant.jpeg",
                         },
-                    ExternalLinks = "https://www.romecavalieri.com/lapergola"
+                    ExternalLinks = "https://www.romecavalieri.com/lapergola",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -825,7 +831,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome24Restaurant.jpeg",
                         },
-                    ExternalLinks = "https://www.armandoalpantheon.it"
+                    ExternalLinks = "https://www.armandoalpantheon.it",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -841,7 +848,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome25Restaurant.jpeg",
                         },
-                    ExternalLinks = "https://www.anticoarco.it"
+                    ExternalLinks = "https://www.anticoarco.it",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -857,7 +865,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome26Transport.jpeg",
                         },
-                    ExternalLinks = "https://www.hertz.com"
+                    ExternalLinks = "https://www.hertz.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -873,7 +882,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome27Transport.jpeg",
                         },
-                    ExternalLinks = "https://www.avis.com"
+                    ExternalLinks = "https://www.avis.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -889,7 +899,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome28Transport.jpeg",
                         },
-                    ExternalLinks = "https://www.mydriver.com"
+                    ExternalLinks = "https://www.mydriver.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -905,7 +916,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome29Guide.jpeg",
                         },
-                    ExternalLinks = "https://www.romeprivateguides.com"
+                    ExternalLinks = "https://www.romeprivateguides.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -921,7 +933,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesServices/Rome30Guide.jpeg",
                         },
-                    ExternalLinks = "https://www.walksofitaly.com"
+                    ExternalLinks = "https://www.walksofitaly.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -937,7 +950,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.hotelclement.cz"
+                    ExternalLinks = "https://www.hotelclement.cz",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -953,7 +967,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.hotelsalvator.cz"
+                    ExternalLinks = "https://www.hotelsalvator.cz",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -969,7 +984,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.hoteljulian.com"
+                    ExternalLinks = "https://www.hoteljulian.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -985,7 +1001,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.mosaichouse.com"
+                    ExternalLinks = "https://www.mosaichouse.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -1001,7 +1018,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.hostelone.com"
+                    ExternalLinks = "https://www.hostelone.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -1017,7 +1035,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.ufleku.cz"
+                    ExternalLinks = "https://www.ufleku.cz",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -1033,7 +1052,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.czechfolklore.com"
+                    ExternalLinks = "https://www.czechfolklore.com",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -1049,7 +1069,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.lokal-dlouha.ambi.cz"
+                    ExternalLinks = "https://www.lokal-dlouha.ambi.cz",
+                    DestinationId = 2
                 },
                 new Service
                 {
@@ -1064,7 +1085,8 @@ namespace LittleBigTraveler.Models.DataBase
                         {
                             "/ImagesTest/serviceVilleId.jpg",
                         },
-                    ExternalLinks = "https://www.praguelocalguides.com"
+                    ExternalLinks = "https://www.praguelocalguides.com",
+                    DestinationId = 2
                 }
 
                 );
@@ -1075,7 +1097,9 @@ namespace LittleBigTraveler.Models.DataBase
 
                     new Role { Id = 1, Name = "Air France", Type = "Transport" },
 
-                    new Role { Id = 2, Name = "Chez Toto Pizza", Type = "Restaurant" }
+                    new Role { Id = 2, Name = "Chez Toto Pizza", Type = "Restaurant" },
+
+                    new Role { Id = 3, Name = "Autres", Type = "Activité" }
                 // Autre role ci-après
                 );
 
@@ -1088,7 +1112,7 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Dupont",
                 FirstName = "Alice",
                 Email = "alice@example.com",
-                Password = "password123",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "123 Rue des Fleurs",
                 PhoneNumber = "1234567890",
                 BirthDate = new DateTime(1990, 1, 1),
@@ -1100,7 +1124,7 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Martin",
                 FirstName = "Bob",
                 Email = "bob@example.com",
-                Password = "password456",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "456 Rue des Arbres",
                 PhoneNumber = "9876543210",
                 BirthDate = new DateTime(1995, 5, 5),
@@ -1112,7 +1136,7 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Dubois",
                 FirstName = "Charlie",
                 Email = "charlie@example.com",
-                Password = "password789",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "789 Rue des Montagnes",
                 PhoneNumber = "5678901234",
                 BirthDate = new DateTime(1985, 10, 10),
@@ -1136,7 +1160,7 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Lefebvre",
                 FirstName = "Emma",
                 Email = "emma@example.com",
-                Password = "passworddef",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "654 Rue des Rivières",
                 PhoneNumber = "6789012345",
                 BirthDate = new DateTime(1992, 7, 20),
@@ -1148,7 +1172,7 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Fournier",
                 FirstName = "François",
                 Email = "francois@example.com",
-                Password = "passwordghi",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "987 Rue des Collines",
                 PhoneNumber = "3456789012",
                 BirthDate = new DateTime(1988, 12, 25),
@@ -1160,7 +1184,7 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Rousseau",
                 FirstName = "Alexandre",
                 Email = "alexandre.rousseau@gmail.com",
-                Password = "pass12345",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "14 Rue de Rivoli, Quartier des Tuileries, Paris",
                 PhoneNumber = "0145678901",
                 BirthDate = new DateTime(1994, 9, 2),
@@ -1172,7 +1196,7 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Leclerc",
                 FirstName = "Manon",
                 Email = "manon.leclerc@gmail.com",
-                Password = "mdp98765",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "30 Rue Sainte-Catherine, Pentes de la Croix-Rousse, Lyon",
                 PhoneNumber = "046543210",
                 BirthDate = new DateTime(1993, 12, 18),
@@ -1184,7 +1208,7 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Dubois",
                 FirstName = "Émilie",
                 Email = "emilie.dubois@gmail.com",
-                Password = "securepass123",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "18 Rue des Augustins, Centre Ville, Perpignan",
                 PhoneNumber = "043216549",
                 BirthDate = new DateTime(1992, 5, 28),
@@ -1196,7 +1220,7 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Martin",
                 FirstName = "Antoine",
                 Email = "antoine.martin@gmail.com",
-                Password = "password456",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "10 Quai de la Tourette, Le Panier, Marseille",
                 PhoneNumber = "067891234",
                 BirthDate = new DateTime(1991, 8, 10),
@@ -1208,10 +1232,11 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Dubois",
                 FirstName = "Jean",
                 Email = "jean.dubois@gmail.com",
-                Password = "motdepasse123",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "12 Rue de la Paix, Quartier Latin, Paris",
                 PhoneNumber = "0145678901",
                 BirthDate = new DateTime(1985, 8, 20),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             },
             new User
             {
@@ -1219,10 +1244,11 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Leroy",
                 FirstName = "Sophie",
                 Email = "sophie.leroy@gmail.com",
-                Password = "securepassword",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "27 Rue du Palais Grillet, Presqu'île, Lyon",
                 PhoneNumber = "046543210",
                 BirthDate = new DateTime(1992, 3, 10),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             },
             new User
             {
@@ -1230,10 +1256,11 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Martin",
                 FirstName = "Pierre",
                 Email = "pierre.martin@gmail.com",
-                Password = "12345678",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "45 Rue des Pénitents Bleus, Vieux Lyon, Lyon",
                 PhoneNumber = "0141234564",
                 BirthDate = new DateTime(1991, 11, 25),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             },
             new User
             {
@@ -1241,10 +1268,11 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Dubois",
                 FirstName = "Marie",
                 Email = "marie.dubois@gmail.com",
-                Password = "mdp123",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "8 Rue de la République, Part-Dieu, Lyon",
                 PhoneNumber = "0149876543",
                 BirthDate = new DateTime(1988, 6, 15),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             },
             new User
             {
@@ -1252,10 +1280,11 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Dupont",
                 FirstName = "Paul",
                 Email = "paul.dupont@gmail.com",
-                Password = "password",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "15 Rue de l'Ancienne Porte Neuve, Centre Ville, Perpignan",
                 PhoneNumber = "0145678901",
                 BirthDate = new DateTime(1995, 2, 18),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             },
             new User
             {
@@ -1263,10 +1292,11 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Lefèvre",
                 FirstName = "Sophie",
                 Email = "sophie.lefevre@gmail.com",
-                Password = "secure123",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "22 Avenue de Grande Bretagne, Les Coves, Perpignan",
                 PhoneNumber = "0410987654",
                 BirthDate = new DateTime(1987, 7, 5),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             },
             new User
             {
@@ -1274,10 +1304,11 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Moreau",
                 FirstName = "Luc",
                 Email = "luc.moreau@gmail.com",
-                Password = "pass1234",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "32 Rue Saint-Ferréol, Centre Ville, Marseille",
                 PhoneNumber = "0623415678",
                 BirthDate = new DateTime(1993, 9, 12),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             },
             new User
             {
@@ -1285,10 +1316,11 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Girard",
                 FirstName = "Emma",
                 Email = "emma.girard@gmail.com",
-                Password = "password321",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "9 Quai du Port, Vieux Port, Marseille",
                 PhoneNumber = "0168765432",
                 BirthDate = new DateTime(1989, 4, 27),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             },
             new User
             {
@@ -1296,10 +1328,11 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Dupuis",
                 FirstName = "Marc",
                 Email = "marc.dupuis@gmail.com",
-                Password = "mdp5678",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "23 Rue Esquermoise, Vieux Lille, Lille",
                 PhoneNumber = "0131234567",
                 BirthDate = new DateTime(1990, 12, 5),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             },
             new User
             {
@@ -1307,122 +1340,13 @@ namespace LittleBigTraveler.Models.DataBase
                 LastName = "Lefebvre",
                 FirstName = "Julie",
                 Email = "julie.lefebvre@gmail.com",
-                Password = "securepass",
+                Password = UserDAL.EncodeMD5("password"),
                 Address = "8 Rue de la Clef, Centre Ville, Lille",
                 PhoneNumber = "0139876543",
                 BirthDate = new DateTime(1986, 2, 28),
-            },
-            new User
-            {
-                Id = 21,
-                LastName = "Roy",
-                FirstName = "Sophie",
-                Email = "sophie.roy@gmail.com",
-                Password = "pass1234",
-                Address = "17 Rue Sainte-Catherine, Saint-Michel, Bordeaux",
-                PhoneNumber = "0123456789",
-                BirthDate = new DateTime(1992, 10, 15),
-            },
-            new User
-            {
-                Id = 22,
-                LastName = "Gagnon",
-                FirstName = "Alexandre",
-                Email = "alexandre.gagnon@gmail.com",
-                Password = "securepass",
-                Address = "12 Avenue de la Marne, La Négresse, Biarritz",
-                PhoneNumber = "0456789123",
-                BirthDate = new DateTime(1988, 5, 2),
-            },
-            new User
-            {
-                Id = 23,
-                LastName = "Tremblay",
-                FirstName = "Emma",
-                Email = "emma.tremblay@gmail.com",
-                Password = "mdp7890",
-                Address = "9 Rue des Francs-Bourgeois, Centre Ville, Strasbourg",
-                PhoneNumber = "0498765432",
-                BirthDate = new DateTime(1995, 12, 28),
-            },
-            new User
-            {
-                Id = 24,
-                LastName = "Lavoie",
-                FirstName = "Pierre",
-                Email = "pierre.lavoie@gmail.com",
-                Password = "password789",
-                Address = "6 Boulevard des Anglais, Milady, Biarritz",
-                PhoneNumber = "0632147859",
-                BirthDate = new DateTime(1991, 7, 10),
-            },
-            new User
-            {
-                Id = 25,
-                LastName = "Bélanger",
-                FirstName = "Marie",
-                Email = "marie.belanger@gmail.com",
-                Password = "secure1234",
-                Address = "15 Rue de la Douane, Centre Ville, Strasbourg",
-                PhoneNumber = "0356897412",
-                BirthDate = new DateTime(1987, 3, 22),
-            },
-            new User
-            {
-                Id = 26,
-                LastName = "Fortin",
-                FirstName = "Marc",
-                Email = "marc.fortin@gmail.com",
-                Password = "mdp4567",
-                Address = "32 Avenue Jean Médecin, Carré d'Or, Nice",
-                PhoneNumber = "0123456789",
-                BirthDate = new DateTime(1993, 9, 5),
-            },
-            new User
-            {
-                Id = 27,
-                LastName = "Gauthier",
-                FirstName = "Isabelle",
-                Email = "isabelle.gauthier@gmail.com",
-                Password = "pass456",
-                Address = "8 Rue Masséna, Vieux Nice, Nice",
-                PhoneNumber = "0456789123",
-                BirthDate = new DateTime(1990, 4, 12),
-
-            },
-            new User
-            {
-                Id = 28,
-                LastName = "Morin",
-                FirstName = "David",
-                Email = "david.morin@gmail.com",
-                Password = "password123",
-                Address = "17 Rue du Maréchal Foch, Petite France, Strasbourg",
-                PhoneNumber = "0498765432",
-                BirthDate = new DateTime(1986, 11, 25),
-            },
-            new User
-            {
-                Id = 29,
-                LastName = "Lévesque",
-                FirstName = "Sarah",
-                Email = "sarah.levesque@gmail.com",
-                Password = "securepass789",
-                Address = "6 Avenue Thiers, Jean Médecin, Nice",
-                PhoneNumber = "0632147859",
-                BirthDate = new DateTime(1994, 2, 18),
-            },
-            new User
-            {
-                Id = 30,
-                LastName = "Caron",
-                FirstName = "Thomas",
-                Email = "thomas.caron@gmail.com",
-                Password = "mdp789",
-                Address = "15 Rue de la Juiverie, Bouffay, Nantes",
-                PhoneNumber = "0132546897",
-                BirthDate = new DateTime(1991, 10, 20),
+                ProfilePicture = "/path/to/profile_picture.jpg"
             }
+           
             );
 
 
@@ -1431,32 +1355,101 @@ namespace LittleBigTraveler.Models.DataBase
                  new Customer
                  {
                      Id = 1,
-                     User = Users.Find(1),
+                     User = Users.Find(6),
                      LoyaltyPoint = 100,
                      CommentPoint = 50
                  },
                 new Customer
                 {
                     Id = 2,
-                    User = Users.Find(2),
+                    User = Users.Find(7),
+                    LoyaltyPoint = 200,
+                    CommentPoint = 75
+                },
+                 new Customer
+                 {
+                     Id = 3,
+                     User = Users.Find(8),
+                     LoyaltyPoint = 100,
+                     CommentPoint = 50
+                 },
+                new Customer
+                {
+                    Id = 4,
+                    User = Users.Find(9),
+                    LoyaltyPoint = 200,
+                    CommentPoint = 75
+                },
+                 new Customer
+                 {
+                     Id = 5,
+                     User = Users.Find(10),
+                     LoyaltyPoint = 100,
+                     CommentPoint = 50
+                 },
+                new Customer
+                {
+                    Id = 6,
+                    User = Users.Find(11),
                     LoyaltyPoint = 200,
                     CommentPoint = 75
                 }
+
             );
 
             this.Administrators.AddRange(
                 new Administrator
                 {
-                    Id = 3,
-                    User = Users.Find(3),
-
+                    Id = 1,
+                    User = Users.Find(1),
                 },
+               new Administrator
+               {
+                   Id = 2,
+                   User = Users.Find(2),
+               },
+               new Administrator
+               {
+                   Id = 3,
+                   User = Users.Find(3),
+               },
                new Administrator
                {
                    Id = 4,
                    User = Users.Find(4),
+               },
+               new Administrator
+               {
+                   Id = 5,
+                   User = Users.Find(5),
                }
-           );
+
+            );
+            this.Partners.AddRange(
+                new Partner
+                {
+                    Id = 1,
+                    User = Users.Find(12),
+                    RoleId = 1,
+                   
+                    
+                },
+                new Partner
+                {
+                    Id = 2,
+                    User = Users.Find(13),
+                    RoleId = 2,
+                },
+                new Partner
+                {
+                    Id = 3,
+                    User = Users.Find(14),
+                    RoleId = 3,
+                }
+
+                );
+
+
 
             this.SaveChanges();
         }

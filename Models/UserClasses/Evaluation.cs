@@ -9,6 +9,7 @@ namespace LittleBigTraveler.Models.UserClasses
         public int Note { get; set; }
         public string Comment { get; set; }
 
+
         public int BookingId { get; set; }
         public virtual Booking Booking { get; set; }
     }

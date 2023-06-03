@@ -1,0 +1,69 @@
+﻿@model AllInclusiveTravelViewModel
+
+@{
+    ViewData["Title"] = "Modify All Inclusive Travel";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1 class="text-center">Modify All Inclusive Travel</h1>
+
+    <form method="post" action="/AllInclusiveTravel/EditAllInclusiveTravel">
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+        <div class="form-group">
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="Name" class="form-control" value="@Model.Name" />
+        </div>
+
+        <div class="form-group">
+            <label for="Description">Description:</label>
+            <textarea id="Description" name="Description" class="form-control">@Model.Description</textarea>
+        </div>
+
+        <h2 class="text-center">Services disponibles pour la destination</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th> <!-- pour checkbox -->
+                    <th>Nom</th>
+                    <th>Prix</th>
+                    <th>Horaire</th>
+                    <th>Emplacement</th>
+                    <th>Type</th>
+                    <th>Style</th>
+                    <th>Images</th>
+                    <th>Liens</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var service in Model.Services)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="service-@service.Id" name="SelectedServiceId" value="@service.Id" @(Model.SelectedServiceId.Contains(service.Id) ? "checked" : "")>
+                        </td>
+                        <td>@service.Name</td>
+                        <td>@service.Price</td>
+                        <td>@service.Schedule</td>
+                        <td>@service.Location</td>
+                        <td>@service.Type</td>
+                        <td>@service.Style</td>
+                        <td>
+                            @foreach (var image in service.Images)
+                            {
+                                <img src="@image" alt="Image" class="img-thumbnail" />
+                            }
+                        </td>
+                        <td>@service.ExternalLinks</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Modifier le voyage</button>
+        </div>
+    </form>
+</div>
