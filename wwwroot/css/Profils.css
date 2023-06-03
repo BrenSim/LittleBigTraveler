@@ -1,4 +1,6 @@
 ﻿* {
+    padding: 0;
+    margin: 0;
     align-items: center;
     justify-content: center;
 }
@@ -101,14 +103,19 @@ footer {
     text-align: center;
 }
 
+    .logoFooter i {
+        margin-right: 5%;
+        font-size: 25px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+        .logoFooter i:hover {
+            margin-right: 5%;
+            transform: scale(1.2);
+        }
+
 #navFooter {
     display: flex;
-    justify-content: flex-start;
-}
-
-.navFooter ul {
-    display: flex;
-    flex-direction: column;
     justify-content: flex-start;
 }
 
@@ -117,7 +124,20 @@ footer {
     flex-direction: column;
     white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
     font-size: 1em;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+    .navFooter ul {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5vw;
+        justify-content: flex-start; /* Modifier la justification */
+        align-items: flex-start; /* Alignement des éléments à gauche */
+    }
+
+    .navFooter li {
+        line-height: 25px;
+    }
 
 .navTitre {
     font-size: larger;
@@ -272,10 +292,11 @@ section {
 }
 
 .menu-container {
+    display: flex;
     position: absolute;
     z-index: 1;
     top: 63%;
-    width: auto;
+    height: 60px;
     background-color: rgba(255, 255, 255, 0.074);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(20px);
