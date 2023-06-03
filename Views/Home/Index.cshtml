@@ -1,17 +1,215 @@
-﻿@{
-    Layout = "_PrimaryLayout";
-    ViewData["Title"] = "Accueil";
-}
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/feb8ff1e04.js" crossorigin="anonymous"></script>
+    <title>Little Big Traveler</title>
+    <link rel="stylesheet" href="~/css/Index.css">
+</head>
+<body>
+    <!--Première partie de la page-->
+    <header>
+        <!--Barre de Navigation-->
+        <!--  <div class="logo">
+                 <a href="#Home"><img src="/Assets/Images/logoLBT.png" alt="Logo"></a>
+             </div> -->
+        <nav class="navMenu">
+            <ul>
+                <li><a href="#sectionThreeCards">Nos offres</a></li>
+                <li><a href="#">Notre concept</a></li>
+                <li><a href="@Url.Action("SigninPage", "SigninSignup")">Connexion</a></li>
+                <li><a href="@Url.Action("SignupPage", "SigninSignup")">Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="primaryPicture">
+            <div class="flexbox">
+                <div class="logo">
+                    <a href="#"><img src="~/imagesIndex/logoLBT.png" alt="Logo"></a>
+                </div>
+                <!--   <h1 class="titreHeader">Little Big Traveler</h1>
+                   <p class="textHeader"t>Petit voyage, grande découverte !</p> -->
+            </div>
+            </section>
+            <section>
+                <nav class="menu-container">
+                    <ul>
+                        <li class="destination"><a href="#">Destination</a></li>
+                        <li class="VDepart"><a href="#">Ville de départ</a></li>
+                        <li class="DDepart"><a href="#">Date de départ</a></li>
+                        <li class="prix"><a href="#">Prix</a></li>
+                    </ul>
+                    <button class="glassIcon">
+                        <span>
+                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                        </span>
+                    </button>
+                </nav>
+            </section>
+            <section class="sectionCaroussel">
+                <div class="container">
+                    <div class="content">
+                        <div class="introduce"></div>
+                        <div class="thumbnail-list">
+                            <div class="wrapper"></div>
+                        </div>
+                    </div>
 
-@section Content {
-    <div class="jumbotron mt-4">
-        <h1 class="display-4 text-center">Destinations!</h1>
-        <p class="lead text-center">Test de formulaire pour ajout/modification de destinations.</p>
-    </div>
-
-    <div class="text-center mb-4" style="margin-top: 20px;">
-        <a href="/Destination/Liste" class="btn btn-primary btn-lg mr-2">Voir les destinations</a>
-        <a href="@Url.Action("SigninPage", "SigninSignup")" class="btn btn-success btn-lg">Ajouter une destination</a>
-        <a href="@Url.Action("SignupPage", "SigninSignup")" class="btn btn-success btn-lg">Ajouter une destination</a>
-    </div>
-}
+                    <div class="navigation">
+                        <button class="next-button">Suivant</button>
+                        <span class="line"></span>
+                        <span class="ordinal-number"> </span>
+                    </div>
+                </div>
+                <script src="~/js/index.js"></script>
+            </section>
+            <section id="sectionThreeCards">
+                <div class="glassBorderBackground">
+                    <h1 class="titrePackage">NOS PACKAGES</h1>
+                    <div class="glassBorderCard">
+                        <div class="card">
+                            <img src="~/imagesIndex/img.jpg" class="card-img" />
+                            <div class="card-body">
+                                <h1 class="card-title">Voyage sur mesure</h1>
+                                <p class="card-sub-title">Vos envies, votre découverte</p>
+                                <p class="card-info">Vous avez la possibilité de customiser vous même votre propre voyage ! Transports, services, activités, vous êtes libre.</p>
+                                <button class="card-btn">Réserver !</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glassBorderCard">
+                        <div class="card">
+                            <img src="~/imagesIndex/img2.jpg" class="card-img" />
+                            <div class="card-body">
+                                <h1 class="card-title">All Inclusive</h1>
+                                <p class="card-sub-title">Le voyage tout compris !</p>
+                                <p class="card-info">Venez découvrir nos packages personnalisables en adéquation avec vos envies !</p>
+                                <button class="card-btn">Réserver !</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glassBorderCardSurprise">
+                        <div class="card">
+                            <img src="~/imagesIndex/img3.jpg" class="card-img" />
+                            <div class="card-body">
+                                <h1 class="card-title">Voyage surprise</h1>
+                                <p class="card-sub-title">Laissez vous surprendre par nos propositions...</p>
+                                <p class="card-info">
+                                    Envie de voyager mais vous n'avez pas d'idée de destination?
+                                    Remplissez vos préférences et tenter les expériences de nos voyages surprises.
+                                </p>
+                                <button class="card-btn">Réserver !</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sectionProfileTeamLBT">
+                <div class="cardProfile">
+                    <div class="imgBx">
+                        <img src="~/imagesIndex/brendan.jpg" alt="Photo de profil" />
+                    </div>
+                    <div class="content">
+                        <div class="details">
+                            <h2>Brendan SIMON<br /><span>Développeur Web</span></h2>
+                            <div class="data">
+                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardProfile">
+                    <div class="imgBx">
+                        <img src="~/imagesIndex/mounia.jpg" alt="Photo de profil" />
+                    </div>
+                    <div class="content">
+                        <div class="details">
+                            <h2>Mounia TAHAROUCHTE<br /><span>Développeur Web</span></h2>
+                            <div class="data">
+                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardProfile">
+                    <div class="imgBx">
+                        <img src="~/imagesIndex/andre.jpg" alt="Photo de profil" />
+                    </div>
+                    <div class="content">
+                        <div class="details">
+                            <h2>Andre BASTOS<br /><span>Développeur Web</span></h2>
+                            <div class="data">
+                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardProfile">
+                    <div class="imgBx">
+                        <img src="~/imagesIndex/david.jpg" alt="Photo de profil" />
+                    </div>
+                    <div class="content">
+                        <div class="details">
+                            <h2>David ESA<br /><span>Développeur Web</span></h2>
+                            <div class="data">
+                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardProfile">
+                    <div class="imgBx">
+                        <img src="~/imagesIndex/fred.jpg" alt="Photo de profil" />
+                    </div>
+                    <div class="content">
+                        <div class="details">
+                            <h2>Frédéric DUPIN<br /><span>Développeur Web</span></h2>
+                            <div class="data">
+                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </main>
+    <footer>
+        <div class="logoFooter">
+            <a href="@Url.Action("Index", "HomeController")"><img src="~/imagesIndex/logoLBT.png" alt="Logo"></a>
+            <div class="icons">
+                <span><a href="#"><i class="fa-brands fa-facebook"></a></i></span>
+                <span><a href="#"><i class="fa-brands fa-instagram"></a></i></span>
+                <span><a href="#"><i class="fa-brands fa-twitter"></a></i></span>
+                <span><a href="#"><i class="fa-brands fa-tiktok"></a></i></span>
+            </div>
+        </div>
+        <div id="navFooter">
+            <nav class="navFooter">
+                <ul>
+                    <li class="navTitre">À propos de nous</li>
+                    <li><a href="#"><p>Qui sommes nous</p></a></li>
+                    <li><a href="#">Notre concept</a></li>
+                    <li><a href="#">Nous rejoindre</a></li>
+                </ul>
+            </nav>
+            <nav class="navFooter">
+                <ul>
+                    <li class="navTitre">Contacts</li>
+                    <li><a href="#">Contactez-nous</li>
+                    <li><a href="#">Presse</a></li>
+                </ul>
+            </nav>
+            <nav class="navFooter">
+                <ul>
+                    <li class="navTitre">Informations légales</li>
+                    <li><a href="#">Mentions légale</a></li>
+                    <li><a href="#">Conditions générales de vente</a></li>
+                    <li><a href="#">Gestion des consentements cookies</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
