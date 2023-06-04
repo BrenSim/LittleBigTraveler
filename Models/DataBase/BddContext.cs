@@ -413,7 +413,6 @@ namespace LittleBigTraveler.Models.DataBase
             this.Services.AddRange(
 
             // Paris:
-            // Services à Paris 
             new Service
             {
                 Id = 1,
@@ -431,23 +430,22 @@ namespace LittleBigTraveler.Models.DataBase
                 DestinationId = 1
             },
 
-
-                new Service
+            new Service
+            {
+                Id = 2,
+                Name = "Le Village Hostel Montmartre",
+                Price = 35.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Paris",
+                Type = "Accommodation",
+                MaxCapacity = 1,
+                Images = new List<string>
                 {
-                    Id = 2,
-                    Name = "Le Village Hostel Montmartre",
-                    Price = 35.0,
-                    Schedule = DateTime.Now.AddDays(2),
-                    Location = "Paris",
-                    Type = "Accommodation",
-                    MaxCapacity = 1,
-                    Images = new List<string>
-                    {
-                        "/ImagesTest/Paris2Services.jpg",
-                    },
-                    ExternalLinks = "https://www.villagehostel.fr/montmartre",
-                    DestinationId = 1
+                    "/ImagesTest/Paris2Services.jpg",
                 },
+                ExternalLinks = "https://www.villagehostel.fr/montmartre",
+                DestinationId = 1
+            },
 
             new Service
             {
@@ -669,6 +667,7 @@ namespace LittleBigTraveler.Models.DataBase
                 ExternalLinks = "https://www.batobus.com",
                 DestinationId = 1
             },
+
             // Rome:
             new Service
             {
@@ -684,7 +683,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/16RomeHotel.jpeg",
                     },
-                ExternalLinks = "https://www.hostelrome.com"
+                ExternalLinks = "https://www.hostelrome.com",
+                DestinationId = 2
             },
 
             new Service
@@ -701,8 +701,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/17RomeHotel.jpeg",
                     },
-                ExternalLinks = "https://www.the-yellow.com"
+                ExternalLinks = "https://www.the-yellow.com",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 18,
@@ -717,8 +719,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/18RomeHotel.jpeg",
                     },
-                ExternalLinks = "https://www.hotelderussie.it"
+                ExternalLinks = "https://www.hotelderussie.it",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 19,
@@ -733,7 +737,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/19RomeHotel.jpeg",
                     },
-                ExternalLinks = "https://www.hotelartemide.it"
+                ExternalLinks = "https://www.hotelartemide.it",
+                DestinationId = 2
             },
             new Service
             {
@@ -749,8 +754,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/20RomeHotel.jpeg",
                     },
-                ExternalLinks = "https://www.raphaelhotel.com"
+                ExternalLinks = "https://www.raphaelhotel.com",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 21,
@@ -765,8 +772,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/21RomeRestaurant.jpeg",
                     },
-                ExternalLinks = "https://www.trattoriadadanilo.it"
+                ExternalLinks = "https://www.trattoriadadanilo.it",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 22,
@@ -781,8 +790,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/22RomeRestaurant.jpeg",
                     },
-                ExternalLinks = "https://www.bonci.it"
+                ExternalLinks = "https://www.bonci.it",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 23,
@@ -797,8 +808,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/23RomeRestaurant.jpeg",
                     },
-                ExternalLinks = "https://www.romecavalieri.com/lapergola"
+                ExternalLinks = "https://www.romecavalieri.com/lapergola",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 24,
@@ -813,8 +826,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/24RomeRestaurant.jpeg",
                     },
-                ExternalLinks = "https://www.armandoalpantheon.it"
+                ExternalLinks = "https://www.armandoalpantheon.it",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 25,
@@ -829,7 +844,7 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/25RomeRestaurant.jpeg",
                     },
-                ExternalLinks = "https://www.anticoarco.it"
+                ExternalLinks = "https://www.anticoarco.it",
             },
             new Service
             {
@@ -845,7 +860,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/26RomeTransport.jpeg",
                     },
-                ExternalLinks = "https://www.hertz.com"
+                ExternalLinks = "https://www.hertz.com",
+                DestinationId = 2
             },
             new Service
             {
@@ -861,8 +877,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/27RomeTransport.jpeg",
                     },
-                ExternalLinks = "https://www.avis.com"
+                ExternalLinks = "https://www.avis.com",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 28,
@@ -877,8 +895,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/28RomeTransport.jpeg",
                     },
-                ExternalLinks = "https://www.mydriver.com"
+                ExternalLinks = "https://www.mydriver.com",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 29,
@@ -893,8 +913,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/29RomeGuide.jpeg",
                     },
-                ExternalLinks = "https://www.romeprivateguides.com"
+                ExternalLinks = "https://www.romeprivateguides.com",
+                DestinationId = 2
             },
+
             new Service
             {
                 Id = 30,
@@ -909,8 +931,10 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/30Rome0Guide.jpeg",
                     },
-                ExternalLinks = "https://www.walksofitaly.com"
+                ExternalLinks = "https://www.walksofitaly.com",
+                DestinationId = 2
             },
+
             // Prague :
             new Service
             {
@@ -926,7 +950,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/31PragueHotel.jpeg",
                     },
-                ExternalLinks = "https://www.hotelclement.cz"
+                ExternalLinks = "https://www.hotelclement.cz",
+                DestinationId = 3
             },
 
             new Service
@@ -943,7 +968,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/32PragueHotel.png",
                     },
-                ExternalLinks = "https://www.hotelsalvator.cz"
+                ExternalLinks = "https://www.hotelsalvator.cz",
+                DestinationId = 3
             },
 
             new Service
@@ -960,7 +986,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/33PragueHotel.png",
                     },
-                ExternalLinks = "https://www.hoteljulian.com"
+                ExternalLinks = "https://www.hoteljulian.com",
+                DestinationId = 3
             },
 
             new Service
@@ -977,7 +1004,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/34PragueHotel.jpeg",
                     },
-                ExternalLinks = "https://www.mosaichouse.com"
+                ExternalLinks = "https://www.mosaichouse.com",
+                DestinationId = 3
             },
 
             new Service
@@ -994,7 +1022,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/35PragueHotel.jpeg",
                     },
-                ExternalLinks = "https://www.hostelone.com"
+                ExternalLinks = "https://www.hostelone.com",
+                DestinationId = 3
             },
 
             new Service
@@ -1011,7 +1040,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/36PragueRestaurant.png",
                     },
-                ExternalLinks = "https://www.ufleku.cz"
+                ExternalLinks = "https://www.ufleku.cz",
+                DestinationId = 3
             },
 
             new Service
@@ -1028,7 +1058,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/37PragueRestaurant.png",
                     },
-                ExternalLinks = "https://www.czechfolklore.com"
+                ExternalLinks = "https://www.czechfolklore.com",
+                DestinationId = 3
             },
 
             new Service
@@ -1045,7 +1076,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/38PragueRestaurant.png",
                     },
-                ExternalLinks = "https://www.lokal-dlouha.ambi.cz"
+                ExternalLinks = "https://www.lokal-dlouha.ambi.cz",
+                DestinationId = 3
             },
 
             new Service
@@ -1061,7 +1093,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/39PragueGuide.png",
                     },
-                ExternalLinks = "https://www.praguelocalguides.com"
+                ExternalLinks = "https://www.praguelocalguides.com",
+                DestinationId = 3
             },
 
             new Service
@@ -1078,7 +1111,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/40PragueGuide.webp",
                     },
-                ExternalLinks = "https://www.urbanadventures.com/destination/Prague-tours"
+                ExternalLinks = "https://www.urbanadventures.com/destination/Prague-tours",
+                DestinationId = 3
             },
 
             new Service
@@ -1095,7 +1129,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/41PragueTour.png"
                     },
-                ExternalLinks = "https://www.funinprague.eu/en/"
+                ExternalLinks = "https://www.funinprague.eu/en/",
+                DestinationId = 3
             },
 
             new Service
@@ -1112,7 +1147,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/42PragueVisite.png"
                     },
-                ExternalLinks = "https://www.getpragueguide.com/"
+                ExternalLinks = "https://www.getpragueguide.com/",
+                DestinationId = 3
             },
 
             new Service
@@ -1129,7 +1165,8 @@ namespace LittleBigTraveler.Models.DataBase
                     {
                         "/ImagesServices/43PragueActivite.png"
                     },
-                ExternalLinks = "https://www.premiant.cz/fra/"
+                ExternalLinks = "https://www.premiant.cz/fra/",
+                DestinationId = 3
             },
 
             new Service
@@ -1146,7 +1183,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesServices/44PragueActivite.png"
                 },
-                ExternalLinks = "https://mijntours.com/prague/"
+                ExternalLinks = "https://mijntours.com/prague/",
+                DestinationId = 3
             },
 
             new Service
@@ -1163,7 +1201,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesServices/45PragueActivite.png"
                 },
-                ExternalLinks = "https://www.padlujeme.cz/"
+                ExternalLinks = "https://www.padlujeme.cz/",
+                DestinationId = 3
             },
             // Venise:
             new Service
@@ -2921,8 +2960,278 @@ namespace LittleBigTraveler.Models.DataBase
                     "/ImagesServices/149AnnecyActivite.webp",
                 },
                 ExternalLinks = "https://odyssee-canyon.com/"
-            }
+            },
 
+            // Garmisch-Partenkirchen
+            new Service
+            {
+                Id = 150,
+                Name = "Hostel 2962 Garmisch",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Accommodation",
+                Style = null,
+                MaxCapacity = 80,
+                Images = new List<string>
+                {
+                    "/ImagesServices/150GarmischHostel.png",
+                },
+                ExternalLinks = "http://www.hostel2962-garmisch.com/",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 151,
+                Name = "Youth Hostel Lübeck Altstadt",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Accommodation",
+                Style = null,
+                MaxCapacity = 60,
+                Images = new List<string>
+                {
+                    "/ImagesServices/151GarmischHostel.webp",
+                },
+                ExternalLinks = "https://www.jugendherberge.de/en/youth-hostels/luebeck-altstadt/",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 152,
+                Name = "Mountain Hideaway & Health Care Das Graseck",
+                Price = 100.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Accommodation",
+                Style = null,
+                MaxCapacity = 40,
+                Images = new List<string>
+                {
+                    "/ImagesServices/152GarmischHotel.svg",
+                },
+                ExternalLinks = "https://www.das-graseck.de/en",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 153,
+                Name = "Hotel Zugspitze",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Accommodation",
+                Style = null,
+                MaxCapacity = 100,
+                Images = new List<string>
+                {
+                    "/ImagesServices/153GarmischHotel.svg",
+                },
+                ExternalLinks = "https://www.hotel-zugspitze.de",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 154,
+                Name = "Hotel Edelweiss",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Accommodation",
+                Style = null,
+                MaxCapacity = 80,
+                Images = new List<string>
+                {
+                    "/ImagesServices/154GarmischHotel.png",
+                },
+                ExternalLinks = "https://www.edelweisslodgeandresort.com/",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 155,
+                Name = "Restaurant Gasthof Fraundorfer",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Restaurant",
+                Style = null,
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "/ImagesServices/155GarmischRestaurant.png",
+                },
+                ExternalLinks = "https://www.gasthof-fraundorfer.de/Gastronomie",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 156,
+                Name = "Restaurant Husar",
+                Price = 100.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Restaurant",
+                Style = null,
+                MaxCapacity = 60,
+                Images = new List<string>
+                {
+                    "/ImagesServices/156GarmischRestaurant.png",
+                },
+                ExternalLinks = "http://www.restauranthusar.de/",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 157,
+                Name = "Neuschwanstein Castle Tour",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Visite",
+                Style = "Culturel",
+                MaxCapacity = 15,
+                Images = new List<string>
+                {
+                    "/ImagesServices/157GarmischActivite.jpeg",
+                },
+                ExternalLinks = "https://www.neuschwanstein.de/englisch/tourist/index.htm",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 158,
+                Name = "Escalade à Garmisch-Partenkirchen",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Activité",
+                Style = "Sport" + " " + "Nature",
+                MaxCapacity = 20,
+                Images = new List<string>
+                {
+                    "/ImagesServices/158GarmischActivite.png",
+                },
+                ExternalLinks = "https://www.gapa-tourismus.de/bergsteigen",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 159,
+                Name = "Richard Strauss Institute",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Visite",
+                Style = "Culturel",
+                MaxCapacity = 200,
+                Images = new List<string>
+                {
+                    "/ImagesServices/159GarmischActivite.png",
+                },
+                ExternalLinks = "https://www.gapa.de/en/culture/museum",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 160,
+                Name = "Visite au Werdenfels Museum",
+                Price = 4.5,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Visite",
+                Style = "Culturel",
+                MaxCapacity = 150,
+                Images = new List<string>
+                {
+                    "/ImagesServices/160GarmischActivite.png",
+                },
+                ExternalLinks = "https://museum-werdenfels.de/",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 161,
+                Name = "Visite à pied de Garmisch-Partenkirchen",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Visite guidée",
+                Style = "Culture",
+                MaxCapacity = 100,
+                Images = new List<string>
+                {
+                    "/ImagesServices/161GarmischActivite.png",
+                },
+                ExternalLinks = "https://www.allthingsgarmisch.com/",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 162,
+                Name = "Ski a Garmisch-Partenkirchen",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Activité",
+                Style = "Sport" + " " + "Nature",
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "/ImagesServices/162GarmischActivite.png",
+                },
+                ExternalLinks = "https://www.gapa-tourismus.de/de/Sport-und-Natur/Winter/Skifahren",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 163,
+                Name = "Hiking in the Bavarian Alps",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Activité",
+                Style = "Sport" + " " + "Nature",
+                MaxCapacity = 40,
+                Images = new List<string>
+                {
+                    "/ImagesServices/163GarmischActivite.png",
+                },
+                ExternalLinks = "https://www.gapa-tourismus.de/wandern",
+                DestinationId = 11
+            },
+
+            new Service
+            {
+                Id = 164,
+                Name = "Trail Running Park in the Bavarian Alps",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Garmisch-Partenkirchen",
+                Type = "Activité",
+                Style = "Sport" + " " + "Nature",
+                MaxCapacity = 40,
+                Images = new List<string>
+                {
+                    "/ImagesServices/164GarmischActivite.png",
+                },
+                ExternalLinks = "https://www.gapa-tourismus.de/trailrunning",
+                DestinationId = 11
+            }
                 );
 
 
