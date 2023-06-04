@@ -3335,7 +3335,536 @@ namespace LittleBigTraveler.Models.DataBase
                 },
                 ExternalLinks = "https://www.gapa-tourismus.de/trailrunning",
                 DestinationId = 11
+            },
+            // Lisbonne :
+            new Service
+            {
+                Id = 164,
+                Name = "Lisbon Destination Hostel",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 100,
+                Images = new List<string>
+                {
+                    "/ImagesServices/164.jpeg",
+                },
+                ExternalLinks = "https://www.lisbondestinationhostel.com",
+                DestinationId = 12
+            },
+
+            new Service
+            {
+                Id = 165,
+                Name = "Living Lounge Hostel",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 80,
+                Images = new List<string>
+                {
+                    "/ImagesServices/165.jpeg",
+                },
+                ExternalLinks = "https://www.livingloungehostel.com",
+                DestinationId = 12
+            },
+
+            new Service
+            {
+                Id = 166,
+                Name = "Sunset Destination Hostel",
+                Price = 35.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 60,
+                Images = new List<string>
+                {
+                    "/ImagesServices/166.jpeg",
+                },
+                ExternalLinks = "https://www.sunsetdestinationhostel.com",
+                DestinationId = 12
+            },
+
+            // Hôtels
+
+            new Service
+            {
+                Id = 167,
+                Name = "Hotel Avenida Palace",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 100,
+                Images = new List<string>
+                {
+                    "/ImagesServices/167.jpeg",
+                },
+                ExternalLinks = "https://www.hotelavenidapalace.pt",
+                DestinationId = 12
+            },
+
+            new Service
+            {
+                Id = 168,
+                Name = "Altis Avenida Hotel",
+                Price = 180.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 80,
+                Images = new List<string>
+                {
+                    "/ImagesServices/168.jpeg",
+                },
+                ExternalLinks = "https://www.altishotels.com",
+                DestinationId = 12
+            },
+
+            // Restaurants
+
+            new Service
+            {
+                Id = 169,
+                Name = "Belcanto",
+                Price = 200.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Restaurant",
+                Style = "",
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "/ImagesServices/169.jpeg",
+                },
+                ExternalLinks = "https://www.belcanto.pt",
+                DestinationId = 12
+            },
+
+            new Service
+            {
+                Id = 170,
+                Name = "Time Out Market Lisbon",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Restaurant",
+                Style = "",
+                MaxCapacity = 60,
+                Images = new List<string>
+                {
+                    "/ImagesServices/170.jpeg",
+                },
+                ExternalLinks = "https://www.timeoutmarket.com/lisboa/en",
+                DestinationId = 12
+            },
+
+            // Visites guidées
+
+            new Service
+            {
+                Id = 171,
+                Name = "Belem Tower Guided Tour",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Guided Tour",
+                Style = "",
+                MaxCapacity = 15,
+                Images = new List<string>
+                {
+                    "/ImagesServices/171.jpeg",
+                },
+                ExternalLinks = "https://www.torrebelem.pt/en/",
+                DestinationId = 12
+            },
+
+            new Service
+            {
+                Id = 172,
+                Name = "Jerónimos Monastery Guided Tour",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Guided Tour",
+                Style = "",
+                MaxCapacity = 20,
+                Images = new List<string>
+                {
+                    "/ImagesServices/172.jpeg",
+                },
+                ExternalLinks = "https://www.mosteirojeronimos.pt/en/",
+                DestinationId = 12
+            },
+
+            // Activités culturelles
+
+            new Service
+            {
+                Id = 173,
+                Name = "Lisbon Oceanarium",
+                Price = 15.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Cultural Activity",
+                Style = "",
+                MaxCapacity = 200,
+                Images = new List<string>
+                {
+                    "/ImagesServices/173.jpeg",
+                },
+                ExternalLinks = "https://www.oceanario.pt/en/",
+                DestinationId = 12
+            },
+
+            new Service
+            {
+                Id = 174,
+                Name = "National Tile Museum",
+                Price = 10.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Cultural Activity",
+                Style = "",
+                MaxCapacity = 150,
+                Images = new List<string>
+                {
+                    "/ImagesServices/174.jpeg",
+                },
+                ExternalLinks = "https://www.museudoazulejo.pt/en-GB/home",
+                DestinationId = 12
+            },
+
+            new Service
+            {
+                Id = 175,
+                Name = "Calouste Gulbenkian Museum",
+                Price = 12.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Cultural Activity",
+                Style = "",
+                MaxCapacity = 100,
+                Images = new List<string>
+                {
+                    "/ImagesServices/175.jpeg",
+                },
+                ExternalLinks = "https://gulbenkian.pt/museu/en/",
+                DestinationId = 12
+            },
+
+            // Activités sportives
+
+            new Service
+            {
+                Id = 176,
+                Name = "Surfing Lessons in Lisbon",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Sport Activity",
+                Style = "",
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "/ImagesServices/176.jpeg",
+                },
+                ExternalLinks = "https://www.lisbonsurfacademy.com",
+                DestinationId = 12
+            },
+
+            new Service
+            {
+                Id = 177,
+                Name = "Kayaking in the Tagus River",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Sport Activity",
+                Style = "",
+                MaxCapacity = 40,
+                Images = new List<string>
+                {
+                    "/ImagesServices/177.jpeg",
+                },
+                ExternalLinks = "https://www.lisboakayak.com",
+                DestinationId = 12
+            },
+
+            // Interlaken : Vérifier les chiffres (14 références pour Lisbonne et Interlaken)
+            new Service
+            {
+                Id = 178,
+                Name = "Balmer's Hostel",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 80,
+                Images = new List<string>
+                {
+                    "/ImagesServices/178.jpeg",
+                },
+                ExternalLinks = "https://www.balmers.com",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 179,
+                Name = "Funny-Farm Backpackers Hostel",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 60,
+                Images = new List<string>
+                {
+                    "/ImagesServices/179.jpeg",
+                },
+                ExternalLinks = "https://www.funny-farm.ch",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 180,
+                Name = "Backpackers Villa Sonnenhof",
+                Price = 35.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 40,
+                Images = new List<string>
+                {
+                    "/ImagesServices/180.jpeg",
+                },
+                ExternalLinks = "https://www.villa.ch",
+                DestinationId = 13
+            },
+
+            // Hôtels
+
+            new Service
+            {
+                Id = 181,
+                Name = "Victoria-Jungfrau Grand Hotel",
+                Price = 250.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 100,
+                Images = new List<string>
+                {
+                    "/ImagesServices/181.jpeg",
+                },
+                ExternalLinks = "https://www.victoria-jungfrau.ch",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 182,
+                Name = "Hotel Interlaken",
+                Price = 200.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Accommodation",
+                Style = "",
+                MaxCapacity = 80,
+                Images = new List<string>
+                {
+                    "/ImagesServices/182.jpeg",
+                },
+                ExternalLinks = "https://www.hotelinterlaken.ch",
+                DestinationId = 13
+            },
+
+            // Restaurants
+
+            new Service
+            {
+                Id = 183,
+                Name = "Restaurant Taverne",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Restaurant",
+                Style = "",
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "/ImagesServices/183.jpeg",
+                },
+                ExternalLinks = "https://www.taverne-interlaken.ch",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 184,
+                Name = "Restaurant Chalet Swiss",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Restaurant",
+                Style = "",
+                MaxCapacity = 60,
+                Images = new List<string>
+                {
+                    "/ImagesServices/184.jpeg",
+                },
+                ExternalLinks = "https://www.chaletswiss.com",
+                DestinationId = 13
+            },
+
+            // Visites guidées
+
+            new Service
+            {
+                Id = 185,
+                Name = "Jungfraujoch Top of Europe",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Guided Tour",
+                Style = "",
+                MaxCapacity = 15,
+                Images = new List<string>
+                {
+                    "/ImagesServices/185.jpeg",
+                },
+                ExternalLinks = "https://www.jungfrau.ch/en-gb/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 186,
+                Name = "Harder Kulm Panorama View",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Guided Tour",
+                Style = "",
+                MaxCapacity = 20,
+                Images = new List<string>
+                {
+                    "/ImagesServices/186.jpeg",
+                },
+                ExternalLinks = "https://www.jungfrau.ch/en-gb/harder-kulm/",
+                DestinationId = 13
+            },
+
+            // Activités culturelles
+
+            new Service
+            {
+                Id = 187,
+                Name = "Ballenberg Open-Air Museum",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Cultural Activity",
+                Style = "",
+                MaxCapacity = 200,
+                Images = new List<string>
+                {
+                    "/ImagesServices/187.jpeg",
+                },
+                ExternalLinks = "https://www.ballenberg.ch/en/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 188,
+                Name = "St. Beatus Caves",
+                Price = 15.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Cultural Activity",
+                Style = "",
+                MaxCapacity = 150,
+                Images = new List<string>
+                {
+                    "/ImagesServices/188.jpeg",
+                },
+                ExternalLinks = "https://www.beatushoehlen.ch/en/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 189,
+                Name = "Thun Castle",
+                Price = 10.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Cultural Activity",
+                Style = "",
+                MaxCapacity = 100,
+                Images = new List<string>
+                {
+                    "/ImagesServices/189.jpeg",
+                },
+                ExternalLinks = "https://www.schlossthun.ch/en/",
+                DestinationId = 13
+            },
+
+            // Activités sportives
+
+            new Service
+            {
+                Id = 190,
+                Name = "Paragliding in Interlaken",
+                Price = 200.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Sport Activity",
+                Style = "",
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "/ImagesServices/190.jpeg",
+                },
+                ExternalLinks = "https://www.paragliding-interlaken.ch",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 191,
+                Name = "Canyoning Adventure",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Interlaken",
+                Type = "Sport Activity",
+                Style = "",
+                MaxCapacity = 40,
+                Images = new List<string>
+                {
+                    "/ImagesServices/191.jpeg",
+                },
+                ExternalLinks = "https://www.outdoor-interlaken.ch/en",
+                DestinationId = 13
             }
+
+
+
+
                 );
 
 
