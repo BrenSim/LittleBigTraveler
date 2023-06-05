@@ -14,16 +14,13 @@ public class TravelController : Controller
         _httpContextAccessor = httpContextAccessor;
     }
 
-    // Action pour afficher la liste des voyages d'un client
-    [Authorize(Roles = "Administrator, Customer")]
+    // Action pour afficher la liste des voyages
+    [Authorize(Roles = "Administrator")]
     public IActionResult List()
     {
-        // Récupérer l'ID du client connecté depuis le contexte HTTP
-        int customerId = int.Parse(HttpContext.User.Identity.Name);
-
         using (var travelDAL = new TravelDAL(_httpContextAccessor))
         {
-            var travels = travelDAL.GetTravelsByCustomerId(customerId);
+            var travels = travelDAL.GetAllTravels();
 
             if (travels == null || travels.Count == 0)
             {
@@ -73,7 +70,7 @@ public class TravelController : Controller
         {
             try
             {
-                travelDAL.CreateTravel(customerId, model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
+                travelDAL.CreateTravel( model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
                 return RedirectToAction("List"); // Rediriger vers la page d'accueil ou une autre page
             }
             catch (Exception ex)
@@ -81,7 +78,7 @@ public class TravelController : Controller
                 ModelState.AddModelError("", ex.Message);
             }
 
-            // Si une erreur s'est produite, revenir à la vue avec les données saisies
+            // Si erreur , revenir à la vue avec les données saisies
             return View(model);
         }
     }
@@ -127,7 +124,7 @@ public class TravelController : Controller
         {
             try
             {
-                travelDAL.ModifyTravel(model.Id, customerId, model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
+                travelDAL.ModifyTravel(model.Id, model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
                 return RedirectToAction("List"); 
             }
             catch (Exception ex)
@@ -142,7 +139,7 @@ public class TravelController : Controller
 
 
     // Action pour supprimer un voyage
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator, Customer")]
     public IActionResult DeleteTravel(int id)
     {
         using (var travelDAL = new TravelDAL(_httpContextAccessor))
