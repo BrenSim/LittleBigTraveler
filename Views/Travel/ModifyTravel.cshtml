@@ -1,0 +1,51 @@
+﻿@model LittleBigTraveler.ViewModels.TravelViewModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Modification d'un voyage";
+}
+
+@section content {
+    <div class="container">
+        <h1 class="text-center">Modifier un voyage</h1>
+
+        <form method="post" action="/Travel/ModifyTravel">
+
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <input type="hidden" name="DestinationId" value="@Model.DestinationId" />
+
+
+            <div class="form-group">
+                <label for="DestinationCity">Ville de la destination :</label>
+                <input type="text" id="DestinationCity" name="DestinationCity" class="form-control" value="@Model.DestinationCity" disabled />
+            </div>
+
+            <div class="form-group">
+                <label for="DepartureLocation">Lieu de départ :</label>
+                <input type="text" id="DepartureLocation" name="DepartureLocation" class="form-control" value="@Model.DepartureLocation" required />
+            </div>
+
+            <div class="form-group">
+                <label for="DepartureDate">Date de départ :</label>
+                <input type="datetime-local" id="DepartureDate" name="DepartureDate" class="form-control" value="@Model.DepartureDate.ToString("yyyy-MM-ddTHH:mm")" required />
+            </div>
+
+            <div class="form-group">
+                <label for="ReturnDate">Date de retour :</label>
+                <input type="datetime-local" id="ReturnDate" name="ReturnDate" class="form-control" value="@Model.ReturnDate.ToString("yyyy-MM-ddTHH:mm")" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Price">Prix :</label>
+                <input type="number" id="Price" name="Price" class="form-control" value="@Model.Price" required />
+            </div>
+
+            <div class="form-group">
+                <label for="NumParticipants">Nombre de participants :</label>
+                <input type="number" id="NumParticipants" name="NumParticipants" class="form-control" value="@Model.NumParticipants" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </form>
+    </div>
+}

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using LittleBigTraveler.Models.TravelClasses;
+﻿using LittleBigTraveler.Models.TravelClasses;
 using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 public class AllInclusiveTravelViewModel
 {
@@ -13,6 +12,9 @@ public class AllInclusiveTravelViewModel
     public List<Service> Services { get; set; }
     public List<Service> AvailableServices { get; set; }
     public Travel Travel { get; set; }
+    public Destination Destination { get; set; }
+
+    public List<AllInclusiveTravelViewModel> AllInclusiveTravelViewModels { get; set; }
 
     public AllInclusiveTravelViewModel()
     {
@@ -25,5 +27,4 @@ public class AllInclusiveTravelViewModel
         Services = new List<Service>();
         AvailableServices = new List<Service>();
     }
-
 }

@@ -22,6 +22,8 @@ namespace LittleBigTraveler
                     options.LoginPath = "/User/LogIn";
                 });
 
+            services.AddScoped<TravelDAL>();
+            services.AddScoped<DestinationDAL>();
             services.AddControllersWithViews();
             services.AddHttpContextAccessor();
         }

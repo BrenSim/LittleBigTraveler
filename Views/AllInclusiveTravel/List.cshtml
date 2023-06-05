@@ -2,39 +2,53 @@
 
 @{
     Layout = "_Layout";
-    ViewData["Title"] = "List des voyages tout compris";
+    ViewData["Title"] = "Liste des voyages tout compris";
 }
 
 @section content {
-    <h1 class="text-center">List des voyages tout compris</h1>
+    <h1 class="text-center">Liste des voyages tout compris</h1>
 
     @if (Model.Count == 0)
     {
-        <p>No All Inclusive Travels found.</p>
+        <p>Aucun voyage tout compris trouvé.</p>
     }
     else
     {
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
+                    <th>Nom</th>
+                    <th>Destination</th>
                     <th>Description</th>
-                    <th>Travel ID</th>
-                    <th>Actions</th>
+                    <th>Lieu de départ</th>
+                    <th>Date de départ</th>
+                    <th>Date de retour</th>
+                    <th>Nombre de participant</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var allInclusiveTravel in Model)
                 {
                     <tr>
-                        <td>@item.Id</td>
-                        <td>@item.Name</td>
-                        <td>@item.Description</td>
-                        <td>@item.TravelId</td>
+                        <td>@allInclusiveTravel.Name</td>
+                        <td>@allInclusiveTravel.Travel.Destination.City, @allInclusiveTravel.Travel.Destination.Country</td>
+                        <td>@allInclusiveTravel.Description</td>
+                        <td>@allInclusiveTravel.Travel.DepartureLocation</td>
+                        <td>@allInclusiveTravel.Travel.DepartureDate</td>
+                        <td>@allInclusiveTravel.Travel.ReturnDate</td>
+                        <td>@allInclusiveTravel.Travel.NumParticipants</td>
                         <td>
-                            <a href="/AllInclusiveTravel/EditAllInclusiveTravel/@item.Id" class="btn btn-secondary">Modifier</a>
-                            <a href="/AllInclusiveTravel/DeleteAllInclusiveTravel/@item.Id" class="btn btn-danger">Supprimer</a>
+                            @foreach (var image in @allInclusiveTravel.Travel.Destination.Images)
+                            {
+                                <img src="@image" alt="Image" class="img-thumbnail" />
+                            }
+                        </td>
+
+                        <td>
+                            <a href="/AllInclusiveTravel/EditAllInclusiveTravel/@allInclusiveTravel.Id" class="btn btn-primary">Modifier Package</a>
+                            <a href="/Travel/ModifyTravel/@allInclusiveTravel.Id" class="btn btn-secondary">Modifier Voyage</a>
+                            <a href="/AllInclusiveTravel/DeleteAllInclusiveTravel/@allInclusiveTravel.Id" class="btn btn-danger">Supprimer</a>
                         </td>
                     </tr>
                 }

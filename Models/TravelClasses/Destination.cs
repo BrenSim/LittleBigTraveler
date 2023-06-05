@@ -18,6 +18,7 @@ namespace LittleBigTraveler.Models.TravelClasses
 
         public virtual List<Service> Services { get; set; } // Propriété de navigation
         public virtual List<Travel> Travels { get; set; }
+        public virtual List<AllInclusiveTravel> AllInclusiveTravels { get; set; }
     }
 
 }

@@ -11,6 +11,10 @@ namespace LittleBigTraveler.Models.DataBase
 {
     public class TravelDAL : ITravelDAL
     {
+        public void SaveChanges()
+        {
+            _bddContext.SaveChanges();
+        }
         private BddContext _bddContext;
         // Manière de récupérer l'ID du client connecté
         private IHttpContextAccessor _httpContextAccessor;
@@ -76,30 +80,47 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-        // Modification d'un "Travel" par ID
         public void ModifyTravel(int id, int customerId, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
         {
-            var travel = _bddContext.Travels.FirstOrDefault(t => t.Id == id);
-            var customer = _bddContext.Customers.Include(c => c.User).FirstOrDefault(c => c.Id == customerId);
-            var destination = _bddContext.Destinations.FirstOrDefault(d => d.Id == destinationId);
+            var travel = _bddContext.Travels
+                .Include(t => t.Customer)
+                .Include(t => t.Destination)
+                .FirstOrDefault(t => t.Id == id);
+
+            var customer = _bddContext.Customers
+                .Include(c => c.User)
+                .FirstOrDefault(c => c.Id == customerId);
+
+            var destination = _bddContext.Destinations
+                .FirstOrDefault(d => d.Id == destinationId);
+
             if (travel != null && customer != null && destination != null)
             {
+                // Vérifier si le client ou la destination du voyage a changé
+                if (travel.Customer.Id != customerId || travel.Destination.Id != destinationId)
+                {
+                    throw new Exception("Modification du client ou de la destination non autorisée.");
+                }
+
                 // Mise à jour des propriétés du "Travel" avec les nouvelles données fournies
-                travel.Customer = customer;
-                travel.Destination = destination;
                 travel.DepartureLocation = departureLocation;
                 travel.DepartureDate = departureDate;
                 travel.ReturnDate = returnDate;
                 travel.Price = price;
                 travel.NumParticipants = numParticipants;
 
+                // Mettre à jour les relations Customer et Destination
+                travel.Customer = customer;
+                travel.Destination = destination;
+
                 _bddContext.SaveChanges();
             }
             else
             {
-                throw new Exception("Customer , travel ou destination non valide.");
+                throw new Exception("Client, voyage ou destination non valide.");
             }
         }
+
 
         // Récupération des voyages d'un client par son ID
         public List<Travel> GetTravelsByCustomerId(int customerId)

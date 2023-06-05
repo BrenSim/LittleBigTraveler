@@ -63,6 +63,16 @@ namespace LittleBigTraveler.Models.DataBase
                     images => string.Join(";", images),
                     imagesString => imagesString.Split(';', StringSplitOptions.RemoveEmptyEntries).ToList()
                 );
+            modelBuilder.Entity<Service>()
+                 .HasOne(s => s.AllInclusiveTravel)
+                 .WithMany(a => a.ServiceForPackage)
+                 .HasForeignKey(s => s.AllInclusiveTravelId);
+
+            modelBuilder.Entity<AllInclusiveTravel>()
+                .HasMany(a => a.ServiceForPackage) // Remplacez par votre propriété de navigation correcte
+                .WithOne() // Ou .WithMany(), dépend de votre relation
+                .OnDelete(DeleteBehavior.SetNull); // Ou .OnDelete(DeleteBehavior.Restrict);
+
         }
 
         public DbSet<User> GetUsers()

@@ -62,7 +62,6 @@ namespace LittleBigTraveler.Models.DataBase
                 };
 
                 // Ajout des services sélectionnés au package AllInclusiveTravel
-
                 allInclusiveTravel.ServiceForPackage.AddRange(services);
                 // Mise à jour du prix total du package
                 allInclusiveTravel.Price += services.Sum(s => s.Price);
@@ -78,17 +77,30 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-        // Suppression d'un AllInclusiveTravel par ID
+        // Suppression d'un AllInclusiveTravel par ID (et de son Travel associé)
         public void DeleteAllInclusiveTravel(int id)
         {
-            var allInclusiveTravel = _bddContext.AllInclusiveTravels.FirstOrDefault(a => a.Id == id);
+            var allInclusiveTravel = _bddContext.AllInclusiveTravels
+                .Include(a => a.ServiceForPackage)
+                .FirstOrDefault(a => a.Id == id);
+
             if (allInclusiveTravel != null)
             {
+                var travel = allInclusiveTravel.Travel; 
+
+                foreach (var service in allInclusiveTravel.ServiceForPackage)
+                {
+                    _bddContext.Entry(service).State = EntityState.Unchanged;
+                }
+
                 _bddContext.AllInclusiveTravels.Remove(allInclusiveTravel);
+                _bddContext.Travels.Remove(travel); 
                 _bddContext.SaveChanges();
             }
         }
 
+
+        // Modification d'un AllInclusiveTravel par ID
         public void UpdateAllInclusiveTravel(int id, int customerId, int travelId, string name, string description, List<Service> services)
         {
             var allInclusiveTravel = _bddContext.AllInclusiveTravels.Include(a => a.Customer).ThenInclude(c => c.User).Include(a => a.Travel).FirstOrDefault(a => a.Id == id);

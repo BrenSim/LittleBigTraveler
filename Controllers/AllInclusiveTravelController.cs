@@ -10,22 +10,41 @@ using Microsoft.AspNetCore.Mvc;
 using LittleBigTraveler.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using System.Net;
+
+
+
 
 public class AllInclusiveTravelController : Controller
 {
     private readonly IHttpContextAccessor HttpContextAccessor;
+    private readonly TravelDAL travelDAL;
+    private readonly DestinationDAL destinationDAL;
 
-    public AllInclusiveTravelController(IHttpContextAccessor httpContextAccessor)
+    public AllInclusiveTravelController(
+        IHttpContextAccessor httpContextAccessor,
+        TravelDAL travelDAL,
+        DestinationDAL destinationDAL)
     {
         HttpContextAccessor = httpContextAccessor;
+        this.travelDAL = travelDAL;
+        this.destinationDAL = destinationDAL;
     }
 
-    // Action pour afficher la liste de tout les AllInclusiveTravel
+    // Action pour afficher la liste de tous les AllInclusiveTravel
     public IActionResult List()
     {
         using (var allInclusiveTravelDAL = new AllInclusiveTravelDAL(HttpContextAccessor))
         {
             var allInclusiveTravels = allInclusiveTravelDAL.GetAllInclusiveTravel();
+
+            // Récupérer les détails des voyages associés et des destinations
+            foreach (var allInclusiveTravel in allInclusiveTravels)
+            {
+                allInclusiveTravel.Travel = travelDAL.GetTravelById(allInclusiveTravel.TravelId);
+                allInclusiveTravel.Travel.Destination = destinationDAL.GetDestinationWithId(allInclusiveTravel.Travel.DestinationId);
+            }
+
             return View(allInclusiveTravels);
         }
     }
@@ -130,6 +149,18 @@ public class AllInclusiveTravelController : Controller
         }
     }
 
+    // Action pour supprimer le Travel associé au AllInclusiveTravel
+    private void DeleteAssociatedTravel(AllInclusiveTravel allInclusiveTravel)
+    {
+        if (allInclusiveTravel != null && allInclusiveTravel.Travel != null)
+        {
+            using (var travelDAL = new TravelDAL(HttpContextAccessor))
+            {
+                travelDAL.DeleteTravel(allInclusiveTravel.Travel.Id);
+            }
+        }
+    }
+
     // Action pour supprimer un AllInclusiveTravel
     [Authorize(Roles = "Administrator")]
     public IActionResult DeleteAllInclusiveTravel(int id)
@@ -138,6 +169,8 @@ public class AllInclusiveTravelController : Controller
         {
             try
             {
+                var allInclusiveTravel = allInclusiveTravelDAL.GetAllInclusiveTravelById(id);
+                DeleteAssociatedTravel(allInclusiveTravel);
                 allInclusiveTravelDAL.DeleteAllInclusiveTravel(id);
                 return RedirectToAction("List"); // Rediriger vers la page de la liste des AllInclusiveTravel
             }
@@ -148,8 +181,10 @@ public class AllInclusiveTravelController : Controller
         }
     }
 
+
+
     // Action pour afficher le formulaire d'édition d'un AllInclusiveTravel
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator, Customer")]
     public IActionResult EditAllInclusiveTravel(int id)
     {
         using (var allInclusiveTravelDAL = new AllInclusiveTravelDAL(HttpContextAccessor))
@@ -191,7 +226,7 @@ public class AllInclusiveTravelController : Controller
     }
 
     // Action pour le traitement du formulaire d'édition d'un AllInclusiveTravel
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator, Customer")]
     [HttpPost]
     public IActionResult EditAllInclusiveTravel(int id, AllInclusiveTravelViewModel model, List<int> SelectedServiceId)
     {
