@@ -3635,7 +3635,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken1Hebergement.png",
+                    "/ImagesServices/Interlaken1Hebergement.png",
                 },
                 ExternalLinks = "https://www.victoria-jungfrau.ch/en/",
                 DestinationId = 13
@@ -3653,7 +3653,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken2Hebergement.png",
+                    "/ImagesServices/Interlaken2Hebergement.png",
                 },
                 ExternalLinks = "https://www.hotelinterlaken.ch/",
                 DestinationId = 13
@@ -3671,7 +3671,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken3Hebergement.png",
+                    "/ImagesServices/Interlaken3Hebergement.png",
                 },
                 ExternalLinks = "https://www.bellevue-wengen.ch/",
                 DestinationId = 13
@@ -3689,7 +3689,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken4Hebergement.png",
+                    "/ImagesServices/Interlaken4Hebergement.png",
                 },
                 ExternalLinks = "https://www.hotel-dunord.ch/",
                 DestinationId = 13
@@ -3707,7 +3707,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken5Hebergement.png",
+                    "/ImagesServices/Interlaken5Hebergement.png",
                 },
                 ExternalLinks = "https://www.villa.ch/",
                 DestinationId = 13
@@ -3725,7 +3725,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken6Restaurant.png",
+                    "/ImagesServices/Interlaken6Restaurant.png",
                 },
                 ExternalLinks = "https://restauranttaverne.ch/fr/",
                 DestinationId = 13
@@ -3743,7 +3743,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken7Restaurant.png",
+                    "/ImagesServices/Interlaken7Restaurant.png",
                 },
                 ExternalLinks = "https://www.chalet-beizli.ch/",
                 DestinationId = 13
@@ -3761,7 +3761,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken8Restaurant.png",
+                    "/ImagesServices/Interlaken8Restaurant.png",
                 },
                 ExternalLinks = "https://www.huesi-interlaken.ch/",
                 DestinationId = 13
@@ -3779,7 +3779,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken9Restaurant.png",
+                    "/ImagesServices/Interlaken9Restaurant.png",
                 },
                 ExternalLinks = "https://citta-vecchia.digitalone.site/",
                 DestinationId = 13
@@ -3797,7 +3797,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken10Restaurant.png",
+                    "/ImagesServices/Interlaken10Restaurant.png",
                 },
                 ExternalLinks = "https://www.baeren.ch/",
                 DestinationId = 13
@@ -3815,7 +3815,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken11Activite.png",
+                    "/ImagesServices/Interlaken11Activite.png",
                 },
                 ExternalLinks = "https://schilthorn.ch/",
                 DestinationId = 13
@@ -3833,7 +3833,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken12Activite.png",
+                    "/ImagesServices/Interlaken12Activite.png",
                 },
                 ExternalLinks = "https://www.brienzersee.ch/",
                 DestinationId = 13
@@ -3851,7 +3851,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken13Activite.png",
+                    "/ImagesServices/Interlaken13Activite.png",
                 },
                 ExternalLinks = "https://www.beatushoehlen.swiss/fr/",
                 DestinationId = 13
@@ -3869,7 +3869,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken14Activite.png",
+                    "/ImagesServices/Interlaken14Activite.png",
                 },
                 ExternalLinks = "https://www.paragliding-interlaken.ch/",
                 DestinationId = 13
@@ -3887,10 +3887,273 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
-                    "/imagesTest/Interlaken15Activite.png",
+                    "/ImagesServices/Interlaken15Activite.png",
                 },
                 ExternalLinks = "https://www.bls.ch/fr/freizeit-und-ferien/ausfluege/bielersee-drei-seen-fahrt",
                 DestinationId = 13
+            },
+
+            // Chamonix
+            new Service
+            {
+                Id = 195,
+                Name = "Hôtel Richemond",
+                Price = 70.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "228 Rue du Docteur Paccard, Chamonix",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix1Hebergement.png",
+                },
+                ExternalLinks = "https://www.richemond.fr/fr/hotel",
+                DestinationId = 14
+            },
+            new Service
+            {
+                Id = 196,
+                Name = "Hôtel Le Chamonix",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "73 Place de l'Église, Chamonix",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix2Hebergement.png",
+                },
+                ExternalLinks = "https://www.hotel-le-chamonix.com/",
+                DestinationId = 14
+            },
+            new Service
+            {
+                Id = 197,
+                Name = "Résidence Les Balcons du Savoy",
+                Price = 90.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "179 Rue Mummery, Chamonix",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix3Hebergement.png",
+                },
+                ExternalLinks = "https://www.lesbalconsdusavoy.com/",
+                DestinationId = 14
+            },
+            new Service
+            {
+                Id = 198,
+                Name = "Hôtel Alpina",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "79 Avenue du Mont-Blanc, Chamonix",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix4Hebergement.png",
+                },
+                ExternalLinks = "https://www.alpinachamonix.com/",
+                DestinationId = 14
+            },
+            new Service
+            {
+                Id = 199,
+                Name = "Hôtel Le Faucigny",
+                Price = 100.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "118 Rue du Dr Paccard, Chamonix",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix5Hebergement.png",
+                },
+                ExternalLinks = "https://www.hameaufaucigny-chamonix.com/",
+                DestinationId = 14
+            },
+
+            new Service
+            {
+                Id = 200,
+                Name = "La Maison Carrier",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "40 Chemin de la Côte, Chamonix",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix6Restauration.png",
+                },
+                ExternalLinks = "https://www.hameaualbert.fr/fr/restaurant-de-pays/carte-et-menus/",
+                DestinationId = 14
+            },
+
+            new Service
+            {
+                Id = 201,
+                Name = "Le Cap Horn",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "5 Place Edmond Desailloud, Chamonix",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix7Restauration.png",
+                },
+                ExternalLinks = "https://www.caphorn-chamonix.com/fr/",
+                DestinationId = 14
+            },
+
+            new Service
+            {
+                Id = 202,
+                Name = "La Calèche",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "16 Route du Bouchet, Chamonix",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix8Restauration.png",
+                },
+                ExternalLinks = "http://restaurant-caleche.com/",
+                DestinationId = 14
+            },
+
+            new Service
+            {
+                Id = 203,
+                Name = "La Tablee",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "79 Avenue Michel Croz, Chamonix",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix9Restauration.png",
+                },
+                ExternalLinks = "https://www.restaurant-la-tablee-chamonix.com/",
+                DestinationId = 14
+            },
+
+            new Service
+            {
+                Id = 204,
+                Name = "Le Bistrot des Sports",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "155 Place Edmond Desailloud, Chamonix",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix10Restauration.png",
+                },
+                ExternalLinks = "http://bistrotdessports.com/restaurant.aspx",
+                DestinationId = 14
+            },
+
+            new Service
+            {
+                Id = 205,
+                Name = "Sortie VTT Point de vue sur les glaciers",
+                Price = 180.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Chamonix",
+                Type = "Activité",
+                Style = "Sport",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix11Activite.png",
+                },
+                ExternalLinks = "https://www.chamonix.com/activites",
+                DestinationId = 14
+            },
+            new Service
+            {
+                Id = 206,
+                Name = "Ecole de Glace",
+                Price = 160.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Chamonix",
+                Type = "Activité",
+                Style = null,
+                MaxCapacity = 20,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix12Activite.png",
+                },
+                ExternalLinks = "https://www.chamonix.com/activites",
+                DestinationId = 14
+            },
+            new Service
+            {
+                Id = 207,
+                Name = "Parapente",
+                Price = 139.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Chamonix",
+                Type = "Activité",
+                Style = null,
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix13Activite.png",
+                },
+                ExternalLinks = "https://www.chamonix.com/activites",
+                DestinationId = 14
+            },
+            new Service
+            {
+                Id = 208,
+                Name = "Soirée Cabaret la Folie Douce",
+                Price = 46.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Chamonix",
+                Type = "Activité",
+                Style = "Divertissement",
+                MaxCapacity = 15,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix14Activite.png",
+                },
+                ExternalLinks = "https://www.chamonix.com/activites",
+                DestinationId = 14
+            },
+            new Service
+            {
+                Id = 209,
+                Name = "Spa et Bien-être",
+                Price = 37.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Chamonix",
+                Type = "Activité",
+                Style = null,
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                "/ImagesServices/Chamonix15Activite.png",
+                },
+                ExternalLinks = "https://www.chamonix.com/activites",
+                DestinationId = 14
             },
 
 
