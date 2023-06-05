@@ -5252,6 +5252,266 @@ namespace LittleBigTraveler.Models.DataBase
                 },
                 ExternalLinks = "https://www.szechenyispabaths.com",
                 DestinationId = 18
+            },
+
+            // Bath :
+            new Service
+            {
+                Id = 271,
+                Name = "The Gainsborough Bath Spa",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Hébergement",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath1Hebergement.png",
+                },
+                ExternalLinks = "https://www.thegainsboroughbathspa.co.uk",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 272,
+                Name = "The Royal Crescent Hotel & Spa",
+                Price = 200.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Hébergement",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath2Hebergement.png",
+                },
+                ExternalLinks = "https://www.royalcrescent.co.uk",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 273,
+                Name = "Abbey Hotel",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Hébergement",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath3Hebergement.png",
+                },
+                ExternalLinks = "https://www.abbeyhotelbath.co.uk",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 274,
+                Name = "The Bath Priory Hotel, Restaurant and Spa",
+                Price = 180.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Hébergement",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath4Hebergement.png",
+                },
+                ExternalLinks = "https://www.thebathpriory.co.uk",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 275,
+                Name = "No.15 Great Pulteney",
+                Price = 160.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Hébergement",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath5hEBERGEMENT.png",
+                },
+                ExternalLinks = "https://www.guesthousehotels.co.uk/no-15-bath/",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 276,
+                Name = "The Circus Restaurant",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Restauration",
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath6RestauranT.png",
+                },
+                ExternalLinks = "https://www.thecircusrestaurant.co.uk",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 277,
+                Name = "Sotto Sotto",
+                Price = 45.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Restauration",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath7Restauration.png",
+                },
+                ExternalLinks = "https://www.sottosotto.co.uk",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 278,
+                Name = "The Scallop Shell",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Restauration",
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath8Restauration.png",
+                },
+                ExternalLinks = "https://www.thescallopshell.co.uk",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 279,
+                Name = "Menu Gordon Jones",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Restauration",
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath9Restauration.png",
+                },
+                ExternalLinks = "https://www.menugordonjones.co.uk",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 280,
+                Name = "Acorn Vegetarian Kitchen",
+                Price = 55.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Restauration",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath10Restauration.png",
+                },
+                ExternalLinks = "https://www.bathrestaurants.org/restaurant/acorn-vegetarian-restaurant/",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 281,
+                Name = "Bath Insider Tours",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Bath",
+                Type = "Guide",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath11Guide.png",
+                },
+                ExternalLinks = "https://www.bathinsidertours.co.uk/",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 282,
+                Name = "Thermes romains de Bath",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Activité",
+                Style = "Historique",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath12Activite.png",
+                },
+                ExternalLinks = "https://www.romanbaths.co.uk/",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 283,
+                Name = "Afternoon tea dans un salon de thé de la ville",
+                Price = 15.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Activité",
+                Style = "Gastronomie",
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath13Activite.png",
+                },
+                ExternalLinks = "https://thepumproombath.co.uk/",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 284,
+                Name = "Visite de l'abbaye de Bath",
+                Price = 12.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath14Activite.png",
+                },
+                ExternalLinks = "https://www.bathabbey.org/",
+                DestinationId = 19
+            },
+
+            new Service
+            {
+                Id = 285,
+                Name = "Balade en bateau sur la rivière Avon",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Bath",
+                Type = "Activité",
+                Style = "Croisière",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Bath15Activite.png",
+                },
+                ExternalLinks = "https://pulteneycruisers.com/",
+                DestinationId = 19
             }
 
 
@@ -5260,7 +5520,7 @@ namespace LittleBigTraveler.Models.DataBase
 
 
 
-                );
+            );
 
 
             // Création des rôles
