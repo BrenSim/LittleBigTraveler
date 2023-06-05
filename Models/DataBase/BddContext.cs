@@ -4982,7 +4982,278 @@ namespace LittleBigTraveler.Models.DataBase
                 },
                 ExternalLinks = "https://www.killarneynationalpark.ie/visit/locations/torc-waterfall/",
                 DestinationId = 17
+            },
+            // Budapest :
+            new Service
+            {
+                Id = 256,
+                Name = "Grandio Party Hostel",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest1Hebergement.png",
+                },
+                ExternalLinks = "https://grandio.insta-hostel.com/",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 257,
+                Name = "Flow Hostel",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest2Hebergement.png",
+                },
+                ExternalLinks = "https://flowspaces.hu/",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 258,
+                Name = "Hotel Aria",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest3Hebergement.png",
+                },
+                ExternalLinks = "https://ariahotelbudapest.com/",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 259,
+                Name = "New York Palace - Anantara",
+                Price = 200.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest4Hebergement.png",
+                },
+                ExternalLinks = "https://www.anantara.com/fr/new-york-palace-budapest",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 260,
+                Name = "Mango Aparthotel and Spa",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest5Hebergement.png",
+                },
+                ExternalLinks = "https://mangoapartmentsbudapest.com/",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 261,
+                Name = "Karaván Street Food Court",
+                Price = 10.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest6Restaurant.png",
+                },
+                ExternalLinks = "https://www.facebook.com/streetfoodkaravan",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 262,
+                Name = "Retro Büfé",
+                Price = 15.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest7Restaurant.jpg",
+                },
+                ExternalLinks = "https://retrohambi.hu/",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 263,
+                Name = "Belvárosi Lugas Étterem",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest8Restaurant.png",
+                },
+                ExternalLinks = "https://www.facebook.com/belvarosilugasetterem/",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 264,
+                Name = "For Sale Pub",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest9Restaurant.png",
+                },
+                ExternalLinks = "https://www.forsalepub.hu",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 265,
+                Name = "Kőleves Kert",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Budapest",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest10Restaurant.png",
+                },
+                ExternalLinks = "https://www.kolevesvendeglo.hu",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 266,
+                Name = "Free Budapest Walking Tours",
+                Price = 0.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Budapest",
+                Type = "Guide",
+                Style = null,
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest11Guide.png",
+                },
+                ExternalLinks = "https://www.freebudapesttours.hu",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 267,
+                Name = "Budapest Urban Walks",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Budapest",
+                Type = "Guide",
+                Style = null,
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest12Guide.png",
+                },
+                ExternalLinks = "https://www.budapesturbanwalks.com",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 268,
+                Name = "Visite du Château de Buda",
+                Price = 15.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Budapest",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 20,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest13Activite.png",
+                },
+                ExternalLinks = "https://www.budacastlebudapest.com",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 269,
+                Name = "Croisière sur le Danube",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Budapest",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest14Activite.png",
+                },
+                ExternalLinks = "https://www.budapestrivercruise.com",
+                DestinationId = 18
+            },
+
+            new Service
+            {
+                Id = 270,
+                Name = "Visite des thermes de Széchenyi",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Budapest",
+                Type = "Activité",
+                Style = "Bien-être",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Budapest15Activite.png",
+                },
+                ExternalLinks = "https://www.szechenyispabaths.com",
+                DestinationId = 18
             }
+
 
 
 
