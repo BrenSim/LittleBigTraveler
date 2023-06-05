@@ -5512,7 +5512,552 @@ namespace LittleBigTraveler.Models.DataBase
                 },
                 ExternalLinks = "https://pulteneycruisers.com/",
                 DestinationId = 19
+            },
+            // Karlovy Vary :
+            new Service
+            {
+                Id = 286,
+                Name = "Grandhotel Pupp",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary1Hebergement.png",
+                },
+                ExternalLinks = "https://www.pupp.cz",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 287,
+                Name = "Carlsbad Plaza Medical Spa & Wellness hotel",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+            {
+            "/ImagesServices/KarlovyVary2Hebergement.png",
+            },
+                ExternalLinks = "https://www.carlsbad-plaza.com",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 288,
+                Name = "Hotel Imperial",
+                Price = 100.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+            {
+            "/ImagesServices/KarlovyVary3Hebergement.png",
+            },
+                ExternalLinks = "https://www.spa-hotel-imperial.cz",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 289,
+                Name = "Hotel Romance Puskin",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+            {
+            "/ImagesServices/KarlovyVary4Hebergement.png",
+            },
+                ExternalLinks = "https://www.hotelromance.cz/fr/",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 290,
+                Name = "Hotel Ambiente Wellness & Spa",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary5Hebergement.png",
+                },
+                ExternalLinks = "http://www.hotelambiente.cz/en/",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 291,
+                Name = "Restaurant Promenáda",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary6Restaurant.png",
+                },
+                ExternalLinks = "https://www.hotel-promenada.cz/en/restaurant/",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 292,
+                Name = "Restaurant Charleston",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary7Restaurant.png",
+                },
+                ExternalLinks = "https://charleston-kv.cz/",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 293,
+                Name = "Restaurant Sklipek",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary8Restaurant.png",
+                },
+                ExternalLinks = "https://www.restauracesklipek.cz/",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 294,
+                Name = "Restaurant U Tomáše",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary9Restaurant.png",
+                },
+                ExternalLinks = "https://www.restauraceutomase.cz/",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 295,
+                Name = "Becher Platz",
+                Price = 35.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary10Restaurant.png",
+                },
+                ExternalLinks = "https://becherplatz.cz/en/restaurant/",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 296,
+                Name = "Tour d’observation Diana",
+                Price = 5.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary11Activite.png",
+                },
+                ExternalLinks = "https://dianakv.cz/cs/podrobne-informace-rozhledna-diana",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 297,
+                Name = "Spa et bière Karlovy Vary",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Activité",
+                Style = "Relaxation",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary12Activite.png",
+                },
+                ExternalLinks = "https://www.beerspa-carlsbad.cz/",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 298,
+                Name = "Visite de la maison des papillons",
+                Price = 8.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary13Activite.png",
+                },
+                ExternalLinks = "https://papilonia.cz/en",
+                DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 299,
+                Name = "Visite de la Cathédrale de Saint Peter et Paul",
+                Price = 9.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary14Activite.png",
+                },
+                    ExternalLinks = "http://podvorie.cz/",
+                    DestinationId = 20
+            },
+
+            new Service
+            {
+                Id = 300,
+                Name = "Shopping et boutiques à Karlovy Vary",
+                Price = 0.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Karlovy Vary",
+                Type = "Activité",
+                Style = "Shopping",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                "/ImagesServices/KarlovyVary15Activite.png",
+                },
+                ExternalLinks = "https://varyada.cz/",
+                DestinationId = 20
+            },
+            // Ischia :
+            new Service
+            {
+                Id = 301,
+                Name = "Grand Hotel Excelsior",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                "ImagesServices/Ischia1Heberegement.png",
+                },
+                ExternalLinks = "https://www.excelsiorischia.it/fr/",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 302,
+                Name = "Hotel Villa Carolina",
+                Price = 100.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia2Heberegement.png",
+                },
+                ExternalLinks = "https://www.hotelvillacarolinaischia.com/fr/hotel-ischia.asp",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 303,
+                Name = "Paradise Beach Hostel - Ostello",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia3Hebergement.png",
+                },
+                ExternalLinks = "https://paradise-beach-hostel-ostello-ischia-island.booked.net/",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 304,
+                Name = "Hotel Gran Paradiso",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia4Hebergement.png",
+                },
+                ExternalLinks = "https://www.hotelgranparadisoischia.it/en/",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 305,
+                Name = "Ischia Dream Sunset",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia5Hebergement.png",
+                },
+                ExternalLinks = "https://ischiadreamsunset.it/",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 306,
+                Name = "Ristorante Trattoria Ischitana",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia6Restaurant.jpg",
+                },
+                ExternalLinks = "https://www.thefork.it/ristorante/trattoriva-sapori-ischitani-r738549#booking=",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 307,
+                Name = "Da Ciro al Vicoletto",
+                Price = 9.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia7Restaurant.jpg",
+                },
+                ExternalLinks = "https://fr.restaurantguru.com/Pizzeria-Sciue-Sciue-Ischia",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 308,
+                Name = "La Pergola",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia8Restaurant.jpg",
+                },
+                ExternalLinks = "https://lapergola-ischia.it/ristorante/",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 309,
+                Name = "Portobello",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia9Restauration.jpg",
+                },
+                ExternalLinks = "https://www.facebook.com/profile.php?id=100040379155918",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 310,
+                Name = "Pazziella - BeachBar&Restaurant",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Ischia",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia10Restauration.jpg",
+                },
+                ExternalLinks = "https://www.facebook.com/pazziellabeachbarerestaurant/",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 311,
+                Name = "Visite du Château Aragonais",
+                Price = 10.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Ischia",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 30,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia11Activite.jpg",
+                },
+                ExternalLinks = "https://italian-traditions.com/fr/chateau-aragonais-dischia/",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 312,
+                Name = "Excursion en bateau autour de l'île",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Ischia",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 20,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia12Activite.jpg",
+                },
+                ExternalLinks = "https://www.viator.com/fr-FR/tours/Isola-dIschia/Excursion-by-boat-with-lunch-on-board-to-discover-Ischia/d50507-338529P1",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 313,
+                Name = "Randonnée sur le Mont Epomeo",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Ischia",
+                Type = "Activité",
+                Style = "Aventure",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia13Activite.jpg",
+                },
+                ExternalLinks = "https://www.positanocarservice.com/fr/excursions/randonnee-au-sommet-du-mont-epomeo",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 314,
+                Name = "Expérience thermale aux Terme di Ischia",
+                Price = 35.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Ischia",
+                Type = "Activité",
+                Style = "Bien-être",
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia14Activite.jpg",
+                },
+                ExternalLinks = "https://www.visitischia.com/fr/eaux-thermales-de-ischia",
+                DestinationId = 21
+            },
+
+            new Service
+            {
+                Id = 315,
+                Name = "Plongée sous-marine à Ischia",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Ischia",
+                Type = "Activité",
+                Style = "Aventure",
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "ImagesServices/Ischia15Activite.jpg",
+                },
+                ExternalLinks = "https://www.divescover.fr/plongee-sous-marine/italie/ischia",
+                DestinationId = 21
             }
+
+
+
+
+
 
 
 
