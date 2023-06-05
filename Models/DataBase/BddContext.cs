@@ -416,34 +416,36 @@ namespace LittleBigTraveler.Models.DataBase
             new Service
             {
                 Id = 1,
-                Name = "Hôtel Prince Albert Louvre",
+                Name = "Hôtel Prince Albert Montmartre",
                 Price = 120.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Hébergement",
+                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
-                        {
-                            "/ImagesTest/Paris1Services.jpg",
-                        },
-                ExternalLinks = "https://www.hotelprincealbert.com/louvre",
+                {
+                    "/ImagesTest/Paris1Hebergement.png",
+                },
+                ExternalLinks = "https://www.hotelprincealbert.com/hotel-prince-albert-montmartre",
                 DestinationId = 1
             },
 
             new Service
             {
                 Id = 2,
-                Name = "Le Village Hostel Montmartre",
+                Name = "Le Village Hostel",
                 Price = 35.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Hébergement",
+                Style = null,
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris2Services.jpg",
+                    "/ImagesTest/Paris2Hebergement.png",
                 },
-                ExternalLinks = "https://www.villagehostel.fr/montmartre",
+                ExternalLinks = "https://www.villagehostel.fr/",
                 DestinationId = 1
             },
 
@@ -454,13 +456,14 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 180.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Hébergement",
+                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris3Services.jpg",
+                    "/ImagesTest/Paris3Hebergement.jpg",
                 },
-                ExternalLinks = "https://www.lavillaparis.com",
+                ExternalLinks = "https://www.la-villa-paris.com",
                 DestinationId = 1
             },
 
@@ -471,13 +474,14 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Hébergement",
+                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris4Services.jpg",
+                    "/ImagesTest/Paris4Hebergement.jpg",
                 },
-                ExternalLinks = "https://www.herse-dor.com",
+                ExternalLinks = "https://www.hotel-herse-dor.com/",
                 DestinationId = 1
             },
 
@@ -488,47 +492,50 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 200.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Hébergement",
+                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris5Services.jpg",
+                    "/ImagesTest/Paris5Hebergement.png",
                 },
-                ExternalLinks = "https://www.lebristolparis.com",
+                ExternalLinks = "https://www.oetkercollection.com/fr/hotels/le-bristol-paris/",
                 DestinationId = 1
             },
 
             new Service
             {
                 Id = 6,
-                Name = "Le Petit Bistro",
+                Name = "Le Ptit Bistro",
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Restauration",
+                Style = null,
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris6Services.jpg",
+                    "/ImagesTest/Paris1Restauration.png",
                 },
-                ExternalLinks = "https://www.lepetitbistro.fr",
+                ExternalLinks = "https://lepetitbistrot.eatbu.com/",
                 DestinationId = 1
             },
 
             new Service
             {
                 Id = 7,
-                Name = "Green Garden",
+                Name = "Le Grenier de Notre Dame(Veggie)",
                 Price = 25.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Restauration",
+                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris7Services.jpg",
+                    "/ImagesTest/Paris2Restauration.png",
                 },
-                ExternalLinks = "https://www.greengardenrestaurant.fr",
+                ExternalLinks = "https://www.LeGrenierDeNotreDame.fr",
                 DestinationId = 1
             },
 
@@ -539,11 +546,12 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Restauration",
+                Style = null,
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris8Services.jpg",
+                    "/ImagesTest/Paris8Restauration.png",
                 },
                 ExternalLinks = "https://www.labrasserieparisienne.com",
                 DestinationId = 1
@@ -556,13 +564,14 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Restauration",
+                Style = null,
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris9Services.jpg",
+                    "/ImagesTest/Paris9Restauration.jpg",
                 },
-                ExternalLinks = "https://www.lebistrotgourmand.com",
+                ExternalLinks = "https://le-bistrot-gourmand.cover.page/fr",
                 DestinationId = 1
             },
 
@@ -573,98 +582,104 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 100.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Accommodation",
+                Type = "Restauration",
+                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris10Services.jpg",
+                    "/ImagesTest/Paris10Restauration.png",
                 },
-                ExternalLinks = "https://www.lecieldeparis.com",
+                ExternalLinks = "https://www.cieldeparis.com/",
                 DestinationId = 1
             },
 
             new Service
             {
                 Id = 11,
-                Name = "Paris Private Guides",
-                Price = 80.0,
-                Schedule = DateTime.Now.AddDays(1),
+                Name = "Visite du Louvre",
+                Price = 15.0,
+                Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Guide",
-                MaxCapacity = 1,
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 30,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris11Services.jpg",
+                    "/ImagesTest/Paris11Activites.png",
                 },
-                ExternalLinks = "https://www.parisprivateguides.com",
+                ExternalLinks = "https://www.louvre.fr",
                 DestinationId = 1
             },
 
             new Service
             {
                 Id = 12,
-                Name = "Historical Paris Tours",
-                Price = 90.0,
-                Schedule = DateTime.Now.AddDays(1),
+                Name = "Spectacle au Moulin Rouge",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Guide",
-                MaxCapacity = 1,
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 100,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris12Services.jpg",
+                    "/ImagesTest/Paris12Activites.jpg",
                 },
-                ExternalLinks = "https://www.historicalparistours.com",
-                DestinationId = 1,
+                ExternalLinks = "https://www.moulinrouge.fr",
+                DestinationId = 1
             },
 
             new Service
             {
                 Id = 13,
-                Name = "Location de voiture",
-                Price = 50.0,
+                Name = "Balade en bateau sur la Seine",
+                Price = 25.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Transport",
-                MaxCapacity = 4,
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 20,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris13Services.jpg",
+                    "/ImagesTest/Paris13Activites.jpg",
                 },
-                ExternalLinks = "https://www.location-voiture-paris.com",
-                DestinationId = 1,
+                ExternalLinks = "https://www.bateaux-mouches.fr",
+                DestinationId = 1
             },
 
             new Service
             {
                 Id = 14,
-                Name = "TAXI G7",
-                Price = 15.0,
+                Name = "Randonnée Paris-Roller",
+                Price = 10.0,
                 Schedule = DateTime.Now.AddDays(2),
-                Location = "Paris",
-                Type = "Transport",
-                MaxCapacity = 4,
+                Location = "33 Quai de la Tournelle, 75005 Paris",
+                Type = "Activité",
+                Style = "Sport",
+                MaxCapacity = 50,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris14Services.jpg",
+                    "/ImagesTest/Paris14Activites.jpg",
                 },
-                ExternalLinks = "https://www.g7.fr",
-                DestinationId = 1,
+                ExternalLinks = "https://pari-roller.com/",
+                DestinationId = 1
             },
 
             new Service
             {
                 Id = 15,
-                Name = "Batobus",
-                Price = 17.0,
+                Name = "Escapade Segway",
+                Price = 30.0,
                 Schedule = DateTime.Now.AddDays(2),
-                Location = "Paris",
-                Type = "Transport",
-                MaxCapacity = 150,
+                Location = "Port de la Gare, 75013 Paris",
+                Type = "Activité",
+                Style = "Sport",
+                MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris15Services.jpg",
+                    "/ImagesTest/Paris15Activites.jpeg",
                 },
-                ExternalLinks = "https://www.batobus.com",
+                ExternalLinks = "https://www.funbooker.com/fr/annonce/segway-tour-a-la-decouverte-de-paris/voir",
                 DestinationId = 1
             },
 
@@ -3339,35 +3354,35 @@ namespace LittleBigTraveler.Models.DataBase
             // Lisbonne :
             new Service
             {
-                Id = 164,
+                Id = 165,
                 Name = "Lisbon Destination Hostel",
                 Price = 25.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Accommodation",
-                Style = "",
+                Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
-                    "/ImagesServices/164.jpeg",
+                    "/ImagesServices/165.jpeg",
                 },
-                ExternalLinks = "https://www.lisbondestinationhostel.com",
+                ExternalLinks = "https://www.destinationhostels.com/accomodation/lisbon-destination-hostel/",
                 DestinationId = 12
             },
 
             new Service
             {
-                Id = 165,
+                Id = 166,
                 Name = "Living Lounge Hostel",
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Accommodation",
-                Style = "",
+                Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
                 {
-                    "/ImagesServices/165.jpeg",
+                    "/ImagesServices/166LisonneHostel.png",
                 },
                 ExternalLinks = "https://www.livingloungehostel.com",
                 DestinationId = 12
@@ -3375,37 +3390,35 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 166,
+                Id = 167,
                 Name = "Sunset Destination Hostel",
                 Price = 35.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Accommodation",
-                Style = "",
+                Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
                 {
-                    "/ImagesServices/166.jpeg",
+                    "/ImagesServices/167LisbonneHostel.png",
                 },
-                ExternalLinks = "https://www.sunsetdestinationhostel.com",
+                ExternalLinks = "https://www.destinationhostels.com/accomodation/sunset-destination-hostel/",
                 DestinationId = 12
             },
 
-            // Hôtels
-
             new Service
             {
-                Id = 167,
+                Id = 168,
                 Name = "Hotel Avenida Palace",
                 Price = 150.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Accommodation",
-                Style = "",
+                Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
-                    "/ImagesServices/167.jpeg",
+                    "/ImagesServices/168LisbonneHotel.png",
                 },
                 ExternalLinks = "https://www.hotelavenidapalace.pt",
                 DestinationId = 12
@@ -3413,37 +3426,35 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 168,
+                Id = 169,
                 Name = "Altis Avenida Hotel",
                 Price = 180.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Accommodation",
-                Style = "",
+                Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
                 {
-                    "/ImagesServices/168.jpeg",
+                    "/ImagesServices/169LisbonneHotel.png",
                 },
                 ExternalLinks = "https://www.altishotels.com",
                 DestinationId = 12
             },
 
-            // Restaurants
-
             new Service
             {
-                Id = 169,
+                Id = 170,
                 Name = "Belcanto",
                 Price = 200.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Restaurant",
-                Style = "",
+                Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
                 {
-                    "/ImagesServices/169.jpeg",
+                    "/ImagesServices/170LisbonneRestaurant.png",
                 },
                 ExternalLinks = "https://www.belcanto.pt",
                 DestinationId = 12
@@ -3451,75 +3462,71 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 170,
+                Id = 171,
                 Name = "Time Out Market Lisbon",
-                Price = 80.0,
+                Price = 40.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Restaurant",
-                Style = "",
+                Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
                 {
-                    "/ImagesServices/170.jpeg",
+                    "/ImagesServices/171LisbonneRestaurant.png",
                 },
                 ExternalLinks = "https://www.timeoutmarket.com/lisboa/en",
-                DestinationId = 12
-            },
-
-            // Visites guidées
-
-            new Service
-            {
-                Id = 171,
-                Name = "Belem Tower Guided Tour",
-                Price = 20.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Lisbon",
-                Type = "Guided Tour",
-                Style = "",
-                MaxCapacity = 15,
-                Images = new List<string>
-                {
-                    "/ImagesServices/171.jpeg",
-                },
-                ExternalLinks = "https://www.torrebelem.pt/en/",
                 DestinationId = 12
             },
 
             new Service
             {
                 Id = 172,
-                Name = "Jerónimos Monastery Guided Tour",
-                Price = 25.0,
+                Name = "Belem Tower Guided Tour",
+                Price = 9.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Guided Tour",
-                Style = "",
-                MaxCapacity = 20,
+                Type = "Visite",
+                Style = "Culturel",
+                MaxCapacity = 15,
                 Images = new List<string>
                 {
-                    "/ImagesServices/172.jpeg",
+                    "/ImagesServices/172LisbonneActivite.png",
                 },
-                ExternalLinks = "https://www.mosteirojeronimos.pt/en/",
+                ExternalLinks = "https://torrebelem.com/pt/",
                 DestinationId = 12
             },
-
-            // Activités culturelles
 
             new Service
             {
                 Id = 173,
-                Name = "Lisbon Oceanarium",
+                Name = "Visita au Mosteiro dos Jerónimos",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Lisbon",
+                Type = "Visite",
+                Style = "Culturel",
+                MaxCapacity = 20,
+                Images = new List<string>
+                {
+                    "/ImagesServices/173LisbonneActivite.jpeg",
+                },
+                ExternalLinks = "https://www.mosteirojeronimos.com/en/",
+                DestinationId = 12
+            },
+
+            new Service
+            {
+                Id = 174,
+                Name = "Acquarium de Lisbonne",
                 Price = 15.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Cultural Activity",
-                Style = "",
+                Style = "Nature",
                 MaxCapacity = 200,
                 Images = new List<string>
                 {
-                    "/ImagesServices/173.jpeg",
+                    "/ImagesServices/174LisbonneActivite.png",
                 },
                 ExternalLinks = "https://www.oceanario.pt/en/",
                 DestinationId = 12
@@ -3527,55 +3534,53 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 174,
-                Name = "National Tile Museum",
+                Id = 175,
+                Name = "Musée Nacional des Azulejos",
                 Price = 10.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Cultural Activity",
-                Style = "",
+                Type = "Visite",
+                Style = "Culture",
                 MaxCapacity = 150,
                 Images = new List<string>
                 {
-                    "/ImagesServices/174.jpeg",
+                    "/ImagesServices/175LisbonneActivite.png",
                 },
-                ExternalLinks = "https://www.museudoazulejo.pt/en-GB/home",
+                ExternalLinks = "http://www.museudoazulejo.pt/",
                 DestinationId = 12
             },
 
             new Service
             {
-                Id = 175,
-                Name = "Calouste Gulbenkian Museum",
+                Id = 176,
+                Name = "Musée et Fondaction Calouste Gulbenkian",
                 Price = 12.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Cultural Activity",
-                Style = "",
+                Type = "Visite",
+                Style = "Culture",
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
-                    "/ImagesServices/175.jpeg",
+                    "/ImagesServices/176LisbonneActivite.jpeg",
                 },
                 ExternalLinks = "https://gulbenkian.pt/museu/en/",
                 DestinationId = 12
             },
 
-            // Activités sportives
-
             new Service
             {
-                Id = 176,
-                Name = "Surfing Lessons in Lisbon",
+                Id = 177,
+                Name = "Cours de Surf",
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Sport Activity",
-                Style = "",
+                Type = "Activite",
+                Style = "Sport",
                 MaxCapacity = 50,
                 Images = new List<string>
                 {
-                    "/ImagesServices/176.jpeg",
+                    "/ImagesServices/177LisbonneActivite.png",
                 },
                 ExternalLinks = "https://www.lisbonsurfacademy.com",
                 DestinationId = 12
@@ -3583,285 +3588,41 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 177,
-                Name = "Kayaking in the Tagus River",
+                Id = 178,
+                Name = "Location de kayak",
                 Price = 25.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Sport Activity",
-                Style = "",
+                Type = "Activite",
+                Style = "Sport",
                 MaxCapacity = 40,
                 Images = new List<string>
                 {
-                    "/ImagesServices/177.jpeg",
+                    "/ImagesServices/178LisbonneActivite.webp",
                 },
-                ExternalLinks = "https://www.lisboakayak.com",
+                ExternalLinks = "https://www.lisbonkayak.com/",
                 DestinationId = 12
-            },
-
-            // Interlaken : Vérifier les chiffres (14 références pour Lisbonne et Interlaken)
-            new Service
-            {
-                Id = 178,
-                Name = "Balmer's Hostel",
-                Price = 30.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Accommodation",
-                Style = "",
-                MaxCapacity = 80,
-                Images = new List<string>
-                {
-                    "/ImagesServices/178.jpeg",
-                },
-                ExternalLinks = "https://www.balmers.com",
-                DestinationId = 13
             },
 
             new Service
             {
                 Id = 179,
-                Name = "Funny-Farm Backpackers Hostel",
-                Price = 25.0,
+                Name = "Visite gastronomique inconnue de Lisbonne",
+                Price = 94.0,
                 Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Accommodation",
-                Style = "",
-                MaxCapacity = 60,
-                Images = new List<string>
-                {
-                    "/ImagesServices/179.jpeg",
-                },
-                ExternalLinks = "https://www.funny-farm.ch",
-                DestinationId = 13
-            },
-
-            new Service
-            {
-                Id = 180,
-                Name = "Backpackers Villa Sonnenhof",
-                Price = 35.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Accommodation",
-                Style = "",
+                Location = "Lisbon",
+                Type = "Activite",
+                Style = "Culturel",
                 MaxCapacity = 40,
                 Images = new List<string>
                 {
-                    "/ImagesServices/180.jpeg",
+                    "/ImagesServices/179LisbonneActivite.webp",
                 },
-                ExternalLinks = "https://www.villa.ch",
-                DestinationId = 13
-            },
-
-            // Hôtels
-
-            new Service
-            {
-                Id = 181,
-                Name = "Victoria-Jungfrau Grand Hotel",
-                Price = 250.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Accommodation",
-                Style = "",
-                MaxCapacity = 100,
-                Images = new List<string>
-                {
-                    "/ImagesServices/181.jpeg",
-                },
-                ExternalLinks = "https://www.victoria-jungfrau.ch",
-                DestinationId = 13
-            },
-
-            new Service
-            {
-                Id = 182,
-                Name = "Hotel Interlaken",
-                Price = 200.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Accommodation",
-                Style = "",
-                MaxCapacity = 80,
-                Images = new List<string>
-                {
-                    "/ImagesServices/182.jpeg",
-                },
-                ExternalLinks = "https://www.hotelinterlaken.ch",
-                DestinationId = 13
-            },
-
-            // Restaurants
-
-            new Service
-            {
-                Id = 183,
-                Name = "Restaurant Taverne",
-                Price = 80.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Restaurant",
-                Style = "",
-                MaxCapacity = 50,
-                Images = new List<string>
-                {
-                    "/ImagesServices/183.jpeg",
-                },
-                ExternalLinks = "https://www.taverne-interlaken.ch",
-                DestinationId = 13
-            },
-
-            new Service
-            {
-                Id = 184,
-                Name = "Restaurant Chalet Swiss",
-                Price = 120.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Restaurant",
-                Style = "",
-                MaxCapacity = 60,
-                Images = new List<string>
-                {
-                    "/ImagesServices/184.jpeg",
-                },
-                ExternalLinks = "https://www.chaletswiss.com",
-                DestinationId = 13
-            },
-
-            // Visites guidées
-
-            new Service
-            {
-                Id = 185,
-                Name = "Jungfraujoch Top of Europe",
-                Price = 150.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Guided Tour",
-                Style = "",
-                MaxCapacity = 15,
-                Images = new List<string>
-                {
-                    "/ImagesServices/185.jpeg",
-                },
-                ExternalLinks = "https://www.jungfrau.ch/en-gb/",
-                DestinationId = 13
-            },
-
-            new Service
-            {
-                Id = 186,
-                Name = "Harder Kulm Panorama View",
-                Price = 25.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Guided Tour",
-                Style = "",
-                MaxCapacity = 20,
-                Images = new List<string>
-                {
-                    "/ImagesServices/186.jpeg",
-                },
-                ExternalLinks = "https://www.jungfrau.ch/en-gb/harder-kulm/",
-                DestinationId = 13
-            },
-
-            // Activités culturelles
-
-            new Service
-            {
-                Id = 187,
-                Name = "Ballenberg Open-Air Museum",
-                Price = 20.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Cultural Activity",
-                Style = "",
-                MaxCapacity = 200,
-                Images = new List<string>
-                {
-                    "/ImagesServices/187.jpeg",
-                },
-                ExternalLinks = "https://www.ballenberg.ch/en/",
-                DestinationId = 13
-            },
-
-            new Service
-            {
-                Id = 188,
-                Name = "St. Beatus Caves",
-                Price = 15.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Cultural Activity",
-                Style = "",
-                MaxCapacity = 150,
-                Images = new List<string>
-                {
-                    "/ImagesServices/188.jpeg",
-                },
-                ExternalLinks = "https://www.beatushoehlen.ch/en/",
-                DestinationId = 13
-            },
-
-            new Service
-            {
-                Id = 189,
-                Name = "Thun Castle",
-                Price = 10.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Cultural Activity",
-                Style = "",
-                MaxCapacity = 100,
-                Images = new List<string>
-                {
-                    "/ImagesServices/189.jpeg",
-                },
-                ExternalLinks = "https://www.schlossthun.ch/en/",
-                DestinationId = 13
-            },
-
-            // Activités sportives
-
-            new Service
-            {
-                Id = 190,
-                Name = "Paragliding in Interlaken",
-                Price = 200.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Sport Activity",
-                Style = "",
-                MaxCapacity = 50,
-                Images = new List<string>
-                {
-                    "/ImagesServices/190.jpeg",
-                },
-                ExternalLinks = "https://www.paragliding-interlaken.ch",
-                DestinationId = 13
-            },
-
-            new Service
-            {
-                Id = 191,
-                Name = "Canyoning Adventure",
-                Price = 150.0,
-                Schedule = DateTime.Now.AddDays(1),
-                Location = "Interlaken",
-                Type = "Sport Activity",
-                Style = "",
-                MaxCapacity = 40,
-                Images = new List<string>
-                {
-                    "/ImagesServices/191.jpeg",
-                },
-                ExternalLinks = "https://www.outdoor-interlaken.ch/en",
-                DestinationId = 13
+                ExternalLinks = "https://www.eatingeurope.com/lisbon/",
+                DestinationId = 12
             }
 
+                // Interlaken : Vérifier les chiffres (14 références pour Lisbonne et Interlaken)
 
 
 
