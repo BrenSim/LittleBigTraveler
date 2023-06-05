@@ -3620,9 +3620,549 @@ namespace LittleBigTraveler.Models.DataBase
                 },
                 ExternalLinks = "https://www.eatingeurope.com/lisbon/",
                 DestinationId = 12
+            },
+            // Interlaken
+
+            new Service
+            {
+                Id = 180,
+                Name = "Victoria-Jungfrau Grand Hotel & Spa",
+                Price = 300.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken1Hebergement.png",
+                },
+                ExternalLinks = "https://www.victoria-jungfrau.ch/en/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 181,
+                Name = "Hotel Interlaken",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken2Hebergement.png",
+                },
+                ExternalLinks = "https://www.hotelinterlaken.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 182,
+                Name = "Hotel Bellevue",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken3Hebergement.png",
+                },
+                ExternalLinks = "https://www.bellevue-wengen.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 183,
+                Name = "Hotel Du Nord",
+                Price = 100.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken4Hebergement.png",
+                },
+                ExternalLinks = "https://www.hotel-dunord.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 184,
+                Name = "Backpackers Villa Sonnenhof - Hostel Interlaken",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken5Hebergement.png",
+                },
+                ExternalLinks = "https://www.villa.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 185,
+                Name = "Restaurant Taverne",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken6Restaurant.png",
+                },
+                ExternalLinks = "https://restauranttaverne.ch/fr/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 186,
+                Name = "Restaurant Chalet Beizli",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken7Restaurant.png",
+                },
+                ExternalLinks = "https://www.chalet-beizli.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 187,
+                Name = "Restaurant Hüsi Bierhaus",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken8Restaurant.png",
+                },
+                ExternalLinks = "https://www.huesi-interlaken.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 188,
+                Name = "Restaurant Città Vecchia",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken9Restaurant.png",
+                },
+                ExternalLinks = "https://citta-vecchia.digitalone.site/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 189,
+                Name = "Restaurant Bären",
+                Price = 35.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken10Restaurant.png",
+                },
+                ExternalLinks = "https://www.baeren.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 190,
+                Name = "Excursion en téléphérique vers le Schilthorn",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Activité",
+                Style = "Aventure",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken11Activite.png",
+                },
+                ExternalLinks = "https://schilthorn.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 191,
+                Name = "Randonnée au lac de Brienz",
+                Price = 10.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken12Activite.png",
+                },
+                ExternalLinks = "https://www.brienzersee.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 192,
+                Name = "Visite de la grotte de St. Beatus",
+                Price = 15.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken13Activite.png",
+                },
+                ExternalLinks = "https://www.beatushoehlen.swiss/fr/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 193,
+                Name = "Parapente à Interlaken",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Activité",
+                Style = "Aventure",
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken14Activite.png",
+                },
+                ExternalLinks = "https://www.paragliding-interlaken.ch/",
+                DestinationId = 13
+            },
+
+            new Service
+            {
+                Id = 194,
+                Name = "Croisière des trois Lacs",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Interlaken",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                    "/imagesTest/Interlaken15Activite.png",
+                },
+                ExternalLinks = "https://www.bls.ch/fr/freizeit-und-ferien/ausfluege/bielersee-drei-seen-fahrt",
+                DestinationId = 13
+            },
+
+
+            // Tromso
+            new Service
+            {
+                Id = 16,
+                Name = "City Living Hotel",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromoso1Hebergement.png",
+                },
+                ExternalLinks = "https://www.cityliving.no/en/hotel/tromso/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 16,
+                Name = "Tromsø Lodge & Camping",
+                Price = 35.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromoso2Hebergement.png",
+                },
+                ExternalLinks = "https://www.tromsocamping.no/en/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 3,
+                Name = "Tromsø Bed & Books",
+                Price = 45.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromso3Hebergement.jpg",
+                },
+                ExternalLinks = "https://www.bedandbooks.no/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 4,
+                Name = "Thon Hotel Tromsø",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromso4Hebergement.jpg",
+                },
+                ExternalLinks = "https://www.thonhotels.com/hoteller/norge/tromso/thon-hotel-tromso/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 5,
+                Name = "Viking Hotel Tromsø",
+                Price = 55.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromso5Hebergement.jpg",
+                },
+                ExternalLinks = "https://www.vikinghotel.no/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 6,
+                Name = "Fiskekompaniet",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromoso6Restauration.png",
+                },
+                ExternalLinks = "https://www.fiskekompani.no/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 7,
+                Name = "Bardus Bistro",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromoso7Restauration.png",
+                },
+                ExternalLinks = "https://www.bardusbistro.no/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 8,
+                Name = "Risø Mat & Kaffebar",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromoso8Restauration.png",
+                },
+                ExternalLinks = "https://www.riso-mat.no/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 9,
+                Name = "Emma's Drommekjokken",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromso9Restauration.jpg",
+                },
+                ExternalLinks = "https://www.emmasdrommekjokken.no/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 10,
+                Name = "Skirri",
+                Price = 55.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Tromsø",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromoso10Restauration.png",
+                },
+                ExternalLinks = "https://www.skirri.com/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 11,
+                Name = "Northern Shots Tours",
+                Price = 90.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Tromsø",
+                Type = "Guide",
+                Style = null,
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromoso11Guide.png",
+                },
+                ExternalLinks = "https://www.northernshotstours.com/",
+                DestinationId = 16
+            },
+
+            new Service
+            {
+                Id = 12,
+                Name = "Tromsø Outdoor",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Tromsø",
+                Type = "Activité",
+                Style = "Sport",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "Tromoso12Activite.png",
+                },
+                ExternalLinks = "https://www.tromsooutdoor.no/",
+                DestinationId = 16
+            },
+            new Service
+            {
+                Id = 13,
+                Name = "Arctic Cruise in Norway",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Tromsø",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "Tromoso13Activite.png",
+                },
+                ExternalLinks = "https://www.acinorway.com/",
+                DestinationId = 16
+            },
+            new Service
+            {
+                Id = 14,
+                Name = "Fjellheisen Cable Car",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Tromsø",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "Tromso14Activite.jpg",
+                },
+                ExternalLinks = "https://www.fjellheisen.no/",
+                DestinationId = 16
+            },
+            new Service
+            {
+                Id = 15,
+                Name = "Tromso Safari",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Tromsø",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "Tromso15Activite.jpg",
+                },
+                ExternalLinks = "https://www.viator.com/fr-FR/tours/Tromso/Northen-light-tour-with-Panorama-coach/d4362-192522P2",
+                DestinationId = 16
             }
 
-                // Interlaken : Vérifier les chiffres (14 références pour Lisbonne et Interlaken)
+
 
 
 
