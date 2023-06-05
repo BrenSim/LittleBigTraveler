@@ -4712,6 +4712,276 @@ namespace LittleBigTraveler.Models.DataBase
                 },
                 ExternalLinks = "https://www.polaria.no/",
                 DestinationId = 16
+            },
+            // Killarney :
+            new Service
+            {
+                Id = 241,
+                Name = "Ross Castle Lodge",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney1Hebergement.png",
+                },
+                ExternalLinks = "https://rosscastlebnb.com/",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 242,
+                Name = "Kingfisher Lodge",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney2Hebergement.png",
+                },
+                ExternalLinks = "https://www.kingfisherlodgekillarney.com",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 243,
+                Name = "Killarney View House",
+                Price = 55.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney3Hebergement.png",
+                },
+                ExternalLinks = "https://www.killarneyviewHouse.com",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 244,
+                Name = "The Gardens B&B",
+                Price = 45.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney4Hebergement.png",
+                },
+                ExternalLinks = "https://www.thegardenskillarney.com/",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 245,
+                Name = "Murphy's of Killarney",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney5Hebergement.png",
+                },
+                ExternalLinks = "http://www.murphysofkillarney.com/",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 246,
+                Name = "Bricín Restaurant",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney6Restauration.png",
+                },
+                ExternalLinks = "https://www.bricin.ie",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 247,
+                Name = "Cellar One",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney7Restauration.png",
+                },
+                ExternalLinks = "https://www.muckrosspark.com/",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 248,
+                Name = "The Laurels Pub & Restaurant",
+                Price = 35.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney8Restauration.png",
+                },
+                ExternalLinks = "https://www.thelaurelspub.com",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 249,
+                Name = "The Porterhouse Gastropub",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney9Restauration.png",
+                },
+                ExternalLinks = "https://www.theporterhousekillarney.com",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 250,
+                Name = "The Lake Room",
+                Price = 55.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney10Restauration.png",
+                },
+                ExternalLinks = "https://www.killarneyparkhotel.ie/",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 251,
+                Name = "Horseback Riding",
+                Price = 45.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Activité",
+                Style = "Sport",
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney11Activite.png",
+                },
+                ExternalLinks = "https://killarneyridingstables.com/",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 252,
+                Name = "Tour en bateau sur le lac de Killarney",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(3),
+                Location = "Killarney",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 20,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney12Activite.png",
+                },
+                ExternalLinks = "https://killarneydaytour.com/",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 253,
+                Name = "Visite du château de Ross",
+                Price = 10.0,
+                Schedule = DateTime.Now.AddDays(4),
+                Location = "Killarney",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney13Activite.png",
+                },
+                ExternalLinks = "https://www.heritageireland.ie/fr/sud-ouest/ross-castle/",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 254,
+                Name = "Excursion en calèche dans le centre-ville de Killarney",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Killarney",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney14Activite.png",
+                },
+                ExternalLinks = "https://killarneyjauntingcars.com/",
+                DestinationId = 17
+            },
+
+            new Service
+            {
+                Id = 255,
+                Name = "Découverte des cascades de Torc",
+                Price = 0.0,
+                Schedule = DateTime.Now.AddDays(3),
+                Location = "Killarney",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Killarney15Activite.png",
+                },
+                ExternalLinks = "https://www.killarneynationalpark.ie/visit/locations/torc-waterfall/",
+                DestinationId = 17
             }
 
 
