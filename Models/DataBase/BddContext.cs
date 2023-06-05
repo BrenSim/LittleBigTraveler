@@ -4155,12 +4155,282 @@ namespace LittleBigTraveler.Models.DataBase
                 ExternalLinks = "https://www.chamonix.com/activites",
                 DestinationId = 14
             },
+            // Plitvice Lakes :
+            new Service
+            {
+                Id = 210,
+                Name = "Hotel Jezero",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes1Hebergement.jpg",
+                },
+                ExternalLinks = "https://np-plitvicka-jezera.hr/fr/planifiez-votre-visite/hotels-et-campings/hotel-jezero/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 211,
+                Name = "Ethno Houses Plitvica Selo",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes2Hebergement.jpg",
+                },
+                ExternalLinks = "https://www.ethnohouses.com/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 212,
+                Name = "Guesthouse Hodak",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes3Hebergement.jpg",
+                },
+                ExternalLinks = "https://visitcroatia.net/fr/object/chambres-guesthouse-hodak/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 213,
+                Name = "Hotel Degenija",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes7Restaurant.png",
+                },
+                ExternalLinks = "https://www.hotel-degenija.com/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 214,
+                Name = "Etno Garden Hotel",
+                Price = 165.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes6Restaurant.png",
+                },
+                ExternalLinks = "https://www.plitvice-etnogarden.com/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 215,
+                Name = "Restaurant Etno Garden",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes6Restaurant.png",
+                },
+                ExternalLinks = "https://www.plitvice-etnogarden.com/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 216,
+                Name = "Restaurant Degenija",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes7Restaurant.png",
+                },
+                ExternalLinks = "https://www.restoran-degenija.com/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 217,
+                Name = "Restaurant Licka Kuca",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes8Restauration.png",
+                },
+                ExternalLinks = "http://np-plitvicka-jezera.hr/en/plan-your-visit/hospitality-facilities/national-restaurant-licka-kuca/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 218,
+                Name = "Restaurant Vila Velebita",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes9Restauration.jpg",
+                },
+                ExternalLinks = "http://www.vila-velebita.com/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 219,
+                Name = "Old Shatterhand",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes10Restauration.jpg",
+                },
+                ExternalLinks = "https://www.tripadvisor.fr/Restaurant_Review-g670545-d21120273-Reviews-Old_Shatterhand-Rakovica_Plitvice_Lakes_National_Park_Central_Croatia.html/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 220,
+                Name = "Visite des lacs de Plitvice",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Activité",
+                Style = null,
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes11Activite.png",
+                },
+                ExternalLinks = "https://www.np-plitvicka-jezera.hr/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 221,
+                Name = "Randonnée en forêt de Plitvice",
+                Price = 15.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Activité",
+                Style = null,
+                MaxCapacity = 8,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes11Activite.png",
+                },
+                ExternalLinks = "https://www.np-plitvicka-jezera.hr/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 222,
+                Name = "Promenade en bateau sur les lacs",
+                Price = 30.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Activité",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes11Activite.png",
+                },
+                ExternalLinks = "https://www.np-plitvicka-jezera.hr/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 223,
+                Name = "Observation de la faune et de la flore",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Activité",
+                Style = null,
+                MaxCapacity = 8,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes11Activite.png",
+                },
+                ExternalLinks = "https://www.np-plitvicka-jezera.hr/",
+                DestinationId = 15
+            },
+
+            new Service
+            {
+                Id = 224,
+                Name = "Exploration des grottes de Plitvice",
+                Price = 40.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Plitvice Lakes",
+                Type = "Activité",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/PlitviceLakes11Activite.png",
+                },
+                ExternalLinks = "https://www.np-plitvicka-jezera.hr/",
+                DestinationId = 15
+            },
 
 
             // Tromso
             new Service
             {
-                Id = 16,
+                Id = 225,
                 Name = "City Living Hotel",
                 Price = 50.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4170,7 +4440,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Tromoso1Hebergement.png",
+                    "/ImagesServices/Tromso1Hebergement.png",
                 },
                 ExternalLinks = "https://www.cityliving.no/en/hotel/tromso/",
                 DestinationId = 16
@@ -4178,7 +4448,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 16,
+                Id = 226,
                 Name = "Tromsø Lodge & Camping",
                 Price = 35.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4188,7 +4458,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Tromoso2Hebergement.png",
+                    "/ImagesServices/Tromso2Hebergement.png",
                 },
                 ExternalLinks = "https://www.tromsocamping.no/en/",
                 DestinationId = 16
@@ -4196,7 +4466,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 3,
+                Id = 227,
                 Name = "Tromsø Bed & Books",
                 Price = 45.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4214,7 +4484,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 4,
+                Id = 228,
                 Name = "Thon Hotel Tromsø",
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4232,7 +4502,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 5,
+                Id = 229,
                 Name = "Viking Hotel Tromsø",
                 Price = 55.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4250,7 +4520,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 6,
+                Id = 230,
                 Name = "Fiskekompaniet",
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4260,7 +4530,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Tromoso6Restauration.png",
+                    "/ImagesServices/Tromso6Restauration.png",
                 },
                 ExternalLinks = "https://www.fiskekompani.no/",
                 DestinationId = 16
@@ -4268,7 +4538,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 7,
+                Id = 231,
                 Name = "Bardus Bistro",
                 Price = 50.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4278,7 +4548,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Tromoso7Restauration.png",
+                    "/ImagesServices/Tromso7Restauration.png",
                 },
                 ExternalLinks = "https://www.bardusbistro.no/",
                 DestinationId = 16
@@ -4286,7 +4556,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 8,
+                Id = 232,
                 Name = "Risø Mat & Kaffebar",
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4296,7 +4566,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Tromoso8Restauration.png",
+                    "/ImagesServices/Tromso8Restauration.png",
                 },
                 ExternalLinks = "https://www.riso-mat.no/",
                 DestinationId = 16
@@ -4304,7 +4574,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 9,
+                Id = 233,
                 Name = "Emma's Drommekjokken",
                 Price = 40.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4322,7 +4592,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 10,
+                Id = 234,
                 Name = "Skirri",
                 Price = 55.0,
                 Schedule = DateTime.Now.AddDays(2),
@@ -4332,7 +4602,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Tromoso10Restauration.png",
+                    "/ImagesServices/Tromso10Restauration.png",
                 },
                 ExternalLinks = "https://www.skirri.com/",
                 DestinationId = 16
@@ -4340,7 +4610,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 11,
+                Id = 235,
                 Name = "Northern Shots Tours",
                 Price = 90.0,
                 Schedule = DateTime.Now.AddDays(1),
@@ -4350,7 +4620,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Tromoso11Guide.png",
+                    "/ImagesServices/Tromso11Guide.png",
                 },
                 ExternalLinks = "https://www.northernshotstours.com/",
                 DestinationId = 16
@@ -4358,7 +4628,7 @@ namespace LittleBigTraveler.Models.DataBase
 
             new Service
             {
-                Id = 12,
+                Id = 236,
                 Name = "Tromsø Outdoor",
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(1),
@@ -4368,14 +4638,15 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                    "Tromoso12Activite.png",
+                    "/ImagesServices/Tromso12Activite.png",
                 },
                 ExternalLinks = "https://www.tromsooutdoor.no/",
                 DestinationId = 16
             },
+
             new Service
             {
-                Id = 13,
+                Id = 237,
                 Name = "Arctic Cruise in Norway",
                 Price = 120.0,
                 Schedule = DateTime.Now.AddDays(1),
@@ -4385,45 +4656,64 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                    "Tromoso13Activite.png",
+                    "/ImagesServices/Tromso13Activite.png",
                 },
                 ExternalLinks = "https://www.acinorway.com/",
                 DestinationId = 16
             },
+
             new Service
             {
-                Id = 14,
-                Name = "Fjellheisen Cable Car",
-                Price = 60.0,
+                Id = 238,
+                Name = "Arctic Cathedral",
+                Price = 20.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Tromsø",
                 Type = "Activité",
-                Style = "Nature",
+                Style = "Culture",
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                    "Tromso14Activite.jpg",
+                    "/ImagesServices/Tromso14Activite.png",
                 },
-                ExternalLinks = "https://www.fjellheisen.no/",
+                ExternalLinks = "https://www.tromso.kirken.no/",
                 DestinationId = 16
             },
             new Service
             {
-                Id = 15,
-                Name = "Tromso Safari",
-                Price = 60.0,
+                Id = 239,
+                Name = "Tromsø Safari",
+                Price = 100.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Tromsø",
                 Type = "Activité",
-                Style = "Nature",
+                Style = "Aventure",
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                    "Tromso15Activite.jpg",
+                    "/ImagesServices/Tromso15Activite.png",
                 },
-                ExternalLinks = "https://www.viator.com/fr-FR/tours/Tromso/Northen-light-tour-with-Panorama-coach/d4362-192522P2",
+                ExternalLinks = "https://www.tromsosafari.no/",
+                DestinationId = 16
+            },
+            new Service
+            {
+                Id = 240,
+                Name = "Polaria",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Tromsø",
+                Type = "Activité",
+                Style = "Découverte",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Tromso16Activite.png",
+                },
+                ExternalLinks = "https://www.polaria.no/",
                 DestinationId = 16
             }
+
 
 
 
