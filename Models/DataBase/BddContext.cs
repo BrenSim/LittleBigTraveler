@@ -6052,21 +6052,278 @@ namespace LittleBigTraveler.Models.DataBase
                 },
                 ExternalLinks = "https://www.divescover.fr/plongee-sous-marine/italie/ischia",
                 DestinationId = 21
+            },
+            // Vichy :
+            new Service
+            {
+                Id = 316,
+                Name = "Hôtel Aletti Palace",
+                Price = 150.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy1Hebergement.png",
+                },
+                ExternalLinks = "http://www.hotel-aletti.fr/",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 317,
+                Name = "Vichy Célestins Spa Hôtel",
+                Price = 200.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy2Hebergement.png",
+                },
+                ExternalLinks = "https://www.vichy-spa-hotel.fr",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 318,
+                Name = "Hôtel de Grignan",
+                Price = 120.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy3Hebergement.png",
+                },
+                ExternalLinks = "https://www.hoteldegrignan.fr",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 319,
+                Name = "Vichy Residencia",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy4Hebergement.png",
+                },
+                ExternalLinks = "https://www.vichy-residencia.com",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 320,
+                Name = "Château de Codignat",
+                Price = 250.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Hébergement",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy5Hebergement.png",
+                },
+                ExternalLinks = "https://www.codignat.com",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 321,
+                Name = "Restaurant Les Caudalies",
+                Price = 50.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy6Restaurant.png",
+                },
+                ExternalLinks = "https://www.restaurant-lescaudalies.fr/",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 322,
+                Name = "Le Vichy",
+                Price = 20.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy7Restaurant.png",
+                },
+                ExternalLinks = "https://www.facebook.com/profile.php?id=100061213009343",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 323,
+                Name = "La Table d'Antoine",
+                Price = 60.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 6,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy8Restaurant.png",
+                },
+                ExternalLinks = "https://www.latabledantoine.com/",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 324,
+                Name = "L’Atmosphere",
+                Price = 70.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 4,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy9Restaurant.jpg",
+                },
+                ExternalLinks = "https://www.facebook.com/Malhuretedouard/?ref=br_rs",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 325,
+                Name = "Le Petit Bouchon",
+                Price = 70.0,
+                Schedule = DateTime.Now.AddDays(2),
+                Location = "Vichy",
+                Type = "Restauration",
+                Style = null,
+                MaxCapacity = 2,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy10Restaurant.png",
+                },
+                ExternalLinks = "https://eater.space/le-petit-bouchon-vichy",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 326,
+                Name = "Vichy MonAmour",
+                Price = 80.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Vichy",
+                Type = "Guide",
+                Style = null,
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy11Guide.Png",
+                },
+                ExternalLinks = "https://vichymonamour.fr/sejourner/a-faire/nos-visites-guidees/",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 327,
+                Name = "Visite Opera-Casino Vichy",
+                Price = 10.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Vichy",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 1,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy12Activite.png",
+                },
+                ExternalLinks = "https://opera-vichy.com/",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 328,
+                Name = "Baignade aux Thermes des Dômes",
+                Price = 25.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Vichy",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 20,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy13Activite.png",
+                },
+                ExternalLinks = "https://www.thermes-de-vichy.fr/",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 329,
+                Name = "Visite des thermes de Vichy",
+                Price = 12.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Vichy",
+                Type = "Activité",
+                Style = "Culture",
+                MaxCapacity = 50,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy14Activite.png",
+                },
+                ExternalLinks = "https://www.thermes-de-vichy.fr/",
+                DestinationId = 22
+            },
+
+            new Service
+            {
+                Id = 330,
+                Name = "Promenade Bateau Allier",
+                Price = 10.0,
+                Schedule = DateTime.Now.AddDays(1),
+                Location = "Vichy",
+                Type = "Activité",
+                Style = "Nature",
+                MaxCapacity = 10,
+                Images = new List<string>
+                {
+                    "/ImagesServices/Vichy15Activite.png",
+                },
+                ExternalLinks = "https://www.allier-auvergne-tourisme.com/equipement/vichy/bateau-promenade-vichy/5261458",
+                DestinationId = 22
             }
-
-
-
-
-
-
-
-
-
-
-
-
             );
-
 
             // Création des rôles
             this.Roles.AddRange(
