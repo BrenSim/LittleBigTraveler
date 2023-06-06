@@ -4,9 +4,8 @@ using System.Collections.Generic;
 
 namespace LittleBigTraveler.Models.TravelClasses
 {
-	public class Package
-	{
-
+    public class Package
+    {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -17,7 +16,7 @@ namespace LittleBigTraveler.Models.TravelClasses
         public Travel Travel { get; set; }
 
         public List<Service> ServiceForPackage { get; set; }
-        //public virtual Service Service { get; set; }
+
+        public virtual List<Booking> Bookings { get; set; }
     }
 }
-

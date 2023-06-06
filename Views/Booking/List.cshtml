@@ -29,8 +29,9 @@
                         <td>@booking.Id</td>
                         <td>@booking.Package.Name</td>
                         <td>
-                            <a href="/Booking/Confirmation/@booking.Id" class="btn btn-primary">Voir détails</a>
-                            <a href="/Booking/Delete/@booking.Id" class="btn btn-danger">Supprimer</a>
+                            <a href="@Url.Action("Confirmation", "Booking", new { bookingId = booking.Id })" class="btn btn-primary">Voir détails</a>
+                            <a href="@Url.Action("Delete", "Booking", new { bookingId = booking.Id })" class="btn btn-danger">Supprimer</a>
+
                         </td>
                     </tr>
                 }
@@ -39,6 +40,6 @@
     }
 
     <div class="text-center mt-4">
-        <a href="/Home/Index" class="btn btn-primary">Retour à l'accueil</a>
+        <a href="/Home/IndexTEST" class="btn btn-primary">Retour à l'accueil</a>
     </div>
 }

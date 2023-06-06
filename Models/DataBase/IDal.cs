@@ -8,7 +8,6 @@ using LittleBigTraveler.Models.UserClasses;
 using static System.Net.Mime.MediaTypeNames;
 
 
-using static System.Net.Mime.MediaTypeNames;
 
 
 namespace LittleBigTraveler.Models.DataBase

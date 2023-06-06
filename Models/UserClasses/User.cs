@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Principal;
+using LittleBigTraveler.Models.TravelClasses;
 
 namespace LittleBigTraveler.Models.UserClasses
 {
@@ -20,6 +21,7 @@ namespace LittleBigTraveler.Models.UserClasses
         public virtual Partner Partner { get; set; }
         public virtual Administrator Administrator { get; set; }
         public virtual Role Role { get; set; }
+        public virtual List<Booking> Bookings { get; set; }
 
 
 
@@ -42,8 +44,3 @@ namespace LittleBigTraveler.Models.UserClasses
         }
     }
 }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 29435c6c2af7e8eed44b585d8cc77c1a74648318

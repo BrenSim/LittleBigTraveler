@@ -7,7 +7,7 @@ namespace LittleBigTraveler.Models.DataBase
     public interface IBookingDAL : IDisposable
     {
         // Créer une réservation
-        int CreateBooking(int customerId, int packageId);
+        int CreateBooking(int userId, int packageId);
 
         // Récupérer une réservation par son ID
         Booking GetBookingById(int id);
@@ -15,8 +15,10 @@ namespace LittleBigTraveler.Models.DataBase
         // Supprimer une réservation
         void DeleteBooking(int id);
 
+        // Récupérer un package par son ID
         Package GetPackageById(int packageId);
 
-        List<Booking> GetCustomerBookings(int customerId);
+        // Récupérer toutes les réservations d'un utilisateur
+        List<Booking> GetUserBookings(int userId);
     }
 }

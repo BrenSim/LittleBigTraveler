@@ -65,7 +65,7 @@ public class PackageController : Controller
     //}
 
     // Action pour créer un PackageTravel
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator, Customer")]
     public IActionResult CreatePackage(int travelId)
     {
         using (var travelDAL = new TravelDAL(HttpContextAccessor))
@@ -109,7 +109,7 @@ public class PackageController : Controller
     }
 
     // Action pour le traitement du formulaire de création d'un PackageTravel
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator, Customer")]
     [HttpPost]
     public IActionResult CreatePackage(PackageViewModel model, List<int> SelectedServiceId)
     {
@@ -157,7 +157,7 @@ public class PackageController : Controller
     }
 
     // Action pour supprimer un PackageTravel
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator, Customer")]
     public IActionResult DeletePackage(int id)
     {
         using (var packageDAL = new PackageDAL(HttpContextAccessor))
@@ -196,7 +196,7 @@ public class PackageController : Controller
     //}
 
     // Action pour afficher le formulaire d'édition d'un PackageTravel
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator, Customer")]
     public IActionResult EditPackage(int id)
     {
         using (var packageDAL = new PackageDAL(HttpContextAccessor))
@@ -241,7 +241,7 @@ public class PackageController : Controller
     }
 
     // Action pour le traitement du formulaire d'édition d'un PackageTravel
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator, Customer")]
     [HttpPost]
     public IActionResult EditPackage(int id, PackageViewModel model, List<int> SelectedServiceId)
     {
