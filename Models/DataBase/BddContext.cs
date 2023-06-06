@@ -50,7 +50,7 @@ namespace LittleBigTraveler.Models.DataBase
         // Connexion avec la database MySql
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;user id=root;password=Zachary3529<;database=LittleBigTravelDB");
+            optionsBuilder.UseMySql("server=localhost;user id=root;password=Loveandroses123;database=LittleBigTravelDB");
         }
 
         
@@ -873,6 +873,7 @@ namespace LittleBigTraveler.Models.DataBase
                         "/ImagesServices/25RomeRestaurant.jpeg",
                     },
                 ExternalLinks = "https://www.anticoarco.it",
+                DestinationId = 2
             },
             new Service
             {
