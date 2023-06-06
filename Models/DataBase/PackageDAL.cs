@@ -64,8 +64,8 @@ namespace LittleBigTraveler.Models.DataBase
 
                 // Ajout des services sélectionnés au package PackageTravel
                 package.ServiceForPackage.AddRange(services);
-                // Mise à jour du prix total du package
-                package.Price += services.Sum(s => s.Price);
+                // Update price
+                package.Price = travel.Price + services.Sum(s => s.Price);
 
                 _bddContext.Packages.Add(package);
                 _bddContext.SaveChanges();

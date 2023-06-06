@@ -27,6 +27,7 @@
     <None Remove="Views\User\" />
     <None Remove="Views\Travel\" />
     <None Remove="Views\Booking\" />
+    <None Remove="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -44,6 +45,7 @@
     <Folder Include="Views\User\" />
     <Folder Include="Views\Travel\" />
     <Folder Include="Views\Booking\" />
+    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

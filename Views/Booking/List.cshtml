@@ -19,6 +19,7 @@
                 <tr>
                     <th>Réservation n°</th>
                     <th>Package</th>
+                    <th>Confirmation</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -29,9 +30,18 @@
                         <td>@booking.Id</td>
                         <td>@booking.Package.Name</td>
                         <td>
+                            @if (booking.IsConfirmed)
+                            {
+                                <span class="text-success">Payée</span>
+                            }
+                            else
+                            {
+                                <span class="text-danger">Non payée</span>
+                            }
+                        </td>
+                        <td>
                             <a href="@Url.Action("Confirmation", "Booking", new { bookingId = booking.Id })" class="btn btn-primary">Voir détails</a>
                             <a href="@Url.Action("Delete", "Booking", new { bookingId = booking.Id })" class="btn btn-danger">Supprimer</a>
-
                         </td>
                     </tr>
                 }

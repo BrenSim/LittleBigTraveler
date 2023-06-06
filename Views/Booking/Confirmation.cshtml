@@ -24,6 +24,11 @@
                     <p class="card-text">Prix : @booking.Package.Price €</p>
                 </div>
             </div>
+
+            <!-- Ajouter un lien ou un bouton pour le paiement -->
+            <div class="text-center mt-2">
+                <a href="/Payment/Create?bookingId=@booking.Id&totalAmount=@booking.Package.Price" class="btn btn-primary">Payer</a>
+            </div>
         }
     }
 
