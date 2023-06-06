@@ -43,3 +43,7 @@ namespace LittleBigTraveler.Models.UserClasses
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 29435c6c2af7e8eed44b585d8cc77c1a74648318

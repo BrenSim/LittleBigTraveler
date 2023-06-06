@@ -4,6 +4,10 @@ using LittleBigTraveler.Models.TravelClasses;
 
 using LittleBigTraveler.Models.UserClasses;
 
+
+using static System.Net.Mime.MediaTypeNames;
+
+
 using static System.Net.Mime.MediaTypeNames;
 
 

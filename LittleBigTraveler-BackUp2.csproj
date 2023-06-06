@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.15">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Controllers\" />
+    <None Remove="Views\" />
+    <None Remove="ViewModels\" />
+    <None Remove="Views\Home\" />
+    <None Remove="Models\Users\" />
+    <None Remove="Models\TravelClasses\" />
+    <None Remove="Models\DataBase\" />
+    <None Remove="Views\Shared\" />
+<<<<<<< HEAD
+    <None Remove="Views\Destination\" />
+    <None Remove="Views\Service\" />
+    <None Remove="Views\User\" />
+    <None Remove="Views\Travel\" />
+=======
+    <None Remove="Views\User\" />
+    <None Remove="Views\Service\" />
+>>>>>>> filldb
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Views\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Models\TravelClasses\" />
+    <Folder Include="Models\DataBase\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="wwwroot\css\" />
+<<<<<<< HEAD
+    <Folder Include="Views\Destination\" />
+    <Folder Include="Views\Service\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Travel\" />
+=======
+    <Folder Include="wwwroot\ImagesDestinations\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Service\" />
+    <Folder Include="wwwroot\ImagesServices\" />
+>>>>>>> filldb
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\css\" />
+    <Content Remove="wwwroot\ImagesDestinations\" />
+    <Content Remove="wwwroot\ImagesServices\" />
+  </ItemGroup>
+</Project>
