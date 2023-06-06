@@ -6731,10 +6731,7 @@ namespace LittleBigTraveler.Models.DataBase
                    User = Users.Find(4),
                }
            );
-
             this.SaveChanges();
         }
-
-
     }
 }
