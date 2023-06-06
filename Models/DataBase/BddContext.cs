@@ -50,7 +50,7 @@ namespace LittleBigTraveler.Models.DataBase
         // Connexion avec la database MySql
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;user id=root;password=Maia*Pereira2403<;database=LittleBigTravelDB");
+            optionsBuilder.UseMySql("server=localhost;user id=root;password=Maia*Pereira2403;database=LittleBigTravelDB");
         }
 
         
@@ -441,7 +441,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris1Services.jpg",
+                    "/ImagesServices/Paris1Hebergement.png",
                 },
                 ExternalLinks = "https://www.hotelprincealbert.com/louvre",
                 DestinationId = 1
@@ -459,7 +459,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris2Services.jpg",
+                    "/ImagesServices/Paris2Hebergement.png",
                 },
                 ExternalLinks = "https://www.villagehostel.fr/montmartre",
                 DestinationId = 1
@@ -476,7 +476,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris3Services.jpg",
+                    "/ImagesServices/Paris3Hebergement.jpg",
                 },
                 ExternalLinks = "https://www.lavillaparis.com",
                 DestinationId = 1
@@ -493,7 +493,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris4Services.jpg",
+                    "/ImagesServices/Paris4Hebergement.jpg",
                 },
                 ExternalLinks = "https://www.herse-dor.com",
                 DestinationId = 1
@@ -511,7 +511,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris5Hebergement.png",
+                    "/ImagesServices/Paris5Hebergement.png",
                 },
                 ExternalLinks = "https://www.oetkercollection.com/fr/hotels/le-bristol-paris/",
                 DestinationId = 1
@@ -529,7 +529,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris1Restauration.png",
+                    "/ImagesServices/Paris6Restauration.png",
                 },
                 ExternalLinks = "https://lepetitbistrot.eatbu.com/",
                 DestinationId = 1
@@ -547,7 +547,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris2Restauration.png",
+                    "/ImagesServices/Paris7Restauration.png",
                 },
                 ExternalLinks = "https://www.LeGrenierDeNotreDame.fr",
                 DestinationId = 1
@@ -565,7 +565,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris8Restauration.png",
+                    "/ImagesServices/Paris8Restauration.png",
                 },
                 ExternalLinks = "https://www.labrasserieparisienne.com",
                 DestinationId = 1
@@ -583,7 +583,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris9Restauration.jpg",
+                    "/ImagesServices/Paris9Restauration.jpg",
                 },
                 ExternalLinks = "https://le-bistrot-gourmand.cover.page/fr",
                 DestinationId = 1
@@ -601,7 +601,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris10Restauration.png",
+                    "/ImagesServices/Paris10Restauration.png",
                 },
                 ExternalLinks = "https://www.cieldeparis.com/",
                 DestinationId = 1
@@ -619,7 +619,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 30,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris11Activites.png",
+                    "/ImagesServices/Paris11Activites.png",
                 },
                 ExternalLinks = "https://www.louvre.fr",
                 DestinationId = 1
@@ -637,7 +637,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris12Activites.jpg",
+                    "/ImagesServices/Paris12Activites.jpg",
                 },
                 ExternalLinks = "https://www.moulinrouge.fr",
                 DestinationId = 1
@@ -655,7 +655,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 20,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris13Activites.jpg",
+                    "/ImagesServices/Paris13Activites.jpg",
                 },
                 ExternalLinks = "https://www.bateaux-mouches.fr",
                 DestinationId = 1
@@ -673,7 +673,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 50,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris14Activites.jpg",
+                    "/ImagesServices/Paris14Activites.jpg",
                 },
                 ExternalLinks = "https://pari-roller.com/",
                 DestinationId = 1
@@ -691,7 +691,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/ImagesTest/Paris15Activites.jpeg",
+                    "/ImagesServices/Paris15Activites.png",
                 },
                 ExternalLinks = "https://www.funbooker.com/fr/annonce/segway-tour-a-la-decouverte-de-paris/voir",
                 DestinationId = 1
@@ -708,9 +708,9 @@ namespace LittleBigTraveler.Models.DataBase
                 Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
-                    {
-                        "/ImagesServices/16RomeHotel.jpeg",
-                    },
+                {
+                    "/ImagesServices/16RomeHotel.jpeg",
+                },
                 ExternalLinks = "https://www.hostelrome.com",
                 DestinationId = 2
             },
@@ -873,6 +873,7 @@ namespace LittleBigTraveler.Models.DataBase
                         "/ImagesServices/25RomeRestaurant.jpeg",
                     },
                 ExternalLinks = "https://www.anticoarco.it",
+                DestinationId = 2
             },
             new Service
             {
@@ -957,7 +958,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 1,
                 Images = new List<string>
                     {
-                        "/ImagesServices/30Rome0Guide.jpeg",
+                        "/ImagesServices/30RomeGuide.jpeg",
                     },
                 ExternalLinks = "https://www.walksofitaly.com",
                 DestinationId = 2
@@ -2098,7 +2099,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 80,
                 Images = new List<string>
                 {
-                    "/ImagesServices/94AthensHostel.webp",
+                    "/ImagesServices/94AthensHostel.png",
                 },
                 ExternalLinks = "https://the-student-travellers-inn.athens-greecehotels.com/en/",
                 DestinationId = 7
@@ -2152,7 +2153,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 80,
                 Images = new List<string>
                 {
-                    "/ImagesServices/97.jpeg",
+                    "/ImagesServices/97AthensRestaurant.png",
                 },
                 ExternalLinks = "https://thes.katalogos.menu/#/el",
                 DestinationId = 7
@@ -2206,7 +2207,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 200,
                 Images = new List<string>
                 {
-                    "/ImagesServices/100AthensActivite.jpeg",
+                    "/ImagesServices/100AthensActivite.png",
                 },
                 ExternalLinks = "https://www.theacropolismuseum.gr",
                 DestinationId = 7
@@ -2476,7 +2477,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 1000,
                 Images = new List<string>
                 {
-                    "/ImagesServices/115BarcelonaActivite.jpeg",
+                    "/ImagesServices/115BarcelonaActivite.png",
                 },
                 ExternalLinks = "https://sagradafamilia.org",
                 DestinationId = 8
@@ -2530,7 +2531,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 50,
                 Images = new List<string>
                 {
-                    "/ImagesServices/118BarcelonaActivite.jpeg",
+                    "/ImagesServices/118BarcelonaActivite.png",
                 },
                 ExternalLinks = "https://www.boqueria.barcelona/",
                 DestinationId = 8
@@ -3143,7 +3144,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 40,
                 Images = new List<string>
                 {
-                    "/ImagesServices/152GarmischHotel.svg",
+                    "/ImagesServices/152GarmischHostel.svg",
                 },
                 ExternalLinks = "https://www.das-graseck.de/en",
                 DestinationId = 11
@@ -3161,7 +3162,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
-                    "/ImagesServices/153GarmischHotel.svg",
+                    "/ImagesServices/153GarmischHostel.svg",
                 },
                 ExternalLinks = "https://www.hotel-zugspitze.de",
                 DestinationId = 11
@@ -3179,7 +3180,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 80,
                 Images = new List<string>
                 {
-                    "/ImagesServices/154GarmischHotel.png",
+                    "/ImagesServices/154GarmischHostel.png",
                 },
                 ExternalLinks = "https://www.edelweisslodgeandresort.com/",
                 DestinationId = 11
@@ -3377,7 +3378,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
-                    "/ImagesServices/165.jpeg",
+                    "/ImagesServices/165LisbonneHostel.png",
                 },
                 ExternalLinks = "https://www.destinationhostels.com/accomodation/lisbon-destination-hostel/",
                 DestinationId = 12
@@ -3395,7 +3396,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 80,
                 Images = new List<string>
                 {
-                    "/ImagesServices/166LisonneHostel.png",
+                    "/ImagesServices/166LisbonneHostel.png",
                 },
                 ExternalLinks = "https://www.livingloungehostel.com",
                 DestinationId = 12
@@ -3629,7 +3630,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 40,
                 Images = new List<string>
                 {
-                    "/ImagesServices/179LisbonneActivite.webp",
+                    "/ImagesServices/179LisbonneActivite.jpeg",
                 },
                 ExternalLinks = "https://www.eatingeurope.com/lisbon/",
                 DestinationId = 12
@@ -3738,7 +3739,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Interlaken6Restaurant.png",
+                    "/ImagesServices/Interlaken6Restauration.png",
                 },
                 ExternalLinks = "https://restauranttaverne.ch/fr/",
                 DestinationId = 13
@@ -3756,7 +3757,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Interlaken7Restaurant.png",
+                    "/ImagesServices/Interlaken7Restauration.png",
                 },
                 ExternalLinks = "https://www.chalet-beizli.ch/",
                 DestinationId = 13
@@ -3774,7 +3775,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Interlaken8Restaurant.png",
+                    "/ImagesServices/Interlaken8Restauration.png",
                 },
                 ExternalLinks = "https://www.huesi-interlaken.ch/",
                 DestinationId = 13
@@ -3792,7 +3793,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Interlaken9Restaurant.png",
+                    "/ImagesServices/Interlaken9Restauration.png",
                 },
                 ExternalLinks = "https://citta-vecchia.digitalone.site/",
                 DestinationId = 13
@@ -3810,7 +3811,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Interlaken10Restaurant.png",
+                    "/ImagesServices/Interlaken10Restauration.png",
                 },
                 ExternalLinks = "https://www.baeren.ch/",
                 DestinationId = 13
@@ -4112,7 +4113,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 20,
                 Images = new List<string>
                 {
-                "/ImagesServices/Chamonix12Activite.png",
+                "/ImagesServices/Chamonix11Activite.png",
                 },
                 ExternalLinks = "https://www.chamonix.com/activites",
                 DestinationId = 14
@@ -4129,7 +4130,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                "/ImagesServices/Chamonix13Activite.png",
+                "/ImagesServices/Chamonix11Activite.png",
                 },
                 ExternalLinks = "https://www.chamonix.com/activites",
                 DestinationId = 14
@@ -4146,7 +4147,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 15,
                 Images = new List<string>
                 {
-                "/ImagesServices/Chamonix14Activite.png",
+                "/ImagesServices/Chamonix11Activite.png",
                 },
                 ExternalLinks = "https://www.chamonix.com/activites",
                 DestinationId = 14
@@ -4163,7 +4164,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
-                "/ImagesServices/Chamonix15Activite.png",
+                "/ImagesServices/Chamonix11Activite.png",
                 },
                 ExternalLinks = "https://www.chamonix.com/activites",
                 DestinationId = 14
@@ -4199,7 +4200,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesServices/PlitviceLakes2Hebergement.jpg",
+                    "/ImagesServices/PlitviceLakes2Hebergement.png",
                 },
                 ExternalLinks = "https://www.ethnohouses.com/",
                 DestinationId = 15
@@ -4325,7 +4326,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "/ImagesServices/PlitviceLakes9Restauration.jpg",
+                    "/ImagesServices/PlitviceLakes9Restauration.png",
                 },
                 ExternalLinks = "http://www.vila-velebita.com/",
                 DestinationId = 15
@@ -4343,7 +4344,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "/ImagesServices/PlitviceLakes10Restauration.jpg",
+                    "/ImagesServices/PlitviceLakes10Restauration.png",
                 },
                 ExternalLinks = "https://www.tripadvisor.fr/Restaurant_Review-g670545-d21120273-Reviews-Old_Shatterhand-Rakovica_Plitvice_Lakes_National_Park_Central_Croatia.html/",
                 DestinationId = 15
@@ -4687,7 +4688,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Tromso14Activite.png",
+                    "/ImagesServices/Tromso14Activite.jpg",
                 },
                 ExternalLinks = "https://www.tromso.kirken.no/",
                 DestinationId = 16
@@ -4704,7 +4705,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Tromso15Activite.png",
+                    "/ImagesServices/Tromso15Activite.jpg",
                 },
                 ExternalLinks = "https://www.tromsosafari.no/",
                 DestinationId = 16
@@ -4723,7 +4724,7 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                     "/ImagesServices/Tromso16Activite.png",
                 },
-                ExternalLinks = "https://www.polaria.no/",
+                ExternalLinks = "https://polaria.no/",
                 DestinationId = 16
             },
             // Killarney :
@@ -5629,7 +5630,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                "/ImagesServices/KarlovyVary6Restaurant.png",
+                "/ImagesServices/KarlovyVary6Restauration.png",
                 },
                 ExternalLinks = "https://www.hotel-promenada.cz/en/restaurant/",
                 DestinationId = 20
@@ -5647,7 +5648,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                "/ImagesServices/KarlovyVary7Restaurant.png",
+                "/ImagesServices/KarlovyVary7Restauration.png",
                 },
                 ExternalLinks = "https://charleston-kv.cz/",
                 DestinationId = 20
@@ -5665,7 +5666,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                "/ImagesServices/KarlovyVary8Restaurant.png",
+                "/ImagesServices/KarlovyVary8Restauration.png",
                 },
                 ExternalLinks = "https://www.restauracesklipek.cz/",
                 DestinationId = 20
@@ -5683,7 +5684,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                "/ImagesServices/KarlovyVary9Restaurant.png",
+                "/ImagesServices/KarlovyVary9Restauration.png",
                 },
                 ExternalLinks = "https://www.restauraceutomase.cz/",
                 DestinationId = 20
@@ -5701,7 +5702,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                "/ImagesServices/KarlovyVary10Restaurant.png",
+                "/ImagesServices/KarlovyVary10Restauration.png",
                 },
                 ExternalLinks = "https://becherplatz.cz/en/restaurant/",
                 DestinationId = 20
@@ -5809,7 +5810,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                "ImagesServices/Ischia1Heberegement.png",
+                "/ImagesServices/Ischia1Hotel.png",
                 },
                 ExternalLinks = "https://www.excelsiorischia.it/fr/",
                 DestinationId = 21
@@ -5827,7 +5828,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia2Heberegement.png",
+                "/ImagesServices/Ischia2Hebergement.png",
                 },
                 ExternalLinks = "https://www.hotelvillacarolinaischia.com/fr/hotel-ischia.asp",
                 DestinationId = 21
@@ -5845,7 +5846,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia3Hebergement.png",
+                "/ImagesServices/Ischia3Hebergement.png",
                 },
                 ExternalLinks = "https://paradise-beach-hostel-ostello-ischia-island.booked.net/",
                 DestinationId = 21
@@ -5863,7 +5864,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia4Hebergement.png",
+                "/ImagesServices/Ischia4Hebergement.png",
                 },
                 ExternalLinks = "https://www.hotelgranparadisoischia.it/en/",
                 DestinationId = 21
@@ -5881,7 +5882,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia5Hebergement.png",
+                "/ImagesServices/Ischia5Hebergement.png",
                 },
                 ExternalLinks = "https://ischiadreamsunset.it/",
                 DestinationId = 21
@@ -5899,7 +5900,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia6Restaurant.jpg",
+                "/ImagesServices/Ischia6Restauration.jpg",
                 },
                 ExternalLinks = "https://www.thefork.it/ristorante/trattoriva-sapori-ischitani-r738549#booking=",
                 DestinationId = 21
@@ -5917,7 +5918,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia7Restaurant.jpg",
+                "/ImagesServices/Ischia7Restauration.jpg",
                 },
                 ExternalLinks = "https://fr.restaurantguru.com/Pizzeria-Sciue-Sciue-Ischia",
                 DestinationId = 21
@@ -5935,7 +5936,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia8Restaurant.jpg",
+                "/ImagesServices/Ischia8Restauration.jpg",
                 },
                 ExternalLinks = "https://lapergola-ischia.it/ristorante/",
                 DestinationId = 21
@@ -5953,7 +5954,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia9Restauration.jpg",
+                "/ImagesServices/Ischia9Restauration.jpg",
                 },
                 ExternalLinks = "https://www.facebook.com/profile.php?id=100040379155918",
                 DestinationId = 21
@@ -5971,7 +5972,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia10Restauration.jpg",
+                "/ImagesServices/Ischia10Restauration.jpg",
                 },
                 ExternalLinks = "https://www.facebook.com/pazziellabeachbarerestaurant/",
                 DestinationId = 21
@@ -5989,7 +5990,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 30,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia11Activite.jpg",
+                "/ImagesServices/Ischia11Activite.png",
                 },
                 ExternalLinks = "https://italian-traditions.com/fr/chateau-aragonais-dischia/",
                 DestinationId = 21
@@ -6007,7 +6008,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 20,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia12Activite.jpg",
+                "/ImagesServices/Ischia12Activite.jpg",
                 },
                 ExternalLinks = "https://www.viator.com/fr-FR/tours/Isola-dIschia/Excursion-by-boat-with-lunch-on-board-to-discover-Ischia/d50507-338529P1",
                 DestinationId = 21
@@ -6025,7 +6026,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia13Activite.jpg",
+                "/ImagesServices/Ischia13Activite.png",
                 },
                 ExternalLinks = "https://www.positanocarservice.com/fr/excursions/randonnee-au-sommet-du-mont-epomeo",
                 DestinationId = 21
@@ -6043,7 +6044,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 50,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia14Activite.jpg",
+                "/ImagesServices/Ischia14Activite.png",
                 },
                 ExternalLinks = "https://www.visitischia.com/fr/eaux-thermales-de-ischia",
                 DestinationId = 21
@@ -6061,7 +6062,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
-                    "ImagesServices/Ischia15Activite.jpg",
+                    "/ImagesServices/Ischia15Activite.png",
                 },
                 ExternalLinks = "https://www.divescover.fr/plongee-sous-marine/italie/ischia",
                 DestinationId = 21
@@ -6295,7 +6296,7 @@ namespace LittleBigTraveler.Models.DataBase
                 MaxCapacity = 20,
                 Images = new List<string>
                 {
-                    "/ImagesServices/Vichy13Activite.png",
+                    "/ImagesServices/Vichy14Activite.png",
                 },
                 ExternalLinks = "https://www.thermes-de-vichy.fr/",
                 DestinationId = 22
@@ -6337,6 +6338,38 @@ namespace LittleBigTraveler.Models.DataBase
                 DestinationId = 22
             }
             );
+
+            //Création Travel
+
+            this.Travels.AddRange(
+            new Travel
+            {
+                Id = 1,
+                Destination = Destinations.Find(1),
+                DepartureLocation = "Perpignan",
+                DepartureDate = new DateTime(2023, 7, 1, 14, 30, 0),
+                ReturnDate = new DateTime(2023, 8, 1, 14, 30, 0),
+                Price = 1500,
+                NumParticipants = 10,
+            }
+
+            );
+
+            //Création Package
+            this.Packages.AddRange(
+            new Package
+            {
+                Id = 1,
+                Name = "Package Name",
+                Description = "Package Description",
+                Price = 1000,
+                QuantityAvailable = 20,
+                Travel = Travels.Find(1),
+                ServiceForPackage = new List<Service> { Services.Find(1), Services.Find(2) }
+            }
+
+            );
+
 
             // Création des rôles
             this.Roles.AddRange(
