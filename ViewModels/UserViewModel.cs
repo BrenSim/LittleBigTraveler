@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Claims;
+using LittleBigTraveler.Models.UserClasses;
 
 namespace LittleBigTraveler.ViewModels
 {
@@ -32,6 +34,8 @@ namespace LittleBigTraveler.ViewModels
 
         public bool LoggedIn { get; set; }
 
-        //public string ReturnUrl { get; set; } // Ajout de la propriété ReturnUrl
+        //public ClaimsPrincipal UserPrincipal { get; set; }
+
+        //public string ReturnUrl { get; set; }
     }
 }

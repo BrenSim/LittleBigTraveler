@@ -3,25 +3,24 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using LittleBigTraveler.ViewModels;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 public class TravelController : Controller
 {
-    private readonly IHttpContextAccessor HttpContextAccessor;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
     public TravelController(IHttpContextAccessor httpContextAccessor)
     {
-        HttpContextAccessor = httpContextAccessor;
+        _httpContextAccessor = httpContextAccessor;
     }
 
-    // Action pour afficher la liste des voyages d'un client
+    // Action pour afficher la liste des voyages
+    [Authorize(Roles = "Administrator")]
     public IActionResult List()
     {
-        // Récupérer l'ID du client connecté depuis le contexte HTTP
-        int customerId = int.Parse(HttpContext.User.Identity.Name);
-
-        using (var travelDAL = new TravelDAL(HttpContextAccessor))
+        using (var travelDAL = new TravelDAL(_httpContextAccessor))
         {
-            var travels = travelDAL.GetTravelsByCustomerId(customerId);
+            var travels = travelDAL.GetAllTravels();
 
             if (travels == null || travels.Count == 0)
             {
@@ -33,6 +32,7 @@ public class TravelController : Controller
     }
 
     // Action pour créer un voyage
+    [Authorize(Roles = "Administrator, Customer")]
     public IActionResult CreateTravel(int destinationId)
     {
         using (var destinationDAL = new DestinationDAL())
@@ -43,7 +43,7 @@ public class TravelController : Controller
                 return NotFound("problème destination");
             }
 
-            var model = new TravelViewModel(HttpContextAccessor)
+            var model = new TravelViewModel(_httpContextAccessor)
             {
                 DestinationId = destinationId,
                 Destination = destination,
@@ -59,17 +59,18 @@ public class TravelController : Controller
     }
 
     // Action pour le traitement du formulaire de création d'un voyage
+    [Authorize(Roles = "Administrator, Customer")]
     [HttpPost]
     public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,Price,NumParticipants")] TravelViewModel model)
     {
         // Récupérer l'ID du client connecté depuis le contexte HTTP
         int customerId = int.Parse(HttpContext.User.Identity.Name);
 
-        using (var travelDAL = new TravelDAL(HttpContextAccessor))
+        using (var travelDAL = new TravelDAL(_httpContextAccessor))
         {
             try
             {
-                travelDAL.CreateTravel(customerId, model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
+                travelDAL.CreateTravel( model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
                 return RedirectToAction("List"); // Rediriger vers la page d'accueil ou une autre page
             }
             catch (Exception ex)
@@ -77,46 +78,80 @@ public class TravelController : Controller
                 ModelState.AddModelError("", ex.Message);
             }
 
-            // Si une erreur s'est produite, revenir à la vue avec les données saisies
+            // Si erreur , revenir à la vue avec les données saisies
+            return View(model);
+        }
+    }
+
+    // Action pour afficher le formulaire de modification d'un voyage
+    [Authorize(Roles = "Administrator, Customer")]
+    public IActionResult ModifyTravel(int id)
+    {
+        using (var travelDAL = new TravelDAL(_httpContextAccessor))
+        {
+            var travel = travelDAL.GetTravelById(id);
+            if (travel == null)
+            {
+                return NotFound("Voyage introuvable");
+            }
+
+            var model = new TravelViewModel(_httpContextAccessor)
+            {
+                Id = travel.Id,
+                DestinationId = travel.Destination.Id,
+                DestinationCity = travel.Destination.City,
+                Destination = travel.Destination,
+                DepartureLocation = travel.DepartureLocation,
+                DepartureDate = travel.DepartureDate,
+                ReturnDate = travel.ReturnDate,
+                Price = travel.Price,
+                NumParticipants = travel.NumParticipants
+            };
+
             return View(model);
         }
     }
 
     // Action pour modifier un voyage
+    [Authorize(Roles = "Administrator, Customer")]
     [HttpPost]
-    public IActionResult ModifyTravel(int id, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
+    public IActionResult ModifyTravel(TravelViewModel model)
     {
         // Récupérer l'ID du client connecté depuis le contexte HTTP
         int customerId = int.Parse(HttpContext.User.Identity.Name);
 
-        using (var travelDAL = new TravelDAL(HttpContextAccessor))
+        using (var travelDAL = new TravelDAL(_httpContextAccessor))
         {
             try
             {
-                travelDAL.ModifyTravel(id, customerId, destinationId, departureLocation, departureDate, returnDate, price, numParticipants);
-                return RedirectToAction("Index", "Home"); // Rediriger vers la page d'accueil ou une autre page appropriée
+                travelDAL.ModifyTravel(model.Id, model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
+                return RedirectToAction("List"); 
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
 
-            // Récupérer la destination associée à l'ID
-            using (var destinationDAL = new DestinationDAL())
+            
+            return View(model);
+        }
+    }
+
+
+    // Action pour supprimer un voyage
+    [Authorize(Roles = "Administrator, Customer")]
+    public IActionResult DeleteTravel(int id)
+    {
+        using (var travelDAL = new TravelDAL(_httpContextAccessor))
+        {
+            try
             {
-                var destination = destinationDAL.GetDestinationWithId(destinationId);
-                // Si une erreur s'est produite, revenir à la vue avec les données saisies et la destination
-                return View(new TravelViewModel(HttpContextAccessor)
-                {
-                    Id = id,
-                    DestinationId = destinationId,
-                    Destination = destination,
-                    DepartureLocation = departureLocation,
-                    DepartureDate = departureDate,
-                    ReturnDate = returnDate,
-                    Price = price,
-                    NumParticipants = numParticipants
-                });
+                travelDAL.DeleteTravel(id);
+                return RedirectToAction("List"); // Rediriger vers la page de la liste des voyages
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
             }
         }
     }

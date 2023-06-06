@@ -1,4 +1,5 @@
 ﻿@model LittleBigTraveler.ViewModels.DestinationViewModel
+@using LittleBigTraveler.ViewModels
 @{
     Layout = "_Layout";
     ViewData["Title"] = "Accueil";
@@ -11,8 +12,17 @@
 
 <div class="text-center mb-4" style="margin-top: 20px;">
     <a href="/Destination/List" class="btn btn-primary btn-lg mr-2">Voir les destinations</a>
-    <a href="/Destination/AddDestination" class="btn btn-success btn-lg">Ajouter une destination</a>
+
+    @if (!User.IsInRole("Administrator"))
+    {
+        <a href="/Destination/AddDestination" class="btn btn-success btn-lg disabled">Ajouter une destination</a>
+    }
+    else
+    {
+        <a href="/Destination/AddDestination" class="btn btn-success btn-lg">Ajouter une destination</a>
+    }
 </div>
+
 
 <div class="container">
     <h2 class="text-center">Rechercher une destination</h2>
@@ -63,8 +73,15 @@
 </div>
 
 <div class="container">
-    <h2 class="text-center">Créer un voyage tout compris</h2>
+    <h2 class="text-center">Créer un voyage sur mesure</h2>
     <form method="get" action="/Destination/List">
-        <button type="submit" class="btn btn-primary btn-lg">Créer un voyage tout compris</button>
+        <button type="submit" class="btn btn-primary btn-lg">Créer un voyage sur mesure</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2 class="text-center">Voir les voyages sur mesure créés</h2>
+    <form method="get" action="/Package/List">
+        <button type="submit" class="btn btn-primary btn-lg">Voir les voyages sur mesure créés</button>
     </form>
 </div>

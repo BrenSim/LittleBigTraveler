@@ -11,6 +11,7 @@ namespace LittleBigTraveler.ViewModels
     {
         public int Id { get; set; }
         public int DestinationId { get; set; }
+        public string DestinationCity { get; set; }
         public Customer Customer { get; set; }
         public Destination Destination { get; set; }
         public string DepartureLocation { get; set; }
@@ -23,7 +24,6 @@ namespace LittleBigTraveler.ViewModels
 
         public TravelViewModel()
         {
-            // Ajoutez des valeurs par défaut si nécessaire
         }
 
         public TravelViewModel(IHttpContextAccessor httpContextAccessor)

@@ -1,26 +1,26 @@
-﻿@model AllInclusiveTravelViewModel
+﻿@model LittleBigTraveler.ViewModels.PackageViewModel
 
 @{
-    ViewData["Title"] = "Create All Inclusive Travel";
+    ViewData["Title"] = "Modification Custom Made Travel";
     Layout = "_Layout";
 }
 
 <div class="container">
-    <h1 class="text-center">Create All Inclusive Travel</h1>
+    <h1 class="text-center">Modification Custom Made Travel</h1>
 
-    <form method="post" action="/AllInclusiveTravel/CreateAllInclusiveTravel">
-        <!-- pour checkbox -->
+    <form method="post" action="/Package/EditPackage">
+
+        <input type="hidden" name="Id" value="@Model.Id" />
         <input type="hidden" name="TravelId" value="@Model.TravelId" />
 
         <div class="form-group">
             <label for="Name">Name:</label>
-            <input for="Name" name="Name" class="form-control" />
-
+            <input type="text" id="Name" name="Name" class="form-control" value="@Model.Name" />
         </div>
 
         <div class="form-group">
             <label for="Description">Description:</label>
-            <textarea for="Description" name="Description" class="form-control"></textarea>
+            <textarea id="Description" name="Description" class="form-control">@Model.Description</textarea>
         </div>
 
         <h2 class="text-center">Services disponibles pour la destination</h2>
@@ -40,7 +40,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var service in Model.AvailableServices)
+                @foreach (var service in Model.Services)
                 {
                     <tr>
                         <td>
@@ -65,9 +65,7 @@
         </table>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">Créer le voyage</button>
+            <button type="submit" class="btn btn-primary">Modifier le voyage</button>
         </div>
     </form>
-
-   
 </div>

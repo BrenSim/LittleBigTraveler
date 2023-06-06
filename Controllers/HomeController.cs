@@ -11,7 +11,7 @@ namespace LittleBigTraveler.Controllers
     public class HomeController : Controller
     {
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult IndexTEST()
         {
             return View();
         }

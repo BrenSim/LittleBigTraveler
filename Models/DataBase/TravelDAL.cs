@@ -11,6 +11,10 @@ namespace LittleBigTraveler.Models.DataBase
 {
     public class TravelDAL : ITravelDAL
     {
+        public void SaveChanges()
+        {
+            _bddContext.SaveChanges();
+        }
         private BddContext _bddContext;
         // Manière de récupérer l'ID du client connecté
         private IHttpContextAccessor _httpContextAccessor;
@@ -21,31 +25,25 @@ namespace LittleBigTraveler.Models.DataBase
             _httpContextAccessor = httpContextAccessor;
         }
 
-        // Suppression/Création de la base de données (méthode appelée dans BddContext)
-        public void DeleteCreateDatabase()
-        {
-            _bddContext.Database.EnsureDeleted();
-            _bddContext.Database.EnsureCreated();
-        }
-
         public void Dispose()
         {
             _bddContext.Dispose();
         }
 
         // Création/Ajout d'un "Travel"
-        public int CreateTravel(int customerId, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
+        public int CreateTravel(int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
         {
             // Récupération du client associé à l'ID fourni
-            var customer = _bddContext.Customers.Include(c => c.User).FirstOrDefault(c => c.Id == customerId);
+            //var customer = _bddContext.Customers.Include(c => c.User).FirstOrDefault(c => c.Id == customerId);
+
             // Récupération de la destination associée à l'ID fourni
             var destination = _bddContext.Destinations.FirstOrDefault(d => d.Id == destinationId);
-            if (customer != null && destination != null)
+            if (destination != null)
             {
                 // Création d'un nouvel objet Travel avec les données fournies
                 Travel travel = new Travel()
                 {
-                    Customer = customer,
+                    //Customer = customer,
                     Destination = destination,
                     DepartureLocation = departureLocation,
                     DepartureDate = departureDate,
@@ -76,66 +74,68 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-        // Modification d'un "Travel" par ID
-        public void ModifyTravel(int id, int customerId, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
+        public void ModifyTravel(int id, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
         {
-            var travel = _bddContext.Travels.FirstOrDefault(t => t.Id == id);
-            var customer = _bddContext.Customers.Include(c => c.User).FirstOrDefault(c => c.Id == customerId);
-            var destination = _bddContext.Destinations.FirstOrDefault(d => d.Id == destinationId);
-            if (travel != null && customer != null && destination != null)
+            var travel = _bddContext.Travels
+                .Include(t => t.Destination)
+                .FirstOrDefault(t => t.Id == id);
+
+            var destination = _bddContext.Destinations
+                .FirstOrDefault(d => d.Id == destinationId);
+
+            if (travel != null  && destination != null)
             {
+                // Vérifier si le client ou la destination du voyage a changé
+                if (travel.Destination.Id != destinationId)
+                {
+                    throw new Exception("Modification du client ou de la destination non autorisée.");
+                }
+
                 // Mise à jour des propriétés du "Travel" avec les nouvelles données fournies
-                travel.Customer = customer;
-                travel.Destination = destination;
                 travel.DepartureLocation = departureLocation;
                 travel.DepartureDate = departureDate;
                 travel.ReturnDate = returnDate;
                 travel.Price = price;
                 travel.NumParticipants = numParticipants;
 
+                // Mettre à jour les relations Customer et Destination
+                travel.Destination = destination;
+
                 _bddContext.SaveChanges();
             }
             else
             {
-                throw new Exception("Customer , travel ou destination non valide.");
+                throw new Exception("Client, voyage ou destination non valide.");
             }
         }
 
-        // Récupération des voyages d'un client par son ID
-        public List<Travel> GetTravelsByCustomerId(int customerId)
-        {
-            // Récupération de l'ID du client connecté à partir du contexte HTTP
-            customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
 
-            return _bddContext.Travels
-                .Include(t => t.Customer)
-                    .ThenInclude(c => c.User)
-                .Include(t => t.Destination)
-                .Where(t => t.Customer.Id == customerId)
-                .ToList();
-        }
+        // Récupération des voyages d'un client par son ID
+        //public List<Travel> GetTravelsByCustomerId(int customerId)
+        //{
+        //    // Récupération de l'ID du client connecté à partir du contexte HTTP
+        //    customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
+
+        //    return _bddContext.Travels
+        //        .Include(t => t.Destination)
+        //        .Where(t => t.Customer.Id == customerId)
+        //        .ToList();
+        //}
 
         // Récupération d'un voyage par son ID
         public Travel GetTravelById(int travelId)
 
         {
             return _bddContext.Travels
-                .Include(t => t.Customer)
-                    .ThenInclude(c => c.User)
                 .Include(t => t.Destination)
                 .FirstOrDefault(t => t.Id == travelId);
         }
 
-        // Récupération d'un voyage par son ID pour un client spécifique
-        public Travel GetTravelByIdForCustomer(int travelId)
+        public List<Travel> GetAllTravels()
         {
-            int customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
-
             return _bddContext.Travels
-                .Include(t => t.Customer)
-                    .ThenInclude(c => c.User)
                 .Include(t => t.Destination)
-                .FirstOrDefault(t => t.Id == travelId && t.Customer.Id == customerId);
+                .ToList();
         }
 
     }

@@ -40,7 +40,8 @@
                         <td>@travel.NumParticipants</td>
                         <td>
                             <a href="/Travel/ModifyTravel/@travel.Id" class="btn btn-secondary">Modifier</a>
-                            <a href="/AllInclusiveTravel/CreateAllInclusiveTravel?travelId=@travel.Id" class="btn btn-primary">Sélectionner les services</a>
+                            <a href="/Travel/DeleteTravel/@travel.Id" class="btn btn-danger">Supprimer</a>
+                            <a href="/Package/CreatePackage?travelId=@travel.Id" class="btn btn-primary">Sélectionner les services</a>
                         </td>
                     </tr>
                 }
@@ -49,6 +50,6 @@
     }
 
     <div class="text-center mt-4">
-        <a href="/Home/Index" class="btn btn-primary">Retour à l'accueil</a>
+        <a href="/Home/IndexTEST" class="btn btn-primary">Retour à l'accueil</a>
     </div>
 }

@@ -8,11 +8,17 @@ namespace LittleBigTraveler.Models.TravelClasses
 	{
         public int Id { get; set; }
 
-        public int TravelId { get; set; }
-        public virtual Travel Travel { get; set; }
+        public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
 
-        public int ServiceId { get; set; }
-        public virtual Service Service { get; set; }
+        public int PackageId { get; set; }
+        public  Package Package { get; set; }
+
+        //public int TravelId { get; set; }
+        //public virtual Travel Travel { get; set; }
+
+        //public int ServiceId { get; set; }
+        //public virtual Service Service { get; set; }
 
 
         public virtual List<Payment> Payments { get; set; }

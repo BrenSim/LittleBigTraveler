@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Principal;
 
 namespace LittleBigTraveler.Models.UserClasses
 {
@@ -18,6 +19,9 @@ namespace LittleBigTraveler.Models.UserClasses
         public virtual Customer Customer { get; set; }
         public virtual Partner Partner { get; set; }
         public virtual Administrator Administrator { get; set; }
+        public virtual Role Role { get; set; }
+
+
 
         public string GetUserType()
         {
@@ -39,4 +43,7 @@ namespace LittleBigTraveler.Models.UserClasses
     }
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 29435c6c2af7e8eed44b585d8cc77c1a74648318
