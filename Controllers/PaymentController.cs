@@ -14,6 +14,7 @@ public class PaymentController : Controller
         _httpContextAccessor = httpContextAccessor;
     }
 
+    // Action pour afficher le formulaire de création d'un paiement
     public IActionResult Create(int bookingId, double totalAmount)
     {
         var model = new PaymentViewModel
@@ -25,6 +26,7 @@ public class PaymentController : Controller
         return View(model);
     }
 
+    // Méthode pour traiter le formulaire de création d'un paiement
     [HttpPost]
     public IActionResult Create(int bookingId, double totalAmount, int numCB)
     {
@@ -48,6 +50,7 @@ public class PaymentController : Controller
         }
     }
 
+    // Action pour afficher la page de confirmation d'un paiement
     public IActionResult Confirmation(int paymentId)
     {
         try
@@ -84,6 +87,7 @@ public class PaymentController : Controller
         }
     }
 
+    // Action pour supprimer un paiement
     public IActionResult Delete(int paymentId)
     {
         try
@@ -114,6 +118,7 @@ public class PaymentController : Controller
         }
     }
 
+    // Action pour afficher la liste des paiements de l'utilisateur
     public IActionResult List()
     {
         try

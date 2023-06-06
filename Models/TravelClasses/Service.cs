@@ -23,9 +23,5 @@ namespace LittleBigTraveler.Models.TravelClasses
 
         public int? PackageId { get; set; }
         public Package Package { get; set; }
-        //public virtual List<AllInclusiveTravel> AllInclusiveTravels { get; set; }
-
-        //public virtual List<ServiceCatalog> ServiceCatalogs { get; set; }
-        //public virtual List<Booking> Bookings { get; set; }
     }
 }

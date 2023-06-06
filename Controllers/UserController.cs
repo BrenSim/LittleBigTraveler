@@ -364,25 +364,6 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
-        //// Action pour la création d'un User (et non pas d'un Customer etc.) (outdated)
-        //public int CreateUser(UserViewModel model)
-        //{
-        //    using (var userDAL = new UserDAL())
-        //    {
-        //        switch (model.UserType)
-        //        {
-        //            case "Customer":
-        //                return userDAL.CreateCustomer(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
-        //            case "Partner":
-        //                return userDAL.CreatePartner(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
-        //            case "Administrator":
-        //                return userDAL.CreateAdministrator(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
-        //            default:
-        //                throw new ArgumentException("Invalid user type");
-        //        }
-        //    }
-        //}
-
         // Action pour "Mapper" le ViewModel d'un utilisateur
         public UserViewModel MapUserToViewModel(User user)
         {
@@ -431,5 +412,24 @@ namespace LittleBigTraveler.Controllers
     }
 }
 
+
+//// Action pour la création d'un User (et non pas d'un Customer etc.) (outdated)
+//public int CreateUser(UserViewModel model)
+//{
+//    using (var userDAL = new UserDAL())
+//    {
+//        switch (model.UserType)
+//        {
+//            case "Customer":
+//                return userDAL.CreateCustomer(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
+//            case "Partner":
+//                return userDAL.CreatePartner(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
+//            case "Administrator":
+//                return userDAL.CreateAdministrator(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
+//            default:
+//                throw new ArgumentException("Invalid user type");
+//        }
+//    }
+//}
 
 

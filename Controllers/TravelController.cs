@@ -142,7 +142,6 @@ public class TravelController : Controller
         }
     }
 
-
     // Action pour supprimer un voyage
     //[Authorize(Roles = "Administrator")]
     //[Authorize(Roles = "Customer")]

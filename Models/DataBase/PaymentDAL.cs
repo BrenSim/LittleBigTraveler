@@ -22,6 +22,7 @@ public class PaymentDAL : IPaymentDAL
         _bddContext.Dispose();
     }
 
+    // Création d'un paiement
     public int CreatePayment(int userId, int bookingId, double totalAmount, int numCB)
     {
         var user = _bddContext.Users.FirstOrDefault(u => u.Id == userId);
@@ -53,6 +54,7 @@ public class PaymentDAL : IPaymentDAL
         }
     }
 
+    // Suppression d'un paiement
     public void DeletePayment(int paymentId)
     {
         var payment = _bddContext.Payments.FirstOrDefault(p => p.Id == paymentId);
@@ -68,6 +70,7 @@ public class PaymentDAL : IPaymentDAL
         }
     }
 
+    // Récupération d'un paiement par ID
     public Payment GetPaymentById(int paymentId)
     {
         return _bddContext.Payments
@@ -76,6 +79,7 @@ public class PaymentDAL : IPaymentDAL
             .FirstOrDefault(p => p.Id == paymentId);
     }
 
+    // Récupération de tous les paiements d'un utilisateur
     public List<Payment> GetUserPayments(int userId)
     {
         return _bddContext.Payments

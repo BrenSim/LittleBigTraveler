@@ -18,6 +18,7 @@ public class BookingController : Controller
         _httpContextAccessor = httpContextAccessor;
     }
 
+    // Action pour afficher la liste des réservations de l'utilisateur
     public IActionResult List()
     {
         try
@@ -40,7 +41,7 @@ public class BookingController : Controller
         }
     }
 
-
+    // Action pour créer une nouvelle réservation
     public IActionResult Create(int packageId)
     {
         try
@@ -76,6 +77,7 @@ public class BookingController : Controller
         }
     }
 
+    // Action pour afficher la page de confirmation d'une réservation
     public IActionResult Confirmation(int bookingId)
     {
         try
@@ -107,48 +109,7 @@ public class BookingController : Controller
         }
     }
 
-    //public IActionResult Confirmation(int bookingId)
-    //{
-    //    try
-    //    {
-    //        // Récupérer l'ID de l'utilisateur connecté depuis le contexte HTTP
-    //        int userId = int.Parse(HttpContext.User.Identity.Name);
-    //        //Console.WriteLine("UserId: " + userId);  // Log user id
-    //        Booking booking;
-
-    //        using (var bookingDAL = new BookingDAL(_httpContextAccessor))
-    //        {
-    //            // Récupérer la réservation en utilisant l'ID de réservation
-    //            booking = bookingDAL.GetBookingById(bookingId);
-    //            //Console.WriteLine("BookingId: " + booking?.Id);  // Log booking id
-
-
-
-    //            // Vérifier si la réservation existe et appartient à l'utilisateur
-    //            if (booking == null || booking.UserId != userId)
-    //            {
-    //                return NotFound("Booking not found");
-    //            }
-    //        }
-
-    //        // Créer le modèle de vue pour la confirmation de réservation
-    //        var model = new ConfirmationViewModel
-    //        {
-    //            BookingId = booking.Id,
-    //            CustomerId = userId,
-    //            PackageName = booking.Package.Name,
-    //            PackageDescription = booking.Package.Description,
-    //            PackagePrice = (decimal)booking.Package.Price
-    //        };
-
-    //        return View(model);
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        return BadRequest(ex.Message);
-    //    }
-    //}
-
+    // Action pour supprimer une réservation
     public IActionResult Delete(int bookingId)
     {
         try
@@ -180,5 +141,6 @@ public class BookingController : Controller
         }
     }
 }
+
 
 
