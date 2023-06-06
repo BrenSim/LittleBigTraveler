@@ -1,6 +1,55 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "_DestinationLayout";
+    ViewData["Title"] = "Nos destinations";
 }
 
+@section Content {
+
+    <section id="sectionDestinationCards">
+        <div class="glassBorderBackground">
+            <h1 class="titrePackage">NOS DESTINATIONS</h1>
+            <div class="positionDSF">
+                <div class="destinationSearchField">
+                    <input type="search" name="SearchBar" class="input" autocomplete="on">
+                    <label class="searchLabel">Rechercher une destination</label>
+                </div>
+              <!--  <button class="glassIcon">
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                    </span>
+                </button> -->
+            </div>
+            <div class="glassBorderCard">
+                <div class="card">
+                    <img src="~/images/krka-987021_1920.jpg" class="card-img" />
+                    <div class="card-body">
+                        <h1 class="card-title">Voyage 1</h1>
+                        <p class="card-sub-title">Description 1</p>
+                        <button class="card-btn">Réserver !</button>
+                    </div>
+                </div>
+            </div>
+            <div class="glassBorderCard">
+                <div class="card">
+                    <img src="~/images/strasbourg-4988969_1920.jpg" class="card-img" />
+                    <div class="card-body">
+                        <h1 class="card-title">Voyage 2</h1>
+                        <p class="card-sub-title">Description 2</p>
+                        <button class="card-btn">Réserver !</button>
+                    </div>
+                </div>
+            </div>
+            <div class="glassBorderCard">
+                <div class="card">
+                    <img src="/images/vienna-933500_1280.jpg" class="card-img" />
+                    <div class="card-body">
+                        <h1 class="card-title">Voyage 3</h1>
+                        <p class="card-sub-title">Description 3</p>
+                        <button class="card-btn">Réserver !</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}

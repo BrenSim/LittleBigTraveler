@@ -19,6 +19,7 @@
             <ul>
                 <li><a href="#">Nos offres</a></li>
                 <li><a href="#">Notre concept</a></li>
+                <li><a href="@Url.Action("List", "Destination")">Connexion</a></li>
                 <li><a href="@Url.Action("SigninPage", "SigninSignup")">Connexion</a></li>
                 <li><a href="@Url.Action("SignupPage", "SigninSignup")">Inscription</a></li>
             </ul>
@@ -32,7 +33,40 @@
     </main>
 
     <footer>
-        <!-- Contenu spécifique au pied de page commun à toutes les pages -->
+            <div class="logoFooter">
+                <a href="#Home"><img src="./Logos/LOGO_P2-05.png" alt="Logo"></a>
+                <div>
+                    <span><a href="#"><i class="fa-brands fa-facebook"></a></i></span>
+                    <span><a href="#"><i class="fa-brands fa-instagram"></a></i></span>
+                    <span><a href="#"><i class="fa-brands fa-twitter"></a></i></span>
+                    <span><a href="#"><i class="fa-brands fa-tiktok"></a></i></span>
+                </div>
+            </div>
+            <div id="navFooter">
+                <nav class="navFooter">
+                    <ul>
+                        <li class="navTitre">À propos de nous</li>
+                        <li><a href="#"><p>Qui sommes nous</p></a></li>
+                        <li><a href="#">Notre concept</a></li>
+                        <li><a href="#">Nous rejoindre</a></li>
+                    </ul>
+                </nav>
+                <nav class="navFooter">
+                    <ul>
+                        <li class="navTitre">Contacts</li>
+                        <li><a href="#">Contactez-nous</li>
+                        <li><a href="#">Presse</a></li>
+                    </ul>
+                </nav>
+                <nav class="navFooter">
+                    <ul>
+                        <li class="navTitre">Informations légales</li>
+                        <li><a href="#">Mentions légale</a></li>
+                        <li><a href="#">Conditions générales de vente</a></li>
+                        <li><a href="#">Gestion des consentements cookies</a></li>
+                    </ul>
+                </nav>
+            </div>
     </footer>
 </body>
 </html>
