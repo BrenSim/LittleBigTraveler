@@ -1,0 +1,44 @@
+﻿@model List<LittleBigTraveler.Models.TravelClasses.Booking>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Liste des réservations";
+}
+
+@section content {
+    <h1 class="text-center">Liste des réservations</h1>
+
+    @if (Model.Count == 0)
+    {
+        <p>Aucune réservation trouvée.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Réservation n°</th>
+                    <th>Package</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var booking in Model)
+                {
+                    <tr>
+                        <td>@booking.Id</td>
+                        <td>@booking.Package.Name</td>
+                        <td>
+                            <a href="/Booking/Confirmation/@booking.Id" class="btn btn-primary">Voir détails</a>
+                            <a href="/Booking/Delete/@booking.Id" class="btn btn-danger">Supprimer</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <div class="text-center mt-4">
+        <a href="/Home/Index" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+}

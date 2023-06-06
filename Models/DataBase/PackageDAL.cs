@@ -89,7 +89,7 @@ namespace LittleBigTraveler.Models.DataBase
                 // Créer une copie de la collection de services
                 var services = new List<Service>(package.ServiceForPackage);
 
-                // Supprimer les services associés au package
+                // Supprimer les services associés au package sans supprimer 
                 foreach (var service in services)
                 {
                     service.PackageId = null;

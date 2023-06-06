@@ -1,0 +1,22 @@
+﻿@model LittleBigTraveler.Models.TravelClasses.Booking
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Supprimer réservation";
+}
+
+@section content {
+    <h1 class="text-center">Supprimer réservation</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Réservation n° @Model.Id</h5>
+            <p class="card-text">Package : @Model.Package.Name</p>
+            <p class="card-text">Êtes-vous sûr de vouloir supprimer cette réservation ?</p>
+            <form method="post" action="/Booking/Delete/@Model.Id">
+                <button type="submit" class="btn btn-danger">Confirmer la suppression</button>
+                <a href="/Booking/List" class="btn btn-secondary">Annuler</a>
+            </form>
+        </div>
+    </div>
+}

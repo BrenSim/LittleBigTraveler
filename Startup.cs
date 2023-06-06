@@ -24,6 +24,8 @@ namespace LittleBigTraveler
 
             services.AddScoped<TravelDAL>();
             services.AddScoped<DestinationDAL>();
+            services.AddScoped<PackageDAL>();
+            services.AddScoped<BookingDAL>();
             services.AddControllersWithViews();
             services.AddHttpContextAccessor();
         }
@@ -55,10 +57,12 @@ namespace LittleBigTraveler
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=IndexTEST}/{id?}");
             });
         }
+
     }
 }
