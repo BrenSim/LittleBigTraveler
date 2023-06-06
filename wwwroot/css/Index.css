@@ -70,19 +70,36 @@ header {
 
         .navMenu ul li a {
             color: white;
-            background-color: #048b9a79;
+          /*  background-color: #048b9a79; */
             font-size: 17px;
             padding: 7px 13px;
             border-radius: 13px;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-            .navMenu ul li a:hover {
+           /* .navMenu ul li a:hover {
                 background-color: #ffba43;
                 font-size: 19px;
                 padding: 7px 13px;
                 border-radius: 13px;
-            }
+            } */
+.navMenu a {
+    border: 4px solid white;
+    border-radius: 25px;
+    padding: 10px 30px;
+    width: fit-content;
+    font-size: 15px;
+    font-weight: 700;
+    background: none;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+    .navMenu a:hover {
+        background: orange;
+        color: white;
+        border: 4px solid orange;
+    }
 
 h1 {
     filter: brightness(1);
@@ -702,11 +719,11 @@ button {
     transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .glassBorderCard:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     z-index: 1;
 }
 .glassBorderCardSurprise:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     z-index: 1;
 }
 @media (max-width: 1190px) {
