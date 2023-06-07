@@ -64,7 +64,7 @@ public class TravelController : Controller
     //[Authorize(Roles = "Administrator")]
     //[Authorize(Roles = "Customer")]
     [HttpPost]
-    public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,Price,NumParticipants")] TravelViewModel model)
+    public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,NumParticipants")] TravelViewModel model)
     {
         // Récupérer l'ID du client connecté depuis le contexte HTTP
         int customerId = int.Parse(HttpContext.User.Identity.Name);

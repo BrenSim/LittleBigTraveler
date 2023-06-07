@@ -216,11 +216,6 @@ namespace LittleBigTraveler.Models.DataBase
 
 
 
-
-
-
-
-
         // Récupération de toutes les données "PackageTravel"
         public List<Package> GetAllPackage()
         {

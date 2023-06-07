@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using LittleBigTraveler.Models.UserClasses;
 
 namespace LittleBigTraveler.Models.TravelClasses
@@ -12,6 +13,8 @@ namespace LittleBigTraveler.Models.TravelClasses
         public string DepartureLocation { get; set; }
         public DateTime DepartureDate { get; set; }
         public DateTime ReturnDate { get; set; }
+
+        [ReadOnly(true)]
         public double Price { get; set; }
         public int NumParticipants { get; set; }
 

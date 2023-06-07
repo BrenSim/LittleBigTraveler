@@ -164,7 +164,6 @@ namespace LittleBigTraveler.Models.DataBase
             var user = _bddContext.Users.FirstOrDefault(u => u.Id == id);
             if (user != null)
             {
-                // Modification des propriétés de l'utilisateur avec les nouvelles données fournies
                 user.LastName = lastName;
                 user.FirstName = firstName;
                 user.Email = email;
@@ -174,7 +173,7 @@ namespace LittleBigTraveler.Models.DataBase
                 user.BirthDate = birthDate;
                 user.ProfilePicture = profilePicture;
 
-                _bddContext.SaveChanges();
+                // Ne pas appeler _bddContext.SaveChanges() ici
             }
         }
 
@@ -183,26 +182,26 @@ namespace LittleBigTraveler.Models.DataBase
         {
             var customer = _bddContext.Customers
                 .Include(c => c.User)
-                .FirstOrDefault(c => c.Id == id);
+                .FirstOrDefault(c => c.User.Id == id);
 
             if (customer != null)
             {
                 var user = customer.User;
-                // Appel de la méthode ModifyUser pour mettre à jour les données de l'utilisateur
                 ModifyUser(user.Id, lastName, firstName, email, password, address, phoneNumber, birthDate, user.ProfilePicture);
-                // Modification des propriétés spécifiques du client
                 customer.LoyaltyPoint = loyaltyPoint;
                 customer.CommentPoint = commentPoint;
+
                 _bddContext.SaveChanges();
             }
         }
+
 
         // Modification des données d'un partenaire
         public void ModifyPartner(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string roleName, string roleType)
         {
             var partner = _bddContext.Partners
                 .Include(p => p.User)
-                .FirstOrDefault(p => p.Id == id);
+                .FirstOrDefault(p => p.User.Id == id);
 
             if (partner != null)
             {
@@ -221,7 +220,7 @@ namespace LittleBigTraveler.Models.DataBase
         {
             var administrator = _bddContext.Administrators
                 .Include(a => a.User)
-                .FirstOrDefault(a => a.Id == id);
+                .FirstOrDefault(a => a.User.Id == id);
 
             if (administrator != null)
             {

@@ -129,14 +129,14 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour l'ajout d'un partenaire
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         public IActionResult AddPartner()
         {
             return View();
         }
 
         // Action pour le traitement du formulaire d'ajout d'un partenaire
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult AddPartners(UserViewModel model)
         {
@@ -166,13 +166,13 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour l'ajout d'un administrateur
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public IActionResult AddAdministrator()
         {
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         // Action pour le traitement du formulaire d'ajout d'un administrateur
         [HttpPost]
         public IActionResult AddAdministrators(UserViewModel model)
