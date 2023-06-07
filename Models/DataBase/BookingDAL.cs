@@ -22,7 +22,6 @@ public class BookingDAL : IBookingDAL
         _bddContext.Dispose();
     }
 
-
     // Création d'une réservation (Booking)
     public int CreateBooking(int userId, int packageId)
     {
@@ -70,8 +69,6 @@ public class BookingDAL : IBookingDAL
     // Récupération d'une réservation (Booking) par ID
     public Booking GetBookingById(int bookingId)
     {
-        Console.WriteLine("BookingId: " + bookingId);  // Log booking id
-
         var booking = _bddContext.Bookings
             .Include(b => b.User)
             .Include(b => b.Package)
@@ -79,9 +76,6 @@ public class BookingDAL : IBookingDAL
             .Include(b => b.Package)
                 .ThenInclude(p => p.ServiceForPackage)
             .FirstOrDefault(b => b.Id == bookingId);
-
-        Console.WriteLine("Booking: " + booking);  // Log booking
-
         return booking;
     }
 

@@ -7,10 +7,6 @@ namespace LittleBigTraveler.ViewModels
 {
     public class PackageViewModel
     {
-      
-
-
-
         public int Id { get; set; }
         public int TravelId { get; set; }
         public Travel Travel { get; set; }
@@ -21,7 +17,6 @@ namespace LittleBigTraveler.ViewModels
         public List<Service> Services { get; set; }
         public List<int> SelectedServiceId { get; set; }
         public List<Service> AvailableServices { get; set; }
-
         public List<Package> Packages { get; set; }
 
         public PackageViewModel()

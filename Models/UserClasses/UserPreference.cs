@@ -18,7 +18,7 @@ namespace LittleBigTraveler.Models.UserClasses
 
         public virtual List <Service> Services { get; set; }
 
-        public virtual List<Bookmark> Bookmarks { get; set; }
+        //public virtual List<Bookmark> Bookmarks { get; set; }
     }
 }
 

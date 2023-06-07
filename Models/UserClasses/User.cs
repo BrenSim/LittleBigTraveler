@@ -22,6 +22,7 @@ namespace LittleBigTraveler.Models.UserClasses
         public virtual Administrator Administrator { get; set; }
         public virtual Role Role { get; set; }
         public virtual List<Booking> Bookings { get; set; }
+        public virtual UserPreference UserPreference { get; set; }
 
 
 
@@ -40,7 +41,7 @@ namespace LittleBigTraveler.Models.UserClasses
                 return "Administrator";
             }
 
-            return "Unknown";
+            return "Role non défini";
         }
     }
 }

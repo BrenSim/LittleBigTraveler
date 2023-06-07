@@ -364,6 +364,56 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        [Authorize]
+        public IActionResult Profile()
+        {
+            using (var userDAL = new UserDAL())
+            {
+                int userId = int.Parse(HttpContext.User.Identity.Name);
+                var user = userDAL.GetAllUsersWithTypeWithId(userId);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                var model = MapUserToViewModel(user);
+                return View(model);
+            }
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult DeleteProfile()
+        {
+            using (var userDAL = new UserDAL())
+            {
+                int userId = int.Parse(HttpContext.User.Identity.Name);
+                userDAL.DeleteUser(userId);
+            }
+
+            // Sign the user out after deleting the profile
+            HttpContext.SignOutAsync();
+            return Redirect("/");
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult ChangeProfile(UserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var userDAL = new UserDAL())
+                {
+                    int userId = int.Parse(HttpContext.User.Identity.Name);
+                    userDAL.ModifyUser(userId, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.ProfilePicture);
+                }
+                return RedirectToAction("Profile");
+            }
+
+            return View(model);
+        }
+
+
         // Action pour "Mapper" le ViewModel d'un utilisateur
         public UserViewModel MapUserToViewModel(User user)
         {

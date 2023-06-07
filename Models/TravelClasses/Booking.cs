@@ -11,7 +11,6 @@ namespace LittleBigTraveler.Models.TravelClasses
         public virtual User User { get; set; }
         public int PackageId { get; set; }
         public Package Package { get; set; }
-
         public bool IsConfirmed { get; set; } // Statut de confirmation de la réservation
 
         public virtual List<Payment> Payments { get; set; }

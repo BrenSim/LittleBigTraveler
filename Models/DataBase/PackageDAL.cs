@@ -45,7 +45,7 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
 
-        // Création d'un PackageTravel
+        // Création d'un Package
         public int CreatePackage(int travelId, string name, string description, List<Service> services)
         {
             //var customer = _bddContext.Customers.Include(c => c.User).FirstOrDefault(c => c.Id == customerId);
@@ -78,6 +78,7 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
+        // Suppression d'un Package
         public void DeletePackage(int packageId)
         {
             var package = _bddContext.Packages.Include(a => a.ServiceForPackage)
@@ -89,7 +90,7 @@ namespace LittleBigTraveler.Models.DataBase
                 // Créer une copie de la collection de services
                 var services = new List<Service>(package.ServiceForPackage);
 
-                // Supprimer les services associés au package sans supprimer 
+                // Supprimer les services associés au package sans supprimer les originaux 
                 foreach (var service in services)
                 {
                     service.PackageId = null;
@@ -154,9 +155,6 @@ namespace LittleBigTraveler.Models.DataBase
                 throw new Exception("Package incorrect");
             }
         }
-    
-   
-
 
         // Récupération de toutes les données "PackageTravel"
         public List<Package> GetAllPackage()
@@ -172,23 +170,6 @@ namespace LittleBigTraveler.Models.DataBase
                 .Include(a => a.ServiceForPackage)
                 .FirstOrDefault(a => a.Id == id);
         }
-
-        // Récupération des PackageTravel d'un client par son ID
-        //public List<Package> GetCustomerPackageTravels(int customerId)
-        //{
-
-        //    // Récupération de l'ID du client connecté à partir du contexte HTTP
-        //    customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
-        //    return _bddContext.PackageTravels
-        //        .Include(a => a.Customer)
-        //            .ThenInclude(c => c.User)
-        //        .Include(a => a.Travel)
-        //        .Where(a => a.Customer.Id == customerId)
-        //        .ToList();
-        //}
-
-
-
     }
 }
 
@@ -253,3 +234,18 @@ namespace LittleBigTraveler.Models.DataBase
 //    _bddContext.Packages.Update(package);
 //    _bddContext.SaveChanges();
 //}
+
+// Récupération des PackageTravel d'un client par son ID
+//public List<Package> GetCustomerPackageTravels(int customerId)
+//{
+
+//    // Récupération de l'ID du client connecté à partir du contexte HTTP
+//    customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
+//    return _bddContext.PackageTravels
+//        .Include(a => a.Customer)
+//            .ThenInclude(c => c.User)
+//        .Include(a => a.Travel)
+//        .Where(a => a.Customer.Id == customerId)
+//        .ToList();
+//}
+
