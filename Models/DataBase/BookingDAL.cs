@@ -22,19 +22,18 @@ public class BookingDAL : IBookingDAL
         _bddContext.Dispose();
     }
 
-
     // Création d'une réservation (Booking)
-    public int CreateBooking(int customerId, int packageId)
+    public int CreateBooking(int userId, int packageId)
     {
-        var customer = _bddContext.Customers.FirstOrDefault(c => c.Id == customerId);
+        var user = _bddContext.Users.FirstOrDefault(u => u.Id == userId);
         var package = _bddContext.Packages.Include(p => p.ServiceForPackage)
                                            .FirstOrDefault(p => p.Id == packageId);
 
-        if (customer != null && package != null)
+        if (user != null && package != null)
         {
             Booking booking = new Booking()
             {
-                CustomerId = customerId,
+                UserId = userId,
                 PackageId = packageId,
                 Payments = new List<Payment>(),
                 Evaluations = new List<Evaluation>()
@@ -47,7 +46,7 @@ public class BookingDAL : IBookingDAL
         }
         else
         {
-            throw new Exception("Customer or Package not found");
+            throw new Exception("User or Package not found");
         }
     }
 
@@ -70,28 +69,28 @@ public class BookingDAL : IBookingDAL
     // Récupération d'une réservation (Booking) par ID
     public Booking GetBookingById(int bookingId)
     {
-        return _bddContext.Bookings
-            .Include(b => b.Customer)
-                .ThenInclude(c => c.User)
+        var booking = _bddContext.Bookings
+            .Include(b => b.User)
             .Include(b => b.Package)
                 .ThenInclude(p => p.Travel)
             .Include(b => b.Package)
                 .ThenInclude(p => p.ServiceForPackage)
             .FirstOrDefault(b => b.Id == bookingId);
+        return booking;
     }
 
 
-    // Récupération de toutes les réservations (Booking) d'un client
-    public List<Booking> GetCustomerBookings(int customerId)
+    // Récupération de toutes les réservations (Booking) d'un utilisateur
+    public List<Booking> GetUserBookings(int userId)
     {
+        //Console.WriteLine("UserId: " + userId);  // Log user id
         return _bddContext.Bookings
-            .Include(b => b.Customer)
-                .ThenInclude(c => c.User)
+            .Include(b => b.User)
             .Include(b => b.Package)
                 .ThenInclude(p => p.Travel)
             .Include(b => b.Package)
                 .ThenInclude(p => p.ServiceForPackage)
-            .Where(b => b.Customer.Id == customerId)
+            .Where(b => b.User.Id == userId)
             .ToList();
     }
 

@@ -7,8 +7,6 @@ namespace LittleBigTraveler.Models.DataBase
 {
     public interface IServiceDAL : IDisposable
     {
-
-        // Méthodes relatives aux services
         List<Service> GetAllServices();
         int CreateService(string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link, int destinationId);
         void DeleteService(int id);

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Web;
 using System.Linq;
-using System.Linq;
-
 
 using System.Diagnostics;
 using System.IO;
@@ -70,6 +68,17 @@ namespace LittleBigTraveler.Models.DataBase
                     images => string.Join(";", images),
                     imagesString => imagesString.Split(';', StringSplitOptions.RemoveEmptyEntries).ToList()
                 );
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.User)
+                .WithMany(c => c.Bookings)
+                .HasForeignKey(b => b.UserId);
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.Package)
+                .WithMany(p => p.Bookings)
+                .HasForeignKey(b => b.PackageId);
+
             //modelBuilder.Entity<Service>()
             //     .HasOne(s => s.Package)
             //     .WithMany(a => a.ServiceForPackage)
@@ -5776,8 +5785,8 @@ namespace LittleBigTraveler.Models.DataBase
                 {
                 "/ImagesServices/KarlovyVary14Activite.png",
                 },
-                    ExternalLinks = "http://podvorie.cz/",
-                    DestinationId = 20
+                ExternalLinks = "http://podvorie.cz/",
+                DestinationId = 20
             },
 
             new Service
@@ -6874,295 +6883,295 @@ namespace LittleBigTraveler.Models.DataBase
                 PhoneNumber = "3456789012",
                 BirthDate = new DateTime(1988, 12, 25),
                 ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 7,
-                LastName = "Rousseau",
-                FirstName = "Alexandre",
-                Email = "alexandre.rousseau@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "14 Rue de Rivoli, Quartier des Tuileries, Paris",
-                PhoneNumber = "0145678901",
-                BirthDate = new DateTime(1994, 9, 2),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 8,
-                LastName = "Leclerc",
-                FirstName = "Manon",
-                Email = "manon.leclerc@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "30 Rue Sainte-Catherine, Pentes de la Croix-Rousse, Lyon",
-                PhoneNumber = "046543210",
-                BirthDate = new DateTime(1993, 12, 18),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 9,
-                LastName = "Dubois",
-                FirstName = "Émilie",
-                Email = "emilie.dubois@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "18 Rue des Augustins, Centre Ville, Perpignan",
-                PhoneNumber = "043216549",
-                BirthDate = new DateTime(1992, 5, 28),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 10,
-                LastName = "Martin",
-                FirstName = "Antoine",
-                Email = "antoine.martin@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "10 Quai de la Tourette, Le Panier, Marseille",
-                PhoneNumber = "067891234",
-                BirthDate = new DateTime(1991, 8, 10),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 11,
-                LastName = "Dubois",
-                FirstName = "Jean",
-                Email = "jean.dubois@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "12 Rue de la Paix, Quartier Latin, Paris",
-                PhoneNumber = "0145678901",
-                BirthDate = new DateTime(1985, 8, 20),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 12,
-                LastName = "Leroy",
-                FirstName = "Sophie",
-                Email = "sophie.leroy@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "27 Rue du Palais Grillet, Presqu'île, Lyon",
-                PhoneNumber = "046543210",
-                BirthDate = new DateTime(1992, 3, 10),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 13,
-                LastName = "Martin",
-                FirstName = "Pierre",
-                Email = "pierre.martin@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "45 Rue des Pénitents Bleus, Vieux Lyon, Lyon",
-                PhoneNumber = "0141234564",
-                BirthDate = new DateTime(1991, 11, 25),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 14,
-                LastName = "Dubois",
-                FirstName = "Marie",
-                Email = "marie.dubois@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "8 Rue de la République, Part-Dieu, Lyon",
-                PhoneNumber = "0149876543",
-                BirthDate = new DateTime(1988, 6, 15),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 15,
-                LastName = "Dupont",
-                FirstName = "Paul",
-                Email = "paul.dupont@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "15 Rue de l'Ancienne Porte Neuve, Centre Ville, Perpignan",
-                PhoneNumber = "0145678901",
-                BirthDate = new DateTime(1995, 2, 18),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 16,
-                LastName = "Lefèvre",
-                FirstName = "Sophie",
-                Email = "sophie.lefevre@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "22 Avenue de Grande Bretagne, Les Coves, Perpignan",
-                PhoneNumber = "0410987654",
-                BirthDate = new DateTime(1987, 7, 5),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 17,
-                LastName = "Moreau",
-                FirstName = "Luc",
-                Email = "luc.moreau@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "32 Rue Saint-Ferréol, Centre Ville, Marseille",
-                PhoneNumber = "0623415678",
-                BirthDate = new DateTime(1993, 9, 12),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 18,
-                LastName = "Girard",
-                FirstName = "Emma",
-                Email = "emma.girard@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "9 Quai du Port, Vieux Port, Marseille",
-                PhoneNumber = "0168765432",
-                BirthDate = new DateTime(1989, 4, 27),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 19,
-                LastName = "Dupuis",
-                FirstName = "Marc",
-                Email = "marc.dupuis@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "23 Rue Esquermoise, Vieux Lille, Lille",
-                PhoneNumber = "0131234567",
-                BirthDate = new DateTime(1990, 12, 5),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 20,
-                LastName = "Lefebvre",
-                FirstName = "Julie",
-                Email = "julie.lefebvre@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "8 Rue de la Clef, Centre Ville, Lille",
-                PhoneNumber = "0139876543",
-                BirthDate = new DateTime(1986, 2, 28),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 21,
-                LastName = "Roy",
-                FirstName = "Sophie",
-                Email = "sophie.roy@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "17 Rue Sainte-Catherine, Saint-Michel, Bordeaux",
-                PhoneNumber = "0123456789",
-                BirthDate = new DateTime(1992, 10, 15),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 22,
-                LastName = "Gagnon",
-                FirstName = "Alexandre",
-                Email = "alexandre.gagnon@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "12 Avenue de la Marne, La Négresse, Biarritz",
-                PhoneNumber = "0456789123",
-                BirthDate = new DateTime(1988, 5, 2),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 23,
-                LastName = "Tremblay",
-                FirstName = "Emma",
-                Email = "emma.tremblay@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "9 Rue des Francs-Bourgeois, Centre Ville, Strasbourg",
-                PhoneNumber = "0498765432",
-                BirthDate = new DateTime(1995, 12, 28),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 24,
-                LastName = "Lavoie",
-                FirstName = "Pierre",
-                Email = "pierre.lavoie@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "6 Boulevard des Anglais, Milady, Biarritz",
-                PhoneNumber = "0632147859",
-                BirthDate = new DateTime(1991, 7, 10),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 25,
-                LastName = "Bélanger",
-                FirstName = "Marie",
-                Email = "marie.belanger@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "15 Rue de la Douane, Centre Ville, Strasbourg",
-                PhoneNumber = "0356897412",
-                BirthDate = new DateTime(1987, 3, 22),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 26,
-                LastName = "Fortin",
-                FirstName = "Marc",
-                Email = "marc.fortin@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "32 Avenue Jean Médecin, Carré d'Or, Nice",
-                PhoneNumber = "0123456789",
-                BirthDate = new DateTime(1993, 9, 5),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 27,
-                LastName = "Gauthier",
-                FirstName = "Isabelle",
-                Email = "isabelle.gauthier@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "8 Rue Masséna, Vieux Nice, Nice",
-                PhoneNumber = "0456789123",
-                BirthDate = new DateTime(1990, 4, 12),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 28,
-                LastName = "Morin",
-                FirstName = "David",
-                Email = "david.morin@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "17 Rue du Maréchal Foch, Petite France, Strasbourg",
-                PhoneNumber = "0498765432",
-                BirthDate = new DateTime(1986, 11, 25),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 29,
-                LastName = "Lévesque",
-                FirstName = "Sarah",
-                Email = "sarah.levesque@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "6 Avenue Thiers, Jean Médecin, Nice",
-                PhoneNumber = "0632147859",
-                BirthDate = new DateTime(1994, 2, 18),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 30,
-                LastName = "Caron",
-                FirstName = "Thomas",
-                Email = "thomas.caron@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "15 Rue de la Juiverie, Bouffay, Nantes",
-                PhoneNumber = "0132546897",
-                BirthDate = new DateTime(1991, 10, 20),
-                ProfilePicture = "/path/to/profile_picture.jpg"
             }
+            //new User
+            //{
+            //    Id = 7,
+            //    LastName = "Rousseau",
+            //    FirstName = "Alexandre",
+            //    Email = "alexandre.rousseau@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "14 Rue de Rivoli, Quartier des Tuileries, Paris",
+            //    PhoneNumber = "0145678901",
+            //    BirthDate = new DateTime(1994, 9, 2),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 8,
+            //    LastName = "Leclerc",
+            //    FirstName = "Manon",
+            //    Email = "manon.leclerc@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "30 Rue Sainte-Catherine, Pentes de la Croix-Rousse, Lyon",
+            //    PhoneNumber = "046543210",
+            //    BirthDate = new DateTime(1993, 12, 18),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 9,
+            //    LastName = "Dubois",
+            //    FirstName = "Émilie",
+            //    Email = "emilie.dubois@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "18 Rue des Augustins, Centre Ville, Perpignan",
+            //    PhoneNumber = "043216549",
+            //    BirthDate = new DateTime(1992, 5, 28),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 10,
+            //    LastName = "Martin",
+            //    FirstName = "Antoine",
+            //    Email = "antoine.martin@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "10 Quai de la Tourette, Le Panier, Marseille",
+            //    PhoneNumber = "067891234",
+            //    BirthDate = new DateTime(1991, 8, 10),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 11,
+            //    LastName = "Dubois",
+            //    FirstName = "Jean",
+            //    Email = "jean.dubois@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "12 Rue de la Paix, Quartier Latin, Paris",
+            //    PhoneNumber = "0145678901",
+            //    BirthDate = new DateTime(1985, 8, 20),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 12,
+            //    LastName = "Leroy",
+            //    FirstName = "Sophie",
+            //    Email = "sophie.leroy@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "27 Rue du Palais Grillet, Presqu'île, Lyon",
+            //    PhoneNumber = "046543210",
+            //    BirthDate = new DateTime(1992, 3, 10),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 13,
+            //    LastName = "Martin",
+            //    FirstName = "Pierre",
+            //    Email = "pierre.martin@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "45 Rue des Pénitents Bleus, Vieux Lyon, Lyon",
+            //    PhoneNumber = "0141234564",
+            //    BirthDate = new DateTime(1991, 11, 25),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 14,
+            //    LastName = "Dubois",
+            //    FirstName = "Marie",
+            //    Email = "marie.dubois@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "8 Rue de la République, Part-Dieu, Lyon",
+            //    PhoneNumber = "0149876543",
+            //    BirthDate = new DateTime(1988, 6, 15),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 15,
+            //    LastName = "Dupont",
+            //    FirstName = "Paul",
+            //    Email = "paul.dupont@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "15 Rue de l'Ancienne Porte Neuve, Centre Ville, Perpignan",
+            //    PhoneNumber = "0145678901",
+            //    BirthDate = new DateTime(1995, 2, 18),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 16,
+            //    LastName = "Lefèvre",
+            //    FirstName = "Sophie",
+            //    Email = "sophie.lefevre@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "22 Avenue de Grande Bretagne, Les Coves, Perpignan",
+            //    PhoneNumber = "0410987654",
+            //    BirthDate = new DateTime(1987, 7, 5),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 17,
+            //    LastName = "Moreau",
+            //    FirstName = "Luc",
+            //    Email = "luc.moreau@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "32 Rue Saint-Ferréol, Centre Ville, Marseille",
+            //    PhoneNumber = "0623415678",
+            //    BirthDate = new DateTime(1993, 9, 12),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 18,
+            //    LastName = "Girard",
+            //    FirstName = "Emma",
+            //    Email = "emma.girard@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "9 Quai du Port, Vieux Port, Marseille",
+            //    PhoneNumber = "0168765432",
+            //    BirthDate = new DateTime(1989, 4, 27),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 19,
+            //    LastName = "Dupuis",
+            //    FirstName = "Marc",
+            //    Email = "marc.dupuis@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "23 Rue Esquermoise, Vieux Lille, Lille",
+            //    PhoneNumber = "0131234567",
+            //    BirthDate = new DateTime(1990, 12, 5),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 20,
+            //    LastName = "Lefebvre",
+            //    FirstName = "Julie",
+            //    Email = "julie.lefebvre@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "8 Rue de la Clef, Centre Ville, Lille",
+            //    PhoneNumber = "0139876543",
+            //    BirthDate = new DateTime(1986, 2, 28),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 21,
+            //    LastName = "Roy",
+            //    FirstName = "Sophie",
+            //    Email = "sophie.roy@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "17 Rue Sainte-Catherine, Saint-Michel, Bordeaux",
+            //    PhoneNumber = "0123456789",
+            //    BirthDate = new DateTime(1992, 10, 15),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 22,
+            //    LastName = "Gagnon",
+            //    FirstName = "Alexandre",
+            //    Email = "alexandre.gagnon@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "12 Avenue de la Marne, La Négresse, Biarritz",
+            //    PhoneNumber = "0456789123",
+            //    BirthDate = new DateTime(1988, 5, 2),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 23,
+            //    LastName = "Tremblay",
+            //    FirstName = "Emma",
+            //    Email = "emma.tremblay@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "9 Rue des Francs-Bourgeois, Centre Ville, Strasbourg",
+            //    PhoneNumber = "0498765432",
+            //    BirthDate = new DateTime(1995, 12, 28),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 24,
+            //    LastName = "Lavoie",
+            //    FirstName = "Pierre",
+            //    Email = "pierre.lavoie@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "6 Boulevard des Anglais, Milady, Biarritz",
+            //    PhoneNumber = "0632147859",
+            //    BirthDate = new DateTime(1991, 7, 10),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 25,
+            //    LastName = "Bélanger",
+            //    FirstName = "Marie",
+            //    Email = "marie.belanger@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "15 Rue de la Douane, Centre Ville, Strasbourg",
+            //    PhoneNumber = "0356897412",
+            //    BirthDate = new DateTime(1987, 3, 22),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 26,
+            //    LastName = "Fortin",
+            //    FirstName = "Marc",
+            //    Email = "marc.fortin@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "32 Avenue Jean Médecin, Carré d'Or, Nice",
+            //    PhoneNumber = "0123456789",
+            //    BirthDate = new DateTime(1993, 9, 5),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 27,
+            //    LastName = "Gauthier",
+            //    FirstName = "Isabelle",
+            //    Email = "isabelle.gauthier@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "8 Rue Masséna, Vieux Nice, Nice",
+            //    PhoneNumber = "0456789123",
+            //    BirthDate = new DateTime(1990, 4, 12),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 28,
+            //    LastName = "Morin",
+            //    FirstName = "David",
+            //    Email = "david.morin@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "17 Rue du Maréchal Foch, Petite France, Strasbourg",
+            //    PhoneNumber = "0498765432",
+            //    BirthDate = new DateTime(1986, 11, 25),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 29,
+            //    LastName = "Lévesque",
+            //    FirstName = "Sarah",
+            //    Email = "sarah.levesque@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "6 Avenue Thiers, Jean Médecin, Nice",
+            //    PhoneNumber = "0632147859",
+            //    BirthDate = new DateTime(1994, 2, 18),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //},
+            //new User
+            //{
+            //    Id = 30,
+            //    LastName = "Caron",
+            //    FirstName = "Thomas",
+            //    Email = "thomas.caron@gmail.com",
+            //    Password = UserDAL.EncodeMD5("password"),
+            //    Address = "15 Rue de la Juiverie, Bouffay, Nantes",
+            //    PhoneNumber = "0132546897",
+            //    BirthDate = new DateTime(1991, 10, 20),
+            //    ProfilePicture = "/path/to/profile_picture.jpg"
+            //}
             );
 
 

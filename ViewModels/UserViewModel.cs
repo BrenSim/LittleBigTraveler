@@ -34,8 +34,5 @@ namespace LittleBigTraveler.ViewModels
 
         public bool LoggedIn { get; set; }
 
-        //public ClaimsPrincipal UserPrincipal { get; set; }
-
-        //public string ReturnUrl { get; set; }
     }
 }

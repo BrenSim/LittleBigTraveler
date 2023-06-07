@@ -22,14 +22,14 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour ajouter un service (affiche le formulaire)
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         public IActionResult AddService()
         {
             return View();
         }
 
         // Méthode pour traiter le formulaire d'ajout d'un service
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult AddServices(ServiceViewModel model)
         {
