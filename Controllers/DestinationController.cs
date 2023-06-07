@@ -7,7 +7,6 @@ using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
 
 namespace LittleBigTraveler.Controllers
