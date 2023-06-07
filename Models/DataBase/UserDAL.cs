@@ -181,7 +181,10 @@ namespace LittleBigTraveler.Models.DataBase
         // Modification des données d'un client
         public void ModifyCustomer(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, int loyaltyPoint, int commentPoint)
         {
-            var customer = _bddContext.Customers.FirstOrDefault(c => c.Id == id);
+            var customer = _bddContext.Customers
+                .Include(c => c.User)
+                .FirstOrDefault(c => c.Id == id);
+
             if (customer != null)
             {
                 var user = customer.User;
@@ -197,7 +200,10 @@ namespace LittleBigTraveler.Models.DataBase
         // Modification des données d'un partenaire
         public void ModifyPartner(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate, string roleName, string roleType)
         {
-            var partner = _bddContext.Partners.FirstOrDefault(p => p.Id == id);
+            var partner = _bddContext.Partners
+                .Include(p => p.User)
+                .FirstOrDefault(p => p.Id == id);
+
             if (partner != null)
             {
                 var user = partner.User;
@@ -213,7 +219,10 @@ namespace LittleBigTraveler.Models.DataBase
         // Modification des données d'un administrateur
         public void ModifyAdministrator(int id, string lastName, string firstName, string email, string password, string address, string phoneNumber, DateTime birthDate)
         {
-            var administrator = _bddContext.Administrators.FirstOrDefault(a => a.Id == id);
+            var administrator = _bddContext.Administrators
+                .Include(a => a.User)
+                .FirstOrDefault(a => a.Id == id);
+
             if (administrator != null)
             {
                 var user = administrator.User;

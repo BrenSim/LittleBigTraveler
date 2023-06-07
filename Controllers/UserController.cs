@@ -15,7 +15,7 @@ namespace LittleBigTraveler.Controllers
     public class UserController : Controller
     {
         // Action pour afficher la liste des utilisateurs
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public IActionResult List()
         {
             using (var userDAL = new UserDAL())
@@ -202,7 +202,7 @@ namespace LittleBigTraveler.Controllers
             return View("AddAdministrator", model);
         }
 
-        [Authorize(Roles = "Administrator, Customer")]
+        //[Authorize(Roles = "Administrator, Customer")]
         // Action pour la suppression d'un utilisateur
         public IActionResult DeleteUsers(int id)
         {
@@ -211,10 +211,10 @@ namespace LittleBigTraveler.Controllers
                 userDAL.DeleteUser(id);
             }
 
-            return RedirectToAction("List");
+            return RedirectToAction("IndexTEST", "Home");
         }
 
-        [Authorize(Roles = "Administrator, Customer")]
+        //[Authorize(Roles = "Administrator, Customer")]
         // Action pour la modification d'un utilisateur
         public IActionResult ChangeUser(int id)
         {
@@ -232,7 +232,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour le traitement du formulaire de modification d'un utilisateur
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult ChangeUsers(int id, UserViewModel model)
         {
@@ -242,7 +242,7 @@ namespace LittleBigTraveler.Controllers
                 {
                     userDAL.ModifyUser(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.ProfilePicture);
                 }
-                return RedirectToAction("List");
+                return RedirectToAction("IndexTEST", "Home");
             }
 
             return View(model);
@@ -250,7 +250,7 @@ namespace LittleBigTraveler.Controllers
 
 
         // Action pour la modification d'un client
-        [Authorize(Roles = "Administrator, Customer")]
+        //[Authorize(Roles = "Administrator, Customer")]
         public IActionResult ChangeCustomer(int id)
         {
             using (var userDAL = new UserDAL())
@@ -267,7 +267,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour le traitement du formulaire de modification d'un client
-        [Authorize(Roles = "Administrator, Customer")]
+        //[Authorize(Roles = "Administrator, Customer")]
         [HttpPost]
         public IActionResult ChangeCustomers(int id, UserViewModel model)
         {
@@ -277,14 +277,14 @@ namespace LittleBigTraveler.Controllers
                 {
                     userDAL.ModifyCustomer(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
                 }
-                return RedirectToAction("List");
+                return RedirectToAction("IndexTEST", "Home");
             }
 
             return View("ChangeCustomer", model);
         }
 
         // Action pour la modification d'un partenaire
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         public IActionResult ChangePartner(int id)
         {
             using (var userDAL = new UserDAL())
@@ -301,7 +301,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour le traitement du formulaire de modification d'un partenaire
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult ChangePartners(int id, UserViewModel model)
         {
@@ -311,14 +311,14 @@ namespace LittleBigTraveler.Controllers
                 {
                     userDAL.ModifyPartner(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
                 }
-                return RedirectToAction("List");
+                return RedirectToAction("IndexTEST", "Home");
             }
 
             return View("ChangePartner", model);
         }
 
         // Action pour la modification d'un administrateur
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public IActionResult ChangeAdministrator(int id)
         {
             using (var userDAL = new UserDAL())
@@ -335,7 +335,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour le traitement du formulaire de modification d'un administrateur
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult ChangeAdministrators(int id, UserViewModel model)
         {
@@ -345,14 +345,14 @@ namespace LittleBigTraveler.Controllers
                 {
                     userDAL.ModifyAdministrator(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
                 }
-                return RedirectToAction("List");
+                return RedirectToAction("IndexTEST", "Home");
             }
 
             return View("ChangeAdministrator", model);
         }
 
         // Action pour la recherche d'un utilisateur
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public IActionResult FindUsers(string query)
         {
             using (var userDAL = new UserDAL())
