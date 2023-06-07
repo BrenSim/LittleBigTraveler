@@ -48,5 +48,28 @@
   <ItemGroup>
     <Content Remove="wwwroot\" />
     <Content Remove="wwwroot\css\" />
+    <Content Remove="wwwroot\ImagesServices\Paris5Hebergement.png" />
+    <Content Remove="wwwroot\ImagesServices\Paris6Restauration.png" />
+    <Content Remove="wwwroot\ImagesServices\Paris7Restauration.png" />
+    <Content Remove="wwwroot\ImagesServices\Paris15Activites.png" />
+    <Content Remove="wwwroot\ImagesServices\74MunichRandonnee.webp" />
+    <Content Remove="wwwroot\ImagesServices\94AthensHostel.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso1Hebergement.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso2Hebergement.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso6Restauration.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso8Restauration.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso7Restauration.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso10Restauration.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso11Guide.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso12Activite.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso13Activite.png" />
+    <Content Remove="wwwroot\ImagesServices\Tromso16Activite.png" />
+    <Content Remove="wwwroot\ImagesServices\Ischia2Hebergement.png" />
+    <Content Remove="wwwroot\ImagesServices\Ischia15Activite.png" />
+    <Content Remove="wwwroot\ImagesServices\Ischia11Activite.png" />
+    <Content Remove="wwwroot\ImagesServices\Ischia8Restauration.jpg" />
+    <Content Remove="wwwroot\ImagesServices\Ischia7Restauration.jpg" />
+    <Content Remove="wwwroot\ImagesServices\Ischia6Restaurantion.jpg" />
+    <Content Remove="wwwroot\ImagesServices\Ischia1Hotel.png" />
   </ItemGroup>
 </Project>
