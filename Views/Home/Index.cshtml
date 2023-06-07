@@ -20,8 +20,17 @@
                 <li><a href="#sectionThreeCards">Nos offres</a></li>
                 <li><a href="#">Notre concept</a></li>
                 <li><a href="@Url.Action("List", "Destination")">Nos destinations</a></li>
-                <li><a href="@Url.Action("SigninPage", "SigninSignup")">Connexion</a></li>
-                <li><a href="@Url.Action("SignupPage", "SigninSignup")">Inscription</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a href="/User/Profile">Mon Profil</a>
+                    <a href="/User/LogOut">Déconnexion</a>
+                }
+                else
+                {
+                    <li><a href="@Url.Action("SigninPage", "SigninSignup")">Connexion</a></li>
+                    <li><a href="@Url.Action("SignupPage", "SigninSignup")">Inscription</a></li>
+                }
+
             </ul>
         </nav>
     </header>
@@ -32,149 +41,203 @@
                     <a href="#"><img src="~/imagesIndex/logoLBT.png" alt="Logo"></a>
                 </div>
                 <!--   <h1 class="titreHeader">Little Big Traveler</h1>
-                   <p class="textHeader"t>Petit voyage, grande découverte !</p> -->
+               <p class="textHeader"t>Petit voyage, grande découverte !</p> -->
             </div>
-            </section>
-            <section>
-                <nav class="menu-container">
-                    <ul>
-                        <li class="destination"><a href="#">Destination</a></li>
-                        <li class="VDepart"><a href="#">Ville de départ</a></li>
-                        <li class="DDepart"><a href="#">Date de départ</a></li>
-                        <li class="prix"><a href="#">Prix</a></li>
-                    </ul>
-                    <button class="glassIcon">
-                        <span>
-                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                        </span>
-                    </button>
-                </nav>
-            </section>
-            <section class="sectionCaroussel">
-                <div class="container">
-                    <div class="content">
-                        <div class="introduce"></div>
-                        <div class="thumbnail-list">
-                            <div class="wrapper"></div>
-                        </div>
-                    </div>
+        </section>
+        <section>
+            <nav class="menu-container">
+                <ul>
+                    <li class="destination"><a href="#">Destination</a></li>
+                    <li class="VDepart"><a href="#">Ville de départ</a></li>
+                    <li class="DDepart"><a href="#">Date de départ</a></li>
+                    <li class="prix"><a href="#">Prix</a></li>
+                </ul>
+                <button class="glassIcon">
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                    </span>
+                </button>
+            </nav>
+        </section>
 
-                    <div class="navigation">
-                        <button class="next-button">Suivant</button>
-                        <span class="line"></span>
-                        <span class="ordinal-number"> </span>
-                    </div>
+        <section id="sectionBestCards">
+            <div class="glassBorderOffersBackground">
+                <div class="titlesZone">
+                    <h1 class="titreOffers">Nos offres du moments !</h1>
+                    <h3 class="sousTitreOffers">Découvrez les sans plus tarder !</h3>
                 </div>
-                <script src="~/js/index.js"></script>
-            </section>
-            <section id="sectionThreeCards">
-                <div class="glassBorderBackground">
-                    <h1 class="titrePackage">NOS PACKAGES</h1>
-                    <div class="glassBorderCard">
-                        <div class="card">
-                            <img src="~/imagesIndex/img.jpg" class="card-img" />
-                            <div class="card-body">
-                                <h1 class="card-title">Voyage sur mesure</h1>
-                                <p class="card-sub-title">Vos envies, votre découverte</p>
-                                <p class="card-info">Vous avez la possibilité de customiser vous même votre propre voyage ! Transports, services, activités, vous êtes libre.</p>
-                                <button class="card-btn">Réserver !</button>
+                <div id="positionIntoSection">
+                    <div class="card-container">
+                        <div class="glassBorderCardOffers">
+                            <div class="cardOffers">
+                                <img src="/images/krka-987021_1920.jpg" class="card-img" />
+                                <div class="cardOffers-body">
+                                    <h1 class="cardOffers-title">Voyage 1</h1>
+                                    <p class="cardOffers-sub-title">Description 1</p>
+                                    <button class="cardOffers-btn">Réserver !</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="glassBorderCard">
-                        <div class="card">
-                            <img src="~/imagesIndex/img2.jpg" class="card-img" />
-                            <div class="card-body">
-                                <h1 class="card-title">All Inclusive</h1>
-                                <p class="card-sub-title">Le voyage tout compris !</p>
-                                <p class="card-info">Venez découvrir nos packages personnalisables en adéquation avec vos envies !</p>
-                                <button class="card-btn">Réserver !</button>
+                        <div class="glassBorderCardOffers">
+                            <div class="cardOffers">
+                                <img src="/images/strasbourg-4988969_1920.jpg" class="card-img" />
+                                <div class="cardOffers-body">
+                                    <h1 class="cardOffers-title">Voyage 2</h1>
+                                    <p class="cardOffers-sub-title">Description 2</p>
+                                    <button class="cardOffers-btn">Réserver !</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="glassBorderCardSurprise">
-                        <div class="card">
-                            <img src="~/imagesIndex/img3.jpg" class="card-img" />
-                            <div class="card-body">
-                                <h1 class="card-title">Voyage surprise</h1>
-                                <p class="card-sub-title">Laissez vous surprendre par nos propositions...</p>
-                                <p class="card-info">
-                                    Envie de voyager mais vous n'avez pas d'idée de destination?
-                                    Remplissez vos préférences et tenter les expériences de nos voyages surprises.
-                                </p>
-                                <button class="card-btn">Réserver !</button>
+                        <div class="glassBorderCardOffers">
+                            <div class="cardOffers">
+                                <img src="/images/vienna-933500_1280.jpg" class="card-img" />
+                                <div class="cardOffers-body">
+                                    <h1 class="cardOffers-title">Voyage 3</h1>
+                                    <p class="cardOffers-sub-title">Description 3</p>
+                                    <button class="cardOffers-btn">Réserver !</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-            <section class="sectionProfileTeamLBT">
-                <div class="cardProfile">
-                    <div class="imgBx">
-                        <img src="~/imagesIndex/brendan.jpg" alt="Photo de profil" />
-                    </div>
-                    <div class="content">
-                        <div class="details">
-                            <h2>Brendan SIMON<br /><span>Développeur Web</span></h2>
-                            <div class="data">
-                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                        <div class="glassBorderCardOffers">
+                            <div class="cardOffers">
+                                <img src="/images/santorini-1972883_1920.jpg" class="card-img" />
+                                <div class="cardOffers-body">
+                                    <h1 class="cardOffers-title">Voyage 4</h1>
+                                    <p class="cardOffers-sub-title">Description 3</p>
+                                    <button class="cardOffers-btn">Réserver !</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="cardProfile">
-                    <div class="imgBx">
-                        <img src="~/imagesIndex/mounia.jpg" alt="Photo de profil" />
+            </div>
+        </section>
+
+        <section class="sectionCaroussel">
+            <div class="container">
+                <div class="content">
+                    <div class="introduce"></div>
+                    <div class="thumbnail-list">
+                        <div class="wrapper"></div>
                     </div>
-                    <div class="content">
-                        <div class="details">
-                            <h2>Mounia TAHAROUCHTE<br /><span>Développeur Web</span></h2>
-                            <div class="data">
-                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
-                            </div>
+                </div>
+
+                <div class="navigation">
+                    <button class="next-button">Suivant</button>
+                    <span class="line"></span>
+                    <span class="ordinal-number"> </span>
+                </div>
+            </div>
+            <script src="~/js/index.js"></script>
+        </section>
+        <section id="sectionThreeCards">
+            <div class="glassBorderBackground">
+                <h1 class="titrePackage">NOS PACKAGES</h1>
+                <div class="glassBorderCard">
+                    <div class="card">
+                        <img src="~/imagesIndex/img.jpg" class="card-img" />
+                        <div class="card-body">
+                            <h1 class="card-title">Voyage sur mesure</h1>
+                            <p class="card-sub-title">Vos envies, votre découverte</p>
+                            <p class="card-info">Vous avez la possibilité de customiser vous même votre propre voyage ! Transports, services, activités, vous êtes libre.</p>
+                            <button class="card-btn">Réserver !</button>
                         </div>
                     </div>
                 </div>
-                <div class="cardProfile">
-                    <div class="imgBx">
-                        <img src="~/imagesIndex/andre.jpg" alt="Photo de profil" />
-                    </div>
-                    <div class="content">
-                        <div class="details">
-                            <h2>Andre BASTOS<br /><span>Développeur Web</span></h2>
-                            <div class="data">
-                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
-                            </div>
+                <div class="glassBorderCard">
+                    <div class="card">
+                        <img src="~/imagesIndex/img2.jpg" class="card-img" />
+                        <div class="card-body">
+                            <h1 class="card-title">All Inclusive</h1>
+                            <p class="card-sub-title">Le voyage tout compris !</p>
+                            <p class="card-info">Venez découvrir nos packages personnalisables en adéquation avec vos envies !</p>
+                            <button class="card-btn">Réserver !</button>
                         </div>
                     </div>
                 </div>
-                <div class="cardProfile">
-                    <div class="imgBx">
-                        <img src="~/imagesIndex/david.jpg" alt="Photo de profil" />
-                    </div>
-                    <div class="content">
-                        <div class="details">
-                            <h2>David ESA<br /><span>Développeur Web</span></h2>
-                            <div class="data">
-                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
-                            </div>
+                <div class="glassBorderCardSurprise">
+                    <div class="card">
+                        <img src="~/imagesIndex/img3.jpg" class="card-img" />
+                        <div class="card-body">
+                            <h1 class="card-title">Voyage surprise</h1>
+                            <p class="card-sub-title">Laissez vous surprendre par nos propositions...</p>
+                            <p class="card-info">
+                                Envie de voyager mais vous n'avez pas d'idée de destination?
+                                Remplissez vos préférences et tenter les expériences de nos voyages surprises.
+                            </p>
+                            <button class="card-btn">Réserver !</button>
                         </div>
                     </div>
                 </div>
-                <div class="cardProfile">
-                    <div class="imgBx">
-                        <img src="~/imagesIndex/fred.jpg" alt="Photo de profil" />
-                    </div>
-                    <div class="content">
-                        <div class="details">
-                            <h2>Frédéric DUPIN<br /><span>Développeur Web</span></h2>
-                            <div class="data">
-                                <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
-                            </div>
+            </div>
+        </section>
+        <section class="sectionProfileTeamLBT">
+            <div class="cardProfile">
+                <div class="imgBx">
+                    <img src="~/imagesIndex/brendan.jpg" alt="Photo de profil" />
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <h2>Brendan SIMON<br /><span>Développeur Web</span></h2>
+                        <div class="data">
+                            <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+            <div class="cardProfile">
+                <div class="imgBx">
+                    <img src="~/imagesIndex/mounia.jpg" alt="Photo de profil" />
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <h2>Mounia TAHAROUCHTE<br /><span>Développeur Web</span></h2>
+                        <div class="data">
+                            <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardProfile">
+                <div class="imgBx">
+                    <img src="~/imagesIndex/andre.jpg" alt="Photo de profil" />
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <h2>Andre BASTOS<br /><span>Développeur Web</span></h2>
+                        <div class="data">
+                            <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardProfile">
+                <div class="imgBx">
+                    <img src="~/imagesIndex/david.jpg" alt="Photo de profil" />
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <h2>David ESA<br /><span>Développeur Web</span></h2>
+                        <div class="data">
+                            <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardProfile">
+                <div class="imgBx">
+                    <img src="~/imagesIndex/fred.jpg" alt="Photo de profil" />
+                </div>
+                <div class="content">
+                    <div class="details">
+                        <h2>Frédéric DUPIN<br /><span>Développeur Web</span></h2>
+                        <div class="data">
+                            <p class="textDescriptionTeamLBT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos necessitatibus placeat eveniet doloremque similique, reiciendis soluta voluptates?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="logoFooter">

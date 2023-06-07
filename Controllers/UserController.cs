@@ -80,7 +80,7 @@ namespace LittleBigTraveler.Controllers
                 return View(model);
             }
 
-            return View("IndexTEST", "Home");
+            return View("Index", "Home");
         }
 
         // Action pour la déconnexion de l'utilisateur
@@ -121,7 +121,7 @@ namespace LittleBigTraveler.Controllers
 
                     HttpContext.SignInAsync(mainUser);
 
-                    return RedirectToAction("IndexTEST", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
@@ -158,7 +158,7 @@ namespace LittleBigTraveler.Controllers
 
                     HttpContext.SignInAsync(mainUser);
 
-                    return RedirectToAction("IndexTEST", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
@@ -195,7 +195,7 @@ namespace LittleBigTraveler.Controllers
 
                     HttpContext.SignInAsync(mainUser);
 
-                    return RedirectToAction("IndexTEST", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
@@ -242,7 +242,7 @@ namespace LittleBigTraveler.Controllers
                 {
                     userDAL.ModifyUser(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.ProfilePicture);
                 }
-                return RedirectToAction("IndexTEST", "Home");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(model);
@@ -277,7 +277,7 @@ namespace LittleBigTraveler.Controllers
                 {
                     userDAL.ModifyCustomer(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
                 }
-                return RedirectToAction("IndexTEST", "Home");
+                return RedirectToAction("Index", "Home");
             }
 
             return View("ChangeCustomer", model);
@@ -311,7 +311,7 @@ namespace LittleBigTraveler.Controllers
                 {
                     userDAL.ModifyPartner(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
                 }
-                return RedirectToAction("IndexTEST", "Home");
+                return RedirectToAction("Index", "Home");
             }
 
             return View("ChangePartner", model);
@@ -345,7 +345,7 @@ namespace LittleBigTraveler.Controllers
                 {
                     userDAL.ModifyAdministrator(id, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
                 }
-                return RedirectToAction("IndexTEST", "Home");
+                return RedirectToAction("Index", "Home");
             }
 
             return View("ChangeAdministrator", model);
