@@ -156,6 +156,71 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
+        // Creation d'un voyage surprise
+        public Package CreateSurprisePackage()
+        {
+            var random = new Random();
+
+            // Récupérer toutes les destinations disponibles
+            var destinations = _bddContext.Destinations.ToList();
+
+            if (destinations.Count == 0)
+            {
+                throw new Exception("Il n'y a pas de destinations disponibles pour créer un voyage surprise.");
+            }
+
+            // Sélectionner une destination aléatoire
+            var randomDestination = destinations[random.Next(destinations.Count)];
+
+            // Générer un nom aléatoire pour le package surprise
+            var packageName = "Votre voyage surprise!";
+
+            // Récupérer les services disponibles de la destination
+            var destinationServices = _bddContext.Services.Where(s => s.DestinationId == randomDestination.Id).ToList();
+
+            // Si moins de 2 services sont disponibles, tous les utiliser
+            if (destinationServices.Count < 2)
+            {
+                throw new Exception("Il y a moins de 2 services disponibles pour cette destination.");
+            }
+
+            // Sélectionner un nombre aléatoire de services à associer au package, entre 2 et 4
+            var numServices = random.Next(2, Math.Min(destinationServices.Count, 4) + 1);
+
+            // Sélectionner de manière aléatoire les services à associer au package
+            var selectedServices = destinationServices.OrderBy(x => random.Next()).Take(numServices).ToList();
+
+            // Créer le voyage avec la destination aléatoire
+            var travel = new Travel
+            {
+                DestinationId = randomDestination.Id,
+                DepartureLocation = "Départ de votre choix",
+                DepartureDate = DateTime.Now.AddDays(12),
+                ReturnDate = DateTime.Now.AddDays(16),
+                Price = 750,
+                NumParticipants = 1
+            };
+            _bddContext.Travels.Add(travel);
+            _bddContext.SaveChanges();
+
+            // Créer le package avec le voyage aléatoire et les services sélectionnés
+            var packageId = CreatePackage(travel.Id, packageName, "Votre voyage surprise généré avec soin par notre algorithme ", selectedServices);
+
+            // Récupérer le package de la base de données
+            var createdPackage = _bddContext.Packages
+                .Include(p => p.ServiceForPackage)
+                .FirstOrDefault(p => p.Id == packageId);
+
+            return createdPackage;
+        }
+
+
+
+
+
+
+
+
         // Récupération de toutes les données "PackageTravel"
         public List<Package> GetAllPackage()
         {

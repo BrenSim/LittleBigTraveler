@@ -125,6 +125,8 @@ public class PackageController : Controller
         }
     }
 
+
+
     // Action pour supprimer le Travel associé au PackageTravel
     private void DeleteAssociatedTravel(Package package)
     {
@@ -236,81 +238,117 @@ public class PackageController : Controller
             return View(model);
         }
     }
-}
-    //// Action pour le traitement du formulaire d'édition d'un PackageTravel
-    //[Authorize(Roles = "Administrator, Customer")]
-    //[HttpPost]
-    //public IActionResult EditPackage(int id, PackageViewModel model, List<int> SelectedServiceId)
+
+    //// Action pour créer un PackageTravel surprise
+    //public IActionResult CreateSurprisePackage()
     //{
-
-    //    using (var packageDAL = new PackageDAL(HttpContextAccessor))
+    //    try
     //    {
-    //        try
+    //        using (var packageDAL = new PackageDAL(HttpContextAccessor))
     //        {
-    //            var services = new List<Service>();
-
-    //            if (model.SelectedServiceId != null)
-    //            {
-    //                using (var serviceDAL = new ServiceDAL())
-    //                {
-    //                    foreach (var serviceId in model.SelectedServiceId)
-    //                    {
-    //                        var service = serviceDAL.GetServiceWithId(serviceId);
-    //                        services.Add(service);
-    //                    }
-    //                }
-    //            }
-
-    //            packageDAL.UpdatePackage(id, model.TravelId, model.Name, model.Description, services);
-
+    //            int packageId = packageDAL.CreateSurprisePackage();
     //            return RedirectToAction("List"); // Redirection vers la page de la liste des PackageTravel
     //        }
-    //        catch (Exception ex)
-    //        {
-    //            ModelState.AddModelError("ERREUR", ex.Message);
-    //        }
-
-    //        // Si une erreur se produit, revenir à la vue avec les données saisies
-    //        return View(model);
     //    }
-    //}
-    //// Action pour afficher la liste des PackageTravel d'un client
-    //public IActionResult ListCustomer()
-    //{
-    //    // Récupérer l'ID du client connecté depuis le contexte HTTP
-    //    int customerId = int.Parse(HttpContext.User.Identity.Name);
-
-    //    using (var packageDAL = new PackageDAL(HttpContextAccessor))
+    //    catch (Exception ex)
     //    {
-    //        var packageTravels = packageDAL.GetCustomerPackageTravels(customerId);
-
-    //        if (packageTravels == null || packageTravels.Count == 0)
-    //        {
-    //            return View("ListCustomer"); // Appelle la vue "ListCustomer.cshtml" lorsque la liste des voyages est vide
-    //        }
-
-    //        return View(packageTravels);
+    //        return NotFound(ex.Message);
     //    }
     //}
 
+    public IActionResult CreateSurprisePackage()
+    {
+        // Supposons que vous avez accès à une instance de PackageDAL
+        var packageDAL = new PackageDAL(HttpContextAccessor);
+
+        var package = packageDAL.CreateSurprisePackage();
+
+        // Il serait bon de vérifier si le package est null avant de le passer à la vue
+        if (package == null)
+        {
+            // Gérer l'erreur, par exemple renvoyer une vue d'erreur
+            return View("Error");
+        }
+
+        // Renvoyer la vue "PackageSurprise" avec le package créé
+        return View("PackageSurprise", package);
+    }
+
+}
+//// Action pour le traitement du formulaire d'édition d'un PackageTravel
+//[Authorize(Roles = "Administrator, Customer")]
+//[HttpPost]
+//public IActionResult EditPackage(int id, PackageViewModel model, List<int> SelectedServiceId)
+//{
+
+//    using (var packageDAL = new PackageDAL(HttpContextAccessor))
+//    {
+//        try
+//        {
+//            var services = new List<Service>();
+
+//            if (model.SelectedServiceId != null)
+//            {
+//                using (var serviceDAL = new ServiceDAL())
+//                {
+//                    foreach (var serviceId in model.SelectedServiceId)
+//                    {
+//                        var service = serviceDAL.GetServiceWithId(serviceId);
+//                        services.Add(service);
+//                    }
+//                }
+//            }
+
+//            packageDAL.UpdatePackage(id, model.TravelId, model.Name, model.Description, services);
+
+//            return RedirectToAction("List"); // Redirection vers la page de la liste des PackageTravel
+//        }
+//        catch (Exception ex)
+//        {
+//            ModelState.AddModelError("ERREUR", ex.Message);
+//        }
+
+//        // Si une erreur se produit, revenir à la vue avec les données saisies
+//        return View(model);
+//    }
+//}
+//// Action pour afficher la liste des PackageTravel d'un client
+//public IActionResult ListCustomer()
+//{
+//    // Récupérer l'ID du client connecté depuis le contexte HTTP
+//    int customerId = int.Parse(HttpContext.User.Identity.Name);
+
+//    using (var packageDAL = new PackageDAL(HttpContextAccessor))
+//    {
+//        var packageTravels = packageDAL.GetCustomerPackageTravels(customerId);
+
+//        if (packageTravels == null || packageTravels.Count == 0)
+//        {
+//            return View("ListCustomer"); // Appelle la vue "ListCustomer.cshtml" lorsque la liste des voyages est vide
+//        }
+
+//        return View(packageTravels);
+//    }
+//}
 
 
-    //// Action pour supprimer un PackageTravel
-    //[Authorize(Roles = "Administrator, Customer")]
-    //public IActionResult DeletePackage(int id)
-    //{
-    //    using (var packageDAL = new PackageDAL(HttpContextAccessor))
-    //    {
-    //        try
-    //        {
-    //            var packageTravel = packageDAL.GetPackageById(id);
-    //            DeleteAssociatedTravel(packageTravel);
-    //            packageDAL.DeletePackage(id);
-    //            return RedirectToAction("List"); // Rediriger vers la page de la liste des PackageTravel
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            return NotFound(ex.Message);
-    //        }
-    //    }
-    //}
+
+//// Action pour supprimer un PackageTravel
+//[Authorize(Roles = "Administrator, Customer")]
+//public IActionResult DeletePackage(int id)
+//{
+//    using (var packageDAL = new PackageDAL(HttpContextAccessor))
+//    {
+//        try
+//        {
+//            var packageTravel = packageDAL.GetPackageById(id);
+//            DeleteAssociatedTravel(packageTravel);
+//            packageDAL.DeletePackage(id);
+//            return RedirectToAction("List"); // Rediriger vers la page de la liste des PackageTravel
+//        }
+//        catch (Exception ex)
+//        {
+//            return NotFound(ex.Message);
+//        }
+//    }
+//}
