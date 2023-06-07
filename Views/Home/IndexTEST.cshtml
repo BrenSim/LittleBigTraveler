@@ -64,6 +64,7 @@
     <a href="/User/AddAdministrator" class="btn btn-success btn-lg">Créer un compte administrateur</a>
     @if (User.Identity.IsAuthenticated)
     {
+        <a href="/User/Profile" class="btn btn-info btn-lg mr-2">Mon Profil</a>
         <a href="/User/LogOut" class="btn btn-danger btn-lg">Déconnexion</a>
     }
     else
@@ -71,6 +72,7 @@
         <a href="/User/LogIn" class="btn btn-primary btn-lg">Connexion Client</a>
     }
 </div>
+
 
 <div class="container">
     <h2 class="text-center">Créer un voyage sur mesure</h2>

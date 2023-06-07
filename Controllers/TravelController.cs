@@ -15,7 +15,8 @@ public class TravelController : Controller
     }
 
     // Action pour afficher la liste des voyages
-    [Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Customer")]
     public IActionResult List()
     {
         using (var travelDAL = new TravelDAL(_httpContextAccessor))
@@ -32,7 +33,8 @@ public class TravelController : Controller
     }
 
     // Action pour créer un voyage
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Customer")]
     public IActionResult CreateTravel(int destinationId)
     {
         using (var destinationDAL = new DestinationDAL())
@@ -59,7 +61,8 @@ public class TravelController : Controller
     }
 
     // Action pour le traitement du formulaire de création d'un voyage
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Customer")]
     [HttpPost]
     public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,Price,NumParticipants")] TravelViewModel model)
     {
@@ -84,7 +87,8 @@ public class TravelController : Controller
     }
 
     // Action pour afficher le formulaire de modification d'un voyage
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Customer")]
     public IActionResult ModifyTravel(int id)
     {
         using (var travelDAL = new TravelDAL(_httpContextAccessor))
@@ -113,7 +117,8 @@ public class TravelController : Controller
     }
 
     // Action pour modifier un voyage
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Customer")]
     [HttpPost]
     public IActionResult ModifyTravel(TravelViewModel model)
     {
@@ -137,9 +142,9 @@ public class TravelController : Controller
         }
     }
 
-
     // Action pour supprimer un voyage
-    [Authorize(Roles = "Administrator, Customer")]
+    //[Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Customer")]
     public IActionResult DeleteTravel(int id)
     {
         using (var travelDAL = new TravelDAL(_httpContextAccessor))

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Principal;
+using LittleBigTraveler.Models.TravelClasses;
 
 namespace LittleBigTraveler.Models.UserClasses
 {
@@ -20,6 +21,8 @@ namespace LittleBigTraveler.Models.UserClasses
         public virtual Partner Partner { get; set; }
         public virtual Administrator Administrator { get; set; }
         public virtual Role Role { get; set; }
+        public virtual List<Booking> Bookings { get; set; }
+        public virtual UserPreference UserPreference { get; set; }
 
 
 
@@ -38,8 +41,7 @@ namespace LittleBigTraveler.Models.UserClasses
                 return "Administrator";
             }
 
-            return "Unknown";
+            return "Role non défini";
         }
     }
 }
-

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Web;
 using System.Linq;
-using System.Linq;
-
 
 using System.Diagnostics;
 using System.IO;
@@ -51,7 +49,6 @@ namespace LittleBigTraveler.Models.DataBase
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql("server=localhost;user id=root;password=Loveandroses123;database=LittleBigTravelDB");
-<<<<<<< HEAD
         }
 
         
@@ -86,8 +83,7 @@ namespace LittleBigTraveler.Models.DataBase
         public DbSet<User> GetUsers()
         {
             return Users;
-=======
->>>>>>> Layout
+
         }
 
 

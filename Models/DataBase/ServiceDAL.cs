@@ -15,8 +15,7 @@ namespace LittleBigTraveler.Models.DataBase
             _bddContext = new BddContext();
         }
 
-
-
+        // Update des services (utilisée dans PackageController)
         public void UpdatePackage(Service service, int packageId)
         {
             service.PackageId = packageId;

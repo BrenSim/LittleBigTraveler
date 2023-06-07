@@ -12,8 +12,6 @@ namespace LittleBigTraveler.Models.TravelClasses
         public string Location { get; set; }
         public string Type { get; set; }
         public string Style { get; set; }
-
-        
         public int MaxCapacity { get; set; }
         public List<string> Images { get; set; } // Liste d'images
         public string ExternalLinks { get; set; }
@@ -23,9 +21,5 @@ namespace LittleBigTraveler.Models.TravelClasses
 
         public int? PackageId { get; set; }
         public Package Package { get; set; }
-        //public virtual List<AllInclusiveTravel> AllInclusiveTravels { get; set; }
-
-        //public virtual List<ServiceCatalog> ServiceCatalogs { get; set; }
-        //public virtual List<Booking> Bookings { get; set; }
     }
 }
