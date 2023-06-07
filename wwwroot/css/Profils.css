@@ -1,0 +1,642 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: white;
+}
+
+/* Partie Header */
+
+@media (max-width: 1050px) {
+    nav ul li {
+        font-size: 0.9rem;
+        margin-right: 2vw;
+        margin-left: 2vw;
+    }
+
+    .logo img {
+        height: 5vh;
+        margin-right: 5vw;
+        margin-left: 1vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    nav ul li {
+        font-size: 0.8rem;
+        margin-right: 0vw;
+        margin-left: 0vw;
+    }
+
+    .logo img {
+        height: 3vh;
+        margin-right: 5vw;
+        margin-left: 0vw;
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 45px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 10vw;
+    margin-left: 1vw;
+}
+
+.navMenu ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 2vw;
+    margin-left: 2vw;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+
+/* Partie Footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 180px;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 45px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+}
+
+.logoFooter {
+    text-align: center;
+}
+
+    .logoFooter i {
+        margin-right: 5%;
+        font-size: 25px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+        .logoFooter i:hover {
+            margin-right: 5%;
+            transform: scale(1.2);
+        }
+
+#navFooter {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navFooter {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+    font-size: 1em;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+    .navFooter ul {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5vw;
+        justify-content: flex-start; /* Modifier la justification */
+        align-items: flex-start; /* Alignement des éléments à gauche */
+    }
+
+    .navFooter li {
+        line-height: 25px;
+    }
+
+.navTitre {
+    font-size: larger;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.logoFooter img {
+    height: 8vh;
+}
+
+@media (max-width: 1257px) {
+    .navFooter {
+        font-size: 14px;
+    }
+
+    .logoFooter img {
+        height: 6vh;
+    }
+}
+
+@media (max-width: 1017px) {
+    .navFooter {
+        font-size: 12px;
+    }
+}
+
+/* Partie Card */
+#primaryCard {
+    height: 35vh;
+    width: 90vw;
+    margin-top: 220px;
+    border-radius: 30px;
+    box-shadow: 15px 15px 30px #dedede, -15px -15px 30px #ffffff;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.banner {
+    background-image: url("./images/amsterdam-1910176_1920.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.card-container {
+    display: flex;
+    height: auto;
+    width: 100%;
+}
+
+.myCard {
+    position: absolute;
+    text-align: center;
+    margin-top: 100px;
+    top: 100px;
+    height: 280px;
+    width: 300px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 35px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    /* Ajout de l'effet de flou */
+    opacity: 0.9;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: zoom-in;
+}
+
+.cardInfos {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.myCard:hover {
+    width: 550px;
+}
+
+    .myCard:hover .profilImage {
+        border-radius: 20px;
+        top: 7%;
+        left: -9%;
+        width: 350px;
+    }
+
+    .myCard:hover h1 {
+        color: white;
+        transform: translateX(-200px) translateY(-150px);
+    }
+
+    .myCard:hover .littleHole {
+        transform: translateY(-130px);
+    }
+
+    .myCard:hover .cardInfos {
+        opacity: 1;
+        transform: translateX(320px) translateY(-350px);
+    }
+
+
+.littleHole {
+    margin: 10px 48.7%;
+    height: 10px;
+    width: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+}
+
+.backgroundCard {
+    height: 50%;
+    width: 100%;
+    border-radius: 15% 15% 0 0;
+}
+
+.profilImage {
+    position: absolute;
+    background-size: cover;
+    background-image: url("./images/DSC07719.jpg");
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    top: -20%;
+    left: 16%;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.myCard h1 {
+    margin-top: 60%;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+section {
+    margin-top: 50px;
+}
+
+#profilInfos ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Partie menu flottant */
+@media (max-width: 1030px) {
+    .menu-container li {
+        white-space: nowrap;
+    }
+}
+
+.menu-container {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    top: 63%;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.074);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.changeBackgroundButton {
+    position: absolute;
+    top: 580px;
+    left: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 4px solid black;
+    padding-top: 10px;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.changeProfilImagedButton {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid white;
+    padding-top: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+li {
+    border-radius: 0;
+    background-color: transparent;
+    display: inline-flex;
+    padding: 5px 10px 5px 10px;
+}
+
+/* li:not(:last-child) {
+    border-radius: 0px;
+    border-right: 1px solid lightgray;
+} */
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+    a:hover {
+        color: orange;
+        transform: scale(1.05);
+    }
+
+/* Infos pour les views du menu flottant */
+
+#personalInfo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 340px;
+    width: 99vw;
+    margin-top: 14px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+    border-radius: 25px;
+    padding: 50px 0 50px 0;
+}
+
+.checkboxGender {
+}
+
+.userNameFirstname {
+    display: flex;
+    flex-direction: column;
+}
+
+.birthdateNationalite {
+    display: flex;
+    flex-direction: column;
+}
+
+.otherInfos {
+    display: flex;
+    flex-direction: column;
+}
+
+.saveInfos {
+    background-color: orange;
+    position: absolute;
+    bottom: 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 10px;
+    padding: 12px 80px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+    .saveInfos:active {
+        transform: scale(1.1);
+        background-color: rgb(255, 178, 34);
+    }
+
+/* Design champs de texte */
+
+@media (max-width: 1030px) {
+    .input {
+        width: 100px;
+    }
+}
+
+.input-Email {
+    position: relative;
+}
+
+.input {
+    border: solid 1.5px #9e9e9e;
+    text-align: center;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 20px 0;
+    padding: 12px 80px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    transition: 0.3s ease-in-out;
+}
+
+.user-Email {
+    position: absolute;
+    left: 25px;
+    bottom: 48px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus,
+input:valid {
+    outline: none;
+    border: 1.5px solid orange;
+}
+
+    .input:focus ~ label,
+    input:valid ~ label {
+        transform: translateY(-50%) scale(0.8);
+        padding: 0 .2em;
+        color: black;
+        background-color: white;
+    }
+
+.input-Password {
+    position: relative;
+}
+
+.input-Birthdate {
+    position: relative;
+}
+
+.user-Birthdate {
+    position: absolute;
+    left: 395px;
+    bottom: 48px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-Adress {
+    position: relative;
+}
+
+.user-Adress {
+    position: absolute;
+    left: 25px;
+    bottom: 48px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-City {
+    position: relative;
+}
+
+.user-City {
+    position: absolute;
+    left: 25px;
+    bottom: 48px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-Zipcode {
+    position: relative;
+}
+
+.user-Zipcode {
+    position: absolute;
+    left: 25px;
+    bottom: 48px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-Tel {
+    position: relative;
+}
+
+.user-Tel {
+    position: absolute;
+    left: 25px;
+    bottom: 48px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-Password {
+    position: absolute;
+    left: 25px;
+    bottom: 48px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-Firstname {
+    position: relative;
+}
+
+.user-Firstname {
+    position: absolute;
+    left: 25px;
+    bottom: 48px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-Name {
+    position: relative;
+}
+
+.user-Name {
+    position: absolute;
+    left: 25px;
+    bottom: 48px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Radio button design */
+
+.radio-inputs {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    top: 60px;
+    border: 1px solid #9e9e9e;
+    border-radius: 15px;
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0rem;
+    width: 300px;
+    font-size: 14px;
+}
+
+    .radio-inputs .radio {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+        .radio-inputs .radio input {
+            display: none;
+        }
+
+        .radio-inputs .radio .gender {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            border: none;
+            padding: .5rem 0;
+            color: rgba(51, 65, 85, 1);
+            transition: all .15s ease-in-out, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .radio-inputs .radio input:checked + .gender {
+            background-color: orange;
+            font-weight: 600;
+            animation: moveRadio 0.3s ease-in-out;
+            /* Ajoutez l'animation */
+            opacity: 0.9;
+            /* Réduire légèrement l'opacité */
+        }
+
+        .radio-inputs .radio input:not(:checked) + .gender {
+            transform: translateX(0);
+            /* Réinitialisation du déplacement */
+            opacity: 1;
+            /* Rétablir l'opacité par défaut */
+        }
+
+@keyframes moveRadio {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

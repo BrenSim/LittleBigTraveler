@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Signup Page";
+    Layout = "_SigninSignupLayout";
+}
+
+@section Log {
+    <div class="myCardUp">
+        <h1>Rejoignez-nous !</h1>
+        <div class="container" id="container">
+            <div class="input-Name">
+                <input required="on" type="text" name="Name" autocomplete="on" class="input">
+                <label class="user-Name">Nom</label>
+            </div>
+            <div class="input-Firstname">
+                <input required="on" type="text" name="Firstname" autocomplete="on" class="input">
+                <label class="user-Firstname">Prénom</label>
+            </div>
+            <div class="input-Email">
+                <input required="on" type="email" name="email" autocomplete="on" class="input">
+                <label class="user-Email">Mail</label>
+            </div>
+            <div class="input-Password">
+                <input required="on" type="password" name="password" autocomplete="off" class="input">
+                <label class="user-Password">Mot de passe</label>
+            </div>
+        </div>
+        <div>
+            <input type="button" value="Inscription" class="btnRegistration">
+
+            <p>Vous êtes déjà un Little Big Traveller ? <br> Connectez-vous !</p>
+            <button class="btnSignInUp">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <a href="@Url.Action("SigninPage", "SigninSignup")"><span class="button-text">Connexion !</span></a>
+            </button>
+        </div>
+        <div class="littleHole"></div>
+    </div>
+
+    
+
+    <!-- Les autres éléments spécifiques à la page d'inscription -->
+}

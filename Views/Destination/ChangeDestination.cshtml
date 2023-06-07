@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@model LittleBigTraveler.ViewModels.DestinationViewModel
 
 @{
@@ -42,3 +43,61 @@
         </form>
     </div>
 }
+=======
+﻿@{
+    Layout = "_DestinationLayout";
+    ViewData["Title"] = "Modifier une destination";
+}
+
+@section content {
+
+    <section class="modif">
+        <div class="containerModif">
+            <div class="titre">
+                <h1 class="titreSection">Modifier une destination</h1>
+            </div>
+            <form method="post" action="/Destination/ChangeDestinations/@Model.Id" class="btnFlexBox">
+                <div class="flexBox allGroup">
+                    <input type="hidden" name="Id" value="@Model.Id" />
+                    <div class="group1">
+                        <div class="form-group">
+                            <!--   <label for="Country" class="countryLabel">Pays :</label> -->
+                            <input type="text" id="Country" name="Country" class="form-control" value="@Model.Country"
+                                   required placeholder="Pays" />
+                        </div>
+
+                        <div class="form-group">
+                            <!--  <label for="City" class="cityLabel">Ville :</label> -->
+                            <input type="text" id="City" name="City" class="form-control" value="@Model.City" required
+                                   placeholder="Ville" />
+                        </div>
+
+                        <div class="form-group">
+                            <!--  <label for="Images" class="imagesLabel">Images :</label> -->
+                            <input type="file" id="Images" name="Images" class="form-control-file" multiple
+                                   placeholder="Images" />
+                        </div>
+
+                        <div class="form-group">
+                            <!--  <label for="Link" class="linksLabel">Lien externe :</label> -->
+                            <input type="text" id="Link" name="Link" class="form-control" value="@Model.ExternalLinks"
+                                   required placeholder="Liens" />
+                        </div>
+                    </div>
+
+                    <div class="group2">
+
+                        <div class="form-group">
+                            <!--   <label for="Description" class="descriptionLabel">Description :</label> -->
+                            <textarea id="Description" name="Description" class="form-control" required
+                                      placeholder="Écrivez une petite description...">@Model.Description</textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Modifier</button>
+            </form>
+        </div>
+    </section>
+
+}
+>>>>>>> Layout

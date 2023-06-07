@@ -51,6 +51,7 @@ namespace LittleBigTraveler.Models.DataBase
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql("server=localhost;user id=root;password=Loveandroses123;database=LittleBigTravelDB");
+<<<<<<< HEAD
         }
 
         
@@ -85,6 +86,8 @@ namespace LittleBigTraveler.Models.DataBase
         public DbSet<User> GetUsers()
         {
             return Users;
+=======
+>>>>>>> Layout
         }
 
 
