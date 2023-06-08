@@ -6338,6 +6338,455 @@ namespace LittleBigTraveler.Models.DataBase
             }
             );
 
+            //Création Travel
+
+            this.Travels.AddRange(
+            new Travel
+            {
+                Id = 1,
+                Destination = Destinations.Find(1),
+                DepartureLocation = "Nantes",
+                DepartureDate = new DateTime(2023, 7, 13, 21, 15, 0),
+                ReturnDate = new DateTime(2023, 7, 16, 20, 05, 0),
+                Price = 937,
+                NumParticipants = 10,
+            },
+            new Travel
+            {
+                Id = 2,
+                Destination = Destinations.Find(2),
+                DepartureLocation = "Nantes",
+                DepartureDate = new DateTime(2023, 7, 7, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 7, 9, 19, 15, 0),
+                Price = 821,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 3,
+                Destination = Destinations.Find(3),
+                DepartureLocation = "Nantes",
+                DepartureDate = new DateTime(2023, 7, 13, 21, 06, 0),
+                ReturnDate = new DateTime(2023, 7, 16, 18, 37, 0),
+                Price = 875,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 4,
+                Destination = Destinations.Find(4),
+                DepartureLocation = "Nantes",
+                DepartureDate = new DateTime(2023, 7, 21, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 7, 23, 19, 37, 0),
+                Price = 759,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 5,
+                Destination = Destinations.Find(5),
+                DepartureLocation = "Lyon",
+                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                Price = 849,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 6,
+                Destination = Destinations.Find(6),
+                DepartureLocation = "Lyon",
+                DepartureDate = new DateTime(2023, 6, 30, 21, 15, 0),
+                ReturnDate = new DateTime(2023, 7, 2, 20, 05, 0),
+                Price = 937,
+                NumParticipants = 10,
+            },
+            new Travel
+            {
+                Id = 7,
+                Destination = Destinations.Find(7),
+                DepartureLocation = "Lyon",
+                DepartureDate = new DateTime(2023, 7, 7, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 7, 9, 19, 15, 0),
+                Price = 821,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 8,
+                Destination = Destinations.Find(8),
+                DepartureLocation = "Lyon",
+                DepartureDate = new DateTime(2023, 7, 13, 21, 06, 0),
+                ReturnDate = new DateTime(2023, 7, 16, 18, 37, 0),
+                Price = 875,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 9,
+                Destination = Destinations.Find(9),
+                DepartureLocation = "Paris",
+                DepartureDate = new DateTime(2023, 7, 21, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 7, 23, 19, 37, 0),
+                Price = 759,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 10,
+                Destination = Destinations.Find(10),
+                DepartureLocation = "Paris",
+                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                Price = 849,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 11,
+                Destination = Destinations.Find(11),
+                DepartureLocation = "Paris",
+                DepartureDate = new DateTime(2023, 6, 30, 21, 15, 0),
+                ReturnDate = new DateTime(2023, 7, 2, 20, 05, 0),
+                Price = 937,
+                NumParticipants = 10,
+            },
+            new Travel
+            {
+                Id = 12,
+                Destination = Destinations.Find(12),
+                DepartureLocation = "Paris",
+                DepartureDate = new DateTime(2023, 7, 7, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 7, 9, 19, 15, 0),
+                Price = 821,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 13,
+                Destination = Destinations.Find(13),
+                DepartureLocation = "Bordeaux",
+                DepartureDate = new DateTime(2023, 7, 13, 21, 06, 0),
+                ReturnDate = new DateTime(2023, 7, 16, 18, 37, 0),
+                Price = 875,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 14,
+                Destination = Destinations.Find(14),
+                DepartureLocation = "Bordeaux",
+                DepartureDate = new DateTime(2023, 7, 21, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 7, 23, 19, 37, 0),
+                Price = 759,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 15,
+                Destination = Destinations.Find(15),
+                DepartureLocation = "Bordeaux",
+                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                Price = 849,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 16,
+                Destination = Destinations.Find(16),
+                DepartureLocation = "Bordeaux",
+                DepartureDate = new DateTime(2023, 6, 30, 21, 15, 0),
+                ReturnDate = new DateTime(2023, 7, 2, 20, 05, 0),
+                Price = 937,
+                NumParticipants = 10,
+            },
+            new Travel
+            {
+                Id = 17,
+                Destination = Destinations.Find(17),
+                DepartureLocation = "Marseille",
+                DepartureDate = new DateTime(2023, 7, 7, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 7, 9, 19, 15, 0),
+                Price = 821,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 18,
+                Destination = Destinations.Find(18),
+                DepartureLocation = "Marseille",
+                DepartureDate = new DateTime(2023, 7, 13, 21, 06, 0),
+                ReturnDate = new DateTime(2023, 7, 16, 18, 37, 0),
+                Price = 875,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 19,
+                Destination = Destinations.Find(19),
+                DepartureLocation = "Marseille",
+                DepartureDate = new DateTime(2023, 7, 21, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 7, 23, 19, 37, 0),
+                Price = 759,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 20,
+                Destination = Destinations.Find(20),
+                DepartureLocation = "Marseille",
+                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                Price = 849,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 21,
+                Destination = Destinations.Find(21),
+                DepartureLocation = "Paris",
+                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                Price = 849,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 22,
+                Destination = Destinations.Find(22),
+                DepartureLocation = "Paris",
+                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                Price = 849,
+                NumParticipants = 05,
+            }
+            );
+
+            //Création Package
+            this.Packages.AddRange(
+            new Package
+            {
+                Id = 1,
+                Name = "Fête Nationale et les feux d'artifice à Paris",
+                Description = "Les feux d'artifice embrasant le ciel, monuments emblématiques illuminés, défilés grandioses, ambiance festive et romantique, laissant des souvenirs inoubliables.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(1),
+                ServiceForPackage = new List<Service> { Services.Find(4), Services.Find(7), Services.Find(8), Services.Find(11), Services.Find(13) }
+            },
+            new Package
+            {
+                Id = 2,
+                Name = "Rome et son histoire",
+                Description = "Vestiges antiques, art sublime, délices culinaires. Une immersion dans la grandeur de l'histoire et de la culture italiennes.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(2),
+                ServiceForPackage = new List<Service> { Services.Find(19), Services.Find(22), Services.Find(24), Services.Find(29), Services.Find(30) }
+            },
+            new Package
+            {
+                Id = 3,
+                Name = "Le charme de Prague",
+                Description = "Architecture gothique, charme médiéval, ruelles pavées. Une ville de contes de fées où chaque coin révèle une beauté éternelle.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(3),
+                ServiceForPackage = new List<Service> { Services.Find(31), Services.Find(37), Services.Find(38), Services.Find(41), Services.Find(43) }
+            },
+            new Package
+            {
+                Id = 4,
+                Name = "Venise et ses canaux",
+                Description = "Gondoles, palais majestueux, ruelles pittoresques, ponts romantiques. Une atmosphère magique qui vous transporte dans un autre monde, laissant des souvenirs à jamais gravés.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(4),
+                ServiceForPackage = new List<Service> { Services.Find(46), Services.Find(52), Services.Find(53), Services.Find(55), Services.Find(57) }
+            },
+            new Package
+            {
+                Id = 5,
+                Name = "La terre de la joie: Munich",
+                Description = "Le mélange de tradition et de modernité, bières renommées, festivals animés. Une ville qui célèbre l'art de vivre bavarois avec enthousiasme.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(5),
+                ServiceForPackage = new List<Service> { Services.Find(62), Services.Find(67), Services.Find(68), Services.Find(71), Services.Find(73) }
+            },
+            new Package
+            {
+                Id = 6,
+                Name = "Londres et sa diversité",
+                Description = "Palais royaux, ambiance cosmopolite, scène culturelle vibrante. Une métropole dynamique offrant une richesse inégalée en histoire et en diversité.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(6),
+                ServiceForPackage = new List<Service> { Services.Find(76), Services.Find(82), Services.Find(83), Services.Find(86), Services.Find(88) }
+            },
+            new Package
+            {
+                Id = 7,
+                Name = "Athènes et l'Acropole",
+                Description = "Héritage classique, l'Acropole majestueuse et une cuisine délicieuse. Une destination où l'histoire rencontre la vie contemporaine avec éclat.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(7),
+                ServiceForPackage = new List<Service> { Services.Find(94), Services.Find(97), Services.Find(98), Services.Find(101), Services.Find(103) }
+            },
+            new Package
+            {
+                Id = 8,
+                Name = "Barcelone: entre culture et détente",
+                Description = "Un séjour envoûtant à Barcelone : histoire fascinante, sites emblématiques, plages dorées et activités nautiques excitantes. Une destination qui offre une expérience unique alliant culture et détente.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(8),
+                ServiceForPackage = new List<Service> { Services.Find(107), Services.Find(110), Services.Find(112), Services.Find(113), Services.Find(115), Services.Find(116) }
+            },
+            new Package
+            {
+                Id = 9,
+                Name = "Les montagnes à Innsbruck",
+                Description = "Montagnes alpines spectaculaires, sports d'hiver, charme tyrolien. Une ville où l'aventure et la beauté naturelle se rencontrent harmonieusement.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(9),
+                ServiceForPackage = new List<Service> { Services.Find(124), Services.Find(127), Services.Find(128), Services.Find(131), Services.Find(133) }
+            },
+            new Package
+            {
+                Id = 10,
+                Name = "Week-end sportif à Annecy",
+                Description = "Un week-end vibrant à Annecy : lac scintillant, montagnes majestueuses, sports nautiques enivrants. Une combinaison parfaite de nature et d'aventure pour des moments inoubliables.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(10),
+                ServiceForPackage = new List<Service> { Services.Find(135), Services.Find(139), Services.Find(140), Services.Find(144), Services.Find(146), Services.Find(147), Services.Find(149) }
+            },
+            new Package
+            {
+                Id = 11,
+                Name = "Les montagnes de Garmisch-Partenkirchen",
+                Description = "Panorama alpin, ski de renommée mondiale, ambiance bavaroise. Un paradis pour les amoureux de la montagne et les passionnés de sports d'hiver.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(11),
+                ServiceForPackage = new List<Service> { Services.Find(152), Services.Find(157), Services.Find(158), Services.Find(161), Services.Find(163) }
+            },
+            new Package
+            {
+                Id = 12,
+                Name = "Les couleurs de Lisbonne",
+                Description = "Ruelles colorées, azulejos, cuisine savoureuse. Une ville côtière envoûtante alliant un riche patrimoine historique à une ambiance décontractée.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(12),
+                ServiceForPackage = new List<Service> { Services.Find(167), Services.Find(172), Services.Find(173), Services.Find(176), Services.Find(178) }
+            },
+            new Package
+            {
+                Id = 13,
+                Name = "Interlaken et ses paysages alpins",
+                Description = "Paysages alpins à couper le souffle, sports d'aventure, lacs cristallins. Une destination qui offre une combinaison parfaite de nature brute et d'adrénaline.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(13),
+                ServiceForPackage = new List<Service> { Services.Find(184), Services.Find(187), Services.Find(188), Services.Find(191), Services.Find(193) }
+            },
+            new Package
+            {
+                Id = 14,
+                Name = "Chamonix et les sommets",
+                Description = "Sommets légendaires, ski extrême, atmosphère alpine authentique. Un lieu emblématique pour les amoureux de la montagne et les passionnés de sports de glisse.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(14),
+                ServiceForPackage = new List<Service> { Services.Find(199), Services.Find(202), Services.Find(203), Services.Find(206), Services.Find(208) }
+            },
+            new Package
+            {
+                Id = 15,
+                Name = "La nature époustouflante aux lacs de Plitvice",
+                Description = "Une escapade féerique aux lacs de Plitvice : cascades cristallines, eaux turquoise, sentiers enchanteurs, faune sauvage. La nature déploie toute sa splendeur, offrant une expérience inoubliable.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(15),
+                ServiceForPackage = new List<Service> { Services.Find(210), Services.Find(216), Services.Find(218), Services.Find(220), Services.Find(221), Services.Find(224) }
+            },
+            new Package
+            {
+                Id = 16,
+                Name = "Tromsø et ses paysages",
+                Description = "Aurores boréales, paysages arctiques, nature sauvage. Une expérience unique dans le cercle polaire, offrant des merveilles naturelles et une culture fascinante.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(16),
+                ServiceForPackage = new List<Service> { Services.Find(229), Services.Find(232), Services.Find(233), Services.Find(236), Services.Find(238) }
+            },
+            new Package
+            {
+                Id = 17,
+                Name = "Killarney et ses paysages pittoresques",
+                Description = "paysages irlandais pittoresques, châteaux, musique traditionnelle. Une escapade pleine de charme, entre lacs scintillants et landes verdoyantes.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(17),
+                ServiceForPackage = new List<Service> { Services.Find(244), Services.Find(247), Services.Find(248), Services.Find(251), Services.Find(253) }
+            },
+            new Package
+            {
+                Id = 18,
+                Name = "Budapest et son architecture grandiose",
+                Description = "Architecture grandiose, bains thermaux, vie nocturne animée. Une perle du Danube qui allie l'élégance et l'effervescence dans une atmosphère captivante.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(18),
+                ServiceForPackage = new List<Service> { Services.Find(259), Services.Find(262), Services.Find(263), Services.Find(266), Services.Find(268) }
+            },
+            new Package
+            {
+                Id = 19,
+                Name = "Bath et ses bains romains",
+                Description = "Bains romains, architecture géorgienne, histoire fascinante. Une ville thermale pleine de grâce et de charme, où l'histoire et le bien-être se rejoignent.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(19),
+                ServiceForPackage = new List<Service> { Services.Find(274), Services.Find(277), Services.Find(278), Services.Find(281), Services.Find(283) }
+            },
+            new Package
+            {
+                Id = 20,
+                Name = "Karlovy Vary et ses sources thermales",
+                Description = "Sources thermales, architecture baroque, festivals de cinéma. Une ville thermale tchèque célèbre pour ses eaux curatives et son ambiance élégante.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(20),
+                ServiceForPackage = new List<Service> { Services.Find(289), Services.Find(292), Services.Find(293), Services.Find(296), Services.Find(298) }
+            },
+            new Package
+            {
+                Id = 21,
+                Name = "Ischia et sa beauté méditerranéenne",
+                Description = "Plages idylliques, thermes naturels, cuisine méditerranéenne, une île italienne où détente, beauté naturelle et bien-être se conjuguent harmonieusement.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(21),
+                ServiceForPackage = new List<Service> { Services.Find(304), Services.Find(307), Services.Find(308), Services.Find(311), Services.Find(313) }
+            },
+            new Package
+            {
+                Id = 22,
+                Name = "Vichy et son patrimoine historique",
+                Description = "Sources thermales, architecture belle époque, gastronomie raffinée, une ville thermale française réputée pour ses bienfaits sur la santé et son patrimoine architectural.",
+                Price = 1000,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(22),
+                ServiceForPackage = new List<Service> { Services.Find(319), Services.Find(322), Services.Find(323), Services.Find(326), Services.Find(328) }
+            }
+            );
+
             // Création des rôles
             this.Roles.AddRange(
 

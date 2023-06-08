@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@model LittleBigTraveler.ViewModels.DestinationViewModel
+@using LittleBigTraveler.ViewModels
+
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -40,23 +43,26 @@
                     <a href="#"><img src="~/imagesIndex/logoLBT.png" alt="Logo"></a>
                 </div>
                 <!--   <h1 class="titreHeader">Little Big Traveler</h1>
-               <p class="textHeader"t>Petit voyage, grande découverte !</p> -->
+                <p class="textHeader"t>Petit voyage, grande découverte !</p> -->
             </div>
         </section>
         <section>
-            <nav class="menu-container">
-                <ul>
-                    <li class="destination"><a href="#">Destination</a></li>
-                    <li class="VDepart"><a href="#">Ville de départ</a></li>
-                    <li class="DDepart"><a href="#">Date de départ</a></li>
-                    <li class="prix"><a href="#">Prix</a></li>
-                </ul>
-                <button class="glassIcon">
-                    <span>
-                        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                    </span>
-                </button>
-            </nav>
+            <div class="menu-container">
+                <form method="get" action="/Destination/FindDestinations">
+                    <!-- <ul>
+                        <li class="destination"><a href="#">Destination</a></li>
+                        <li class="VDepart"><a href="#">Ville de départ</a></li>
+                        <li class="DDepart"><a href="#">Date de départ</a></li>
+                        <li class="prix"><a href="#">Prix</a></li>
+                    </ul> -->
+                    <input type="text" class="searchField" placeholder="Rechercher une destination par pays ou par ville..." name="query">
+                    <button class="glassIcon" type="submit">
+                        <span>
+                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                        </span>
+                    </button>
+                </form>
+            </div>
         </section>
 
         <section id="sectionBestCards">
@@ -150,7 +156,7 @@
                             <h1 class="card-title">All Inclusive</h1>
                             <p class="card-sub-title">Le voyage tout compris !</p>
                             <p class="card-info">Venez découvrir nos packages personnalisables en adéquation avec vos envies !</p>
-                            <button class="card-btn">Réserver !</button>
+                            <a href="/Package/List"><button class="card-btn">Réserver !</button></a>
                         </div>
                     </div>
                 </div>

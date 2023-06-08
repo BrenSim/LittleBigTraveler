@@ -1,25 +1,25 @@
 
 @model List<LittleBigTraveler.Models.TravelClasses.Destination>
 
-
 ﻿@{
     Layout = "_DestinationLayout";
     ViewData["Title"] = "Nos destinations";
 }
 
 @section Content {
-
     <section id="sectionDestinationCards">
         <div class="glassBorderBackground">
-            <h1 class="titrePackage">NOS DESTINATIONS</h1>
+            <div class="titlesZone">
+                <h1 class="titreOffers">Nos destinations</h1>
+            </div>
             <div class="positionDSF">
                 <form method="get" action="/Destination/FindDestinations">
                     <div class="destinationSearchField">
                         <input type="search" name="SearchBar" class="input" autocomplete="on" placeholder="Recherche de destinations par Pays ou Ville">
                         <!--  <label class="searchLabel">Rechercher une destination</label> -->
                     </div>
-                    <div class="col-auto">
-                        <button type="submit" class="card-btn">Rechercher</button>
+                    <div class="searchingBtn">
+                        <button type="submit" class="card-btn-search">Rechercher</button>
                     </div>
                     <button class="glassIcon">
                         <span>
@@ -31,23 +31,23 @@
             <div id="positionIntoSection">
                 <div class="card-container">
                     @foreach (var destination in Model)
-                        {
+                    {
                         <div class="glassBorderCard">
                             <div class="card">
                                 @foreach (var image in destination.Images)
-                                    {
+                                {
                                     <img src="@image" alt="Image" class="card-img" />
-                                    }
-                                    <div class="card-body">
-                                        <h1 class="card-title">@destination.Country</h1>
-                                        <h3 class="card-sub-title">@destination.City</h3>
-                                        <p class="card-sub-title">@destination.Description</p>
-                                        <button class="card-btn">Réserver !</button>
-                                    </div>
+                                }
+                                <div class="card-body">
+                                    <h1 class="card-title">@destination.Country</h1>
+                                    <h3 class="card-sub-title">@destination.City</h3>
+                                    <p class="card-sub-title">@destination.Description</p>
+                                    <a href="/Travel/CreateTravel?destinationId=@destination.Id"><button class="card-btn">Réserver !</button></a>
                                 </div>
+                            </div>
                         </div>
-                        }
-                    </div>
+                     }
+                </div>
             </div>
         </div>
     </section>
@@ -62,40 +62,50 @@
                 <div class="card-container">
                     <div class="glassBorderCardOffers">
                         <div class="cardOffers">
-                            <img src="/images/krka-987021_1920.jpg" class="card-img" />
+                            <img src="@Model[1].Images" class="card-img" />
                             <div class="cardOffers-body">
-                                <h1 class="cardOffers-title">Voyage 1</h1>
-                                <p class="cardOffers-sub-title">Description 1</p>
+                                <h1 class="cardOffers-title">@Model[1].Country</h1>
+                                <p class="cardOffers-sub-title">@Model[1].City</p>
                                 <button class="cardOffers-btn">Réserver !</button>
                             </div>
                         </div>
                     </div>
                     <div class="glassBorderCardOffers">
                         <div class="cardOffers">
-                            <img src="/images/strasbourg-4988969_1920.jpg" class="card-img" />
+                            <img src="@Model[6].Images" class="card-img" />
                             <div class="cardOffers-body">
-                                <h1 class="cardOffers-title">Voyage 2</h1>
-                                <p class="cardOffers-sub-title">Description 2</p>
+                                <h1 class="cardOffers-title">@Model[6].Country</h1>
+                                <p class="cardOffers-sub-title">@Model[6].City</p>
                                 <button class="cardOffers-btn">Réserver !</button>
                             </div>
                         </div>
                     </div>
                     <div class="glassBorderCardOffers">
                         <div class="cardOffers">
-                            <img src="/images/vienna-933500_1280.jpg" class="card-img" />
+                            <img src="@Model[7].Images" class="card-img" />
                             <div class="cardOffers-body">
-                                <h1 class="cardOffers-title">Voyage 3</h1>
-                                <p class="cardOffers-sub-title">Description 3</p>
+                                <h1 class="cardOffers-title">@Model[7].Country</h1>
+                                <p class="cardOffers-sub-title">@Model[7].City</p>
                                 <button class="cardOffers-btn">Réserver !</button>
                             </div>
                         </div>
                     </div>
                     <div class="glassBorderCardOffers">
                         <div class="cardOffers">
-                            <img src="/images/santorini-1972883_1920.jpg" class="card-img" />
+                            <img src="@Model[14].Images" class="card-img" />
                             <div class="cardOffers-body">
-                                <h1 class="cardOffers-title">Voyage 4</h1>
-                                <p class="cardOffers-sub-title">Description 3</p>
+                                <h1 class="cardOffers-title">@Model[7].Country</h1>
+                                <p class="cardOffers-sub-title">@Model[7].City</p>
+                                <button class="cardOffers-btn">Réserver !</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glassBorderCardOffers">
+                        <div class="cardOffers">
+                            <img src="@Model[9].Images" class="card-img" />
+                            <div class="cardOffers-body">
+                                <h1 class="cardOffers-title">@Model[9].Country</h1>
+                                <p class="cardOffers-sub-title">@Model[9].City</p>
                                 <button class="cardOffers-btn">Réserver !</button>
                             </div>
                         </div>
