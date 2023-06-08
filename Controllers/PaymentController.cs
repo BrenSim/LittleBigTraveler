@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System;
 using LittleBigTraveler.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 public class PaymentController : Controller
 {
@@ -14,7 +15,13 @@ public class PaymentController : Controller
         _httpContextAccessor = httpContextAccessor;
     }
 
-    // Action pour afficher le formulaire de création d'un paiement
+    /// <summary>
+    /// Action pour afficher le formulaire de création d'un paiement.
+    /// </summary>
+    /// <param name="bookingId">ID de la réservation associée au paiement.</param>
+    /// <param name="totalAmount">Montant total du paiement.</param>
+    /// <returns>Vue contenant le formulaire de création d'un paiement.</returns>
+    [Authorize]
     public IActionResult Create(int bookingId, double totalAmount)
     {
         var model = new PaymentViewModel
@@ -26,7 +33,14 @@ public class PaymentController : Controller
         return View(model);
     }
 
-    // Méthode pour traiter le formulaire de création d'un paiement
+    /// <summary>
+    /// Méthode pour traiter le formulaire de création d'un paiement.
+    /// </summary>
+    /// <param name="bookingId">ID de la réservation associée au paiement.</param>
+    /// <param name="totalAmount">Montant total du paiement.</param>
+    /// <param name="numCB">Numéro de carte bancaire.</param>
+    /// <returns>Redirige vers la page de confirmation du paiement en cas de succès, sinon renvoie un code d'erreur.</returns>
+    [Authorize]
     [HttpPost]
     public IActionResult Create(int bookingId, double totalAmount, int numCB)
     {
@@ -50,7 +64,12 @@ public class PaymentController : Controller
         }
     }
 
-    // Action pour afficher la page de confirmation d'un paiement
+    /// <summary>
+    /// Action pour afficher la page de confirmation d'un paiement.
+    /// </summary>
+    /// <param name="paymentId">ID du paiement.</param>
+    /// <returns>Vue contenant la confirmation du paiement.</returns>
+    [Authorize]
     public IActionResult Confirmation(int paymentId)
     {
         try
@@ -87,7 +106,12 @@ public class PaymentController : Controller
         }
     }
 
-    // Action pour supprimer un paiement
+    /// <summary>
+    /// Action pour supprimer un paiement.
+    /// </summary>
+    /// <param name="paymentId">ID du paiement à supprimer.</param>
+    /// <returns>Redirige vers la page de la liste des paiements en cas de succès, sinon renvoie un code d'erreur.</returns>
+    [Authorize]
     public IActionResult Delete(int paymentId)
     {
         try
@@ -118,7 +142,11 @@ public class PaymentController : Controller
         }
     }
 
-    // Action pour afficher la liste des paiements de l'utilisateur
+    /// <summary>
+    /// Action pour afficher la liste des paiements de l'utilisateur.
+    /// </summary>
+    /// <returns>Vue contenant la liste des paiements de l'utilisateur.</returns>
+    [Authorize]
     public IActionResult List()
     {
         try

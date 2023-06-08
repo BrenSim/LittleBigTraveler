@@ -9,13 +9,22 @@ using System.Security.Claims;
 using System.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 
 namespace LittleBigTraveler.Controllers
 {
     public class UserController : Controller
     {
+
+        [AllowAnonymous]
+        public IActionResult LogoutOnStartup()
+        {
+            HttpContext.SignOutAsync();
+            return RedirectToAction("LogIn");
+        }
+
         // Action pour afficher la liste des utilisateurs
-        //[Authorize(Roles = "Administrator")]
+        [Authorize]
         public IActionResult List()
         {
             using (var userDAL = new UserDAL())
@@ -41,6 +50,7 @@ namespace LittleBigTraveler.Controllers
                 }
                 return View(model);
             }
+
             //model.UserPrincipal = User;
             return View(model);
         }
@@ -129,14 +139,14 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour l'ajout d'un partenaire
-        //[Authorize(Roles = "Administrator, Partner")]
+        [Authorize(Roles = "Administrator, Partner")]
         public IActionResult AddPartner()
         {
             return View();
         }
 
         // Action pour le traitement du formulaire d'ajout d'un partenaire
-        //[Authorize(Roles = "Administrator, Partner")]
+        [Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult AddPartners(UserViewModel model)
         {
@@ -166,14 +176,15 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour l'ajout d'un administrateur
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")]
         public IActionResult AddAdministrator()
         {
             return View();
         }
 
-        //[Authorize(Roles = "Administrator")]
+
         // Action pour le traitement du formulaire d'ajout d'un administrateur
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult AddAdministrators(UserViewModel model)
         {
@@ -202,8 +213,9 @@ namespace LittleBigTraveler.Controllers
             return View("AddAdministrator", model);
         }
 
-        //[Authorize(Roles = "Administrator, Customer")]
+        
         // Action pour la suppression d'un utilisateur
+        [Authorize(Roles = "Administrator, Customer")]
         public IActionResult DeleteUsers(int id)
         {
             using (var userDAL = new UserDAL())
@@ -214,8 +226,9 @@ namespace LittleBigTraveler.Controllers
             return RedirectToAction("IndexTEST", "Home");
         }
 
-        //[Authorize(Roles = "Administrator, Customer")]
+
         // Action pour la modification d'un utilisateur
+        [Authorize(Roles = "Administrator, Customer")]
         public IActionResult ChangeUser(int id)
         {
             using (var userDAL = new UserDAL())
@@ -232,7 +245,6 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour le traitement du formulaire de modification d'un utilisateur
-        //[Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult ChangeUsers(int id, UserViewModel model)
         {
@@ -250,7 +262,7 @@ namespace LittleBigTraveler.Controllers
 
 
         // Action pour la modification d'un client
-        //[Authorize(Roles = "Administrator, Customer")]
+        [Authorize(Roles = "Administrator, Customer")]
         public IActionResult ChangeCustomer(int id)
         {
             using (var userDAL = new UserDAL())
@@ -267,7 +279,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour le traitement du formulaire de modification d'un client
-        //[Authorize(Roles = "Administrator, Customer")]
+        [Authorize(Roles = "Administrator, Customer")]
         [HttpPost]
         public IActionResult ChangeCustomers(int id, UserViewModel model)
         {
@@ -284,7 +296,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour la modification d'un partenaire
-        //[Authorize(Roles = "Administrator, Partner")]
+        [Authorize(Roles = "Administrator, Partner")]
         public IActionResult ChangePartner(int id)
         {
             using (var userDAL = new UserDAL())
@@ -301,7 +313,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour le traitement du formulaire de modification d'un partenaire
-        //[Authorize(Roles = "Administrator, Partner")]
+        [Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult ChangePartners(int id, UserViewModel model)
         {
@@ -318,7 +330,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour la modification d'un administrateur
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")]
         public IActionResult ChangeAdministrator(int id)
         {
             using (var userDAL = new UserDAL())
@@ -335,7 +347,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour le traitement du formulaire de modification d'un administrateur
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult ChangeAdministrators(int id, UserViewModel model)
         {
@@ -352,7 +364,7 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour la recherche d'un utilisateur
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")]
         public IActionResult FindUsers(string query)
         {
             using (var userDAL = new UserDAL())
@@ -380,39 +392,6 @@ namespace LittleBigTraveler.Controllers
                 return View(model);
             }
         }
-
-        [Authorize]
-        [HttpPost]
-        public IActionResult DeleteProfile()
-        {
-            using (var userDAL = new UserDAL())
-            {
-                int userId = int.Parse(HttpContext.User.Identity.Name);
-                userDAL.DeleteUser(userId);
-            }
-
-            // Sign the user out after deleting the profile
-            HttpContext.SignOutAsync();
-            return Redirect("/");
-        }
-
-        [Authorize]
-        [HttpPost]
-        public IActionResult ChangeProfile(UserViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                using (var userDAL = new UserDAL())
-                {
-                    int userId = int.Parse(HttpContext.User.Identity.Name);
-                    userDAL.ModifyUser(userId, model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.ProfilePicture);
-                }
-                return RedirectToAction("Profile");
-            }
-
-            return View(model);
-        }
-
 
         // Action pour "Mapper" le ViewModel d'un utilisateur
         public UserViewModel MapUserToViewModel(User user)
@@ -461,25 +440,3 @@ namespace LittleBigTraveler.Controllers
         }
     }
 }
-
-
-//// Action pour la création d'un User (et non pas d'un Customer etc.) (outdated)
-//public int CreateUser(UserViewModel model)
-//{
-//    using (var userDAL = new UserDAL())
-//    {
-//        switch (model.UserType)
-//        {
-//            case "Customer":
-//                return userDAL.CreateCustomer(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.LoyaltyPoint, model.CommentPoint);
-//            case "Partner":
-//                return userDAL.CreatePartner(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
-//            case "Administrator":
-//                return userDAL.CreateAdministrator(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
-//            default:
-//                throw new ArgumentException("Invalid user type");
-//        }
-//    }
-//}
-
-

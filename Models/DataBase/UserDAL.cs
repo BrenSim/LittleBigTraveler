@@ -133,6 +133,7 @@ namespace LittleBigTraveler.Models.DataBase
                 PhoneNumber = phoneNumber,
                 BirthDate = birthDate
             };
+
             // Création d'un nouveau client lié à l'utilisateur
             Customer customer = new Customer()
             {
