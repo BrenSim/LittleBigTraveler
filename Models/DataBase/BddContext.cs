@@ -6346,6 +6346,7 @@ namespace LittleBigTraveler.Models.DataBase
                 ExternalLinks = "https://www.allier-auvergne-tourisme.com/equipement/vichy/bateau-promenade-vichy/5261458",
                 DestinationId = 22
             }
+
             );
 
             //Création Travel
@@ -6580,7 +6581,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 1,
                 Name = "Fête Nationale et les feux d'artifice à Paris",
                 Description = "Les feux d'artifice embrasant le ciel, monuments emblématiques illuminés, défilés grandioses, ambiance festive et romantique, laissant des souvenirs inoubliables.",
-                Price = 1000,
+                Price = Travels.Find(1).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(1),
                 ServiceForPackage = new List<Service> { Services.Find(4), Services.Find(7), Services.Find(8), Services.Find(11), Services.Find(13) }

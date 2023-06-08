@@ -14,10 +14,11 @@ namespace LittleBigTraveler.ViewModels
         public string DestinationCity { get; set; }
         public Customer Customer { get; set; }
         public Destination Destination { get; set; }
+        public Travel Travel { get; set; }
         public string DepartureLocation { get; set; }
         public DateTime DepartureDate { get; set; }
         public DateTime ReturnDate { get; set; }
-        public double Price { get; set; }
+        public int Price { get; set; }
         public int NumParticipants { get; set; }
 
         public List<Travel> Travels { get; set; }

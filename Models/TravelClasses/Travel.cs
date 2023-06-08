@@ -14,8 +14,7 @@ namespace LittleBigTraveler.Models.TravelClasses
         public DateTime DepartureDate { get; set; }
         public DateTime ReturnDate { get; set; }
 
-        [ReadOnly(true)]
-        public double Price { get; set; }
+        public int Price { get; set; }
         public int NumParticipants { get; set; }
 
         public virtual List<Package> Packages { get; set; }

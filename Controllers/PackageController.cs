@@ -126,8 +126,10 @@ public class PackageController : Controller
                         }
                     }
                 }
-
-                return RedirectToAction("List"); // Redirection vers la page de la liste des PackageTravel
+                //Package package;
+                //package = packageDAL.GetPackageById(packageTravelId);
+                return RedirectToAction("Details", new { id = packageTravelId }); // Redirection vers la page de détails du package créé
+                 // Redirection vers la page de la liste des PackageTravel
             }
             catch (Exception ex)
             {
@@ -138,6 +140,22 @@ public class PackageController : Controller
             return View(model);
         }
     }
+
+    public IActionResult Details(int id)
+    {
+        using (var packageDAL = new PackageDAL(HttpContextAccessor))
+        {
+            var package = packageDAL.GetPackageById(id);
+
+            if (package == null)
+            {
+                return View(null);
+            }
+
+            return View(package);
+        }
+    }
+
 
     /// <summary>
     /// Méthode privée pour supprimer le Travel associé au PackageTravel.

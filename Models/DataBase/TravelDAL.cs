@@ -31,7 +31,7 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
         // Création/Ajout d'un "Travel"
-        public int CreateTravel(int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
+        public int CreateTravel(int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, int price, int numParticipants)
         {
             // Récupération de la destination associée à l'ID fourni
             var destination = _bddContext.Destinations.FirstOrDefault(d => d.Id == destinationId);
@@ -72,7 +72,7 @@ namespace LittleBigTraveler.Models.DataBase
         }
 
         // Modification d'un "Travel" par ID
-        public void ModifyTravel(int id, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
+        public void ModifyTravel(int id, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, int price, int numParticipants)
         {
             var travel = _bddContext.Travels
                 .Include(t => t.Destination)

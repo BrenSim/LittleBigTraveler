@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using LittleBigTraveler.ViewModels;
 using System;
 using Microsoft.AspNetCore.Authorization;
+using LittleBigTraveler.Models.TravelClasses;
 
 public class TravelController : Controller
 {
@@ -42,6 +43,12 @@ public class TravelController : Controller
     [Authorize]
     public IActionResult CreateTravel(int destinationId)
     {
+        int minimumPrice = 500; // prix minimum
+        int maximumPrice = 900; // prix maximum
+        Random random = new Random();
+        int randomPrice = random.Next(minimumPrice, maximumPrice + 1);
+
+
         using (var destinationDAL = new DestinationDAL())
         {
             var destination = destinationDAL.GetDestinationWithId(destinationId);
@@ -57,7 +64,7 @@ public class TravelController : Controller
                 DepartureLocation = "",
                 DepartureDate = DateTime.Now,
                 ReturnDate = DateTime.Now.AddDays(7),
-                Price = 0,
+                Price = randomPrice,
                 NumParticipants = 1
             };
 
@@ -72,7 +79,7 @@ public class TravelController : Controller
     /// <returns>Redirige vers la page d'accueil ou une autre page en cas de succès, sinon réaffiche le formulaire avec les erreurs.</returns>
     [Authorize]
     [HttpPost]
-    public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,NumParticipants")] TravelViewModel model)
+    public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,Price,NumParticipants")] TravelViewModel model)
     {
         // Récupérer l'ID du client connecté depuis le contexte HTTP
         int customerId = int.Parse(HttpContext.User.Identity.Name);
@@ -81,8 +88,8 @@ public class TravelController : Controller
         {
             try
             {
-                travelDAL.CreateTravel(model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
-                return RedirectToAction("List"); // Rediriger vers la page d'accueil ou une autre page
+                var newTravelId = travelDAL.CreateTravel(model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
+                return RedirectToAction("CreatePackage", "Package", new { travelId = newTravelId });
             }
             catch (Exception ex)
             {
@@ -93,6 +100,7 @@ public class TravelController : Controller
             return View(model);
         }
     }
+
 
     /// <summary>
     /// Action pour afficher le formulaire de modification d'un voyage.

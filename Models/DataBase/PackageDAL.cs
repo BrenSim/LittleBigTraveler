@@ -227,10 +227,13 @@ namespace LittleBigTraveler.Models.DataBase
         {
             return _bddContext.Packages
                 .Include(a => a.Travel)
+                    .ThenInclude(t => t.Destination) // Assurez-vous que Destination est chargé
                 .Include(a => a.ServiceForPackage)
                 .FirstOrDefault(a => a.Id == id);
         }
 
+
+        // Recherche multicritère de package
         public List<Package> SearchPackages(string destination, int? departureMonth, double? minPrice, double? maxPrice)
         {
             IQueryable<Package> recherche = _bddContext.Packages

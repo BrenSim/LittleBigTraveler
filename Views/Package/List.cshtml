@@ -1,4 +1,6 @@
-﻿@model List<LittleBigTraveler.Models.TravelClasses.Package>
+﻿@using System.Globalization
+
+@model List<LittleBigTraveler.Models.TravelClasses.Package>
 
 @{
     Layout = "_Layout";
@@ -31,6 +33,9 @@
                 </tr>
             </thead>
             <tbody>
+                @{
+                    CultureInfo frenchCulture = new CultureInfo("fr-FR");
+                }
                 @foreach (var package in Model)
                 {
                     <tr>
@@ -38,8 +43,8 @@
                         <td>@package.Travel.Destination.City, @package.Travel.Destination.Country</td>
                         <td>@package.Description</td>
                         <td>@package.Travel.DepartureLocation</td>
-                        <td>@package.Travel.DepartureDate</td>
-                        <td>@package.Travel.ReturnDate</td>
+                        <td>@package.Travel.DepartureDate.ToString("d MMMM yyyy", frenchCulture)</td>
+                        <td>@package.Travel.ReturnDate.ToString("d MMMM yyyy", frenchCulture)</td>
                         <td>@package.Travel.NumParticipants</td>
                         <td>@package.Price</td>
                         <td>@package.QuantityAvailable</td>
