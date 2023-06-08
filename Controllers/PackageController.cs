@@ -287,4 +287,27 @@ public class PackageController : Controller
         // Renvoyer la vue "PackageSurprise" avec le package créé
         return View("PackageSurprise", package);
     }
+
+
+    [AllowAnonymous]
+    public IActionResult SearchPackages(string destination, int? departureMonth, double? minPrice, double? maxPrice)
+    {
+        using (var packageDAL = new PackageDAL(HttpContextAccessor))
+        {
+            // Utiliser la méthode SearchPackages pour récupérer les packages correspondants
+            var packages = packageDAL.SearchPackages(destination, departureMonth, minPrice, maxPrice);
+
+            // Récupérer les détails des voyages associés et des destinations
+            foreach (var package in packages)
+            {
+                package.Travel = travelDAL.GetTravelById(package.TravelId);
+                package.Travel.Destination = destinationDAL.GetDestinationWithId(package.Travel.DestinationId);
+            }
+
+            return View("List", packages); // Retourner la vue "List" avec les packages recherchés
+        }
+    }
+
 }
+
+

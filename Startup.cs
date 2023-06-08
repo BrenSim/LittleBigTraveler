@@ -74,10 +74,10 @@ namespace LittleBigTraveler
                     defaults: new { controller = "Booking", action = "Delete" }
                 );
 
-                endpoints.MapControllerRoute(
-                    name: "logoutOnStartup",
-                    pattern: "LogoutOnStartup",
-                    defaults: new { controller = "User", action = "LogoutOnStartup" });
+                //endpoints.MapControllerRoute(
+                //    name: "logoutOnStartup",
+                //    pattern: "LogoutOnStartup",
+                //    defaults: new { controller = "User", action = "LogoutOnStartup" });
 
         });
         }

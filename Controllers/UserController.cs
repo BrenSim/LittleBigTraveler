@@ -16,12 +16,12 @@ namespace LittleBigTraveler.Controllers
     public class UserController : Controller
     {
 
-        [AllowAnonymous]
-        public IActionResult LogoutOnStartup()
-        {
-            HttpContext.SignOutAsync();
-            return RedirectToAction("LogIn");
-        }
+        //[AllowAnonymous]
+        //public IActionResult LogoutOnStartup()
+        //{
+        //    HttpContext.SignOutAsync();
+        //    return RedirectToAction("LogIn");
+        //}
 
         // Action pour afficher la liste des utilisateurs
         [Authorize]

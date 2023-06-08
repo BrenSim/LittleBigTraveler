@@ -230,82 +230,39 @@ namespace LittleBigTraveler.Models.DataBase
                 .Include(a => a.ServiceForPackage)
                 .FirstOrDefault(a => a.Id == id);
         }
+
+        public List<Package> SearchPackages(string destination, int? departureMonth, double? minPrice, double? maxPrice)
+        {
+            IQueryable<Package> recherche = _bddContext.Packages
+                .Include(a => a.Travel)
+                .Include(a => a.ServiceForPackage);
+
+            if (!string.IsNullOrEmpty(destination))
+            {
+                recherche = recherche.Where(a => a.Travel.Destination.City.Contains(destination));
+            }
+
+            if (departureMonth.HasValue)
+            {
+                recherche = recherche.Where(a => a.Travel.DepartureDate.Month == departureMonth.Value);
+            }
+
+            if (minPrice.HasValue)
+            {
+                recherche = recherche.Where(a => a.Price >= minPrice.Value);
+            }
+
+            if (maxPrice.HasValue)
+            {
+                recherche = recherche.Where(a => a.Price <= maxPrice.Value);
+            }
+
+            return recherche.ToList();
+        }
+
     }
 }
 
 
 
-//// Suppression d'un PackageTravel par ID (et de son Travel associé)
-//public void DeletePackage(int id)
-//{
-//    var package = _bddContext.Packages
-//        .Include(a => a.ServiceForPackage)
-//        .FirstOrDefault(a => a.Id == id);
-
-//    if (package != null)
-//    {
-//        var travel = package.Travel;
-
-//        foreach (var service in package.ServiceForPackage)
-//        {
-//            _bddContext.Entry(service).State = EntityState.Unchanged;
-//        }
-
-//        _bddContext.Packages.Remove(package);
-//        _bddContext.Travels.Remove(travel);
-//        _bddContext.SaveChanges();
-//    }
-//    else
-//    {
-//        throw new Exception("PackageTravel non trouvé");
-//    }
-//}
-
-
-//// Modification d'un PackageTravel par ID
-//public void UpdatePackage(int id, int travelId, string name, string description, List<Service> services)
-//{
-//    var package = _bddContext.Packages
-//        .Include(a => a.ServiceForPackage)
-//        .FirstOrDefault(a => a.Id == id);
-
-//    if (package == null)
-//    {
-//        throw new Exception("PackageTravel non trouvé");
-//    }
-
-//    var travel = _bddContext.Travels.Include(t => t.Destination).FirstOrDefault(t => t.Id == travelId);
-//    if (travel == null)
-//    {
-//        throw new Exception("Voyage incorrect");
-//    }
-
-//    package.Travel = travel;
-//    package.Name = name;
-//    package.Description = description;
-
-//    // Mettre à jour les services
-//    package.ServiceForPackage.Clear();
-//    package.ServiceForPackage.AddRange(services);
-
-//    // Mettre à jour le prix
-//    package.Price = travel.Price + services.Sum(s => s.Price);
-
-//    _bddContext.Packages.Update(package);
-//    _bddContext.SaveChanges();
-//}
-
-// Récupération des PackageTravel d'un client par son ID
-//public List<Package> GetCustomerPackageTravels(int customerId)
-//{
-
-//    // Récupération de l'ID du client connecté à partir du contexte HTTP
-//    customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
-//    return _bddContext.PackageTravels
-//        .Include(a => a.Customer)
-//            .ThenInclude(c => c.User)
-//        .Include(a => a.Travel)
-//        .Where(a => a.Customer.Id == customerId)
-//        .ToList();
-//}
 
