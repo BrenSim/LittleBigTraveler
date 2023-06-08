@@ -48,6 +48,7 @@ header {
     /* code rajouté pour l'occasion */
     height: 200px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    filter: drop-shadow(10px 10px 13px #284246);
 }
 
 @media (max-width: 950px) {

@@ -13,15 +13,22 @@
 <body>
     <header>
         <div class="logo">
-            <a href="@Url.Action("Index", "HomeController")"><img src="./Logos/LOGO_P2-05.png" alt="Logo"></a>
+            <a href="@Url.Action("Index", "Home")"><img src="~/imagesIndex/LOGO_P2-05.png" alt="Logo"></a>
         </div>
         <nav class="navMenu">
             <ul>
                 <li><a href="#">Nos offres</a></li>
                 <li><a href="#">Notre concept</a></li>
-                <li><a href="@Url.Action("List", "Destination")">Connexion</a></li>
-                <li><a href="@Url.Action("SigninPage", "SigninSignup")">Connexion</a></li>
-                <li><a href="@Url.Action("SignupPage", "SigninSignup")">Inscription</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a href="/User/Profile">Mon Profil</a></li>
+                    <li><a href="/User/LogOut">Déconnexion</a></li>
+                }
+                else
+                {
+                    <li><a href="@Url.Action("LogIn", "User")">Connexion</a></li>
+                    <li><a href="@Url.Action("AddCustomer", "User")">Inscription</a></li>
+                }
             </ul>
         </nav>
     </header>
@@ -34,7 +41,7 @@
 
     <footer>
             <div class="logoFooter">
-                <a href="#Home"><img src="./Logos/LOGO_P2-05.png" alt="Logo"></a>
+                <a href="#Home"><img src="~/imagesIndex/LOGO_P2-05.png" alt="Logo"></a>
                 <div>
                     <span><a href="#"><i class="fa-brands fa-facebook"></a></i></span>
                     <span><a href="#"><i class="fa-brands fa-instagram"></a></i></span>

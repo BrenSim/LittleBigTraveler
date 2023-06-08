@@ -2,7 +2,7 @@
 @model LittleBigTraveler.ViewModels.DestinationViewModel
 
 @{
-    Layout = "_Layout";
+    Layout = "_DestinationLayout";
     ViewData["Title"] = "Résultats de recherche";
 }
 
@@ -10,50 +10,94 @@
     <h1 class="text-center">Résultats de recherche</h1>
 
     @if (Model.Destinations.Count == 0)
-    {
+        {
         <p>Aucun résultat trouvé.</p>
-    }
-    else
-    {
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Pays</th>
-                    <th>Ville</th>
-                    <th>Description</th>
-                    <th>Images</th>
-                    <th>Liens</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var destination in Model.Destinations)
-                {
-                    <tr>
-                        <td>@destination.Country</td>
-                        <td>@destination.City</td>
-                        <td>@destination.Description</td>
-                        <td>
-                            @foreach (var image in destination.Images)
-                            {
-                                <img src="@image" alt="Image" class="img-thumbnail" />
-                            }
-                        </td>
-                        <td>@destination.ExternalLinks</td>
-                        <td>
-                            <a href="/Destination/ChangeDestination/@destination.Id" class="btn btn-secondary mr-2">Modifier</a>
-                            <a href="/Destination/DeleteDestinations/@destination.Id" class="btn btn-danger">Supprimer</a>
-                            <a href="/Travel/CreateTravel?destinationId=@destination.Id" class="btn btn-primary">Voyager</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
+        }
+        else
+        {
 
-    <div class="text-center mt-4">
-        <a href="/Home/IndexTEST" class="btn btn-primary">Retour à l'accueil</a>
-    </div>
-}
+        <section id="sectionDestinationCards">
+            <div class="glassBorderBackground">
+                <h1 class="titrePackage">NOS DESTINATIONS</h1>
+                <div class="positionDSF">
+                    <form method="get" action="/Destination/FindDestinations">
+                        <div class="destinationSearchField">
+                            <input type="search" name="SearchBar" class="input" autocomplete="on" placeholder="Recherche de destinations par Pays ou Ville">
+                            <!--  <label class="searchLabel">Rechercher une destination</label> -->
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="card-btn">Rechercher</button>
+                        </div>
+                        <button class="glassIcon">
+                            <span>
+                                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+                <div id="positionIntoSection">
+                    <div class="card-container">
+                        @foreach (var destination in Model.Destinations)
+                            {
+                            <div class="glassBorderCard">
+                                <div class="card">
+                                    @foreach (var image in destination.Images)
+                                        {
+                                        <img src="@image" alt="Image" class="card-img" />
+                                        }
+                                    <div class="card-body">
+                                        <h1 class="card-title">@destination.Country</h1>
+                                        <h3 class="card-sub-title">@destination.City</h3>
+                                        <p class="card-sub-title">@destination.Description</p>
+                                        <button class="card-btn">Réserver !</button>
+                                    </div>
+                                </div>
+                            </div>
+                         <!--   <a href="/Destination/ChangeDestination/@destination.Id" class="btn btn-secondary mr-2">Modifier</a>
+                            <a href="/Destination/DeleteDestinations/@destination.Id" class="btn btn-danger">Supprimer</a>
+                            <a href="/Travel/CreateTravel?destinationId=@destination.Id" class="btn btn-primary">Voyager</a> -->
+                            }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- <table class="table">
+             <thead>
+                 <tr>
+                     <th>Pays</th>
+                     <th>Ville</th>
+                     <th>Description</th>
+                     <th>Images</th>
+                     <th>Liens</th>
+                     <th>Actions</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 @foreach (var destination in Model.Destinations)
+                     {
+                     <tr>
+                         <td>@destination.Country</td>
+                         <td>@destination.City</td>
+                         <td>@destination.Description</td>
+                         <td>
+                             @foreach (var image in destination.Images)
+                                 {
+                                 <img src="@image" alt="Image" class="img-thumbnail" />
+                                 }
+                         </td>
+                         <td>@destination.ExternalLinks</td>
+                         <td>
+                             <a href="/Destination/ChangeDestination/@destination.Id" class="btn btn-secondary mr-2">Modifier</a>
+                             <a href="/Destination/DeleteDestinations/@destination.Id" class="btn btn-danger">Supprimer</a>
+                             <a href="/Travel/CreateTravel?destinationId=@destination.Id" class="btn btn-primary">Voyager</a>
+                         </td>
+                     </tr>
+                     }
+             </tbody>
+         </table> -->
+            }
+        }
 
 

@@ -22,15 +22,14 @@
                 <li><a href="@Url.Action("List", "Destination")">Nos destinations</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <a href="/User/Profile">Mon Profil</a>
-                    <a href="/User/LogOut">Déconnexion</a>
+                    <li><a href="/User/Profile">Mon Profil</a></li>
+                    <li><a href="/User/LogOut">Déconnexion</a></li>
                 }
                 else
                 {
-                    <li><a href="@Url.Action("SigninPage", "SigninSignup")">Connexion</a></li>
-                    <li><a href="@Url.Action("SignupPage", "SigninSignup")">Inscription</a></li>
+                    <li><a href="@Url.Action("LogIn", "User")">Connexion</a></li>
+                    <li><a href="@Url.Action("AddCustomer", "User")">Inscription</a></li>
                 }
-
             </ul>
         </nav>
     </header>

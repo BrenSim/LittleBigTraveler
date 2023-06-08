@@ -1,61 +1,46 @@
-﻿@model LittleBigTraveler.ViewModels.UserViewModel
-
-@{
-    ViewData["Title"] = "Ajouter un client";
-    Layout = "_Layout";
+﻿@{
+    ViewBag.Title = "Signup Page";
+    Layout = "_SigninSignupLayout";
 }
 
-<div class="container">
-    <h1 class="text-center">Ajouter un client</h1>
-
-    <form method="post" action="/User/AddCustomers">
-        <div class="form-group">
-            <label for="LastName">Nom :</label>
-            <input type="text" id="LastName" name="LastName" class="form-control" required />
+@section Log {
+    <div class="myCardUp">
+        <h1>Rejoignez-nous !</h1>
+        <div class="container" id="container">
+            <form method="post" action="/User/AddCustomers">
+                <div class="input-Name">
+                    <input required type="text" name="Name" autocomplete="on" class="input">
+                    <label class="user-Name">Nom</label>
+                </div>
+                <div class="input-Firstname">
+                    <input required type="text" name="Firstname" autocomplete="on" class="input">
+                    <label class="user-Firstname">Prénom</label>
+                </div>
+                <div class="input-Email">
+                    <input required type="email" name="email" autocomplete="on" class="input">
+                    <label class="user-Email">Mail</label>
+                </div>
+                <div class="input-Password">
+                    <input required type="password" name="password" autocomplete="off" class="input">
+                    <label class="user-Password">Mot de passe</label>
+                </div>
+                <button type="submit" class="btnRegistration">Inscription</button>
+            </form>
         </div>
-
-        <div class="form-group">
-            <label for="FirstName">Prénom :</label>
-            <input type="text" id="FirstName" name="FirstName" class="form-control" required />
+        <div>
+            
+            <p>Vous êtes déjà un Little Big Traveller ? <br> Connectez-vous !</p>
+            <button class="btnSignInUp">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <a href="@Url.Action("LogIn", "User")"><span class="button-text">Connexion !</span></a>
+            </button>
         </div>
-
-        <div class="form-group">
-            <label for="Email">Email :</label>
-            <input type="email" id="Email" name="Email" class="form-control" required />
+        <div class="littleHole"></div>
+        <div class="backHome">
+            <a href="@Url.Action("Index", "Home")">Accueil</a>
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="Password">Mot de passe :</label>
-            <input type="password" id="Password" name="Password" class="form-control" required />
-        </div>
-
-        <div class="form-group">
-            <label for="Address">Adresse :</label>
-            <input type="text" id="Address" name="Address" class="form-control" required />
-        </div>
-
-        <div class="form-group">
-            <label for="PhoneNumber">Numéro de téléphone :</label>
-            <input type="tel" id="PhoneNumber" name="PhoneNumber" class="form-control" required />
-        </div>
-
-        <div class="form-group">
-            <label for="BirthDate">Date de naissance :</label>
-            <input type="date" id="BirthDate" name="BirthDate" class="form-control" required />
-        </div>
-
-        <div class="form-group">
-            <label for="LoyaltyPoint">Points de fidélité :</label>
-            <input type="number" id="LoyaltyPoint" name="LoyaltyPoint" class="form-control" required />
-        </div>
-
-        <div class="form-group">
-            <label for="CommentPoint">Points de commentaire :</label>
-            <input type="number" id="CommentPoint" name="CommentPoint" class="form-control" required />
-        </div>
-
-        <button type="submit" class="btn btn-primary">Ajouter</button>
-    </form>
-</div>
-
-
+    }

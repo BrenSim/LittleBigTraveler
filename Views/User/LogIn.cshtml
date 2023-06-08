@@ -1,32 +1,45 @@
 ﻿@model LittleBigTraveler.ViewModels.UserViewModel
 
 @{
-    ViewData["Title"] = "Se connecter";
-    Layout = "_Layout";
+    ViewBag.Title = "Page de connexion";
+    Layout = "_SigninSignupLayout";
 }
 
-<div class="container">
-    <h1 class="text-center">Se connecter</h1>
-
-    @if (Model.LoggedIn)
-    {
-        <p>Bienvenue, @Model.FirstName</p>
-    }
-    else
-    {
-        <form method="post" action="/User/LogIn">
-            <div class="form-group">
-                <label for="Email">Email :</label>
-                <input type="email" id="Email" name="Email" class="form-control" required />
+@section Log {
+    <!-- Contenu spécifique à la page d'inscription -->
+    <div class="myCardIn">
+                
+            <h1>Bienvenue, Little Big Traveller !</h1>
+            <h3>Connectez-vous !</h3>
+            <div class="container" id="container">
+                <form method="post" action="/User/LogIn">
+                    <div class="input-Email">
+                        <input required type="email" name="email" autocomplete="on" class="input">
+                        <label class="user-Email">Email</label>
+                    </div>
+                    <div class="input-Password">
+                        <input required type="password" name="password" autocomplete="off" class="input">
+                        <label class="user-Password">Mot de passe</label>
+                    </div>
+                    <button type="submit" class="btnLogin">Connexion</button>
+                </form>
             </div>
+            <div>
+                
 
-            <div class="form-group">
-                <label for="Password">Mot de passe :</label>
-                <input type="password" id="Password" name="Password" class="form-control" required />
+                <p>Vous n'êtes pas encore inscrit ? <br> Rejoignez l'aventure !</p>
+                <button class="btnSignInUp">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <a href="@Url.Action("AddCustomer", "User")"><span class="button-text">Inscrivez-vous !</span></a>
+                </button>
             </div>
+            <div class="littleHole"></div>
+            <div class="backHome">
+                <a href="@Url.Action("Index", "Home")">Accueil</a>
+            </div>
+        </div>
 
-            <button type="submit" class="btn btn-primary">Se connecter</button>
-        </form>
-    }
-</div>
-
+    <!-- Les autres éléments spécifiques à la page d'inscription -->
+}
