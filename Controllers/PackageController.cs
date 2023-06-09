@@ -113,7 +113,7 @@ public class PackageController : Controller
                     }
                 }
 
-                return RedirectToAction("List"); // Redirection vers la page de la liste des PackageTravel
+                return RedirectToAction("Details", new { id = packageTravelId }); // Redirection vers la page de la liste des PackageTravel
             }
             catch (Exception ex)
             {
@@ -122,6 +122,21 @@ public class PackageController : Controller
 
             // Si une erreur se produit, revenir à la vue avec les données saisies
             return View(model);
+        }
+    }
+
+    public IActionResult Details(int id)
+    {
+        using (var packageDAL = new PackageDAL(HttpContextAccessor))
+        {
+            var package = packageDAL.GetPackageById(id);
+
+            if (package == null)
+            {
+                return View(null);
+            }
+
+            return View(package);
         }
     }
 

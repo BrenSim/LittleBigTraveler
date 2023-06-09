@@ -7,6 +7,7 @@ namespace LittleBigTraveler.Models.TravelClasses
     public class Booking
     {
         public int Id { get; set; }
+        public double Price { get; set; }
         public int UserId { get; set; }
         public virtual User User { get; set; }
         public int PackageId { get; set; }

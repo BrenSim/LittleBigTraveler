@@ -167,6 +167,7 @@ namespace LittleBigTraveler.Models.DataBase
         {
             return _bddContext.Packages
                 .Include(a => a.Travel)
+                    .ThenInclude(t => t.Destination) // Assurez-vous que Destination est chargé
                 .Include(a => a.ServiceForPackage)
                 .FirstOrDefault(a => a.Id == id);
         }

@@ -5,7 +5,7 @@
     Layout = "_DestinationLayout";
 }
 
-<!-- <div class="container">
+ @*<div class="container">
     <h1 class="text-center">Create Custom Made Travel</h1>
 
     <form method="post" action="/Package/CreatePackage">
@@ -67,7 +67,7 @@
             <button type="submit" class="btn btn-primary">Créer le voyage</button>
         </div>
     </form>
-</div> -->
+</div>*@ 
 
 @section content {
 
@@ -93,7 +93,7 @@
         <div class="sectionService">
             <h2 class="titreService">Services disponibles pour la destination</h2>
             @foreach (var service in Model.AvailableServices)
-                {
+            {
                 <div class="info-row">
                     <label class="container">
                         <input type="checkbox" id="service-@service.Id" name="SelectedServiceId" value="@service.Id" @(Model.SelectedServiceId.Contains(service.Id) ? "checked" : "")>
@@ -124,27 +124,36 @@
                         <p>@service.Style</p>
                     </div>
                     @foreach (var image in service.Images)
-                        {
+                    {
                         <div class="info-item">
                             <h3>Images :</h3>
                             <img src="@image" alt="Image" class="img-thumbnail" />
                         </div>
-                        }
-                        <div class="info-item">
-                            <h3>Liens :</h3>
-                            <p>@service.ExternalLinks</p>
-                        </div>
-                        <div class="info-item-admin">
-                            <a href="/Service/ChangeService/@service.Id" class="modif">Modifier</a>
-                            <a href="/Service/DeleteServices/@service.Id" class="delete">Supprimer</a>
-                        </div>
-
+                    }
+                    <div class="info-item">
+                        <h3>Liens :</h3>
+                        <a href="@service.ExternalLinks"><p>@service.ExternalLinks</p></a>
                     </div>
-                }
-            </div>
+                    @*<div class="info-item-admin">
+                        <a href="/Service/ChangeService/@service.Id" class="modif">Modifier</a>
+                        <a href="/Service/DeleteServices/@service.Id" class="delete">Supprimer</a>
+                    </div>*@
+
+                </div>
+            }
+        </div>
         <div>
-            <button type="submit" class="submitBtn">Créer le voyage</button>
+            <button type="submit" class="submitBtn">Confirmer</button>
         </div>
     </form>
 </section>
+
+<script>
+    const confirmBtn = document.querySelector('.submitBtnConfirm');
+    const createBtn = document.querySelector('.submitBtn');
+
+    confirmBtn.addEventListener('click', () => {
+        createBtn.removeAttribute('disabled');
+    });
+ </script>
 }

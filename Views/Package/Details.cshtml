@@ -1,0 +1,74 @@
+﻿@model LittleBigTraveler.Models.TravelClasses.Package
+
+
+@{
+    ViewData["Title"] = "Détail du voyage";
+    Layout = "_DestinationLayout";
+}
+
+@section content {
+    <section id="sectionDetails">
+        <h1 class="titrePackageDetails">Détails du voyage @Model.Name</h1>
+
+        @if (Model == null)
+            {
+            <p>Aucun voyage trouvé.</p>
+            }
+            else
+            {
+            <div class="glassBorderBackground">
+
+                <div class="flex">
+                    <div class="textDetails">
+                        <h3>Nom : </h3>
+                        <h4>@Model.Name</h4>
+                    </div>
+                    <div class="textDetails">
+                        <h3>Destination : </h3>
+                        <h4>@Model.Travel.Destination.City, @Model.Travel.Destination.Country</h4>
+                    </div>
+                    <div class="textDetails">
+                        <h3>Description : </h3>
+                        <h4>@Model.Description</h4>
+                    </div>
+                    <div class="textDetails">
+                        <h3>Lieu de départ : </h3>
+                        <h4>@Model.Travel.DepartureLocation</h4>
+                    </div>
+                    <div class="textDetails">
+                        <h3>Date de retour : </h3>
+                        <h4>@Model.Travel.ReturnDate</h4>
+                    </div>
+                    <div class="textDetails">
+                        <h3>Prix : </h3>
+                        <h4>@Model.Price</h4>
+                    </div>
+                </div>
+                <div class="flex1">
+                    <div class="card-container">
+                        <div class="glassBorderCardDetails">
+
+                            <div class="cardDetails">
+                                <img src="@Model.Travel.Destination.Images[0]" alt="Image" class="cardDetails-img" />
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="btnZone1">
+                <a href="/Package/EditPackage/@Model.Id" class="modifPackageBtn">Modifier Package</a>
+                <a href="/Travel/ModifyTravel/@Model.Id" class="ModifTravelBtn">Modifier Voyage</a>
+                <a href="/Package/DeletePackage/@Model.Id" class="deleteBtn">Supprimer</a>
+                <a href="/Booking/Create?packageId=@Model.Id" class="resaBtn">Réserver</a>
+            </div>
+
+            <div class="returnHome">
+                <a href="/Home/Index" class="returnBtn">Retour à l'accueil</a>
+            </div>
+            }
+        </section>
+                
+            }
