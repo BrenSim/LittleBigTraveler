@@ -129,7 +129,8 @@ public class PackageController : Controller
                 //Package package;
                 //package = packageDAL.GetPackageById(packageTravelId);
                 return RedirectToAction("Details", new { id = packageTravelId }); // Redirection vers la page de détails du package créé
-                 // Redirection vers la page de la liste des PackageTravel
+                //Redirection vers la page de la liste des PackageTravel
+                //TempData["SuccessMessage"] = "Voyage créé";
             }
             catch (Exception ex)
             {

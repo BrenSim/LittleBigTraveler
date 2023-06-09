@@ -23,7 +23,7 @@ public class PaymentDAL : IPaymentDAL
     }
 
     // Création d'un paiement
-    public int CreatePayment(int userId, int bookingId, double totalAmount, int numCB)
+    public int CreatePayment(int userId, int bookingId, int numCB)
     {
         var user = _bddContext.Users.FirstOrDefault(u => u.Id == userId);
         var booking = _bddContext.Bookings.FirstOrDefault(b => b.Id == bookingId);
@@ -32,7 +32,7 @@ public class PaymentDAL : IPaymentDAL
         {
             Payment payment = new Payment()
             {
-                TotalAmount = totalAmount,
+                TotalAmount = booking.Price,
                 PaymentDate = DateTime.Now,
                 NumCB = numCB, // Numéro de carte bancaire
                 UserId = userId,

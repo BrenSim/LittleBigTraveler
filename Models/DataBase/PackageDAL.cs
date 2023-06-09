@@ -6,6 +6,7 @@ using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
 
 namespace LittleBigTraveler.Models.DataBase
 {
@@ -214,8 +215,6 @@ namespace LittleBigTraveler.Models.DataBase
             return createdPackage;
         }
 
-
-
         // Récupération de toutes les données "PackageTravel"
         public List<Package> GetAllPackage()
         {
@@ -227,7 +226,7 @@ namespace LittleBigTraveler.Models.DataBase
         {
             return _bddContext.Packages
                 .Include(a => a.Travel)
-                    .ThenInclude(t => t.Destination) // Assurez-vous que Destination est chargé
+                    .ThenInclude(t => t.Destination)
                 .Include(a => a.ServiceForPackage)
                 .FirstOrDefault(a => a.Id == id);
         }
@@ -262,6 +261,8 @@ namespace LittleBigTraveler.Models.DataBase
 
             return recherche.ToList();
         }
+
+
 
     }
 }

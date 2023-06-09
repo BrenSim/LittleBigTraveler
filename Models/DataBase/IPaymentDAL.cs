@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public interface IPaymentDAL : IDisposable
 {
-    int CreatePayment(int userId, int bookingId, double totalAmount, int numCB);
+    int CreatePayment(int userId, int bookingId, int numCB);
     void DeletePayment(int paymentId);
     Payment GetPaymentById(int paymentId);
     List<Payment> GetUserPayments(int userId);
