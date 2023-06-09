@@ -18,7 +18,11 @@ public class BookingController : Controller
         _httpContextAccessor = httpContextAccessor;
     }
 
-    // Action pour afficher la liste des réservations de l'utilisateur
+    /// <summary>
+    /// Action pour afficher la liste des réservations de l'utilisateur.
+    /// </summary>
+    /// <returns>Vue contenant la liste des réservations de l'utilisateur.</returns>
+    [Authorize]
     public IActionResult List()
     {
         try
@@ -41,7 +45,12 @@ public class BookingController : Controller
         }
     }
 
-    // Action pour créer une nouvelle réservation
+    /// <summary>
+    /// Action pour créer une nouvelle réservation.
+    /// </summary>
+    /// <param name="packageId">ID du package à réserver.</param>
+    /// <returns>Redirige vers la page de confirmation de réservation en cas de succès, sinon retourne un code d'erreur.</returns>
+    [Authorize]
     public IActionResult Create(int packageId)
     {
         try
@@ -68,8 +77,7 @@ public class BookingController : Controller
                 bookingId = bookingDAL.CreateBooking(userId, packageId);
             }
 
-            // Rediriger vers la page de confirmation de réservation avec l'ID de la réservation
-            return RedirectToAction("Confirmation", new { bookingId });
+            return RedirectToAction("Create", "Payment", new { bookingId,  });
         }
         catch (Exception ex)
         {
@@ -77,7 +85,12 @@ public class BookingController : Controller
         }
     }
 
-    // Action pour afficher la page de confirmation d'une réservation
+    /// <summary>
+    /// Action pour afficher la page de confirmation d'une réservation.
+    /// </summary>
+    /// <param name="bookingId">ID de la réservation.</param>
+    /// <returns>Vue contenant la réservation confirmée.</returns>
+    [Authorize]
     public IActionResult Confirmation(int bookingId)
     {
         try
@@ -109,7 +122,12 @@ public class BookingController : Controller
         }
     }
 
-    // Action pour supprimer une réservation
+    /// <summary>
+    /// Action pour supprimer une réservation.
+    /// </summary>
+    /// <param name="bookingId">ID de la réservation à supprimer.</param>
+    /// <returns>Redirige vers l'action "List" pour afficher la liste mise à jour des réservations.</returns>
+    [Authorize]
     public IActionResult Delete(int bookingId)
     {
         try
@@ -120,16 +138,13 @@ public class BookingController : Controller
 
             using (var bookingDAL = new BookingDAL(_httpContextAccessor))
             {
-                // Récupérer la réservation en utilisant l'ID de réservation
                 booking = bookingDAL.GetBookingById(bookingId);
 
-                // Vérifier si la réservation existe et appartient à l'utilisateur
                 if (booking == null || booking.UserId != userId)
                 {
                     return NotFound("Booking not found");
                 }
-
-                // Supprimer la réservation
+  
                 bookingDAL.DeleteBooking(bookingId);
             }
 
@@ -141,6 +156,3 @@ public class BookingController : Controller
         }
     }
 }
-
-
-

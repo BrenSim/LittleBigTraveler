@@ -1,0 +1,76 @@
+﻿@model LittleBigTraveler.Models.TravelClasses.Package
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Détails du voyage";
+}
+
+<h1 class="text-center">Détails du voyage @Model.Name</h1>
+
+@if (Model == null)
+{
+    <p>Aucun voyage trouvé.</p>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>Nom</th>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <th>Destination</th>
+                <td>@Model.Travel.Destination.City, @Model.Travel.Destination.Country</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>@Model.Description</td>
+            </tr>
+            <tr>
+                <th>Lieu de départ</th>
+                <td>@Model.Travel.DepartureLocation</td>
+            </tr>
+            <tr>
+                <th>Date de départ</th>
+                <td>@Model.Travel.DepartureDate</td>
+            </tr>
+            <tr>
+                <th>Date de retour</th>
+                <td>@Model.Travel.ReturnDate</td>
+            </tr>
+            <tr>
+                <th>Nombre de participant</th>
+                <td>@Model.Travel.NumParticipants</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>@Model.Price</td>
+            </tr>
+            <tr>
+                <th>Nombre de places disponibles</th>
+                <td>@Model.QuantityAvailable</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>
+                    @foreach (var image in Model.Travel.Destination.Images)
+                    {
+                        <img src="@image" alt="Image" class="img-thumbnail" />
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="my-3">
+        <a href="/Package/EditPackage/@Model.Id" class="btn btn-primary">Modifier Package</a>
+        <a href="/Travel/ModifyTravel/@Model.Id" class="btn btn-secondary">Modifier Voyage</a>
+        <a href="/Package/DeletePackage/@Model.Id" class="btn btn-danger">Supprimer</a>
+        <a href="/Booking/Create?packageId=@Model.Id" class="btn btn-success">Select</a>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/Home/IndexTEST" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+}

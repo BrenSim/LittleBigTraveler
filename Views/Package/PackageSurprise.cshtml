@@ -1,0 +1,66 @@
+﻿@model LittleBigTraveler.Models.TravelClasses.Package
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Voyage Surprise";
+}
+
+@section content {
+    <h1 class="text-center">Voyage Surprise</h1>
+
+    @if (Model == null)
+    {
+        <p>Aucun voyage surprise trouvé.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Destination</th>
+                    <th>Description</th>
+                    <th>Lieu de départ</th>
+                    <th>Date de départ</th>
+                    <th>Date de retour</th>
+                    <th>Nombre de participant</th>
+                    <th>Prix</th>
+                    <th>Nombre de places disponibles</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Name</td>
+                    <td>@Model.Travel.Destination.City, @Model.Travel.Destination.Country</td>
+                    <td>@Model.Description</td>
+                    <td>@Model.Travel.DepartureLocation</td>
+                    <td>@Model.Travel.DepartureDate</td>
+                    <td>@Model.Travel.ReturnDate</td>
+                    <td>@Model.Travel.NumParticipants</td>
+                    <td>@Model.Price</td>
+                    <td>@Model.QuantityAvailable</td>
+                    <td>
+                        @foreach (var image in @Model.Travel.Destination.Images)
+                        {
+                            <img src="@image" alt="Image" class="img-thumbnail" />
+                        }
+                    </td>
+
+                    <td>
+                        <a href="/Package/EditPackage/@Model.Id" class="btn btn-primary">Modifier Package</a>
+                        <a href="/Travel/ModifyTravel/@Model.Id" class="btn btn-secondary">Modifier Voyage</a>
+                        <a href="/Package/DeletePackage/@Model.Id" class="btn btn-danger">Supprimer</a>
+                        <a href="/Booking/Create?packageId=@Model.Id" class="btn btn-success">Select</a>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    }
+
+    <div class="text-center mt-4">
+        <a href="/Home/IndexTEST" class="btn btn-primary">Accueil</a>
+    </div>
+}

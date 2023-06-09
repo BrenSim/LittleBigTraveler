@@ -17,17 +17,22 @@ public class PackageController : Controller
     private readonly IHttpContextAccessor HttpContextAccessor;
     private readonly TravelDAL travelDAL;
     private readonly DestinationDAL destinationDAL;
+
     public PackageController(
-    IHttpContextAccessor httpContextAccessor,
-    TravelDAL travelDAL,
-    DestinationDAL destinationDAL)
+        IHttpContextAccessor httpContextAccessor,
+        TravelDAL travelDAL,
+        DestinationDAL destinationDAL)
     {
         HttpContextAccessor = httpContextAccessor;
         this.travelDAL = travelDAL;
         this.destinationDAL = destinationDAL;
     }
 
-    // Action pour afficher la liste de tous les PackageTravel
+    /// <summary>
+    /// Action pour afficher la liste de tous les PackageTravel.
+    /// </summary>
+    /// <returns>Vue contenant la liste des PackageTravel.</returns>
+    [AllowAnonymous]
     public IActionResult List()
     {
         using (var packageDAL = new PackageDAL(HttpContextAccessor))
@@ -45,8 +50,12 @@ public class PackageController : Controller
         }
     }
 
-    // Action pour créer un PackageTravel
-    //[Authorize(Roles = "Administrator, Customer")]
+    /// <summary>
+    /// Action pour créer un PackageTravel.
+    /// </summary>
+    /// <param name="travelId">ID du voyage associé au PackageTravel.</param>
+    /// <returns>Vue contenant le formulaire de création d'un PackageTravel.</returns>
+    [Authorize]
     public IActionResult CreatePackage(int travelId)
     {
         using (var travelDAL = new TravelDAL(HttpContextAccessor))
@@ -89,8 +98,13 @@ public class PackageController : Controller
         }
     }
 
-    // Action pour le traitement du formulaire de création d'un PackageTravel
-    //[Authorize(Roles = "Administrator, Customer")]
+    /// <summary>
+    /// Action pour le traitement du formulaire de création d'un PackageTravel.
+    /// </summary>
+    /// <param name="model">Modèle contenant les informations du PackageTravel.</param>
+    /// <param name="SelectedServiceId">Liste des ID des services sélectionnés.</param>
+    /// <returns>Redirige vers la page de la liste des PackageTravel en cas de succès, sinon réaffiche le formulaire avec les erreurs.</returns>
+    [Authorize]
     [HttpPost]
     public IActionResult CreatePackage(PackageViewModel model, List<int> SelectedServiceId)
     {
@@ -112,8 +126,8 @@ public class PackageController : Controller
                         }
                     }
                 }
+                return RedirectToAction("Details", new { id = packageTravelId }); // Redirection vers la page de détails du package créé
 
-                return RedirectToAction("List"); // Redirection vers la page de la liste des PackageTravel
             }
             catch (Exception ex)
             {
@@ -125,7 +139,26 @@ public class PackageController : Controller
         }
     }
 
-    // Action pour supprimer le Travel associé au PackageTravel
+    public IActionResult Details(int id)
+    {
+        using (var packageDAL = new PackageDAL(HttpContextAccessor))
+        {
+            var package = packageDAL.GetPackageById(id);
+
+            if (package == null)
+            {
+                return View(null);
+            }
+
+            return View(package);
+        }
+    }
+
+
+    /// <summary>
+    /// Méthode privée pour supprimer le Travel associé au PackageTravel.
+    /// </summary>
+    /// <param name="package">PackageTravel à supprimer.</param>
     private void DeleteAssociatedTravel(Package package)
     {
         if (package != null && package.Travel != null)
@@ -137,8 +170,12 @@ public class PackageController : Controller
         }
     }
 
-    // Action pour supprimer un PackageTravel
-    //[Authorize(Roles = "Administrator, Customer")]
+    /// <summary>
+    /// Action pour supprimer un Package.
+    /// </summary>
+    /// <param name="id">ID du Package à supprimer.</param>
+    /// <returns>Redirige vers la page de la liste des PackageTravel en cas de succès, sinon renvoie un code d'erreur.</returns>
+    [Authorize]
     public IActionResult DeletePackage(int id)
     {
         using (var packageDAL = new PackageDAL(HttpContextAccessor))
@@ -146,7 +183,7 @@ public class PackageController : Controller
             try
             {
                 packageDAL.DeletePackage(id);
-                return RedirectToAction("List"); // Rediriger vers la page de la liste des PackageTravel
+                return RedirectToAction("List"); // Rediriger vers la page de la liste des Package
             }
             catch (Exception ex)
             {
@@ -155,19 +192,23 @@ public class PackageController : Controller
         }
     }
 
-    // Action pour afficher le formulaire d'édition d'un PackageTravel
-    //[Authorize(Roles = "Administrator, Customer")]
+    /// <summary>
+    /// Action pour afficher le formulaire d'édition d'un Package.
+    /// </summary>
+    /// <param name="id">ID du Package à éditer.</param>
+    /// <returns>Vue contenant le formulaire d'édition d'un Package.</returns>
+    [Authorize]
     public IActionResult EditPackage(int id)
     {
         using (var packageDAL = new PackageDAL(HttpContextAccessor))
         {
-            var packageTravel = packageDAL.GetPackageById(id);
-            if (packageTravel == null)
+            var package = packageDAL.GetPackageById(id);
+            if (package == null)
             {
-                return NotFound("PackageTravel non trouvé");
+                return NotFound("Package non trouvé");
             }
 
-            var travelId = packageTravel.TravelId;
+            var travelId = package.TravelId;
 
             using (var travelDAL = new TravelDAL(HttpContextAccessor))
             {
@@ -181,15 +222,15 @@ public class PackageController : Controller
 
                     var model = new PackageViewModel(HttpContextAccessor)
                     {
-                        Id = packageTravel.Id,
+                        Id = package.Id,
                         TravelId = travelId,
                         Travel = travel,
-                        Name = packageTravel.Name,
-                        Description = packageTravel.Description,
-                        Price = packageTravel.Price,
-                        QuantityAvailable = packageTravel.QuantityAvailable,
+                        Name = package.Name,
+                        Description = package.Description,
+                        Price = package.Price,
+                        QuantityAvailable = package.QuantityAvailable,
                         Services = services,
-                        SelectedServiceId = packageTravel.ServiceForPackage.Select(s => s.Id).ToList(),
+                        SelectedServiceId = package.ServiceForPackage.Select(s => s.Id).ToList(),
                     };
 
                     model.AvailableServices = services;
@@ -200,8 +241,14 @@ public class PackageController : Controller
         }
     }
 
-    // Action pour le traitement du formulaire d'édition d'un PackageTravel
-    //[Authorize(Roles = "Administrator, Customer")]
+    /// <summary>
+    /// Action pour le traitement du formulaire d'édition d'un PackageTravel.
+    /// </summary>
+    /// <param name="id">ID du PackageTravel à éditer.</param>
+    /// <param name="model">Modèle contenant les informations du PackageTravel.</param>
+    /// <param name="SelectedServiceId">Liste des ID des services sélectionnés.</param>
+    /// <returns>Redirige vers la page de la liste des PackageTravel en cas de succès, sinon réaffiche le formulaire avec les erreurs.</returns>
+    [Authorize]
     [HttpPost]
     public IActionResult EditPackage(int id, PackageViewModel model, List<int> SelectedServiceId)
     {
@@ -236,81 +283,54 @@ public class PackageController : Controller
             return View(model);
         }
     }
+
+    /// <summary>
+    /// Action pour créer un PackageSurprise.
+    /// </summary>
+    /// <returns>Vue contenant le PackageSurprise créé.</returns>
+    [Authorize]
+    public IActionResult CreateSurprisePackage()
+    {
+        var packageDAL = new PackageDAL(HttpContextAccessor);
+
+        var package = packageDAL.CreateSurprisePackage();
+
+        if (package == null)
+        {
+            return View("Erreur");
+        }
+
+        // Renvoyer la vue "PackageSurprise" avec le package créé
+        return View("PackageSurprise", package);
+    }
+
+    /// <summary>
+    /// Recherche des packages de voyage en fonction des critères fournis.
+    /// </summary>
+    /// <param name="destination">Le nom de la destination recherchée. Peut être null.</param>
+    /// <param name="departureMonth">Le mois de départ recherché. Peut être null.</param>
+    /// <param name="minPrice">Le prix minimum recherché. Peut être null.</param>
+    /// <param name="maxPrice">Le prix maximum recherché. Peut être null.</param>
+    /// <returns>Une vue 'List' contenant la liste des packages de voyage qui correspondent aux critères de recherche.</returns>
+    [AllowAnonymous]
+    public IActionResult SearchPackages(string destination, int? departureMonth, double? minPrice, double? maxPrice)
+    {
+        using (var packageDAL = new PackageDAL(HttpContextAccessor))
+        {
+            // Utiliser la méthode SearchPackages pour récupérer les packages correspondants
+            var packages = packageDAL.SearchPackages(destination, departureMonth, minPrice, maxPrice);
+
+            // Récupérer les détails des voyages associés et des destinations
+            foreach (var package in packages)
+            {
+                package.Travel = travelDAL.GetTravelById(package.TravelId);
+                package.Travel.Destination = destinationDAL.GetDestinationWithId(package.Travel.DestinationId);
+            }
+
+            return View("List", packages); // Retourner la vue "List" avec les packages recherchés
+        }
+    }
+
 }
-    //// Action pour le traitement du formulaire d'édition d'un PackageTravel
-    //[Authorize(Roles = "Administrator, Customer")]
-    //[HttpPost]
-    //public IActionResult EditPackage(int id, PackageViewModel model, List<int> SelectedServiceId)
-    //{
-
-    //    using (var packageDAL = new PackageDAL(HttpContextAccessor))
-    //    {
-    //        try
-    //        {
-    //            var services = new List<Service>();
-
-    //            if (model.SelectedServiceId != null)
-    //            {
-    //                using (var serviceDAL = new ServiceDAL())
-    //                {
-    //                    foreach (var serviceId in model.SelectedServiceId)
-    //                    {
-    //                        var service = serviceDAL.GetServiceWithId(serviceId);
-    //                        services.Add(service);
-    //                    }
-    //                }
-    //            }
-
-    //            packageDAL.UpdatePackage(id, model.TravelId, model.Name, model.Description, services);
-
-    //            return RedirectToAction("List"); // Redirection vers la page de la liste des PackageTravel
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            ModelState.AddModelError("ERREUR", ex.Message);
-    //        }
-
-    //        // Si une erreur se produit, revenir à la vue avec les données saisies
-    //        return View(model);
-    //    }
-    //}
-    //// Action pour afficher la liste des PackageTravel d'un client
-    //public IActionResult ListCustomer()
-    //{
-    //    // Récupérer l'ID du client connecté depuis le contexte HTTP
-    //    int customerId = int.Parse(HttpContext.User.Identity.Name);
-
-    //    using (var packageDAL = new PackageDAL(HttpContextAccessor))
-    //    {
-    //        var packageTravels = packageDAL.GetCustomerPackageTravels(customerId);
-
-    //        if (packageTravels == null || packageTravels.Count == 0)
-    //        {
-    //            return View("ListCustomer"); // Appelle la vue "ListCustomer.cshtml" lorsque la liste des voyages est vide
-    //        }
-
-    //        return View(packageTravels);
-    //    }
-    //}
 
 
-
-    //// Action pour supprimer un PackageTravel
-    //[Authorize(Roles = "Administrator, Customer")]
-    //public IActionResult DeletePackage(int id)
-    //{
-    //    using (var packageDAL = new PackageDAL(HttpContextAccessor))
-    //    {
-    //        try
-    //        {
-    //            var packageTravel = packageDAL.GetPackageById(id);
-    //            DeleteAssociatedTravel(packageTravel);
-    //            packageDAL.DeletePackage(id);
-    //            return RedirectToAction("List"); // Rediriger vers la page de la liste des PackageTravel
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            return NotFound(ex.Message);
-    //        }
-    //    }
-    //}

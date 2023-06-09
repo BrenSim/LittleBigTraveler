@@ -18,6 +18,8 @@ namespace LittleBigTraveler.ViewModels
         public List<int> SelectedServiceId { get; set; }
         public List<Service> AvailableServices { get; set; }
         public List<Package> Packages { get; set; }
+        public Package Package { get; set; }
+
 
         public PackageViewModel()
         {

@@ -48,7 +48,11 @@ namespace LittleBigTraveler.Models.DataBase
         // Connexion avec la database MySql
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+<<<<<<< HEAD
             optionsBuilder.UseMySql("server=localhost;user id=root;password=Loveandroses123;database=LittleBigTravelDB");
+=======
+            optionsBuilder.UseMySql("server=localhost;user id=root;password=Zachary3529<;database=LittleBigTravelDB");
+>>>>>>> BS_UserPref
         }
 
         
@@ -6347,6 +6351,7 @@ namespace LittleBigTraveler.Models.DataBase
                 ExternalLinks = "https://www.allier-auvergne-tourisme.com/equipement/vichy/bateau-promenade-vichy/5261458",
                 DestinationId = 22
             }
+
             );
 
             //Création Travel

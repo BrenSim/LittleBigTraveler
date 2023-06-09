@@ -14,13 +14,12 @@
 
         <div class="form-group">
             <label for="Name">Name:</label>
-            <input for="Name" name="Name" class="form-control" />
-
+            <input for="Name" name="Name" class="form-control" value="@Model.Name" />
         </div>
 
         <div class="form-group">
             <label for="Description">Description:</label>
-            <textarea for="Description" name="Description" class="form-control"></textarea>
+            <textarea for="Description" name="Description" class="form-control">@Model.Description</textarea>
         </div>
 
         <h2 class="text-center">Services disponibles pour la destination</h2>
@@ -67,5 +66,12 @@
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Créer le voyage</button>
         </div>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
     </form>
 </div>

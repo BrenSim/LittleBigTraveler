@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using LittleBigTraveler.ViewModels;
 using System;
 using Microsoft.AspNetCore.Authorization;
+using LittleBigTraveler.Models.TravelClasses;
 
 public class TravelController : Controller
 {
@@ -14,9 +15,11 @@ public class TravelController : Controller
         _httpContextAccessor = httpContextAccessor;
     }
 
-    // Action pour afficher la liste des voyages
-    //[Authorize(Roles = "Administrator")]
-    //[Authorize(Roles = "Customer")]
+    /// <summary>
+    /// Action pour afficher la liste des voyages.
+    /// </summary>
+    /// <returns>Vue contenant la liste des voyages.</returns>
+    [Authorize]
     public IActionResult List()
     {
         using (var travelDAL = new TravelDAL(_httpContextAccessor))
@@ -25,24 +28,33 @@ public class TravelController : Controller
 
             if (travels == null || travels.Count == 0)
             {
-                return View("List"); // Appelle la vue "List.cshtml" lorsque la liste des voyages est vide
+                return View("List");
             }
 
             return View(travels);
         }
     }
 
-    // Action pour créer un voyage
-    //[Authorize(Roles = "Administrator")]
-    //[Authorize(Roles = "Customer")]
+    /// <summary>
+    /// Action pour créer un voyage.
+    /// </summary>
+    /// <param name="destinationId">ID de la destination du voyage.</param>
+    /// <returns>Vue contenant le formulaire de création d'un voyage.</returns>
+    [Authorize]
     public IActionResult CreateTravel(int destinationId)
     {
+        int minimumPrice = 500; // prix minimum
+        int maximumPrice = 900; // prix maximum
+        Random random = new Random();
+        int randomPrice = random.Next(minimumPrice, maximumPrice + 1);
+
+
         using (var destinationDAL = new DestinationDAL())
         {
             var destination = destinationDAL.GetDestinationWithId(destinationId);
             if (destination == null)
             {
-                return NotFound("problème destination");
+                return NotFound("Problème avec la destination");
             }
 
             var model = new TravelViewModel(_httpContextAccessor)
@@ -52,7 +64,7 @@ public class TravelController : Controller
                 DepartureLocation = "",
                 DepartureDate = DateTime.Now,
                 ReturnDate = DateTime.Now.AddDays(7),
-                Price = 0,
+                Price = randomPrice,
                 NumParticipants = 1
             };
 
@@ -60,9 +72,12 @@ public class TravelController : Controller
         }
     }
 
-    // Action pour le traitement du formulaire de création d'un voyage
-    //[Authorize(Roles = "Administrator")]
-    //[Authorize(Roles = "Customer")]
+    /// <summary>
+    /// Méthode pour traiter le formulaire de création d'un voyage.
+    /// </summary>
+    /// <param name="model">Modèle contenant les informations du voyage.</param>
+    /// <returns>Redirige vers la page d'accueil ou une autre page en cas de succès, sinon réaffiche le formulaire avec les erreurs.</returns>
+    [Authorize]
     [HttpPost]
     public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,Price,NumParticipants")] TravelViewModel model)
     {
@@ -73,22 +88,24 @@ public class TravelController : Controller
         {
             try
             {
-                travelDAL.CreateTravel( model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
-                return RedirectToAction("List"); // Rediriger vers la page d'accueil ou une autre page
+                var newTravelId = travelDAL.CreateTravel(model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
+                return RedirectToAction("CreatePackage", "Package", new { travelId = newTravelId });
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
-
-            // Si erreur , revenir à la vue avec les données saisies
             return View(model);
         }
     }
 
-    // Action pour afficher le formulaire de modification d'un voyage
-    //[Authorize(Roles = "Administrator")]
-    //[Authorize(Roles = "Customer")]
+
+    /// <summary>
+    /// Action pour afficher le formulaire de modification d'un voyage.
+    /// </summary>
+    /// <param name="id">ID du voyage à modifier.</param>
+    /// <returns>Vue contenant le formulaire de modification du voyage.</returns>
+    [Authorize]
     public IActionResult ModifyTravel(int id)
     {
         using (var travelDAL = new TravelDAL(_httpContextAccessor))
@@ -116,9 +133,12 @@ public class TravelController : Controller
         }
     }
 
-    // Action pour modifier un voyage
-    //[Authorize(Roles = "Administrator")]
-    //[Authorize(Roles = "Customer")]
+    /// <summary>
+    /// Action pour modifier un voyage.
+    /// </summary>
+    /// <param name="model">Modèle contenant les nouvelles informations du voyage.</param>
+    /// <returns>Redirige vers la page de la liste des voyages en cas de succès, sinon réaffiche le formulaire avec les erreurs.</returns>
+    [Authorize]
     [HttpPost]
     public IActionResult ModifyTravel(TravelViewModel model)
     {
@@ -130,21 +150,22 @@ public class TravelController : Controller
             try
             {
                 travelDAL.ModifyTravel(model.Id, model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
-                return RedirectToAction("List"); 
+                return RedirectToAction("List");
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
-
-            
             return View(model);
         }
     }
 
-    // Action pour supprimer un voyage
-    //[Authorize(Roles = "Administrator")]
-    //[Authorize(Roles = "Customer")]
+    /// <summary>
+    /// Action pour supprimer un voyage.
+    /// </summary>
+    /// <param name="id">ID du voyage à supprimer.</param>
+    /// <returns>Redirige vers la page de la liste des voyages en cas de succès, sinon renvoie une réponse NotFound.</returns>
+    [Authorize]
     public IActionResult DeleteTravel(int id)
     {
         using (var travelDAL = new TravelDAL(_httpContextAccessor))

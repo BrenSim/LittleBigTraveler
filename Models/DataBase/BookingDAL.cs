@@ -22,7 +22,12 @@ public class BookingDAL : IBookingDAL
         _bddContext.Dispose();
     }
 
-    // Création d'une réservation (Booking)
+    /// <summary>
+    /// Crée une réservation (Booking).
+    /// </summary>
+    /// <param name="userId">L'ID de l'utilisateur associé à la réservation</param>
+    /// <param name="packageId">L'ID du package associé à la réservation</param>
+    /// <returns>Renvoie l'ID de la réservation créée</returns>
     public int CreateBooking(int userId, int packageId)
     {
         var user = _bddContext.Users.FirstOrDefault(u => u.Id == userId);
@@ -35,6 +40,7 @@ public class BookingDAL : IBookingDAL
             {
                 UserId = userId,
                 PackageId = packageId,
+                Price = package.Price,
                 Payments = new List<Payment>(),
                 Evaluations = new List<Evaluation>()
             };
@@ -50,7 +56,10 @@ public class BookingDAL : IBookingDAL
         }
     }
 
-    // Suppression d'une réservation (Booking)
+    /// <summary>
+    /// Supprime une réservation (Booking).
+    /// </summary>
+    /// <param name="bookingId">L'ID de la réservation à supprimer</param>
     public void DeleteBooking(int bookingId)
     {
         var booking = _bddContext.Bookings.FirstOrDefault(b => b.Id == bookingId);
@@ -66,7 +75,11 @@ public class BookingDAL : IBookingDAL
         }
     }
 
-    // Récupération d'une réservation (Booking) par ID
+    /// <summary>
+    /// Récupère une réservation (Booking) par ID.
+    /// </summary>
+    /// <param name="bookingId">L'ID de la réservation à récupérer</param>
+    /// <returns>Renvoie l'objet Booking correspondant à l'ID spécifié</returns>
     public Booking GetBookingById(int bookingId)
     {
         var booking = _bddContext.Bookings
@@ -79,11 +92,13 @@ public class BookingDAL : IBookingDAL
         return booking;
     }
 
-
-    // Récupération de toutes les réservations (Booking) d'un utilisateur
+    /// <summary>
+    /// Récupère toutes les réservations (Booking) d'un utilisateur.
+    /// </summary>
+    /// <param name="userId">L'ID de l'utilisateur</param>
+    /// <returns>Renvoie une liste de réservations (Booking) de l'utilisateur spécifié</returns>
     public List<Booking> GetUserBookings(int userId)
     {
-        //Console.WriteLine("UserId: " + userId);  // Log user id
         return _bddContext.Bookings
             .Include(b => b.User)
             .Include(b => b.Package)
@@ -94,7 +109,11 @@ public class BookingDAL : IBookingDAL
             .ToList();
     }
 
-    // Récupération d'un PackageTravel par ID
+    /// <summary>
+    /// Récupère un PackageTravel par ID.
+    /// </summary>
+    /// <param name="id">L'ID du PackageTravel</param>
+    /// <returns>Renvoie l'objet Package correspondant à l'ID spécifié</returns>
     public Package GetPackageById(int id)
     {
         return _bddContext.Packages
