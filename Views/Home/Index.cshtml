@@ -170,8 +170,18 @@
                                 Envie de voyager mais vous n'avez pas d'idée de destination?
                                 Remplissez vos préférences et tenter les expériences de nos voyages surprises.
                             </p>
-                            <button class="card-btn">Réserver !</button>
+                            <form method="post" action="/Package/CreateSurprisePackage">
+                                <button type="submit" class="card-btn">Réserver !</button>
+                            </form>
                         </div>
+
+                        @*<div class="container">
+                            <h2 class="text-center">Créer un voyage surprise</h2>
+                            <form method="post" action="/Package/CreateSurprisePackage">
+                                <button type="submit" class="btn btn-primary btn-lg">Créer un voyage surprise</button>
+                            </form>
+                        </div>*@
+
                     </div>
                 </div>
             </div>

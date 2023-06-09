@@ -92,8 +92,12 @@ public class PaymentController : Controller
             PaymentViewModel model = new PaymentViewModel
             {
                 BookingId = bookingId,
-                TotalAmount = booking.Price
-                // Initialisez d'autres champs si nécessaire
+                TotalAmount = booking.Price,
+                FirstName = booking.User.FirstName,
+                LastName = booking.User.LastName,
+                Email = booking.User.Email,
+                PackageName = booking.Package.Name,
+                Description = booking.Package.Description
             };
 
             return View(model);

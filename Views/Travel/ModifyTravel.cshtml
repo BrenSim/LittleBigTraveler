@@ -1,12 +1,12 @@
 ﻿@model LittleBigTraveler.ViewModels.TravelViewModel
 
 @{
-    Layout = "_Layout";
+    Layout = "_CreateTravelPackageLayout";
     ViewData["Title"] = "Modification d'un voyage";
 }
 
 @section content {
-    <div class="container">
+    @*<div class="container">
         <h1 class="text-center">Modifier un voyage</h1>
 
         <form method="post" action="/Travel/ModifyTravel">
@@ -47,5 +47,58 @@
 
             <button type="submit" class="btn btn-primary">Modifier</button>
         </form>
-    </div>
+    </div>*@
+
+<section id="sectionModifyTravel">
+    <form method="post" action="/Travel/ModifyTravel">
+        <div class="borderGlassModifyTravelBackground">
+
+            <h3 class="titreModify">Modifier un voyage</h3>
+
+            <div class="Container">
+
+
+
+
+                <input type="hidden" name="Id" value="@Model.Id" />
+                <input type="hidden" name="DestinationId" value="@Model.DestinationId" />
+
+
+                <div class="form-group">
+                    <label class="labelM">Ville de la destination : </label>
+                    <input type="text" class="input" name="DestinationCity" value="@Model.DestinationCity"
+                           disabled />
+                </div>
+
+                <div class="form-group">
+                    <label class="labelM">Lieu de départ : </label>
+                    <input required type="text" name="departureLocation" autocomplete="on" class="input"
+                           value="@Model.DepartureLocation">
+                </div>
+                <div class="form-group">
+                    <label class="labelM">Date de départ : </label>
+                    <input required type="date" name="departureDate" autocomplete="on" class="input"
+                           value="@Model.DepartureDate.ToString(" yyyy-MM-ddTHH:mm")">
+
+                </div>
+                <div class="form-group">
+                    <label class="labelM">Date de retour : </label>
+                    <input required type="date" name="returnDate" autocomplete="on" class="input"
+                           value="@Model.ReturnDate.ToString(" yyyy-MM-ddTHH:mm")">
+                </div>
+                <div class="form-group">
+                    <label class="labelM">Prix : </label>
+                    <input type="number" class="input" name="Price" class="form-control"
+                           value="@Model.Price" required />
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="Container1">
+            <button type="submit" class="modifyBtn">Modifier</button>
+        </div>
+    </form>
+</section>
 }
