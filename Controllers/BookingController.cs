@@ -77,7 +77,6 @@ public class BookingController : Controller
                 bookingId = bookingDAL.CreateBooking(userId, packageId);
             }
 
-            // Rediriger vers la page de confirmation de réservation avec l'ID de la réservation
             return RedirectToAction("Create", "Payment", new { bookingId,  });
         }
         catch (Exception ex)
@@ -139,16 +138,13 @@ public class BookingController : Controller
 
             using (var bookingDAL = new BookingDAL(_httpContextAccessor))
             {
-                // Récupérer la réservation en utilisant l'ID de réservation
                 booking = bookingDAL.GetBookingById(bookingId);
 
-                // Vérifier si la réservation existe et appartient à l'utilisateur
                 if (booking == null || booking.UserId != userId)
                 {
                     return NotFound("Booking not found");
                 }
-
-                // Supprimer la réservation
+  
                 bookingDAL.DeleteBooking(bookingId);
             }
 

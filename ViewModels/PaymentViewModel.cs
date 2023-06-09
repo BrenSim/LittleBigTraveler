@@ -18,10 +18,8 @@ namespace LittleBigTraveler.ViewModels
 
         public Booking Booking { get; set; }
 
-
         public Package Package { get; set; }
         public User User { get; set; }
-
     }
 }
 

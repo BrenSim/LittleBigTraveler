@@ -26,10 +26,8 @@ namespace LittleBigTraveler.ViewModels
         public TravelViewModel()
         {
         }
-
         public TravelViewModel(IHttpContextAccessor httpContextAccessor)
         {
         }
     }
-
 }

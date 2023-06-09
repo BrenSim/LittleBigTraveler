@@ -28,7 +28,7 @@ public class TravelController : Controller
 
             if (travels == null || travels.Count == 0)
             {
-                return View("List"); // Appelle la vue "List.cshtml" lorsque la liste des voyages est vide
+                return View("List");
             }
 
             return View(travels);
@@ -95,8 +95,6 @@ public class TravelController : Controller
             {
                 ModelState.AddModelError("", ex.Message);
             }
-
-            // Si une erreur se produit, revenir à la vue avec les données saisies
             return View(model);
         }
     }
@@ -158,8 +156,6 @@ public class TravelController : Controller
             {
                 ModelState.AddModelError("", ex.Message);
             }
-
-            // Si une erreur se produit, revenir à la vue avec les données saisies
             return View(model);
         }
     }

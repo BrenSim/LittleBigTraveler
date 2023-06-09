@@ -126,11 +126,8 @@ public class PackageController : Controller
                         }
                     }
                 }
-                //Package package;
-                //package = packageDAL.GetPackageById(packageTravelId);
                 return RedirectToAction("Details", new { id = packageTravelId }); // Redirection vers la page de détails du package créé
-                //Redirection vers la page de la liste des PackageTravel
-                //TempData["SuccessMessage"] = "Voyage créé";
+
             }
             catch (Exception ex)
             {
@@ -174,9 +171,9 @@ public class PackageController : Controller
     }
 
     /// <summary>
-    /// Action pour supprimer un PackageTravel.
+    /// Action pour supprimer un Package.
     /// </summary>
-    /// <param name="id">ID du PackageTravel à supprimer.</param>
+    /// <param name="id">ID du Package à supprimer.</param>
     /// <returns>Redirige vers la page de la liste des PackageTravel en cas de succès, sinon renvoie un code d'erreur.</returns>
     [Authorize]
     public IActionResult DeletePackage(int id)
@@ -186,7 +183,7 @@ public class PackageController : Controller
             try
             {
                 packageDAL.DeletePackage(id);
-                return RedirectToAction("List"); // Rediriger vers la page de la liste des PackageTravel
+                return RedirectToAction("List"); // Rediriger vers la page de la liste des Package
             }
             catch (Exception ex)
             {
@@ -196,22 +193,22 @@ public class PackageController : Controller
     }
 
     /// <summary>
-    /// Action pour afficher le formulaire d'édition d'un PackageTravel.
+    /// Action pour afficher le formulaire d'édition d'un Package.
     /// </summary>
-    /// <param name="id">ID du PackageTravel à éditer.</param>
-    /// <returns>Vue contenant le formulaire d'édition d'un PackageTravel.</returns>
+    /// <param name="id">ID du Package à éditer.</param>
+    /// <returns>Vue contenant le formulaire d'édition d'un Package.</returns>
     [Authorize]
     public IActionResult EditPackage(int id)
     {
         using (var packageDAL = new PackageDAL(HttpContextAccessor))
         {
-            var packageTravel = packageDAL.GetPackageById(id);
-            if (packageTravel == null)
+            var package = packageDAL.GetPackageById(id);
+            if (package == null)
             {
-                return NotFound("PackageTravel non trouvé");
+                return NotFound("Package non trouvé");
             }
 
-            var travelId = packageTravel.TravelId;
+            var travelId = package.TravelId;
 
             using (var travelDAL = new TravelDAL(HttpContextAccessor))
             {
@@ -225,15 +222,15 @@ public class PackageController : Controller
 
                     var model = new PackageViewModel(HttpContextAccessor)
                     {
-                        Id = packageTravel.Id,
+                        Id = package.Id,
                         TravelId = travelId,
                         Travel = travel,
-                        Name = packageTravel.Name,
-                        Description = packageTravel.Description,
-                        Price = packageTravel.Price,
-                        QuantityAvailable = packageTravel.QuantityAvailable,
+                        Name = package.Name,
+                        Description = package.Description,
+                        Price = package.Price,
+                        QuantityAvailable = package.QuantityAvailable,
                         Services = services,
-                        SelectedServiceId = packageTravel.ServiceForPackage.Select(s => s.Id).ToList(),
+                        SelectedServiceId = package.ServiceForPackage.Select(s => s.Id).ToList(),
                     };
 
                     model.AvailableServices = services;
@@ -300,7 +297,7 @@ public class PackageController : Controller
 
         if (package == null)
         {
-            return View("Error");
+            return View("Erreur");
         }
 
         // Renvoyer la vue "PackageSurprise" avec le package créé

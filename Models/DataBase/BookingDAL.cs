@@ -40,7 +40,7 @@ public class BookingDAL : IBookingDAL
             {
                 UserId = userId,
                 PackageId = packageId,
-                Price = package.Price, // assignez ici le prix du package à la réservation
+                Price = package.Price,
                 Payments = new List<Payment>(),
                 Evaluations = new List<Evaluation>()
             };

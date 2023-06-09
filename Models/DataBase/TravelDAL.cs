@@ -9,38 +9,49 @@ using Microsoft.AspNetCore.Http;
 
 namespace LittleBigTraveler.Models.DataBase
 {
+    /// <summary>
+    /// Fournit des méthodes d'accès aux données pour l'entité Travel.
+    /// </summary>
     public class TravelDAL : ITravelDAL
     {
-        public void SaveChanges()
-        {
-            _bddContext.SaveChanges();
-        }
         private BddContext _bddContext;
-        // Manière de récupérer l'ID du client connecté
         private IHttpContextAccessor _httpContextAccessor;
 
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe <see cref="TravelDAL"/>.
+        /// </summary>
+        /// <param name="httpContextAccessor">L'accessoir du contexte HTTP.</param>
         public TravelDAL(IHttpContextAccessor httpContextAccessor)
         {
             _bddContext = new BddContext();
             _httpContextAccessor = httpContextAccessor;
         }
 
+        /// <summary>
+        /// Libère les ressources utilisées par l'instance <see cref="TravelDAL"/>.
+        /// </summary>
         public void Dispose()
         {
             _bddContext.Dispose();
         }
 
-        // Création/Ajout d'un "Travel"
+        /// <summary>
+        /// Crée un nouveau voyage.
+        /// </summary>
+        /// <param name="destinationId">L'ID de la destination.</param>
+        /// <param name="departureLocation">Le lieu de départ.</param>
+        /// <param name="departureDate">La date de départ.</param>
+        /// <param name="returnDate">La date de retour.</param>
+        /// <param name="price">Le prix.</param>
+        /// <param name="numParticipants">Le nombre de participants.</param>
+        /// <returns>L'ID du voyage créé.</returns>
         public int CreateTravel(int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, int price, int numParticipants)
         {
-            // Récupération de la destination associée à l'ID fourni
             var destination = _bddContext.Destinations.FirstOrDefault(d => d.Id == destinationId);
             if (destination != null)
             {
-                // Création d'un nouvel objet Travel avec les données fournies
-                Travel travel = new Travel()
+                var travel = new Travel()
                 {
-                    //Customer = customer,
                     Destination = destination,
                     DepartureLocation = departureLocation,
                     DepartureDate = departureDate,
@@ -56,11 +67,14 @@ namespace LittleBigTraveler.Models.DataBase
             }
             else
             {
-                throw new Exception("Customer ou destination non valide.");
+                throw new Exception("Destination non valide.");
             }
         }
 
-        // Suppression d'un "Travel" par ID
+        /// <summary>
+        /// Supprime un voyage par son ID.
+        /// </summary>
+        /// <param name="id">L'ID du voyage à supprimer.</param>
         public void DeleteTravel(int id)
         {
             var travel = _bddContext.Travels.FirstOrDefault(t => t.Id == id);
@@ -71,7 +85,16 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-        // Modification d'un "Travel" par ID
+        /// <summary>
+        /// Modifie un voyage existant.
+        /// </summary>
+        /// <param name="id">L'ID du voyage à modifier.</param>
+        /// <param name="destinationId">Le nouvel ID de la destination.</param>
+        /// <param name="departureLocation">Le nouveau lieu de départ.</param>
+        /// <param name="departureDate">La nouvelle date de départ.</param>
+        /// <param name="returnDate">La nouvelle date de retour.</param>
+        /// <param name="price">Le nouveau prix.</param>
+        /// <param name="numParticipants">Le nouveau nombre de participants.</param>
         public void ModifyTravel(int id, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, int price, int numParticipants)
         {
             var travel = _bddContext.Travels
@@ -81,41 +104,45 @@ namespace LittleBigTraveler.Models.DataBase
             var destination = _bddContext.Destinations
                 .FirstOrDefault(d => d.Id == destinationId);
 
-            if (travel != null  && destination != null)
+            if (travel != null && destination != null)
             {
-                // Vérifier si le client ou la destination du voyage a changé
                 if (travel.Destination.Id != destinationId)
                 {
-                    throw new Exception("Modification du client ou de la destination non autorisée.");
+                    throw new Exception("Modification de la destination non autorisée.");
                 }
 
-                // Mise à jour des propriétés du "Travel" avec les nouvelles données fournies
                 travel.DepartureLocation = departureLocation;
                 travel.DepartureDate = departureDate;
                 travel.ReturnDate = returnDate;
                 travel.Price = price;
                 travel.NumParticipants = numParticipants;
 
-                // Mettre à jour les relations Customer et Destination
                 travel.Destination = destination;
 
                 _bddContext.SaveChanges();
             }
             else
             {
-                throw new Exception("Client, voyage ou destination non valide.");
+                throw new Exception("Voyage ou destination non valide.");
             }
         }
 
-        // Récupération d'un voyage par son ID
+        /// <summary>
+        /// Récupère un voyage par son ID.
+        /// </summary>
+        /// <param name="travelId">L'ID du voyage à récupérer.</param>
+        /// <returns>Le voyage avec l'ID spécifié, ou null s'il n'est pas trouvé.</returns>
         public Travel GetTravelById(int travelId)
-
         {
             return _bddContext.Travels
                 .Include(t => t.Destination)
                 .FirstOrDefault(t => t.Id == travelId);
         }
 
+        /// <summary>
+        /// Récupère tous les voyages.
+        /// </summary>
+        /// <returns>Une liste de tous les voyages.</returns>
         public List<Travel> GetAllTravels()
         {
             return _bddContext.Travels
@@ -123,18 +150,12 @@ namespace LittleBigTraveler.Models.DataBase
                 .ToList();
         }
 
-
+        /// <summary>
+        /// Enregistre les modifications apportées à la base de données.
+        /// </summary>
+        public void SaveChanges()
+        {
+            _bddContext.SaveChanges();
+        }
     }
 }
-
-// Récupération des voyages d'un client par son ID
-//public List<Travel> GetTravelsByCustomerId(int customerId)
-//{
-//    // Récupération de l'ID du client connecté à partir du contexte HTTP
-//    customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
-
-//    return _bddContext.Travels
-//        .Include(t => t.Destination)
-//        .Where(t => t.Customer.Id == customerId)
-//        .ToList();
-//}

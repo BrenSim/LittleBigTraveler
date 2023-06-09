@@ -12,6 +12,5 @@ namespace LittleBigTraveler.ViewModels
         public string PackageDescription { get; set; }
         public decimal PackagePrice { get; set; }
     }
-
 }
 

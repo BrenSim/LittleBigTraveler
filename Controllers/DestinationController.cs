@@ -42,7 +42,7 @@ namespace LittleBigTraveler.Controllers
         /// Méthode pour traiter le formulaire d'ajout d'une destination.
         /// </summary>
         /// <param name="model">Modèle contenant les informations de la destination à ajouter.</param>
-        /// <returns>Redirige vers l'action "IndexTEST" du contrôleur "Home" en cas de succès, sinon réaffiche le formulaire d'ajout.</returns>
+        /// <returns>Redirige vers l'action List en cas de succès, sinon réaffiche le formulaire d'ajout.</returns>
         [Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult AddDestinations(DestinationViewModel model)
@@ -52,7 +52,7 @@ namespace LittleBigTraveler.Controllers
                 using (var destinationDAL = new DestinationDAL())
                 {
                     int destinationId = destinationDAL.CreateDestination(model.Country, model.City, model.Description, model.Images, model.ExternalLinks);
-                    return RedirectToAction("IndexTEST", "Home");
+                    return RedirectToAction("List");
                 }
             }
 

@@ -22,7 +22,13 @@ public class PaymentDAL : IPaymentDAL
         _bddContext.Dispose();
     }
 
-    // Création d'un paiement
+    /// <summary>
+    /// Crée un nouveau paiement.
+    /// </summary>
+    /// <param name="userId">L'ID de l'utilisateur.</param>
+    /// <param name="bookingId">L'ID de la réservation.</param>
+    /// <param name="numCB">Le numéro de carte bancaire.</param>
+    /// <returns>L'ID du paiement créé.</returns>
     public int CreatePayment(int userId, int bookingId, int numCB)
     {
         var user = _bddContext.Users.FirstOrDefault(u => u.Id == userId);
@@ -34,7 +40,7 @@ public class PaymentDAL : IPaymentDAL
             {
                 TotalAmount = booking.Price,
                 PaymentDate = DateTime.Now,
-                NumCB = numCB, // Numéro de carte bancaire
+                NumCB = numCB,
                 UserId = userId,
                 BookingId = bookingId
             };
@@ -42,7 +48,6 @@ public class PaymentDAL : IPaymentDAL
             _bddContext.Payments.Add(payment);
             _bddContext.SaveChanges();
 
-            // Marquer la réservation comme validée
             booking.IsConfirmed = true;
             _bddContext.SaveChanges();
 
@@ -50,11 +55,14 @@ public class PaymentDAL : IPaymentDAL
         }
         else
         {
-            throw new Exception("User or Booking not found");
+            throw new Exception("Utilisateur ou réservation introuvable.");
         }
     }
 
-    // Suppression d'un paiement
+    /// <summary>
+    /// Supprime un paiement.
+    /// </summary>
+    /// <param name="paymentId">L'ID du paiement à supprimer.</param>
     public void DeletePayment(int paymentId)
     {
         var payment = _bddContext.Payments.FirstOrDefault(p => p.Id == paymentId);
@@ -66,11 +74,15 @@ public class PaymentDAL : IPaymentDAL
         }
         else
         {
-            throw new Exception("Payment not found");
+            throw new Exception("Paiement introuvable.");
         }
     }
 
-    // Récupération d'un paiement par ID
+    /// <summary>
+    /// Récupère un paiement par son ID.
+    /// </summary>
+    /// <param name="paymentId">L'ID du paiement à récupérer.</param>
+    /// <returns>Le paiement avec l'ID spécifié, ou null s'il n'est pas trouvé.</returns>
     public Payment GetPaymentById(int paymentId)
     {
         return _bddContext.Payments
@@ -79,7 +91,11 @@ public class PaymentDAL : IPaymentDAL
             .FirstOrDefault(p => p.Id == paymentId);
     }
 
-    // Récupération de tous les paiements d'un utilisateur
+    /// <summary>
+    /// Récupère tous les paiements d'un utilisateur.
+    /// </summary>
+    /// <param name="userId">L'ID de l'utilisateur.</param>
+    /// <returns>Une liste des paiements de l'utilisateur.</returns>
     public List<Payment> GetUserPayments(int userId)
     {
         return _bddContext.Payments
