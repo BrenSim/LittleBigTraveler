@@ -78,7 +78,7 @@ public class BookingController : Controller
             }
 
             // Rediriger vers la page de confirmation de réservation avec l'ID de la réservation
-            return RedirectToAction("Confirmation", new { bookingId });
+            return RedirectToAction("Create", "Payment", new { bookingId });
         }
         catch (Exception ex)
         {

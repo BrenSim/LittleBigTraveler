@@ -13,16 +13,15 @@ using Microsoft.AspNetCore.Http;
 
 namespace LittleBigTraveler.Controllers
 {
+    /// <summary>
+    /// Contrôleur de l'utilisateur.
+    /// </summary>
     public class UserController : Controller
     {
-
-        //[AllowAnonymous]
-        //public IActionResult LogoutOnStartup()
-        //{
-        //    HttpContext.SignOutAsync();
-        //    return RedirectToAction("LogIn");
-        //}
-
+        /// <summary>
+        /// Affiche la liste des utilisateurs.
+        /// </summary>
+        /// <returns>Vue avec les modèles d'affichage des utilisateurs.</returns>
         // Action pour afficher la liste des utilisateurs
         [Authorize]
         public IActionResult List()
@@ -35,6 +34,10 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        /// <summary>
+        /// Authentification (connexion) de l'utilisateur.
+        /// </summary>
+        /// <returns>Vue pour la connexion.</returns>
         // Connexion
         [AllowAnonymous]
         // Action pour l'authentification (connexion) de l'utilisateur
@@ -55,6 +58,12 @@ namespace LittleBigTraveler.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Traite le formulaire de connexion (authentification).
+        /// </summary>
+        /// <param name="model">Modèle d'affichage de l'utilisateur.</param>
+        /// <param name="returnUrl">URL de redirection après la connexion.</param>
+        /// <returns>Vue pour la connexion ou redirection.</returns>
         // Action pour le traitement du formulaire de connexion (authentification)
         [AllowAnonymous]
         [HttpPost]
@@ -90,9 +99,13 @@ namespace LittleBigTraveler.Controllers
                 return View(model);
             }
 
-            return View("IndexTEST", "Home");
+            return View("/");
         }
 
+        /// <summary>
+        /// Déconnexion de l'utilisateur.
+        /// </summary>
+        /// <returns>Redirection vers la page d'accueil.</returns>
         // Action pour la déconnexion de l'utilisateur
         public ActionResult LogOut()
         {
@@ -100,6 +113,10 @@ namespace LittleBigTraveler.Controllers
             return Redirect("/");
         }
 
+        /// <summary>
+        /// Ajoute un client.
+        /// </summary>
+        /// <returns>Vue pour ajouter un client.</returns>
         //Création d'un compte client
         // Action pour l'ajout d'un client
         [AllowAnonymous]
@@ -108,6 +125,11 @@ namespace LittleBigTraveler.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Traite le formulaire d'ajout d'un client.
+        /// </summary>
+        /// <param name="model">Modèle d'affichage de l'utilisateur.</param>
+        /// <returns>Vue pour ajouter un client ou redirection.</returns>
         // Action pour le traitement du formulaire d'ajout d'un client
         [AllowAnonymous]
         [HttpPost]
@@ -138,6 +160,10 @@ namespace LittleBigTraveler.Controllers
             return View("AddCustomer", model);
         }
 
+        /// <summary>
+        /// Ajoute un partenaire.
+        /// </summary>
+        /// <returns>Vue pour ajouter un partenaire.</returns>
         // Action pour l'ajout d'un partenaire
         [Authorize(Roles = "Administrator, Partner")]
         public IActionResult AddPartner()
@@ -145,6 +171,11 @@ namespace LittleBigTraveler.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Traite le formulaire d'ajout d'un partenaire.
+        /// </summary>
+        /// <param name="model">Modèle d'affichage de l'utilisateur.</param>
+        /// <returns>Vue pour ajouter un partenaire ou redirection.</returns>
         // Action pour le traitement du formulaire d'ajout d'un partenaire
         [Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
@@ -175,6 +206,10 @@ namespace LittleBigTraveler.Controllers
             return View("AddPartner", model);
         }
 
+        /// <summary>
+        /// Ajoute un administrateur.
+        /// </summary>
+        /// <returns>Vue pour ajouter un administrateur.</returns>
         // Action pour l'ajout d'un administrateur
         [Authorize(Roles = "Administrator")]
         public IActionResult AddAdministrator()
@@ -183,7 +218,11 @@ namespace LittleBigTraveler.Controllers
         }
 
 
-        // Action pour le traitement du formulaire d'ajout d'un administrateur
+        /// <summary>
+        /// Action pour le traitement du formulaire d'ajout d'un administrateur
+        /// </summary>
+        /// <param name="model">Le modèle de l'utilisateur à ajouter</param>
+        /// <returns>Renvoie une redirection vers l'action IndexTEST du contrôleur Home</returns>
         [Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult AddAdministrators(UserViewModel model)
@@ -196,9 +235,9 @@ namespace LittleBigTraveler.Controllers
 
                     // Création des revendications (claims) pour l'utilisateur authentifié
                     var userClaims = new List<Claim>()
-                    {
-                        new Claim(ClaimTypes.Name, administratorId.ToString()),
-                    };
+            {
+                new Claim(ClaimTypes.Name, administratorId.ToString()),
+            };
 
                     var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
 
@@ -213,8 +252,11 @@ namespace LittleBigTraveler.Controllers
             return View("AddAdministrator", model);
         }
 
-        
-        // Action pour la suppression d'un utilisateur
+        /// <summary>
+        /// Action pour la suppression d'un utilisateur
+        /// </summary>
+        /// <param name="id">L'ID de l'utilisateur à supprimer</param>
+        /// <returns>Renvoie une redirection vers l'action IndexTEST du contrôleur Home</returns>
         [Authorize(Roles = "Administrator, Customer")]
         public IActionResult DeleteUsers(int id)
         {
@@ -226,8 +268,11 @@ namespace LittleBigTraveler.Controllers
             return RedirectToAction("IndexTEST", "Home");
         }
 
-
-        // Action pour la modification d'un utilisateur
+        /// <summary>
+        /// Action pour la modification d'un utilisateur
+        /// </summary>
+        /// <param name="id">L'ID de l'utilisateur à modifier</param>
+        /// <returns>Renvoie une vue contenant le modèle de l'utilisateur à modifier</returns>
         [Authorize(Roles = "Administrator, Customer")]
         public IActionResult ChangeUser(int id)
         {
@@ -244,7 +289,12 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
-        // Action pour le traitement du formulaire de modification d'un utilisateur
+        /// <summary>
+        /// Action pour le traitement du formulaire de modification d'un utilisateur
+        /// </summary>
+        /// <param name="id">L'ID de l'utilisateur à modifier</param>
+        /// <param name="model">Le modèle de l'utilisateur modifié</param>
+        /// <returns>Renvoie une redirection vers l'action IndexTEST du contrôleur Home</returns>
         [HttpPost]
         public IActionResult ChangeUsers(int id, UserViewModel model)
         {
@@ -260,8 +310,11 @@ namespace LittleBigTraveler.Controllers
             return View(model);
         }
 
-
-        // Action pour la modification d'un client
+        /// <summary>
+        /// Action pour la modification d'un client
+        /// </summary>
+        /// <param name="id">L'ID du client à modifier</param>
+        /// <returns>Renvoie une vue contenant le modèle du client à modifier</returns>
         [Authorize(Roles = "Administrator, Customer")]
         public IActionResult ChangeCustomer(int id)
         {
@@ -278,7 +331,12 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
-        // Action pour le traitement du formulaire de modification d'un client
+        /// <summary>
+        /// Action pour le traitement du formulaire de modification d'un client
+        /// </summary>
+        /// <param name="id">L'ID du client à modifier</param>
+        /// <param name="model">Le modèle du client modifié</param>
+        /// <returns>Renvoie une redirection vers l'action IndexTEST du contrôleur Home</returns>
         [Authorize(Roles = "Administrator, Customer")]
         [HttpPost]
         public IActionResult ChangeCustomers(int id, UserViewModel model)
@@ -295,7 +353,11 @@ namespace LittleBigTraveler.Controllers
             return View("ChangeCustomer", model);
         }
 
-        // Action pour la modification d'un partenaire
+        /// <summary>
+        /// Action pour la modification d'un partenaire
+        /// </summary>
+        /// <param name="id">L'ID du partenaire à modifier</param>
+        /// <returns>Renvoie une vue contenant le modèle du partenaire à modifier</returns>
         [Authorize(Roles = "Administrator, Partner")]
         public IActionResult ChangePartner(int id)
         {
@@ -312,7 +374,12 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
-        // Action pour le traitement du formulaire de modification d'un partenaire
+        /// <summary>
+        /// Action pour le traitement du formulaire de modification d'un partenaire
+        /// </summary>
+        /// <param name="id">L'ID du partenaire à modifier</param>
+        /// <param name="model">Le modèle du partenaire modifié</param>
+        /// <returns>Renvoie une redirection vers l'action IndexTEST du contrôleur Home</returns>
         [Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult ChangePartners(int id, UserViewModel model)
@@ -329,7 +396,11 @@ namespace LittleBigTraveler.Controllers
             return View("ChangePartner", model);
         }
 
-        // Action pour la modification d'un administrateur
+        /// <summary>
+        /// Action pour la modification d'un administrateur
+        /// </summary>
+        /// <param name="id">L'ID de l'administrateur à modifier</param>
+        /// <returns>Renvoie une vue contenant le modèle de l'administrateur à modifier</returns>
         [Authorize(Roles = "Administrator")]
         public IActionResult ChangeAdministrator(int id)
         {
@@ -346,7 +417,12 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
-        // Action pour le traitement du formulaire de modification d'un administrateur
+        /// <summary>
+        /// Action pour le traitement du formulaire de modification d'un administrateur
+        /// </summary>
+        /// <param name="id">L'ID de l'administrateur à modifier</param>
+        /// <param name="model">Le modèle de l'administrateur modifié</param>
+        /// <returns>Renvoie une redirection vers l'action Index du contrôleur Home</returns>
         [Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult ChangeAdministrators(int id, UserViewModel model)
@@ -363,7 +439,11 @@ namespace LittleBigTraveler.Controllers
             return View("ChangeAdministrator", model);
         }
 
-        // Action pour la recherche d'un utilisateur
+        /// <summary>
+        /// Action pour la recherche d'un utilisateur
+        /// </summary>
+        /// <param name="query">La chaîne de recherche</param>
+        /// <returns>Renvoie une vue contenant les résultats de recherche</returns>
         [Authorize(Roles = "Administrator")]
         public IActionResult FindUsers(string query)
         {
@@ -376,6 +456,10 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
+        /// <summary>
+        /// Action pour afficher le profil de l'utilisateur actuellement connecté
+        /// </summary>
+        /// <returns>Renvoie une vue contenant le modèle de l'utilisateur</returns>
         [Authorize]
         public IActionResult Profile()
         {
@@ -393,7 +477,11 @@ namespace LittleBigTraveler.Controllers
             }
         }
 
-        // Action pour "Mapper" le ViewModel d'un utilisateur
+        /// <summary>
+        /// Méthode pour mapper un objet User vers un ViewModel UserViewModel
+        /// </summary>
+        /// <param name="user">L'objet User à mapper</param>
+        /// <returns>Renvoie un ViewModel UserViewModel mappé à partir de l'objet User</returns>
         public UserViewModel MapUserToViewModel(User user)
         {
             var model = new UserViewModel
@@ -433,7 +521,11 @@ namespace LittleBigTraveler.Controllers
             return model;
         }
 
-        // Méthode pour mapper une liste d'utilisateurs vers une liste de ViewModels d'utilisateurs
+        /// <summary>
+        /// Méthode pour mapper une liste d'utilisateurs vers une liste de ViewModels d'utilisateurs
+        /// </summary>
+        /// <param name="users">La liste d'utilisateurs à mapper</param>
+        /// <returns>Renvoie une liste de ViewModels d'utilisateurs mappée à partir de la liste d'utilisateurs</returns>
         public List<UserViewModel> MapUsersToViewModels(List<User> users)
         {
             return users.Select(MapUserToViewModel).ToList();

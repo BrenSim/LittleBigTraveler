@@ -306,7 +306,14 @@ public class PackageController : Controller
         return View("PackageSurprise", package);
     }
 
-
+    /// <summary>
+    /// Recherche des packages de voyage en fonction des critères fournis.
+    /// </summary>
+    /// <param name="destination">Le nom de la destination recherchée. Peut être null.</param>
+    /// <param name="departureMonth">Le mois de départ recherché. Peut être null.</param>
+    /// <param name="minPrice">Le prix minimum recherché. Peut être null.</param>
+    /// <param name="maxPrice">Le prix maximum recherché. Peut être null.</param>
+    /// <returns>Une vue 'List' contenant la liste des packages de voyage qui correspondent aux critères de recherche.</returns>
     [AllowAnonymous]
     public IActionResult SearchPackages(string destination, int? departureMonth, double? minPrice, double? maxPrice)
     {

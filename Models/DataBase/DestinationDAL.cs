@@ -15,7 +15,9 @@ namespace LittleBigTraveler.Models.DataBase
             _bddContext = new BddContext();
         }
 
-        // Suppression/Création de la base de données (méthode appelée dans BddContext)
+        /// <summary>
+        /// Supprime et recrée la base de données (méthode appelée dans BddContext).
+        /// </summary>
         public void DeleteCreateDatabase()
         {
             _bddContext.Database.EnsureDeleted();
@@ -27,7 +29,15 @@ namespace LittleBigTraveler.Models.DataBase
             _bddContext.Dispose();
         }
 
-        // Création des données "Destination"
+        /// <summary>
+        /// Crée une nouvelle destination.
+        /// </summary>
+        /// <param name="country">Le pays de la destination</param>
+        /// <param name="city">La ville de la destination</param>
+        /// <param name="description">La description de la destination</param>
+        /// <param name="images">La liste des images de la destination</param>
+        /// <param name="link">Le lien externe de la destination</param>
+        /// <returns>Renvoie l'ID de la destination créée</returns>
         public int CreateDestination(string country, string city, string description, List<string> images, string link)
         {
             Destination destination = new Destination()
@@ -45,7 +55,10 @@ namespace LittleBigTraveler.Models.DataBase
             return destination.Id;
         }
 
-        // Suppression des données "Destination"
+        /// <summary>
+        /// Supprime une destination.
+        /// </summary>
+        /// <param name="id">L'ID de la destination à supprimer</param>
         public void DeleteDestination(int id)
         {
             var destination = _bddContext.Destinations.FirstOrDefault(d => d.Id == id);
@@ -56,7 +69,15 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-        // Modification des données "Destination"
+        /// <summary>
+        /// Modifie une destination existante.
+        /// </summary>
+        /// <param name="id">L'ID de la destination à modifier</param>
+        /// <param name="country">Le pays de la destination</param>
+        /// <param name="city">La ville de la destination</param>
+        /// <param name="description">La description de la destination</param>
+        /// <param name="images">La liste des images de la destination</param>
+        /// <param name="link">Le lien externe de la destination</param>
         public void ModifyDestination(int id, string country, string city, string description, List<string> images, string link)
         {
             var destination = _bddContext.Destinations.FirstOrDefault(d => d.Id == id);
@@ -72,7 +93,11 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-        // Recherche dans les données "Destination" d'après le pays (country) et la ville (city)
+        /// <summary>
+        /// Recherche des destinations selon le pays (country) ou la ville (city).
+        /// </summary>
+        /// <param name="query">La chaîne de recherche</param>
+        /// <returns>Renvoie une liste de destinations correspondant à la recherche</returns>
         public List<Destination> SearchDestination(string query)
         {
             IQueryable<Destination> recherche = _bddContext.Destinations;
@@ -85,13 +110,20 @@ namespace LittleBigTraveler.Models.DataBase
             return recherche.ToList();
         }
 
-        // Récupération de toutes les données "Destination"
+        /// <summary>
+        /// Récupère toutes les destinations.
+        /// </summary>
+        /// <returns>Renvoie une liste de toutes les destinations</returns>
         public List<Destination> GetAllDestinations()
         {
             return _bddContext.Destinations.ToList();
         }
 
-        // Récupération des données "Destination" par ID
+        /// <summary>
+        /// Récupère une destination par son ID avec ses services associés.
+        /// </summary>
+        /// <param name="id">L'ID de la destination à récupérer</param>
+        /// <returns>Renvoie l'objet Destination correspondant à l'ID spécifié avec ses services associés</returns>
         public Destination GetDestinationWithId(int id)
         {
             return _bddContext.Destinations
@@ -99,13 +131,16 @@ namespace LittleBigTraveler.Models.DataBase
                            .FirstOrDefault(d => d.Id == id);
         }
 
-
+        /// <summary>
+        /// Récupère les services associés à une destination.
+        /// </summary>
+        /// <param name="destinationId">L'ID de la destination</param>
+        /// <returns>Renvoie une liste de services associés à la destination spécifiée</returns>
         public List<Service> GetServicesByDestinationId(int destinationId)
         {
             return _bddContext.Services
                        .Where(s => s.DestinationId == destinationId)
                        .ToList();
         }
-
     }
 }
