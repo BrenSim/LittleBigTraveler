@@ -7,7 +7,6 @@
 }
 
 @section content {
-    <h1 class="text-center">Résultats de recherche</h1>
 
     @if (Model.Destinations.Count == 0)
         {
@@ -62,41 +61,6 @@
             </div>
         </section>
 
-
-        <!-- <table class="table">
-             <thead>
-                 <tr>
-                     <th>Pays</th>
-                     <th>Ville</th>
-                     <th>Description</th>
-                     <th>Images</th>
-                     <th>Liens</th>
-                     <th>Actions</th>
-                 </tr>
-             </thead>
-             <tbody>
-                 @foreach (var destination in Model.Destinations)
-                     {
-                     <tr>
-                         <td>@destination.Country</td>
-                         <td>@destination.City</td>
-                         <td>@destination.Description</td>
-                         <td>
-                             @foreach (var image in destination.Images)
-                                 {
-                                 <img src="@image" alt="Image" class="img-thumbnail" />
-                                 }
-                         </td>
-                         <td>@destination.ExternalLinks</td>
-                         <td>
-                             <a href="/Destination/ChangeDestination/@destination.Id" class="btn btn-secondary mr-2">Modifier</a>
-                             <a href="/Destination/DeleteDestinations/@destination.Id" class="btn btn-danger">Supprimer</a>
-                             <a href="/Travel/CreateTravel?destinationId=@destination.Id" class="btn btn-primary">Voyager</a>
-                         </td>
-                     </tr>
-                     }
-             </tbody>
-         </table> -->
             }
         }
 

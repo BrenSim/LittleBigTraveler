@@ -63,6 +63,7 @@ public class TravelController : Controller
     // Action pour le traitement du formulaire de création d'un voyage
     //[Authorize(Roles = "Administrator")]
     //[Authorize(Roles = "Customer")]
+    [Authorize]
     [HttpPost]
     public IActionResult CreateTravel([Bind("DestinationId,DepartureLocation,DepartureDate,ReturnDate,Price,NumParticipants")] TravelViewModel model)
     {
@@ -73,15 +74,15 @@ public class TravelController : Controller
         {
             try
             {
-                travelDAL.CreateTravel( model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
-                return RedirectToAction("List"); // Rediriger vers la page d'accueil ou une autre page
+                var newTravelId = travelDAL.CreateTravel(model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
+                return RedirectToAction("CreatePackage", "Package", new { travelId = newTravelId });
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
 
-            // Si erreur , revenir à la vue avec les données saisies
+            // Si une erreur se produit, revenir à la vue avec les données saisies
             return View(model);
         }
     }

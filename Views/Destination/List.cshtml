@@ -15,7 +15,7 @@
             <div class="positionDSF">
                 <form method="get" action="/Destination/FindDestinations">
                     <div class="destinationSearchField">
-                        <input type="search" name="SearchBar" class="input" autocomplete="on" placeholder="Recherche de destinations par Pays ou Ville">
+                        <input type="search" name="SearchBar" class="input" autocomplete="on" placeholder="Recherche de destinations par Pays ou Ville...">
                         <!--  <label class="searchLabel">Rechercher une destination</label> -->
                     </div>
                     <div class="searchingBtn">
@@ -62,7 +62,7 @@
                 <div class="card-container">
                     <div class="glassBorderCardOffers">
                         <div class="cardOffers">
-                            <img src="@Model[1].Images" class="card-img" />
+                            <img src="@Model[1].Images[0]" class="card-img" />
                             <div class="cardOffers-body">
                                 <h1 class="cardOffers-title">@Model[1].Country</h1>
                                 <p class="cardOffers-sub-title">@Model[1].City</p>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="glassBorderCardOffers">
                         <div class="cardOffers">
-                            <img src="@Model[6].Images" class="card-img" />
+                            <img src="@Model[6].Images[0]" class="card-img" />
                             <div class="cardOffers-body">
                                 <h1 class="cardOffers-title">@Model[6].Country</h1>
                                 <p class="cardOffers-sub-title">@Model[6].City</p>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="glassBorderCardOffers">
                         <div class="cardOffers">
-                            <img src="@Model[7].Images" class="card-img" />
+                            <img src="@Model[7].Images[0]" class="card-img" />
                             <div class="cardOffers-body">
                                 <h1 class="cardOffers-title">@Model[7].Country</h1>
                                 <p class="cardOffers-sub-title">@Model[7].City</p>
@@ -92,24 +92,24 @@
                     </div>
                     <div class="glassBorderCardOffers">
                         <div class="cardOffers">
-                            <img src="@Model[14].Images" class="card-img" />
+                            <img src="@Model[14].Images[0]" class="card-img" />
                             <div class="cardOffers-body">
-                                <h1 class="cardOffers-title">@Model[7].Country</h1>
-                                <p class="cardOffers-sub-title">@Model[7].City</p>
+                                <h1 class="cardOffers-title">@Model[14].Country</h1>
+                                <p class="cardOffers-sub-title">@Model[14].City</p>
                                 <button class="cardOffers-btn">Réserver !</button>
                             </div>
                         </div>
                     </div>
-                    <div class="glassBorderCardOffers">
+                    @*<div class="glassBorderCardOffers">
                         <div class="cardOffers">
-                            <img src="@Model[9].Images" class="card-img" />
+                            <img src="@Model[9].Images[0]" class="card-img" />
                             <div class="cardOffers-body">
                                 <h1 class="cardOffers-title">@Model[9].Country</h1>
                                 <p class="cardOffers-sub-title">@Model[9].City</p>
                                 <button class="cardOffers-btn">Réserver !</button>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>

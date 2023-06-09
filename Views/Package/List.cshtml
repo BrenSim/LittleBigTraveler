@@ -6,7 +6,7 @@
 }
 
 @section content {
-    <h1 class="titrePackage">NOS PACKAGES ALLINCLUSIVE</h1>
+    
 
     @if (Model.Count == 0)
     {
@@ -14,44 +14,37 @@
     }
     else
     {
-        <section id="sectionDestinationCards">
-            <div class="glassBorderBackground">
-                
-                <div class="positionDSF">
-                    <!--  <div class="destinationSearchField">
-                          <input type="search" name="SearchBar" class="input" autocomplete="on">
-                          <label class="searchLabel">Rechercher un package</label>
-                      </div>
-                      <button class="glassIcon">
-                          <span>
-                              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                          </span>
-                      </button> -->
-                </div>
-                <div id="positionIntoSection">
-                    <div class="card-container">
-                        @foreach (var package in Model)
-                        {
-                            <div class="glassBorderCard">
-                                <div class="card">
-                                    @foreach (var image in @package.Travel.Destination.Images)
-                                    {
-                                        <img src="@image" alt="Image" class="card-img" />
-                                    }
-                                    <div class="card-body">
-                                        <h1 class="card-title">@package.Name</h1>
-                                        <h2>@package.Travel.Destination.City, @package.Travel.Destination.Country</h2>
-                                        <h4>@package.Price</h4>
-                                        <p class="card-sub-title">@package.Description</p>
-                                        <button class="card-btn">Réserver !</button>
-                                    </div>
-                                </div>
+<section id="sectionDestinationCards">
+    <h1 class="titrePackage">NOS PACKAGES ALLINCLUSIVE</h1>
+    <div class="glassBorderBackground">
+
+        <div class="positionDSF">
+
+        </div>
+        <div id="positionIntoSection">
+            <div class="card-container">
+                @foreach (var package in Model)
+                {
+                    <div class="glassBorderCard">
+                        <div class="card">
+                            @foreach (var image in @package.Travel.Destination.Images)
+                            {
+                                <img src="@image" alt="Image" class="card-img" />
+                            }
+                            <div class="card-body">
+                                <h1 class="card-title">@package.Name</h1>
+                                <h2 class="card-sub">@package.Travel.Destination.City, @package.Travel.Destination.Country</h2>
+                                <h4>@package.Price €</h4>
+                                <p class="card-sub-title">@package.Description</p>
+                                <button class="card-btn">Réserver !</button>
                             </div>
-                        }
+                        </div>
                     </div>
-                </div>
+                }
             </div>
-        </section>
+        </div>
+    </div>
+</section>
     }
 
 }

@@ -7,7 +7,7 @@
 /* Partie Header */
 
 @media (max-width: 1050px) {
-    nav ul li {
+    .navMenu ul li {
         font-size: 0.9rem;
         margin-right: 2vw;
         margin-left: 2vw;
@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 1000px) {
-    nav ul li {
+    .navMenu ul li {
         font-size: 0.8rem;
         margin-right: 0vw;
         margin-left: 0vw;
@@ -59,31 +59,32 @@ header {
     display: flex;
 }
 
-nav ul li {
+.navMenu ul li {
     margin-right: 2vw;
     margin-left: 2vw;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-    nav ul li:hover {
+    .navMenu ul li:hover {
         transform: scale(1.15);
     }
 
-    nav ul li a {
+    .navMenu ul li a {
         text-decoration: none;
         color: #333;
         font-weight: bold;
     }
 
 
-* Partie Footer */
+/* Partie Footer */
 
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
-    height: 180px;
-    margin-top: 40px;
+    height: auto;
+    width: 100vw;
     background-color: rgba(255, 255, 255, 0.074);
     border-radius: 45px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -94,7 +95,9 @@ footer {
 }
 
 .logoFooter {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
     .logoFooter i {
@@ -125,8 +128,6 @@ footer {
         display: flex;
         flex-direction: column;
         margin-right: 5vw;
-        justify-content: flex-start; /* Modifier la justification */
-        align-items: flex-start; /* Alignement des éléments à gauche */
         list-style-type: none;
     }
 
@@ -204,7 +205,7 @@ a {
 }
 
 .glassBorderCard {
-    width: 90.3vw;
+    width: 70.3vw;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -312,7 +313,7 @@ a {
 
 .card-sub-title {
     text-transform: none;
-    font-size: 17px;
+    font-size: 23px;
     font-weight: 300;
     margin: 10px 0 30px 5px;
 }
