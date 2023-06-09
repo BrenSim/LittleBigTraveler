@@ -40,7 +40,7 @@
                             }
                         </td>
                         <td>
-                            <a href="@Url.Action("Confirmation", "Booking", new { bookingId = booking.Id })" class="btn btn-primary">Voir détails</a>
+                            <a href="@Url.Action("Details", "Package", new { id = booking.PackageId})" class="btn btn-primary">Voir détails</a>
                             <a href="@Url.Action("Delete", "Booking", new { bookingId = booking.Id })" class="btn btn-danger">Supprimer</a>
                         </td>
                     </tr>

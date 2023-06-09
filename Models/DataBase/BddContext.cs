@@ -38,9 +38,6 @@ namespace LittleBigTraveler.Models.DataBase
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Travel> Travels { get; set; }
         public DbSet<Package> Packages { get; set; }
-        //public DbSet<AllInclusiveTravel> AllInclusiveTravels { get; set; }
-        //public DbSet<CustomMadeTravel> CustomMadeTravels { get; set; }
-        //public DbSet<SurpriseTravel> SurpriseTravels { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceCatalog> ServiceCatalogs { get; set; }
@@ -48,11 +45,9 @@ namespace LittleBigTraveler.Models.DataBase
         // Connexion avec la database MySql
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-<<<<<<< HEAD
-            optionsBuilder.UseMySql("server=localhost;user id=root;password=Loveandroses123;database=LittleBigTravelDB");
-=======
+
             optionsBuilder.UseMySql("server=localhost;user id=root;password=Zachary3529<;database=LittleBigTravelDB");
->>>>>>> BS_UserPref
+
         }
 
         
@@ -7136,142 +7131,10 @@ namespace LittleBigTraveler.Models.DataBase
                 PhoneNumber = "0139876543",
                 BirthDate = new DateTime(1986, 2, 28),
                 ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 21,
-                LastName = "Roy",
-                FirstName = "Sophie",
-                Email = "sophie.roy@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "17 Rue Sainte-Catherine, Saint-Michel, Bordeaux",
-                PhoneNumber = "0123456789",
-                BirthDate = new DateTime(1992, 10, 15),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 22,
-                LastName = "Gagnon",
-                FirstName = "Alexandre",
-                Email = "alexandre.gagnon@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "12 Avenue de la Marne, La Négresse, Biarritz",
-                PhoneNumber = "0456789123",
-                BirthDate = new DateTime(1988, 5, 2),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 23,
-                LastName = "Tremblay",
-                FirstName = "Emma",
-                Email = "emma.tremblay@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "9 Rue des Francs-Bourgeois, Centre Ville, Strasbourg",
-                PhoneNumber = "0498765432",
-                BirthDate = new DateTime(1995, 12, 28),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 24,
-                LastName = "Lavoie",
-                FirstName = "Pierre",
-                Email = "pierre.lavoie@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "6 Boulevard des Anglais, Milady, Biarritz",
-                PhoneNumber = "0632147859",
-                BirthDate = new DateTime(1991, 7, 10),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 25,
-                LastName = "Bélanger",
-                FirstName = "Marie",
-                Email = "marie.belanger@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "15 Rue de la Douane, Centre Ville, Strasbourg",
-                PhoneNumber = "0356897412",
-                BirthDate = new DateTime(1987, 3, 22),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 26,
-                LastName = "Fortin",
-                FirstName = "Marc",
-                Email = "marc.fortin@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "32 Avenue Jean Médecin, Carré d'Or, Nice",
-                PhoneNumber = "0123456789",
-                BirthDate = new DateTime(1993, 9, 5),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 27,
-                LastName = "Gauthier",
-                FirstName = "Isabelle",
-                Email = "isabelle.gauthier@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "8 Rue Masséna, Vieux Nice, Nice",
-                PhoneNumber = "0456789123",
-                BirthDate = new DateTime(1990, 4, 12),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 28,
-                LastName = "Morin",
-                FirstName = "David",
-                Email = "david.morin@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "17 Rue du Maréchal Foch, Petite France, Strasbourg",
-                PhoneNumber = "0498765432",
-                BirthDate = new DateTime(1986, 11, 25),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 29,
-                LastName = "Lévesque",
-                FirstName = "Sarah",
-                Email = "sarah.levesque@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "6 Avenue Thiers, Jean Médecin, Nice",
-                PhoneNumber = "0632147859",
-                BirthDate = new DateTime(1994, 2, 18),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 30,
-                LastName = "Caron",
-                FirstName = "Thomas",
-                Email = "thomas.caron@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "15 Rue de la Juiverie, Bouffay, Nantes",
-                PhoneNumber = "0132546897",
-                BirthDate = new DateTime(1991, 10, 20),
-                ProfilePicture = "/path/to/profile_picture.jpg"
             }
             );
 
-
-            // Création des Customers
-            this.Customers.AddRange(
-                 new Customer
-                 {
-                     Id = 1,
-                     User = Users.Find(6),
-                     LoyaltyPoint = 100,
-                     CommentPoint = 50
-                 }
-
-            );
-
+            // Création des Administrator
             this.Administrators.AddRange(
                 new Administrator
                 {
@@ -7300,29 +7163,117 @@ namespace LittleBigTraveler.Models.DataBase
                }
 
             );
-            //this.Partners.AddRange(
-            //    new Partner
-            //    {
-            //        Id = 1,
-            //        User = Users.Find(12),
-            //        RoleId = 1,
-                   
-                    
-            //    },
-            //    new Partner
-            //    {
-            //        Id = 2,
-            //        User = Users.Find(13),
-            //        RoleId = 2,
-            //    },
-            //    new Partner
-            //    {
-            //        Id = 3,
-            //        User = Users.Find(14),
-            //        RoleId = 3,
-            //    }
 
-            //    );
+            // Création des Customers
+            this.Customers.AddRange(
+                 new Customer
+                 {
+                     Id = 1,
+                     User = Users.Find(6),
+                     LoyaltyPoint = 79,
+                     CommentPoint = 12
+                 },
+                 new Customer
+                 {
+                     Id = 2,
+                     User = Users.Find(7),
+                     LoyaltyPoint = 124,
+                     CommentPoint = 34
+                 },
+                 new Customer
+                 {
+                     Id = 3,
+                     User = Users.Find(8),
+                     LoyaltyPoint = 254,
+                     CommentPoint = 43
+                 },
+                 new Customer
+                 {
+                     Id = 4,
+                     User = Users.Find(9),
+                     LoyaltyPoint = 375,
+                     CommentPoint = 87
+                 },
+                 new Customer
+                 {
+                     Id = 5,
+                     User = Users.Find(10),
+                     LoyaltyPoint = 125,
+                     CommentPoint = 34
+                 },
+
+                 new Customer
+                 {
+                     Id = 6,
+                     User = Users.Find(11),
+                     LoyaltyPoint = 98,
+                     CommentPoint = 14
+                 },
+                 new Customer
+                 {
+                     Id = 7,
+                     User = Users.Find(12),
+                     LoyaltyPoint = 18,
+                     CommentPoint = 2
+                 },
+                 new Customer
+                 {
+                     Id = 8,
+                     User = Users.Find(13),
+                     LoyaltyPoint = 47,
+                     CommentPoint = 2
+                 },
+                 new Customer
+                 {
+                     Id = 9,
+                     User = Users.Find(14),
+                     LoyaltyPoint = 100,
+                     CommentPoint = 50
+                 },
+                 new Customer
+                 {
+                     Id = 10,
+                     User = Users.Find(15),
+                     LoyaltyPoint = 100,
+                     CommentPoint = 50
+                 }
+            );
+
+            this.Partners.AddRange(
+                new Partner
+                {
+                    Id = 1,
+                    User = Users.Find(16),
+                    RoleId = null,
+
+                },
+                new Partner
+                {
+                    Id = 2,
+                    User = Users.Find(17),
+                    RoleId = null,
+                },
+                new Partner
+                {
+                    Id = 3,
+                    User = Users.Find(18),
+                    RoleId = null,
+                },
+
+                new Partner
+                {
+                    Id = 4,
+                    User = Users.Find(19),
+                    RoleId = null,
+                },
+                new Partner
+                {
+                    Id = 5,
+                    User = Users.Find(20),
+                    RoleId = null,
+                }
+
+                );
 
             this.SaveChanges();
         }

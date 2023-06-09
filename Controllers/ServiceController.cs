@@ -14,16 +14,14 @@ namespace LittleBigTraveler.Controllers
 {
     public class ServiceController : Controller
     {
-<<<<<<< HEAD
 
-        // Action pour afficher la liste de tout les services
-=======
+
+
         /// <summary>
         /// Action pour afficher la liste de tous les services.
         /// </summary>
         /// <returns>Vue contenant la liste des services.</returns>
         [AllowAnonymous]
->>>>>>> BS_UserPref
         public IActionResult List()
         {
             using (var serviceDAL = new ServiceDAL())

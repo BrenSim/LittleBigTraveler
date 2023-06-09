@@ -12,6 +12,7 @@ namespace LittleBigTraveler.ViewModels
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public DateTime BookingDate { get; set; }
+        public Travel Travel { get; set; }
 
         public int PackageId { get; set; }
     }

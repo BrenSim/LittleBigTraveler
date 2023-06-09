@@ -16,16 +16,13 @@ namespace LittleBigTraveler.Controllers
     /// </summary>
     public class DestinationController : Controller
     {
-<<<<<<< HEAD
 
-        // Action pour afficher la liste des destinations
-=======
         /// <summary>
         /// Action pour afficher la liste des destinations.
         /// </summary>
         /// <returns>Vue contenant la liste des destinations.</returns>
         [AllowAnonymous]
->>>>>>> BS_UserPref
+
         public IActionResult List()
         {
             using (var destinationDAL = new DestinationDAL())
