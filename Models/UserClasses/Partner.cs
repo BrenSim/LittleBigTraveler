@@ -15,8 +15,10 @@ namespace LittleBigTraveler.Models.UserClasses
         public int RoleId { get; set; }
         public virtual Role Role { get; set; }
 
+        //public int BookingId { get; set; }
+        //public virtual List<Booking> Bookings { get; set; }
 
-        public virtual List<ServiceCatalog> ServiceCatalogs { get; set; }
+        //public virtual List<ServiceCatalog> ServiceCatalogs { get; set; }
     }
 }
 

@@ -61,6 +61,19 @@ namespace LittleBigTraveler
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=IndexTEST}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "confirmation",
+                    pattern: "Booking/Confirmation/{bookingId}",
+                    defaults: new { controller = "Booking", action = "Confirmation" }
+                );
+
+                endpoints.MapControllerRoute(
+                    name: "delete",
+                    pattern: "Booking/Delete/{bookingId}",
+                    defaults: new { controller = "Booking", action = "Delete" }
+                );
+
             });
         }
 

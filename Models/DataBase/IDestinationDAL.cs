@@ -9,7 +9,6 @@ namespace LittleBigTraveler.Models.DataBase
     {
         void DeleteCreateDatabase();
 
-        // Méthodes relatives aux destinations
         List<Destination> GetAllDestinations();
         int CreateDestination(string country, string city, string description, List<string> images, string link);
         void DeleteDestination(int id);

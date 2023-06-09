@@ -33,9 +33,6 @@ namespace LittleBigTraveler.Models.DataBase
         // Création/Ajout d'un "Travel"
         public int CreateTravel(int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
         {
-            // Récupération du client associé à l'ID fourni
-            //var customer = _bddContext.Customers.Include(c => c.User).FirstOrDefault(c => c.Id == customerId);
-
             // Récupération de la destination associée à l'ID fourni
             var destination = _bddContext.Destinations.FirstOrDefault(d => d.Id == destinationId);
             if (destination != null)
@@ -74,6 +71,7 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
+        // Modification d'un "Travel" par ID
         public void ModifyTravel(int id, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants)
         {
             var travel = _bddContext.Travels
@@ -109,19 +107,6 @@ namespace LittleBigTraveler.Models.DataBase
             }
         }
 
-
-        // Récupération des voyages d'un client par son ID
-        //public List<Travel> GetTravelsByCustomerId(int customerId)
-        //{
-        //    // Récupération de l'ID du client connecté à partir du contexte HTTP
-        //    customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
-
-        //    return _bddContext.Travels
-        //        .Include(t => t.Destination)
-        //        .Where(t => t.Customer.Id == customerId)
-        //        .ToList();
-        //}
-
         // Récupération d'un voyage par son ID
         public Travel GetTravelById(int travelId)
 
@@ -140,3 +125,15 @@ namespace LittleBigTraveler.Models.DataBase
 
     }
 }
+
+// Récupération des voyages d'un client par son ID
+//public List<Travel> GetTravelsByCustomerId(int customerId)
+//{
+//    // Récupération de l'ID du client connecté à partir du contexte HTTP
+//    customerId = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
+
+//    return _bddContext.Travels
+//        .Include(t => t.Destination)
+//        .Where(t => t.Customer.Id == customerId)
+//        .ToList();
+//}

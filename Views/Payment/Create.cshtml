@@ -1,0 +1,34 @@
+﻿@model LittleBigTraveler.ViewModels.PaymentViewModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Paiement";
+}
+
+@section content {
+    <h1 class="text-center">Paiement</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Résumé de la réservation</h5>
+            <p class="card-text">Réservation n°: @Model.BookingId</p>
+            <p class="card-text">Montant total: @Model.TotalAmount €</p>
+        </div>
+    </div>
+
+    <form method="post" action="/Payment/Create">
+        <input type="hidden" name="bookingId" value="@Model.BookingId" />
+        <input type="hidden" name="totalAmount" value="@Model.TotalAmount" />
+
+        <div class="form-group">
+            <label for="numCB">Numéro de carte bancaire</label>
+            <input type="text" class="form-control" id="numCB" name="numCB" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Payer</button>
+    </form>
+
+    <div class="text-center mt-4">
+        <a href="/Booking/List" class="btn btn-secondary">Retour à la liste des réservations</a>
+    </div>
+}

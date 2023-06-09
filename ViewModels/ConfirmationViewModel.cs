@@ -1,5 +1,8 @@
 ﻿using System;
+using LittleBigTraveler.Models.TravelClasses;
+using LittleBigTraveler.Models.UserClasses;
 namespace LittleBigTraveler.ViewModels
+
 {
     public class ConfirmationViewModel
     {

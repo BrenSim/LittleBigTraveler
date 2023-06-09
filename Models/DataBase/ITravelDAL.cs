@@ -9,8 +9,5 @@ namespace LittleBigTraveler.Models.DataBase
         int CreateTravel(int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants);
         void ModifyTravel(int id, int destinationId, string departureLocation, DateTime departureDate, DateTime returnDate, double price, int numParticipants);
         void DeleteTravel(int id);
-        //Travel GetTravelWithId(int id);
-        //List<Travel> GetTravelsByCustomerId(int customerId);
-        //List<Travel> GetAllTravels();
     }
 }

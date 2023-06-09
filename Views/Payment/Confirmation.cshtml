@@ -1,0 +1,23 @@
+﻿@model LittleBigTraveler.ViewModels.ConfirmationPayViewModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Confirmation de paiement";
+}
+
+@section content {
+    <h1 class="text-center">Confirmation de paiement</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Paiement n° @Model.PaymentId</h5>
+            <p class="card-text">Montant total : @Model.TotalAmount €</p>
+            <p class="card-text">Date de paiement : @Model.PaymentDate</p>
+            <p class="card-text">Numéro de carte bancaire : @Model.NumCB</p>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/Booking/List" class="btn btn-primary">Retour à la liste des réservations</a>
+    </div>
+}

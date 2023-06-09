@@ -6,11 +6,15 @@ using LittleBigTraveler.Models.DataBase;
 using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace LittleBigTraveler.Controllers
 {
     public class ServiceController : Controller
     {
+
         // Action pour afficher la liste de tout les services
         public IActionResult List()
         {
@@ -22,14 +26,14 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour ajouter un service (affiche le formulaire)
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         public IActionResult AddService()
         {
             return View();
         }
 
         // Méthode pour traiter le formulaire d'ajout d'un service
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult AddServices(ServiceViewModel model)
         {
@@ -118,3 +122,5 @@ namespace LittleBigTraveler.Controllers
         }
     }
 }
+
+
