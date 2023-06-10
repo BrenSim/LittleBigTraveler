@@ -528,6 +528,7 @@ input:valid {
     opacity: 0.9;
     height: auto;
     width: 98vw;
+    margin: 0 0 20px 0;
     padding: 40px 20px 40px 20px;
     display: flex;
     justify-content: center;
@@ -607,6 +608,7 @@ input:valid {
 .container1 {
     border: 1px solid red;
     width: auto;
+    margin: 40px 0 40px 0;
 }
 
 .rightContainer {

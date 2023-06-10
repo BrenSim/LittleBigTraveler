@@ -6,7 +6,7 @@
 /* Partie Header */
 
 @media (max-width: 1050px) {
-    nav ul li {
+    .navMenu ul li {
         font-size: 0.9rem;
         margin-right: 2vw;
         margin-left: 2vw;
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 1000px) {
-    nav ul li {
+    .navMenu ul li {
         font-size: 0.8rem;
         margin-right: 0vw;
         margin-left: 0vw;
@@ -38,6 +38,7 @@ header {
     align-items: center;
     white-space: nowrap;
     padding: 10px;
+    width: 100%;
     margin-bottom: 40px;
     background-color: rgba(255, 255, 255, 0.074);
     border-radius: 45px;
@@ -81,6 +82,7 @@ footer {
     justify-content: space-between;
     padding: 10px;
     height: 180px;
+    width: 100%;
     margin-top: 40px;
     background-color: rgba(255, 255, 255, 0.074);
     border-radius: 45px;
@@ -176,11 +178,11 @@ a {
     scroll-behavior: smooth;
 }
 
-body {
+/*body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+}*/
 
 #sectionConfirmationPaiement {
     width: 100%;
@@ -204,8 +206,7 @@ body {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(20px);
     opacity: 0.9;
-    height: 100%;
-    width: 98vw;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -299,10 +300,12 @@ form input[type="text"], form input[type="email"] {
 
 /* PARTIE CARD PAIEMENT DROITE */
 
-.modal {
-    background: #FFFFFF;
-    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+.rightPayment {
     border-radius: 45px;
+    background-color: white;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
     max-width: 450px;
     margin-left: 2%;
 }
@@ -370,7 +373,7 @@ form input[type="text"], form input[type="email"] {
         background-color: #e8e8e8;
     }
 
-.card-info {
+.card-info-payment {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -451,22 +454,17 @@ form input[type="text"], form input[type="email"] {
             padding: 10px 45px;
             border: 6px solid orange;
         }
-   body {
-       display: flex;
-       flex-direction: column;
-   }
 
-   .sectionBtnConfirm {
-       flex: 1;
-       width: 100%;
-       height:100%
-   }
+
+.buttonAG {
+    font-size: 40px;
+}
 
    /*-------------------------Partie confirmation payment-----------------------------*/
 
 
 #sectionConf {
-    width: 100%;
+    width: 98vw;
     height: auto;
     font-family: "roboto", sans-serif;
     display: flex;
@@ -532,7 +530,7 @@ form input[type="text"], form input[type="email"] {
         /*-----------------------Partie panier----------------------------*/
 
 #sectionPanier {
-    width: 100%;
+    width: 98vw;
     height: auto;
     font-family: "roboto", sans-serif;
     display: flex;
@@ -553,9 +551,9 @@ form input[type="text"], form input[type="email"] {
     opacity: 0.9;
     height: 100%;
     width: 90%;
-    padding: 40px 0 40px 0;
+    padding: 40px 20px 40px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: start;
     transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
