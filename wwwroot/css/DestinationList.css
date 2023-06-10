@@ -6,7 +6,7 @@
 /* Partie Header */
 
 @media (max-width: 1050px) {
-    nav ul li {
+    .navMenu ul li {
         font-size: 0.9rem;
         margin-right: 2vw;
         margin-left: 2vw;
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 1000px) {
-    nav ul li {
+    .navMenu ul li {
         font-size: 0.8rem;
         margin-right: 0vw;
         margin-left: 0vw;
@@ -58,16 +58,16 @@ header {
     display: flex;
 }
 
-nav ul li {
+.navMenu ul li {
     margin-right: 2vw;
     margin-left: 2vw;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-    nav ul li:hover {
+    .navMenu ul li:hover {
         transform: scale(1.15);
     }
 
-    nav ul li a {
+    .navMenu ul li a {
         text-decoration: none;
         color: #333;
         font-weight: bold;
@@ -162,16 +162,55 @@ nav ul li {
     justify-content: center;
     align-items: center;
 }
+.positionDSFSearchDest {
+    margin-bottom: 50px;
+    margin-top: 30px;
+    height: auto;
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .destinationSearchField {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80vw;
 }
+.zoneSearchBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-btnSearchDest {
+    color: orange;
+    background: none;
+    width: 70%;
+    padding: 10px 20px;
+    border: 4px solid orange;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    outline: none;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
+    .card-btnSearchDest:hover {
+        border: 4px solid orange;
+        color: orange;
+        transform: scale(1.1);
+    }
+
+    .card-btnSearchDest:active {
+        border: 4px solid rgb(247, 184, 67);
+        color: orange;
+    }
 #positionInfoSection {
     display: grid;
-    
 }
 .card-container {
     display: flex;

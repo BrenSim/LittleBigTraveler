@@ -2,66 +2,139 @@
 @model LittleBigTraveler.ViewModels.DestinationViewModel
 
 @{
-    Layout = "_DestinationLayout";
+    //Layout = "_DestinationLayout";
     ViewData["Title"] = "Résultats de recherche";
 }
 
-@section content {
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/DestinationListSearch.css">
+    <script src="https://kit.fontawesome.com/feb8ff1e04.js" crossorigin="anonymous"></script>
+    <title>@ViewBag.Title</title>
+</head>
 
-    @if (Model.Destinations.Count == 0)
+<body>
+    <header>
+        <div class="logo">
+            <a href="@Url.Action("Index", "Home")"><img src="~/imagesIndex/LOGO_P2-05.png" alt="Logo"></a>
+        </div>
+        <nav class="navMenu">
+            <ul>
+                <li><a href="#">Nos offres</a></li>
+                <li><a href="#">Notre concept</a></li>
+                <li><a href="@Url.Action("List", "Destination")">Nos destinations</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a href="/User/Profile">Mon Profil</a></li>
+                    <li><a href="/User/LogOut">Déconnexion</a></li>
+                }
+                else
+                {
+                    <li><a href="@Url.Action("LogIn", "User")">Connexion</a></li>
+                    <li><a href="@Url.Action("AddCustomer", "User")">Inscription</a></li>
+                }
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        @*@section content {*@
+
+        @if (Model.Destinations.Count == 0)
         {
-        <p>Aucun résultat trouvé.</p>
+            <p>Aucun résultat trouvé.</p>
         }
         else
         {
 
-        <section id="sectionDestinationCards">
-            <div class="glassBorderBackground">
-                <h1 class="titrePackage">NOS DESTINATIONS</h1>
-                <div class="positionDSF">
-                    <form method="get" action="/Destination/FindDestinations">
-                        <div class="destinationSearchField">
-                            <input type="search" name="query" class="input" autocomplete="on" placeholder="Recherche de destinations par Pays ou Ville">
-                            <!--  <label class="searchLabel">Rechercher une destination</label> -->
-                        </div>
-                        <div class="col-auto">
-                            <button type="submit" class="card-btn">Rechercher</button>
-                        </div>
-                        <button class="glassIcon">
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                            </span>
-                        </button>
-                    </form>
-                </div>
-                <div id="positionIntoSection">
-                    <div class="card-container">
-                        @foreach (var destination in Model.Destinations)
+            <section id="sectionDestinationCards">
+                <div class="glassBorderBackground">
+                    <h1 class="titrePackage">NOS DESTINATIONS</h1>
+                    <div class="positionDSFSearchDest">
+                        <form method="get" action="/Destination/FindDestinations">
+                            <div class="destinationSearchField">
+                                <input type="search" name="query" class="input" autocomplete="on" placeholder="Recherche de destinations par Pays ou Ville">
+                                <!--  <label class="searchLabel">Rechercher une destination</label> -->
+                            </div>
+                            <div class="zoneSearchBtn">
+                                <button type="submit" class="card-btnSearchDest">Rechercher</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="positionIntoSection">
+                        <div class="card-container">
+                            @foreach (var destination in Model.Destinations)
                             {
-                            <div class="glassBorderCard">
-                                <div class="card">
-                                    @foreach (var image in destination.Images)
+                                <div class="glassBorderCard">
+                                    <div class="card">
+                                        @foreach (var image in destination.Images)
                                         {
-                                        <img src="@image" alt="Image" class="card-img" />
+                                            <img src="@image" alt="Image" class="card-img" />
                                         }
-                                    <div class="card-body">
-                                        <h1 class="card-title">@destination.Country</h1>
-                                        <h3 class="card-sub-title">@destination.City</h3>
-                                        <p class="card-sub-title">@destination.Description</p>
-                                        <button class="card-btn">Réserver !</button>
+                                        <div class="card-body">
+                                            <h1 class="card-title">@destination.Country</h1>
+                                            <h3 class="card-sub-title">@destination.City</h3>
+                                            <p class="card-sub-title">@destination.Description</p>
+                                            <button class="card-btn">Réserver !</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                         <!--   <a href="/Destination/ChangeDestination/@destination.Id" class="btn btn-secondary mr-2">Modifier</a>
-                            <a href="/Destination/DeleteDestinations/@destination.Id" class="btn btn-danger">Supprimer</a>
-                            <a href="/Travel/CreateTravel?destinationId=@destination.Id" class="btn btn-primary">Voyager</a> -->
+                                <!--   <a href="/Destination/ChangeDestination/@destination.Id" class="btn btn-secondary mr-2">Modifier</a>
+                                   <a href="/Destination/DeleteDestinations/@destination.Id" class="btn btn-danger">Supprimer</a>
+                                   <a href="/Travel/CreateTravel?destinationId=@destination.Id" class="btn btn-primary">Voyager</a> -->
                             }
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-            }
         }
+        @*}*@
+
+    </main>
+
+    <footer>
+        <div class="logoFooter">
+            <a href="#Home"><img src="~/imagesIndex/LOGO_P2-05.png" alt="Logo"></a>
+            <div>
+                <span><a href="#"><i class="fa-brands fa-facebook"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-twitter"></i></a></span>
+                <span><a href="#"><i class="fa-brands fa-tiktok"></i></a></span>
+            </div>
+        </div>
+        <div id="navFooter">
+            <nav class="navFooter">
+                <ul>
+                    <li class="navTitre">À propos de nous</li>
+                    <li><a href="#"><p>Qui sommes nous</p></a></li>
+                    <li><a href="#">Notre concept</a></li>
+                    <li><a href="#">Nous rejoindre</a></li>
+                </ul>
+            </nav>
+            <nav class="navFooter">
+                <ul>
+                    <li class="navTitre">Contacts</li>
+                    <li><a href="#">Contactez-nous</a></li>
+                    <li><a href="#">Presse</a></li>
+                </ul>
+            </nav>
+            <nav class="navFooter">
+                <ul>
+                    <li class="navTitre">Informations légales</li>
+                    <li><a href="#">Mentions légale</a></li>
+                    <li><a href="#">Conditions générales de vente</a></li>
+                    <li><a href="#">Gestion des consentements cookies</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
 
 

@@ -42,28 +42,33 @@
                 <div class="logo">
                     <a href="#"><img src="~/imagesIndex/logoLBT.png" alt="Logo"></a>
                 </div>
-                <!--   <h1 class="titreHeader">Little Big Traveler</h1>
-                <p class="textHeader"t>Petit voyage, grande découverte !</p> -->
+                
             </div>
-        </section>
-        <section>
-            <div class="menu-container">
-                <form method="get" action="/Destination/FindDestinations">
-                    <!-- <ul>
-                        <li class="destination"><a href="#">Destination</a></li>
-                        <li class="VDepart"><a href="#">Ville de départ</a></li>
-                        <li class="DDepart"><a href="#">Date de départ</a></li>
-                        <li class="prix"><a href="#">Prix</a></li>
-                    </ul> -->
-                    <input type="text" class="searchField" placeholder="Rechercher une destination par pays ou par ville..." name="query">
-                    <button class="glassIcon" type="submit">
-                        <span>
-                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                        </span>
-                    </button>
+
+            <div class="sectionMultiSearch">
+                <form method="get" action="/Package/SearchPackages">
+                    <div class="multiSearch">
+
+                        <input type="text" class="inputMulti" placeholder="Destination" name="destination">
+
+
+                        <input type="number" class="inputMulti" placeholder="Mois de départ" name="departureMonth" min="1" max="12"
+                               step="1" value="">
+
+
+                        <input type="number" class="inputMulti" placeholder="Prix min" name="minPrice" step="0.01" value="">
+
+
+                        <input type="number" class="inputMulti" placeholder="Prix max" name="maxPrice" step="0.01" value="">
+
+
+                        <button type="submit" class="btnMulti">Rechercher</button>
+
+                    </div>
                 </form>
             </div>
         </section>
+     
 
         <section id="sectionBestCards">
             <div class="glassBorderOffersBackground">
@@ -82,6 +87,14 @@
                                     <button class="cardOffers-btn">Réserver !</button>
                                 </div>
                             </div>
+                            @*<div class="cardOffers">
+                                <img src="@Model.Destinations[1].Images[0]" class="card-img" />
+                                <div class="cardOffers-body">
+                                    <h1 class="cardOffers-title">@Model.Destinations[1].Country</h1>
+                                    <p class="cardOffers-sub-title">@Model.Destinations[1].City</p>
+                                    <button class="cardOffers-btn">Réserver !</button>
+                                </div>
+                            </div>*@
                         </div>
                         <div class="glassBorderCardOffers">
                             <div class="cardOffers">
@@ -145,7 +158,7 @@
                             <h1 class="card-title">Voyage sur mesure</h1>
                             <p class="card-sub-title">Vos envies, votre découverte</p>
                             <p class="card-info">Vous avez la possibilité de customiser vous même votre propre voyage ! Transports, services, activités, vous êtes libre.</p>
-                            <button class="card-btn">Réserver !</button>
+                            <a href="@Url.Action("List", "Destination")"<button class="card-btn">Réserver !</button></a>
                         </div>
                     </div>
                 </div>
