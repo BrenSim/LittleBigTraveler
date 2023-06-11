@@ -29,18 +29,19 @@
         <div class="card-container">
             <div class="myCard">
                 <div class="profilImage">
+                    <img src="/images/imgProfile.png"/>
                 </div>
 
                 <div class="container" id="container">
                     <div class="UserName">
-                        <h1>Frédéric Dupin</h1>
+                        <h1>@Model.FirstName @Model.LastName</h1>
                     </div>
                 </div>
                 <div class="cardInfos">
-                    <h3>Genre : Homme</h3>
-                    <h3>Email : toto@gmail.com</h3>
-                    <h3>Tel : 0123456789</h3>
-                    <h3>Pays : France</h3>
+                    <h3>Prénom : @Model.FirstName</h3>
+                    <h3>Nom : @Model.LastName</h3>
+                    <h3>Email : @Model.Email</h3>
+                    <h3>Tel : @Model.PhoneNumber</h3>
                 </div>
                 <div class="littleHole"></div>
                 <button class="changeProfilImagedButton" type="submit">
@@ -50,16 +51,16 @@
                 </button>
             </div>
         </div>
-        <div class="banner">
+        @*<div class="banner">
             <button class="changeBackgroundButton" type="submit">
                 <span>
                     <i class="fa-solid fa-upload fa-lg"></i>
                 </span>
             </button>
-        </div>
+        </div>*@
     </section>
 
-    <section id="profilInfos" class="menu-container">
+    @*<section id="profilInfos" class="menu-container">
         <nav>
             <ul>
                 <li><a href="#personalInfo">Informations personnelles</a></li>
@@ -68,7 +69,7 @@
                 <li><a href="#refund">Remboursement</a></li>
             </ul>
         </nav>
-    </section>
+    </section>*@
 
     <section id="personalInfo">
         <form method="post" action="/User/@actionUpdate/@Model.UserId">
