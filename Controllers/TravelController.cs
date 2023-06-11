@@ -150,7 +150,7 @@ public class TravelController : Controller
             try
             {
                 travelDAL.ModifyTravel(model.Id, model.DestinationId, model.DepartureLocation, model.DepartureDate, model.ReturnDate, model.Price, model.NumParticipants);
-                return RedirectToAction("List");
+                return RedirectToAction("/");
             }
             catch (Exception ex)
             {

@@ -142,7 +142,7 @@ public class BookingController : Controller
 
                 if (booking == null || booking.UserId != userId)
                 {
-                    return NotFound("Booking not found");
+                    return NotFound("Pas de réservation trouvée");
                 }
   
                 bookingDAL.DeleteBooking(bookingId);
