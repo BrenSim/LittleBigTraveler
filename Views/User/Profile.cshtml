@@ -4,23 +4,23 @@
     Layout = "_ProfilsLayout";
     ViewData["Title"] = "Mon profil";
 
-    //var actionUpdate = "";
-    //var actionDelete = "";
-    //switch (Model.UserType)
-    //{
-    //    case "Administrator":
-    //        actionUpdate = "ChangeAdministrators";
-    //        actionDelete = "DeleteUsers";
-    //        break;
-    //    case "Customer":
-    //        actionUpdate = "ChangeCustomers";
-    //        actionDelete = "DeleteUsers";
-    //        break;
-    //    case "Partner":
-    //        actionUpdate = "ChangePartners";
-    //        actionDelete = "DeleteUsers";
-    //        break;
-    //}
+    var actionUpdate = "";
+    var actionDelete = "";
+    switch (Model.UserType)
+    {
+        case "Administrator":
+            actionUpdate = "ChangeAdministrators";
+            actionDelete = "DeleteUsers";
+            break;
+        case "Customer":
+            actionUpdate = "ChangeCustomers";
+            actionDelete = "DeleteUsers";
+            break;
+        case "Partner":
+            actionUpdate = "ChangePartners";
+            actionDelete = "DeleteUsers";
+            break;
+    }
 }
 
 @section Content {
@@ -71,27 +71,26 @@
     </section>
 
     <section id="personalInfo">
-        <form method="post" action="@Url.Action("ChangeAdministrators", new { id = Model.UserId })">
-
+        <form method="post" action="/User/@actionUpdate/@Model.UserId">
             <input type="hidden" name="UserId" value="@Model.UserId" />
 
             @*<div class="radio-inputs">
 
-            <label class="radio">
-                <input type="radio" name="civilite" value="monsieur" id="civilite-monsieur">
-                <span class="gender">Monsieur</span>
-            </label>
+                <label class="radio">
+                    <input type="radio" name="civilite" value="monsieur" id="civilite-monsieur">
+                    <span class="gender">Monsieur</span>
+                </label>
 
-            <label class="radio">
-                <input type="radio" name="civilite" value="madame" id="civilite-madame">
-                <span class="gender">Madame</span>
-            </label>
+                <label class="radio">
+                    <input type="radio" name="civilite" value="madame" id="civilite-madame">
+                    <span class="gender">Madame</span>
+                </label>
 
-            <label class="radio">
-                <input type="radio" name="civilite" value="autre" id="civilite-autre">
-                <span class="gender">Autre</span>
-            </label>
-        </div>*@
+                <label class="radio">
+                    <input type="radio" name="civilite" value="autre" id="civilite-autre">
+                    <span class="gender">Autre</span>
+                </label>
+            </div>*@
             <div class="userNameFirstname">
                 <div class="input-Name">
                     <input required type="text" name="LastName" autocomplete="on" class="input" value="@Model.LastName">
@@ -123,16 +122,20 @@
                         <label class="user-Adress">Adresse</label>
                     </div>
                     @*<div class="input-City">
-                    <input type="text" name="City" autocomplete="on" class="input" required>
-                    <label class="user-City">Ville</label>
-                </div>
-                <div class="input-Zipcode">
-                    <input type="text" name="zipcode" autocomplete="on" class="input" required>
-                    <label class="user-Zipcode">Code postal</label>
-                </div>*@
+                        <input type="text" name="City" autocomplete="on" class="input" required>
+                        <label class="user-City">Ville</label>
+                    </div>
+                    <div class="input-Zipcode">
+                        <input type="text" name="zipcode" autocomplete="on" class="input" required>
+                        <label class="user-Zipcode">Code postal</label>
+                    </div>*@
                 </div>
             </div>
             <button type="submit" class="saveInfos">Enregistrer mes informations</button>
+        </form>
+        <form method="post" action="/User/@actionDelete/@Model.UserId" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.');">
+            <input type="hidden" name="UserId" value="@Model.UserId" />
+            <button type="submit" class="btn btn-danger mt-3">Supprimer le compte</button>
         </form>
     </section>
 

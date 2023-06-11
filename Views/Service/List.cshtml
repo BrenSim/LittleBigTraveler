@@ -48,7 +48,7 @@
                     <h3>Liens :</h3>
                     <p>@service.ExternalLinks</p>
                 </div>
-                @if (!User.IsInRole("Customer"))
+                @if (User.IsInRole("Administrator"))
                     {
                     <div class="info-item-admin">
                         <a href="/Service/ChangeService/@service.Id" class="modif">Modifier</a>

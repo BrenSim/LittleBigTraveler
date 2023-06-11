@@ -16,6 +16,8 @@ namespace LittleBigTraveler.ViewModels
         public List<string> Images { get; set; }
         public string ExternalLinks { get; set; }
         public List<Destination> Destinations { get; set; }
+        public Package Package { get; set; }
+        public Destination Destination { get; set; }
         //public ClaimsPrincipal UserPrincipal { get; set; }
     }
 }

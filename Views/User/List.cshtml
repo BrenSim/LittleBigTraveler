@@ -1,0 +1,58 @@
+﻿@model List<LittleBigTraveler.ViewModels.UserViewModel>
+@{
+    Layout = "_DestinationLayout";
+    ViewData["Title"] = "Liste des utilisateurs";
+}
+
+@section content {
+    <section id="sectionService">
+        <h1 class="titreService">Liste des utilisateurs</h1>
+        @if (Model == null || Model.Count == 0)
+        {
+            <p>Aucun utilisateur trouvé.</p>
+        }
+        else
+        {
+            @foreach (var user in Model)
+            {
+                <div class="info-row">
+
+                    <div class="info-item">
+                        <h3>Nom :</h3>
+                        <p>@user.LastName</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Prénom :</h3>
+                        <p>@user.FirstName</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Email :</h3>
+                        <p>@user.Email</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Type d'utilisateur :</h3>
+                        <p>@user.UserType</p>
+                    </div>
+                    @if (user.UserType == "Customer")
+                    {
+                        <a href="/User/Profile/@user.UserId" class="">Modifier</a>
+                    }
+                    else if (user.UserType == "Partner")
+                    {
+                        <a href="/User/Profile/@user.UserId" class="">Modifier</a>
+                    }
+                    else if (user.UserType == "Administrator")
+                    {
+                        <a href="/User/Profile/@user.UserId" class="">Modifier</a>
+                    }
+
+                    @*<a href="/User/DeleteUsers/@user.UserId" class="">Supprimer</a>*@
+                </div>
+            }
+        }
+
+        <div class="card-btn">
+            <a href="/Home/Index" class="">Retour à l'accueil</a>
+        </div>
+    </section>
+}

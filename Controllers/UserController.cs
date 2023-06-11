@@ -129,14 +129,14 @@ namespace LittleBigTraveler.Controllers
         }
 
         // Action pour l'ajout d'un partenaire
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         public IActionResult AddPartner()
         {
             return View();
         }
 
         // Action pour le traitement du formulaire d'ajout d'un partenaire
-        [Authorize(Roles = "Administrator, Partner")]
+        //[Authorize(Roles = "Administrator, Partner")]
         [HttpPost]
         public IActionResult AddPartners(UserViewModel model)
         {
@@ -145,11 +145,12 @@ namespace LittleBigTraveler.Controllers
                 using (var userDAL = new UserDAL())
                 {
                     int partnerId = userDAL.CreatePartner(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate, model.RoleName, model.RoleType);
-
+                    User user = userDAL.Authentification(model.Email, model.Password);
                     // Création des revendications (claims) pour l'utilisateur authentifié
                     var userClaims = new List<Claim>()
                     {
                         new Claim(ClaimTypes.Name, partnerId.ToString()),
+                        new Claim(ClaimTypes.Role, user.GetUserType())
                     };
 
                     var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
@@ -182,11 +183,12 @@ namespace LittleBigTraveler.Controllers
                 using (var userDAL = new UserDAL())
                 {
                     int administratorId = userDAL.CreateAdministrator(model.LastName, model.FirstName, model.Email, model.Password, model.Address, model.PhoneNumber, model.BirthDate);
-
+                    User user = userDAL.Authentification(model.Email, model.Password);
                     // Création des revendications (claims) pour l'utilisateur authentifié
                     var userClaims = new List<Claim>()
                     {
                         new Claim(ClaimTypes.Name, administratorId.ToString()),
+                        new Claim(ClaimTypes.Role, user.GetUserType())
                     };
 
                     var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
@@ -211,7 +213,7 @@ namespace LittleBigTraveler.Controllers
                 userDAL.DeleteUser(id);
             }
 
-            return RedirectToAction("IndexTEST", "Home");
+            return RedirectToAction("Index", "Home");
         }
 
         //[Authorize(Roles = "Administrator, Customer")]

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model LittleBigTraveler.ViewModels.UserViewModel
+
+@{
     ViewBag.Title = "Signup Page";
     Layout = "_SigninSignupLayout";
 }
@@ -27,7 +29,7 @@
                 <button type="submit" class="btnRegistration">Inscription</button>
             </form>
         </div>
-        <div>
+        @*<div>
 
             <p>Vous voulez juste voyager ? <br> Connectez-vous !</p>
             <button class="btnSignInUp">
@@ -36,7 +38,7 @@
                 </span>
                 <a href="@Url.Action("LogIn", "User")"><span class="button-text">Connexion !</span></a>
             </button>
-        </div>
+        </div>*@
         <div class="littleHole"></div>
         <div class="backHome">
             <a href="@Url.Action("Index", "Home")">Accueil</a>

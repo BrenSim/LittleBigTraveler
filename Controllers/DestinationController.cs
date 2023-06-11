@@ -41,7 +41,7 @@ namespace LittleBigTraveler.Controllers
                 using (var destinationDAL = new DestinationDAL())
                 {
                     int destinationId = destinationDAL.CreateDestination(model.Country, model.City, model.Description, model.Images, model.ExternalLinks);
-                    return RedirectToAction("IndexTEST", "Home");
+                    return RedirectToAction("List", "Destination");
                 }
             }
 
