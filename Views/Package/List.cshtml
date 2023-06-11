@@ -3,12 +3,12 @@
 @model List<LittleBigTraveler.Models.TravelClasses.Package>
 
 @{
-    Layout = "_Layout";
+    Layout = "_DestinationLayout";
     ViewData["Title"] = "Liste des voyages sur mesure";
 }
 
 @section content {
-    <h1 class="text-center">Liste des voyages sur mesure</h1>
+    
 
     @if (Model.Count == 0)
     {
@@ -16,59 +16,37 @@
     }
     else
     {
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Destination</th>
-                    <th>Description</th>
-                    <th>Lieu de départ</th>
-                    <th>Date de départ</th>
-                    <th>Date de retour</th>
-                    <th>Nombre de participant</th>
-                    <th>Prix</th>
-                    <th>Nombre de places disponibles</th>
-                    <th>Image</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    CultureInfo frenchCulture = new CultureInfo("fr-FR");
-                }
+<section id="sectionDestinationCards">
+    <h1 class="titrePackage">NOS PACKAGES ALLINCLUSIVE</h1>
+    <div class="glassBorderBackground">
+
+        <div class="positionDSF">
+
+        </div>
+        <div id="positionIntoSection">
+            <div class="card-container">
                 @foreach (var package in Model)
                 {
-                    <tr>
-                        <td>@package.Name</td>
-                        <td>@package.Travel.Destination.City, @package.Travel.Destination.Country</td>
-                        <td>@package.Description</td>
-                        <td>@package.Travel.DepartureLocation</td>
-                        <td>@package.Travel.DepartureDate.ToString("d MMMM yyyy", frenchCulture)</td>
-                        <td>@package.Travel.ReturnDate.ToString("d MMMM yyyy", frenchCulture)</td>
-                        <td>@package.Travel.NumParticipants</td>
-                        <td>@package.Price</td>
-                        <td>@package.QuantityAvailable</td>
-                        <td>
+                    <div class="glassBorderCard">
+                        <div class="card">
                             @foreach (var image in @package.Travel.Destination.Images)
                             {
-                                <img src="@image" alt="Image" class="img-thumbnail" />
+                                <img src="@image" alt="Image" class="card-img" />
                             }
-                        </td>
-
-                        <td>
-                            <a href="/Package/EditPackage/@package.Id" class="btn btn-primary">Modifier Package</a>
-                            <a href="/Travel/ModifyTravel/@package.Id" class="btn btn-secondary">Modifier Voyage</a>
-                            <a href="/Package/DeletePackage/@package.Id" class="btn btn-danger">Supprimer</a>
-                            <a href="/Booking/Create?packageId=@package.Id" class="btn btn-success">Select</a>
-
-                        </td>
-                    </tr>
+                            <div class="card-body">
+                                <h1 class="card-title">@package.Name</h1>
+                                <h2 class="card-sub">@package.Travel.Destination.City, @package.Travel.Destination.Country</h2>
+                                <h4>@package.Price €</h4>
+                                <p class="card-sub-title">@package.Description</p>
+                                <a href="/Booking/Create?packageId=@package.Id"><button class="card-btn">Réserver !</button></a>
+                            </div>
+                        </div>
+                    </div>
                 }
-            </tbody>
-        </table>
+            </div>
+        </div>
+    </div>
+</section>
     }
 
-    <div class="text-center mt-4">
-        <a href="/Home/IndexTEST" class="btn btn-primary">Accueil</a>
-    </div>
 }

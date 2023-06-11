@@ -20,7 +20,6 @@ namespace LittleBigTraveler.ViewModels
         public List<Package> Packages { get; set; }
         public Package Package { get; set; }
 
-
         public PackageViewModel()
         {
             Services = new List<Service>();

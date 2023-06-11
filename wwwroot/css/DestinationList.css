@@ -1,12 +1,13 @@
 ﻿* {
     margin: 0;
     padding: 0;
+    box-sizing: unset; /*À voir*/
 }
 
 /* Partie Header */
 
 @media (max-width: 1050px) {
-    nav ul li {
+    .navMenu ul li {
         font-size: 0.9rem;
         margin-right: 2vw;
         margin-left: 2vw;
@@ -20,7 +21,7 @@
 }
 
 @media (max-width: 1000px) {
-    nav ul li {
+    .navMenu ul li {
         font-size: 0.8rem;
         margin-right: 0vw;
         margin-left: 0vw;
@@ -58,16 +59,16 @@ header {
     display: flex;
 }
 
-nav ul li {
+.navMenu ul li {
     margin-right: 2vw;
     margin-left: 2vw;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-    nav ul li:hover {
+    .navMenu ul li:hover {
         transform: scale(1.15);
     }
 
-    nav ul li a {
+    .navMenu ul li a {
         text-decoration: none;
         color: #333;
         font-weight: bold;
@@ -77,7 +78,7 @@ nav ul li {
 
 #sectionDestinationCards {
     width: 100%;
-    height: 800px;
+    height: auto;
     font-family: "roboto", sans-serif;
     display: flex;
     justify-content: center;
@@ -102,6 +103,7 @@ nav ul li {
     opacity: 0.9;
     height: 100%;
     width: 98vw;
+    padding: 40px 0 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,27 +114,110 @@ nav ul li {
 
 .titrePackage {
     font-size: 3rem;
-    position: absolute;
-    margin-bottom: 725px;
+    margin: 20px 0 0;
     color: white; /*modif*/
     text-shadow: 3px 0px 7px #048b9a; /*modif*/
+}
+.searchingBtn {
+    display: flex;
+    justify-content: center;
+}
+
+.card-btn-search {
+    color: orange;
+    background: none;
+    width: auto;
+    padding: 10px 30px;
+    border: 4px solid orange;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    outline: none;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+    .card-btn-search:hover {
+        border: 4px solid orange;
+        background: orange;
+        color: white;
+        transform: scale(1.1);
+    }
+
+.card-btn-search:active {
+    border: 4px solid rgb(247, 184, 67);
+    color: white;
+    background: orange;
 }
 
 /* Partie recherche */
 
 .positionDSF {
     margin-bottom: 50px;
+    margin-top: 30px;
+    height: auto;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.positionDSFSearchDest {
+    margin-bottom: 50px;
+    margin-top: 30px;
+    height: auto;
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.destinationSearchField {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+.zoneSearchBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-btnSearchDest {
+    color: orange;
+    background: none;
+    width: 70%;
+    padding: 10px 20px;
+    border: 4px solid orange;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    outline: none;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+    .card-btnSearchDest:hover {
+        border: 4px solid orange;
+        color: orange;
+        transform: scale(1.1);
+    }
+
+    .card-btnSearchDest:active {
+        border: 4px solid rgb(247, 184, 67);
+        color: orange;
+    }
 #positionInfoSection {
-    display: flex;
+    display: grid;
 }
 .card-container {
     display: flex;
-    justify-content: space-between; /* ou 'space-around' pour ajouter un espace égal entre les éléments */
-}
-.destinationSearchField {
-    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;/* ou 'space-around' pour ajouter un espace égal entre les éléments */
+    margin-top: 20px;
 }
 
 .input {
@@ -150,7 +235,6 @@ nav ul li {
     letter-spacing: 1px;
     font-size: 15px;
     font-weight: 700;
-    text-transform: capitalize;
     transition: 0.3s ease-in-out;
 }
 
@@ -201,6 +285,7 @@ nav ul li {
 .glassBorderCard {
     width: 370px;
     height: 460px;
+    margin: 10px;
     background: rgba(255, 255, 255, 0.074);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -282,9 +367,6 @@ nav ul li {
     transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.glassBorderCard:hover .card-img {
-    transform: scale(1.2);
-}
 
 .card-body {
     width: 80%;
@@ -395,7 +477,8 @@ nav ul li {
 
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     height: 180px;
     margin-top: 40px;
@@ -410,6 +493,7 @@ footer {
 
 .logoFooter {
     text-align: center;
+    margin-right: 4%;
 }
 
     .logoFooter i {
@@ -426,6 +510,7 @@ footer {
 #navFooter {
     display: flex;
     justify-content: flex-start;
+    margin-left: 4%;
 }
 
 .navFooter {
@@ -504,23 +589,6 @@ a {
     #sectionThreeCards {
         height: 600px;
     }
-}
-
-.glassBorderBackground {
-    position: relative;
-    background-color: white;
-    border-radius: 45px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(20px);
-    opacity: 0.9;
-    height: 100%;
-    width: 98vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .titlesZone {
@@ -668,7 +736,7 @@ a {
 .cardOffers-btn {
     color: white;
     background: none;
-    width: 90%;
+    width: auto;
     padding: 10px 20px;
     border: 4px solid white;
     border-radius: 50px;
@@ -708,7 +776,7 @@ a {
     }
 
     .cardOffers-btn {
-        width: 90%;
+        width: auto;
         padding: 10px 20px;
         font-size: 12px;
     }
@@ -730,7 +798,7 @@ a {
     }
 
     .cardOffers-btn {
-        width: 90%;
+        width: auto;
         padding: 6px 15px;
         font-size: 12px;
     }
@@ -854,7 +922,6 @@ input:valid ~ label {
     letter-spacing: 1px;
     font-size: 15px;
     font-weight: 700;
-    text-transform: capitalize;
     transition: 0.3s ease-in-out;
 }
 
@@ -1007,7 +1074,6 @@ input:valid ~ label {
     letter-spacing: 1px;
     font-size: 15px;
     font-weight: 700;
-    text-transform: capitalize;
     transition: 0.3s ease-in-out;
 }
 
@@ -1041,4 +1107,529 @@ input:valid ~ label {
     margin-bottom: 50px;
     color: white;
     text-shadow: 3px 0px 7px #048b9a; /*modif*/
+}
+
+/*---------------------------------Partie liste de services-------------------------------------------*/
+
+.imgService {
+
+}
+
+
+   /*---------------------Partie Create Package avec les services-----------------------------*/
+
+#sectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.form-group-description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .form-group-description textarea {
+        height: 200px;
+        width: 50%;
+    }
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .form-group input {
+        width: 50%;
+    }
+
+.input {
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 20px 0;
+    padding: 12px;
+    width: 95%;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+}
+
+.label {
+    color: grey;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus,
+input:valid {
+    outline: none;
+    border: 1.5px solid grey;
+}
+
+    .input:focus ~ label,
+    input:valid ~ label {
+        transform: translateY(-50%) scale(0.8);
+        padding: 0 .2em;
+        color: black;
+        background-color: white;
+    }
+
+.sectionService {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.titreService {
+    font-size: 3rem;
+    color: white; /*modif*/
+    text-shadow: 3px 0px 7px #048b9a; /*modif*/
+}
+
+.info-row {
+    display: flex;
+    justify-content: start;
+    text-align: start;
+    flex-wrap: nowrap;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 45px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    margin: 20px 0;
+}
+
+.info-item {
+    margin: 10px 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align:start;
+    /*----------*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 110px;
+    /*----------*/
+}
+.info-item img{
+    height: 50px;
+    width: 80px;
+}
+    .info-item h3 {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+.info-item-admin {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 10px 10px 3%;
+}
+
+    .info-item-admin a {
+        margin: 10px 1%;
+        border: 2px solid orange;
+        border-radius: 50px;
+        text-decoration: none;
+        color: orange;
+        padding: 5px;
+    }
+
+    .info-item-admin .modif {
+        border: 3px solid orange;
+        color: orange;
+    }
+
+    .info-item-admin .delete {
+        border: 3px solid black;
+        color: black;
+    }
+
+.imgService {
+    max-height: 120px;
+}
+/*----------------Partie checkbox------------------*/
+/* Hide the default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center center;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.34em;
+    width: 1.3em;
+    background-color: lightgrey;
+    transition: .4s ease-in-out;
+    border-radius: 50%;
+}
+
+    .checkmark:hover {
+        background-color: rgba(144, 238, 144, 0.654);
+    }
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: lightgreen;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 0.25em;
+    top: 0.29em;
+    width: 0.50em;
+    height: 0.50em;
+    border: solid lightgreen;
+    background-color: lightgreen;
+    border-radius: 50%;
+}
+
+.submitBtn {
+    background: none;
+    border-radius: 50px;
+    color: orange;
+    border: 4px solid orange;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .submitBtn:hover {
+        background: orange;
+        border-radius: 50px;
+        color: white;
+        border: 4px solid orange;
+        padding: 12px 40px;
+        font-size: 17px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+
+.submitBtnConfirm {
+    background: none;
+    border-radius: 50px;
+    color: black;
+    border: 4px solid black;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .submitBtnCOnfirm:hover {
+        background: orange;
+        border-radius: 50px;
+        color: white;
+        border: 4px solid orange;
+        padding: 12px 40px;
+        font-size: 17px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+
+    /*---------------------------Partie details-----------------------------------*/
+
+.sectionDetails {
+    width: 100%;
+    height: auto;
+    font-family: "roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1073px) {
+    #sectionThreeCards {
+        height: 600px;
+    }
+}
+
+.glassBorderBackgroundDetails {
+    position: relative;
+    background-color: white;
+    border-radius: 45px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+    height: 100%;
+    width: 98vw;
+    padding: 40px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    flex: 3;
+}
+
+.titrePackageDetails {
+    font-size: 3rem;
+    margin: 20px 0;
+    text-align: center;
+    color: white; /*modif*/
+    text-shadow: 3px 0px 7px #048b9a; /*modif*/
+}
+
+/* Partie recherche */
+.flex {
+    flex: 2;
+    height: 460px;
+    margin-left: 2%;
+    padding-left 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 45px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+}
+
+.textDetails {
+/*    display: flex;*/
+    margin-left: 20px;
+    width: 80%;
+}
+
+    .textDetails h3 {
+        font-size: 20px;
+    }
+    .textDetails h4 {
+        font-size: 20px;
+        color: grey;
+    }
+
+.flex1 {
+    flex: 1;
+    ;
+}
+
+#positionInfoSection {
+    display: flex;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center; /* ou 'space-around' pour ajouter un espace égal entre les éléments */
+    flex-wrap: wrap; /* ou 'space-around' pour ajouter un espace égal entre les éléments */
+    margin-top: 20px;
+}
+
+
+.glassBorderCardDetails {
+    width: 370px;
+    height: 460px;
+    background: rgba(255, 255, 255, 0.074);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@media (max-width: 1190px) {
+    .glassBorderCardDetails {
+        width: 300px;
+        height: 450px;
+        background: rgba(255, 255, 255, 0.074);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+}
+
+@media (max-width: 1073px) {
+    .glassBorderCardDetails {
+        width: 230px;
+        height: 350px;
+        background: rgba(255, 255, 255, 0.074);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+}
+
+.glassBorderCardDetails:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.cardDetails {
+    width: 360px;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 0 solid #fff;
+    position: relative;
+    margin: 5px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@media (max-width: 1190px) {
+    .cardDetails {
+        width: 290px;
+        height: 440px;
+        background: rgba(255, 255, 255, 0.074);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-right: 70px;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+}
+
+@media (max-width: 1073px) {
+    .cardDetails {
+        width: 220px;
+        height: 340px;
+        background: rgba(255, 255, 255, 0.074);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-right: 70px;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+}
+
+.cardDetails-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glassBorderCardDetails:hover .cardDetails-img {
+    transform: scale(1.2);
+}
+
+.btnZone1 {
+    background-color: white;
+    border-radius: 45px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+    height: 100%;
+    width: 98vw;
+    padding: 40px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin: 20px 0 10px 0;
+}
+
+    .btnZone1 a {
+        text-decoration: none;
+        margin: 0 20px;
+    }
+
+.returnHome {
+    background-color: white;
+    border-radius: 45px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+    height: 100%;
+    padding: 40px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin: 10px 0 20px 0;
+}
+
+    .returnHome a {
+        text-decoration: none;
+    }
+
+.resaBtn {
+    color: orange;
+    font-size: 20px;
+    border: 5px solid orange;
+    border-radius: 50px;
+    padding: 10px 30px;
+    margin-left: 20px;
+}
+
+.deleteBtn {
+    color: rgb(231, 4, 4);
+    border: 3px solid;
+    border-radius: 50px;
+    padding: 10px 30px;
+}
+
+.ModifTravelBtn {
+    color: black;
+    border: 3px solid black;
+    border-radius: 50px;
+    padding: 10px 30px;
+}
+
+.modifPackageBtn {
+    color: black;
+    border: 3px solid black;
+    border-radius: 50px;
+    padding: 10px 30px;
+}
+
+.returnBtn {
+    color: orange;
+    border: 4px solid orange;
+    border-radius: 50px;
+    padding: 10px 30px;
 }

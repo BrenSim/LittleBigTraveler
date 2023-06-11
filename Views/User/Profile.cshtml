@@ -1,8 +1,9 @@
 ﻿@model LittleBigTraveler.ViewModels.UserViewModel
 
 @{
-    ViewData["Title"] = "Profil";
-    Layout = "_Layout";
+    Layout = "_ProfilsLayout";
+    ViewData["Title"] = "Mon profil";
+
     var actionUpdate = "";
     var actionDelete = "";
     switch (Model.UserType)
@@ -22,63 +23,122 @@
     }
 }
 
-<h1>@ViewData["Title"]</h1>
+@section Content {
 
-<div class="row">
-    <div class="col-md-6">
+    <section id="primaryCard">
+        <div class="card-container">
+            <div class="myCard">
+                <div class="profilImage">
+                    <img src="/images/imgProfile.png"/>
+                </div>
+
+                <div class="container" id="container">
+                    <div class="UserName">
+                        <h1>@Model.FirstName @Model.LastName</h1>
+                    </div>
+                </div>
+                <div class="cardInfos">
+                    <h3>Prénom : @Model.FirstName</h3>
+                    <h3>Nom : @Model.LastName</h3>
+                    <h3>Email : @Model.Email</h3>
+                    <h3>Tel : @Model.PhoneNumber</h3>
+                </div>
+                <div class="littleHole"></div>
+                <button class="changeProfilImagedButton" type="submit">
+                    <span>
+                        <i class="fa-solid fa-upload fa-lg"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+        @*<div class="banner">
+            <button class="changeBackgroundButton" type="submit">
+                <span>
+                    <i class="fa-solid fa-upload fa-lg"></i>
+                </span>
+            </button>
+        </div>*@
+    </section>
+
+    @*<section id="profilInfos" class="menu-container">
+        <nav>
+            <ul>
+                <li><a href="#personalInfo">Informations personnelles</a></li>
+                <li><a href="#pref">Préférences</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#refund">Remboursement</a></li>
+            </ul>
+        </nav>
+    </section>*@
+
+    <section id="personalInfo">
         <form method="post" action="/User/@actionUpdate/@Model.UserId">
             <input type="hidden" name="UserId" value="@Model.UserId" />
-            <div class="form-group">
-                <label for="LastName">Nom</label>
-                <input type="text" id="LastName" name="LastName" class="form-control" value="@Model.LastName" />
-            </div>
-            <div class="form-group">
-                <label for="FirstName">Prénom</label>
-                <input type="text" id="FirstName" name="FirstName" class="form-control" value="@Model.FirstName" />
-            </div>
-            <div class="form-group">
-                <label for="Email">Email</label>
-                <input type="email" id="Email" name="Email" class="form-control" value="@Model.Email" />
-            </div>
-            <div class="form-group">
-                <label for="Address">Adresse</label>
-                <input type="text" id="Address" name="Address" class="form-control" value="@Model.Address" />
-            </div>
-            <div class="form-group">
-                <label for="PhoneNumber">Numéro de téléphone</label>
-                <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
-            </div>
-            <div class="form-group">
-                <label for="BirthDate">Date de naissance</label>
-                <input type="date" id="BirthDate" name="BirthDate" class="form-control" value="@Model.BirthDate.ToString("yyyy-MM-dd")" />
-            </div>
-            @if (Model.UserType == "Customer")
-            {
-                <div class="form-group">
-                    <label for="LoyaltyPoint">Points de fidélité</label>
-                    <input type="text" id="LoyaltyPoint" name="LoyaltyPoint" class="form-control" value="@Model.LoyaltyPoint" />
+
+            @*<div class="radio-inputs">
+
+                <label class="radio">
+                    <input type="radio" name="civilite" value="monsieur" id="civilite-monsieur">
+                    <span class="gender">Monsieur</span>
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="civilite" value="madame" id="civilite-madame">
+                    <span class="gender">Madame</span>
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="civilite" value="autre" id="civilite-autre">
+                    <span class="gender">Autre</span>
+                </label>
+            </div>*@
+            <div class="userNameFirstname">
+                <div class="input-Name">
+                    <input required type="text" name="LastName" autocomplete="on" class="input" value="@Model.LastName">
+                    <label class="user-Name">Nom</label>
                 </div>
-                <div class="form-group">
-                    <label for="CommentPoint">Points de commentaire</label>
-                    <input type="text" id="CommentPoint" name="CommentPoint" class="form-control" value="@Model.CommentPoint" />
+                <div class="input-Firstname">
+                    <input required type="text" name="Firstname" autocomplete="on" class="input" value="@Model.FirstName">
+                    <label class="user-Firstname">Prénom</label>
                 </div>
-            }
-            @if (Model.UserType == "Administrator" || Model.UserType == "Partner")
-            {
-                <div class="form-group">
-                    <label for="RoleName">Rôle</label>
-                    <input type="text" id="RoleName" name="RoleName" class="form-control" value="@Model.RoleName" />
+                <div class="input-Email">
+                    <input required type="email" name="Email" autocomplete="on" class="input" value="@Model.Email">
+                    <label class="user-Email">Email</label>
                 </div>
-                <div class="form-group">
-                    <label for="RoleType">Type de rôle</label>
-                    <input type="text" id="RoleType" name="RoleType" class="form-control" value="@Model.RoleType" />
+            </div>
+            <div class="birthdateNationalite">
+                <div class="input-Birthdate">
+                    <input type="date" name="email" class="input" required value="@Model.BirthDate.ToString("yyyy-MM-dd")">
+                    <label class="user-Email user-Nationalite"></label>
                 </div>
-            }
-            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                <div class="input-Tel">
+                    <input type="text" name="tel" autocomplete="on" class="input" required value="@Model.PhoneNumber">
+                    <label class="user-Tel">Numéro de téléphone</label>
+                </div>
+            </div>
+            <div class="otherInfos-global">
+                <div class="otherInfos">
+                    <div class="input-Adress">
+                        <input type="text" name="Adress" autocomplete="on" class="input" required value="@Model.Address">
+                        <label class="user-Adress">Adresse</label>
+                    </div>
+                    @*<div class="input-City">
+                        <input type="text" name="City" autocomplete="on" class="input" required>
+                        <label class="user-City">Ville</label>
+                    </div>
+                    <div class="input-Zipcode">
+                        <input type="text" name="zipcode" autocomplete="on" class="input" required>
+                        <label class="user-Zipcode">Code postal</label>
+                    </div>*@
+                </div>
+            </div>
+            <button type="submit" class="saveInfos">Enregistrer mes informations</button>
         </form>
         <form method="post" action="/User/@actionDelete/@Model.UserId" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.');">
             <input type="hidden" name="UserId" value="@Model.UserId" />
             <button type="submit" class="btn btn-danger mt-3">Supprimer le compte</button>
         </form>
-    </div>
-</div>
+    </section>
+
+
+}

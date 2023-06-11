@@ -29,6 +29,7 @@ public class PaymentDAL : IPaymentDAL
     /// <param name="bookingId">L'ID de la réservation.</param>
     /// <param name="numCB">Le numéro de carte bancaire.</param>
     /// <returns>L'ID du paiement créé.</returns>
+
     public int CreatePayment(int userId, int bookingId, int numCB)
     {
         var user = _bddContext.Users.FirstOrDefault(u => u.Id == userId);

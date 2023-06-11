@@ -2,69 +2,87 @@
 
 @{
     ViewData["Title"] = "Create Custom Made Travel";
-    Layout = "_Layout";
+    Layout = "_DestinationLayout";
 }
 
-<div class="container">
-    <h1 class="text-center">Create Custom Made Travel</h1>
+@section content {
+
+<section id="sectionContainer">
+    <h1 class="titreService">Création de votre voyage...</h1>
 
     <form method="post" action="/Package/CreatePackage">
         <!-- pour checkbox -->
         <input type="hidden" name="TravelId" value="@Model.TravelId" />
 
         <div class="form-group">
-            <label for="Name">Name:</label>
-            <input for="Name" name="Name" class="form-control" value="@Model.Name" />
+
+            <label for="Name">Nom:</label>
+            <input for="Name" name="Name" class="input" placeholder="Donnez un nom à votre voyage !" />
+
         </div>
 
-        <div class="form-group">
+        <div class="form-group-description">
             <label for="Description">Description:</label>
-            <textarea for="Description" name="Description" class="form-control">@Model.Description</textarea>
+
+            <textarea for="Description" name="Description"
+                      placeholder="Une petite description de ce que vous inspire ce voyage..."
+                      class="input"></textarea>
         </div>
 
-        <h2 class="text-center">Services disponibles pour la destination</h2>
+        <div class="sectionService">
+            <h2 class="titreService">Services disponibles pour la destination</h2>
+            @foreach (var service in Model.AvailableServices)
+            {
+                <div class="info-row">
+                    <label class="container">
+                        <input type="checkbox" id="service-@service.Id" name="SelectedServiceId" value="@service.Id" @(Model.SelectedServiceId.Contains(service.Id) ? "checked" : "")>
+                        <div class="checkmark"></div>
+                    </label>
+                    <div class="info-item">
+                        <h3>Nom :</h3>
+                        <p>@service.Name</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Prix :</h3>
+                        <p>@service.Price</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Horaire :</h3>
+                        <p>@service.Schedule</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Emplacement :</h3>
+                        <p>@service.Location</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Type :</h3>
+                        <p>@service.Type</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Style :</h3>
+                        <p>@service.Style</p>
+                    </div>
+                    @foreach (var image in service.Images)
+                    {
+                        <div class="info-item">
+                            <h3>Images :</h3>
+                            <img src="@image" alt="Image" class="imgService" />
+                        </div>
+                    }
+                    <div class="info-item">
+                        <h3>Liens :</h3>
+                        <a href="@service.ExternalLinks"><p>@service.ExternalLinks</p></a>
+                    </div>
+                    <div class="info-item-admin">
+                        <a href="/Service/ChangeService/@service.Id" class="modif">Modifier</a>
+                        <a href="/Service/DeleteServices/@service.Id" class="delete">Supprimer</a>
+                    </div>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th></th> <!-- pour checkbox -->
-                    <th>Nom</th>
-                    <th>Prix</th>
-                    <th>Horaire</th>
-                    <th>Emplacement</th>
-                    <th>Type</th>
-                    <th>Style</th>
-                    <th>Images</th>
-                    <th>Liens</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var service in Model.AvailableServices)
-                {
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="service-@service.Id" name="SelectedServiceId" value="@service.Id" @(Model.SelectedServiceId.Contains(service.Id) ? "checked" : "")>
-                        </td>
-                        <td>@service.Name</td>
-                        <td>@service.Price</td>
-                        <td>@service.Schedule</td>
-                        <td>@service.Location</td>
-                        <td>@service.Type</td>
-                        <td>@service.Style</td>
-                        <td>
-                            @foreach (var image in service.Images)
-                            {
-                                <img src="@image" alt="Image" class="img-thumbnail" />
-                            }
-                        </td>
-                        <td>@service.ExternalLinks</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">Créer le voyage</button>
+                </div>
+            }
+        </div>
+        <div>
+            <button type="submit" class="submitBtn">Confirmer</button>
         </div>
 
         @if (TempData["SuccessMessage"] != null)
@@ -74,4 +92,14 @@
             </div>
         }
     </form>
-</div>
+</section>
+
+<script>
+    const confirmBtn = document.querySelector('.submitBtnConfirm');
+    const createBtn = document.querySelector('.submitBtn');
+
+    confirmBtn.addEventListener('click', () => {
+        createBtn.removeAttribute('disabled');
+    });
+ </script>
+}

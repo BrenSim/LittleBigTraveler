@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 public class BookingDAL : IBookingDAL
 {
@@ -41,6 +42,7 @@ public class BookingDAL : IBookingDAL
                 UserId = userId,
                 PackageId = packageId,
                 Price = package.Price,
+
                 Payments = new List<Payment>(),
                 Evaluations = new List<Evaluation>()
             };
@@ -122,3 +124,12 @@ public class BookingDAL : IBookingDAL
             .FirstOrDefault(a => a.Id == id);
     }
 }
+
+
+
+
+
+
+
+
+

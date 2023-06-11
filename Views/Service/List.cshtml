@@ -1,54 +1,62 @@
 ﻿@model List<LittleBigTraveler.Models.TravelClasses.Service>
 
 @{
-    Layout = "_Layout";
+    Layout = "_DestinationLayout";
     ViewData["Title"] = "Liste des services";
 }
 
 @section content {
-    <h1 class="text-center">Liste des services</h1>
+    <section id="sectionService">
+        <h1 class="titreService">Liste des services</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Prix</th>
-                <th>Horaire</th>
-                <th>Emplacement</th>
-                <th>Type</th>
-                <th>Style</th>
-                <th>Images</th>
-                <th>Liens</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var service in Model)
-            {
-                <tr>
-                    <td>@service.Name</td>
-                    <td>@service.Price</td>
-                    <td>@service.Schedule</td>
-                    <td>@service.Location</td>
-                    <td>@service.Type</td>
-                    <td>@service.Style</td>
-                    <td>
-                        @foreach (var image in service.Images)
-                        {
-                            <img src="@image" alt="Image" class="img-thumbnail" />
-                        }
-                    </td>
-                    <td>@service.ExternalLinks</td>
-                    <td>
-                        <a href="/Service/ChangeService/@service.Id" class="btn btn-secondary mr-2">Modifier</a>
-                        <a href="/Service/DeleteServices/@service.Id" class="btn btn-danger">Supprimer</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        @foreach (var service in Model)
+        {
+            <div class="info-row">
 
-    <div class="text-center mt-4">
-        <a href="/Home/IndexTEST" class="btn btn-primary">Retour à l'accueil</a>
-    </div>
-}
+                <div class="info-item">
+                    <h3>Nom :</h3>
+                    <p>@service.Name</p>
+                </div>
+                <div class="info-item">
+                    <h3>Prix :</h3>
+                    <p>@service.Price</p>
+                </div>
+                <div class="info-item">
+                    <h3>Horaire :</h3>
+                    <p>@service.Schedule</p>
+                </div>
+                <div class="info-item">
+                    <h3>Emplacement :</h3>
+                    <p>@service.Location</p>
+                </div>
+                <div class="info-item">
+                    <h3>Type :</h3>
+                    <p>@service.Type</p>
+                </div>
+                <div class="info-item">
+                    <h3>Style :</h3>
+                    <p>@service.Style</p>
+                </div>
+                @foreach (var image in service.Images)
+                {
+                    <div class="info-item">
+                        <h3>Images :</h3>
+                        <img src="@image" alt="Image" class="imgService" />
+                    </div>
+                }
+                <div class="info-item">
+                    <h3>Liens :</h3>
+                    <p>@service.ExternalLinks</p>
+                </div>
+                @if (User.IsInRole("Administrator"))
+                    {
+                    <div class="info-item-admin">
+                        <a href="/Service/ChangeService/@service.Id" class="modif">Modifier</a>
+                        <a href="/Service/DeleteServices/@service.Id" class="delete">Supprimer</a>
+                    </div>
+                    }
+                </div>
+                }
+            
+        </section>
+    }

@@ -1,55 +1,63 @@
 ﻿@model List<LittleBigTraveler.Models.TravelClasses.Booking>
 
 @{
-    Layout = "_Layout";
+    Layout = "_PackageLayout";
     ViewData["Title"] = "Liste des réservations";
 }
 
 @section content {
-    <h1 class="text-center">Liste des réservations</h1>
-
     @if (Model.Count == 0)
     {
         <p>Aucune réservation trouvée.</p>
     }
     else
     {
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Réservation n°</th>
-                    <th>Package</th>
-                    <th>Confirmation</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var booking in Model)
-                {
-                    <tr>
-                        <td>@booking.Id</td>
-                        <td>@booking.Package.Name</td>
-                        <td>
-                            @if (booking.IsConfirmed)
-                            {
-                                <span class="text-success">Payée</span>
-                            }
-                            else
-                            {
-                                <span class="text-danger">Non payée</span>
-                            }
-                        </td>
-                        <td>
-                            <a href="@Url.Action("Details", "Package", new { id = booking.PackageId})" class="btn btn-primary">Voir détails</a>
-                            <a href="@Url.Action("Delete", "Booking", new { bookingId = booking.Id })" class="btn btn-danger">Supprimer</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
 
-    <div class="text-center mt-4">
-        <a href="/Home/IndexTEST" class="btn btn-primary">Retour à l'accueil</a>
-    </div>
+        <section id="sectionPanier">
+            <h1 class="titrePanier">Votre liste de réservation</h1>
+            @foreach (var booking in Model)
+            {
+                <div class="glassBorderPanierBackground">
+                    <div class="info-panier">
+
+                        <h3>Réservation :</h3>
+                        <p>N° @booking.Id</p>
+                    </div>
+                    <div class="info-panier">
+                        <h3>Package :</h3>
+                        <p>@booking.Package.Name</p>
+                    </div>
+                    @if (booking.IsConfirmed)
+                    {
+
+                        <div class="info-panier">
+                            <h3>Confirmation :</h3>
+                            <span>Payée</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="info-panier">
+                            <h3>Confirmation :</h3>
+                            <span>Non payée</span>
+                        </div>
+                    }
+                    @*<div class="info-panier">
+                            <h3>Action :</h3>
+                            <p></p>
+                        </div>*@
+
+                    <div class="zonePanierBtn">
+                        <a href="@Url.Action("Details", "Package" , new { id=booking.PackageId })">Voir détails</a>
+                        <a href="@Url.Action("Delete", "Booking" , new { bookingId=booking.Id })">Supprimer</a>
+                    </div>
+                </div>
+            }
+
+            <div class="returnHome">
+                <a href="/Home/Index">Retour à l'accueil</a>
+            </div>
+
+        </section>
+    }
 }

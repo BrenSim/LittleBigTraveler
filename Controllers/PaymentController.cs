@@ -85,6 +85,7 @@ public class PaymentController : Controller
                 if (booking == null)
                 {
                     return NotFound("Booking introuvable");
+
                 }
             }
 
@@ -107,6 +108,7 @@ public class PaymentController : Controller
             return BadRequest(ex.Message);
         }
     }
+
     /// <summary>
     /// Action pour afficher la page de confirmation d'un paiement.
     /// </summary>

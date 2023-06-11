@@ -1,0 +1,84 @@
+﻿@model LittleBigTraveler.ViewModels.UserViewModel
+
+@{
+    ViewData["Title"] = "Profil";
+    Layout = "_Layout";
+    var actionUpdate = "";
+    var actionDelete = "";
+    switch (Model.UserType)
+    {
+        case "Administrator":
+            actionUpdate = "ChangeAdministrators";
+            actionDelete = "DeleteUsers";
+            break;
+        case "Customer":
+            actionUpdate = "ChangeCustomers";
+            actionDelete = "DeleteUsers";
+            break;
+        case "Partner":
+            actionUpdate = "ChangePartners";
+            actionDelete = "DeleteUsers";
+            break;
+    }
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" action="/User/@actionUpdate/@Model.UserId">
+            <input type="hidden" name="UserId" value="@Model.UserId" />
+            <div class="form-group">
+                <label for="LastName">Nom</label>
+                <input type="text" id="LastName" name="LastName" class="form-control" value="@Model.LastName" />
+            </div>
+            <div class="form-group">
+                <label for="FirstName">Prénom</label>
+                <input type="text" id="FirstName" name="FirstName" class="form-control" value="@Model.FirstName" />
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" id="Email" name="Email" class="form-control" value="@Model.Email" />
+            </div>
+            <div class="form-group">
+                <label for="Address">Adresse</label>
+                <input type="text" id="Address" name="Address" class="form-control" value="@Model.Address" />
+            </div>
+            <div class="form-group">
+                <label for="PhoneNumber">Numéro de téléphone</label>
+                <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
+            </div>
+            <div class="form-group">
+                <label for="BirthDate">Date de naissance</label>
+                <input type="date" id="BirthDate" name="BirthDate" class="form-control" value="@Model.BirthDate.ToString("yyyy-MM-dd")" />
+            </div>
+            @if (Model.UserType == "Customer")
+            {
+                <div class="form-group">
+                    <label for="LoyaltyPoint">Points de fidélité</label>
+                    <input type="text" id="LoyaltyPoint" name="LoyaltyPoint" class="form-control" value="@Model.LoyaltyPoint" />
+                </div>
+                <div class="form-group">
+                    <label for="CommentPoint">Points de commentaire</label>
+                    <input type="text" id="CommentPoint" name="CommentPoint" class="form-control" value="@Model.CommentPoint" />
+                </div>
+            }
+            @if (Model.UserType == "Administrator" || Model.UserType == "Partner")
+            {
+                <div class="form-group">
+                    <label for="RoleName">Rôle</label>
+                    <input type="text" id="RoleName" name="RoleName" class="form-control" value="@Model.RoleName" />
+                </div>
+                <div class="form-group">
+                    <label for="RoleType">Type de rôle</label>
+                    <input type="text" id="RoleType" name="RoleType" class="form-control" value="@Model.RoleType" />
+                </div>
+            }
+            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+        </form>
+        <form method="post" action="/User/@actionDelete/@Model.UserId" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.');">
+            <input type="hidden" name="UserId" value="@Model.UserId" />
+            <button type="submit" class="btn btn-danger mt-3">Supprimer le compte</button>
+        </form>
+    </div>
+</div>

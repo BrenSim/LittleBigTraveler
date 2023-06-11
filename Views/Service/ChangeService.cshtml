@@ -1,12 +1,12 @@
 ﻿@model LittleBigTraveler.ViewModels.ServiceViewModel
 
 @{
-    Layout = "_Layout";
+    Layout = "_CreateTravelPackageLayout";
     ViewData["Title"] = "Modification d'un service";
 }
 
 @section content {
-    <div class="container">
+    @*<div class="container">
         <h1 class="text-center">Modifier un service</h1>
 
         <form method="post" action="/Service/ChangeServices/@Model.Id">
@@ -60,5 +60,74 @@
 
             <button type="submit" class="btn btn-primary">Modifier</button>
         </form>
-    </div>
+    </div>*@
+
+<section id="sectionModifyTravel">
+        <div class="borderGlassModifyTravelBackground">
+
+            <h3 class="titreModify">Modifier un service</h3>
+            <div class="Container">
+
+
+                <form method="post" action="/Service/ChangeServices/@Model.Id">
+
+                    <input type="hidden" name="Id" value="@Model.Id" />
+
+
+                    <div class="form-group">
+                        <label class="label">Nom : </label>
+                        <input type="text" class="input" name="Name" value="@Model.Name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Prix : </label>
+                        <input type="text" class="input" name="Price" value="@Model.Price" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Horaire : </label>
+                        <input type="text" class="input" name="Schedule" value="@Model.Schedule.ToString("yyyy-MM-ddTHH:mm")" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Lieu : </label>
+                        <input required type="text" name="Location" autocomplete="on" class="input"
+                               value="@Model.Location">
+                    </div>
+                    <div class="form-group">
+                        <label class="label">Type : </label>
+                        <input required type="date" name="Type" autocomplete="on" class="input"
+                               value="@Model.Type">
+                    </div>
+                    <div class="form-group">
+                        <label class="label">Style : </label>
+                        <input required type="text" name="Style" autocomplete="on" class="input">
+                    </div>
+                    <div class="form-group">
+                        <label class="label">Capacité maximale : </label>
+                        <input type="number" class="input" name="MaxCapacity"
+                               value="@Model.MaxCapacity" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Images : </label>
+                        <input type="file" class="input" name="Images" multiple />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Lien externe : </label>
+                        <input type="number" class="input" name="Link"
+                               value="@Model.ExternalLinks" required />
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+        <div class="Container1">
+            <button type="submit" class="modifyBtn">Modifier</button>
+        </div>
+   
+</section>
 }
+

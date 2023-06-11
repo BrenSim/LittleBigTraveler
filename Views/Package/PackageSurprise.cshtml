@@ -1,12 +1,14 @@
 ﻿@model LittleBigTraveler.Models.TravelClasses.Package
 
 @{
-    Layout = "_Layout";
+
+    Layout = "_CreateTravelPackageLayout";
     ViewData["Title"] = "Voyage Surprise";
 }
 
 @section content {
-    <h1 class="text-center">Voyage Surprise</h1>
+
+    @*<h1 class="text-center">Voyage Surprise</h1>
 
     @if (Model == null)
     {
@@ -63,4 +65,102 @@
     <div class="text-center mt-4">
         <a href="/Home/IndexTEST" class="btn btn-primary">Accueil</a>
     </div>
+}
+        <a href="/Home/Index" class="btn btn-primary">Accueil</a>
+    </div>*@
+
+
+
+
+    <section id="sectionDestinationCards">
+        <h1 class="text-center">Voyage Surprise</h1>
+
+        @if (Model == null)
+            {
+            <p>Aucun voyage surprise trouvé.</p>
+            }
+            else
+            {
+            <div class="glassBorderBackground">
+
+                <div id="positionIntoSection">
+                    <div class="card-container">
+                        <div class="glassBorderCard slider-1">
+                            <div class="card">
+                                @foreach (var image in @Model.Travel.Destination.Images)
+                                    {
+                                    <img src="@image" alt="Image" class="card-img" />
+                                    }
+                            </div>
+                            @*<div class="card-body">
+                                <h1 class="card-title">@Model.Destination.Country</h1>
+                                <h3 class="card-sub">@Model.Destination.City</h3>
+                                <p class="card-sub-title">@Model.Destination.Description</p>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottomContainer">
+
+                <div class="leftContainer">
+                    <h3>Vos détails de réservation</h3>
+
+                    <div class="userNameFirstname">
+
+                        <div class="form-group">
+                            <label class="label">Nom : </label>
+                            <input required type="text" name="name" autocomplete="on"
+                                   class="input" value="@Model.Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Destination : </label>
+                            <input required type="text" name="departureLocation" autocomplete="on"
+                                   class="input" value="@Model.Travel.Destination.City, @Model.Travel.Destination.Country">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Description : </label>
+                            <input required type="text" name="departureLocation" autocomplete="on"
+                                   class="input" value="@Model.Description">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Lieu de départ : </label>
+                            <input required type="text" name="departureLocation" autocomplete="on"
+                                   class="input" value="@Model.Travel.DepartureLocation">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Date de départ : </label>
+                            <input required type="date" name="departureDate" autocomplete="on" class="input"
+                                   value="@Model.Travel.DepartureDate">
+
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Date de retour : </label>
+                            <input required type="date" name="returnDate" autocomplete="on" class="input"
+                                   value="@Model.Travel.ReturnDate">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Prix : </label>
+                            <h3> @Model.Price €</h3>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="rightContainer">
+                    <a href="/Package/EditPackage/@Model.Id" class="reservationBtn">Modifier Package</a>
+                    <a href="/Travel/ModifyTravel/@Model.Id" class="reservationBtn">Modifier Voyage</a>
+                    <a href="/Package/DeletePackage/@Model.Id" class="reservationBtn">Supprimer</a>
+                    <a href="/Booking/Create?packageId=@Model.Id" class="reservationBtn">Select</a>
+                    <button type="submit" class="reservationBtn">Réservation</button>
+                </div>
+
+            </div>
+            }
+            <div class="reservationBtn">
+                <a href="/Home/Index">Accueil</a>
+            </div>
+        </section>
 }

@@ -1,12 +1,12 @@
 ﻿@model LittleBigTraveler.ViewModels.PaymentViewModel
 
 @{
-    Layout = "_Layout";
+    Layout = "_PackageLayout";
     ViewData["Title"] = "Paiement";
 }
 
 @section content {
-    <h1 class="text-center">Paiement</h1>
+    @*<h1 class="text-center">Paiement</h1>
 
     <div class="card">
         <div class="card-body">
@@ -31,5 +31,72 @@
 
     <div class="text-center mt-4">
         <a href="/Booking/List" class="btn btn-secondary">Retour à la liste des réservations</a>
+    </div>*@
+
+<section id="sectionConfirmationPaiement">
+    <div class="glassBorderRecapBackground">
+        <div class="columns">
+            <!-- PARTIE GAUCHE CARTE FORMULAIRE-->
+            <div class="payment-summary">
+                <div class="summary-form">
+                    <h2 class="titre-recap">Résumé de réservation</h2>
+                    <div class="zoneRecap">
+                        <p class="textRecap">Réservation n°: <strong>@Model.BookingId</strong></p>
+                        <p class="textRecap">Nom complet : <strong>@Model.FirstName @Model.LastName</strong></p>
+                        <p class="textRecap">Email : <strong>@Model.Email</strong></p>
+                        <p class="textRecap">Nom du package : <strong>@Model.PackageName</strong></p>
+                        <p class="textRecap">Description du package : <strong>@Model.Description</strong></p>
+                        <p class="textRecap">Montant total: <strong>@Model.TotalAmount €</strong></p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- PARTIE DROITE CARTE PAIEMENT-->
+            <div class="rightPayment">
+                <form class="form" method="post" action="/Payment/Create">
+
+                    <input type="hidden" name="bookingId" value="@Model.BookingId" />
+                    <input type="hidden" name="totalAmount" value="@Model.TotalAmount" />
+
+                    <div class="paymentother">
+                        <button name="apple-pay" type="button" class="buttonAG">
+                            <i class="fa-brands fa-apple-pay " style="color: #000000;"></i>
+                        </button>
+                        <button name="google-pay" type="button" class="buttonAG">
+                            <i class="fa-brands fa-google-pay"></i>
+                        </button>
+                    </div>
+                    <div class="separator">
+                        <hr class="line" />
+                        <p>OU</p>
+                        <hr class="line" />
+                    </div>
+                    <div class="card-info-payment">
+                        <div class="input_container">
+                            <label class="input_label">Nom complet</label>
+                            <input class="input_field" type="text" placeholder="Entrer votre nom au complet" />
+                        </div>
+                        <div class="input_container">
+                            <label class="input_label">Numéro de la Carte</label>
+                            <input class="input_field" type="number" id="numCB" name="numCB" placeholder="0000 0000 0000 0000" required />
+                        </div>
+                        <div class="input_container">
+                            <label class="input_label">Date d'expiration / CVV</label>
+                            <div class="split">
+                                <input class="input_field" style="width: 250px" type="text" placeholder="01/23" />
+                                <input class="input_field" style="width: 110px" type="number" placeholder="CVV" />
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="checkout" style="cursor: pointer">
+                        <span>Payer</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="continue-button">
+            <a href="#">Continuez vos achats</a>
+        </div>
     </div>
+</section>
 }

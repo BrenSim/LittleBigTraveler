@@ -77,7 +77,11 @@ public class BookingController : Controller
                 bookingId = bookingDAL.CreateBooking(userId, packageId);
             }
 
+            // Rediriger vers la page de confirmation de réservation avec l'ID de la réservation
             return RedirectToAction("Create", "Payment", new { bookingId,  });
+
+            
+
         }
         catch (Exception ex)
         {
@@ -143,6 +147,7 @@ public class BookingController : Controller
                 if (booking == null || booking.UserId != userId)
                 {
                     return NotFound("Pas de réservation trouvée");
+
                 }
   
                 bookingDAL.DeleteBooking(bookingId);

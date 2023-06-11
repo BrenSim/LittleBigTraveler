@@ -5,8 +5,8 @@ using LittleBigTraveler.Models.UserClasses;
 
 namespace LittleBigTraveler.Models.TravelClasses
 {
-	public class Travel
-	{
+    public class Travel
+    {
         public int Id { get; set; }
         public int DestinationId { get; set; }
         public virtual Destination Destination { get; set; }
@@ -20,4 +20,3 @@ namespace LittleBigTraveler.Models.TravelClasses
         public virtual List<Package> Packages { get; set; }
     }
 }
-

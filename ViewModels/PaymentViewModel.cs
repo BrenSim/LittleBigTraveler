@@ -3,7 +3,7 @@ using LittleBigTraveler.Models.TravelClasses;
 using LittleBigTraveler.Models.UserClasses;
 
 namespace LittleBigTraveler.ViewModels
-    
+
 {
     public class PaymentViewModel
     {
@@ -18,9 +18,14 @@ namespace LittleBigTraveler.ViewModels
 
         public Booking Booking { get; set; }
 
+
         public Package Package { get; set; }
         public User User { get; set; }
+
     }
 }
+
+
+
 
 

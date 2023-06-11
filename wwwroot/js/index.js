@@ -60,7 +60,7 @@ for (let i = 0; i < data.length; i++) {
                 <p class="describe" style="--idx: 2">${data[i].describe}</p>
             </span>
             <span>
-                <button class="discover-button" style="--idx: 3">Venez découvrir</button>
+                <a href="../Package/List"><button class="discover-button" style="--idx: 3">Venez découvrir</button></a>
             </span>
         </div>
     `;

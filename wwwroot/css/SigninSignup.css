@@ -21,7 +21,7 @@ body {
 }
 
 .myCardUp {
-    height: 480px;
+    height: 520px;
     width: 410px;
     z-index: 0;
     background-color: rgba(255, 255, 255, 0.074);
@@ -307,7 +307,6 @@ body {
     font-weight: 700;
     /*box-shadow: 20px 20px 60px #bebebe,
     -20px -20px 60px #ffffff;*/
-    text-transform: capitalize;
     transition: 0.3s ease-in-out;
 }
 
@@ -465,4 +464,21 @@ button {
 
     button:hover .button-text {
         color: #fff;
+    }
+
+.backHome a {
+    text-decoration: none;
+    font-size: 14px;
+    border: 3px solid orange;
+    border-radius: 50px;
+    color: orange;
+    padding: 3px 30px;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+    .backHome a:hover {
+        border-radius: 50px;
+        color: white;
+        padding: 3px 40px;
+        background: orange;
     }

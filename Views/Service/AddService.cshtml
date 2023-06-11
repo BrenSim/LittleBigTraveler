@@ -2,10 +2,10 @@
 
 @{
     ViewData["Title"] = "Ajouter un service";
-    Layout = "_Layout";
+    Layout = "_CreateTravelPackageLayout";
 }
 
-<div class="container">
+@*<div class="container">
     <h1 class="text-center">Ajouter un service</h1>
 
     <form method="post" action="/Service/AddServices">
@@ -51,4 +51,63 @@
 
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
-</div>
+</div>*@
+
+@section content {
+    <section id="sectionModifyTravel">
+        <div class="borderGlassModifyTravelBackground">
+
+            <h3 class="titreModify">Ajouter un service</h3>
+            <div class="Container">
+
+
+                <form method="post" action="/Service/AddServices">
+
+                    <div class="form-group">
+                        <label class="label">Nom : </label>
+                        <input type="text" class="input" name="Name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Prix : </label>
+                        <input type="text" class="input" name="Price" value="" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Horaire : </label>
+                        <input type="datetime-local" class="input" name="Schedule" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Emplacement : </label>
+                        <input required type="text" name="Location" autocomplete="on" class="input">
+                    </div>
+                    <div class="form-group">
+                        <label class="label">Type : </label>
+                        <input required type="text" name="Type" autocomplete="on" class="input">
+                    </div>
+                    <div class="form-group">
+                        <label class="label">Style : </label>
+                        <input required type="text" name="Style" autocomplete="on" class="input">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Images : </label>
+                        <input type="file" class="input" name="Images" multiple />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Lien externe : </label>
+                        <input type="text" class="input" name="Link" required />
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+        <div class="Container1">
+            <button type="submit" class="modifyBtn">Ajouter</button>
+        </div>
+
+    </section>
+}

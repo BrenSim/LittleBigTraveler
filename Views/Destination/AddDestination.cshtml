@@ -1,7 +1,7 @@
 
 @model LittleBigTraveler.ViewModels.DestinationViewModel
 
-@{
+@*@{
     ViewData["Title"] = "Ajouter une destination";
     Layout = "_Layout";
 }
@@ -37,9 +37,10 @@
 
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
-</div>
+</div>*@
 
-<!--﻿@{
+
+﻿@{
     Layout = "_DestinationLayout";
     ViewData["Title"] = "Créer une nouvelle destination";
 }
@@ -58,36 +59,37 @@
                 <div class="group1">
                     <div class="form-group">-->
                         <!--   <label for="Country" class="countryLabel">Pays :</label> -->
-                        <!--<input type="text" id="Country" name="Country" class="form-control" value="@Model.Country"
+
+                        <input type="text" id="Country" name="Country" class="form-control"
                                required placeholder="Pays" />
                     </div>
 
                     <div class="form-group">-->
                         <!--  <label for="City" class="cityLabel">Ville :</label> -->
-                        <!--<input type="text" id="City" name="City" class="form-control" value="@Model.City" required
+
+                        <input type="text" id="City" name="City" class="form-control" required
                                placeholder="Ville" />
                     </div>
 
                     <div class="form-group">-->
                         <!--  <label for="Images" class="imagesLabel">Images :</label> -->
-                        <!--<input type="file" id="Images" name="Images" class="form-control-file" multiple
+
+                        <input type="text" id="Images" name="Images" class="form-control-file" multiple
+
                                placeholder="Images" />
                     </div>
 
                     <div class="form-group">-->
                         <!--  <label for="Link" class="linksLabel">Lien externe :</label> -->
-                        <!--<input type="text" id="Link" name="Link" class="form-control" value="@Model.ExternalLinks"
-                               required placeholder="Liens" />
+
+                        <input type="text" id="Link" name="Link" class="form-control"
+                                placeholder="Liens" />
+
                     </div>
                 </div>
 
                 <div class="group2">
 
-                    <div class="form-group">-->
-                        <!--   <label for="Description" class="descriptionLabel">Description :</label> -->
-                        <!--<textarea id="Description" name="Description" class="form-control" required
-                                  placeholder="Écrivez une petite description...">@Model.Description</textarea>
-                    </div>
                 </div>
             </div>
             <button type="submit" class="btn">Créer</button>
@@ -95,4 +97,4 @@
     </div>
 </section>
 
-}-->
+}

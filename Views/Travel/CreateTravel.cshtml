@@ -2,10 +2,11 @@
 
 @{
     ViewData["Title"] = "Créer un voyage";
-    Layout = "_Layout";
+    Layout = "_CreateTravelPackageLayout";
 }
 
-<div class="container">
+@section content {
+@*<div class="container">
     <h1 class="text-center">Créer un voyage</h1>
 
     @if (Model.Destination != null)
@@ -31,7 +32,11 @@
 
         <div class="form-group">
             <label for="price">Prix :</label>
+
             <input type="number" class="form-control" id="price" name="price" value="@Model.Price" required>
+
+            <h3 class="text-center">@Model.Price" </h3>
+
         </div>
 
         <div class="form-group">
@@ -44,8 +49,83 @@
             <input type="hidden" name="destinationId" value="@Model.Destination?.Id">
         }
 
+
     <div class="text-center">
         <button type="submit" class="btn btn-primary">Créer le voyage</button>
     </div>
     </form>
 </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Créer le voyage</button>
+        </div>
+    </form>*@
+
+    <section id="sectionDestinationCards">
+        <div class="glassBorderBackground">
+            @if (Model.Destination != null)
+                {
+                <h1 class="titreDestination">Destination : @Model.Destination.Country, @Model.Destination.City</h1>
+                }
+                <div id="positionIntoSection">
+                    <div class="card-container">
+                        <div class="glassBorderCard slider-1">
+                            <div class="card">
+                                <img src="@Model.Destination.Images[0]" class="card-img" />
+                                <img src="@Model.Destination.Images[1]" class="card-img" />
+                                <img src="@Model.Destination.Images[2]" class="card-img" />
+                                <img src="@Model.Destination.Images[3]" class="card-img" />
+                                <img src="@Model.Destination.Images[0]" class="card-img" />
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title">@Model.Destination.Country</h1>
+                                <h3 class="card-sub">@Model.Destination.City</h3>
+                                <p class="card-sub-title">@Model.Destination.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="bottomContainer">
+            <form method="post" action="/Travel/CreateTravel">
+                <div class="leftContainer">
+                    <h3>Vos détails de réservation</h3>
+
+                    <div class="userNameFirstname">
+
+                        <div class="form-group">
+                            <label class="label">Lieu de départ : </label>
+                            <input required type="text" name="departureLocation" autocomplete="on"
+                                   class="input" value="@Model.DepartureLocation">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Date de départ : </label>
+                            <input required type="date" name="departureDate" autocomplete="on" class="input"
+                                   value="@Model.DepartureDate.ToString(" yyyy-MM-dd")">
+
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Date de retour : </label>
+                            <input required type="date" name="returnDate" autocomplete="on" class="input"
+                                   value="@Model.ReturnDate.ToString(" yyyy-MM-dd")">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Prix : </label>
+                            <h3> @Model.Price €</h3>
+                        </div>
+
+
+                    </div>
+                </div>
+                @if (Model.Destination != null)
+                {
+                    <input type="hidden" name="destinationId" value="@Model.Destination?.Id">
+                }
+                <div class="rightContainer">
+                    <button type="submit" class="reservationBtn">Réservation</button>
+                </div>
+            </form>
+        </div>
+     </section>
+}
