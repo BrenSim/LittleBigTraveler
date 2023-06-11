@@ -5,16 +5,16 @@
 
 @section Log {
     <div class="myCardUp">
-        <h1>Créer un administrateur !</h1>
+        <h1>Devenez un de nos partenaires !</h1>
         <div class="container" id="container">
-            <form method="post" action="/User/AddAdministrators">
+            <form method="post" action="/User/AddPartners">
                 <div class="input-Name">
                     <input required type="text" name="Name" autocomplete="on" class="input">
-                    <label class="user-Name">Nom</label>
+                    <label class="user-Name">Nom de la société</label>
                 </div>
                 <div class="input-Firstname">
                     <input required type="text" name="Firstname" autocomplete="on" class="input">
-                    <label class="user-Firstname">Prénom</label>
+                    <label class="user-Firstname">Nom du référent</label>
                 </div>
                 <div class="input-Email">
                     <input required type="email" name="email" autocomplete="on" class="input">
@@ -27,10 +27,20 @@
                 <button type="submit" class="btnRegistration">Inscription</button>
             </form>
         </div>
+        <div>
+
+            <p>Vous voulez juste voyager ? <br> Connectez-vous !</p>
+            <button class="btnSignInUp">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <a href="@Url.Action("LogIn", "User")"><span class="button-text">Connexion !</span></a>
+            </button>
+        </div>
         <div class="littleHole"></div>
         <div class="backHome">
             <a href="@Url.Action("Index", "Home")">Accueil</a>
         </div>
     </div>
 
-    }
+}

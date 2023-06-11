@@ -18,18 +18,20 @@
         <nav class="navMenu">
             <ul>
                 <li><a href="#">Nos offres</a></li>
-                <li><a href="#">Notre concept</a></li>
                 <li><a href="@Url.Action("List", "Destination")">Nos destinations</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li><a href="/User/Profile">Mon Profil</a></li>
                     <li><a href="/User/LogOut">Déconnexion</a></li>
+                    <li><a href="@Url.Action("List", "Booking")">Mes réservations</a></li>
                 }
                 else
                 {
                     <li><a href="@Url.Action("LogIn", "User")">Connexion</a></li>
                     <li><a href="@Url.Action("AddCustomer", "User")">Inscription</a></li>
+                    <li><a href="@Url.Action("AddPartner", "User")">Espace partenaires</a></li>
                 }
+
             </ul>
         </nav>
     </header>

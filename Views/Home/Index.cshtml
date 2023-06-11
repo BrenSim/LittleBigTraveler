@@ -27,22 +27,92 @@
                 {
                     <li><a href="/User/Profile">Mon Profil</a></li>
                     <li><a href="/User/LogOut">Déconnexion</a></li>
+                    <li><a href="@Url.Action("List", "Booking")">Mes réservations</a></li>
                 }
                 else
                 {
                     <li><a href="@Url.Action("LogIn", "User")">Connexion</a></li>
                     <li><a href="@Url.Action("AddCustomer", "User")">Inscription</a></li>
+                    <li><a href="@Url.Action("AddPartner", "User")">Espace partenaires</a></li>
                 }
             </ul>
         </nav>
     </header>
     <main>
+
+
+
+        @if (User.IsInRole("Administrator"))
+        {
+            <section class="zoneMenuAdmin">
+                <nav class="borderGlassAdminMenu">
+                    <ul>
+                        <div class="zoneLiAdmin">
+                            <a href="/Destination/AddDestination">
+                        <li>Ajouter une destination</li>
+                        </a>
+                        <a href="/Destination/ListSearchResult">
+                        <li>Voir liste de destination</li>
+                        </a>
+                        </div>
+
+                        <div class="zoneLiAdmin">
+                            <a href="/Service/AddService">
+                        <li>Ajouter un service</li>
+                        </a>
+                        <a href="/Service/List">
+                        <li>Voir liste de service</li>
+                        </a>
+                        </div>
+
+
+                        <div class="zoneLiAdmin">
+                            <a href="/Destination/List">
+                        <li>Ajouter un package</li>
+                        </a>
+                        <a href="/Package/List">
+                        <li>Voir liste des packages</li>
+                        </a>
+                        </div>
+
+                        <div class="zoneLiAdmin">
+                            <a href="/User/AddAdministrator">
+                        <li>Ajouter un admin</li>
+                        </a>
+                        <a href="/User/List">
+                        <li>Voir liste des users</li>
+                        </a>
+                        </div>
+
+                    </ul>
+                </nav>
+            </section>
+        }
+        @if (User.IsInRole("Partner"))
+        {
+            <section class="zoneMenuAdmin">
+                <nav class="borderGlassAdminMenu">
+                    <ul>
+                        <div class="zoneLiAdmin">
+                            <a href="/Service/AddService">
+                        <li>Ajouter un service</li>
+                        </a>
+                        <a href="/Service/List">
+                        <li>Voir liste de service</li>
+                        </a>
+                        </div>
+                    </ul>
+                </nav>
+            </section>
+        }
+
+
         <section id="primaryPicture">
             <div class="flexbox">
                 <div class="logo">
                     <a href="#"><img src="~/imagesIndex/logoLBT.png" alt="Logo"></a>
                 </div>
-                
+
             </div>
 
             <div class="sectionMultiSearch">
@@ -68,7 +138,7 @@
                 </form>
             </div>
         </section>
-     
+
 
         <section id="sectionBestCards">
             <div class="glassBorderOffersBackground">
@@ -168,7 +238,7 @@
                         <div class="card-body">
                             <h1 class="card-title">All Inclusive</h1>
                             <p class="card-sub-title">Le voyage tout compris !</p>
-                            <p class="card-info">Venez découvrir nos packages personnalisables en adéquation avec vos envies !</p>
+                            <p class="card-info">Venez découvrir nos All Inclusive en adéquation avec vos envies !</p>
                             <a href="/Package/List"><button class="card-btn">Réserver !</button></a>
                         </div>
                     </div>
@@ -181,7 +251,7 @@
                             <p class="card-sub-title">Laissez vous surprendre par nos propositions...</p>
                             <p class="card-info">
                                 Envie de voyager mais vous n'avez pas d'idée de destination?
-                                Remplissez vos préférences et tenter les expériences de nos voyages surprises.
+                                Tentez les expériences de nos voyages surprises...
                             </p>
                             <form method="post" action="/Package/CreateSurprisePackage">
                                 <button type="submit" class="card-btn">Réserver !</button>

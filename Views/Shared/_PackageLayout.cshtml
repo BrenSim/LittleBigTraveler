@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Package.css">
     <script src="https://kit.fontawesome.com/feb8ff1e04.js" crossorigin="anonymous"></script>
     <title>@ViewBag.Title</title>
@@ -24,11 +23,13 @@
                 {
                     <li><a href="/User/Profile">Mon Profil</a></li>
                     <li><a href="/User/LogOut">Déconnexion</a></li>
+                    <li><a href="@Url.Action("List", "Booking")">Mes réservations</a></li>
                 }
                 else
                 {
                     <li><a href="@Url.Action("LogIn", "User")">Connexion</a></li>
                     <li><a href="@Url.Action("AddCustomer", "User")">Inscription</a></li>
+                    <li><a href="@Url.Action("AddPartner", "User")">Espace partenaires</a></li>
                 }
             </ul>
         </nav>

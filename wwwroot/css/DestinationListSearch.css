@@ -191,7 +191,6 @@ header {
     letter-spacing: 1px;
     font-size: 15px;
     font-weight: 700;
-    text-transform: capitalize;
     transition: 0.3s ease-in-out;
 }
 

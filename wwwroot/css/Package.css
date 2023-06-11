@@ -278,7 +278,6 @@ a {
         width: 100%;
         letter-spacing: 1px;
         font-weight: 700;
-        text-transform: capitalize;
         transition: 0.3s ease-in-out;
     }
 
@@ -620,3 +619,4 @@ form input[type="text"], form input[type="email"] {
 .btnShowPanier a{
     
 } */
+

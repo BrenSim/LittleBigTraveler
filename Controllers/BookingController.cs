@@ -145,7 +145,7 @@ public class BookingController : Controller
                 // Vérifier si la réservation existe et appartient à l'utilisateur
                 if (booking == null || booking.UserId != userId)
                 {
-                    return NotFound("Booking not found");
+                    return NotFound("Pas de réservation.");
                 }
 
                 // Supprimer la réservation

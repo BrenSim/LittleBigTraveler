@@ -41,18 +41,21 @@
                 {
                     <div class="info-item">
                         <h3>Images :</h3>
-                        <img src="@image" alt="Image" class="img-thumbnail" />
+                        <img src="@image" alt="Image" class="imgService" />
                     </div>
                 }
                 <div class="info-item">
                     <h3>Liens :</h3>
                     <p>@service.ExternalLinks</p>
                 </div>
-                <div class="info-item-admin">
-                    <a href="/Service/ChangeService/@service.Id" class="modif">Modifier</a>
-                    <a href="/Service/DeleteServices/@service.Id" class="delete">Supprimer</a>
+                @if (!User.IsInRole("Customer"))
+                    {
+                    <div class="info-item-admin">
+                        <a href="/Service/ChangeService/@service.Id" class="modif">Modifier</a>
+                        <a href="/Service/DeleteServices/@service.Id" class="delete">Supprimer</a>
+                    </div>
+                    }
                 </div>
-            </div>
                 }
             
         </section>

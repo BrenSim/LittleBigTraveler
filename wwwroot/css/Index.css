@@ -102,9 +102,6 @@ header {
         border: 4px solid orange;
     }
 
-h1 {
-    filter: brightness(1);
-}
 
 
 .flexbox {
@@ -120,7 +117,7 @@ h1 {
         ou ASP .NET. Toujours mettre le chemin relatf dans un css */
 }
 
-.titreHeader {
+/*.titreHeader {
     text-transform: uppercase;
     color: whitesmoke;
     letter-spacing: 3px;
@@ -129,9 +126,9 @@ h1 {
     text-shadow: 3px 0px 7px #048b9a;
     animation: animateHeader 1s ease-in-out forwards;
     transform: translateY(20px);
-}
+}*/
 
-.textHeader {
+/*.textHeader {
     padding: 10px;
     color: whitesmoke;
     letter-spacing: 3px;
@@ -153,11 +150,11 @@ h1 {
         transform: translateY(0px);
         opacity: 1;
     }
-}
+}*/
 
 /* CODE POUR LE RESPONSIVE */
 
-@media (max-width: 952px) {
+/*@media (max-width: 952px) {
     label.logo {
         font-size: 25px;
         padding-left: 50px;
@@ -168,9 +165,9 @@ h1 {
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 850px) {*/
     /* MOBILE MODE */
-    .checkbtn {
+    /*.checkbtn {
         display: block;
     }
 
@@ -205,10 +202,10 @@ h1 {
     #check :checked ~ ul {
         left: 0;
     }
-}
+}*/
 /* CODE POUR LE RESPONSIVE */
 
-@media (max-width: 952px) {
+/*@media (max-width: 952px) {
     label.logo {
         font-size: 25px;
         padding-left: 50px;
@@ -219,9 +216,9 @@ h1 {
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 850px) {*/
     /* MOBILE MODE */
-    .checkbtn {
+    /*.checkbtn {
         display: block;
     }
 
@@ -256,7 +253,7 @@ h1 {
     #check :checked ~ ul {
         left: 0;
     }
-}
+}*/
 
 /* Partie Footer */
 
@@ -443,7 +440,18 @@ footer {
     /* margin-bottom: 30px; */
 }
 
-button {
+.discover-button {
+    font-family: "Rubik", sans-serif;
+    background-color: transparent;
+    border: 1px solid white;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 50px;
+    transition: 0.5s ease;
+}
+.next-button {
     font-family: "Rubik", sans-serif;
     background-color: transparent;
     border: 1px solid white;
@@ -455,11 +463,16 @@ button {
     transition: 0.5s ease;
 }
 
-    button:hover {
-        cursor: pointer;
-        background-color: rgba(255, 255, 255, 0.4);
-        transition-delay: 0 !important;
-    }
+.next-button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition-delay: 0 !important;
+}
+.discover-button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition-delay: 0 !important;
+}
 
 .container {
     position: relative;
@@ -663,7 +676,6 @@ button {
         transform: unset;
     }
 
-/* ******* CODE SÉPARATION BOX ******* */
 
 /* ******* CODE DU TRIO CARDS ******* */
 
@@ -863,16 +875,15 @@ button {
 }
 
 .card-btn {
-    color: #1f3d47;
-    background: #8fabba;
-    width: 120px;
+    width: 140px;
     padding: 10px 20px;
-    border-radius: 15px;
-    text-transform: uppercase; /*On va ken ce code de merde*/
-    font-size: 13px;
+    border-radius: 50px;
+    background: none;
+    text-transform: uppercase;
+    font-size: 15px;
     font-family: 'Rubik', sans-serif;
-    color: whitesmoke;
-    border: none;
+    color: white;
+    border: 4px solid white;
     outline: none;
     font-weight: 500;
     cursor: pointer;
@@ -894,7 +905,7 @@ button {
     }
 
     .card-btn {
-        width: 120px;
+        width: auto;
         padding: 10px 20px;
         font-size: 10px;
     }
@@ -916,7 +927,7 @@ button {
     }
 
     .card-btn {
-        width: 120px;
+        width: auto;
         padding: 6px 15px;
         font-size: 12px;
     }
@@ -1231,10 +1242,9 @@ button {
 
 .cardOffers-btn {
     color: white;
-    background: none;
-    width: 70%;
     padding: 10px 20px;
     border: 4px solid white;
+    background: none;
     border-radius: 50px;
     text-transform: uppercase;
     font-size: 12px;
@@ -1272,7 +1282,6 @@ button {
     }
 
     .cardOffers-btn {
-        width: 70%;
         padding: 10px 20px;
         font-size: 12px;
     }
@@ -1294,7 +1303,7 @@ button {
     }
 
     .cardOffers-btn {
-        width: 120px;
+        width: auto;
         padding: 6px 15px;
         font-size: 12px;
     }
@@ -1359,3 +1368,71 @@ button {
     font-weight: 700;
     transition: 0.3s ease-in-out;
 }
+
+/*Partie menu Admin/partner*/
+
+
+.zoneMenuAdmin {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 5%;
+    width: 98%;
+    z-index: 15;
+}
+
+    .zoneMenuAdmin ul, a {
+        list-style-type: none;
+        text-decoration: none;
+        color: white;
+        
+    }
+
+.borderGlassAdminMenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 10px 0;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+    .borderGlassAdminMenu li {
+        margin: 10px;
+        border: 4px solid white;
+        border-radius: 13px;
+        padding: 10px 20px;
+        width: fit-content;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        cursor: pointer;
+    }
+
+        .borderGlassAdminMenu li:hover {
+            border: 4px solid orange;
+            background: orange;
+            color: orange;
+        }
+
+    .borderGlassAdminMenu ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+    .zoneLiAdmin {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }

@@ -7204,31 +7204,33 @@ namespace LittleBigTraveler.Models.DataBase
                }
 
             );
-            //this.Partners.AddRange(
-            //    new Partner
-            //    {
-            //        Id = 1,
-            //        User = Users.Find(12),
-            //        RoleId = 1,
-                   
-                    
-            //    },
-            //    new Partner
-            //    {
-            //        Id = 2,
-            //        User = Users.Find(13),
-            //        RoleId = 2,
-            //    },
-            //    new Partner
-            //    {
-            //        Id = 3,
-            //        User = Users.Find(14),
-            //        RoleId = 3,
-            //    }
+            this.Partners.AddRange(
+                new Partner
+                {
+                    Id = 1,
+                    User = Users.Find(7),
+                    RoleId = 1,
+                }
+                );
 
-            //    );
 
-            this.SaveChanges();
+                    //    },
+                    //    new Partner
+                    //    {
+                    //        Id = 2,
+                    //        User = Users.Find(13),
+                    //        RoleId = 2,
+                    //    },
+                    //    new Partner
+                    //    {
+                    //        Id = 3,
+                    //        User = Users.Find(14),
+                    //        RoleId = 3,
+                    //    }
+
+                    //    );
+
+                    this.SaveChanges();
         }
 
 

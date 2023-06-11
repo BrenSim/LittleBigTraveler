@@ -59,10 +59,16 @@
             </div>
 
             <div class="btnZone1">
+
                 <a href="/Package/EditPackage/@Model.Id" class="modifPackageBtn">Modifier Package</a>
                 <a href="/Travel/ModifyTravel/@Model.Id" class="ModifTravelBtn">Modifier Voyage</a>
-                <a href="/Package/DeletePackage/@Model.Id" class="deleteBtn">Supprimer</a>
+                @if (User.IsInRole("Administrator"))
+                {
+                    <a href="/Package/DeletePackage/@Model.Id" class="deleteBtn">Supprimer</a>
+                }
                 <a href="/Booking/Create?packageId=@Model.Id" class="resaBtn">Réserver</a>
+
+
             </div>
 
             <div class="returnHome">

@@ -1,6 +1,7 @@
 ﻿* {
     margin: 0;
     padding: 0;
+    box-sizing: unset; /*À voir*/
 }
 
 /* Partie Header */
@@ -234,7 +235,6 @@ header {
     letter-spacing: 1px;
     font-size: 15px;
     font-weight: 700;
-    text-transform: capitalize;
     transition: 0.3s ease-in-out;
 }
 
@@ -477,7 +477,8 @@ header {
 
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     height: 180px;
     margin-top: 40px;
@@ -492,6 +493,7 @@ footer {
 
 .logoFooter {
     text-align: center;
+    margin-right: 4%;
 }
 
     .logoFooter i {
@@ -508,6 +510,7 @@ footer {
 #navFooter {
     display: flex;
     justify-content: flex-start;
+    margin-left: 4%;
 }
 
 .navFooter {
@@ -733,7 +736,7 @@ a {
 .cardOffers-btn {
     color: white;
     background: none;
-    width: 90%;
+    width: auto;
     padding: 10px 20px;
     border: 4px solid white;
     border-radius: 50px;
@@ -773,7 +776,7 @@ a {
     }
 
     .cardOffers-btn {
-        width: 90%;
+        width: auto;
         padding: 10px 20px;
         font-size: 12px;
     }
@@ -795,7 +798,7 @@ a {
     }
 
     .cardOffers-btn {
-        width: 90%;
+        width: auto;
         padding: 6px 15px;
         font-size: 12px;
     }
@@ -919,7 +922,6 @@ input:valid ~ label {
     letter-spacing: 1px;
     font-size: 15px;
     font-weight: 700;
-    text-transform: capitalize;
     transition: 0.3s ease-in-out;
 }
 
@@ -1072,7 +1074,6 @@ input:valid ~ label {
     letter-spacing: 1px;
     font-size: 15px;
     font-weight: 700;
-    text-transform: capitalize;
     transition: 0.3s ease-in-out;
 }
 
@@ -1109,6 +1110,10 @@ input:valid ~ label {
 }
 
 /*---------------------------------Partie liste de services-------------------------------------------*/
+
+.imgService {
+
+}
 
 
    /*---------------------Partie Create Package avec les services-----------------------------*/
@@ -1220,10 +1225,13 @@ input:valid {
     /*----------*/
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 100%;
+    width: 110px;
     /*----------*/
 }
-
+.info-item img{
+    height: 50px;
+    width: 80px;
+}
     .info-item h3 {
         margin-bottom: 10px;
         font-size: 16px;
