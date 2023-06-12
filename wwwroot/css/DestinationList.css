@@ -15,7 +15,6 @@
 
     .logo img {
         height: 5vh;
-        margin-right: 5vw;
         margin-left: 1vw;
     }
 }
@@ -29,13 +28,13 @@
 
     .logo img {
         height: 3vh;
-        margin-right: 5vw;
         margin-left: 0vw;
     }
 }
 
 header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     white-space: nowrap;
     padding: 10px;
@@ -49,8 +48,7 @@ header {
 }
 
 .logo img {
-    height: 70px;
-    margin-right: 10vw;
+    height: 40px;
     margin-left: 1vw;
 }
 
@@ -382,7 +380,7 @@ header {
 
 .card-title {
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
 }
 
@@ -430,7 +428,7 @@ header {
 
 @media (max-width: 1190px) {
     .card-title {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .card-sub-title {
@@ -452,7 +450,7 @@ header {
 
 @media (max-width: 1073px) {
     .card-title {
-        font-size: 27px;
+        font-size: 23px;
     }
 
     .card-sub-title {
@@ -480,7 +478,6 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    height: 180px;
     margin-top: 40px;
     background-color: rgba(255, 255, 255, 0.074);
     border-radius: 45px;
@@ -1196,6 +1193,7 @@ input:valid {
 
 .titreService {
     font-size: 3rem;
+    text-align: center;
     color: white; /*modif*/
     text-shadow: 3px 0px 7px #048b9a; /*modif*/
 }
@@ -1217,7 +1215,7 @@ input:valid {
 }
 
 .info-item {
-    margin: 10px 1%;
+    margin: 30px 1%;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -1284,7 +1282,7 @@ input:valid {
     user-select: none;
     display: flex;
     justify-content: center;
-    align-items: center center;
+    align-items: center;
 }
 
 /* Create a custom checkbox */

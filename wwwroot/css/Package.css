@@ -551,6 +551,7 @@ form input[type="text"], form input[type="email"] {
     height: 100%;
     width: 90%;
     padding: 40px 20px 40px 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -29,7 +29,7 @@
         <div class="card-container">
             <div class="myCard">
                 <div class="profilImage">
-                    <img src="/images/imgProfile.png"/>
+                    @*<img src="/images/avatar-neutre.png"/>*@
                 </div>
 
                 <div class="container" id="container">
@@ -132,13 +132,12 @@
                     </div>*@
                 </div>
             </div>
-            <button type="submit" class="saveInfos">Enregistrer mes informations</button>
+            
+            <button type="submit" class="saveInfos">Modifier mes informations</button>
         </form>
         <form method="post" action="/User/@actionDelete/@Model.UserId" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.');">
             <input type="hidden" name="UserId" value="@Model.UserId" />
-            <button type="submit" class="btn btn-danger mt-3">Supprimer le compte</button>
+            <button type="submit" class="deleteInfos">Supprimer le compte</button>
         </form>
     </section>
-
-
 }
