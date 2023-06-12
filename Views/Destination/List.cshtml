@@ -38,18 +38,26 @@
                                 {
                                     <img src="@image" alt="Image" class="card-img" />
                                 }
-                                <div class="card-body">
-                                    <h1 class="card-title">@destination.Country</h1>
-                                    <h3 class="card-sub-title">@destination.City</h3>
-                                    <p class="card-sub-title">@destination.Description</p>
-                                    <a href="/Travel/CreateTravel?destinationId=@destination.Id"><button class="card-btn">Réserver !</button></a>
-                                </div>
+                            <div class="card-body">
+                                <h1 class="card-title">@destination.Country</h1>
+                                <h3 class="card-sub-title">@destination.City</h3>
+                                <p class="card-sub-title">@destination.Description</p>
+                                <a href="/Travel/CreateTravel?destinationId=@destination.Id"><button class="card-btn">Réserver !</button></a>
+                                @if (User.IsInRole("Administrator"))
+                                {
+                                        <div class="divMod">
+                                            <a href="/Destination/ChangeDestination/@destination.Id" class="card-btn">Modifier</a>
+                                            <a href="/Destination/DeleteDestinations/@destination.Id" class="card-btn">Supprimer</a>
+                                        </div>
+                                    
+                                }
                             </div>
-                            @if (User.IsInRole("Administrator"))
+                            </div>
+                            @*@if (User.IsInRole("Administrator"))
                             {
                                 <a href="/Destination/ChangeDestination/@destination.Id" class="card-btn">Modifier</a>
                                 <a href="/Destination/DeleteDestinations/@destination.Id" class="card-btn">Supprimer</a>
-                            }
+                            }*@
                         </div>
                      }
                 </div>

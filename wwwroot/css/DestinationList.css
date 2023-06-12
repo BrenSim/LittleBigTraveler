@@ -1637,3 +1637,9 @@ input:valid {
     border-radius: 50px;
     padding: 10px 30px;
 }
+
+.divMod {
+    position: absolute;
+    top: -15%;
+    left: 20%
+}
