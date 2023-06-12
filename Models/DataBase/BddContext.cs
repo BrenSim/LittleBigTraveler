@@ -6396,8 +6396,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 6,
                 Destination = Destinations.Find(6),
                 DepartureLocation = "Lyon",
-                DepartureDate = new DateTime(2023, 6, 30, 21, 15, 0),
-                ReturnDate = new DateTime(2023, 7, 2, 20, 05, 0),
+                DepartureDate = new DateTime(2023, 8, 4, 21, 15, 0),
+                ReturnDate = new DateTime(2023, 8, 6, 20, 05, 0),
                 Price = 937,
                 NumParticipants = 10,
             },
@@ -6406,8 +6406,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 7,
                 Destination = Destinations.Find(7),
                 DepartureLocation = "Lyon",
-                DepartureDate = new DateTime(2023, 7, 7, 20, 42, 0),
-                ReturnDate = new DateTime(2023, 7, 9, 19, 15, 0),
+                DepartureDate = new DateTime(2023, 8, 11, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 8, 13, 19, 15, 0),
                 Price = 821,
                 NumParticipants = 05,
             },
@@ -6416,8 +6416,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 8,
                 Destination = Destinations.Find(8),
                 DepartureLocation = "Lyon",
-                DepartureDate = new DateTime(2023, 7, 13, 21, 06, 0),
-                ReturnDate = new DateTime(2023, 7, 16, 18, 37, 0),
+                DepartureDate = new DateTime(2023, 8, 18, 21, 06, 0),
+                ReturnDate = new DateTime(2023, 8, 20, 18, 37, 0),
                 Price = 875,
                 NumParticipants = 05,
             },
@@ -6426,8 +6426,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 9,
                 Destination = Destinations.Find(9),
                 DepartureLocation = "Paris",
-                DepartureDate = new DateTime(2023, 7, 21, 20, 42, 0),
-                ReturnDate = new DateTime(2023, 7, 23, 19, 37, 0),
+                DepartureDate = new DateTime(2023, 8, 25, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 8, 27, 19, 37, 0),
                 Price = 759,
                 NumParticipants = 05,
             },
@@ -6436,8 +6436,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 10,
                 Destination = Destinations.Find(10),
                 DepartureLocation = "Paris",
-                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
-                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                DepartureDate = new DateTime(2023, 9, 1, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 9, 3, 20, 27, 0),
                 Price = 849,
                 NumParticipants = 05,
             },
@@ -6446,8 +6446,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 11,
                 Destination = Destinations.Find(11),
                 DepartureLocation = "Paris",
-                DepartureDate = new DateTime(2023, 6, 30, 21, 15, 0),
-                ReturnDate = new DateTime(2023, 7, 2, 20, 05, 0),
+                DepartureDate = new DateTime(2023, 9, 8, 21, 15, 0),
+                ReturnDate = new DateTime(2023, 9, 10, 20, 05, 0),
                 Price = 937,
                 NumParticipants = 10,
             },
@@ -6456,8 +6456,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 12,
                 Destination = Destinations.Find(12),
                 DepartureLocation = "Paris",
-                DepartureDate = new DateTime(2023, 7, 7, 20, 42, 0),
-                ReturnDate = new DateTime(2023, 7, 9, 19, 15, 0),
+                DepartureDate = new DateTime(2023, 9, 15, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 9, 17, 19, 15, 0),
                 Price = 821,
                 NumParticipants = 05,
             },
@@ -6466,8 +6466,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 13,
                 Destination = Destinations.Find(13),
                 DepartureLocation = "Bordeaux",
-                DepartureDate = new DateTime(2023, 7, 13, 21, 06, 0),
-                ReturnDate = new DateTime(2023, 7, 16, 18, 37, 0),
+                DepartureDate = new DateTime(2023, 9, 22, 21, 06, 0),
+                ReturnDate = new DateTime(2023, 9, 24, 18, 37, 0),
                 Price = 875,
                 NumParticipants = 05,
             },
@@ -6476,8 +6476,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 14,
                 Destination = Destinations.Find(14),
                 DepartureLocation = "Bordeaux",
-                DepartureDate = new DateTime(2023, 7, 21, 20, 42, 0),
-                ReturnDate = new DateTime(2023, 7, 23, 19, 37, 0),
+                DepartureDate = new DateTime(2023, 9, 29, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 10, 1, 19, 37, 0),
                 Price = 759,
                 NumParticipants = 05,
             },
@@ -6486,8 +6486,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 15,
                 Destination = Destinations.Find(15),
                 DepartureLocation = "Bordeaux",
-                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
-                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                DepartureDate = new DateTime(2023, 10, 6, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 10, 8, 20, 27, 0),
                 Price = 849,
                 NumParticipants = 05,
             },
@@ -6496,8 +6496,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 16,
                 Destination = Destinations.Find(16),
                 DepartureLocation = "Bordeaux",
-                DepartureDate = new DateTime(2023, 6, 30, 21, 15, 0),
-                ReturnDate = new DateTime(2023, 7, 2, 20, 05, 0),
+                DepartureDate = new DateTime(2023, 10, 13, 21, 15, 0),
+                ReturnDate = new DateTime(2023, 10, 15, 20, 05, 0),
                 Price = 937,
                 NumParticipants = 10,
             },
@@ -6506,8 +6506,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 17,
                 Destination = Destinations.Find(17),
                 DepartureLocation = "Marseille",
-                DepartureDate = new DateTime(2023, 7, 7, 20, 42, 0),
-                ReturnDate = new DateTime(2023, 7, 9, 19, 15, 0),
+                DepartureDate = new DateTime(2023, 10, 20, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 10, 22, 19, 15, 0),
                 Price = 821,
                 NumParticipants = 05,
             },
@@ -6516,8 +6516,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 18,
                 Destination = Destinations.Find(18),
                 DepartureLocation = "Marseille",
-                DepartureDate = new DateTime(2023, 7, 13, 21, 06, 0),
-                ReturnDate = new DateTime(2023, 7, 16, 18, 37, 0),
+                DepartureDate = new DateTime(2023, 10, 27, 21, 06, 0),
+                ReturnDate = new DateTime(2023, 10, 29, 18, 37, 0),
                 Price = 875,
                 NumParticipants = 05,
             },
@@ -6526,8 +6526,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 19,
                 Destination = Destinations.Find(19),
                 DepartureLocation = "Marseille",
-                DepartureDate = new DateTime(2023, 7, 21, 20, 42, 0),
-                ReturnDate = new DateTime(2023, 7, 23, 19, 37, 0),
+                DepartureDate = new DateTime(2023, 11, 3, 20, 42, 0),
+                ReturnDate = new DateTime(2023, 11, 5, 19, 37, 0),
                 Price = 759,
                 NumParticipants = 05,
             },
@@ -6536,8 +6536,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 20,
                 Destination = Destinations.Find(20),
                 DepartureLocation = "Marseille",
-                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
-                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                DepartureDate = new DateTime(2023, 11, 10, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 11, 12, 20, 27, 0),
                 Price = 849,
                 NumParticipants = 05,
             },
@@ -6546,8 +6546,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 21,
                 Destination = Destinations.Find(21),
                 DepartureLocation = "Paris",
-                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
-                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                DepartureDate = new DateTime(2023, 11, 17, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 11, 19, 20, 27, 0),
                 Price = 849,
                 NumParticipants = 05,
             },
@@ -6556,9 +6556,49 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 22,
                 Destination = Destinations.Find(22),
                 DepartureLocation = "Paris",
-                DepartureDate = new DateTime(2023, 7, 28, 21, 17, 0),
-                ReturnDate = new DateTime(2023, 7, 30, 20, 27, 0),
+                DepartureDate = new DateTime(2023, 11, 24, 21, 17, 0),
+                ReturnDate = new DateTime(2023, 11, 26, 20, 27, 0),
                 Price = 849,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 23,
+                Destination = Destinations.Find(1),
+                DepartureLocation = "Marseille",
+                DepartureDate = new DateTime(2023, 8, 11, 21, 12, 0),
+                ReturnDate = new DateTime(2023, 8, 13, 18, 37, 0),
+                Price = 759,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 24,
+                Destination = Destinations.Find(1),
+                DepartureLocation = "Lyon",
+                DepartureDate = new DateTime(2023, 9, 15, 20, 27, 0),
+                ReturnDate = new DateTime(2023, 9, 17, 20, 19, 0),
+                Price = 849,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 25,
+                Destination = Destinations.Find(1),
+                DepartureLocation = "Lille",
+                DepartureDate = new DateTime(2023, 10, 20, 22, 42, 0),
+                ReturnDate = new DateTime(2023, 10, 22, 19, 44, 0),
+                Price = 756,
+                NumParticipants = 05,
+            },
+            new Travel
+            {
+                Id = 26,
+                Destination = Destinations.Find(1),
+                DepartureLocation = "Biarritz",
+                DepartureDate = new DateTime(2023, 11, 24, 20, 17, 0),
+                ReturnDate = new DateTime(2023, 11, 26, 18, 36, 0),
+                Price = 812,
                 NumParticipants = 05,
             }
             );
@@ -6570,7 +6610,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 1,
                 Name = "Fête Nationale et les feux d'artifice à Paris",
                 Description = "Les feux d'artifice embrasant le ciel, monuments emblématiques illuminés, défilés grandioses, ambiance festive et romantique, laissant des souvenirs inoubliables.",
-                Price = 1000,
+                Price = Travels.Find(1).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(1),
                 ServiceForPackage = new List<Service> { Services.Find(4), Services.Find(7), Services.Find(8), Services.Find(11), Services.Find(13) }
@@ -6580,7 +6620,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 2,
                 Name = "Rome et son histoire",
                 Description = "Vestiges antiques, art sublime, délices culinaires. Une immersion dans la grandeur de l'histoire et de la culture italiennes.",
-                Price = 1000,
+                Price = Travels.Find(2).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(2),
                 ServiceForPackage = new List<Service> { Services.Find(19), Services.Find(22), Services.Find(24), Services.Find(29), Services.Find(30) }
@@ -6590,7 +6630,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 3,
                 Name = "Le charme de Prague",
                 Description = "Architecture gothique, charme médiéval, ruelles pavées. Une ville de contes de fées où chaque coin révèle une beauté éternelle.",
-                Price = 1000,
+                Price = Travels.Find(3).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(3),
                 ServiceForPackage = new List<Service> { Services.Find(31), Services.Find(37), Services.Find(38), Services.Find(41), Services.Find(43) }
@@ -6600,7 +6640,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 4,
                 Name = "Venise et ses canaux",
                 Description = "Gondoles, palais majestueux, ruelles pittoresques, ponts romantiques. Une atmosphère magique qui vous transporte dans un autre monde, laissant des souvenirs à jamais gravés.",
-                Price = 1000,
+                Price = Travels.Find(4).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(4),
                 ServiceForPackage = new List<Service> { Services.Find(46), Services.Find(52), Services.Find(53), Services.Find(55), Services.Find(57) }
@@ -6610,7 +6650,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 5,
                 Name = "La terre de la joie: Munich",
                 Description = "Le mélange de tradition et de modernité, bières renommées, festivals animés. Une ville qui célèbre l'art de vivre bavarois avec enthousiasme.",
-                Price = 1000,
+                Price = Travels.Find(5).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(5),
                 ServiceForPackage = new List<Service> { Services.Find(62), Services.Find(67), Services.Find(68), Services.Find(71), Services.Find(73) }
@@ -6620,7 +6660,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 6,
                 Name = "Londres et sa diversité",
                 Description = "Palais royaux, ambiance cosmopolite, scène culturelle vibrante. Une métropole dynamique offrant une richesse inégalée en histoire et en diversité.",
-                Price = 1000,
+                Price = Travels.Find(6).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(6),
                 ServiceForPackage = new List<Service> { Services.Find(76), Services.Find(82), Services.Find(83), Services.Find(86), Services.Find(88) }
@@ -6630,7 +6670,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 7,
                 Name = "Athènes et l'Acropole",
                 Description = "Héritage classique, l'Acropole majestueuse et une cuisine délicieuse. Une destination où l'histoire rencontre la vie contemporaine avec éclat.",
-                Price = 1000,
+                Price = Travels.Find(7).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(7),
                 ServiceForPackage = new List<Service> { Services.Find(94), Services.Find(97), Services.Find(98), Services.Find(101), Services.Find(103) }
@@ -6640,7 +6680,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 8,
                 Name = "Barcelone: entre culture et détente",
                 Description = "Un séjour envoûtant à Barcelone : histoire fascinante, sites emblématiques, plages dorées et activités nautiques excitantes. Une destination qui offre une expérience unique alliant culture et détente.",
-                Price = 1000,
+                Price = Travels.Find(8).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(8),
                 ServiceForPackage = new List<Service> { Services.Find(107), Services.Find(110), Services.Find(112), Services.Find(113), Services.Find(115), Services.Find(116) }
@@ -6650,7 +6690,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 9,
                 Name = "Les montagnes à Innsbruck",
                 Description = "Montagnes alpines spectaculaires, sports d'hiver, charme tyrolien. Une ville où l'aventure et la beauté naturelle se rencontrent harmonieusement.",
-                Price = 1000,
+                Price = Travels.Find(9).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(9),
                 ServiceForPackage = new List<Service> { Services.Find(124), Services.Find(127), Services.Find(128), Services.Find(131), Services.Find(133) }
@@ -6660,7 +6700,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 10,
                 Name = "Week-end sportif à Annecy",
                 Description = "Un week-end vibrant à Annecy : lac scintillant, montagnes majestueuses, sports nautiques enivrants. Une combinaison parfaite de nature et d'aventure pour des moments inoubliables.",
-                Price = 1000,
+                Price = Travels.Find(10).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(10),
                 ServiceForPackage = new List<Service> { Services.Find(135), Services.Find(139), Services.Find(140), Services.Find(144), Services.Find(146), Services.Find(147), Services.Find(149) }
@@ -6670,7 +6710,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 11,
                 Name = "Les montagnes de Garmisch-Partenkirchen",
                 Description = "Panorama alpin, ski de renommée mondiale, ambiance bavaroise. Un paradis pour les amoureux de la montagne et les passionnés de sports d'hiver.",
-                Price = 1000,
+                Price = Travels.Find(11).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(11),
                 ServiceForPackage = new List<Service> { Services.Find(152), Services.Find(157), Services.Find(158), Services.Find(161), Services.Find(163) }
@@ -6680,7 +6720,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 12,
                 Name = "Les couleurs de Lisbonne",
                 Description = "Ruelles colorées, azulejos, cuisine savoureuse. Une ville côtière envoûtante alliant un riche patrimoine historique à une ambiance décontractée.",
-                Price = 1000,
+                Price = Travels.Find(12).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(12),
                 ServiceForPackage = new List<Service> { Services.Find(167), Services.Find(172), Services.Find(173), Services.Find(176), Services.Find(178) }
@@ -6690,7 +6730,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 13,
                 Name = "Interlaken et ses paysages alpins",
                 Description = "Paysages alpins à couper le souffle, sports d'aventure, lacs cristallins. Une destination qui offre une combinaison parfaite de nature brute et d'adrénaline.",
-                Price = 1000,
+                Price = Travels.Find(13).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(13),
                 ServiceForPackage = new List<Service> { Services.Find(184), Services.Find(187), Services.Find(188), Services.Find(191), Services.Find(193) }
@@ -6700,7 +6740,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 14,
                 Name = "Chamonix et les sommets",
                 Description = "Sommets légendaires, ski extrême, atmosphère alpine authentique. Un lieu emblématique pour les amoureux de la montagne et les passionnés de sports de glisse.",
-                Price = 1000,
+                Price = Travels.Find(14).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(14),
                 ServiceForPackage = new List<Service> { Services.Find(199), Services.Find(202), Services.Find(203), Services.Find(206), Services.Find(208) }
@@ -6710,7 +6750,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 15,
                 Name = "La nature époustouflante aux lacs de Plitvice",
                 Description = "Une escapade féerique aux lacs de Plitvice : cascades cristallines, eaux turquoise, sentiers enchanteurs, faune sauvage. La nature déploie toute sa splendeur, offrant une expérience inoubliable.",
-                Price = 1000,
+                Price = Travels.Find(15).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(15),
                 ServiceForPackage = new List<Service> { Services.Find(210), Services.Find(216), Services.Find(218), Services.Find(220), Services.Find(221), Services.Find(224) }
@@ -6720,7 +6760,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 16,
                 Name = "Tromsø et ses paysages",
                 Description = "Aurores boréales, paysages arctiques, nature sauvage. Une expérience unique dans le cercle polaire, offrant des merveilles naturelles et une culture fascinante.",
-                Price = 1000,
+                Price = Travels.Find(16).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(16),
                 ServiceForPackage = new List<Service> { Services.Find(229), Services.Find(232), Services.Find(233), Services.Find(236), Services.Find(238) }
@@ -6730,7 +6770,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 17,
                 Name = "Killarney et ses paysages pittoresques",
                 Description = "paysages irlandais pittoresques, châteaux, musique traditionnelle. Une escapade pleine de charme, entre lacs scintillants et landes verdoyantes.",
-                Price = 1000,
+                Price = Travels.Find(17).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(17),
                 ServiceForPackage = new List<Service> { Services.Find(244), Services.Find(247), Services.Find(248), Services.Find(251), Services.Find(253) }
@@ -6740,7 +6780,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 18,
                 Name = "Budapest et son architecture grandiose",
                 Description = "Architecture grandiose, bains thermaux, vie nocturne animée. Une perle du Danube qui allie l'élégance et l'effervescence dans une atmosphère captivante.",
-                Price = 1000,
+                Price = Travels.Find(18).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(18),
                 ServiceForPackage = new List<Service> { Services.Find(259), Services.Find(262), Services.Find(263), Services.Find(266), Services.Find(268) }
@@ -6750,7 +6790,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 19,
                 Name = "Bath et ses bains romains",
                 Description = "Bains romains, architecture géorgienne, histoire fascinante. Une ville thermale pleine de grâce et de charme, où l'histoire et le bien-être se rejoignent.",
-                Price = 1000,
+                Price = Travels.Find(19).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(19),
                 ServiceForPackage = new List<Service> { Services.Find(274), Services.Find(277), Services.Find(278), Services.Find(281), Services.Find(283) }
@@ -6760,7 +6800,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 20,
                 Name = "Karlovy Vary et ses sources thermales",
                 Description = "Sources thermales, architecture baroque, festivals de cinéma. Une ville thermale tchèque célèbre pour ses eaux curatives et son ambiance élégante.",
-                Price = 1000,
+                Price = Travels.Find(20).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(20),
                 ServiceForPackage = new List<Service> { Services.Find(289), Services.Find(292), Services.Find(293), Services.Find(296), Services.Find(298) }
@@ -6770,7 +6810,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 21,
                 Name = "Ischia et sa beauté méditerranéenne",
                 Description = "Plages idylliques, thermes naturels, cuisine méditerranéenne, une île italienne où détente, beauté naturelle et bien-être se conjuguent harmonieusement.",
-                Price = 1000,
+                Price = Travels.Find(21).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(21),
                 ServiceForPackage = new List<Service> { Services.Find(304), Services.Find(307), Services.Find(308), Services.Find(311), Services.Find(313) }
@@ -6780,10 +6820,50 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 22,
                 Name = "Vichy et son patrimoine historique",
                 Description = "Sources thermales, architecture belle époque, gastronomie raffinée, une ville thermale française réputée pour ses bienfaits sur la santé et son patrimoine architectural.",
-                Price = 1000,
+                Price = Travels.Find(22).Price,
                 QuantityAvailable = 10,
                 Travel = Travels.Find(22),
                 ServiceForPackage = new List<Service> { Services.Find(319), Services.Find(322), Services.Find(323), Services.Find(326), Services.Find(328) }
+            },
+            new Package
+            {
+                Id = 23,
+                Name = "Un week-end dans la ville lumière",
+                Description = "Paris, la ville des amoureux, enchante avec ses ruelles pittoresques et ses façades élégantes.",
+                Price = Travels.Find(23).Price,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(23),
+                ServiceForPackage = new List<Service> { Services.Find(1), Services.Find(7), Services.Find(8), Services.Find(12), Services.Find(14) }
+            },
+            new Package
+            {
+                Id = 24,
+                Name = "Les bateaux voguent sur la Seine scintillante.",
+                Description = "Ses monuments emblématiques, tels que la majestueuse tour Eiffel et la magnifique cathédrale Notre-Dame, émerveillent les visiteurs.",
+                Price = Travels.Find(24).Price,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(24),
+                ServiceForPackage = new List<Service> { Services.Find(3), Services.Find(6), Services.Find(10), Services.Find(11), Services.Find(13) }
+            },
+            new Package
+            {
+                Id = 25,
+                Name = "La gastronomie unique et l'animation de ses cafés!",
+                Description = "Les délices culinaires, des croissants croustillants aux délicieuses pâtisseries, ravissent les papilles les plus exigeantes.",
+                Price = Travels.Find(25).Price,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(25),
+                ServiceForPackage = new List<Service> { Services.Find(5), Services.Find(7), Services.Find(9), Services.Find(12), Services.Find(15) }
+            },
+            new Package
+            {
+                Id = 26,
+                Name = "La Paris antique et le charme de son passé",
+                Description = "L'atmosphère bohème des quartiers artistiques, comme Montmartre, inspire la créativité et invite à flâner dans les galeries d'art.",
+                Price = Travels.Find(26).Price,
+                QuantityAvailable = 10,
+                Travel = Travels.Find(26),
+                ServiceForPackage = new List<Service> { Services.Find(2), Services.Find(6), Services.Find(9), Services.Find(13), Services.Find(14), Services.Find(15) }
             }
             );
 
@@ -7040,142 +7120,11 @@ namespace LittleBigTraveler.Models.DataBase
                 PhoneNumber = "0139876543",
                 BirthDate = new DateTime(1986, 2, 28),
                 ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 21,
-                LastName = "Roy",
-                FirstName = "Sophie",
-                Email = "sophie.roy@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "17 Rue Sainte-Catherine, Saint-Michel, Bordeaux",
-                PhoneNumber = "0123456789",
-                BirthDate = new DateTime(1992, 10, 15),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 22,
-                LastName = "Gagnon",
-                FirstName = "Alexandre",
-                Email = "alexandre.gagnon@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "12 Avenue de la Marne, La Négresse, Biarritz",
-                PhoneNumber = "0456789123",
-                BirthDate = new DateTime(1988, 5, 2),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 23,
-                LastName = "Tremblay",
-                FirstName = "Emma",
-                Email = "emma.tremblay@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "9 Rue des Francs-Bourgeois, Centre Ville, Strasbourg",
-                PhoneNumber = "0498765432",
-                BirthDate = new DateTime(1995, 12, 28),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 24,
-                LastName = "Lavoie",
-                FirstName = "Pierre",
-                Email = "pierre.lavoie@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "6 Boulevard des Anglais, Milady, Biarritz",
-                PhoneNumber = "0632147859",
-                BirthDate = new DateTime(1991, 7, 10),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 25,
-                LastName = "Bélanger",
-                FirstName = "Marie",
-                Email = "marie.belanger@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "15 Rue de la Douane, Centre Ville, Strasbourg",
-                PhoneNumber = "0356897412",
-                BirthDate = new DateTime(1987, 3, 22),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 26,
-                LastName = "Fortin",
-                FirstName = "Marc",
-                Email = "marc.fortin@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "32 Avenue Jean Médecin, Carré d'Or, Nice",
-                PhoneNumber = "0123456789",
-                BirthDate = new DateTime(1993, 9, 5),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 27,
-                LastName = "Gauthier",
-                FirstName = "Isabelle",
-                Email = "isabelle.gauthier@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "8 Rue Masséna, Vieux Nice, Nice",
-                PhoneNumber = "0456789123",
-                BirthDate = new DateTime(1990, 4, 12),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 28,
-                LastName = "Morin",
-                FirstName = "David",
-                Email = "david.morin@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "17 Rue du Maréchal Foch, Petite France, Strasbourg",
-                PhoneNumber = "0498765432",
-                BirthDate = new DateTime(1986, 11, 25),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 29,
-                LastName = "Lévesque",
-                FirstName = "Sarah",
-                Email = "sarah.levesque@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "6 Avenue Thiers, Jean Médecin, Nice",
-                PhoneNumber = "0632147859",
-                BirthDate = new DateTime(1994, 2, 18),
-                ProfilePicture = "/path/to/profile_picture.jpg"
-            },
-            new User
-            {
-                Id = 30,
-                LastName = "Caron",
-                FirstName = "Thomas",
-                Email = "thomas.caron@gmail.com",
-                Password = UserDAL.EncodeMD5("password"),
-                Address = "15 Rue de la Juiverie, Bouffay, Nantes",
-                PhoneNumber = "0132546897",
-                BirthDate = new DateTime(1991, 10, 20),
-                ProfilePicture = "/path/to/profile_picture.jpg"
             }
             );
 
 
-            // Création des Customers
-            this.Customers.AddRange(
-                 new Customer
-                 {
-                     Id = 1,
-                     User = Users.Find(6),
-                     LoyaltyPoint = 100,
-                     CommentPoint = 50
-                 }
-
-            );
-
+            // Création des Administrator
             this.Administrators.AddRange(
                 new Administrator
                 {
@@ -7204,33 +7153,120 @@ namespace LittleBigTraveler.Models.DataBase
                }
 
             );
+
+
+            // Création des Customers
+            this.Customers.AddRange(
+                 new Customer
+                 {
+                     Id = 1,
+                     User = Users.Find(6),
+                     LoyaltyPoint = 79,
+                     CommentPoint = 12
+                 },
+                 new Customer
+                 {
+                     Id = 2,
+                     User = Users.Find(7),
+                     LoyaltyPoint = 124,
+                     CommentPoint = 34
+                 },
+                 new Customer
+                 {
+                     Id = 3,
+                     User = Users.Find(8),
+                     LoyaltyPoint = 254,
+                     CommentPoint = 43
+                 },
+                 new Customer
+                 {
+                     Id = 4,
+                     User = Users.Find(9),
+                     LoyaltyPoint = 375,
+                     CommentPoint = 87
+                 },
+                 new Customer
+                 {
+                     Id = 5,
+                     User = Users.Find(10),
+                     LoyaltyPoint = 125,
+                     CommentPoint = 34
+                 },
+
+                 new Customer
+                 {
+                     Id = 6,
+                     User = Users.Find(11),
+                     LoyaltyPoint = 98,
+                     CommentPoint = 14
+                 },
+                 new Customer
+                 {
+                     Id = 7,
+                     User = Users.Find(12),
+                     LoyaltyPoint = 18,
+                     CommentPoint = 2
+                 },
+                 new Customer
+                 {
+                     Id = 8,
+                     User = Users.Find(13),
+                     LoyaltyPoint = 47,
+                     CommentPoint = 2
+                 },
+                 new Customer
+                 {
+                     Id = 9,
+                     User = Users.Find(14),
+                     LoyaltyPoint = 100,
+                     CommentPoint = 50
+                 },
+                 new Customer
+                 {
+                     Id = 10,
+                     User = Users.Find(15),
+                     LoyaltyPoint = 100,
+                     CommentPoint = 50
+                 }
+            );
+
             this.Partners.AddRange(
                 new Partner
                 {
                     Id = 1,
-                    User = Users.Find(7),
-                    RoleId = 1,
+                    User = Users.Find(16),
+                    RoleId = null,
+
+                },
+                new Partner
+                {
+                    Id = 2,
+                    User = Users.Find(17),
+                    RoleId = null,
+                },
+                new Partner
+                {
+                    Id = 3,
+                    User = Users.Find(18),
+                    RoleId = null,
+                },
+
+                new Partner
+                {
+                    Id = 4,
+                    User = Users.Find(19),
+                    RoleId = null,
+                },
+                new Partner
+                {
+                    Id = 5,
+                    User = Users.Find(20),
+                    RoleId = null,
                 }
+
                 );
 
-
-                    //    },
-                    //    new Partner
-                    //    {
-                    //        Id = 2,
-                    //        User = Users.Find(13),
-                    //        RoleId = 2,
-                    //    },
-                    //    new Partner
-                    //    {
-                    //        Id = 3,
-                    //        User = Users.Find(14),
-                    //        RoleId = 3,
-                    //    }
-
-                    //    );
-
-                    this.SaveChanges();
+            this.SaveChanges();
         }
 
 

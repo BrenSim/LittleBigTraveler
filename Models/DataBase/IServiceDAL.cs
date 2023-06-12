@@ -8,9 +8,9 @@ namespace LittleBigTraveler.Models.DataBase
     public interface IServiceDAL : IDisposable
     {
         List<Service> GetAllServices();
-        int CreateService(string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link, int destinationId);
+        int CreateService(string name, double price, DateTime schedule, string location, string type, string style, List<string> images, string link);
         void DeleteService(int id);
-        void ModifyService(int id, string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link, int destinationId);
+        void ModifyService(int id, string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link);
         Service GetServiceWithId(int id);
         List<Service> SearchService(string searchText);
 

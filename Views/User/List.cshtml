@@ -1,6 +1,6 @@
 ﻿@model List<LittleBigTraveler.ViewModels.UserViewModel>
 @{
-    Layout = "_DestinationLayout";
+    Layout = "_UserLayout";
     ViewData["Title"] = "Liste des utilisateurs";
 }
 
@@ -33,26 +33,29 @@
                         <h3>Type d'utilisateur :</h3>
                         <p>@user.UserType</p>
                     </div>
-                    @if (user.UserType == "Customer")
-                    {
-                        <a href="/User/Profile/@user.UserId" class="">Modifier</a>
-                    }
-                    else if (user.UserType == "Partner")
-                    {
-                        <a href="/User/Profile/@user.UserId" class="">Modifier</a>
-                    }
-                    else if (user.UserType == "Administrator")
-                    {
-                        <a href="/User/Profile/@user.UserId" class="">Modifier</a>
-                    }
+                    <div class="modifDivListUser">
+                        @if (user.UserType == "Customer")
+                        {
+                            <a href="/User/Profile/@user.UserId" class="">Modifier</a>
+                        }
+                        else if (user.UserType == "Partner")
+                        {
+                            <a href="/User/Profile/@user.UserId" class="">Modifier</a>
+                        }
+                        else if (user.UserType == "Administrator")
+                        {
+                            <a href="/User/Profile/@user.UserId" class="">Modifier</a>
+                        }
+                    </div>
+                    
 
                     @*<a href="/User/DeleteUsers/@user.UserId" class="">Supprimer</a>*@
                 </div>
             }
         }
 
-        <div class="card-btn">
-            <a href="/Home/Index" class="">Retour à l'accueil</a>
+        <div>
+            <a href="/Home/Index" class="card-btnBackHome">Retour à l'accueil</a>
         </div>
     </section>
 }

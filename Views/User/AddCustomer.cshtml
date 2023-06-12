@@ -1,31 +1,45 @@
-﻿@{
+﻿@model LittleBigTraveler.ViewModels.UserViewModel
+
+@{
     ViewBag.Title = "Signup Page";
     Layout = "_SigninSignupLayout";
 }
 
 @section Log {
+
+
     <div class="myCardUp">
-        <h1>Créer un administrateur !</h1>
+        <h1>Rejoignez-nous !</h1>
         <div class="container" id="container">
-            <form method="post" action="/User/AddAdministrators">
+            <form method="post" action="/User/AddCustomers">
                 <div class="input-Name">
-                    <input required type="text" name="Name" autocomplete="on" class="input">
+                    <input required type="text" name="LastName" autocomplete="on" class="input">
                     <label class="user-Name">Nom</label>
                 </div>
                 <div class="input-Firstname">
-                    <input required type="text" name="Firstname" autocomplete="on" class="input">
+                    <input required type="text" name="FirstName" autocomplete="on" class="input">
                     <label class="user-Firstname">Prénom</label>
                 </div>
                 <div class="input-Email">
-                    <input required type="email" name="email" autocomplete="on" class="input">
+                    <input required type="email" name="Email" autocomplete="on" class="input">
                     <label class="user-Email">Mail</label>
                 </div>
                 <div class="input-Password">
-                    <input required type="password" name="password" autocomplete="off" class="input">
+                    <input required type="password" name="Password" autocomplete="off" class="input">
                     <label class="user-Password">Mot de passe</label>
                 </div>
                 <button type="submit" class="btnRegistration">Inscription</button>
             </form>
+        </div>
+        <div>
+
+            <p>Vous êtes déjà un Little Big Traveller ? <br> Connectez-vous !</p>
+            <button class="btnSignInUp">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <a href="@Url.Action("LogIn", "User")"><span class="button-text">Connexion !</span></a>
+            </button>
         </div>
         <div class="littleHole"></div>
         <div class="backHome">
@@ -33,4 +47,5 @@
         </div>
     </div>
 
-    }
+
+}
