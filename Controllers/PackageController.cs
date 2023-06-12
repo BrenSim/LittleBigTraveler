@@ -84,7 +84,7 @@ public class PackageController : Controller
                     Travel = travel,
                     Name = "",
                     Description = "",
-                    Price = travel.Price,
+                    Price = 300,
                     QuantityAvailable = 5,
                     Services = services,
                     SelectedServiceId = new List<int>()
