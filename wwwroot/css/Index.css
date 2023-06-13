@@ -34,7 +34,7 @@ header {
     white-space: nowrap;
     /* padding: 10px; */
     background-color: rgba(255, 255, 255, 0.074);
-    border-radius: 45px;
+    border-radius: 0 0 45px 45px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(20px);
     opacity: 0.9;
@@ -72,6 +72,7 @@ header {
         .navMenu ul li a {
             color: white;
           /*  background-color: #048b9a79; */
+          display: flex;
             font-size: 17px;
             padding: 7px 13px;
             border-radius: 13px;
@@ -103,6 +104,13 @@ header {
     }
 
 
+.navMenu li > a > img {
+    width: 20px; /* Remplacez la valeur par la taille souhaitée */
+    height: auto; /* Ajuste automatiquement la hauteur en maintenant les proportions */
+    margin-left: 10px; /* Remplacez la valeur par la marge souhaitée */
+    filter: invert(1);
+    transform: scale(1.2)
+}
 
 .flexbox {
     display: flex;
@@ -116,10 +124,6 @@ header {
         de la même maniere dans un fichier css et dans un fichier html
         ou ASP .NET. Toujours mettre le chemin relatf dans un css */
 }
-
-
-
-/
 
 /* Partie Footer */
 
@@ -178,7 +182,7 @@ footer {
 .navFooter {
     display: flex;
     flex-direction: column;
-    white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+    white-space: nowrap;
     font-size: 1em;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -316,6 +320,7 @@ footer {
     text-transform: uppercase;
     height: 50px;
     transition: 0.5s ease;
+    cursor: pointer;
 }
 .next-button {
     font-family: "Rubik", sans-serif;
@@ -344,7 +349,7 @@ footer {
     position: relative;
     width: 1280px;
     height: 720px;
-    border-radius: 20px;
+    border-radius: 50px;
     overflow: hidden;
     background-color: #767676;
     display: flex;
@@ -459,6 +464,7 @@ footer {
     height: 50px;
     border-radius: 50px;
     margin-top: 20px;
+    color: white;
 }
 
 .content .thumbnail-list {
@@ -496,6 +502,7 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .container .navigation {
@@ -1243,15 +1250,13 @@ footer {
     justify-content: center;
     position: absolute;
     top: 10%;
-/*    width: 98%;*/
     z-index: 15;
 }
 
-    .zoneMenuAdmin ul, a {
+    .zoneMenuAdmin > ul > li > a {
         list-style-type: none;
         text-decoration: none;
-        color: white;
-        
+/*        color: white;*/
     }
 
 .borderGlassAdminMenu {
@@ -1278,6 +1283,7 @@ footer {
         width: fit-content;
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         cursor: pointer;
+        color: white;
     }
 
         .borderGlassAdminMenu li:hover {

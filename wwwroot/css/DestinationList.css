@@ -71,7 +71,13 @@ header {
         color: #333;
         font-weight: bold;
     }
-
+.navMenu li > a > img {
+    width: 20px; /* Remplacez la valeur par la taille souhaitée */
+    height: auto; /* Ajuste automatiquement la hauteur en maintenant les proportions */
+    margin-left: 10px; /* Remplacez la valeur par la marge souhaitée */
+    filter: invert(1);
+    transform: scale(1.2)
+}
     /* Partie sections */
 
 #sectionDestinationCards {
@@ -849,6 +855,7 @@ a {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    padding-left: 16%;
 }
 
 @media (max-width: 1200px) {
@@ -1643,3 +1650,4 @@ input:valid {
     top: -15%;
     left: 20%
 }
+
