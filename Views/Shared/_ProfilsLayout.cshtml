@@ -16,11 +16,9 @@
         </div>
         <nav class="navMenu">
             <ul>
-                <li><a href="#">Nos offres</a></li>
-                <li><a href="#">Notre concept</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <li><a href="/User/Profile">Mon Profil <img src="~/images/profilIcon.png" /></a></li>
+                    <li><a href="@Url.Action("List", "Destination")">Nos destinations</a></li>
                     <li><a href="/User/LogOut">Déconnexion</a></li>
                     <li>
                         <a href="@Url.Action("List", "Booking")">
