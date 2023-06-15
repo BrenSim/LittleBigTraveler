@@ -6,61 +6,6 @@
 }
 
 @section content {
-    @*<div class="container">
-        <h1 class="text-center">Modifier un service</h1>
-
-        <form method="post" action="/Service/ChangeServices/@Model.Id">
-
-            <input type="hidden" name="Id" value="@Model.Id" />
-
-            <div class="form-group">
-                <label for="Name">Nom :</label>
-                <input type="text" id="Name" name="Name" class="form-control" value="@Model.Name" required />
-            </div>
-
-            <div class="form-group">
-                <label for="Price">Prix :</label>
-                <input type="number" id="Price" name="Price" class="form-control" value="@Model.Price" required />
-            </div>
-
-            <div class="form-group">
-                <label for="Schedule">Horaire :</label>
-                <input type="datetime-local" id="Schedule" name="Schedule" class="form-control" value="@Model.Schedule.ToString("yyyy-MM-ddTHH:mm")" required />
-            </div>
-
-            <div class="form-group">
-                <label for="Location">Lieu :</label>
-                <input type="text" id="Location" name="Location" class="form-control" value="@Model.Location" required />
-            </div>
-
-            <div class="form-group">
-                <label for="Type">Type :</label>
-                <input type="text" id="Type" name="Type" class="form-control" value="@Model.Type" required />
-            </div>
-
-            <div class="form-group">
-                <label for="Style">Style :</label>
-                <input type="text" id="Style" name="Style" class="form-control" required />
-            </div>
-
-            <div class="form-group">
-                <label for="MaxCapacity">Capacité maximale :</label>
-                <input type="number" id="MaxCapacity" name="MaxCapacity" class="form-control" value="@Model.MaxCapacity" required />
-            </div>
-
-            <div class="form-group">
-                <label for="Images">Images :</label>
-                <input type="file" id="Images" name="Images" class="form-control-file" multiple />
-            </div>
-
-            <div class="form-group">
-                <label for="Link">Lien externe :</label>
-                <input type="text" id="Link" name="Link" class="form-control" value="@Model.ExternalLinks" required />
-            </div>
-
-            <button type="submit" class="btn btn-primary">Modifier</button>
-        </form>
-    </div>*@
 
 <section id="sectionModifyTravel">
         <div class="borderGlassModifyTravelBackground">
@@ -81,7 +26,7 @@
 
                     <div class="form-group">
                         <label class="label">Prix : </label>
-                        <input type="text" class="input" name="Price" value="@Model.Price" required />
+                        <input type="text" class="input" name="Price" value="@Model.Price €" required />
                     </div>
 
                     <div class="form-group">
@@ -96,18 +41,18 @@
                     </div>
                     <div class="form-group">
                         <label class="label">Type : </label>
-                        <input required type="date" name="Type" autocomplete="on" class="input"
+                        <input required type="text" name="Type" autocomplete="on" class="input"
                                value="@Model.Type">
                     </div>
                     <div class="form-group">
                         <label class="label">Style : </label>
-                        <input required type="text" name="Style" autocomplete="on" class="input">
+                        <input type="text" name="Style" autocomplete="on" class="input">
                     </div>
-                    <div class="form-group">
+                    @*<div class="form-group">
                         <label class="label">Capacité maximale : </label>
                         <input type="number" class="input" name="MaxCapacity"
-                               value="@Model.MaxCapacity" required />
-                    </div>
+                               value="@Model.MaxCapacity" />
+                    </div>*@
 
                     <div class="form-group">
                         <label class="label">Images : </label>
@@ -117,16 +62,18 @@
                     <div class="form-group">
                         <label class="label">Lien externe : </label>
                         <input type="number" class="input" name="Link"
-                               value="@Model.ExternalLinks" required />
+                               value="@Model.ExternalLinks" />
                     </div>
+
+                    <button type="submit" class="modifyBtn">Modifier</button>
                 </form>
             </div>
 
 
         </div>
-        <div class="Container1">
+        @*<div class="Container1">
             <button type="submit" class="modifyBtn">Modifier</button>
-        </div>
+        </div>*@
    
 </section>
 }

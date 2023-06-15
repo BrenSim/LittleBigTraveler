@@ -29,7 +29,7 @@
         <div class="card-container">
             <div class="myCard">
                 <div class="profilImage">
-                    <img src="/images/imgProfile.png"/>
+                    @*<img src="/images/avatar-neutre.png"/>*@
                 </div>
 
                 <div class="container" id="container">
@@ -112,14 +112,14 @@
                     <label class="user-Email user-Nationalite"></label>
                 </div>
                 <div class="input-Tel">
-                    <input type="text" name="tel" autocomplete="on" class="input" required value="@Model.PhoneNumber">
+                    <input type="text" name="tel" autocomplete="on" class="input" value="@Model.PhoneNumber">
                     <label class="user-Tel">Numéro de téléphone</label>
                 </div>
             </div>
             <div class="otherInfos-global">
                 <div class="otherInfos">
                     <div class="input-Adress">
-                        <input type="text" name="Adress" autocomplete="on" class="input" required value="@Model.Address">
+                        <input type="text" name="Adress" autocomplete="on" class="input" value="@Model.Address">
                         <label class="user-Adress">Adresse</label>
                     </div>
                     @*<div class="input-City">
@@ -132,13 +132,12 @@
                     </div>*@
                 </div>
             </div>
-            <button type="submit" class="saveInfos">Enregistrer mes informations</button>
+            
+            <button type="submit" class="saveInfos">Modifier mes informations</button>
         </form>
         <form method="post" action="/User/@actionDelete/@Model.UserId" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.');">
             <input type="hidden" name="UserId" value="@Model.UserId" />
-            <button type="submit" class="btn btn-danger mt-3">Supprimer le compte</button>
+            <button type="submit" class="deleteInfos">Supprimer le compte</button>
         </form>
     </section>
-
-
 }

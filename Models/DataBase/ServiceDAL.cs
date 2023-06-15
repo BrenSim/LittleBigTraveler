@@ -49,6 +49,7 @@ namespace LittleBigTraveler.Models.DataBase
             _bddContext.Dispose();
         }
 
+
         /// <summary>
         /// Crée un nouveau service.
         /// </summary>
@@ -64,6 +65,7 @@ namespace LittleBigTraveler.Models.DataBase
         /// <param name="destinationId">L'ID de la destination associée au service.</param>
         /// <returns>L'ID du service créé.</returns>
         public int CreateService(string name, double price, DateTime schedule, string location, string type, string style, int maxCapacity, List<string> images, string link, int destinationId)
+
         {
             Service service = new Service()
             {
@@ -73,7 +75,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Location = location,
                 Type = type,
                 Style = style,
-                MaxCapacity = maxCapacity,
                 Images = images,
                 ExternalLinks = link,
                 DestinationId = destinationId
@@ -98,6 +99,7 @@ namespace LittleBigTraveler.Models.DataBase
                 _bddContext.SaveChanges();
             }
         }
+
 
         /// <summary>
         /// Modifie un service existant.
@@ -127,7 +129,7 @@ namespace LittleBigTraveler.Models.DataBase
                 service.MaxCapacity = maxCapacity;
                 service.Images = images;
                 service.ExternalLinks = link;
-                service.DestinationId = destinationId;
+                //service.DestinationId = destinationId;
 
                 _bddContext.SaveChanges();
             }

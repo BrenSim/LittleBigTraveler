@@ -35,3 +35,10 @@
             padding: 10px 45px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
+.navMenu li > a > img {
+    width: 50px; /* Remplacez la valeur par la taille souhaitée */
+    height: auto; /* Ajuste automatiquement la hauteur en maintenant les proportions */
+    margin-left: 10px; /* Remplacez la valeur par la marge souhaitée */
+    filter: invert(1);
+    transform: scale(1.2)
+}

@@ -64,28 +64,72 @@
     <section id="sectionDestinationCards">
         <div class="glassBorderBackground">
             @if (Model.Destination != null)
-                {
+            {
                 <h1 class="titreDestination">Destination : @Model.Destination.Country, @Model.Destination.City</h1>
-                }
+            }
+            @*<div id="positionIntoSection">
+            <div class="card-container">
+                <div class="glassBorderCard slider-1">
+                    <div class="card">
+                        <img src="@Model.Destination.Images[0]" class="card-img" />
+                        <img src="@Model.Destination.Images[1]" class="card-img" />
+                        <img src="@Model.Destination.Images[2]" class="card-img" />
+                        <img src="@Model.Destination.Images[3]" class="card-img" />
+                        <img src="@Model.Destination.Images[0]" class="card-img" />
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title">@Model.Destination.Country</h1>
+                        <h3 class="card-sub">@Model.Destination.City</h3>
+                        <p class="card-sub-title">@Model.Destination.Description</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>*@
+
+            <div class="glassBorderBackground">
+         
+                </div>
                 <div id="positionIntoSection">
                     <div class="card-container">
-                        <div class="glassBorderCard slider-1">
-                            <div class="card">
+                        <div class="glassBorderCardOffers">
+                            <div class="cardOffers">
                                 <img src="@Model.Destination.Images[0]" class="card-img" />
-                                <img src="@Model.Destination.Images[1]" class="card-img" />
-                                <img src="@Model.Destination.Images[2]" class="card-img" />
-                                <img src="@Model.Destination.Images[3]" class="card-img" />
-                                <img src="@Model.Destination.Images[0]" class="card-img" />
-                            </div>
-                            <div class="card-body">
-                                <h1 class="card-title">@Model.Destination.Country</h1>
-                                <h3 class="card-sub">@Model.Destination.City</h3>
-                                <p class="card-sub-title">@Model.Destination.Description</p>
+                              
                             </div>
                         </div>
+                        <div class="glassBorderCardOffers">
+                            <div class="cardOffers">
+                                <img src="@Model.Destination.Images[1]" class="card-img" />
+                               
+                            </div>
+                        </div>
+                        <div class="glassBorderCardOffers">
+                            <div class="cardOffers">
+                                <img src="@Model.Destination.Images[2]" class="card-img" />
+                               
+                            </div>
+                        </div>
+                        <div class="glassBorderCardOffers">
+                            <div class="cardOffers">
+                                <img src="@Model.Destination.Images[3]" class="card-img" />
+                                
+                            </div>
+                        </div>
+                        @*<div class="glassBorderCardOffers">
+                        <div class="cardOffers">
+                            <img src="@Model[9].Images[0]" class="card-img" />
+                            <div class="cardOffers-body">
+                                <h1 class="cardOffers-title">@Model[9].Country</h1>
+                                <p class="cardOffers-sub-title">@Model[9].City</p>
+                                <button class="cardOffers-btn">Réserver !</button>
+                            </div>
+                        </div>
+                    </div>*@
                     </div>
                 </div>
             </div>
+        </div>
 
         <div class="bottomContainer">
             <form method="post" action="/Travel/CreateTravel">

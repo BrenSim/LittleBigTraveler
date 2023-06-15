@@ -34,7 +34,7 @@ header {
     white-space: nowrap;
     /* padding: 10px; */
     background-color: rgba(255, 255, 255, 0.074);
-    border-radius: 45px;
+    border-radius: 0 0 45px 45px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(20px);
     opacity: 0.9;
@@ -72,6 +72,7 @@ header {
         .navMenu ul li a {
             color: white;
           /*  background-color: #048b9a79; */
+          display: flex;
             font-size: 17px;
             padding: 7px 13px;
             border-radius: 13px;
@@ -103,6 +104,13 @@ header {
     }
 
 
+.navMenu li > a > img {
+    width: 20px; /* Remplacez la valeur par la taille souhaitée */
+    height: auto; /* Ajuste automatiquement la hauteur en maintenant les proportions */
+    margin-left: 10px; /* Remplacez la valeur par la marge souhaitée */
+    filter: invert(1);
+    transform: scale(1.2)
+}
 
 .flexbox {
     display: flex;
@@ -116,144 +124,6 @@ header {
         de la même maniere dans un fichier css et dans un fichier html
         ou ASP .NET. Toujours mettre le chemin relatf dans un css */
 }
-
-/*.titreHeader {
-    text-transform: uppercase;
-    color: whitesmoke;
-    letter-spacing: 3px;
-    text-align: center;
-    font-size: 5rem;
-    text-shadow: 3px 0px 7px #048b9a;
-    animation: animateHeader 1s ease-in-out forwards;
-    transform: translateY(20px);
-}*/
-
-/*.textHeader {
-    padding: 10px;
-    color: whitesmoke;
-    letter-spacing: 3px;
-    text-align: center;
-    font-size: 2.5rem;
-    text-shadow: 3px 0px 7px #ff8f44;
-    margin-bottom: 60px;
-    animation: animateHeader 1s ease-in-out forwards;
-    transform: translateY(20px);
-}
-
-@keyframes animateHeader {
-    0% {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}*/
-
-/* CODE POUR LE RESPONSIVE */
-
-/*@media (max-width: 952px) {
-    label.logo {
-        font-size: 25px;
-        padding-left: 50px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 850px) {*/
-    /* MOBILE MODE */
-    /*.checkbtn {
-        display: block;
-    }
-
-    nav ul {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: var(--orange-blc);
-        top: 80px;
-        left: -100%;
-        padding-top: 80%;
-        text-align: center;
-        transition: .5s ease;
-    }
-
-        nav ul li {
-            display: block;
-            margin: 30px 0;
-            line-height: 30px;
-        }
-
-            nav ul li a {
-                font-size: 20px;
-            }
-
-    a.active, a:hover {
-        background: none;
-        color: var(--orange);
-        text-shadow: 0 10px 15px var(--blue);
-    }
-
-    #check :checked ~ ul {
-        left: 0;
-    }
-}*/
-/* CODE POUR LE RESPONSIVE */
-
-/*@media (max-width: 952px) {
-    label.logo {
-        font-size: 25px;
-        padding-left: 50px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 850px) {*/
-    /* MOBILE MODE */
-    /*.checkbtn {
-        display: block;
-    }
-
-    nav ul {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: var(--orange-blc);
-        top: 80px;
-        left: -100%;
-        padding-top: 80%;
-        text-align: center;
-        transition: .5s ease;
-    }
-
-        nav ul li {
-            display: block;
-            margin: 30px 0;
-            line-height: 30px;
-        }
-
-            nav ul li a {
-                font-size: 20px;
-            }
-
-    a.active, a:hover {
-        background: none;
-        color: var(--orange);
-        text-shadow: 0 10px 15px var(--blue);
-    }
-
-    #check :checked ~ ul {
-        left: 0;
-    }
-}*/
 
 /* Partie Footer */
 
@@ -312,7 +182,7 @@ footer {
 .navFooter {
     display: flex;
     flex-direction: column;
-    white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+    white-space: nowrap;
     font-size: 1em;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -450,6 +320,7 @@ footer {
     text-transform: uppercase;
     height: 50px;
     transition: 0.5s ease;
+    cursor: pointer;
 }
 .next-button {
     font-family: "Rubik", sans-serif;
@@ -478,7 +349,7 @@ footer {
     position: relative;
     width: 1280px;
     height: 720px;
-    border-radius: 20px;
+    border-radius: 50px;
     overflow: hidden;
     background-color: #767676;
     display: flex;
@@ -593,6 +464,7 @@ footer {
     height: 50px;
     border-radius: 50px;
     margin-top: 20px;
+    color: white;
 }
 
 .content .thumbnail-list {
@@ -630,6 +502,7 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .container .navigation {
@@ -1376,32 +1249,26 @@ footer {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 5%;
-    width: 98%;
+    top: 10%;
     z-index: 15;
 }
 
-    .zoneMenuAdmin ul, a {
+    .zoneMenuAdmin > ul > li > a {
         list-style-type: none;
         text-decoration: none;
-        color: white;
-        
+/*        color: white;*/
     }
 
 .borderGlassAdminMenu {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    display: flex;
     align-items: center;
     white-space: nowrap;
     flex-wrap: wrap;
-    width: 80%;
+    width: auto;
     padding: 10px 0;
     margin-top: 20px;
     background-color: rgba(255, 255, 255, 0.074);
-    border-radius: 50px;
+    border-radius: 0 50px 50px 0;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(20px);
     opacity: 0.9;
@@ -1416,17 +1283,18 @@ footer {
         width: fit-content;
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         cursor: pointer;
+        color: white;
     }
 
         .borderGlassAdminMenu li:hover {
             border: 4px solid orange;
             background: orange;
-            color: orange;
+            color: white;
         }
 
     .borderGlassAdminMenu ul {
-        display: flex;
-        align-items: center;
+/*        display: flex;
+        align-items: center;*/
         padding: 0;
     }
 
@@ -1434,5 +1302,5 @@ footer {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
     }
