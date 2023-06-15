@@ -81,7 +81,7 @@ header {
     .navMenu ul li a {
         color: white;
         display: flex;
-        font-size: 16px;
+        font-size: 17px;
         padding: 7px 5px;
         border-radius: 13px;
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
