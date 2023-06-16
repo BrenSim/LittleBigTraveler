@@ -22,17 +22,17 @@ public class PaymentController : Controller
     /// <param name="bookingId">ID de la réservation associée au paiement.</param>
     /// <param name="totalAmount">Montant total du paiement.</param>
     /// <returns>Vue contenant le formulaire de création d'un paiement.</returns>
-    [Authorize]
-    public IActionResult Create(int bookingId, double totalAmount)
-    {
-        var model = new PaymentViewModel
-        {
-            BookingId = bookingId,
-            TotalAmount = totalAmount
-        };
+    //[Authorize]
+    //public IActionResult Create(int bookingId, double totalAmount)
+    //{
+    //    var model = new PaymentViewModel
+    //    {
+    //        BookingId = bookingId,
+    //        TotalAmount = totalAmount
+    //    };
 
-        return View(model);
-    }
+    //    return View(model);
+    //}
 
     /// <summary>
     /// Méthode pour traiter le formulaire de création d'un paiement.

@@ -38,6 +38,9 @@ namespace LittleBigTraveler.Models.DataBase
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Travel> Travels { get; set; }
         public DbSet<Package> Packages { get; set; }
+        //public DbSet<AllInclusiveTravel> AllInclusiveTravels { get; set; }
+        //public DbSet<CustomMadeTravel> CustomMadeTravels { get; set; }
+        //public DbSet<SurpriseTravel> SurpriseTravels { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceCatalog> ServiceCatalogs { get; set; }
@@ -45,9 +48,7 @@ namespace LittleBigTraveler.Models.DataBase
         // Connexion avec la database MySql
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
             optionsBuilder.UseMySql("server=localhost;user id=root;password=Zachary3529<;database=LittleBigTravelDB");
-
         }
 
         
@@ -435,7 +436,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 120.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -453,7 +454,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 35.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -470,7 +471,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 180.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -487,7 +488,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Paris",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -702,7 +703,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 20.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
@@ -720,7 +721,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 4,
                 Images = new List<string>
@@ -738,7 +739,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 350.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
@@ -756,7 +757,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 150.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 3,
                 Images = new List<string>
@@ -773,7 +774,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 300.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 4,
                 Images = new List<string>
@@ -791,7 +792,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 40.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -809,7 +810,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 15.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 30,
                 Images = new List<string>
@@ -827,7 +828,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 150.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 20,
                 Images = new List<string>
@@ -845,7 +846,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 40,
                 Images = new List<string>
@@ -863,7 +864,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 70.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Rome",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 35,
                 Images = new List<string>
@@ -970,7 +971,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Prague",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
@@ -988,7 +989,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 95.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Prague",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
@@ -1006,7 +1007,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 90.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Prague",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
@@ -1024,7 +1025,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 40.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Prague",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 4,
                 Images = new List<string>
@@ -1042,7 +1043,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 25.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Prague",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 6,
                 Images = new List<string>
@@ -1060,7 +1061,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 50.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Prague",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -1078,7 +1079,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 40.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Prague",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -1096,7 +1097,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Prague",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 40,
                 Images = new List<string>
@@ -1239,7 +1240,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 125.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Venise",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1257,7 +1258,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 120.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Venise",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1275,7 +1276,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 110.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Venise",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1293,7 +1294,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 100.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Venise",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1311,7 +1312,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 90.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Venise",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1329,7 +1330,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Venise",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -1347,7 +1348,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 70.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Venise",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -1365,7 +1366,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 55.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Venise",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 40,
                 Images = new List<string>
@@ -1509,7 +1510,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 120.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1526,7 +1527,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 110.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1543,7 +1544,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 100.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1560,7 +1561,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -1577,7 +1578,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1594,7 +1595,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 50.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 150,
                 Images = new List<string>
@@ -1611,7 +1612,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 70.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -1628,7 +1629,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 55.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -1679,7 +1680,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 70.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Activité",
+                Type = "Activité sportive",
                 Style = "Sport",
                 MaxCapacity = 20,
                 Images = new List<string>
@@ -1696,7 +1697,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Guide",
+                Type = "Tour guidé",
                 Style = "Culturel",
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -1713,7 +1714,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 40.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Guide",
+                Type = "Tour guidé",
                 Style = "Culturel",
                 MaxCapacity = 10,
                 Images = new List<string>
@@ -1731,7 +1732,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 289.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Munich",
-                Type = "Activité",
+                Type = "Activitée Sportive",
                 Style = "Sport",
                 MaxCapacity = 10,
                 Images = new List<string>
@@ -1750,7 +1751,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 250.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 200,
                 Images = new List<string>
@@ -1768,7 +1769,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 220.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 150,
                 Images = new List<string>
@@ -1786,7 +1787,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 200.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1804,7 +1805,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 180.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 150,
                 Images = new List<string>
@@ -1822,7 +1823,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 160.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -1840,7 +1841,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 120.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -1858,7 +1859,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 100.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 120,
                 Images = new List<string>
@@ -1876,7 +1877,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 150,
                 Images = new List<string>
@@ -1894,7 +1895,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 150.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Visite",
+                Type = "Visite Guidée",
                 Style = "Culturel",
                 MaxCapacity = 15,
                 Images = new List<string>
@@ -1912,7 +1913,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 20.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Visite",
+                Type = "Activité Culturelle",
                 Style = "Culture",
                 MaxCapacity = 200,
                 Images = new List<string>
@@ -1930,7 +1931,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 25.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Visite",
+                Type = "Activité Culturelle",
                 Style = "Culturel",
                 MaxCapacity = 150,
                 Images = new List<string>
@@ -1948,7 +1949,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 14.9,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Activite",
+                Type = "Croisière",
                 Style = "Culturel",
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -1984,7 +1985,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 35.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Visite",
+                Type = "Visite Guidée",
                 Style = "Culturel",
                 MaxCapacity = 30,
                 Images = new List<string>
@@ -2002,8 +2003,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 50.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Londres",
-                Type = "Visite",
-                Style = "Sport",
+                Type = "Croisière en bateau",
+                Style = "Sportive",
                 MaxCapacity = 30,
                 Images = new List<string>
                 {
@@ -2038,7 +2039,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 20.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 150,
                 Images = new List<string>
@@ -2056,7 +2057,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 15.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -2074,7 +2075,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 18.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 120,
                 Images = new List<string>
@@ -2092,7 +2093,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 17.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -2110,7 +2111,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 16.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -2128,7 +2129,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -2146,7 +2147,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 70.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -2164,7 +2165,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -2183,7 +2184,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
                 Type = "Guide",
-                Style = "Culturel",
+                Style = "",
                 MaxCapacity = 20,
                 Images = new List<string>
                 {
@@ -2200,8 +2201,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 15.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Visite",
-                Style = "Culturel",
+                Type = "Culture",
+                Style = "Culture",
                 MaxCapacity = 200,
                 Images = new List<string>
                 {
@@ -2218,8 +2219,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 10.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Visite",
-                Style = "Culturel",
+                Type = "Culture",
+                Style = "",
                 MaxCapacity = 150,
                 Images = new List<string>
                 {
@@ -2236,7 +2237,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 135.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Visite",
+                Type = "Visite guidée",
                 Style = "Nature",
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -2254,8 +2255,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 56.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Visite",
-                Style = "Culturel",
+                Type = "Sport",
+                Style = "",
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
@@ -2272,7 +2273,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 53.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Athènes",
-                Type = "Visite",
+                Type = "Visite Guidée",
                 Style = "Culturel",
                 MaxCapacity = 10,
                 Images = new List<string>
@@ -2290,7 +2291,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 25.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 150,
                 Images = new List<string>
@@ -2308,7 +2309,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 20.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -2326,7 +2327,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 22.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 120,
                 Images = new List<string>
@@ -2344,7 +2345,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 250.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 200,
                 Images = new List<string>
@@ -2362,7 +2363,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 200.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 180,
                 Images = new List<string>
@@ -2380,7 +2381,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 150.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -2398,7 +2399,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 250.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -2416,7 +2417,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 180.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 40,
                 Images = new List<string>
@@ -2434,7 +2435,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 106.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Visite",
+                Type = "Visite guidée",
                 Style = "Culturel",
                 MaxCapacity = 15,
                 Images = new List<string>
@@ -2452,7 +2453,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 17.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Visite",
+                Type = "Visite guidée",
                 Style = "Culturel",
                 MaxCapacity = 20,
                 Images = new List<string>
@@ -2470,8 +2471,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 26.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
-                Type = "Visite",
-                Style = "Culturel",
+                Type = "Cultural Activity",
+                Style = "",
                 MaxCapacity = 1000,
                 Images = new List<string>
                 {
@@ -2489,7 +2490,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
                 Type = "Visite",
-                Style = "Nature" + " " + "Culturel",
+                Style = "Nature",
                 MaxCapacity = 500,
                 Images = new List<string>
                 {
@@ -2507,7 +2508,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
                 Type = "Visite",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 200,
                 Images = new List<string>
                 {
@@ -2525,7 +2526,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
                 Type = "Visite",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 50,
                 Images = new List<string>
                 {
@@ -2543,7 +2544,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Barcelona",
                 Type = "Visite",
-                Style = "Sport",
+                Style = "Sportive",
                 MaxCapacity = 30,
                 Images = new List<string>
                 {
@@ -2560,7 +2561,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 20.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -2578,7 +2579,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 20.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -2596,7 +2597,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 150.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -2614,7 +2615,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 120.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -2632,7 +2633,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -2650,7 +2651,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 100.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -2668,7 +2669,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 90.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
-                Type = "Visite",
+                Type = "Visite guidée",
                 Style = "Nature",
                 MaxCapacity = 20,
                 Images = new List<string>
@@ -2704,8 +2705,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 27.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
-                Type = "Visite",
-                Style = "Culturel",
+                Type = "Visite guidée",
+                Style = "Culture",
                 MaxCapacity = 30,
                 Images = new List<string>
                 {
@@ -2723,7 +2724,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
                 Type = "Visite",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 200,
                 Images = new List<string>
                 {
@@ -2741,7 +2742,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
                 Type = "Visite",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 150,
                 Images = new List<string>
                 {
@@ -2794,7 +2795,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 25.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Innsbruck",
-                Type = "Activité",
+                Type = "Sport Activity",
                 Style = "Culture" + " " + "Sport",
                 MaxCapacity = 40,
                 Images = new List<string>
@@ -2830,7 +2831,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Annecy",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -2848,7 +2849,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 40.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Annecy",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -2866,7 +2867,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 120.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Annecy",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -2884,7 +2885,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Annecy",
-                Type = "Hébergement",
+                Type = "Accomodation",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -2902,7 +2903,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Annecy",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -2920,7 +2921,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 100.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Annecy",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -2956,8 +2957,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Annecy",
-                Type = "Visite",
-                Style = "Culturel",
+                Type = "Visite guidée",
+                Style = "Culture",
                 MaxCapacity = 20,
                 Images = new List<string>
                 {
@@ -2974,7 +2975,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 10.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Annecy",
-                Type = "Visite",
+                Type = "Activité",
                 Style = "Culturel",
                 MaxCapacity = 200,
                 Images = new List<string>
@@ -3101,7 +3102,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Garmisch-Partenkirchen",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -3119,7 +3120,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 40.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Garmisch-Partenkirchen",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -3137,7 +3138,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 100.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Garmisch-Partenkirchen",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 40,
                 Images = new List<string>
@@ -3155,7 +3156,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 120.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Garmisch-Partenkirchen",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -3173,7 +3174,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 150.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Garmisch-Partenkirchen",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -3191,7 +3192,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 50.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Garmisch-Partenkirchen",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -3209,7 +3210,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 100.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Garmisch-Partenkirchen",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -3299,8 +3300,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 60.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Garmisch-Partenkirchen",
-                Type = "Visite",
-                Style = "Culturel",
+                Type = "Visite guidée",
+                Style = "Culture",
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
@@ -3371,14 +3372,14 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 25.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
                     "/ImagesServices/165.jpeg",
                 },
-                ExternalLinks = "https://www.destinationhostels.com/Hébergement/lisbon-destination-hostel/",
+                ExternalLinks = "https://www.destinationhostels.com/accomodation/lisbon-destination-hostel/",
                 DestinationId = 12
             },
 
@@ -3389,7 +3390,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -3407,14 +3408,14 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 35.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
                 {
                     "/ImagesServices/167LisbonneHostel.png",
                 },
-                ExternalLinks = "https://www.destinationhostels.com/Hébergement/sunset-destination-hostel/",
+                ExternalLinks = "https://www.destinationhostels.com/accomodation/sunset-destination-hostel/",
                 DestinationId = 12
             },
 
@@ -3425,7 +3426,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 150.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 100,
                 Images = new List<string>
@@ -3443,7 +3444,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 180.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Hébergement",
+                Type = "Accommodation",
                 Style = null,
                 MaxCapacity = 80,
                 Images = new List<string>
@@ -3461,7 +3462,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 200.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -3479,7 +3480,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 40.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Restauration",
+                Type = "Restaurant",
                 Style = null,
                 MaxCapacity = 60,
                 Images = new List<string>
@@ -3533,7 +3534,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 15.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Visite",
+                Type = "Cultural Activity",
                 Style = "Nature",
                 MaxCapacity = 200,
                 Images = new List<string>
@@ -3552,7 +3553,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Visite",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 150,
                 Images = new List<string>
                 {
@@ -3570,7 +3571,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
                 Type = "Visite",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 100,
                 Images = new List<string>
                 {
@@ -3587,7 +3588,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 30.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Activité",
+                Type = "Activite",
                 Style = "Sport",
                 MaxCapacity = 50,
                 Images = new List<string>
@@ -3605,7 +3606,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 25.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Activité",
+                Type = "Activite",
                 Style = "Sport",
                 MaxCapacity = 40,
                 Images = new List<string>
@@ -3623,7 +3624,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 94.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Lisbon",
-                Type = "Activité",
+                Type = "Activite",
                 Style = "Culturel",
                 MaxCapacity = 40,
                 Images = new List<string>
@@ -3823,7 +3824,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Interlaken",
                 Type = "Activité",
-                Style = "Nature",
+                Style = "Aventure",
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
@@ -3859,7 +3860,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Interlaken",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
@@ -3877,7 +3878,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Interlaken",
                 Type = "Activité",
-                Style = "Sport",
+                Style = "Aventure",
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -4107,7 +4108,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Chamonix",
                 Type = "Activité",
-                Style = "Sport",
+                Style = null,
                 MaxCapacity = 20,
                 Images = new List<string>
                 {
@@ -4124,7 +4125,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Chamonix",
                 Type = "Activité",
-                Style = "Sport",
+                Style = null,
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -4141,7 +4142,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Chamonix",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Divertissement",
                 MaxCapacity = 15,
                 Images = new List<string>
                 {
@@ -4158,7 +4159,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Chamonix",
                 Type = "Activité",
-                Style = "Détente",
+                Style = null,
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
@@ -4356,7 +4357,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Plitvice Lakes",
                 Type = "Activité",
-                Style = "Nature",
+                Style = null,
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
@@ -4374,7 +4375,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Plitvice Lakes",
                 Type = "Activité",
-                Style = "Sport",
+                Style = null,
                 MaxCapacity = 8,
                 Images = new List<string>
                 {
@@ -4392,7 +4393,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Plitvice Lakes",
                 Type = "Activité",
-                Style = "Nature",
+                Style = null,
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
@@ -4410,7 +4411,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Plitvice Lakes",
                 Type = "Activité",
-                Style = "Nature",
+                Style = null,
                 MaxCapacity = 8,
                 Images = new List<string>
                 {
@@ -4428,7 +4429,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Plitvice Lakes",
                 Type = "Activité",
-                Style = "Nature",
+                Style = null,
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
@@ -4682,7 +4683,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Tromsø",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -4699,7 +4700,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Tromsø",
                 Type = "Activité",
-                Style = "Nature",
+                Style = "Aventure",
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -4716,7 +4717,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Tromsø",
                 Type = "Activité",
-                Style = "Nature",
+                Style = "Découverte",
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -4950,7 +4951,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(4),
                 Location = "Killarney",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 50,
                 Images = new List<string>
                 {
@@ -4968,7 +4969,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Killarney",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
@@ -5183,8 +5184,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 0.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Budapest",
-                Type = "Activité",
-                Style = "Culturel",
+                Type = "Guide",
+                Style = null,
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -5201,8 +5202,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 20.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Budapest",
-                Type = "Activité",
-                Style = "Culturel",
+                Type = "Guide",
+                Style = null,
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -5220,7 +5221,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Budapest",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 20,
                 Images = new List<string>
                 {
@@ -5256,7 +5257,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Budapest",
                 Type = "Activité",
-                Style = "Détente",
+                Style = "Bien-être",
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
@@ -5275,7 +5276,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Hébergement",
-                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -5293,7 +5293,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Hébergement",
-                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -5311,7 +5310,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Hébergement",
-                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -5329,7 +5327,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Hébergement",
-                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -5347,7 +5344,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Hébergement",
-                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -5365,7 +5361,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Restauration",
-                Style = null,
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
@@ -5383,7 +5378,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Restauration",
-                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -5401,7 +5395,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Restauration",
-                Style = null,
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
@@ -5419,7 +5412,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Restauration",
-                Style = null,
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
@@ -5437,7 +5429,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Restauration",
-                Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -5455,7 +5446,6 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Bath",
                 Type = "Guide",
-                Style = "Culturel",
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -5473,7 +5463,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Activité",
-                Style = "Détente",
+                Style = "Historique",
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -5491,7 +5481,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Gastronomie",
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
@@ -5509,7 +5499,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
@@ -5527,7 +5517,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Bath",
                 Type = "Activité",
-                Style = "Sport",
+                Style = "Croisière",
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
@@ -5566,9 +5556,9 @@ namespace LittleBigTraveler.Models.DataBase
                 Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
-                {
-                "/ImagesServices/KarlovyVary2Hebergement.png",
-                },
+            {
+            "/ImagesServices/KarlovyVary2Hebergement.png",
+            },
                 ExternalLinks = "https://www.carlsbad-plaza.com",
                 DestinationId = 20
             },
@@ -5584,9 +5574,9 @@ namespace LittleBigTraveler.Models.DataBase
                 Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
-                {
-                "/ImagesServices/KarlovyVary3Hebergement.png",
-                },
+            {
+            "/ImagesServices/KarlovyVary3Hebergement.png",
+            },
                 ExternalLinks = "https://www.spa-hotel-imperial.cz",
                 DestinationId = 20
             },
@@ -5602,9 +5592,9 @@ namespace LittleBigTraveler.Models.DataBase
                 Style = null,
                 MaxCapacity = 2,
                 Images = new List<string>
-                {
-                "/ImagesServices/KarlovyVary4Hebergement.png",
-                },
+            {
+            "/ImagesServices/KarlovyVary4Hebergement.png",
+            },
                 ExternalLinks = "https://www.hotelromance.cz/fr/",
                 DestinationId = 20
             },
@@ -5725,7 +5715,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Karlovy Vary",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
@@ -5743,7 +5733,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Karlovy Vary",
                 Type = "Activité",
-                Style = "Détente",
+                Style = "Relaxation",
                 MaxCapacity = 2,
                 Images = new List<string>
                 {
@@ -5779,7 +5769,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Karlovy Vary",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 4,
                 Images = new List<string>
                 {
@@ -5797,7 +5787,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(2),
                 Location = "Karlovy Vary",
                 Type = "Activité",
-                Style = "Détente",
+                Style = "Shopping",
                 MaxCapacity = 10,
                 Images = new List<string>
                 {
@@ -5995,7 +5985,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Ischia",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 30,
                 Images = new List<string>
                 {
@@ -6067,7 +6057,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Ischia",
                 Type = "Activité",
-                Style = "Sport",
+                Style = "Aventure",
                 MaxCapacity = 6,
                 Images = new List<string>
                 {
@@ -6264,8 +6254,8 @@ namespace LittleBigTraveler.Models.DataBase
                 Price = 80.0,
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Vichy",
-                Type = "Activité",
-                Style = "Culturel",
+                Type = "Guide",
+                Style = null,
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -6283,7 +6273,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Vichy",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 1,
                 Images = new List<string>
                 {
@@ -6319,7 +6309,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Schedule = DateTime.Now.AddDays(1),
                 Location = "Vichy",
                 Type = "Activité",
-                Style = "Culturel",
+                Style = "Culture",
                 MaxCapacity = 50,
                 Images = new List<string>
                 {
@@ -6346,7 +6336,6 @@ namespace LittleBigTraveler.Models.DataBase
                 ExternalLinks = "https://www.allier-auvergne-tourisme.com/equipement/vichy/bateau-promenade-vichy/5261458",
                 DestinationId = 22
             }
-
             );
 
             //Création Travel
@@ -6537,7 +6526,7 @@ namespace LittleBigTraveler.Models.DataBase
                 Id = 19,
                 Destination = Destinations.Find(19),
                 DepartureLocation = "Marseille",
-                DepartureDate = new DateTime(2023, 11 , 3, 20, 42, 0),
+                DepartureDate = new DateTime(2023, 11, 3, 20, 42, 0),
                 ReturnDate = new DateTime(2023, 11, 5, 19, 37, 0),
                 Price = 759,
                 NumParticipants = 05,
@@ -6765,7 +6754,7 @@ namespace LittleBigTraveler.Models.DataBase
                 QuantityAvailable = 10,
                 Travel = Travels.Find(15),
                 ServiceForPackage = new List<Service> { Services.Find(210), Services.Find(216), Services.Find(218), Services.Find(220), Services.Find(221), Services.Find(224) }
-            },          
+            },
             new Package
             {
                 Id = 16,
@@ -6878,8 +6867,6 @@ namespace LittleBigTraveler.Models.DataBase
             }
             );
 
-           
-
             // Création des rôles
             this.Roles.AddRange(
 
@@ -6892,6 +6879,7 @@ namespace LittleBigTraveler.Models.DataBase
                 );
 
             // Création des users
+            //User users = new List<User> {
             this.Users.AddRange(
             new User
             {
