@@ -66,12 +66,11 @@ public class PaymentController : Controller
     }
 
     /// <summary>
-    /// Méthode HTTP GET pour créer un nouveau paiement.
+    /// Méthode pour créer un nouveau paiement.
     /// </summary>
     /// <param name="bookingId">L'identifiant de la réservation pour laquelle le paiement doit être créé.</param>
     /// <returns>Une vue avec le modèle de vue de paiement initialisé.</returns>
     [Authorize]
-    [HttpGet]
     public IActionResult Create(int bookingId)
     {
         try

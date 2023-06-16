@@ -81,26 +81,66 @@
             }
             else
             {
-            <div class="glassBorderBackground">
+    <div class="glassBorderBackground">
 
-                <div id="positionIntoSection">
-                    <div class="card-container">
-                        <div class="glassBorderCard slider-1">
-                            <div class="card">
-                                @foreach (var image in @Model.Travel.Destination.Images)
-                                    {
-                                    <img src="@image" alt="Image" class="card-img" />
-                                    }
-                            </div>
-                            @*<div class="card-body">
-                                <h1 class="card-title">@Model.Destination.Country</h1>
-                                <h3 class="card-sub">@Model.Destination.City</h3>
-                                <p class="card-sub-title">@Model.Destination.Description</p>
-                            </div>*@
-                        </div>
+        <!--<div id="positionIntoSection">
+            <div class="card-container">
+                <div class="glassBorderCard">
+                    <div class="card">
+                        @foreach (var image in @Model.Travel.Destination.Images)
+                        {
+                            <img src="@image" alt="Image" class="card-img" />
+                        }
+                    </div>-->
+                    @*<div class="card-body">
+                        <h1 class="card-title">@Model.Destination.Country</h1>
+                        <h3 class="card-sub">@Model.Destination.City</h3>
+                        <p class="card-sub-title">@Model.Destination.Description</p>
+                    </div>*@
+                <!--</div>
+            </div>
+        </div>-->
+
+        <div id="positionIntoSection">
+            <div class="card-container">
+                <div class="glassBorderCardOffers">
+                    <div class="cardOffers">
+                        <img src="@Model.Travel.Destination.Images[0]" class="card-img" />
+
                     </div>
                 </div>
+                <div class="glassBorderCardOffers">
+                    <div class="cardOffers">
+                        <img src="@Model.Travel.Destination.Images[1]" class="card-img" />
+
+                    </div>
+                </div>
+                <div class="glassBorderCardOffers">
+                    <div class="cardOffers">
+                        <img src="@Model.Travel.Destination.Images[2]" class="card-img" />
+
+                    </div>
+                </div>
+                <div class="glassBorderCardOffers">
+                    <div class="cardOffers">
+                        <img src="@Model.Travel.Destination.Images[3]" class="card-img" />
+
+                    </div>
+                </div>
+                @*<div class="glassBorderCardOffers">
+                    <div class="cardOffers">
+                        <img src="@Model[9].Images[0]" class="card-img" />
+                        <div class="cardOffers-body">
+                            <h1 class="cardOffers-title">@Model[9].Country</h1>
+                            <p class="cardOffers-sub-title">@Model[9].City</p>
+                            <button class="cardOffers-btn">Réserver !</button>
+                        </div>
+                    </div>
+                </div>*@
             </div>
+        </div>
+
+    </div>
 
             <div class="bottomContainer">
 
@@ -150,12 +190,15 @@
                 </div>
 
                 <div class="rightContainer">
-                    <a href="/Package/EditPackage/@Model.Id" class="reservationBtn">Modifier Package</a>
-                    <a href="/Travel/ModifyTravel/@Model.Id" class="reservationBtn">Modifier Voyage</a>
-                    <a href="/Package/DeletePackage/@Model.Id" class="reservationBtn">Supprimer</a>
-                    <a href="/Booking/Create?packageId=@Model.Id" class="reservationBtn">Réservation</a>
-                    @*<button type="submit" class="reservationBtn">Réservation</button>*@
-                </div>
+                    @if (User.IsInRole("Administrator"))
+                        {
+                        <a href="/Package/EditPackage/@Model.Id" class="modifBtnPackage">Modifier Package</a>
+                        <a href="/Travel/ModifyTravel/@Model.Id" class="modifBtnTravel">Modifier Voyage</a>
+                        <a href="/Package/DeletePackage/@Model.Id" class="deleteBtnSurprise">Supprimer</a>
+                        }
+                        <a href="/Booking/Create?packageId=@Model.Id" class="reservationBtn">Réservation</a>
+                        @*<button type="submit" class="reservationBtn">Réservation</button>*@
+                    </div>
 
             </div>
             }

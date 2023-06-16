@@ -29,9 +29,9 @@ public class PackageController : Controller
     }
 
     /// <summary>
-    /// Action pour afficher la liste de tous les PackageTravel.
+    /// Action pour afficher la liste de tous les Package.
     /// </summary>
-    /// <returns>Vue contenant la liste des PackageTravel.</returns>
+    /// <returns>Vue contenant la liste des Package.</returns>
     [AllowAnonymous]
     public IActionResult List()
     {
@@ -51,10 +51,10 @@ public class PackageController : Controller
     }
 
     /// <summary>
-    /// Action pour créer un PackageTravel.
+    /// Action pour créer un Package.
     /// </summary>
-    /// <param name="travelId">ID du voyage associé au PackageTravel.</param>
-    /// <returns>Vue contenant le formulaire de création d'un PackageTravel.</returns>
+    /// <param name="travelId">ID du voyage associé au Package.</param>
+    /// <returns>Vue contenant le formulaire de création d'un Package.</returns>
     [Authorize]
     public IActionResult CreatePackage(int travelId)
     {
@@ -99,9 +99,9 @@ public class PackageController : Controller
     }
 
     /// <summary>
-    /// Action pour le traitement du formulaire de création d'un PackageTravel.
+    /// Action pour le traitement du formulaire de création d'un Package.
     /// </summary>
-    /// <param name="model">Modèle contenant les informations du PackageTravel.</param>
+    /// <param name="model">Modèle contenant les informations du Package.</param>
     /// <param name="SelectedServiceId">Liste des ID des services sélectionnés.</param>
     /// <returns>Redirige vers la page de la liste des PackageTravel en cas de succès, sinon réaffiche le formulaire avec les erreurs.</returns>
     [Authorize]
@@ -156,9 +156,9 @@ public class PackageController : Controller
 
 
     /// <summary>
-    /// Méthode privée pour supprimer le Travel associé au PackageTravel.
+    /// Méthode privée pour supprimer le Travel associé au Package.
     /// </summary>
-    /// <param name="package">PackageTravel à supprimer.</param>
+    /// <param name="package">Package à supprimer.</param>
     private void DeleteAssociatedTravel(Package package)
     {
         if (package != null && package.Travel != null)
@@ -174,7 +174,7 @@ public class PackageController : Controller
     /// Action pour supprimer un Package.
     /// </summary>
     /// <param name="id">ID du Package à supprimer.</param>
-    /// <returns>Redirige vers la page de la liste des PackageTravel en cas de succès, sinon renvoie un code d'erreur.</returns>
+    /// <returns>Redirige vers la page de la liste des Package en cas de succès, sinon renvoie un code d'erreur.</returns>
     [Authorize]
     public IActionResult DeletePackage(int id)
     {
@@ -242,12 +242,12 @@ public class PackageController : Controller
     }
 
     /// <summary>
-    /// Action pour le traitement du formulaire d'édition d'un PackageTravel.
+    /// Action pour le traitement du formulaire d'édition d'un Package.
     /// </summary>
-    /// <param name="id">ID du PackageTravel à éditer.</param>
-    /// <param name="model">Modèle contenant les informations du PackageTravel.</param>
+    /// <param name="id">ID du Package à éditer.</param>
+    /// <param name="model">Modèle contenant les informations du Package.</param>
     /// <param name="SelectedServiceId">Liste des ID des services sélectionnés.</param>
-    /// <returns>Redirige vers la page de la liste des PackageTravel en cas de succès, sinon réaffiche le formulaire avec les erreurs.</returns>
+    /// <returns>Redirige vers la page de la liste des Package en cas de succès, sinon réaffiche le formulaire avec les erreurs.</returns>
     [Authorize]
     [HttpPost]
     public IActionResult EditPackage(int id, PackageViewModel model, List<int> SelectedServiceId)
@@ -272,14 +272,12 @@ public class PackageController : Controller
 
                 packageDAL.UpdatePackage(id, model.TravelId, model.Name, model.Description, services);
 
-                return RedirectToAction("List"); // Redirection vers la page de la liste des PackageTravel
+                return RedirectToAction("List");
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
-
-            // Si une erreur se produit, revenir à la vue avec les données saisies
             return View(model);
         }
     }
@@ -308,10 +306,10 @@ public class PackageController : Controller
     /// <summary>
     /// Recherche des packages de voyage en fonction des critères fournis.
     /// </summary>
-    /// <param name="destination">Le nom de la destination recherchée. Peut être null.</param>
-    /// <param name="departureMonth">Le mois de départ recherché. Peut être null.</param>
-    /// <param name="minPrice">Le prix minimum recherché. Peut être null.</param>
-    /// <param name="maxPrice">Le prix maximum recherché. Peut être null.</param>
+    /// <param name="destination">Le nom de la destination recherchée.</param>
+    /// <param name="departureMonth">Le mois de départ recherché.</param>
+    /// <param name="minPrice">Le prix minimum recherché.</param>
+    /// <param name="maxPrice">Le prix maximum recherché.</param>
     /// <returns>Une vue 'List' contenant la liste des packages de voyage qui correspondent aux critères de recherche.</returns>
 
     [AllowAnonymous]

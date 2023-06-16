@@ -76,8 +76,6 @@ public class BookingController : Controller
                 // Créer une nouvelle réservation
                 bookingId = bookingDAL.CreateBooking(userId, packageId);
             }
-
-            // Rediriger vers la page de confirmation de réservation avec l'ID de la réservation
             return RedirectToAction("Create", "Payment", new { bookingId,  });
 
             
@@ -111,7 +109,7 @@ public class BookingController : Controller
                 // Vérifier si la réservation existe et appartient à l'utilisateur
                 if (booking == null || booking.UserId != userId)
                 {
-                    return NotFound("Booking not found");
+                    return NotFound("Pas de réservation trouvée");
                 }
             }
 
